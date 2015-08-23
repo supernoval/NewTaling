@@ -10,10 +10,15 @@
 		1506DF4C1B89B36D007D1696 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF4B1B89B36D007D1696 /* main.m */; };
 		1506DF4F1B89B36D007D1696 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF4E1B89B36D007D1696 /* AppDelegate.m */; };
 		1506DF521B89B36D007D1696 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF511B89B36D007D1696 /* ViewController.m */; };
-		1506DF551B89B36D007D1696 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1506DF531B89B36D007D1696 /* Main.storyboard */; };
 		1506DF571B89B36D007D1696 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1506DF561B89B36D007D1696 /* Images.xcassets */; };
 		1506DF5A1B89B36D007D1696 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1506DF581B89B36D007D1696 /* LaunchScreen.xib */; };
 		1506DF661B89B36D007D1696 /* TalingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF651B89B36D007D1696 /* TalingTests.m */; };
+		1506DF7B1B89B457007D1696 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1506DF7A1B89B457007D1696 /* Main.storyboard */; };
+		1506DF811B89B46D007D1696 /* CommonMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF7D1B89B46D007D1696 /* CommonMethods.m */; };
+		1506DF821B89B46D007D1696 /* StringHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF801B89B46D007D1696 /* StringHeight.m */; };
+		1506DF911B89B4A0007D1696 /* MyProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF8D1B89B4A0007D1696 /* MyProgressHUD.m */; };
+		1506DF921B89B4A0007D1696 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1506DF8E1B89B4A0007D1696 /* ProgressHUD.bundle */; };
+		1506DF931B89B4A0007D1696 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF901B89B4A0007D1696 /* ProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +39,22 @@
 		1506DF4E1B89B36D007D1696 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1506DF501B89B36D007D1696 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		1506DF511B89B36D007D1696 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		1506DF541B89B36D007D1696 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1506DF561B89B36D007D1696 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1506DF591B89B36D007D1696 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1506DF5F1B89B36D007D1696 /* TalingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TalingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1506DF641B89B36D007D1696 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1506DF651B89B36D007D1696 /* TalingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TalingTests.m; sourceTree = "<group>"; };
+		1506DF7A1B89B457007D1696 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		1506DF7C1B89B46D007D1696 /* CommonMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonMethods.h; sourceTree = "<group>"; };
+		1506DF7D1B89B46D007D1696 /* CommonMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonMethods.m; sourceTree = "<group>"; };
+		1506DF7E1B89B46D007D1696 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		1506DF7F1B89B46D007D1696 /* StringHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHeight.h; sourceTree = "<group>"; };
+		1506DF801B89B46D007D1696 /* StringHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringHeight.m; sourceTree = "<group>"; };
+		1506DF8C1B89B4A0007D1696 /* MyProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProgressHUD.h; sourceTree = "<group>"; };
+		1506DF8D1B89B4A0007D1696 /* MyProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProgressHUD.m; sourceTree = "<group>"; };
+		1506DF8E1B89B4A0007D1696 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		1506DF8F1B89B4A0007D1696 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		1506DF901B89B4A0007D1696 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +96,13 @@
 		1506DF481B89B36D007D1696 /* Taling */ = {
 			isa = PBXGroup;
 			children = (
+				1506DF791B89B449007D1696 /* ThirdFrameWork */,
+				1506DF711B89B40C007D1696 /* constants */,
 				1506DF4D1B89B36D007D1696 /* AppDelegate.h */,
 				1506DF4E1B89B36D007D1696 /* AppDelegate.m */,
 				1506DF501B89B36D007D1696 /* ViewController.h */,
 				1506DF511B89B36D007D1696 /* ViewController.m */,
-				1506DF531B89B36D007D1696 /* Main.storyboard */,
+				1506DF7A1B89B457007D1696 /* Main.storyboard */,
 				1506DF561B89B36D007D1696 /* Images.xcassets */,
 				1506DF581B89B36D007D1696 /* LaunchScreen.xib */,
 				1506DF491B89B36D007D1696 /* Supporting Files */,
@@ -117,6 +134,38 @@
 				1506DF641B89B36D007D1696 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1506DF711B89B40C007D1696 /* constants */ = {
+			isa = PBXGroup;
+			children = (
+				1506DF7C1B89B46D007D1696 /* CommonMethods.h */,
+				1506DF7D1B89B46D007D1696 /* CommonMethods.m */,
+				1506DF7E1B89B46D007D1696 /* Constants.h */,
+				1506DF7F1B89B46D007D1696 /* StringHeight.h */,
+				1506DF801B89B46D007D1696 /* StringHeight.m */,
+			);
+			path = constants;
+			sourceTree = "<group>";
+		};
+		1506DF791B89B449007D1696 /* ThirdFrameWork */ = {
+			isa = PBXGroup;
+			children = (
+				1506DF831B89B483007D1696 /* ProgressHUD */,
+			);
+			path = ThirdFrameWork;
+			sourceTree = "<group>";
+		};
+		1506DF831B89B483007D1696 /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				1506DF8C1B89B4A0007D1696 /* MyProgressHUD.h */,
+				1506DF8D1B89B4A0007D1696 /* MyProgressHUD.m */,
+				1506DF8E1B89B4A0007D1696 /* ProgressHUD.bundle */,
+				1506DF8F1B89B4A0007D1696 /* ProgressHUD.h */,
+				1506DF901B89B4A0007D1696 /* ProgressHUD.m */,
+			);
+			path = ProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +248,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1506DF551B89B36D007D1696 /* Main.storyboard in Resources */,
+				1506DF921B89B4A0007D1696 /* ProgressHUD.bundle in Resources */,
+				1506DF7B1B89B457007D1696 /* Main.storyboard in Resources */,
 				1506DF5A1B89B36D007D1696 /* LaunchScreen.xib in Resources */,
 				1506DF571B89B36D007D1696 /* Images.xcassets in Resources */,
 			);
@@ -219,9 +269,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1506DF821B89B46D007D1696 /* StringHeight.m in Sources */,
 				1506DF521B89B36D007D1696 /* ViewController.m in Sources */,
+				1506DF911B89B4A0007D1696 /* MyProgressHUD.m in Sources */,
+				1506DF931B89B4A0007D1696 /* ProgressHUD.m in Sources */,
 				1506DF4F1B89B36D007D1696 /* AppDelegate.m in Sources */,
 				1506DF4C1B89B36D007D1696 /* main.m in Sources */,
+				1506DF811B89B46D007D1696 /* CommonMethods.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,14 +298,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1506DF531B89B36D007D1696 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1506DF541B89B36D007D1696 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1506DF581B89B36D007D1696 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
