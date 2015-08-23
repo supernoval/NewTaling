@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>E9C8EB71-5FAF-4EE0-AB35-E5AC7DD04DEC</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Taling</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>7eaeacd9-2d0e-93bf-dca0-ce57b7db7bff</key>
 		<string>https://github.com/supernoval/NewTaling.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>trunk/Taling/Taling.xcodeproj/project.xcworkspace</string>
+	<string>trunk/Taling/Taling.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>7eaeacd9-2d0e-93bf-dca0-ce57b7db7bff</key>

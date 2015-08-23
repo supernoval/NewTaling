@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 #import "Constants.h"
+#import <SMS_SDK/SMS_SDK.h>
+#import "ConstantsHeaders.h"
+#import "LoginViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -27,8 +31,62 @@
     
     
     [[UITabBar appearance] setTintColor:NavigationBarColor];
+    
+    
+    
+    
+    //sharesdk sms 注册
+    [SMS_SDK registerApp:kShareSDKSMSAppKey withSecret:kShareSDKSMSAppSecret];
+    
+    
+    if ([[UIDevice currentDevice].systemVersion floatValue] >=8.0)
+    {
+        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+        
+    }
+    else
+    {
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes: UIRemoteNotificationTypeBadge |UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert];
+    }
+    
+    
+ 
+    
     return YES;
 }
+
+#ifdef __IPHONE_8_0
+
+-(void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+{
+    [application registerForRemoteNotifications];
+    
+}
+
+-(void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler
+{
+    
+}
+#endif
+
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSString *dToken = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    
+    dToken = [dToken stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    NSLog(@"STR:%@",dToken);
+    
+    
+    if (dToken)
+    {
+       
+        
+    }
+    
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

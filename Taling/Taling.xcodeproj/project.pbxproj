@@ -96,6 +96,12 @@
 		1506E1691B89B6D6007D1696 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1506E1461B89B68E007D1696 /* CoreLocation.framework */; };
 		1506E16A1B89B6D6007D1696 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1506E1471B89B68E007D1696 /* Security.framework */; };
 		1506E16B1B89B6D6007D1696 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1506E1481B89B68E007D1696 /* MapKit.framework */; };
+		1506E22A1B89BB3A007D1696 /* RecommendTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E2291B89BB3A007D1696 /* RecommendTableViewController.m */; };
+		1506E2511B89BD87007D1696 /* ChangeCodeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E24A1B89BD87007D1696 /* ChangeCodeTVC.m */; };
+		1506E2521B89BD87007D1696 /* ForgetCodeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E24C1B89BD87007D1696 /* ForgetCodeTVC.m */; };
+		1506E2531B89BD87007D1696 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E24E1B89BD87007D1696 /* LoginViewController.m */; };
+		1506E2541B89BD87007D1696 /* RegistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E2501B89BD87007D1696 /* RegistTableViewController.m */; };
+		1506E25B1B89BDE5007D1696 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E25A1B89BDE5007D1696 /* Location.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -343,6 +349,20 @@
 		1506E1461B89B68E007D1696 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1506E1471B89B68E007D1696 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1506E1481B89B68E007D1696 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1506E2281B89BB3A007D1696 /* RecommendTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendTableViewController.h; sourceTree = "<group>"; };
+		1506E2291B89BB3A007D1696 /* RecommendTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendTableViewController.m; sourceTree = "<group>"; };
+		1506E2491B89BD87007D1696 /* ChangeCodeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeCodeTVC.h; sourceTree = "<group>"; };
+		1506E24A1B89BD87007D1696 /* ChangeCodeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeCodeTVC.m; sourceTree = "<group>"; };
+		1506E24B1B89BD87007D1696 /* ForgetCodeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetCodeTVC.h; sourceTree = "<group>"; };
+		1506E24C1B89BD87007D1696 /* ForgetCodeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetCodeTVC.m; sourceTree = "<group>"; };
+		1506E24D1B89BD87007D1696 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		1506E24E1B89BD87007D1696 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		1506E24F1B89BD87007D1696 /* RegistTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistTableViewController.h; sourceTree = "<group>"; };
+		1506E2501B89BD87007D1696 /* RegistTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistTableViewController.m; sourceTree = "<group>"; };
+		1506E2591B89BDE5007D1696 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		1506E25A1B89BDE5007D1696 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		1506E25C1B89BF5F007D1696 /* NSUserDefaultKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSUserDefaultKeys.h; sourceTree = "<group>"; };
+		1506E25F1B89BF92007D1696 /* ConstantsHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantsHeaders.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -406,6 +426,9 @@
 		1506DF481B89B36D007D1696 /* Taling */ = {
 			isa = PBXGroup;
 			children = (
+				1506E2551B89BDBD007D1696 /* Locationmanager */,
+				1506E23C1B89BD65007D1696 /* Account */,
+				1506E2271B89BB23007D1696 /* Recommend */,
 				1506E0B11B89B608007D1696 /* BaseViewControllers */,
 				1506DF791B89B449007D1696 /* ThirdFrameWork */,
 				1506DF711B89B40C007D1696 /* constants */,
@@ -450,11 +473,13 @@
 		1506DF711B89B40C007D1696 /* constants */ = {
 			isa = PBXGroup;
 			children = (
+				1506E25F1B89BF92007D1696 /* ConstantsHeaders.h */,
 				1506DF7C1B89B46D007D1696 /* CommonMethods.h */,
 				1506DF7D1B89B46D007D1696 /* CommonMethods.m */,
 				1506DF7E1B89B46D007D1696 /* Constants.h */,
 				1506DF7F1B89B46D007D1696 /* StringHeight.h */,
 				1506DF801B89B46D007D1696 /* StringHeight.m */,
+				1506E25C1B89BF5F007D1696 /* NSUserDefaultKeys.h */,
 			);
 			path = constants;
 			sourceTree = "<group>";
@@ -801,6 +826,39 @@
 			path = Taling;
 			sourceTree = "<group>";
 		};
+		1506E2271B89BB23007D1696 /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				1506E2281B89BB3A007D1696 /* RecommendTableViewController.h */,
+				1506E2291B89BB3A007D1696 /* RecommendTableViewController.m */,
+			);
+			path = Recommend;
+			sourceTree = "<group>";
+		};
+		1506E23C1B89BD65007D1696 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				1506E2491B89BD87007D1696 /* ChangeCodeTVC.h */,
+				1506E24A1B89BD87007D1696 /* ChangeCodeTVC.m */,
+				1506E24B1B89BD87007D1696 /* ForgetCodeTVC.h */,
+				1506E24C1B89BD87007D1696 /* ForgetCodeTVC.m */,
+				1506E24D1B89BD87007D1696 /* LoginViewController.h */,
+				1506E24E1B89BD87007D1696 /* LoginViewController.m */,
+				1506E24F1B89BD87007D1696 /* RegistTableViewController.h */,
+				1506E2501B89BD87007D1696 /* RegistTableViewController.m */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		1506E2551B89BDBD007D1696 /* Locationmanager */ = {
+			isa = PBXGroup;
+			children = (
+				1506E2591B89BDE5007D1696 /* Location.h */,
+				1506E25A1B89BDE5007D1696 /* Location.m */,
+			);
+			path = Locationmanager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -910,6 +968,7 @@
 				1506E1301B89B646007D1696 /* base64.m in Sources */,
 				1506E1351B89B646007D1696 /* openssl_wrapper.m in Sources */,
 				1506DFFA1B89B506007D1696 /* SDPhotoBrowser.m in Sources */,
+				1506E25B1B89BDE5007D1696 /* Location.m in Sources */,
 				1506E01C1B89B521007D1696 /* MJRefreshHeader.m in Sources */,
 				1506E0A11B89B582007D1696 /* SDWebImageManager.m in Sources */,
 				1506E0B61B89B608007D1696 /* BaseTableViewController.m in Sources */,
@@ -920,6 +979,7 @@
 				1506E0A51B89B582007D1696 /* UIImage+MultiFormat.m in Sources */,
 				1506E0181B89B521007D1696 /* MJRefreshConst.m in Sources */,
 				1506E09F1B89B582007D1696 /* SDWebImageDownloader.m in Sources */,
+				1506E2521B89BD87007D1696 /* ForgetCodeTVC.m in Sources */,
 				1506E0171B89B521007D1696 /* MJRefreshComponent.m in Sources */,
 				1506E0A61B89B582007D1696 /* UIImage+WebP.m in Sources */,
 				1506DF521B89B36D007D1696 /* ViewController.m in Sources */,
@@ -933,6 +993,7 @@
 				1506DF911B89B4A0007D1696 /* MyProgressHUD.m in Sources */,
 				1506DFFB1B89B506007D1696 /* SDPhotoGroup.m in Sources */,
 				1506E0411B89B53C007D1696 /* JSONAPI.m in Sources */,
+				1506E2541B89BD87007D1696 /* RegistTableViewController.m in Sources */,
 				1506E01E1B89B521007D1696 /* MJRefreshLegendHeader.m in Sources */,
 				1506E1331B89B646007D1696 /* MD5DataSigner.m in Sources */,
 				1506E03E1B89B53C007D1696 /* JSONModelClassProperty.m in Sources */,
@@ -945,10 +1006,13 @@
 				1506E1311B89B646007D1696 /* DataSigner.m in Sources */,
 				1506DF931B89B4A0007D1696 /* ProgressHUD.m in Sources */,
 				1506DF4F1B89B36D007D1696 /* AppDelegate.m in Sources */,
+				1506E2531B89BD87007D1696 /* LoginViewController.m in Sources */,
 				1506E12F1B89B646007D1696 /* Order.m in Sources */,
 				1506E1371B89B646007D1696 /* RSADataVerifier.m in Sources */,
 				1506DF4C1B89B36D007D1696 /* main.m in Sources */,
 				1506E0A01B89B582007D1696 /* SDWebImageDownloaderOperation.m in Sources */,
+				1506E22A1B89BB3A007D1696 /* RecommendTableViewController.m in Sources */,
+				1506E2511B89BD87007D1696 /* ChangeCodeTVC.m in Sources */,
 				1506E01D1B89B521007D1696 /* MJRefreshLegendFooter.m in Sources */,
 				1506E0431B89B53C007D1696 /* JSONModel+networking.m in Sources */,
 				1506E09D1B89B582007D1696 /* SDWebImageCompat.m in Sources */,
@@ -1189,6 +1253,7 @@
 				1506DF6B1B89B36D007D1696 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1506DF6C1B89B36D007D1696 /* Build configuration list for PBXNativeTarget "TalingTests" */ = {
 			isa = XCConfigurationList;
@@ -1197,6 +1262,7 @@
 				1506DF6E1B89B36D007D1696 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 
 
-
+//短信验证
+#define  kShareSDKSMSAppKey  @"9d573f7c6b9e"
+#define  kShareSDKSMSAppSecret  @"2346f2597896eed5d144b3cab6b9d7f6"
 
 /*宽高*/
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
@@ -26,13 +28,6 @@
 #define FONT_12 [UIFont systemFontOfSize:12]
 
 
-
-/*颜色*//*牵手邦里的颜色一共只有红，绿，灰，黑。
-       红色：R，255    G，0   B，0
-       主打绿色：R,65,  G,174,    B,158
-       灰色：R,154    G,154    B,154
-       黑色：R,0     G,0     B,0
-       下面五个大图标绿色：R,10    G,184    B,7   */
 
 
 #define RGB(a,b,c,d) [UIColor colorWithRed:a/255.0 green:b/255.0 blue:c/255.0 alpha:d]
@@ -61,7 +56,6 @@
 #define kDarkTintColor  RGB(49, 46, 46, 1)
 
 #define CheckNil(a) (a)==nil?@"":(a)
-
 
 
 #define kDarkTintColor   RGB(49, 46, 46, 1)
