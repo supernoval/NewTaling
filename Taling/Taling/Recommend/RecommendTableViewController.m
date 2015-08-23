@@ -35,18 +35,18 @@
     [super viewDidAppear:animated];
     
     
-    if (![[NSUserDefaults standardUserDefaults]boolForKey:kHadLogin])
-    {
-        
-        
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        
-        UINavigationController *loginNav = [sb instantiateViewControllerWithIdentifier:@"LoginNav"];
-        
-        [self presentViewController:loginNav animated:YES completion:nil];
-        
-        
-    }
+//    if (![[NSUserDefaults standardUserDefaults]boolForKey:kHadLogin])
+//    {
+//        
+//        
+//        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+//        
+//        UINavigationController *loginNav = [sb instantiateViewControllerWithIdentifier:@"LoginNav"];
+//        
+//        [self presentViewController:loginNav animated:YES completion:nil];
+//        
+//        
+//    }
 }
 
 - (void)didReceiveMemoryWarning {
