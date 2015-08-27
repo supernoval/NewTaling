@@ -102,6 +102,8 @@
 		1506E2531B89BD87007D1696 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E24E1B89BD87007D1696 /* LoginViewController.m */; };
 		1506E2541B89BD87007D1696 /* RegistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E2501B89BD87007D1696 /* RegistTableViewController.m */; };
 		1506E25B1B89BDE5007D1696 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E25A1B89BDE5007D1696 /* Location.m */; };
+		1579153D1B8F52E100E31111 /* MineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1579153C1B8F52E100E31111 /* MineTableViewController.m */; };
+		157915411B8F54DD00E31111 /* PersonalInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 157915401B8F54DD00E31111 /* PersonalInfoTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -363,6 +365,11 @@
 		1506E25A1B89BDE5007D1696 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		1506E25C1B89BF5F007D1696 /* NSUserDefaultKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSUserDefaultKeys.h; sourceTree = "<group>"; };
 		1506E25F1B89BF92007D1696 /* ConstantsHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantsHeaders.h; sourceTree = "<group>"; };
+		157915371B8F4F3200E31111 /* APIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIConstants.h; sourceTree = "<group>"; };
+		1579153B1B8F52E100E31111 /* MineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewController.h; sourceTree = "<group>"; };
+		1579153C1B8F52E100E31111 /* MineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewController.m; sourceTree = "<group>"; };
+		1579153F1B8F54DD00E31111 /* PersonalInfoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfoTableView.h; sourceTree = "<group>"; };
+		157915401B8F54DD00E31111 /* PersonalInfoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -426,6 +433,7 @@
 		1506DF481B89B36D007D1696 /* Taling */ = {
 			isa = PBXGroup;
 			children = (
+				1579153A1B8F52C400E31111 /* mine */,
 				1506E2551B89BDBD007D1696 /* Locationmanager */,
 				1506E23C1B89BD65007D1696 /* Account */,
 				1506E2271B89BB23007D1696 /* Recommend */,
@@ -480,6 +488,7 @@
 				1506DF7F1B89B46D007D1696 /* StringHeight.h */,
 				1506DF801B89B46D007D1696 /* StringHeight.m */,
 				1506E25C1B89BF5F007D1696 /* NSUserDefaultKeys.h */,
+				157915371B8F4F3200E31111 /* APIConstants.h */,
 			);
 			path = constants;
 			sourceTree = "<group>";
@@ -859,6 +868,25 @@
 			path = Locationmanager;
 			sourceTree = "<group>";
 		};
+		1579153A1B8F52C400E31111 /* mine */ = {
+			isa = PBXGroup;
+			children = (
+				1579153E1B8F54AB00E31111 /* personalInfo */,
+				1579153B1B8F52E100E31111 /* MineTableViewController.h */,
+				1579153C1B8F52E100E31111 /* MineTableViewController.m */,
+			);
+			path = mine;
+			sourceTree = "<group>";
+		};
+		1579153E1B8F54AB00E31111 /* personalInfo */ = {
+			isa = PBXGroup;
+			children = (
+				1579153F1B8F54DD00E31111 /* PersonalInfoTableView.h */,
+				157915401B8F54DD00E31111 /* PersonalInfoTableView.m */,
+			);
+			name = personalInfo;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -979,6 +1007,7 @@
 				1506E0A51B89B582007D1696 /* UIImage+MultiFormat.m in Sources */,
 				1506E0181B89B521007D1696 /* MJRefreshConst.m in Sources */,
 				1506E09F1B89B582007D1696 /* SDWebImageDownloader.m in Sources */,
+				1579153D1B8F52E100E31111 /* MineTableViewController.m in Sources */,
 				1506E2521B89BD87007D1696 /* ForgetCodeTVC.m in Sources */,
 				1506E0171B89B521007D1696 /* MJRefreshComponent.m in Sources */,
 				1506E0A61B89B582007D1696 /* UIImage+WebP.m in Sources */,
@@ -996,6 +1025,7 @@
 				1506E2541B89BD87007D1696 /* RegistTableViewController.m in Sources */,
 				1506E01E1B89B521007D1696 /* MJRefreshLegendHeader.m in Sources */,
 				1506E1331B89B646007D1696 /* MD5DataSigner.m in Sources */,
+				157915411B8F54DD00E31111 /* PersonalInfoTableView.m in Sources */,
 				1506E03E1B89B53C007D1696 /* JSONModelClassProperty.m in Sources */,
 				1506E0451B89B53C007D1696 /* JSONValueTransformer.m in Sources */,
 				1506E0A41B89B582007D1696 /* UIImage+GIF.m in Sources */,

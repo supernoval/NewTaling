@@ -56,8 +56,26 @@
   
         
         _sendCodeButton.enabled = NO;
-
-        [self checkPhonehadRegist];
+       
+        [self getAutoCodeTime];
+        
+     
+        [SMS_SDK getVerificationCodeBySMSWithPhone:_phoneTF.text zone:@"86" result:^(SMS_SDKError *error) {
+            
+            if (!error) {
+                
+                NSLog(@"sendsms!");
+                
+                
+            }
+            else
+            {
+                NSLog(@"error:%@",error);
+                
+            }
+          
+            
+        }];
         
         
     }
@@ -192,12 +210,7 @@
     dispatch_resume(_timer);
 }
 
-#pragma mark - 查询手机号码是否注册过
--(void)checkPhonehadRegist
-{
 
-   
-}
 
 
 
