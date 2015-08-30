@@ -104,6 +104,16 @@
 		1506E25B1B89BDE5007D1696 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E25A1B89BDE5007D1696 /* Location.m */; };
 		1579153D1B8F52E100E31111 /* MineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1579153C1B8F52E100E31111 /* MineTableViewController.m */; };
 		157915411B8F54DD00E31111 /* PersonalInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 157915401B8F54DD00E31111 /* PersonalInfoTableView.m */; };
+		15EE6BE01B92D1CA00FBD86C /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EE6BDF1B92D1CA00FBD86C /* MAMapKit.framework */; };
+		15EE6BE21B92D21200FBD86C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EE6BE11B92D21200FBD86C /* UIKit.framework */; };
+		15EE6BE41B92D21800FBD86C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EE6BE31B92D21800FBD86C /* Foundation.framework */; };
+		15EE6BE61B92D23600FBD86C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EE6BE51B92D23600FBD86C /* QuartzCore.framework */; };
+		15EE6BE81B92D23F00FBD86C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EE6BE71B92D23F00FBD86C /* OpenGLES.framework */; };
+		15EE6BEA1B92D26700FBD86C /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EE6BE91B92D26700FBD86C /* libstdc++.6.0.9.dylib */; };
+		15EE6BEC1B92D36F00FBD86C /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EE6BEB1B92D36F00FBD86C /* AMapSearchKit.framework */; };
+		15EE6BF01B92F64800FBD86C /* PickAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EE6BEF1B92F64800FBD86C /* PickAddressViewController.m */; };
+		15EE6BF21B92FB9300FBD86C /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 15EE6BF11B92FB9300FBD86C /* AMap.bundle */; };
+		15EE6BF51B93072500FBD86C /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EE6BF41B93072500FBD86C /* MapAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -370,6 +380,18 @@
 		1579153C1B8F52E100E31111 /* MineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewController.m; sourceTree = "<group>"; };
 		1579153F1B8F54DD00E31111 /* PersonalInfoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfoTableView.h; sourceTree = "<group>"; };
 		157915401B8F54DD00E31111 /* PersonalInfoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoTableView.m; sourceTree = "<group>"; };
+		15EE6BDF1B92D1CA00FBD86C /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
+		15EE6BE11B92D21200FBD86C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		15EE6BE31B92D21800FBD86C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		15EE6BE51B92D23600FBD86C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		15EE6BE71B92D23F00FBD86C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		15EE6BE91B92D26700FBD86C /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
+		15EE6BEB1B92D36F00FBD86C /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
+		15EE6BEE1B92F64800FBD86C /* PickAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickAddressViewController.h; sourceTree = "<group>"; };
+		15EE6BEF1B92F64800FBD86C /* PickAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickAddressViewController.m; sourceTree = "<group>"; };
+		15EE6BF11B92FB9300FBD86C /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
+		15EE6BF31B93072500FBD86C /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
+		15EE6BF41B93072500FBD86C /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,22 +399,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1506E15B1B89B6D6007D1696 /* CoreGraphics.framework in Frameworks */,
-				1506E15C1B89B6D6007D1696 /* MobileCoreServices.framework in Frameworks */,
-				1506E15D1B89B6D6007D1696 /* CFNetwork.framework in Frameworks */,
-				1506E15E1B89B6D6007D1696 /* CoreTelephony.framework in Frameworks */,
+				1506E16A1B89B6D6007D1696 /* Security.framework in Frameworks */,
+				15EE6BEA1B92D26700FBD86C /* libstdc++.6.0.9.dylib in Frameworks */,
+				1506E1651B89B6D6007D1696 /* libz.dylib in Frameworks */,
 				1506E15F1B89B6D6007D1696 /* SystemConfiguration.framework in Frameworks */,
+				1506E15E1B89B6D6007D1696 /* CoreTelephony.framework in Frameworks */,
+				1506E1691B89B6D6007D1696 /* CoreLocation.framework in Frameworks */,
+				15EE6BE81B92D23F00FBD86C /* OpenGLES.framework in Frameworks */,
+				15EE6BE61B92D23600FBD86C /* QuartzCore.framework in Frameworks */,
+				15EE6BEC1B92D36F00FBD86C /* AMapSearchKit.framework in Frameworks */,
+				1506E15B1B89B6D6007D1696 /* CoreGraphics.framework in Frameworks */,
+				15EE6BE41B92D21800FBD86C /* Foundation.framework in Frameworks */,
+				15EE6BE21B92D21200FBD86C /* UIKit.framework in Frameworks */,
+				1506E15C1B89B6D6007D1696 /* MobileCoreServices.framework in Frameworks */,
+				15EE6BE01B92D1CA00FBD86C /* MAMapKit.framework in Frameworks */,
+				1506E15D1B89B6D6007D1696 /* CFNetwork.framework in Frameworks */,
 				1506E1601B89B6D6007D1696 /* libz.1.2.5.dylib in Frameworks */,
 				1506E1611B89B6D6007D1696 /* libsqlite3.dylib in Frameworks */,
 				1506E1621B89B6D6007D1696 /* AVFoundation.framework in Frameworks */,
 				1506E1631B89B6D6007D1696 /* MediaPlayer.framework in Frameworks */,
 				1506E1641B89B6D6007D1696 /* libicucore.dylib in Frameworks */,
-				1506E1651B89B6D6007D1696 /* libz.dylib in Frameworks */,
 				1506E1661B89B6D6007D1696 /* MessageUI.framework in Frameworks */,
 				1506E1671B89B6D6007D1696 /* AddressBook.framework in Frameworks */,
 				1506E1681B89B6D6007D1696 /* AddressBookUI.framework in Frameworks */,
-				1506E1691B89B6D6007D1696 /* CoreLocation.framework in Frameworks */,
-				1506E16A1B89B6D6007D1696 /* Security.framework in Frameworks */,
 				1506E16B1B89B6D6007D1696 /* MapKit.framework in Frameworks */,
 				1506E12E1B89B646007D1696 /* libssl.a in Frameworks */,
 				1506E0C51B89B637007D1696 /* SMS_SDK.framework in Frameworks */,
@@ -496,6 +525,9 @@
 		1506DF791B89B449007D1696 /* ThirdFrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				15EE6BF11B92FB9300FBD86C /* AMap.bundle */,
+				15EE6BEB1B92D36F00FBD86C /* AMapSearchKit.framework */,
+				15EE6BDF1B92D1CA00FBD86C /* MAMapKit.framework */,
 				1506E0C61B89B646007D1696 /* Alipay */,
 				1506E0BF1B89B637007D1696 /* SMS_SDK */,
 				1506E0781B89B582007D1696 /* SDWebImage */,
@@ -813,6 +845,11 @@
 		1506E15A1B89B6B0007D1696 /* FrameWorks */ = {
 			isa = PBXGroup;
 			children = (
+				15EE6BE91B92D26700FBD86C /* libstdc++.6.0.9.dylib */,
+				15EE6BE71B92D23F00FBD86C /* OpenGLES.framework */,
+				15EE6BE51B92D23600FBD86C /* QuartzCore.framework */,
+				15EE6BE31B92D21800FBD86C /* Foundation.framework */,
+				15EE6BE11B92D21200FBD86C /* UIKit.framework */,
 				1506E1381B89B68E007D1696 /* CoreGraphics.framework */,
 				1506E1391B89B68E007D1696 /* MobileCoreServices.framework */,
 				1506E13A1B89B68E007D1696 /* CFNetwork.framework */,
@@ -871,6 +908,7 @@
 		1579153A1B8F52C400E31111 /* mine */ = {
 			isa = PBXGroup;
 			children = (
+				15EE6BED1B92F61700FBD86C /* addressPickVC */,
 				1579153E1B8F54AB00E31111 /* personalInfo */,
 				1579153B1B8F52E100E31111 /* MineTableViewController.h */,
 				1579153C1B8F52E100E31111 /* MineTableViewController.m */,
@@ -885,6 +923,17 @@
 				157915401B8F54DD00E31111 /* PersonalInfoTableView.m */,
 			);
 			name = personalInfo;
+			sourceTree = "<group>";
+		};
+		15EE6BED1B92F61700FBD86C /* addressPickVC */ = {
+			isa = PBXGroup;
+			children = (
+				15EE6BEE1B92F64800FBD86C /* PickAddressViewController.h */,
+				15EE6BEF1B92F64800FBD86C /* PickAddressViewController.m */,
+				15EE6BF31B93072500FBD86C /* MapAnnotation.h */,
+				15EE6BF41B93072500FBD86C /* MapAnnotation.m */,
+			);
+			name = addressPickVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -970,6 +1019,7 @@
 			files = (
 				1506DF921B89B4A0007D1696 /* ProgressHUD.bundle in Resources */,
 				1506DF7B1B89B457007D1696 /* Main.storyboard in Resources */,
+				15EE6BF21B92FB9300FBD86C /* AMap.bundle in Resources */,
 				1506E12B1B89B646007D1696 /* AlipaySDK.bundle in Resources */,
 				1506DF5A1B89B36D007D1696 /* LaunchScreen.xib in Resources */,
 				1506E0161B89B521007D1696 /* MJRefresh.bundle in Resources */,
@@ -1024,6 +1074,7 @@
 				1506E0411B89B53C007D1696 /* JSONAPI.m in Sources */,
 				1506E2541B89BD87007D1696 /* RegistTableViewController.m in Sources */,
 				1506E01E1B89B521007D1696 /* MJRefreshLegendHeader.m in Sources */,
+				15EE6BF01B92F64800FBD86C /* PickAddressViewController.m in Sources */,
 				1506E1331B89B646007D1696 /* MD5DataSigner.m in Sources */,
 				157915411B8F54DD00E31111 /* PersonalInfoTableView.m in Sources */,
 				1506E03E1B89B53C007D1696 /* JSONModelClassProperty.m in Sources */,
@@ -1060,6 +1111,7 @@
 				1506E09A1B89B582007D1696 /* MKAnnotationView+WebCache.m in Sources */,
 				1506E0211B89B521007D1696 /* UIView+MJExtension.m in Sources */,
 				1506E0191B89B521007D1696 /* MJRefreshFooter.m in Sources */,
+				15EE6BF51B93072500FBD86C /* MapAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1190,6 +1242,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Taling/ThirdFrameWork/SMS_SDK",
 					"$(PROJECT_DIR)/Taling/ThirdFrameWork/Alipay",
+					"$(PROJECT_DIR)/Taling/ThirdFrameWork",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1214,6 +1267,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Taling/ThirdFrameWork/SMS_SDK",
 					"$(PROJECT_DIR)/Taling/ThirdFrameWork/Alipay",
+					"$(PROJECT_DIR)/Taling/ThirdFrameWork",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

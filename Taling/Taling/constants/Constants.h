@@ -12,7 +12,8 @@
 
 
 
-
+//高德地图
+#define kGaodeMapKey     @"90587cf4e3bc6f8ea43cae1fe5ba2da5"
 
 //短信验证
 #define  kShareSDKSMSAppKey  @"9d573f7c6b9e"
@@ -42,6 +43,7 @@
 //navigationbar 颜色
 #define NavigationBarColor  RGB(255,128,0,0.9)
 
+#define kOrangeTextColor   RGB(255,128,0,0.9)
 
 //背景色
 #define kBackgroundColor RGB(239,239,244,1)
@@ -64,4 +66,7 @@
 
 
 #define kDarkTintColor   RGB(49, 46, 46, 1)
+
+//线颜色
+#define kLineColor     RGB(240,240,240,1)
 

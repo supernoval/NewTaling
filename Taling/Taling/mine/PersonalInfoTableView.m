@@ -7,6 +7,7 @@
 //
 
 #import "PersonalInfoTableView.h"
+#import "PickAddressViewController.h"
 
 @interface PersonalInfoTableView ()
 
@@ -24,6 +25,42 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    if (indexPath.section == 0) {
+        
+        switch (indexPath.row) {
+            case 0:
+            {
+                
+            }
+                break;
+            case 1:
+            {
+                
+            }
+                break;
+            case 2:
+            {
+                PickAddressViewController *_pickAddress = [[PickAddressViewController alloc]init];
+                [self.navigationController pushViewController:_pickAddress animated:YES];
+                
+
+            }
+                break;
+            case 3:
+            {
+                
+            }
+                break;
+                
+            default:
+                break;
+        }
+        
+        
+    }
+  
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }

@@ -11,7 +11,7 @@
 #import <SMS_SDK/SMS_SDK.h>
 #import "ConstantsHeaders.h"
 #import "LoginViewController.h"
-
+#import <MAMapKit/MAMapKit.h>
 
 @interface AppDelegate ()
 
@@ -34,6 +34,8 @@
     
     
     
+    //注册高德地图
+    [MAMapServices sharedServices].apiKey = kGaodeMapKey;
     
     //sharesdk sms 注册
     [SMS_SDK registerApp:kShareSDKSMSAppKey withSecret:kShareSDKSMSAppSecret];
