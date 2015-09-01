@@ -88,6 +88,11 @@
 }
 - (IBAction)registAction:(id)sender {
     
+    
+//     [self summitRegist];
+//    
+//    return;
+    
     if (![CommonMethods checkTel:_phoneTF.text]) {
         
         [MyProgressHUD showError:@"请输入正确的手机号码"];
@@ -168,8 +173,20 @@
 #pragma mark - 提交注册
 -(void)summitRegist
 {
-
+    NSDictionary *param = @{@"nickname":@"匿名",@"username":_phoneTF.text,@"password":_codeTF.text};
     
+    
+    TLRequest *request = [TLRequest shareRequest];
+    
+    [request tlRequestWithAction:Kregist Params:param result:^(BOOL isSuccess, id data) {
+        
+        if (isSuccess) {
+            
+            [self.navigationController popViewControllerAnimated:YES];
+            
+        }
+        
+    }];
     
     
 }
@@ -196,7 +213,7 @@
             int seconds = timeout % 31;
             NSString *strTime = [NSString stringWithFormat:@"%.2d", seconds];
             dispatch_async(dispatch_get_main_queue(), ^{
-                NSLog(@"____%@",strTime);
+//                NSLog(@"____%@",strTime);
                 
                 [_sendCodeButton setTitle:[NSString stringWithFormat:@"%@s",strTime] forState:UIControlStateNormal] ;
                 

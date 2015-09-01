@@ -9,7 +9,7 @@
 
 
 //
-#define  kRequestHeader  @"http://www.183.131.151.50/taling-api"
+#define  kRequestHeader  @"http://183.131.151.50/taling-api"
 
 
 //注册

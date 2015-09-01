@@ -7,6 +7,7 @@
 //
 
 #import "BaseTableViewController.h"
+#import "TLRequest.h"
 
 @interface RegistTableViewController : BaseTableViewController
 @property (weak, nonatomic) IBOutlet UITextField *phoneTF;

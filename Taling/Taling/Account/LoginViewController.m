@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-
+#import "ConstantsHeaders.h"
 #import "CommonMethods.h"
 #import "RegistTableViewController.h"
 #import "ForgetCodeTVC.h"
@@ -56,7 +56,21 @@
         
     }
     
-                 
+    
+    [[TLRequest shareRequest] tlRequestWithAction:klogin Params:@{@"username":_phoneTF.text,@"password":_codeTF.text} result:^(BOOL isSuccess, id data) {
+        
+        if (isSuccess)
+        {
+            
+            [[NSUserDefaults standardUserDefaults ] setObject:@YES forKey:kHadLogin];
+            
+            [[NSUserDefaults standardUserDefaults ] synchronize];
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+        }
+        
+    }];
             
         
     
