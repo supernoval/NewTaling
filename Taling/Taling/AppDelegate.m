@@ -28,8 +28,7 @@
     [[UINavigationBar appearance] setBarTintColor:NavigationBarColor];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18],NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    
-    
+
     [[UITabBar appearance] setTintColor:NavigationBarColor];
     
     
