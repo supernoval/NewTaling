@@ -9,5 +9,6 @@
 #import "BaseTableViewController.h"
 
 @interface RecommendTableViewController : BaseTableViewController
+- (IBAction)searchAction:(id)sender;
 
 @end

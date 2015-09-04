@@ -27,6 +27,7 @@ static CGFloat tableViewHeight = 160.0;
     UIView *_centerPointView;
     UIButton *_buttonAddress;
     UIImageView *_pinView;
+    BOOL showedUserLocation;
     
     
 }
@@ -233,12 +234,22 @@ static CGFloat tableViewHeight = 160.0;
 -(void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation
 {
     
-   static dispatch_once_t onece;
-    dispatch_once(&onece, ^{
+  
+    if (!showedUserLocation) {
+        
+        
+        
+        
+        
+        
+        showedUserLocation = YES;
         
         [self showUserAddress:userLocation];
         
-    });
+    }
+    
+        
+    
   
     
     
