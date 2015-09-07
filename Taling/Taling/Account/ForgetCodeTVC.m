@@ -33,13 +33,7 @@
 }
 
 
-#pragma mark - 查询手机号码是否注册过
--(void)checkPhonehadRegist
-{
-    
- 
-    
-}
+
 
 #pragma mark - 倒计时
 -(void)getAutoCodeTime{
@@ -62,7 +56,7 @@
                 NSLog(@"____%@",strTime);
                 
                 [_sendCodeButton setTitle:[NSString stringWithFormat:@"%@s",strTime] forState:UIControlStateNormal] ;
-                _sendCodeButton.enabled = YES;
+                _sendCodeButton.enabled = NO;
                 
                 
                 
@@ -78,8 +72,16 @@
     if ([CommonMethods checkTel:_phoneNum.text]) {
         
         
-        [self checkPhonehadRegist];
+        [self getAutoCodeTime];
         
+        [SMS_SDK getVerificationCodeBySMSWithPhone:_phoneNum.text zone:@"86" result:^(SMS_SDKError *error) {
+           
+            if (!error) {
+                
+                
+            }
+            
+        }];
         
     }
     else

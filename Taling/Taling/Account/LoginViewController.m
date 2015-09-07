@@ -62,7 +62,12 @@
         if (isSuccess)
         {
             
+            [UserInfo saveUserInfo:data];
+            
             [[NSUserDefaults standardUserDefaults ] setObject:@YES forKey:kHadLogin];
+            
+            [[NSUserDefaults standardUserDefaults ] setObject:_codeTF.text forKey:kpassword];
+            
             
             [[NSUserDefaults standardUserDefaults ] synchronize];
             

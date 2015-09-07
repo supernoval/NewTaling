@@ -12,3 +12,19 @@
 
 // 是否登录
 #define kHadLogin    @"HadLogin"
+
+//用户名
+#define kusername  @"username"
+
+//密码
+#define kpassword  @"password"
+
+//uuid
+#define kuuid   @"uuid"
+
+//nickname
+#define knickname   @"nickname"
+
+//isAttestation
+#define kisAttestation @"isAttestation"
+

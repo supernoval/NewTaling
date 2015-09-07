@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		137BBBE01B9DA9F5004571C6 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 137BBBDF1B9DA9F5004571C6 /* UserInfo.m */; };
 		13AA5E3B1B95C37E00AB477E /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13AA5E3A1B95C37E00AB477E /* libssl.a */; };
 		13AA5E3D1B95C38300AB477E /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13AA5E3C1B95C38300AB477E /* libcrypto.a */; };
 		13AA5E5D1B95C4F900AB477E /* TLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AA5E5C1B95C4F900AB477E /* TLRequest.m */; };
@@ -140,6 +141,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		137BBBDE1B9DA9F5004571C6 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		137BBBDF1B9DA9F5004571C6 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		13AA5E3A1B95C37E00AB477E /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
 		13AA5E3C1B95C38300AB477E /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		13AA5E5B1B95C4F900AB477E /* TLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLRequest.h; sourceTree = "<group>"; };
@@ -482,6 +485,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		137BBBE11B9DB18F004571C6 /* bindThirdpart */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = bindThirdpart;
+			sourceTree = "<group>";
+		};
 		13AA5E791B95CCD600AB477E /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -994,6 +1004,8 @@
 				1506E24E1B89BD87007D1696 /* LoginViewController.m */,
 				1506E24F1B89BD87007D1696 /* RegistTableViewController.h */,
 				1506E2501B89BD87007D1696 /* RegistTableViewController.m */,
+				137BBBDE1B9DA9F5004571C6 /* UserInfo.h */,
+				137BBBDF1B9DA9F5004571C6 /* UserInfo.m */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -1021,6 +1033,7 @@
 		1579153E1B8F54AB00E31111 /* personalInfo */ = {
 			isa = PBXGroup;
 			children = (
+				137BBBE11B9DB18F004571C6 /* bindThirdpart */,
 				13B6CAD21B9C25A9003EC8A9 /* changeNickName */,
 				1579153F1B8F54DD00E31111 /* PersonalInfoTableView.h */,
 				157915401B8F54DD00E31111 /* PersonalInfoTableView.m */,
@@ -1222,6 +1235,7 @@
 				1506E1361B89B646007D1696 /* RSADataSigner.m in Sources */,
 				1506E01F1B89B521007D1696 /* UIScrollView+MJExtension.m in Sources */,
 				1506E1321B89B646007D1696 /* DataVerifier.m in Sources */,
+				137BBBE01B9DA9F5004571C6 /* UserInfo.m in Sources */,
 				1506E0A91B89B582007D1696 /* UIView+WebCacheOperation.m in Sources */,
 				13B6CACD1B9C1928003EC8A9 /* OrderListViewController.m in Sources */,
 				1506E09A1B89B582007D1696 /* MKAnnotationView+WebCache.m in Sources */,

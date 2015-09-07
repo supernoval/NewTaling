@@ -7,6 +7,7 @@
 //
 
 #import "TLRequest.h"
+#import "MyProgressHUD.h"
 
 @implementation TLRequest
 
@@ -35,9 +36,14 @@ TLRequest *request;
     
     NSString *url = [NSString stringWithFormat:@"%@%@",kRequestHeader,action];
     NSLog(@"url:%@",url);
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
+    [MyProgressHUD showProgress];
+    
     [manager POST:url parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        [MyProgressHUD dismiss];
         
         NSInteger result = [[responseObject objectForKey:@"result"]integerValue];
         
@@ -48,8 +54,9 @@ TLRequest *request;
         }
         if (result == 0)
         {
+            id data = [responseObject objectForKey:@"data"];
             
-            block(YES,responseObject);
+            block(YES,data);
             
             
         }

@@ -57,6 +57,7 @@
                         <viewControllerLayoutGuide type="bottom" id="BnW-mK-vAg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qtK-Sm-J4v">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="109" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mhZ-lh-VtY">
@@ -85,10 +86,10 @@
                                 <exclude reference="mhZ-lh-VtY"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="vEE-JE-0Mk"/>
                                 <exclude reference="VPz-sq-Tbr"/>
                                 <exclude reference="jvj-id-P9I"/>
                                 <exclude reference="svo-iB-6I9"/>
-                                <exclude reference="vEE-JE-0Mk"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -96,10 +97,10 @@
                                 <include reference="mhZ-lh-VtY"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="vEE-JE-0Mk"/>
                                 <include reference="VPz-sq-Tbr"/>
                                 <include reference="jvj-id-P9I"/>
                                 <include reference="svo-iB-6I9"/>
-                                <include reference="vEE-JE-0Mk"/>
                             </mask>
                         </variation>
                     </view>
@@ -220,6 +221,7 @@
                         <viewControllerLayoutGuide type="bottom" id="aRj-GO-T7w"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZA7-yT-MJw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -553,6 +555,11 @@
                     </tableView>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="headImageView" destination="DaR-9f-2VS" id="qxE-NS-uRD"/>
+                        <outlet property="nickName" destination="RmA-Ue-laH" id="875-X8-5il"/>
+                        <outlet property="professionLabel" destination="c4V-WV-iub" id="qjy-KR-HPD"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bf2-q5-VsA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -567,6 +574,7 @@
                         <viewControllerLayoutGuide type="bottom" id="g6J-3W-L7H"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rjw-wz-BTr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mhf-YC-wcd">
@@ -2370,7 +2378,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPq-vM-hpT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="767.25" y="-594.375"/>
+            <point key="canvasLocation" x="767.25" y="-546.375"/>
         </scene>
     </scenes>
     <resources>

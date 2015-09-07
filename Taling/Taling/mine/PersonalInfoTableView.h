@@ -9,5 +9,8 @@
 #import "BaseTableViewController.h"
 
 @interface PersonalInfoTableView : BaseTableViewController
+@property (weak, nonatomic) IBOutlet UIImageView *headImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nickName;
+@property (weak, nonatomic) IBOutlet UILabel *professionLabel;
 
 @end
