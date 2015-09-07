@@ -19,6 +19,9 @@
 		13AA5EAF1B95CCEF00AB477E /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AA5EA41B95CCEF00AB477E /* AFURLRequestSerialization.m */; };
 		13AA5EB01B95CCEF00AB477E /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AA5EA61B95CCEF00AB477E /* AFURLResponseSerialization.m */; };
 		13AA5EB11B95CCEF00AB477E /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AA5EA81B95CCEF00AB477E /* AFURLSessionManager.m */; };
+		13B6CACD1B9C1928003EC8A9 /* OrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B6CACC1B9C1928003EC8A9 /* OrderListViewController.m */; };
+		13B6CAD11B9C1DCF003EC8A9 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B6CAD01B9C1DCF003EC8A9 /* MessageViewController.m */; };
+		13B6CAD51B9C25C8003EC8A9 /* ChangeNickNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B6CAD41B9C25C8003EC8A9 /* ChangeNickNameVC.m */; };
 		1506DF4C1B89B36D007D1696 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF4B1B89B36D007D1696 /* main.m */; };
 		1506DF4F1B89B36D007D1696 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF4E1B89B36D007D1696 /* AppDelegate.m */; };
 		1506DF521B89B36D007D1696 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF511B89B36D007D1696 /* ViewController.m */; };
@@ -160,6 +163,12 @@
 		13AA5EA61B95CCEF00AB477E /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		13AA5EA71B95CCEF00AB477E /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		13AA5EA81B95CCEF00AB477E /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		13B6CACB1B9C1928003EC8A9 /* OrderListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderListViewController.h; path = Orders/OrderListViewController.h; sourceTree = "<group>"; };
+		13B6CACC1B9C1928003EC8A9 /* OrderListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderListViewController.m; path = Orders/OrderListViewController.m; sourceTree = "<group>"; };
+		13B6CACF1B9C1DCF003EC8A9 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageViewController.h; path = MessageVC/MessageViewController.h; sourceTree = "<group>"; };
+		13B6CAD01B9C1DCF003EC8A9 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageViewController.m; path = MessageVC/MessageViewController.m; sourceTree = "<group>"; };
+		13B6CAD31B9C25C8003EC8A9 /* ChangeNickNameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeNickNameVC.h; sourceTree = "<group>"; };
+		13B6CAD41B9C25C8003EC8A9 /* ChangeNickNameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeNickNameVC.m; sourceTree = "<group>"; };
 		1506DF461B89B36D007D1696 /* Taling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1506DF4A1B89B36D007D1696 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1506DF4B1B89B36D007D1696 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -499,6 +508,33 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		13B6CACA1B9C18E8003EC8A9 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				13B6CACB1B9C1928003EC8A9 /* OrderListViewController.h */,
+				13B6CACC1B9C1928003EC8A9 /* OrderListViewController.m */,
+			);
+			name = Orders;
+			sourceTree = "<group>";
+		};
+		13B6CACE1B9C1DAB003EC8A9 /* messages */ = {
+			isa = PBXGroup;
+			children = (
+				13B6CACF1B9C1DCF003EC8A9 /* MessageViewController.h */,
+				13B6CAD01B9C1DCF003EC8A9 /* MessageViewController.m */,
+			);
+			name = messages;
+			sourceTree = "<group>";
+		};
+		13B6CAD21B9C25A9003EC8A9 /* changeNickName */ = {
+			isa = PBXGroup;
+			children = (
+				13B6CAD31B9C25C8003EC8A9 /* ChangeNickNameVC.h */,
+				13B6CAD41B9C25C8003EC8A9 /* ChangeNickNameVC.m */,
+			);
+			name = changeNickName;
+			sourceTree = "<group>";
+		};
 		1506DF3D1B89B36D007D1696 = {
 			isa = PBXGroup;
 			children = (
@@ -521,6 +557,8 @@
 		1506DF481B89B36D007D1696 /* Taling */ = {
 			isa = PBXGroup;
 			children = (
+				13B6CACE1B9C1DAB003EC8A9 /* messages */,
+				13B6CACA1B9C18E8003EC8A9 /* Orders */,
 				1579153A1B8F52C400E31111 /* mine */,
 				1506E2551B89BDBD007D1696 /* Locationmanager */,
 				1506E23C1B89BD65007D1696 /* Account */,
@@ -983,6 +1021,7 @@
 		1579153E1B8F54AB00E31111 /* personalInfo */ = {
 			isa = PBXGroup;
 			children = (
+				13B6CAD21B9C25A9003EC8A9 /* changeNickName */,
 				1579153F1B8F54DD00E31111 /* PersonalInfoTableView.h */,
 				157915401B8F54DD00E31111 /* PersonalInfoTableView.m */,
 			);
@@ -1138,6 +1177,7 @@
 				1506E0A71B89B582007D1696 /* UIImageView+HighlightedWebCache.m in Sources */,
 				1506E1341B89B646007D1696 /* NSDataEx.m in Sources */,
 				1506E09E1B89B582007D1696 /* SDWebImageDecoder.m in Sources */,
+				13B6CAD51B9C25C8003EC8A9 /* ChangeNickNameVC.m in Sources */,
 				1506E0A21B89B582007D1696 /* SDWebImagePrefetcher.m in Sources */,
 				1506DF911B89B4A0007D1696 /* MyProgressHUD.m in Sources */,
 				1506DFFB1B89B506007D1696 /* SDPhotoGroup.m in Sources */,
@@ -1183,9 +1223,11 @@
 				1506E01F1B89B521007D1696 /* UIScrollView+MJExtension.m in Sources */,
 				1506E1321B89B646007D1696 /* DataVerifier.m in Sources */,
 				1506E0A91B89B582007D1696 /* UIView+WebCacheOperation.m in Sources */,
+				13B6CACD1B9C1928003EC8A9 /* OrderListViewController.m in Sources */,
 				1506E09A1B89B582007D1696 /* MKAnnotationView+WebCache.m in Sources */,
 				1506E0211B89B521007D1696 /* UIView+MJExtension.m in Sources */,
 				1506E0191B89B521007D1696 /* MJRefreshFooter.m in Sources */,
+				13B6CAD11B9C1DCF003EC8A9 /* MessageViewController.m in Sources */,
 				15EE6BF51B93072500FBD86C /* MapAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1326,6 +1368,7 @@
 					"\"$(SRCROOT)/Taling/ThirdFrameWork/Alipay\"",
 				);
 				INFOPLIST_FILE = Taling/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1354,6 +1397,7 @@
 					"\"$(SRCROOT)/Taling/ThirdFrameWork/Alipay\"",
 				);
 				INFOPLIST_FILE = Taling/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

@@ -18,7 +18,7 @@
  * username
  * password
  */
-#define Kregist       @"/user/register"
+#define kRegist       @"/user/register"
 
 
 
@@ -27,4 +27,15 @@
  * username
  * password
  */
-#define klogin     @"/user/login"
+#define kLogin     @"/user/login"
+
+//修改个人信息
+/*
+ *account_id
+ *nickname 
+ *password
+ *is_company
+ *is_attestation
+ *companyId
+ */
+#define kupdateUser   @"/user/updateUser"

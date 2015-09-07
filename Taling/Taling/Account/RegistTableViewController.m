@@ -178,7 +178,7 @@
     
     TLRequest *request = [TLRequest shareRequest];
     
-    [request tlRequestWithAction:Kregist Params:param result:^(BOOL isSuccess, id data) {
+    [request tlRequestWithAction:kRegist Params:param result:^(BOOL isSuccess, id data) {
         
         if (isSuccess) {
             

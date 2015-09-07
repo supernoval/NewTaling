@@ -57,7 +57,7 @@
     }
     
     
-    [[TLRequest shareRequest] tlRequestWithAction:klogin Params:@{@"username":_phoneTF.text,@"password":_codeTF.text} result:^(BOOL isSuccess, id data) {
+    [[TLRequest shareRequest] tlRequestWithAction:kLogin Params:@{@"username":_phoneTF.text,@"password":_codeTF.text} result:^(BOOL isSuccess, id data) {
         
         if (isSuccess)
         {
