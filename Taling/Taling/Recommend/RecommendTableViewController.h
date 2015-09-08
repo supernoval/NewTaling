@@ -7,8 +7,15 @@
 //
 
 #import "BaseTableViewController.h"
+#import "SelectView.h"
+
+
 
 @interface RecommendTableViewController : BaseTableViewController
-- (IBAction)searchAction:(id)sender;
+{
+    SelectView *_selectedView;
+    
+}
+
 
 @end

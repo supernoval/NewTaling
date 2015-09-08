@@ -21,11 +21,11 @@
     self.title = @"推荐";
     
     
-//    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(showSortView)];
-//    
-//    self.navigationItem.rightBarButtonItem = item;
+    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(showSortView)];
     
+    self.navigationItem.leftBarButtonItem = item;
     
+    _selectedView = [[SelectView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
   
 }
 
@@ -54,11 +54,18 @@
         
     }
 }
-
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [_selectedView removeFromSuperview];
+    
+}
 
 -(void)showSortView
 {
-    
+    [self.navigationController.view addSubview:_selectedView];
+    [_selectedView show];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -129,6 +136,8 @@
 }
 */
 
-- (IBAction)searchAction:(id)sender {
-}
+
+
+
+
 @end

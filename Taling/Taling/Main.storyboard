@@ -980,13 +980,7 @@
                             <outlet property="delegate" destination="O1K-7F-SOZ" id="572-o6-E0j"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="推荐" id="Mym-4X-anA">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="xJ6-Ou-jcG">
-                            <connections>
-                                <action selector="searchAction:" destination="O1K-7F-SOZ" id="fbp-iL-gQY"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="推荐" id="Mym-4X-anA"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jmf-rA-Tfk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
