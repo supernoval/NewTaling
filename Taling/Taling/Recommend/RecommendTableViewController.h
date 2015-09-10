@@ -8,6 +8,7 @@
 
 #import "BaseTableViewController.h"
 #import "SelectView.h"
+#import "RecommendCell.h"
 
 
 

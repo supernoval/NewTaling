@@ -9,5 +9,7 @@
 #import "BaseViewController.h"
 
 @interface OrderListViewController : BaseViewController
+- (IBAction)switchOrderList:(id)sender;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

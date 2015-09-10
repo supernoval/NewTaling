@@ -24,6 +24,9 @@
 		13B6CACD1B9C1928003EC8A9 /* OrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B6CACC1B9C1928003EC8A9 /* OrderListViewController.m */; };
 		13B6CAD11B9C1DCF003EC8A9 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B6CAD01B9C1DCF003EC8A9 /* MessageViewController.m */; };
 		13B6CAD51B9C25C8003EC8A9 /* ChangeNickNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B6CAD41B9C25C8003EC8A9 /* ChangeNickNameVC.m */; };
+		13D5F0F71B9FF8E3001A8AFF /* RecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D5F0F61B9FF8E3001A8AFF /* RecommendCell.m */; };
+		13D5F0FB1BA04FED001A8AFF /* SellOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D5F0FA1BA04FED001A8AFF /* SellOrderCell.m */; };
+		13D5F0FE1BA05198001A8AFF /* BuyOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D5F0FD1BA05198001A8AFF /* BuyOrderCell.m */; };
 		1506DF4C1B89B36D007D1696 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF4B1B89B36D007D1696 /* main.m */; };
 		1506DF4F1B89B36D007D1696 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF4E1B89B36D007D1696 /* AppDelegate.m */; };
 		1506DF521B89B36D007D1696 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF511B89B36D007D1696 /* ViewController.m */; };
@@ -175,6 +178,12 @@
 		13B6CAD01B9C1DCF003EC8A9 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageViewController.m; path = MessageVC/MessageViewController.m; sourceTree = "<group>"; };
 		13B6CAD31B9C25C8003EC8A9 /* ChangeNickNameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeNickNameVC.h; sourceTree = "<group>"; };
 		13B6CAD41B9C25C8003EC8A9 /* ChangeNickNameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeNickNameVC.m; sourceTree = "<group>"; };
+		13D5F0F51B9FF8E3001A8AFF /* RecommendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendCell.h; sourceTree = "<group>"; };
+		13D5F0F61B9FF8E3001A8AFF /* RecommendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendCell.m; sourceTree = "<group>"; };
+		13D5F0F91BA04FED001A8AFF /* SellOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SellOrderCell.h; path = Orders/SellOrderCell.h; sourceTree = "<group>"; };
+		13D5F0FA1BA04FED001A8AFF /* SellOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SellOrderCell.m; path = Orders/SellOrderCell.m; sourceTree = "<group>"; };
+		13D5F0FC1BA05198001A8AFF /* BuyOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuyOrderCell.h; path = Orders/BuyOrderCell.h; sourceTree = "<group>"; };
+		13D5F0FD1BA05198001A8AFF /* BuyOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BuyOrderCell.m; path = Orders/BuyOrderCell.m; sourceTree = "<group>"; };
 		1506DF461B89B36D007D1696 /* Taling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1506DF4A1B89B36D007D1696 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1506DF4B1B89B36D007D1696 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -533,6 +542,7 @@
 		13B6CACA1B9C18E8003EC8A9 /* Orders */ = {
 			isa = PBXGroup;
 			children = (
+				13D5F0F81BA04FCE001A8AFF /* ordercells */,
 				13B6CACB1B9C1928003EC8A9 /* OrderListViewController.h */,
 				13B6CACC1B9C1928003EC8A9 /* OrderListViewController.m */,
 			);
@@ -555,6 +565,26 @@
 				13B6CAD41B9C25C8003EC8A9 /* ChangeNickNameVC.m */,
 			);
 			name = changeNickName;
+			sourceTree = "<group>";
+		};
+		13D5F0F41B9FF8C4001A8AFF /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				13D5F0F51B9FF8E3001A8AFF /* RecommendCell.h */,
+				13D5F0F61B9FF8E3001A8AFF /* RecommendCell.m */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
+		13D5F0F81BA04FCE001A8AFF /* ordercells */ = {
+			isa = PBXGroup;
+			children = (
+				13D5F0F91BA04FED001A8AFF /* SellOrderCell.h */,
+				13D5F0FA1BA04FED001A8AFF /* SellOrderCell.m */,
+				13D5F0FC1BA05198001A8AFF /* BuyOrderCell.h */,
+				13D5F0FD1BA05198001A8AFF /* BuyOrderCell.m */,
+			);
+			name = ordercells;
 			sourceTree = "<group>";
 		};
 		1506DF3D1B89B36D007D1696 = {
@@ -999,6 +1029,7 @@
 		1506E2271B89BB23007D1696 /* Recommend */ = {
 			isa = PBXGroup;
 			children = (
+				13D5F0F41B9FF8C4001A8AFF /* cell */,
 				139919131B9EB4F300FE56DD /* selectView */,
 				1506E2281B89BB3A007D1696 /* RecommendTableViewController.h */,
 				1506E2291B89BB3A007D1696 /* RecommendTableViewController.m */,
@@ -1209,6 +1240,7 @@
 				1506DFFB1B89B506007D1696 /* SDPhotoGroup.m in Sources */,
 				13AA5EAA1B95CCEF00AB477E /* AFHTTPRequestOperationManager.m in Sources */,
 				1506E0411B89B53C007D1696 /* JSONAPI.m in Sources */,
+				13D5F0FE1BA05198001A8AFF /* BuyOrderCell.m in Sources */,
 				1506E2541B89BD87007D1696 /* RegistTableViewController.m in Sources */,
 				1506E01E1B89B521007D1696 /* MJRefreshLegendHeader.m in Sources */,
 				15EE6BF01B92F64800FBD86C /* PickAddressViewController.m in Sources */,
@@ -1254,7 +1286,9 @@
 				1506E09A1B89B582007D1696 /* MKAnnotationView+WebCache.m in Sources */,
 				139919161B9EB69900FE56DD /* SelectView.m in Sources */,
 				1506E0211B89B521007D1696 /* UIView+MJExtension.m in Sources */,
+				13D5F0F71B9FF8E3001A8AFF /* RecommendCell.m in Sources */,
 				1506E0191B89B521007D1696 /* MJRefreshFooter.m in Sources */,
+				13D5F0FB1BA04FED001A8AFF /* SellOrderCell.m in Sources */,
 				13B6CAD11B9C1DCF003EC8A9 /* MessageViewController.m in Sources */,
 				15EE6BF51B93072500FBD86C /* MapAnnotation.m in Sources */,
 			);

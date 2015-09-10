@@ -9,8 +9,16 @@
 #import "RecommendTableViewController.h"
 #import "ConstantsHeaders.h"
 
-@interface RecommendTableViewController ()
-
+@interface RecommendTableViewController ()<UISearchBarDelegate,UISearchDisplayDelegate>
+{
+    UISearchBar *_searchBar;
+    
+    UISearchDisplayController *_displayController;
+    
+    UITapGestureRecognizer *_tap;
+    
+    
+}
 @end
 
 @implementation RecommendTableViewController
@@ -21,11 +29,25 @@
     self.title = @"推荐";
     
     
-    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(showSortView)];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"getdistance"] style:UIBarButtonItemStylePlain target:self action:@selector(showSortView)];
+    
     
     self.navigationItem.leftBarButtonItem = item;
     
     _selectedView = [[SelectView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
+    
+    _searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(50, 0, ScreenWidth, 44)];
+    _searchBar.delegate = self;
+    _searchBar.placeholder = @"搜索关键字";
+    self.navigationItem.titleView = _searchBar;
+    
+    _tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(resign)];
+    
+    [self addHeaderRefresh];
+    [self addFooterRefresh];
+    
+    
+    
   
 }
 
@@ -59,6 +81,29 @@
     [super viewWillDisappear:animated];
     
     [_selectedView removeFromSuperview];
+    
+}
+
+-(void)headerRefresh
+{
+    
+}
+
+-(void)footerRefresh
+{
+    
+}
+
+
+-(void)getData
+{
+    
+}
+
+
+-(void)resign
+{
+    [_searchBar resignFirstResponder];
     
 }
 
@@ -106,7 +151,7 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"recomendCell"];
+    RecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:@"recomendCell"];
     
     
     return cell;
@@ -121,6 +166,25 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
+
+
+#pragma mark -  UISearchBarDelegate
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [self.view removeGestureRecognizer:_tap];
+    
+    [searchBar resignFirstResponder];
+    
+    
+}
+
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    [self.view addGestureRecognizer:_tap];
+    
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
