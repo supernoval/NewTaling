@@ -10,6 +10,6 @@
 
 @interface OrderListViewController : BaseViewController
 - (IBAction)switchOrderList:(id)sender;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property ( nonatomic)  UITableView *tableView;
 
 @end

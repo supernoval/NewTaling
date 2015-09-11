@@ -30,11 +30,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.tableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStylePlain];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
     self.tableView.tableHeaderView =nil;
     
     self.tableView.backgroundColor = kBackgroundColor;
     
-    
+    [self.view addSubview:self.tableView];
     
 }
 
@@ -84,7 +88,9 @@
 {
     if (isBuyOrderList) {
         
-        BuyOrderCell *buyCell = [tableView dequeueReusableCellWithIdentifier:@"buyCell"];
+        BuyOrderCell *buyCell = [[[NSBundle mainBundle]loadNibNamed:@"BuyCell" owner:self options:nil]firstObject];
+        
+        
         
         
         return buyCell;
@@ -92,7 +98,8 @@
     }
     else
     {
-        SellOrderCell *sellCell = [tableView dequeueReusableCellWithIdentifier:@"sellCell"];
+        SellOrderCell *sellCell = [[[NSBundle mainBundle] loadNibNamed:@"SellOrderCell" owner:self options:nil]firstObject];
+        
         
         
         return sellCell;
