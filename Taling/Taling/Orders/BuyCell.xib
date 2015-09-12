@@ -42,7 +42,7 @@
                             <constraint firstAttribute="height" constant="21" id="XJf-Ba-VGK"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <variation key="default">
                             <mask key="constraints">
@@ -64,7 +64,7 @@
                             <constraint firstAttribute="height" constant="21" id="yEc-MV-Rqt"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <variation key="default">
                             <mask key="constraints">
@@ -86,7 +86,7 @@
                             <constraint firstAttribute="height" constant="21" id="bCs-ET-EnX"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <variation key="default">
                             <mask key="constraints">
@@ -132,7 +132,7 @@
                             <constraint firstAttribute="height" constant="21" id="nbd-3M-L1S"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <variation key="default">
                             <mask key="constraints">
@@ -200,18 +200,18 @@
                         <exclude reference="VP6-cj-vcr"/>
                     </mask>
                     <mask key="constraints">
-                        <exclude reference="DUC-Dy-h2I"/>
-                        <exclude reference="PC5-GY-s7p"/>
-                        <exclude reference="Dft-e7-AWK"/>
-                        <exclude reference="ksN-au-Uty"/>
                         <exclude reference="aEg-0c-6ig"/>
                         <exclude reference="eQ6-OC-Syl"/>
-                        <exclude reference="5IC-pR-vu8"/>
-                        <exclude reference="g27-j7-KX0"/>
-                        <exclude reference="8ov-tj-5Yr"/>
-                        <exclude reference="uCp-dD-eYl"/>
                         <exclude reference="KtA-cY-bVy"/>
                         <exclude reference="mGq-xk-afL"/>
+                        <exclude reference="5IC-pR-vu8"/>
+                        <exclude reference="g27-j7-KX0"/>
+                        <exclude reference="Dft-e7-AWK"/>
+                        <exclude reference="ksN-au-Uty"/>
+                        <exclude reference="DUC-Dy-h2I"/>
+                        <exclude reference="PC5-GY-s7p"/>
+                        <exclude reference="8ov-tj-5Yr"/>
+                        <exclude reference="uCp-dD-eYl"/>
                         <exclude reference="BOL-hR-Lye"/>
                         <exclude reference="hXc-0r-zl9"/>
                     </mask>
@@ -227,18 +227,18 @@
                         <include reference="VP6-cj-vcr"/>
                     </mask>
                     <mask key="constraints">
-                        <include reference="DUC-Dy-h2I"/>
-                        <include reference="PC5-GY-s7p"/>
-                        <include reference="Dft-e7-AWK"/>
-                        <include reference="ksN-au-Uty"/>
                         <include reference="aEg-0c-6ig"/>
                         <include reference="eQ6-OC-Syl"/>
-                        <include reference="5IC-pR-vu8"/>
-                        <include reference="g27-j7-KX0"/>
-                        <include reference="8ov-tj-5Yr"/>
-                        <include reference="uCp-dD-eYl"/>
                         <include reference="KtA-cY-bVy"/>
                         <include reference="mGq-xk-afL"/>
+                        <include reference="5IC-pR-vu8"/>
+                        <include reference="g27-j7-KX0"/>
+                        <include reference="Dft-e7-AWK"/>
+                        <include reference="ksN-au-Uty"/>
+                        <include reference="DUC-Dy-h2I"/>
+                        <include reference="PC5-GY-s7p"/>
+                        <include reference="8ov-tj-5Yr"/>
+                        <include reference="uCp-dD-eYl"/>
                         <include reference="BOL-hR-Lye"/>
                         <include reference="hXc-0r-zl9"/>
                     </mask>

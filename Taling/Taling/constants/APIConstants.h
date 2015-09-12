@@ -39,3 +39,11 @@
  *companyId
  */
 #define kupdateUser   @"/user/updateUser"
+
+//获取推荐列表
+// http://183.131.151.50/taling-api/resume/getCommendResumes?index=1&size=10
+/*
+ *index
+ *size
+ */
+#define kgetCommendResumes @"/resume/getCommendResumes"

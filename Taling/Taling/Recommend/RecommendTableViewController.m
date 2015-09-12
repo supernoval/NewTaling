@@ -17,6 +17,12 @@
     
     UITapGestureRecognizer *_tap;
     
+    NSInteger index;
+    NSInteger size;
+    
+    NSMutableArray *_JDArray;
+    
+    
     
 }
 @end
@@ -27,6 +33,8 @@
     [super viewDidLoad];
     
     self.title = @"推荐";
+    
+    _JDArray = [[NSMutableArray alloc]init];
     
     
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"getdistance"] style:UIBarButtonItemStylePlain target:self action:@selector(showSortView)];
@@ -46,7 +54,10 @@
     [self addHeaderRefresh];
     [self addFooterRefresh];
     
+    index = 1;
+    size = 10;
     
+    [self.tableView.header beginRefreshing];
     
   
 }
@@ -86,17 +97,46 @@
 
 -(void)headerRefresh
 {
+    index = 1;
+    
+    [self getData];
     
 }
 
 -(void)footerRefresh
 {
+    index ++;
+    
+    [self getData];
     
 }
 
 
 -(void)getData
 {
+    NSDictionary *param = @{@"index":@(index),@"size":@(size)};
+    
+    [[TLRequest shareRequest] tlRequestWithAction:kgetCommendResumes Params:param result:^(BOOL isSuccess, id data) {
+       
+        [self endHeaderRefresh];
+        [self endFooterRefresh];
+        
+        if (isSuccess) {
+            
+            if (index == 1)
+            {
+                
+                [_JDArray removeAllObjects];
+                
+            }
+            
+            [_JDArray addObjectsFromArray:data];
+            
+            [self.tableView reloadData];
+            
+        }
+        
+    }];
     
 }
 
@@ -133,7 +173,7 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 10;
+    return _JDArray.count;
 }
 
 -(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
@@ -153,6 +193,12 @@
     
     RecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:@"recomendCell"];
     
+    NSDictionary *oneDict = [_JDArray objectAtIndex:indexPath.section];
+    
+    NSString *name = [oneDict objectForKey:@"name"];
+    
+    cell.nameLabel.text = name;
+  
     
     return cell;
 }
