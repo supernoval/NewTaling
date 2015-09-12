@@ -90,10 +90,7 @@
 		1506E0C51B89B637007D1696 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1506E0C21B89B637007D1696 /* SMS_SDK.framework */; };
 		1506E12B1B89B646007D1696 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1506E0C71B89B646007D1696 /* AlipaySDK.bundle */; };
 		1506E12C1B89B646007D1696 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1506E0C81B89B646007D1696 /* AlipaySDK.framework */; };
-<<<<<<< .mine
 		1506E12E1B89B646007D1696 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1506E0CA1B89B646007D1696 /* libssl.a */; };
-=======
->>>>>>> .r16
 		1506E12F1B89B646007D1696 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E1181B89B646007D1696 /* Order.m */; };
 		1506E1301B89B646007D1696 /* base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E11B1B89B646007D1696 /* base64.m */; };
 		1506E1311B89B646007D1696 /* DataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E11E1B89B646007D1696 /* DataSigner.m */; };
