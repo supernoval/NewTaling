@@ -90,6 +90,10 @@
 		1506E0C51B89B637007D1696 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1506E0C21B89B637007D1696 /* SMS_SDK.framework */; };
 		1506E12B1B89B646007D1696 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1506E0C71B89B646007D1696 /* AlipaySDK.bundle */; };
 		1506E12C1B89B646007D1696 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1506E0C81B89B646007D1696 /* AlipaySDK.framework */; };
+<<<<<<< .mine
+		1506E12E1B89B646007D1696 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1506E0CA1B89B646007D1696 /* libssl.a */; };
+=======
+>>>>>>> .r16
 		1506E12F1B89B646007D1696 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E1181B89B646007D1696 /* Order.m */; };
 		1506E1301B89B646007D1696 /* base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E11B1B89B646007D1696 /* base64.m */; };
 		1506E1311B89B646007D1696 /* DataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E11E1B89B646007D1696 /* DataSigner.m */; };
@@ -134,6 +138,7 @@
 		15EE6BF01B92F64800FBD86C /* PickAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EE6BEF1B92F64800FBD86C /* PickAddressViewController.m */; };
 		15EE6BF21B92FB9300FBD86C /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 15EE6BF11B92FB9300FBD86C /* AMap.bundle */; };
 		15EE6BF51B93072500FBD86C /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EE6BF41B93072500FBD86C /* MapAnnotation.m */; };
+		D29BBC691B946B7E004B4021 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D29BBC681B946B7E004B4021 /* libcrypto.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -309,7 +314,6 @@
 		1506E0C31B89B637007D1696 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SMS_SDKLocalizable.strings"; sourceTree = "<group>"; };
 		1506E0C71B89B646007D1696 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		1506E0C81B89B646007D1696 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
-		1506E0C91B89B646007D1696 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		1506E0CA1B89B646007D1696 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
 		1506E0CC1B89B646007D1696 /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
 		1506E0CD1B89B646007D1696 /* asn1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asn1.h; sourceTree = "<group>"; };
@@ -453,6 +457,7 @@
 		15EE6BF11B92FB9300FBD86C /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
 		15EE6BF31B93072500FBD86C /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
 		15EE6BF41B93072500FBD86C /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
+		D29BBC681B946B7E004B4021 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -486,6 +491,7 @@
 				1506E1671B89B6D6007D1696 /* AddressBook.framework in Frameworks */,
 				1506E1681B89B6D6007D1696 /* AddressBookUI.framework in Frameworks */,
 				1506E16B1B89B6D6007D1696 /* MapKit.framework in Frameworks */,
+				D29BBC691B946B7E004B4021 /* libcrypto.a in Frameworks */,
 				1506E0C51B89B637007D1696 /* SMS_SDK.framework in Frameworks */,
 				1506E12C1B89B646007D1696 /* AlipaySDK.framework in Frameworks */,
 			);
@@ -884,7 +890,7 @@
 			children = (
 				1506E0C71B89B646007D1696 /* AlipaySDK.bundle */,
 				1506E0C81B89B646007D1696 /* AlipaySDK.framework */,
-				1506E0C91B89B646007D1696 /* libcrypto.a */,
+				D29BBC681B946B7E004B4021 /* libcrypto.a */,
 				1506E0CA1B89B646007D1696 /* libssl.a */,
 				1506E0CB1B89B646007D1696 /* openssl */,
 				1506E1171B89B646007D1696 /* Order.h */,
