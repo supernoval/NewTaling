@@ -66,6 +66,7 @@ TLRequest *request;
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
+         [MyProgressHUD dismiss];
         
         NSLog(@"fail:%@,%@",error,operation.responseString);
 

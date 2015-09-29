@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		137BBBE01B9DA9F5004571C6 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 137BBBDF1B9DA9F5004571C6 /* UserInfo.m */; };
+		138961CC1BA98E3F009F33FA /* MyJDsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 138961CA1BA98E3F009F33FA /* MyJDsTableViewController.m */; };
+		138961CD1BA98E3F009F33FA /* MyJDsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138961CB1BA98E3F009F33FA /* MyJDsTableViewController.xib */; };
 		139919161B9EB69900FE56DD /* SelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 139919151B9EB69900FE56DD /* SelectView.m */; };
 		13AA5E3B1B95C37E00AB477E /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13AA5E3A1B95C37E00AB477E /* libssl.a */; };
 		13AA5E3D1B95C38300AB477E /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13AA5E3C1B95C38300AB477E /* libcrypto.a */; };
@@ -90,7 +92,6 @@
 		1506E0C51B89B637007D1696 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1506E0C21B89B637007D1696 /* SMS_SDK.framework */; };
 		1506E12B1B89B646007D1696 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1506E0C71B89B646007D1696 /* AlipaySDK.bundle */; };
 		1506E12C1B89B646007D1696 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1506E0C81B89B646007D1696 /* AlipaySDK.framework */; };
-		1506E12E1B89B646007D1696 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1506E0CA1B89B646007D1696 /* libssl.a */; };
 		1506E12F1B89B646007D1696 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E1181B89B646007D1696 /* Order.m */; };
 		1506E1301B89B646007D1696 /* base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E11B1B89B646007D1696 /* base64.m */; };
 		1506E1311B89B646007D1696 /* DataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E11E1B89B646007D1696 /* DataSigner.m */; };
@@ -151,6 +152,9 @@
 /* Begin PBXFileReference section */
 		137BBBDE1B9DA9F5004571C6 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		137BBBDF1B9DA9F5004571C6 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		138961C91BA98E3F009F33FA /* MyJDsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyJDsTableViewController.h; sourceTree = "<group>"; };
+		138961CA1BA98E3F009F33FA /* MyJDsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyJDsTableViewController.m; sourceTree = "<group>"; };
+		138961CB1BA98E3F009F33FA /* MyJDsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyJDsTableViewController.xib; sourceTree = "<group>"; };
 		139919141B9EB69900FE56DD /* SelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectView.h; sourceTree = "<group>"; };
 		139919151B9EB69900FE56DD /* SelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectView.m; sourceTree = "<group>"; };
 		13AA5E3A1B95C37E00AB477E /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
@@ -509,6 +513,16 @@
 			children = (
 			);
 			name = bindThirdpart;
+			sourceTree = "<group>";
+		};
+		138961C51BA98B4D009F33FA /* MyJDs */ = {
+			isa = PBXGroup;
+			children = (
+				138961C91BA98E3F009F33FA /* MyJDsTableViewController.h */,
+				138961CA1BA98E3F009F33FA /* MyJDsTableViewController.m */,
+				138961CB1BA98E3F009F33FA /* MyJDsTableViewController.xib */,
+			);
+			name = MyJDs;
 			sourceTree = "<group>";
 		};
 		139919131B9EB4F300FE56DD /* selectView */ = {
@@ -1075,6 +1089,7 @@
 		1579153A1B8F52C400E31111 /* mine */ = {
 			isa = PBXGroup;
 			children = (
+				138961C51BA98B4D009F33FA /* MyJDs */,
 				15EE6BED1B92F61700FBD86C /* addressPickVC */,
 				1579153E1B8F54AB00E31111 /* personalInfo */,
 				1579153B1B8F52E100E31111 /* MineTableViewController.h */,
@@ -1187,6 +1202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				138961CD1BA98E3F009F33FA /* MyJDsTableViewController.xib in Resources */,
 				13CD97661BA15213007763E0 /* SellOrderCell.xib in Resources */,
 				1506DF921B89B4A0007D1696 /* ProgressHUD.bundle in Resources */,
 				1506DF7B1B89B457007D1696 /* Main.storyboard in Resources */,
@@ -1215,6 +1231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13AA5EAE1B95CCEF00AB477E /* AFURLConnectionOperation.m in Sources */,
+				138961CC1BA98E3F009F33FA /* MyJDsTableViewController.m in Sources */,
 				1506E0421B89B53C007D1696 /* JSONHTTPClient.m in Sources */,
 				1506E1301B89B646007D1696 /* base64.m in Sources */,
 				1506E1351B89B646007D1696 /* openssl_wrapper.m in Sources */,
@@ -1429,6 +1446,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Taling/ThirdFrameWork/SMS_SDK",
@@ -1449,7 +1467,7 @@
 					"$(PROJECT_DIR)/Taling",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "53920ca9-23bb-4856-ba4d-064c6cb28f3f";
 			};
 			name = Debug;
 		};
@@ -1458,6 +1476,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Taling/ThirdFrameWork/SMS_SDK",
@@ -1478,6 +1497,7 @@
 					"$(PROJECT_DIR)/Taling",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a9945020-cce9-4793-ae60-366d4d80d24a";
 			};
 			name = Release;
 		};
