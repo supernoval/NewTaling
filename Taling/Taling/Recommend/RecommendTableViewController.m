@@ -159,34 +159,22 @@
     
 }
 
+
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    return 162;
+    return 176;
 }
 
 
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 10;
-}
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return _JDArray.count;
 }
 
--(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 10)];
-    
-    footerView.backgroundColor = [UIColor clearColor];
-    
-    
-    return footerView;
-    
-    
-}
+
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -195,9 +183,20 @@
     
     NSDictionary *oneDict = [_JDArray objectAtIndex:indexPath.section];
     
+    //姓名
     NSString *name = [oneDict objectForKey:@"name"];
     
     cell.nameLabel.text = name;
+    
+    //城市、教育程度
+    cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",[oneDict objectForKey:@"city"],[oneDict objectForKey:@"city"]];
+    
+    //公司
+    cell.companyLabel.text = [NSString stringWithFormat:@"公司:%@",[oneDict objectForKey:@"currentCompany"]];
+    
+    
+    //点赞
+    [cell.priseButton setTitle:[NSString stringWithFormat:@"%@",[oneDict objectForKey:@"goodNum"]] forState:UIControlStateNormal];
   
     
     return cell;
@@ -236,15 +235,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 
 

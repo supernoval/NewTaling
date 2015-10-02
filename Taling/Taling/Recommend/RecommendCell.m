@@ -7,14 +7,26 @@
 //
 
 #import "RecommendCell.h"
+#import "Constants.h"
 
 @implementation RecommendCell
 
 - (void)awakeFromNib {
     // Initialization code
     
-    _downloadButton.clipsToBounds = YES;
-    _downloadButton.layer.cornerRadius = 5.0;
+    _headImageView.clipsToBounds = YES;
+    _headImageView.layer.cornerRadius = 5.0;
+    
+    _businessWidth.constant = (ScreenWidth - 31)/2;
+    
+    _companyWidth.constant = (ScreenWidth - 31)/2;
+    
+    _professionWidth.constant = (ScreenWidth - 31)/2;
+    
+    _yeatWidth.constant = (ScreenWidth - 31)/2;
+    
+    _buyButton.clipsToBounds = YES;
+    _buyButton.layer.cornerRadius = 5.0;
     
 }
 
