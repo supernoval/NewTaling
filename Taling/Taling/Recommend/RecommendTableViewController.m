@@ -8,6 +8,7 @@
 
 #import "RecommendTableViewController.h"
 #import "ConstantsHeaders.h"
+#import "ResumeDetailTVC.h"
 
 @interface RecommendTableViewController ()<UISearchBarDelegate,UISearchDisplayDelegate>
 {
@@ -207,6 +208,11 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    
+    ResumeDetailTVC *resumeDetail = [sb instantiateViewControllerWithIdentifier:@"ResumeDetailTVC"];
+    
+    [self.navigationController pushViewController:resumeDetail animated:YES];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     

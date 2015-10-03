@@ -684,8 +684,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="recomendCell" rowHeight="176" id="5eW-ZH-zea" customClass="RecommendCell">
-                                <rect key="frame" x="0.0" y="114" width="320" height="176"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="recomendCell" rowHeight="176" id="5eW-ZH-zea" customClass="RecommendCell">
+                                <rect key="frame" x="0.0" y="92" width="320" height="176"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5eW-ZH-zea" id="Nf1-dx-l7s">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="175"/>
@@ -716,7 +716,7 @@
                                                 <constraint firstAttribute="height" constant="21" id="Ztj-RU-I7W"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -1142,6 +1142,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jmf-rA-Tfk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="852" y="73.5"/>
+        </scene>
+        <!--Resume DetailTVC-->
+        <scene sceneID="nky-I4-n7b">
+            <objects>
+                <tableViewController storyboardIdentifier="ResumeDetailTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="r8K-k9-YuC" customClass="ResumeDetailTVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dFm-ge-3f2">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TTS-4L-Xug">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TTS-4L-Xug" id="zL6-bz-ui7">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="r8K-k9-YuC" id="06w-4s-DNl"/>
+                            <outlet property="delegate" destination="r8K-k9-YuC" id="ATI-Ax-dl9"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R4g-2S-8hV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1432.5" y="73.5"/>
         </scene>
         <!--推荐-->
         <scene sceneID="oRS-xp-3yf">

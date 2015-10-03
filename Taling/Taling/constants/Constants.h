@@ -46,7 +46,7 @@
 #define kOrangeTextColor   RGB(255,128,0,0.9)
 
 //背景色
-#define kBackgroundColor RGB(239,239,244,1)
+#define kBackgroundColor RGB(240,240,240,1)
 #define kContentColor [UIColor whiteColor]
 #define kLineColor RGB(240,240,240,1)
 //蓝绿字体

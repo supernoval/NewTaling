@@ -136,6 +136,13 @@
 		15EE6BF01B92F64800FBD86C /* PickAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EE6BEF1B92F64800FBD86C /* PickAddressViewController.m */; };
 		15EE6BF21B92FB9300FBD86C /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 15EE6BF11B92FB9300FBD86C /* AMap.bundle */; };
 		15EE6BF51B93072500FBD86C /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EE6BF41B93072500FBD86C /* MapAnnotation.m */; };
+		B31A95A91BBFBD5100DF1939 /* ResumeExperienceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B31A95A81BBFBD5100DF1939 /* ResumeExperienceCell.m */; settings = {ASSET_TAGS = (); }; };
+		B34A34B11BBFBFC7009F42A4 /* ResumeDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B34A34B01BBFBFC7009F42A4 /* ResumeDetailTVC.m */; settings = {ASSET_TAGS = (); }; };
+		B3ED93B81BBFB1B20079E346 /* ResumeNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3ED93B71BBFB1B20079E346 /* ResumeNameCell.xib */; settings = {ASSET_TAGS = (); }; };
+		B3ED93BA1BBFB1D50079E346 /* ResumeAgeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3ED93B91BBFB1D50079E346 /* ResumeAgeCell.xib */; settings = {ASSET_TAGS = (); }; };
+		B3ED93BC1BBFB2120079E346 /* ResumeExperienceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3ED93BB1BBFB2120079E346 /* ResumeExperienceCell.xib */; settings = {ASSET_TAGS = (); }; };
+		B3ED93BE1BBFB2560079E346 /* ResumeTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3ED93BD1BBFB2560079E346 /* ResumeTagCell.xib */; settings = {ASSET_TAGS = (); }; };
+		B3ED93C11BBFB5170079E346 /* ResumeNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3ED93C01BBFB5170079E346 /* ResumeNameCell.m */; settings = {ASSET_TAGS = (); }; };
 		D29BBC691B946B7E004B4021 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D29BBC681B946B7E004B4021 /* libcrypto.a */; };
 /* End PBXBuildFile section */
 
@@ -458,6 +465,16 @@
 		15EE6BF11B92FB9300FBD86C /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
 		15EE6BF31B93072500FBD86C /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
 		15EE6BF41B93072500FBD86C /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
+		B31A95A71BBFBD5100DF1939 /* ResumeExperienceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResumeExperienceCell.h; sourceTree = "<group>"; };
+		B31A95A81BBFBD5100DF1939 /* ResumeExperienceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResumeExperienceCell.m; sourceTree = "<group>"; };
+		B34A34AF1BBFBFC7009F42A4 /* ResumeDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResumeDetailTVC.h; sourceTree = "<group>"; };
+		B34A34B01BBFBFC7009F42A4 /* ResumeDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResumeDetailTVC.m; sourceTree = "<group>"; };
+		B3ED93B71BBFB1B20079E346 /* ResumeNameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResumeNameCell.xib; sourceTree = "<group>"; };
+		B3ED93B91BBFB1D50079E346 /* ResumeAgeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResumeAgeCell.xib; sourceTree = "<group>"; };
+		B3ED93BB1BBFB2120079E346 /* ResumeExperienceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResumeExperienceCell.xib; sourceTree = "<group>"; };
+		B3ED93BD1BBFB2560079E346 /* ResumeTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResumeTagCell.xib; sourceTree = "<group>"; };
+		B3ED93BF1BBFB5170079E346 /* ResumeNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResumeNameCell.h; sourceTree = "<group>"; };
+		B3ED93C01BBFB5170079E346 /* ResumeNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResumeNameCell.m; sourceTree = "<group>"; };
 		D29BBC681B946B7E004B4021 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -593,6 +610,14 @@
 			children = (
 				13D5F0F51B9FF8E3001A8AFF /* RecommendCell.h */,
 				13D5F0F61B9FF8E3001A8AFF /* RecommendCell.m */,
+				B3ED93B71BBFB1B20079E346 /* ResumeNameCell.xib */,
+				B3ED93B91BBFB1D50079E346 /* ResumeAgeCell.xib */,
+				B3ED93BB1BBFB2120079E346 /* ResumeExperienceCell.xib */,
+				B3ED93BD1BBFB2560079E346 /* ResumeTagCell.xib */,
+				B3ED93BF1BBFB5170079E346 /* ResumeNameCell.h */,
+				B3ED93C01BBFB5170079E346 /* ResumeNameCell.m */,
+				B31A95A71BBFBD5100DF1939 /* ResumeExperienceCell.h */,
+				B31A95A81BBFBD5100DF1939 /* ResumeExperienceCell.m */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -1056,6 +1081,8 @@
 				139919131B9EB4F300FE56DD /* selectView */,
 				1506E2281B89BB3A007D1696 /* RecommendTableViewController.h */,
 				1506E2291B89BB3A007D1696 /* RecommendTableViewController.m */,
+				B34A34AF1BBFBFC7009F42A4 /* ResumeDetailTVC.h */,
+				B34A34B01BBFBFC7009F42A4 /* ResumeDetailTVC.m */,
 			);
 			path = Recommend;
 			sourceTree = "<group>";
@@ -1204,6 +1231,7 @@
 			files = (
 				138961CD1BA98E3F009F33FA /* MyJDsTableViewController.xib in Resources */,
 				13CD97661BA15213007763E0 /* SellOrderCell.xib in Resources */,
+				B3ED93BC1BBFB2120079E346 /* ResumeExperienceCell.xib in Resources */,
 				1506DF921B89B4A0007D1696 /* ProgressHUD.bundle in Resources */,
 				1506DF7B1B89B457007D1696 /* Main.storyboard in Resources */,
 				15EE6BF21B92FB9300FBD86C /* AMap.bundle in Resources */,
@@ -1211,6 +1239,9 @@
 				1506E12B1B89B646007D1696 /* AlipaySDK.bundle in Resources */,
 				1506DF5A1B89B36D007D1696 /* LaunchScreen.xib in Resources */,
 				1506E0161B89B521007D1696 /* MJRefresh.bundle in Resources */,
+				B3ED93B81BBFB1B20079E346 /* ResumeNameCell.xib in Resources */,
+				B3ED93BA1BBFB1D50079E346 /* ResumeAgeCell.xib in Resources */,
+				B3ED93BE1BBFB2560079E346 /* ResumeTagCell.xib in Resources */,
 				1506E0C41B89B637007D1696 /* SMS_SDKLocalizable.strings in Resources */,
 				1506DF571B89B36D007D1696 /* Images.xcassets in Resources */,
 			);
@@ -1268,6 +1299,7 @@
 				1506DFFB1B89B506007D1696 /* SDPhotoGroup.m in Sources */,
 				13AA5EAA1B95CCEF00AB477E /* AFHTTPRequestOperationManager.m in Sources */,
 				1506E0411B89B53C007D1696 /* JSONAPI.m in Sources */,
+				B3ED93C11BBFB5170079E346 /* ResumeNameCell.m in Sources */,
 				13D5F0FE1BA05198001A8AFF /* BuyOrderCell.m in Sources */,
 				1506E2541B89BD87007D1696 /* RegistTableViewController.m in Sources */,
 				1506E01E1B89B521007D1696 /* MJRefreshLegendHeader.m in Sources */,
@@ -1286,6 +1318,7 @@
 				1506E09C1B89B582007D1696 /* SDImageCache.m in Sources */,
 				1506E0441B89B53C007D1696 /* JSONKeyMapper.m in Sources */,
 				1506E1311B89B646007D1696 /* DataSigner.m in Sources */,
+				B31A95A91BBFBD5100DF1939 /* ResumeExperienceCell.m in Sources */,
 				1506DF931B89B4A0007D1696 /* ProgressHUD.m in Sources */,
 				1506DF4F1B89B36D007D1696 /* AppDelegate.m in Sources */,
 				1506E2531B89BD87007D1696 /* LoginViewController.m in Sources */,
@@ -1305,6 +1338,7 @@
 				1506E0A31B89B582007D1696 /* UIButton+WebCache.m in Sources */,
 				1506E03D1B89B53C007D1696 /* JSONModelArray.m in Sources */,
 				1506E01A1B89B521007D1696 /* MJRefreshGifFooter.m in Sources */,
+				B34A34B11BBFBFC7009F42A4 /* ResumeDetailTVC.m in Sources */,
 				1506E1361B89B646007D1696 /* RSADataSigner.m in Sources */,
 				1506E01F1B89B521007D1696 /* UIScrollView+MJExtension.m in Sources */,
 				1506E1321B89B646007D1696 /* DataVerifier.m in Sources */,

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ResumeAgeCell" rowHeight="88" id="xMV-gK-wSy">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xMV-gK-wSy" id="H6q-5N-Psx">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="年龄:28" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePE-eC-PeD">
+                        <rect key="frame" x="15" y="8" width="297" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="1Fc-TK-Yol"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="城市:上海" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfg-p7-hYw">
+                        <rect key="frame" x="15" y="34" width="297" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Nwm-ca-wIs"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公司:上海百度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaI-d1-4ue">
+                        <rect key="frame" x="15" y="60" width="297" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Ccb-mB-Scl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="EaI-d1-4ue" firstAttribute="leading" secondItem="H6q-5N-Psx" secondAttribute="leading" constant="15" id="0zq-Wl-4kl"/>
+                    <constraint firstAttribute="trailing" secondItem="ePE-eC-PeD" secondAttribute="trailing" constant="8" id="D87-qY-dWz"/>
+                    <constraint firstAttribute="trailing" secondItem="EaI-d1-4ue" secondAttribute="trailing" constant="8" id="E4o-Vs-Iba"/>
+                    <constraint firstItem="bfg-p7-hYw" firstAttribute="leading" secondItem="H6q-5N-Psx" secondAttribute="leading" constant="15" id="J9K-bt-9UF"/>
+                    <constraint firstItem="ePE-eC-PeD" firstAttribute="leading" secondItem="H6q-5N-Psx" secondAttribute="leading" constant="15" id="JEa-gs-1uA"/>
+                    <constraint firstItem="EaI-d1-4ue" firstAttribute="top" secondItem="bfg-p7-hYw" secondAttribute="bottom" constant="5" id="eUS-gP-SEo"/>
+                    <constraint firstItem="bfg-p7-hYw" firstAttribute="top" secondItem="ePE-eC-PeD" secondAttribute="bottom" constant="5" id="lUq-Ko-CDG"/>
+                    <constraint firstAttribute="trailing" secondItem="bfg-p7-hYw" secondAttribute="trailing" constant="8" id="nxP-lf-A0o"/>
+                    <constraint firstItem="ePE-eC-PeD" firstAttribute="top" secondItem="H6q-5N-Psx" secondAttribute="top" constant="8" id="vs3-ab-ORF"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="220" y="208"/>
+        </tableViewCell>
+    </objects>
+</document>
