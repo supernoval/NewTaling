@@ -9,16 +9,16 @@
 #import <UIKit/UIKit.h>
 
 @interface SellOrderCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *orderNoLabel;
-@property (weak, nonatomic) IBOutlet UILabel *orderStateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *buyernameLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *headImageView;
 
-@property (weak, nonatomic) IBOutlet UILabel *positionLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *yearLabel;
-
-
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *nameWidth;
+@property (strong, nonatomic) IBOutlet UIImageView *sexImageView;
+@property (strong, nonatomic) IBOutlet UILabel *placeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *professionLabel;
+@property (strong, nonatomic) IBOutlet UILabel *buyNumLabel;
+@property (strong, nonatomic) IBOutlet UILabel *buyNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end

@@ -9,6 +9,7 @@
 #import "OrderListViewController.h"
 #import "SellOrderCell.h"
 #import "BuyOrderCell.h"
+#import "ResumeDetailTVC.h"
 
 @interface OrderListViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -29,45 +30,143 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    isBuyOrderList = YES;
     
-    self.tableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, ScreenWidth, ScreenHeight-64) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    self.tableView.tableHeaderView =nil;
-    
     self.tableView.backgroundColor = kBackgroundColor;
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
     
     [self.view addSubview:self.tableView];
     
+    self.tableView.tableHeaderView = [self buyTableHeadView];
+    
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
+- (UIView *)sellTableHeadView{
     
-    return 10;
+    UIView *buyView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 80)];
+    buyView.backgroundColor = kContentColor;
+    
+    UILabel *buyNum = [[UILabel alloc]initWithFrame:CGRectMake(0, 15, ScreenWidth/3, 30)];
+    buyNum.font = FONT_17;
+    buyNum.textAlignment = NSTextAlignmentCenter;
+    buyNum.textColor = [UIColor blackColor];
+    buyNum.text = @"128份";
+    [buyView addSubview:buyNum];
+    
+    UILabel *buyLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 45, ScreenWidth/3, 20)];
+    buyLabel.text = @"已售简历数";
+    buyLabel.textColor = kDarkGrayColor;
+    buyLabel.font = FONT_15;
+    buyLabel.textAlignment = NSTextAlignmentCenter;
+    [buyView addSubview:buyLabel];
+    
+    UILabel *sellMoney = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth/3, 15, ScreenWidth/3, 30)];
+    sellMoney.font = FONT_17;
+    sellMoney.textAlignment = NSTextAlignmentCenter;
+    sellMoney.textColor = [UIColor blackColor];
+    sellMoney.text = @"7590元";
+    [buyView addSubview:sellMoney];
+    
+    UILabel *sellLabel = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth/3, 45, ScreenWidth/3, 20)];
+    sellLabel.text = @"已售简历总估值";
+    sellLabel.textColor = kDarkGrayColor;
+    sellLabel.font = FONT_15;
+    sellLabel.textAlignment = NSTextAlignmentCenter;
+    [buyView addSubview:sellLabel];
+    
+    
+    UILabel *earnMoney = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth*2/3, 15, ScreenWidth/3, 30)];
+    earnMoney.font = FONT_17;
+    earnMoney.textAlignment = NSTextAlignmentCenter;
+    earnMoney.textColor = [UIColor blackColor];
+    earnMoney.text = @"7590元";
+    [buyView addSubview:earnMoney];
+    
+    UILabel *earnLabel = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth*2/3, 45, ScreenWidth/3, 20)];
+    earnLabel.text = @"已赚取总额";
+    earnLabel.textColor = kDarkGrayColor;
+    earnLabel.font = FONT_15;
+    earnLabel.textAlignment = NSTextAlignmentCenter;
+    [buyView addSubview:earnLabel];
+    
+    UIView *line = [[UIView alloc]initWithFrame:CGRectMake(15, 79, ScreenWidth-15, 1)];
+    line.backgroundColor = kLineColor;
+    [buyView addSubview:line];
+    return buyView;
 }
 
--(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    UIView *blankView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 10)];
-    blankView.backgroundColor = [UIColor clearColor];
+
+- (UIView *)buyTableHeadView{
+    
+    UIView *buyView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 80)];
+    buyView.backgroundColor = kContentColor;
+    
+    UILabel *buyNum = [[UILabel alloc]initWithFrame:CGRectMake(0, 15, ScreenWidth/3, 30)];
+    buyNum.font = FONT_17;
+    buyNum.textAlignment = NSTextAlignmentCenter;
+    buyNum.textColor = [UIColor blackColor];
+    buyNum.text = @"128份";
+    [buyView addSubview:buyNum];
+    
+    UILabel *buyLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 45, ScreenWidth/3, 20)];
+    buyLabel.text = @"已购简历数";
+    buyLabel.textColor = kDarkGrayColor;
+    buyLabel.font = FONT_15;
+    buyLabel.textAlignment = NSTextAlignmentCenter;
+    [buyView addSubview:buyLabel];
+    
+    UILabel *sellMoney = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth/3, 15, ScreenWidth/3, 30)];
+    sellMoney.font = FONT_17;
+    sellMoney.textAlignment = NSTextAlignmentCenter;
+    sellMoney.textColor = [UIColor blackColor];
+    sellMoney.text = @"7590元";
+    [buyView addSubview:sellMoney];
+    
+    UILabel *sellLabel = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth/3, 45, ScreenWidth/3, 20)];
+    sellLabel.text = @"已购简历总估值";
+    sellLabel.textColor = kDarkGrayColor;
+    sellLabel.font = FONT_15;
+    sellLabel.textAlignment = NSTextAlignmentCenter;
+    [buyView addSubview:sellLabel];
     
     
-    return blankView;
+    UILabel *earnMoney = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth*2/3, 15, ScreenWidth/3, 30)];
+    earnMoney.font = FONT_17;
+    earnMoney.textAlignment = NSTextAlignmentCenter;
+    earnMoney.textColor = [UIColor blackColor];
+    earnMoney.text = @"7590元";
+    [buyView addSubview:earnMoney];
     
+    UILabel *earnLabel = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth*2/3, 45, ScreenWidth/3, 20)];
+    earnLabel.text = @"已花费总额";
+    earnLabel.textColor = kDarkGrayColor;
+    earnLabel.font = FONT_15;
+    earnLabel.textAlignment = NSTextAlignmentCenter;
+    [buyView addSubview:earnLabel];
+    
+    UIView *line = [[UIView alloc]initWithFrame:CGRectMake(15, 79, ScreenWidth-15, 1)];
+    line.backgroundColor = kLineColor;
+    [buyView addSubview:line];
+    
+    return buyView;
 }
+
+
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 180;
+    return 111;
     
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     
-    return 10;
+    return 5;
     
 //    if (isBuyOrderList) {
 //        
@@ -88,7 +187,13 @@
 {
     if (isBuyOrderList) {
         
-        BuyOrderCell *buyCell = [[[NSBundle mainBundle]loadNibNamed:@"BuyCell" owner:self options:nil]firstObject];
+        static NSString *buyId = @"BuyOrderCell";
+        BuyOrderCell *buyCell = [tableView dequeueReusableCellWithIdentifier:buyId];
+        
+        if (buyCell == nil) {
+            buyCell = [[[NSBundle mainBundle]loadNibNamed:@"BuyCell" owner:self options:nil]firstObject];
+        }
+        
         
         
         
@@ -98,7 +203,14 @@
     }
     else
     {
-        SellOrderCell *sellCell = [[[NSBundle mainBundle] loadNibNamed:@"SellOrderCell" owner:self options:nil]firstObject];
+        
+        static NSString *sellId = @"SellOrderCell";
+        SellOrderCell *sellCell = [tableView dequeueReusableCellWithIdentifier:sellId];
+        
+        if (sellCell == nil) {
+            sellCell = [[[NSBundle mainBundle] loadNibNamed:@"SellOrderCell" owner:self options:nil]firstObject];
+
+        }
         
         
         
@@ -111,6 +223,10 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    ResumeDetailTVC *detail = [sb instantiateViewControllerWithIdentifier:@"ResumeDetailTVC"];
+    [self.navigationController pushViewController:detail animated:YES];
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
@@ -121,11 +237,13 @@
     
     if (seg.selectedSegmentIndex == 0) {
         
-        isBuyOrderList = NO;
+        isBuyOrderList = YES;
+        self.tableView.tableHeaderView = [self buyTableHeadView];
     }
     else
     {
-        isBuyOrderList = YES;
+        isBuyOrderList = NO;
+        self.tableView.tableHeaderView = [self sellTableHeadView];
         
     }
     

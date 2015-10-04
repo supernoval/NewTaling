@@ -12,10 +12,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    
-    self.orderStateLabel.clipsToBounds = YES;
-    self.orderStateLabel.layer.cornerRadius = 5.0;
-    
+    _headImageView.clipsToBounds = YES;
+    _headImageView.layer.cornerRadius = 5.0;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

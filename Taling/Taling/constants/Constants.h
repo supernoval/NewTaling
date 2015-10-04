@@ -60,12 +60,12 @@
 //浅灰色气体
 #define kLightTintColor  RGB(154, 154, 154, 1)
 
-#define kDarkTintColor  RGB(49, 46, 46, 1)
+#define kDarkGrayColor   RGB(85,85,85,1.0)
+
+#define kDarkTintColor   RGB(49, 46, 46, 1)
 
 #define CheckNil(a) (a)==nil?@"":(a)
 
-
-#define kDarkTintColor   RGB(49, 46, 46, 1)
 
 //线颜色
 #define kLineColor     RGB(240,240,240,1)

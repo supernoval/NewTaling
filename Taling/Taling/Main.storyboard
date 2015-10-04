@@ -67,8 +67,8 @@
                             <rect key="frame" x="94" y="8" width="133" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="出售订单"/>
-                                <segment title="购买订单"/>
+                                <segment title="已购简历"/>
+                                <segment title="已售简历"/>
                             </segments>
                             <connections>
                                 <action selector="switchOrderList:" destination="URP-2P-TAl" eventType="valueChanged" id="1mj-zd-nT2"/>
@@ -1148,12 +1148,15 @@
             <objects>
                 <tableViewController storyboardIdentifier="ResumeDetailTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="r8K-k9-YuC" customClass="ResumeDetailTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dFm-ge-3f2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TTS-4L-Xug">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TTS-4L-Xug" id="zL6-bz-ui7">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
