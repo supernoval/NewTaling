@@ -3,19 +3,20 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BuyOrderCell" rowHeight="385" id="bVm-N0-lRZ" customClass="BuyOrderCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BuyOrderCell" rowHeight="454" id="bVm-N0-lRZ" customClass="BuyOrderCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bVm-N0-lRZ" id="PcF-bi-G7O">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head_default_9" translatesAutoresizingMaskIntoConstraints="NO" id="g8x-cK-SRm">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="g8x-cK-SRm">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="58" id="usp-9x-A2O"/>
@@ -94,7 +95,7 @@
                             </mask>
                         </variation>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="WPm-Yk-qvH">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="female" translatesAutoresizingMaskIntoConstraints="NO" id="WPm-Yk-qvH">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="K1b-pI-J9Y"/>
@@ -124,14 +125,14 @@
                         <nil key="highlightedColor"/>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="zBR-fO-8nE"/>
                                 <exclude reference="TH7-wQ-ck8"/>
+                                <exclude reference="zBR-fO-8nE"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
-                                <include reference="zBR-fO-8nE"/>
                                 <include reference="TH7-wQ-ck8"/>
+                                <include reference="zBR-fO-8nE"/>
                             </mask>
                         </variation>
                     </label>
@@ -168,14 +169,14 @@
                         <nil key="highlightedColor"/>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="RkX-Cd-1AQ"/>
                                 <exclude reference="GkX-Vu-SCH"/>
+                                <exclude reference="RkX-Cd-1AQ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
-                                <include reference="RkX-Cd-1AQ"/>
                                 <include reference="GkX-Vu-SCH"/>
+                                <include reference="RkX-Cd-1AQ"/>
                             </mask>
                         </variation>
                     </label>
@@ -260,29 +261,29 @@
                         <exclude reference="a7H-hj-qL1"/>
                     </mask>
                     <mask key="constraints">
-                        <exclude reference="110-KS-vPi"/>
-                        <exclude reference="yvu-qH-ihx"/>
-                        <exclude reference="GPe-Ib-koA"/>
-                        <exclude reference="uMl-nb-pja"/>
-                        <exclude reference="pC4-Yl-5p7"/>
-                        <exclude reference="RQB-ef-deE"/>
-                        <exclude reference="aIu-nt-1VI"/>
-                        <exclude reference="S09-g2-TlY"/>
                         <exclude reference="9aj-L3-qms"/>
                         <exclude reference="Llp-WK-DKo"/>
-                        <exclude reference="bYq-1a-8oz"/>
-                        <exclude reference="0XQ-Vy-yeH"/>
-                        <exclude reference="NhW-29-UVd"/>
-                        <exclude reference="P1M-fu-muC"/>
-                        <exclude reference="roQ-kL-yIW"/>
-                        <exclude reference="xJ8-oq-IF1"/>
-                        <exclude reference="Coi-ts-BxY"/>
+                        <exclude reference="GPe-Ib-koA"/>
+                        <exclude reference="uMl-nb-pja"/>
+                        <exclude reference="RQB-ef-deE"/>
+                        <exclude reference="pC4-Yl-5p7"/>
                         <exclude reference="K5C-ad-4so"/>
                         <exclude reference="O1P-XF-DN3"/>
-                        <exclude reference="fgR-IV-F0v"/>
                         <exclude reference="QyC-cP-5Fe"/>
-                        <exclude reference="hm2-gp-5ng"/>
+                        <exclude reference="fgR-IV-F0v"/>
+                        <exclude reference="S09-g2-TlY"/>
+                        <exclude reference="aIu-nt-1VI"/>
                         <exclude reference="6M6-ra-4lp"/>
+                        <exclude reference="hm2-gp-5ng"/>
+                        <exclude reference="0XQ-Vy-yeH"/>
+                        <exclude reference="NhW-29-UVd"/>
+                        <exclude reference="bYq-1a-8oz"/>
+                        <exclude reference="Coi-ts-BxY"/>
+                        <exclude reference="xJ8-oq-IF1"/>
+                        <exclude reference="P1M-fu-muC"/>
+                        <exclude reference="roQ-kL-yIW"/>
+                        <exclude reference="110-KS-vPi"/>
+                        <exclude reference="yvu-qH-ihx"/>
                     </mask>
                 </variation>
                 <variation key="heightClass=regular-widthClass=compact">
@@ -299,29 +300,29 @@
                         <include reference="a7H-hj-qL1"/>
                     </mask>
                     <mask key="constraints">
-                        <include reference="110-KS-vPi"/>
-                        <include reference="yvu-qH-ihx"/>
-                        <include reference="GPe-Ib-koA"/>
-                        <include reference="uMl-nb-pja"/>
-                        <include reference="pC4-Yl-5p7"/>
-                        <include reference="RQB-ef-deE"/>
-                        <include reference="aIu-nt-1VI"/>
-                        <include reference="S09-g2-TlY"/>
                         <include reference="9aj-L3-qms"/>
                         <include reference="Llp-WK-DKo"/>
-                        <include reference="bYq-1a-8oz"/>
-                        <include reference="0XQ-Vy-yeH"/>
-                        <include reference="NhW-29-UVd"/>
-                        <include reference="P1M-fu-muC"/>
-                        <include reference="roQ-kL-yIW"/>
-                        <include reference="xJ8-oq-IF1"/>
-                        <include reference="Coi-ts-BxY"/>
+                        <include reference="GPe-Ib-koA"/>
+                        <include reference="uMl-nb-pja"/>
+                        <include reference="RQB-ef-deE"/>
+                        <include reference="pC4-Yl-5p7"/>
                         <include reference="K5C-ad-4so"/>
                         <include reference="O1P-XF-DN3"/>
-                        <include reference="fgR-IV-F0v"/>
                         <include reference="QyC-cP-5Fe"/>
-                        <include reference="hm2-gp-5ng"/>
+                        <include reference="fgR-IV-F0v"/>
+                        <include reference="S09-g2-TlY"/>
+                        <include reference="aIu-nt-1VI"/>
                         <include reference="6M6-ra-4lp"/>
+                        <include reference="hm2-gp-5ng"/>
+                        <include reference="0XQ-Vy-yeH"/>
+                        <include reference="NhW-29-UVd"/>
+                        <include reference="bYq-1a-8oz"/>
+                        <include reference="Coi-ts-BxY"/>
+                        <include reference="xJ8-oq-IF1"/>
+                        <include reference="P1M-fu-muC"/>
+                        <include reference="roQ-kL-yIW"/>
+                        <include reference="110-KS-vPi"/>
+                        <include reference="yvu-qH-ihx"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
@@ -336,11 +337,11 @@
                 <outlet property="sexImageView" destination="WPm-Yk-qvH" id="WGO-ev-stK"/>
                 <outlet property="timeLabel" destination="a7H-hj-qL1" id="dE9-vC-GcX"/>
             </connections>
-            <point key="canvasLocation" x="347" y="260.5"/>
+            <point key="canvasLocation" x="347" y="294.5"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="head_default_9" width="60" height="60"/>
-        <image name="test" width="15" height="15"/>
+        <image name="female" width="12" height="12"/>
+        <image name="test" width="512" height="512"/>
     </resources>
 </document>

@@ -14,15 +14,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" tag="100" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09b-Ol-jBi">
+                    <button opaque="NO" tag="100" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09b-Ol-jBi">
                         <rect key="frame" x="0.0" y="0.0" width="107" height="44"/>
-                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="107" id="xsU-Uq-qox"/>
                         </constraints>
                         <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
-                        <state key="normal" title="12" image="test"/>
+                        <state key="normal" title="12" image="comment">
+                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="xsU-Uq-qox"/>
@@ -34,15 +36,17 @@
                             </mask>
                         </variation>
                     </button>
-                    <button opaque="NO" tag="102" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MV-Fi-ywZ">
+                    <button opaque="NO" tag="102" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MV-Fi-ywZ">
                         <rect key="frame" x="216" y="0.0" width="107" height="44"/>
-                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="107" id="QcZ-k1-7Rz"/>
                         </constraints>
                         <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
-                        <state key="normal" title="12" image="test"/>
+                        <state key="normal" title="12" image="brought">
+                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="QcZ-k1-7Rz"/>
@@ -54,15 +58,17 @@
                             </mask>
                         </variation>
                     </button>
-                    <button opaque="NO" tag="101" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nY0-wn-20p">
+                    <button opaque="NO" tag="101" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nY0-wn-20p">
                         <rect key="frame" x="107" y="0.0" width="109" height="44"/>
-                        <color key="backgroundColor" red="0.25490196079999999" green="0.68235294120000001" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="109" id="fOi-Kr-x5f"/>
                         </constraints>
                         <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
-                        <state key="normal" title="12" image="test"/>
+                        <state key="normal" title="12" image="like">
+                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="fOi-Kr-x5f"/>
@@ -127,6 +133,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="test" width="15" height="15"/>
+        <image name="brought" width="22" height="18"/>
+        <image name="comment" width="18" height="17"/>
+        <image name="like" width="20" height="20"/>
     </resources>
 </document>

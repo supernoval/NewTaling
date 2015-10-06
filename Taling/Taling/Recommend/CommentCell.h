@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface CommentCell : UITableViewCell
+
+
 @property (strong, nonatomic) IBOutlet UIImageView *headImageView;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;

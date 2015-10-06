@@ -3,19 +3,20 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sellCell" rowHeight="385" id="Wmt-xd-3Y8" customClass="SellOrderCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sellCell" rowHeight="449" id="Wmt-xd-3Y8" customClass="SellOrderCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wmt-xd-3Y8" id="ugE-Io-dVS">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head_default_9" translatesAutoresizingMaskIntoConstraints="NO" id="tgx-Ws-Kgl">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="tgx-Ws-Kgl">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="58" id="YYg-AL-74P"/>
@@ -94,7 +95,7 @@
                             </mask>
                         </variation>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="hTM-Q5-Z14">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="female" translatesAutoresizingMaskIntoConstraints="NO" id="hTM-Q5-Z14">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="6PF-rB-1L8"/>
@@ -260,29 +261,29 @@
                         <exclude reference="pTI-Vm-eoL"/>
                     </mask>
                     <mask key="constraints">
-                        <exclude reference="c1i-cZ-dJy"/>
-                        <exclude reference="puq-ex-zjb"/>
                         <exclude reference="iZj-nu-C1O"/>
                         <exclude reference="wnF-K3-Bpt"/>
-                        <exclude reference="VLj-jo-Gdw"/>
-                        <exclude reference="omO-R3-qIv"/>
-                        <exclude reference="Dz4-ob-3fe"/>
-                        <exclude reference="Zge-Ik-KZX"/>
-                        <exclude reference="0CM-AC-Ox9"/>
-                        <exclude reference="Tlr-JK-dq1"/>
                         <exclude reference="1mK-ZI-VXP"/>
                         <exclude reference="SGW-J4-CN5"/>
                         <exclude reference="prf-fe-gnu"/>
-                        <exclude reference="u6u-7h-AcL"/>
-                        <exclude reference="vI1-2o-TaB"/>
                         <exclude reference="Wrx-wV-ZMu"/>
                         <exclude reference="sh9-cQ-bEi"/>
+                        <exclude reference="Dz4-ob-3fe"/>
+                        <exclude reference="Zge-Ik-KZX"/>
+                        <exclude reference="0I6-DX-rVX"/>
+                        <exclude reference="j96-LM-Wcm"/>
+                        <exclude reference="0CM-AC-Ox9"/>
+                        <exclude reference="Tlr-JK-dq1"/>
+                        <exclude reference="VLj-jo-Gdw"/>
+                        <exclude reference="omO-R3-qIv"/>
                         <exclude reference="EhG-T7-cZA"/>
                         <exclude reference="hPH-5D-Ql9"/>
                         <exclude reference="kSc-fY-NQy"/>
                         <exclude reference="yq2-BN-qqB"/>
-                        <exclude reference="0I6-DX-rVX"/>
-                        <exclude reference="j96-LM-Wcm"/>
+                        <exclude reference="u6u-7h-AcL"/>
+                        <exclude reference="vI1-2o-TaB"/>
+                        <exclude reference="c1i-cZ-dJy"/>
+                        <exclude reference="puq-ex-zjb"/>
                     </mask>
                 </variation>
                 <variation key="heightClass=regular-widthClass=compact">
@@ -299,29 +300,29 @@
                         <include reference="pTI-Vm-eoL"/>
                     </mask>
                     <mask key="constraints">
-                        <include reference="c1i-cZ-dJy"/>
-                        <include reference="puq-ex-zjb"/>
                         <include reference="iZj-nu-C1O"/>
                         <include reference="wnF-K3-Bpt"/>
-                        <include reference="VLj-jo-Gdw"/>
-                        <include reference="omO-R3-qIv"/>
-                        <include reference="Dz4-ob-3fe"/>
-                        <include reference="Zge-Ik-KZX"/>
-                        <include reference="0CM-AC-Ox9"/>
-                        <include reference="Tlr-JK-dq1"/>
                         <include reference="1mK-ZI-VXP"/>
                         <include reference="SGW-J4-CN5"/>
                         <include reference="prf-fe-gnu"/>
-                        <include reference="u6u-7h-AcL"/>
-                        <include reference="vI1-2o-TaB"/>
                         <include reference="Wrx-wV-ZMu"/>
                         <include reference="sh9-cQ-bEi"/>
+                        <include reference="Dz4-ob-3fe"/>
+                        <include reference="Zge-Ik-KZX"/>
+                        <include reference="0I6-DX-rVX"/>
+                        <include reference="j96-LM-Wcm"/>
+                        <include reference="0CM-AC-Ox9"/>
+                        <include reference="Tlr-JK-dq1"/>
+                        <include reference="VLj-jo-Gdw"/>
+                        <include reference="omO-R3-qIv"/>
                         <include reference="EhG-T7-cZA"/>
                         <include reference="hPH-5D-Ql9"/>
                         <include reference="kSc-fY-NQy"/>
                         <include reference="yq2-BN-qqB"/>
-                        <include reference="0I6-DX-rVX"/>
-                        <include reference="j96-LM-Wcm"/>
+                        <include reference="u6u-7h-AcL"/>
+                        <include reference="vI1-2o-TaB"/>
+                        <include reference="c1i-cZ-dJy"/>
+                        <include reference="puq-ex-zjb"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
@@ -336,11 +337,11 @@
                 <outlet property="sexImageView" destination="hTM-Q5-Z14" id="xqf-Ng-H5K"/>
                 <outlet property="timeLabel" destination="RqE-Kx-jgM" id="aMj-y4-7ce"/>
             </connections>
-            <point key="canvasLocation" x="347" y="260.5"/>
+            <point key="canvasLocation" x="347" y="292"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="head_default_9" width="60" height="60"/>
-        <image name="test" width="15" height="15"/>
+        <image name="female" width="12" height="12"/>
+        <image name="test" width="512" height="512"/>
     </resources>
 </document>

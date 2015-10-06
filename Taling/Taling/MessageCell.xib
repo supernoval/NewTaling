@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="64" id="pHB-O9-Jta" customClass="MessageCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pHB-O9-Jta" id="l9u-5v-2fo">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message buy" translatesAutoresizingMaskIntoConstraints="NO" id="45S-QZ-xDm">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="FFh-Ew-c9f">
+                                <variation key="heightClass=regular-widthClass=compact" constant="48"/>
+                            </constraint>
+                            <constraint firstAttribute="width" constant="35" id="Y4H-C5-oO5">
+                                <variation key="heightClass=regular-widthClass=compact" constant="48"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="FFh-Ew-c9f"/>
+                                <exclude reference="Y4H-C5-oO5"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="FFh-Ew-c9f"/>
+                                <include reference="Y4H-C5-oO5"/>
+                            </mask>
+                        </variation>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="购买" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Otm-em-Tps">
+                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="168" id="gNb-cl-Ygw"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="gNb-cl-Ygw"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="gNb-cl-Ygw"/>
+                            </mask>
+                        </variation>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="elq-oA-Y3G">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="L54-Ec-iWg"/>
+                            <constraint firstAttribute="width" constant="12" id="shq-fF-SJG"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="L54-Ec-iWg"/>
+                                <exclude reference="shq-fF-SJG"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="L54-Ec-iWg"/>
+                                <include reference="shq-fF-SJG"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Otm-em-Tps" secondAttribute="bottom" id="6DQ-RG-kXk"/>
+                    <constraint firstItem="Otm-em-Tps" firstAttribute="top" secondItem="l9u-5v-2fo" secondAttribute="top" id="6HL-WS-MXy"/>
+                    <constraint firstItem="45S-QZ-xDm" firstAttribute="leading" secondItem="l9u-5v-2fo" secondAttribute="leading" constant="15" id="FKm-aI-BaZ"/>
+                    <constraint firstItem="Otm-em-Tps" firstAttribute="leading" secondItem="45S-QZ-xDm" secondAttribute="trailing" constant="8" id="Y25-j1-j6j"/>
+                    <constraint firstItem="45S-QZ-xDm" firstAttribute="top" secondItem="l9u-5v-2fo" secondAttribute="top" constant="8" id="cq5-sT-ur7"/>
+                    <constraint firstItem="elq-oA-Y3G" firstAttribute="top" secondItem="l9u-5v-2fo" secondAttribute="top" constant="26" id="jEG-L6-SZb"/>
+                    <constraint firstAttribute="trailing" secondItem="elq-oA-Y3G" secondAttribute="trailing" id="k7z-mL-5Jk"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="subviews">
+                        <exclude reference="45S-QZ-xDm"/>
+                        <exclude reference="Otm-em-Tps"/>
+                        <exclude reference="elq-oA-Y3G"/>
+                    </mask>
+                    <mask key="constraints">
+                        <exclude reference="FKm-aI-BaZ"/>
+                        <exclude reference="cq5-sT-ur7"/>
+                        <exclude reference="6DQ-RG-kXk"/>
+                        <exclude reference="6HL-WS-MXy"/>
+                        <exclude reference="Y25-j1-j6j"/>
+                        <exclude reference="jEG-L6-SZb"/>
+                        <exclude reference="k7z-mL-5Jk"/>
+                    </mask>
+                </variation>
+                <variation key="heightClass=regular-widthClass=compact">
+                    <mask key="subviews">
+                        <include reference="45S-QZ-xDm"/>
+                        <include reference="Otm-em-Tps"/>
+                        <include reference="elq-oA-Y3G"/>
+                    </mask>
+                    <mask key="constraints">
+                        <include reference="FKm-aI-BaZ"/>
+                        <include reference="cq5-sT-ur7"/>
+                        <include reference="6DQ-RG-kXk"/>
+                        <include reference="6HL-WS-MXy"/>
+                        <include reference="Y25-j1-j6j"/>
+                        <include reference="jEG-L6-SZb"/>
+                        <include reference="k7z-mL-5Jk"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dotView" destination="elq-oA-Y3G" id="XTV-an-Mod"/>
+                <outlet property="iconImageView" destination="45S-QZ-xDm" id="iBC-PN-LjY"/>
+                <outlet property="titleLabel" destination="Otm-em-Tps" id="tqX-Cf-BmV"/>
+            </connections>
+            <point key="canvasLocation" x="308" y="140"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="message buy" width="48" height="48"/>
+    </resources>
+</document>

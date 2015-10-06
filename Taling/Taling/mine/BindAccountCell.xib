@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BindAccountCell" rowHeight="115" id="3XE-zt-0yO">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3XE-zt-0yO" id="pvA-dC-cEa">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="51job" translatesAutoresizingMaskIntoConstraints="NO" id="eNY-p5-CMM">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="58" id="AOx-jC-atO"/>
+                            <constraint firstAttribute="height" constant="58" id="nac-8d-lGV"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="AOx-jC-atO"/>
+                                <exclude reference="nac-8d-lGV"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="AOx-jC-atO"/>
+                                <include reference="nac-8d-lGV"/>
+                            </mask>
+                        </variation>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="51Job" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqo-yR-l04">
+                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="29" id="9EC-ON-ylC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9EC-ON-ylC"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="9EC-ON-ylC"/>
+                            </mask>
+                        </variation>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这是一个神奇的网站" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIf-eW-sqg">
+                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="29" id="qU8-gh-pxZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="qU8-gh-pxZ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="qU8-gh-pxZ"/>
+                            </mask>
+                        </variation>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="vIf-eW-sqg" secondAttribute="trailing" constant="8" id="5Pg-Xe-rcY"/>
+                    <constraint firstItem="vIf-eW-sqg" firstAttribute="leading" secondItem="eNY-p5-CMM" secondAttribute="trailing" constant="8" id="Cds-jh-6ZJ"/>
+                    <constraint firstItem="vIf-eW-sqg" firstAttribute="top" secondItem="oqo-yR-l04" secondAttribute="bottom" id="Cwv-G1-9rp"/>
+                    <constraint firstItem="oqo-yR-l04" firstAttribute="leading" secondItem="eNY-p5-CMM" secondAttribute="trailing" constant="8" id="Hi6-IC-hjT"/>
+                    <constraint firstItem="eNY-p5-CMM" firstAttribute="top" secondItem="pvA-dC-cEa" secondAttribute="top" constant="8" id="IJW-1Z-Nj3"/>
+                    <constraint firstItem="eNY-p5-CMM" firstAttribute="leading" secondItem="pvA-dC-cEa" secondAttribute="leading" constant="15" id="ITO-q1-F6m"/>
+                    <constraint firstAttribute="trailing" secondItem="oqo-yR-l04" secondAttribute="trailing" constant="8" id="P9w-G3-NGd"/>
+                    <constraint firstItem="oqo-yR-l04" firstAttribute="top" secondItem="pvA-dC-cEa" secondAttribute="top" constant="8" id="Q3M-CH-rOE"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="subviews">
+                        <exclude reference="eNY-p5-CMM"/>
+                        <exclude reference="oqo-yR-l04"/>
+                        <exclude reference="vIf-eW-sqg"/>
+                    </mask>
+                    <mask key="constraints">
+                        <exclude reference="Hi6-IC-hjT"/>
+                        <exclude reference="P9w-G3-NGd"/>
+                        <exclude reference="Q3M-CH-rOE"/>
+                        <exclude reference="5Pg-Xe-rcY"/>
+                        <exclude reference="Cds-jh-6ZJ"/>
+                        <exclude reference="Cwv-G1-9rp"/>
+                        <exclude reference="IJW-1Z-Nj3"/>
+                        <exclude reference="ITO-q1-F6m"/>
+                    </mask>
+                </variation>
+                <variation key="heightClass=regular-widthClass=compact">
+                    <mask key="subviews">
+                        <include reference="eNY-p5-CMM"/>
+                        <include reference="oqo-yR-l04"/>
+                        <include reference="vIf-eW-sqg"/>
+                    </mask>
+                    <mask key="constraints">
+                        <include reference="Hi6-IC-hjT"/>
+                        <include reference="P9w-G3-NGd"/>
+                        <include reference="Q3M-CH-rOE"/>
+                        <include reference="5Pg-Xe-rcY"/>
+                        <include reference="Cds-jh-6ZJ"/>
+                        <include reference="Cwv-G1-9rp"/>
+                        <include reference="IJW-1Z-Nj3"/>
+                        <include reference="ITO-q1-F6m"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="245" y="296"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="51job" width="58" height="58"/>
+    </resources>
+</document>

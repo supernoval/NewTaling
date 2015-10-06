@@ -34,7 +34,7 @@
     self.title = @"注册";
     
     _registButton.clipsToBounds = YES;
-    _registButton.layer.cornerRadius = 20.0;
+    _registButton.layer.cornerRadius = 5.0;
     
 
     

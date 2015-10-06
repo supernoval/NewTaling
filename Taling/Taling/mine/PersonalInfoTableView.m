@@ -8,7 +8,9 @@
 
 #import "PersonalInfoTableView.h"
 #import "PickAddressViewController.h"
-#import "ChangeNickNameVC.h"
+#import "ChangeNameTVC.h"
+#import "ChangeCompanyTVC.h"
+#import "ChangeProgessionTVC.h"
 
 @interface PersonalInfoTableView ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
 
@@ -18,26 +20,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
     self.title = @"个人信息";
+    _headImageView.clipsToBounds = YES;
+    _headImageView.layer.cornerRadius = 5.0;
     
     
     
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 15;
+}
+
 -(void)viewWillAppear:(BOOL)animated
 {
-    _nickName.text = [[NSUserDefaults standardUserDefaults] objectForKey:knickname];
+    _nameLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:knickname];
     
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    if (indexPath.section == 0) {
-        
-        switch (indexPath.row) {
+      switch (indexPath.row){
             case 0:// 修改头像
             {
                 UIActionSheet *_pickActionSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil, nil];
@@ -60,7 +65,7 @@
                 break;
             case 1:
             {
-                ChangeNickNameVC *changeNickName = [self.storyboard instantiateViewControllerWithIdentifier:@"ChangeNickNameVC"];
+                ChangeNameTVC *changeNickName = [self.storyboard instantiateViewControllerWithIdentifier:@"ChangeNameTVC"];
 //                [changeNickName setblock:^(NSString *nick) {
 //                   
 //                    if (nick.length > 0) {
@@ -79,12 +84,15 @@
 //                PickAddressViewController *_pickAddress = [[PickAddressViewController alloc]init];
 //                [self.navigationController pushViewController:_pickAddress animated:YES];
               
-                
+                ChangeCompanyTVC *company = [self.storyboard instantiateViewControllerWithIdentifier:@"ChangeCompanyTVC"];
+                [self.navigationController pushViewController:company animated:YES];
 
             }
                 break;
             case 3:
             {
+                ChangeProgessionTVC *pro = [self.storyboard instantiateViewControllerWithIdentifier:@"ChangeProgessionTVC"];
+                [self.navigationController pushViewController:pro animated:YES];
                 
             }
                 break;
@@ -94,7 +102,7 @@
         }
         
         
-    }
+    
   
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -160,14 +168,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

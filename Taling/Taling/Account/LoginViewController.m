@@ -27,7 +27,7 @@
     self.title = @"登录";
     
     _loginButton.clipsToBounds = YES;
-    _loginButton.layer.cornerRadius = 20;
+    _loginButton.layer.cornerRadius = 5;
     
     
     
