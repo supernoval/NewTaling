@@ -8,6 +8,7 @@
 
 #import "CommentMessageTVC.h"
 #import "CommentMessageCell.h"
+#import "StringHeight.h"
 
 @interface CommentMessageTVC ()
 
@@ -42,7 +43,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     //209-21+评论内容高度
     
-    return 209;
+    return 188+[StringHeight heightWithText:@"这个小伙子非常不错，活好，懂事听话，态度积极，关键是活好，活好就是好，活好可以找到好工作" font:FONT_14 constrainedToWidth:ScreenWidth - 30];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -50,9 +51,10 @@
     static NSString *cellId = @"CommentMessageCell";
     CommentMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (cell == nil) {
-        NSLog(@"***:%f",cell.frame.size.width);
-        cell = [[NSBundle mainBundle]loadNibNamed:@"CommentMessageCell" owner:self options:nil][0];
+        cell = [[NSBundle mainBundle]loadNibNamed:@"CommentMeaageCell" owner:self options:nil][0];
     }
+    
+    cell.contentLabel.text = @"这个小伙子非常不错，活好，懂事听话，态度积极，关键是活好，活好就是好，活好可以找到好工作";
     //姓名的宽度
     //    cell.nameWidth.constant = 55;
     return cell;

@@ -7,11 +7,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommentMessageCell" rowHeight="209" id="rKE-M3-g8x" customClass="CommentMessageCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommentMessageCell" rowHeight="374" id="rKE-M3-g8x" customClass="CommentMessageCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rKE-M3-g8x" id="NIZ-7h-Wva">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="208"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="KFV-MP-LMs">
@@ -205,18 +205,18 @@
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="V3v-0y-tzX"/>
-                                <exclude reference="78j-wG-ZDu"/>
-                                <exclude reference="jWT-UZ-MUI"/>
-                                <exclude reference="7xY-Pw-Bgx"/>
-                                <exclude reference="eH0-p3-gSL"/>
                                 <exclude reference="AlD-rh-YEa"/>
                                 <exclude reference="cLe-Wu-Ink"/>
                                 <exclude reference="gT4-yW-j9N"/>
+                                <exclude reference="7xY-Pw-Bgx"/>
+                                <exclude reference="eH0-p3-gSL"/>
                                 <exclude reference="QpF-5a-mF8"/>
                                 <exclude reference="iDC-fL-u8G"/>
                                 <exclude reference="kYo-pr-5sx"/>
                                 <exclude reference="YYc-6f-xZe"/>
                                 <exclude reference="rCb-7M-sSq"/>
+                                <exclude reference="78j-wG-ZDu"/>
+                                <exclude reference="jWT-UZ-MUI"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -229,18 +229,18 @@
                             </mask>
                             <mask key="constraints">
                                 <include reference="V3v-0y-tzX"/>
-                                <include reference="78j-wG-ZDu"/>
-                                <include reference="jWT-UZ-MUI"/>
-                                <include reference="7xY-Pw-Bgx"/>
-                                <include reference="eH0-p3-gSL"/>
                                 <include reference="AlD-rh-YEa"/>
                                 <include reference="cLe-Wu-Ink"/>
                                 <include reference="gT4-yW-j9N"/>
+                                <include reference="7xY-Pw-Bgx"/>
+                                <include reference="eH0-p3-gSL"/>
                                 <include reference="QpF-5a-mF8"/>
                                 <include reference="iDC-fL-u8G"/>
                                 <include reference="kYo-pr-5sx"/>
                                 <include reference="YYc-6f-xZe"/>
                                 <include reference="rCb-7M-sSq"/>
+                                <include reference="78j-wG-ZDu"/>
+                                <include reference="jWT-UZ-MUI"/>
                             </mask>
                         </variation>
                     </view>
@@ -271,8 +271,6 @@
                         <exclude reference="hgc-DJ-dQp"/>
                     </mask>
                     <mask key="constraints">
-                        <exclude reference="85f-uS-NiE"/>
-                        <exclude reference="tAF-Po-kjj"/>
                         <exclude reference="f14-ob-QaK"/>
                         <exclude reference="gDZ-Vb-5l4"/>
                         <exclude reference="yUP-o8-PuZ"/>
@@ -282,6 +280,8 @@
                         <exclude reference="7Zt-we-B2y"/>
                         <exclude reference="SVA-70-7LW"/>
                         <exclude reference="WrG-Yx-csW"/>
+                        <exclude reference="85f-uS-NiE"/>
+                        <exclude reference="tAF-Po-kjj"/>
                         <exclude reference="1oH-lu-YeP"/>
                         <exclude reference="CB7-uD-vpq"/>
                         <exclude reference="aCj-6V-x4A"/>
@@ -297,8 +297,6 @@
                         <include reference="hgc-DJ-dQp"/>
                     </mask>
                     <mask key="constraints">
-                        <include reference="85f-uS-NiE"/>
-                        <include reference="tAF-Po-kjj"/>
                         <include reference="f14-ob-QaK"/>
                         <include reference="gDZ-Vb-5l4"/>
                         <include reference="yUP-o8-PuZ"/>
@@ -308,6 +306,8 @@
                         <include reference="7Zt-we-B2y"/>
                         <include reference="SVA-70-7LW"/>
                         <include reference="WrG-Yx-csW"/>
+                        <include reference="85f-uS-NiE"/>
+                        <include reference="tAF-Po-kjj"/>
                         <include reference="1oH-lu-YeP"/>
                         <include reference="CB7-uD-vpq"/>
                         <include reference="aCj-6V-x4A"/>
@@ -328,7 +328,7 @@
                 <outlet property="sexImageView" destination="AbW-lw-2ME" id="Kbf-Wb-yn7"/>
                 <outlet property="timeLabel" destination="sfh-Ti-cA0" id="8In-lA-lov"/>
             </connections>
-            <point key="canvasLocation" x="62" y="77.5"/>
+            <point key="canvasLocation" x="76" y="-37.5"/>
         </tableViewCell>
     </objects>
     <resources>

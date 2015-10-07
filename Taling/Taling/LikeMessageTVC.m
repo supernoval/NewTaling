@@ -49,7 +49,7 @@
     static NSString *cellId = @"CommentMessageCell";
     CommentMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (cell == nil) {
-        cell = [[NSBundle mainBundle]loadNibNamed:@"CommentMessageCell" owner:self options:nil][0];
+        cell = [[NSBundle mainBundle]loadNibNamed:@"CommentMeaageCell" owner:self options:nil][0];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.contentLabel.text = @"点赞了您的一份简历";
