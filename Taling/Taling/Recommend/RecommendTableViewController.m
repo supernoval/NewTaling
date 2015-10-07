@@ -212,6 +212,8 @@
     
     ResumeDetailTVC *resumeDetail = [sb instantiateViewControllerWithIdentifier:@"ResumeDetailTVC"];
     
+    resumeDetail.type = 1;
+    
     [self.navigationController pushViewController:resumeDetail animated:YES];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

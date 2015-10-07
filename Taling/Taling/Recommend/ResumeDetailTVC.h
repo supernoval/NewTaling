@@ -10,4 +10,6 @@
 
 @interface ResumeDetailTVC : BaseTableViewController
 
+@property (nonatomic) NSInteger type;//1 购买 2 评价
+
 @end

@@ -22,6 +22,7 @@
 @end
 
 @implementation ResumeDetailTVC
+@synthesize type;//1 购买 2 评价
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -96,7 +97,13 @@
     
     buyBtn.titleLabel.font = FONT_16;
     
-    [buyBtn setTitle:@"购买" forState:UIControlStateNormal];
+    if (self.type == 1) {
+        [buyBtn setTitle:@"购买" forState:UIControlStateNormal];
+    }else if (self.type == 2){
+        [buyBtn setTitle:@"评价" forState:UIControlStateNormal];
+    }
+    
+    
     
     [buyBtn addTarget:self action:@selector(buyTheResume) forControlEvents:UIControlEventTouchUpInside];
     
@@ -106,9 +113,15 @@
     
 }
 
-#pragma mark- 购买简历
+#pragma mark- 购买、评价简历
 
 - (void)buyTheResume{
+    
+    if (self.type == 1) {
+        //购买
+    }else if (self.type == 2){
+        //评价
+    }
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
