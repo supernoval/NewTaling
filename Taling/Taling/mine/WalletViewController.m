@@ -7,6 +7,7 @@
 //
 
 #import "WalletViewController.h"
+#import "BuyAndCashTVC.h"
 
 @interface WalletViewController ()
 
@@ -35,9 +36,17 @@
 
 #pragma mark-充值
 - (IBAction)rechargeAction:(UIButton *)sender {
+    
+    BuyAndCashTVC *buy = [self.storyboard instantiateViewControllerWithIdentifier:@"BuyAndCashTVC"];
+    buy.viewType = 1;
+    [self.navigationController pushViewController:buy animated:YES];
 }
 
 #pragma mark-提现
 - (IBAction)cashAction:(UIButton *)sender {
+    
+    BuyAndCashTVC *buy = [self.storyboard instantiateViewControllerWithIdentifier:@"BuyAndCashTVC"];
+    buy.viewType = 2;
+    [self.navigationController pushViewController:buy animated:YES];
 }
 @end

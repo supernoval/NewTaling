@@ -29,7 +29,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (UIView *)uploadTableHeadView{
+- (UIView *)sellTableHeadView{
     
     UIView *buyView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 80)];
     buyView.backgroundColor = kContentColor;
@@ -42,7 +42,7 @@
     [buyView addSubview:buyNum];
     
     UILabel *buyLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 45, ScreenWidth/3, 20)];
-    buyLabel.text = @"已上传简历数";
+    buyLabel.text = @"已售简历数";
     buyLabel.textColor = kDarkGrayColor;
     buyLabel.font = FONT_15;
     buyLabel.textAlignment = NSTextAlignmentCenter;
@@ -56,7 +56,7 @@
     [buyView addSubview:sellMoney];
     
     UILabel *sellLabel = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth/3, 45, ScreenWidth/3, 20)];
-    sellLabel.text = @"已上传简历总估值";
+    sellLabel.text = @"已售简历总估值";
     sellLabel.textColor = kDarkGrayColor;
     sellLabel.font = FONT_15;
     sellLabel.textAlignment = NSTextAlignmentCenter;
@@ -231,7 +231,7 @@
     else
     {
         _isBuyOrderList = NO;
-        self.tableView.tableHeaderView = [self uploadTableHeadView];
+        self.tableView.tableHeaderView = [self sellTableHeadView];
         
     }
     
