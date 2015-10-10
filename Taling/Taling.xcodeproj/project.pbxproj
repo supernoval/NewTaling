@@ -31,7 +31,6 @@
 		13D5F0FE1BA05198001A8AFF /* BuyOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D5F0FD1BA05198001A8AFF /* BuyOrderCell.m */; };
 		1506DF4C1B89B36D007D1696 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF4B1B89B36D007D1696 /* main.m */; };
 		1506DF4F1B89B36D007D1696 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF4E1B89B36D007D1696 /* AppDelegate.m */; };
-		1506DF521B89B36D007D1696 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF511B89B36D007D1696 /* ViewController.m */; };
 		1506DF571B89B36D007D1696 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1506DF561B89B36D007D1696 /* Images.xcassets */; };
 		1506DF5A1B89B36D007D1696 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1506DF581B89B36D007D1696 /* LaunchScreen.xib */; };
 		1506DF661B89B36D007D1696 /* TalingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF651B89B36D007D1696 /* TalingTests.m */; };
@@ -225,8 +224,6 @@
 		1506DF4B1B89B36D007D1696 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1506DF4D1B89B36D007D1696 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1506DF4E1B89B36D007D1696 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1506DF501B89B36D007D1696 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1506DF511B89B36D007D1696 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1506DF561B89B36D007D1696 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1506DF591B89B36D007D1696 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1506DF5F1B89B36D007D1696 /* TalingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TalingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -745,8 +742,6 @@
 				1506DF711B89B40C007D1696 /* constants */,
 				1506DF4D1B89B36D007D1696 /* AppDelegate.h */,
 				1506DF4E1B89B36D007D1696 /* AppDelegate.m */,
-				1506DF501B89B36D007D1696 /* ViewController.h */,
-				1506DF511B89B36D007D1696 /* ViewController.m */,
 				1506DF7A1B89B457007D1696 /* Main.storyboard */,
 				1506DF561B89B36D007D1696 /* Images.xcassets */,
 				1506DF581B89B36D007D1696 /* LaunchScreen.xib */,
@@ -1491,7 +1486,6 @@
 				B3FB2A4F1BC298A0003ACC5D /* SettingTVC.m in Sources */,
 				13AA5EB01B95CCEF00AB477E /* AFURLResponseSerialization.m in Sources */,
 				1506E0A61B89B582007D1696 /* UIImage+WebP.m in Sources */,
-				1506DF521B89B36D007D1696 /* ViewController.m in Sources */,
 				1506E0401B89B53C007D1696 /* NSArray+JSONModel.m in Sources */,
 				13AA5EB11B95CCEF00AB477E /* AFURLSessionManager.m in Sources */,
 				1506E0201B89B521007D1696 /* UIScrollView+MJRefresh.m in Sources */,

@@ -27,7 +27,7 @@
     self.title = @"找回密码";
     
     _summitButton.clipsToBounds = YES;
-    _summitButton.layer.cornerRadius = 20.0;
+    _summitButton.layer.cornerRadius = 5.0;
     
     
 }
