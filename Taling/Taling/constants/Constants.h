@@ -10,14 +10,21 @@
 
 
 
-
+//环信
+#define kEaseMobAppKey                @"15900785196#taling"
+#define kEaseMobPushCertNameDEV       @"istore_dev"
+#define kEaseMobPushCertNameProduct   @"istore_product"
 
 //高德地图
-#define kGaodeMapKey     @"90587cf4e3bc6f8ea43cae1fe5ba2da5"
+#define kGaodeMapKey                  @"90587cf4e3bc6f8ea43cae1fe5ba2da5"
 
 //短信验证
-#define  kShareSDKSMSAppKey  @"9d573f7c6b9e"
-#define  kShareSDKSMSAppSecret  @"2346f2597896eed5d144b3cab6b9d7f6"
+#define  kShareSDKSMSAppKey           @"9d573f7c6b9e"
+#define  kShareSDKSMSAppSecret        @"2346f2597896eed5d144b3cab6b9d7f6"
+
+
+
+
 
 /*宽高*/
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width

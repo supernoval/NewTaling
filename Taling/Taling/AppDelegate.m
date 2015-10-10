@@ -12,6 +12,7 @@
 #import "ConstantsHeaders.h"
 #import "LoginViewController.h"
 #import <MAMapKit/MAMapKit.h>
+#import "EaseMob.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +24,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    
     //设置Navigationbar  背景颜色和字体颜色
     //设置naigationbar 背景颜色和字体颜色
     [[UINavigationBar appearance] setBarTintColor:NavigationBarColor];
@@ -30,6 +32,12 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:20],NSForegroundColorAttributeName:[UIColor whiteColor]}];
 
     [[UITabBar appearance] setTintColor:NavigationBarColor];
+    
+    
+#warning 打包注意修改 certname
+    //注册环信
+    [[EaseMob sharedInstance] registerSDKWithAppKey:kEaseMobAppKey apnsCertName:kEaseMobPushCertNameDEV];
+    [[EaseMob sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
     
     
     
@@ -95,12 +103,18 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+   
+    
+    [[EaseMob sharedInstance] applicationDidEnterBackground:application];
+
+    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    
+    
+    [[EaseMob sharedInstance] applicationWillEnterForeground:application];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -108,7 +122,8 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+  
+     [[EaseMob sharedInstance] applicationWillTerminate:application];
 }
 
 @end
