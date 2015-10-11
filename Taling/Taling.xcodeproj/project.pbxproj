@@ -24,7 +24,6 @@
 		13AA5EB01B95CCEF00AB477E /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AA5EA61B95CCEF00AB477E /* AFURLResponseSerialization.m */; };
 		13AA5EB11B95CCEF00AB477E /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AA5EA81B95CCEF00AB477E /* AFURLSessionManager.m */; };
 		13B6CACD1B9C1928003EC8A9 /* OrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B6CACC1B9C1928003EC8A9 /* OrderListViewController.m */; };
-		13C8AD601BC94587009F5B4B /* libEaseMobClientSDKLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13C8AD5D1BC94587009F5B4B /* libEaseMobClientSDKLite.a */; settings = {ASSET_TAGS = (); }; };
 		13C8AD611BC94587009F5B4B /* EaseMob.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 13C8AD5F1BC94587009F5B4B /* EaseMob.bundle */; settings = {ASSET_TAGS = (); }; };
 		13C8AD6F1BC947C3009F5B4B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 13C8AD6E1BC947C3009F5B4B /* libsqlite3.tbd */; };
 		13C8AD711BC947CE009F5B4B /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 13C8AD701BC947CE009F5B4B /* libstdc++.6.0.9.tbd */; };
@@ -131,6 +130,7 @@
 		1506E25B1B89BDE5007D1696 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E25A1B89BDE5007D1696 /* Location.m */; };
 		1579153D1B8F52E100E31111 /* MineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1579153C1B8F52E100E31111 /* MineTableViewController.m */; };
 		157915411B8F54DD00E31111 /* PersonalInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 157915401B8F54DD00E31111 /* PersonalInfoTableView.m */; };
+		158467271BCA4A600047A0BE /* libEaseMobClientSDKLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 158467261BCA4A600047A0BE /* libEaseMobClientSDKLite.a */; settings = {ASSET_TAGS = (); }; };
 		15EE6BE01B92D1CA00FBD86C /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EE6BDF1B92D1CA00FBD86C /* MAMapKit.framework */; };
 		15EE6BE21B92D21200FBD86C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EE6BE11B92D21200FBD86C /* UIKit.framework */; };
 		15EE6BE41B92D21800FBD86C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EE6BE31B92D21800FBD86C /* Foundation.framework */; };
@@ -303,7 +303,6 @@
 		13C8AD581BC94587009F5B4B /* EMNetworkMonitorDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMNetworkMonitorDefs.h; sourceTree = "<group>"; };
 		13C8AD5A1BC94587009F5B4B /* EMError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMError.h; sourceTree = "<group>"; };
 		13C8AD5B1BC94587009F5B4B /* EMErrorDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMErrorDefs.h; sourceTree = "<group>"; };
-		13C8AD5D1BC94587009F5B4B /* libEaseMobClientSDKLite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEaseMobClientSDKLite.a; sourceTree = "<group>"; };
 		13C8AD5F1BC94587009F5B4B /* EaseMob.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EaseMob.bundle; sourceTree = "<group>"; };
 		13C8AD6E1BC947C3009F5B4B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		13C8AD701BC947CE009F5B4B /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
@@ -569,6 +568,7 @@
 		1579153C1B8F52E100E31111 /* MineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewController.m; sourceTree = "<group>"; };
 		1579153F1B8F54DD00E31111 /* PersonalInfoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfoTableView.h; sourceTree = "<group>"; };
 		157915401B8F54DD00E31111 /* PersonalInfoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoTableView.m; sourceTree = "<group>"; };
+		158467261BCA4A600047A0BE /* libEaseMobClientSDKLite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEaseMobClientSDKLite.a; sourceTree = "<group>"; };
 		15EE6BDF1B92D1CA00FBD86C /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		15EE6BE11B92D21200FBD86C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		15EE6BE31B92D21800FBD86C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -654,7 +654,6 @@
 				1506E15F1B89B6D6007D1696 /* SystemConfiguration.framework in Frameworks */,
 				1506E1691B89B6D6007D1696 /* CoreLocation.framework in Frameworks */,
 				1506E15B1B89B6D6007D1696 /* CoreGraphics.framework in Frameworks */,
-				13C8AD601BC94587009F5B4B /* libEaseMobClientSDKLite.a in Frameworks */,
 				15EE6BE41B92D21800FBD86C /* Foundation.framework in Frameworks */,
 				15EE6BE21B92D21200FBD86C /* UIKit.framework in Frameworks */,
 				1506E16A1B89B6D6007D1696 /* Security.framework in Frameworks */,
@@ -678,6 +677,7 @@
 				1506E16B1B89B6D6007D1696 /* MapKit.framework in Frameworks */,
 				D29BBC691B946B7E004B4021 /* libcrypto.a in Frameworks */,
 				1506E0C51B89B637007D1696 /* SMS_SDK.framework in Frameworks */,
+				158467271BCA4A600047A0BE /* libEaseMobClientSDKLite.a in Frameworks */,
 				1506E12C1B89B646007D1696 /* AlipaySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1037,7 +1037,7 @@
 		13C8AD5C1BC94587009F5B4B /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				13C8AD5D1BC94587009F5B4B /* libEaseMobClientSDKLite.a */,
+				158467261BCA4A600047A0BE /* libEaseMobClientSDKLite.a */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -2093,7 +2093,7 @@
 					"$(PROJECT_DIR)/Taling",
 					"$(PROJECT_DIR)/Taling/ThirdFrameWork/EaseMobSDK/lib",
 				);
-				OTHER_LDFLAGS = "-Objc";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "53920ca9-23bb-4856-ba4d-064c6cb28f3f";
 			};
@@ -2125,7 +2125,7 @@
 					"$(PROJECT_DIR)/Taling",
 					"$(PROJECT_DIR)/Taling/ThirdFrameWork/EaseMobSDK/lib",
 				);
-				OTHER_LDFLAGS = "-Objc";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "a9945020-cce9-4793-ae60-366d4d80d24a";
 			};
