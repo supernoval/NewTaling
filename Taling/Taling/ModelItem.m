@@ -12,6 +12,6 @@
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key{
     
-    NSLog(@"ModelItem 中缺少指定字段");
+    NSLog(@"ModelItem 中缺少指定字段:%@",key);
 }
 @end

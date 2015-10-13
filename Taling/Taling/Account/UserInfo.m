@@ -29,6 +29,11 @@
     
 }
 
++(NSString*)getuserid
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:kuserid];
+}
+
 
 
 @end

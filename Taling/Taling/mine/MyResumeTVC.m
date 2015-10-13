@@ -12,6 +12,17 @@
 #import "ResumeDetailTVC.h"
 
 @interface MyResumeTVC ()
+{
+    NSInteger upLoadIndex;
+    NSInteger buyIndex;
+    
+    NSInteger pageSize;
+    
+    NSMutableArray *_buyArray;
+    NSMutableArray *_upLoadArray;
+    
+    
+}
 @property (nonatomic)BOOL isBuyOrderList;
 
 @end
@@ -22,9 +33,59 @@
     [super viewDidLoad];
     _isBuyOrderList = YES;
     self.tableView.tableHeaderView = [self buyTableHeadView];
-    // Do any additional setup after loading the view.
+    
+    _buyArray = [[NSMutableArray alloc]init];
+    _upLoadArray = [[NSMutableArray alloc]init];
+    
+    pageSize = 10;
+    
+    
+    [self addHeaderRefresh];
+    [self addFooterRefresh];
+    
+    [self.tableView.header beginRefreshing];
+    
+    
 }
 
+-(void)headerRefresh
+{
+    
+    if (_isBuyOrderList) {
+        
+        buyIndex = 1;
+        
+        [self requestBuyResumes];
+        
+    }
+    else
+    {
+        upLoadIndex = 1;
+        
+        [self requestUpLoadResumes];
+        
+    }
+}
+
+
+
+-(void)footerRefresh
+{
+    if (_isBuyOrderList) {
+        
+        buyIndex ++;
+        
+        [self requestBuyResumes];
+        
+    }
+    else
+    {
+        upLoadIndex ++;
+        
+        [self requestUpLoadResumes];
+        
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -150,16 +211,15 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     
-    return 5;
+
+        if (_isBuyOrderList) {
     
-    //    if (isBuyOrderList) {
-    //
-    //
-    //        return _buyArray.count;
-    //
-    //    }
-    //
-    //    return _sellArray.count;
+    
+            return _buyArray.count;
+    
+        }
+    
+        return _upLoadArray.count;
     
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -179,6 +239,25 @@
         }
         
         
+        if (indexPath.section < _buyArray.count) {
+            
+          ModelItem *item = [_buyArray objectAtIndex:indexPath.section];
+          
+            buyCell.nameLabel.text = item.name;
+            
+            CGFloat namewith = [StringHeight widthtWithText:item.name font:FONT_15 constrainedToHeight:20] + 5;
+            
+            buyCell.nameWidth.constant = namewith;
+            
+            buyCell.buyMoneyLabel.text = item.price;
+            
+  
+            
+        }
+        
+        
+        
+        
         
         
         
@@ -196,6 +275,21 @@
             
         }
         
+        if (indexPath.section < _upLoadArray.count) {
+            
+            ModelItem *item = [_upLoadArray objectAtIndex:indexPath.section];
+            
+            sellCell.nameLabel.text = item.name;
+            
+            CGFloat namewith = [StringHeight widthtWithText:item.name font:FONT_15 constrainedToHeight:20];
+            
+            sellCell.nameWidth.constant = namewith;
+            
+            sellCell.buyNumLabel.text = item.price;
+            
+            
+            
+        }
         
         
         return sellCell;
@@ -207,10 +301,27 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    ModelItem *item ;
+    
+    if (_isBuyOrderList) {
+        
+        item = [_buyArray objectAtIndex:indexPath.section];
+        
+        
+    }
+    else
+    {
+        item = [_upLoadArray objectAtIndex:indexPath.section];
+        
+    }
+    
+    
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     ResumeDetailTVC *detail = [sb instantiateViewControllerWithIdentifier:@"ResumeDetailTVC"];
     
     detail.type = 2;
+    detail.item = item;
+    
     [self.navigationController pushViewController:detail animated:YES];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -235,6 +346,105 @@
         
     }
     
+    
+    
     [self.tableView reloadData];
+    
+    
+    [self headerRefresh];
+    
 }
+
+#pragma mark - 请求数据
+-(void)requestUpLoadResumes
+{
+    NSString *userid = [UserInfo getuserid];
+    
+    NSDictionary *param = @{@"user_id":userid,@"index":@(upLoadIndex),@"size":@(pageSize)};
+    
+    [[TLRequest shareRequest] tlRequestWithAction:kgetMyResumes Params:param result:^(BOOL isSuccess, id data) {
+    
+        [self endFooterRefresh];
+        [self endHeaderRefresh];
+        
+        
+        if (isSuccess) {
+         
+            
+            if (upLoadIndex == 1) {
+                
+                [_upLoadArray removeAllObjects];
+                
+            }
+            
+            if ([data isKindOfClass:[NSArray class]]) {
+                
+                for (NSDictionary *dict in data) {
+                    
+                    ModelItem *item = [[ModelItem alloc]init];
+                    
+                    [item setValuesForKeysWithDictionary:dict];
+                    
+                    
+                    [_upLoadArray addObject:item];
+                    
+                    
+                }
+                
+                 [self.tableView reloadData];
+                
+            }
+            
+        }
+        
+    }];
+    
+}
+
+
+-(void)requestBuyResumes
+{
+    NSString *userid = [UserInfo getuserid];
+    
+    NSDictionary *param = @{@"user_id":userid,@"index":@(buyIndex),@"size":@(pageSize)};
+    
+    [[TLRequest shareRequest] tlRequestWithAction:kgetMyBuyResumes Params:param result:^(BOOL isSuccess, id data) {
+        
+        [self endFooterRefresh];
+        [self endHeaderRefresh];
+        
+        
+        if (isSuccess) {
+            
+            if (buyIndex == 1) {
+                
+                [_buyArray removeAllObjects];
+                
+            }
+            
+            if ([data isKindOfClass:[NSArray class]]) {
+                
+                for (NSDictionary *dict in data) {
+                    
+                    ModelItem *item = [[ModelItem alloc]init];
+                    
+                    [item setValuesForKeysWithDictionary:dict];
+                    
+                    
+                    [_buyArray addObject:item];
+                    
+                    
+                }
+                
+                [self.tableView reloadData];
+                
+            }
+            
+        }
+        
+    }];
+    
+}
+
+
 @end

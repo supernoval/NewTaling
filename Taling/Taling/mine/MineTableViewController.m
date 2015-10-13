@@ -87,6 +87,8 @@
             {
                 //简历
                 MyResumeTVC *resume = [self.storyboard instantiateViewControllerWithIdentifier:@"MyResumeTVC"];
+                resume.hidesBottomBarWhenPushed = YES;
+                
                 [self.navigationController pushViewController:resume animated:YES];
             }
                 break;
@@ -95,6 +97,8 @@
             {
                 //钱包
                 WalletViewController *wallet = [self.storyboard instantiateViewControllerWithIdentifier:@"WalletViewController"];
+                wallet.hidesBottomBarWhenPushed = YES;
+                
                 [self.navigationController pushViewController:wallet animated:YES];
             }
                 break;
@@ -103,6 +107,8 @@
             case 2:
             {
                 BindAccountTVC *bindAccount = [self.storyboard instantiateViewControllerWithIdentifier:@"BindAccountTVC"];
+                bindAccount.hidesBottomBarWhenPushed = YES;
+                
                 [self.navigationController pushViewController:bindAccount animated:YES];
             }
                 break;

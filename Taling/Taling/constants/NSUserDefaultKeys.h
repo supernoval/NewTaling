@@ -25,6 +25,9 @@
 //nickname
 #define knickname   @"nickname"
 
+//userid
+#define kuserid   @"id"
+
 //isAttestation
 #define kisAttestation @"isAttestation"
 

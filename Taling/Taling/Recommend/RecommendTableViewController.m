@@ -227,13 +227,11 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-<<<<<<< .mine
-=======
+
     ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
->>>>>>> .r40
-    
-    
+
+
     if (indexPath.section < _JDArray.count) {
         
     NSDictionary *dict = [_JDArray objectAtIndex:indexPath.section];
@@ -248,22 +246,24 @@
             
             resumeDetail.type = 1;
             resumeDetail.hidesBottomBarWhenPushed = YES;
-            resumeDetail.resumes_id = resumesId;
+          
+          
             [self.navigationController pushViewController:resumeDetail animated:YES];
-            
+          
+           resumeDetail.item = oneItem;
+          
+          [self.navigationController pushViewController:resumeDetail animated:YES];
           
         }
   
         
     
-<<<<<<< .mine
+
+    
+
+  
+
     }
-=======
-    resumeDetail.item = oneItem;
-    
-    [self.navigationController pushViewController:resumeDetail animated:YES];
->>>>>>> .r40
-    
     
      [tableView deselectRowAtIndexPath:indexPath animated:YES];
     

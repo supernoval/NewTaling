@@ -17,6 +17,9 @@
 
 +(NSString*)getAccount_id; //uuid
 
++(NSString*)getuserid;
+
+
 
 
 @end

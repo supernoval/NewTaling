@@ -19,6 +19,7 @@
 @property (nonatomic)NSInteger index;
 @property (nonatomic)NSInteger size;
 
+
 @end
 
 @implementation ResumeDetailTVC
@@ -33,13 +34,15 @@
     
     self.tableView.tableFooterView = [self tableFooterView];
     
-    [self addHeaderRefresh];
-    [self addFooterRefresh];
+//    [self addHeaderRefresh];
+//    [self addFooterRefresh];
     
     _index = 1;
     _size = 10;
     
-    [self.tableView.header beginRefreshing];
+    [self getData];
+    
+//    [self.tableView.header beginRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,8 +63,12 @@
 -(void)getData
 {
     
-    
-    NSDictionary *param = @{@"resumes_id":_resumes_id};
+    if (!item.resumesId) {
+        
+        return;
+        
+    }
+    NSDictionary *param = @{@"resumes_id":item.resumesId};
     
     [[TLRequest shareRequest] tlRequestWithAction:kgetAppraise Params:param result:^(BOOL isSuccess, id data) {
         
@@ -134,7 +141,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     if (section == 4) {
-        return 3;
+        
+        return _commentArry.count;
     }
     
     return 1;
@@ -243,6 +251,10 @@
             
         case 4:
         {
+            
+            NSDictionary *oneComment = [_commentArry objectAtIndex:indexPath.row];
+            commentCell.commentLabel.text = [oneComment objectForKey:@"comment"];
+            
             return commentCell;
         }
             break;
