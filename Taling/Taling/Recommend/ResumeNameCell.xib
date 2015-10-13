@@ -231,6 +231,7 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
+                <outlet property="fuzhiLabel" destination="v7H-Ck-jmv" id="9ez-u9-xVS"/>
                 <outlet property="headImageView" destination="bVf-mg-iOF" id="RcI-iO-Add"/>
                 <outlet property="moneyLabel" destination="JiJ-Xp-GDE" id="qwz-Zt-B68"/>
                 <outlet property="nameLabel" destination="SbX-tg-PZ4" id="Kdw-TE-zGB"/>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResumePriceCell" rowHeight="46" id="Mvw-hz-dC4">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mvw-hz-dC4" id="ZAy-Ps-45x">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="订单价格" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwi-6x-5Vb">
+                        <rect key="frame" x="15" y="0.0" width="69" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="69" id="UAk-Kg-fMV"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="UAk-Kg-fMV"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="UAk-Kg-fMV"/>
+                            </mask>
+                        </variation>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="88元" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ger-eI-rvD">
+                        <rect key="frame" x="147" y="0.0" width="158" height="44"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.96470588239999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="ger-eI-rvD" secondAttribute="bottom" id="0Gj-Dx-5L2"/>
+                    <constraint firstItem="Bwi-6x-5Vb" firstAttribute="top" secondItem="ZAy-Ps-45x" secondAttribute="top" id="4q3-yr-5Kk"/>
+                    <constraint firstAttribute="bottom" secondItem="Bwi-6x-5Vb" secondAttribute="bottom" id="52u-xy-Pwu"/>
+                    <constraint firstItem="ger-eI-rvD" firstAttribute="leading" secondItem="Bwi-6x-5Vb" secondAttribute="trailing" constant="21" id="Okd-VB-K2n"/>
+                    <constraint firstAttribute="trailing" secondItem="ger-eI-rvD" secondAttribute="trailing" constant="15" id="bCT-dW-gAW"/>
+                    <constraint firstItem="Bwi-6x-5Vb" firstAttribute="leading" secondItem="ZAy-Ps-45x" secondAttribute="leading" constant="15" id="j9b-gK-hNY"/>
+                    <constraint firstItem="ger-eI-rvD" firstAttribute="top" secondItem="ZAy-Ps-45x" secondAttribute="top" id="zEX-lE-B5B"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="4q3-yr-5Kk"/>
+                        <exclude reference="52u-xy-Pwu"/>
+                        <exclude reference="j9b-gK-hNY"/>
+                        <exclude reference="0Gj-Dx-5L2"/>
+                        <exclude reference="Okd-VB-K2n"/>
+                        <exclude reference="bCT-dW-gAW"/>
+                        <exclude reference="zEX-lE-B5B"/>
+                    </mask>
+                </variation>
+                <variation key="heightClass=regular-widthClass=compact">
+                    <mask key="constraints">
+                        <include reference="4q3-yr-5Kk"/>
+                        <include reference="52u-xy-Pwu"/>
+                        <include reference="j9b-gK-hNY"/>
+                        <include reference="0Gj-Dx-5L2"/>
+                        <include reference="Okd-VB-K2n"/>
+                        <include reference="bCT-dW-gAW"/>
+                        <include reference="zEX-lE-B5B"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="342" y="256.5"/>
+        </tableViewCell>
+    </objects>
+</document>

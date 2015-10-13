@@ -17,4 +17,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *professionLabel;
 @property (strong, nonatomic) IBOutlet UILabel *moneyLabel;
 
+@property (strong, nonatomic) IBOutlet UILabel *fuzhiLabel;
 @end

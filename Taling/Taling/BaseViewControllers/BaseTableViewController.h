@@ -24,6 +24,8 @@
 #import "DataSigner.h"
 #import <AlipaySDK/AlipaySDK.h>
 
+#import "ConstantsHeaders.h"
+
 @interface BaseTableViewController : UITableViewController
 {
     

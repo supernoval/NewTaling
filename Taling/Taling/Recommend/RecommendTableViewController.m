@@ -9,7 +9,7 @@
 #import "RecommendTableViewController.h"
 #import "ConstantsHeaders.h"
 #import "ResumeDetailTVC.h"
-
+#import "BuyResumeDetailTVC.h"
 @interface RecommendTableViewController ()<UISearchBarDelegate,UISearchDisplayDelegate>
 {
     UISearchBar *_searchBar;
@@ -121,8 +121,25 @@
        
         [self endHeaderRefresh];
         [self endFooterRefresh];
+       
         
         if (isSuccess) {
+            
+            NSArray *dataArray = [[NSArray alloc]init];//请求获取到的数据
+            
+            NSMutableArray *array = [[NSMutableArray alloc]init];//解析后的数据
+            
+            if ([data isKindOfClass:[NSArray class]]) {
+                dataArray = data;
+            }
+            
+            for (NSInteger i = 0; i < dataArray.count; i++) {
+                NSDictionary *oneDic = [dataArray objectAtIndex:i];
+                ModelItem *item = [[ModelItem alloc]init];
+                [item setValuesForKeysWithDictionary:oneDic];
+                [array addObject:item];
+                
+            }
             
             if (index == 1)
             {
@@ -131,7 +148,7 @@
                 
             }
             
-            [_JDArray addObjectsFromArray:data];
+            [_JDArray addObjectsFromArray:array];
             
             [self.tableView reloadData];
             
@@ -182,22 +199,24 @@
     
     RecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:@"recomendCell"];
     
-    NSDictionary *oneDict = [_JDArray objectAtIndex:indexPath.section];
+    ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
     
     //姓名
-    NSString *name = [oneDict objectForKey:@"name"];
-    
-    cell.nameLabel.text = name;
+    cell.nameLabel.text = oneItem.name;
     
     //城市、教育程度
-    cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",[oneDict objectForKey:@"city"],[oneDict objectForKey:@"city"]];
+    cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,oneItem.city];
     
     //公司
-    cell.companyLabel.text = [NSString stringWithFormat:@"公司:%@",[oneDict objectForKey:@"currentCompany"]];
+    cell.companyLabel.text = [NSString stringWithFormat:@"公司:%@",oneItem.currentCompany];
     
     
     //点赞
-    [cell.priseButton setTitle:[NSString stringWithFormat:@"%@",[oneDict objectForKey:@"goodNum"]] forState:UIControlStateNormal];
+    [cell.priseButton setTitle:[NSString stringWithFormat:@"%@",oneItem.goodNum] forState:UIControlStateNormal];
+    
+    [cell.buyButton addTarget:self action:@selector(buyTheResume:) forControlEvents:UIControlEventTouchUpInside];
+    
+    cell.buyButton.tag = indexPath.section;
   
     
     return cell;
@@ -208,11 +227,14 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     
     ResumeDetailTVC *resumeDetail = [sb instantiateViewControllerWithIdentifier:@"ResumeDetailTVC"];
     
     resumeDetail.type = 1;
+    
+    resumeDetail.item = oneItem;
     
     [self.navigationController pushViewController:resumeDetail animated:YES];
     
@@ -244,7 +266,19 @@
 }
 
 
-
+#pragma mark- 购买建立
+- (void)buyTheResume:(UIButton *)btn{
+    
+    ModelItem *buyItem = [_JDArray objectAtIndex:btn.tag];
+    
+    BuyResumeDetailTVC *buy = [self.storyboard instantiateViewControllerWithIdentifier:@"BuyResumeDetailTVC"];
+    
+    buy.item = buyItem;
+    
+    [self.navigationController pushViewController:buy animated:YES];
+    
+    
+}
 
 
 

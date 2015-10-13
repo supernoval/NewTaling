@@ -23,6 +23,7 @@
 
 @implementation ResumeDetailTVC
 @synthesize type;//1 购买 2 评价
+@synthesize item;
 
 - (void)viewDidLoad {
     [super viewDidLoad];

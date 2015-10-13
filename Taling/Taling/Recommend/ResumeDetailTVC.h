@@ -7,9 +7,11 @@
 //
 
 #import "BaseTableViewController.h"
+#import "ModelItem.h"
 
 @interface ResumeDetailTVC : BaseTableViewController
 
 @property (nonatomic) NSInteger type;//1 购买 2 评价
+@property (strong, nonatomic)ModelItem *item;
 
 @end

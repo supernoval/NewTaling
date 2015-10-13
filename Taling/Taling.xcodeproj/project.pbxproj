@@ -130,7 +130,6 @@
 		1506E25B1B89BDE5007D1696 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E25A1B89BDE5007D1696 /* Location.m */; };
 		1579153D1B8F52E100E31111 /* MineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1579153C1B8F52E100E31111 /* MineTableViewController.m */; };
 		157915411B8F54DD00E31111 /* PersonalInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 157915401B8F54DD00E31111 /* PersonalInfoTableView.m */; };
-		158467271BCA4A600047A0BE /* libEaseMobClientSDKLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 158467261BCA4A600047A0BE /* libEaseMobClientSDKLite.a */; settings = {ASSET_TAGS = (); }; };
 		15EE6BE01B92D1CA00FBD86C /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EE6BDF1B92D1CA00FBD86C /* MAMapKit.framework */; };
 		15EE6BE21B92D21200FBD86C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EE6BE11B92D21200FBD86C /* UIKit.framework */; };
 		15EE6BE41B92D21800FBD86C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EE6BE31B92D21800FBD86C /* Foundation.framework */; };
@@ -174,6 +173,12 @@
 		B3FB2A531BC3AD82003ACC5D /* MyResumeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FB2A521BC3AD82003ACC5D /* MyResumeTVC.m */; settings = {ASSET_TAGS = (); }; };
 		D27021211BC7744900428B31 /* BuyAndCashTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D27021201BC7744900428B31 /* BuyAndCashTVC.m */; settings = {ASSET_TAGS = (); }; };
 		D29BBC691B946B7E004B4021 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D29BBC681B946B7E004B4021 /* libcrypto.a */; };
+		D2FCB8F51BCBE7BB00C6ACC0 /* libEaseMobClientSDKLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2FCB8F41BCBE7BB00C6ACC0 /* libEaseMobClientSDKLite.a */; settings = {ASSET_TAGS = (); }; };
+		D2FCB8F91BCBE88D00C6ACC0 /* ModelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FCB8F81BCBE88D00C6ACC0 /* ModelItem.m */; settings = {ASSET_TAGS = (); }; };
+		D2FCB8FD1BCBEFB900C6ACC0 /* BuyResumeDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FCB8FC1BCBEFB900C6ACC0 /* BuyResumeDetailTVC.m */; settings = {ASSET_TAGS = (); }; };
+		D2FCB9001BCBF12200C6ACC0 /* ResumePriceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FCB8FF1BCBF12200C6ACC0 /* ResumePriceCell.xib */; settings = {ASSET_TAGS = (); }; };
+		D2FCB9021BCBF14200C6ACC0 /* ResumePayStyleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FCB9011BCBF14200C6ACC0 /* ResumePayStyleCell.xib */; settings = {ASSET_TAGS = (); }; };
+		D2FCB9051BCBF27200C6ACC0 /* ResumePayStyleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FCB9041BCBF27200C6ACC0 /* ResumePayStyleCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -568,7 +573,6 @@
 		1579153C1B8F52E100E31111 /* MineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewController.m; sourceTree = "<group>"; };
 		1579153F1B8F54DD00E31111 /* PersonalInfoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfoTableView.h; sourceTree = "<group>"; };
 		157915401B8F54DD00E31111 /* PersonalInfoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoTableView.m; sourceTree = "<group>"; };
-		158467261BCA4A600047A0BE /* libEaseMobClientSDKLite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEaseMobClientSDKLite.a; sourceTree = "<group>"; };
 		15EE6BDF1B92D1CA00FBD86C /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		15EE6BE11B92D21200FBD86C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		15EE6BE31B92D21800FBD86C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -636,6 +640,15 @@
 		D270211F1BC7744900428B31 /* BuyAndCashTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyAndCashTVC.h; sourceTree = "<group>"; };
 		D27021201BC7744900428B31 /* BuyAndCashTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyAndCashTVC.m; sourceTree = "<group>"; };
 		D29BBC681B946B7E004B4021 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		D2FCB8F41BCBE7BB00C6ACC0 /* libEaseMobClientSDKLite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEaseMobClientSDKLite.a; sourceTree = "<group>"; };
+		D2FCB8F71BCBE88D00C6ACC0 /* ModelItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelItem.h; sourceTree = "<group>"; };
+		D2FCB8F81BCBE88D00C6ACC0 /* ModelItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelItem.m; sourceTree = "<group>"; };
+		D2FCB8FB1BCBEFB900C6ACC0 /* BuyResumeDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyResumeDetailTVC.h; sourceTree = "<group>"; };
+		D2FCB8FC1BCBEFB900C6ACC0 /* BuyResumeDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyResumeDetailTVC.m; sourceTree = "<group>"; };
+		D2FCB8FF1BCBF12200C6ACC0 /* ResumePriceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResumePriceCell.xib; sourceTree = "<group>"; };
+		D2FCB9011BCBF14200C6ACC0 /* ResumePayStyleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResumePayStyleCell.xib; sourceTree = "<group>"; };
+		D2FCB9031BCBF27200C6ACC0 /* ResumePayStyleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResumePayStyleCell.h; sourceTree = "<group>"; };
+		D2FCB9041BCBF27200C6ACC0 /* ResumePayStyleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResumePayStyleCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -677,7 +690,7 @@
 				1506E16B1B89B6D6007D1696 /* MapKit.framework in Frameworks */,
 				D29BBC691B946B7E004B4021 /* libcrypto.a in Frameworks */,
 				1506E0C51B89B637007D1696 /* SMS_SDK.framework in Frameworks */,
-				158467271BCA4A600047A0BE /* libEaseMobClientSDKLite.a in Frameworks */,
+				D2FCB8F51BCBE7BB00C6ACC0 /* libEaseMobClientSDKLite.a in Frameworks */,
 				1506E12C1B89B646007D1696 /* AlipaySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1037,7 +1050,7 @@
 		13C8AD5C1BC94587009F5B4B /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				158467261BCA4A600047A0BE /* libEaseMobClientSDKLite.a */,
+				D2FCB8F41BCBE7BB00C6ACC0 /* libEaseMobClientSDKLite.a */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -1107,6 +1120,7 @@
 		1506DF481B89B36D007D1696 /* Taling */ = {
 			isa = PBXGroup;
 			children = (
+				D2FCB8F61BCBE86A00C6ACC0 /* Model */,
 				13B6CACE1B9C1DAB003EC8A9 /* messages */,
 				13B6CACA1B9C18E8003EC8A9 /* Orders */,
 				1579153A1B8F52C400E31111 /* mine */,
@@ -1532,6 +1546,7 @@
 		1506E2271B89BB23007D1696 /* Recommend */ = {
 			isa = PBXGroup;
 			children = (
+				D2FCB8FA1BCBEF9400C6ACC0 /* buyResume */,
 				13D5F0F41B9FF8C4001A8AFF /* cell */,
 				139919131B9EB4F300FE56DD /* selectView */,
 				1506E2281B89BB3A007D1696 /* RecommendTableViewController.h */,
@@ -1716,6 +1731,36 @@
 			name = buyAndCash;
 			sourceTree = "<group>";
 		};
+		D2FCB8F61BCBE86A00C6ACC0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D2FCB8F71BCBE88D00C6ACC0 /* ModelItem.h */,
+				D2FCB8F81BCBE88D00C6ACC0 /* ModelItem.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D2FCB8FA1BCBEF9400C6ACC0 /* buyResume */ = {
+			isa = PBXGroup;
+			children = (
+				D2FCB8FE1BCBF10100C6ACC0 /* buyCell */,
+				D2FCB8FB1BCBEFB900C6ACC0 /* BuyResumeDetailTVC.h */,
+				D2FCB8FC1BCBEFB900C6ACC0 /* BuyResumeDetailTVC.m */,
+			);
+			name = buyResume;
+			sourceTree = "<group>";
+		};
+		D2FCB8FE1BCBF10100C6ACC0 /* buyCell */ = {
+			isa = PBXGroup;
+			children = (
+				D2FCB8FF1BCBF12200C6ACC0 /* ResumePriceCell.xib */,
+				D2FCB9011BCBF14200C6ACC0 /* ResumePayStyleCell.xib */,
+				D2FCB9031BCBF27200C6ACC0 /* ResumePayStyleCell.h */,
+				D2FCB9041BCBF27200C6ACC0 /* ResumePayStyleCell.m */,
+			);
+			name = buyCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1808,6 +1853,8 @@
 				13CD97681BA152A0007763E0 /* BuyCell.xib in Resources */,
 				1506E12B1B89B646007D1696 /* AlipaySDK.bundle in Resources */,
 				B30000A91BC3D449006B7B08 /* CommentMeaageCell.xib in Resources */,
+				D2FCB9001BCBF12200C6ACC0 /* ResumePriceCell.xib in Resources */,
+				D2FCB9021BCBF14200C6ACC0 /* ResumePayStyleCell.xib in Resources */,
 				B3D3F9D11BC0F14300044F0F /* CommentCell.xib in Resources */,
 				1506DF5A1B89B36D007D1696 /* LaunchScreen.xib in Resources */,
 				1506E0161B89B521007D1696 /* MJRefresh.bundle in Resources */,
@@ -1849,6 +1896,7 @@
 				1506E25B1B89BDE5007D1696 /* Location.m in Sources */,
 				B30000AC1BC3D78C006B7B08 /* LikeMessageTVC.m in Sources */,
 				1506E01C1B89B521007D1696 /* MJRefreshHeader.m in Sources */,
+				D2FCB8FD1BCBEFB900C6ACC0 /* BuyResumeDetailTVC.m in Sources */,
 				1506E0A11B89B582007D1696 /* SDWebImageManager.m in Sources */,
 				1506E0B61B89B608007D1696 /* BaseTableViewController.m in Sources */,
 				B3D3F9CF1BC0DC9900044F0F /* ResumeOpetationCell.m in Sources */,
@@ -1906,9 +1954,11 @@
 				1506E09C1B89B582007D1696 /* SDImageCache.m in Sources */,
 				1506E0441B89B53C007D1696 /* JSONKeyMapper.m in Sources */,
 				1506E1311B89B646007D1696 /* DataSigner.m in Sources */,
+				D2FCB9051BCBF27200C6ACC0 /* ResumePayStyleCell.m in Sources */,
 				B31A95A91BBFBD5100DF1939 /* ResumeExperienceCell.m in Sources */,
 				1506DF931B89B4A0007D1696 /* ProgressHUD.m in Sources */,
 				1506DF4F1B89B36D007D1696 /* AppDelegate.m in Sources */,
+				D2FCB8F91BCBE88D00C6ACC0 /* ModelItem.m in Sources */,
 				B300008C1BC3B276006B7B08 /* MessageTVC.m in Sources */,
 				1506E2531B89BD87007D1696 /* LoginViewController.m in Sources */,
 				1506E12F1B89B646007D1696 /* Order.m in Sources */,
