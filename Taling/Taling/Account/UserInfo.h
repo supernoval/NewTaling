@@ -15,7 +15,8 @@
 
 +(void)saveUserInfo:(NSDictionary*)userInfo;
 
-+(NSString*)getAccount_id;
++(NSString*)getAccount_id; //uuid
+
 
 
 @end

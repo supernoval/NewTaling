@@ -39,7 +39,7 @@
     _index = 1;
     _size = 10;
     
-//    [self.tableView.header beginRefreshing];
+    [self.tableView.header beginRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,9 +59,11 @@
 
 -(void)getData
 {
-    NSDictionary *param = @{@"index":@(_index),@"size":@(_size)};
     
-    [[TLRequest shareRequest] tlRequestWithAction:kgetCommendResumes Params:param result:^(BOOL isSuccess, id data) {
+    
+    NSDictionary *param = @{@"resumes_id":_resumes_id};
+    
+    [[TLRequest shareRequest] tlRequestWithAction:kgetAppraise Params:param result:^(BOOL isSuccess, id data) {
         
         [self endHeaderRefresh];
         [self endFooterRefresh];

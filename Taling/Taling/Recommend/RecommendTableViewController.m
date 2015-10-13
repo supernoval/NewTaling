@@ -227,18 +227,47 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+<<<<<<< .mine
+=======
     ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+>>>>>>> .r40
     
-    ResumeDetailTVC *resumeDetail = [sb instantiateViewControllerWithIdentifier:@"ResumeDetailTVC"];
     
-    resumeDetail.type = 1;
+    if (indexPath.section < _JDArray.count) {
+        
+    NSDictionary *dict = [_JDArray objectAtIndex:indexPath.section];
+        
+    NSString *resumesId = [dict objectForKey:@"resumesId"];
+        
+      if (resumesId) {
+            
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+            
+            ResumeDetailTVC *resumeDetail = [sb instantiateViewControllerWithIdentifier:@"ResumeDetailTVC"];
+            
+            resumeDetail.type = 1;
+            resumeDetail.hidesBottomBarWhenPushed = YES;
+            resumeDetail.resumes_id = resumesId;
+            [self.navigationController pushViewController:resumeDetail animated:YES];
+            
+          
+        }
+  
+        
     
+<<<<<<< .mine
+    }
+=======
     resumeDetail.item = oneItem;
     
     [self.navigationController pushViewController:resumeDetail animated:YES];
+>>>>>>> .r40
     
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+
     
 }
 
