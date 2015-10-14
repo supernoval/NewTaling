@@ -743,13 +743,6 @@
 			name = comment;
 			sourceTree = "<group>";
 		};
-		139DC5491BCE741E00AA9C27 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group";
-			sourceTree = "<group>";
-		};
 		13AA5E791B95CCD600AB477E /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -1139,7 +1132,6 @@
 		1506DF481B89B36D007D1696 /* Taling */ = {
 			isa = PBXGroup;
 			children = (
-				139DC5491BCE741E00AA9C27 /* New Group */,
 				D2FCB8F61BCBE86A00C6ACC0 /* Model */,
 				13B6CACE1B9C1DAB003EC8A9 /* messages */,
 				13B6CACA1B9C18E8003EC8A9 /* Orders */,
