@@ -12,6 +12,11 @@
 		138961CD1BA98E3F009F33FA /* MyJDsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138961CB1BA98E3F009F33FA /* MyJDsTableViewController.xib */; };
 		139919161B9EB69900FE56DD /* SelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 139919151B9EB69900FE56DD /* SelectView.m */; };
 		139DC5481BCE6DE500AA9C27 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 139DC5471BCE6DE500AA9C27 /* CommentViewController.m */; settings = {ASSET_TAGS = (); }; };
+		139DC54E1BCE75ED00AA9C27 /* ChatListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 139DC54D1BCE75ED00AA9C27 /* ChatListTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		139DC5511BCE82BC00AA9C27 /* ChatListCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 139DC5501BCE82BC00AA9C27 /* ChatListCellTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		139DC5541BCE875000AA9C27 /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 139DC5531BCE875000AA9C27 /* NSDate+Category.m */; settings = {ASSET_TAGS = (); }; };
+		139DC5571BCE875C00AA9C27 /* NSDateFormatter+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 139DC5561BCE875C00AA9C27 /* NSDateFormatter+Category.m */; settings = {ASSET_TAGS = (); }; };
+		139DC55A1BCE87C500AA9C27 /* ConvertToCommonEmoticonsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 139DC5591BCE87C500AA9C27 /* ConvertToCommonEmoticonsHelper.m */; settings = {ASSET_TAGS = (); }; };
 		13AA5E3B1B95C37E00AB477E /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13AA5E3A1B95C37E00AB477E /* libssl.a */; };
 		13AA5E3D1B95C38300AB477E /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13AA5E3C1B95C38300AB477E /* libcrypto.a */; };
 		13AA5E5D1B95C4F900AB477E /* TLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AA5E5C1B95C4F900AB477E /* TLRequest.m */; };
@@ -203,6 +208,16 @@
 		139919151B9EB69900FE56DD /* SelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectView.m; sourceTree = "<group>"; };
 		139DC5461BCE6DE500AA9C27 /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
 		139DC5471BCE6DE500AA9C27 /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
+		139DC54C1BCE75ED00AA9C27 /* ChatListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatListTableViewController.h; path = ChatViewControllers/ChatListTableViewController.h; sourceTree = "<group>"; };
+		139DC54D1BCE75ED00AA9C27 /* ChatListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatListTableViewController.m; path = ChatViewControllers/ChatListTableViewController.m; sourceTree = "<group>"; };
+		139DC54F1BCE82BC00AA9C27 /* ChatListCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatListCellTableViewCell.h; path = ChatViewControllers/ChatListCellTableViewCell.h; sourceTree = "<group>"; };
+		139DC5501BCE82BC00AA9C27 /* ChatListCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatListCellTableViewCell.m; path = ChatViewControllers/ChatListCellTableViewCell.m; sourceTree = "<group>"; };
+		139DC5521BCE874C00AA9C27 /* NSDate+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Category.h"; sourceTree = "<group>"; };
+		139DC5531BCE875000AA9C27 /* NSDate+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Category.m"; sourceTree = "<group>"; };
+		139DC5551BCE875600AA9C27 /* NSDateFormatter+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+Category.h"; sourceTree = "<group>"; };
+		139DC5561BCE875C00AA9C27 /* NSDateFormatter+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+Category.m"; sourceTree = "<group>"; };
+		139DC5581BCE87C100AA9C27 /* ConvertToCommonEmoticonsHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConvertToCommonEmoticonsHelper.h; sourceTree = "<group>"; };
+		139DC5591BCE87C500AA9C27 /* ConvertToCommonEmoticonsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConvertToCommonEmoticonsHelper.m; sourceTree = "<group>"; };
 		13AA5E3A1B95C37E00AB477E /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
 		13AA5E3C1B95C38300AB477E /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		13AA5E5B1B95C4F900AB477E /* TLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLRequest.h; sourceTree = "<group>"; };
@@ -745,6 +760,31 @@
 			name = comment;
 			sourceTree = "<group>";
 		};
+		139DC54A1BCE74EC00AA9C27 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				139DC54B1BCE758400AA9C27 /* ChatList */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
+		139DC54B1BCE758400AA9C27 /* ChatList */ = {
+			isa = PBXGroup;
+			children = (
+				139DC5581BCE87C100AA9C27 /* ConvertToCommonEmoticonsHelper.h */,
+				139DC5591BCE87C500AA9C27 /* ConvertToCommonEmoticonsHelper.m */,
+				139DC5521BCE874C00AA9C27 /* NSDate+Category.h */,
+				139DC5531BCE875000AA9C27 /* NSDate+Category.m */,
+				139DC5551BCE875600AA9C27 /* NSDateFormatter+Category.h */,
+				139DC54C1BCE75ED00AA9C27 /* ChatListTableViewController.h */,
+				139DC54D1BCE75ED00AA9C27 /* ChatListTableViewController.m */,
+				139DC5561BCE875C00AA9C27 /* NSDateFormatter+Category.m */,
+				139DC54F1BCE82BC00AA9C27 /* ChatListCellTableViewCell.h */,
+				139DC5501BCE82BC00AA9C27 /* ChatListCellTableViewCell.m */,
+			);
+			name = ChatList;
+			sourceTree = "<group>";
+		};
 		13AA5E791B95CCD600AB477E /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -1134,6 +1174,7 @@
 		1506DF481B89B36D007D1696 /* Taling */ = {
 			isa = PBXGroup;
 			children = (
+				139DC54A1BCE74EC00AA9C27 /* Chat */,
 				D2FCB8F61BCBE86A00C6ACC0 /* Model */,
 				13B6CACE1B9C1DAB003EC8A9 /* messages */,
 				13B6CACA1B9C18E8003EC8A9 /* Orders */,
@@ -1938,6 +1979,7 @@
 				1506E0401B89B53C007D1696 /* NSArray+JSONModel.m in Sources */,
 				13AA5EB11B95CCEF00AB477E /* AFURLSessionManager.m in Sources */,
 				1506E0201B89B521007D1696 /* UIScrollView+MJRefresh.m in Sources */,
+				139DC5541BCE875000AA9C27 /* NSDate+Category.m in Sources */,
 				1506E03C1B89B53C007D1696 /* JSONModel.m in Sources */,
 				1506E0A71B89B582007D1696 /* UIImageView+HighlightedWebCache.m in Sources */,
 				1506E1341B89B646007D1696 /* NSDataEx.m in Sources */,
@@ -1970,8 +2012,10 @@
 				B3FB2A3A1BC2621A003ACC5D /* ChangeCompanyTVC.m in Sources */,
 				1506E09C1B89B582007D1696 /* SDImageCache.m in Sources */,
 				1506E0441B89B53C007D1696 /* JSONKeyMapper.m in Sources */,
+				139DC54E1BCE75ED00AA9C27 /* ChatListTableViewController.m in Sources */,
 				1506E1311B89B646007D1696 /* DataSigner.m in Sources */,
 				D2FCB9051BCBF27200C6ACC0 /* ResumePayStyleCell.m in Sources */,
+				139DC5571BCE875C00AA9C27 /* NSDateFormatter+Category.m in Sources */,
 				B31A95A91BBFBD5100DF1939 /* ResumeExperienceCell.m in Sources */,
 				1506DF931B89B4A0007D1696 /* ProgressHUD.m in Sources */,
 				1506DF4F1B89B36D007D1696 /* AppDelegate.m in Sources */,
@@ -1982,7 +2026,9 @@
 				1506E1371B89B646007D1696 /* RSADataVerifier.m in Sources */,
 				1506DF4C1B89B36D007D1696 /* main.m in Sources */,
 				1506E0A01B89B582007D1696 /* SDWebImageDownloaderOperation.m in Sources */,
+				139DC55A1BCE87C500AA9C27 /* ConvertToCommonEmoticonsHelper.m in Sources */,
 				1506E22A1B89BB3A007D1696 /* RecommendTableViewController.m in Sources */,
+				139DC5511BCE82BC00AA9C27 /* ChatListCellTableViewCell.m in Sources */,
 				B3FB2A351BC25A19003ACC5D /* ChangeNameTVC.m in Sources */,
 				1506E2511B89BD87007D1696 /* ChangeCodeTVC.m in Sources */,
 				1506E01D1B89B521007D1696 /* MJRefreshLegendFooter.m in Sources */,
