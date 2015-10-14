@@ -11,6 +11,7 @@
 		138961CC1BA98E3F009F33FA /* MyJDsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 138961CA1BA98E3F009F33FA /* MyJDsTableViewController.m */; };
 		138961CD1BA98E3F009F33FA /* MyJDsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138961CB1BA98E3F009F33FA /* MyJDsTableViewController.xib */; };
 		139919161B9EB69900FE56DD /* SelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 139919151B9EB69900FE56DD /* SelectView.m */; };
+		139DC5481BCE6DE500AA9C27 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 139DC5471BCE6DE500AA9C27 /* CommentViewController.m */; settings = {ASSET_TAGS = (); }; };
 		13AA5E3B1B95C37E00AB477E /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13AA5E3A1B95C37E00AB477E /* libssl.a */; };
 		13AA5E3D1B95C38300AB477E /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13AA5E3C1B95C38300AB477E /* libcrypto.a */; };
 		13AA5E5D1B95C4F900AB477E /* TLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AA5E5C1B95C4F900AB477E /* TLRequest.m */; };
@@ -199,6 +200,8 @@
 		138961CB1BA98E3F009F33FA /* MyJDsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyJDsTableViewController.xib; sourceTree = "<group>"; };
 		139919141B9EB69900FE56DD /* SelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectView.h; sourceTree = "<group>"; };
 		139919151B9EB69900FE56DD /* SelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectView.m; sourceTree = "<group>"; };
+		139DC5461BCE6DE500AA9C27 /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
+		139DC5471BCE6DE500AA9C27 /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
 		13AA5E3A1B95C37E00AB477E /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
 		13AA5E3C1B95C38300AB477E /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		13AA5E5B1B95C4F900AB477E /* TLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLRequest.h; sourceTree = "<group>"; };
@@ -607,8 +610,8 @@
 		B30000AB1BC3D78C006B7B08 /* LikeMessageTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikeMessageTVC.m; sourceTree = "<group>"; };
 		B31A95A71BBFBD5100DF1939 /* ResumeExperienceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResumeExperienceCell.h; sourceTree = "<group>"; };
 		B31A95A81BBFBD5100DF1939 /* ResumeExperienceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResumeExperienceCell.m; sourceTree = "<group>"; };
-		B34A34AF1BBFBFC7009F42A4 /* ResumeDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResumeDetailTVC.h; sourceTree = "<group>"; };
-		B34A34B01BBFBFC7009F42A4 /* ResumeDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResumeDetailTVC.m; sourceTree = "<group>"; };
+		B34A34AF1BBFBFC7009F42A4 /* ResumeDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResumeDetailTVC.h; path = ../Recommend/ResumeDetailTVC.h; sourceTree = "<group>"; };
+		B34A34B01BBFBFC7009F42A4 /* ResumeDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResumeDetailTVC.m; path = ../Recommend/ResumeDetailTVC.m; sourceTree = "<group>"; };
 		B3D3F9CB1BC0D85900044F0F /* ResumeOperationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResumeOperationCell.xib; sourceTree = "<group>"; };
 		B3D3F9CD1BC0DC9900044F0F /* ResumeOpetationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResumeOpetationCell.h; sourceTree = "<group>"; };
 		B3D3F9CE1BC0DC9900044F0F /* ResumeOpetationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResumeOpetationCell.m; sourceTree = "<group>"; };
@@ -729,6 +732,22 @@
 				139919151B9EB69900FE56DD /* SelectView.m */,
 			);
 			name = selectView;
+			sourceTree = "<group>";
+		};
+		139DC5451BCE6DC000AA9C27 /* comment */ = {
+			isa = PBXGroup;
+			children = (
+				139DC5461BCE6DE500AA9C27 /* CommentViewController.h */,
+				139DC5471BCE6DE500AA9C27 /* CommentViewController.m */,
+			);
+			name = comment;
+			sourceTree = "<group>";
+		};
+		139DC5491BCE741E00AA9C27 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 		13AA5E791B95CCD600AB477E /* AFNetworking */ = {
@@ -1120,6 +1139,7 @@
 		1506DF481B89B36D007D1696 /* Taling */ = {
 			isa = PBXGroup;
 			children = (
+				139DC5491BCE741E00AA9C27 /* New Group */,
 				D2FCB8F61BCBE86A00C6ACC0 /* Model */,
 				13B6CACE1B9C1DAB003EC8A9 /* messages */,
 				13B6CACA1B9C18E8003EC8A9 /* Orders */,
@@ -1551,8 +1571,6 @@
 				139919131B9EB4F300FE56DD /* selectView */,
 				1506E2281B89BB3A007D1696 /* RecommendTableViewController.h */,
 				1506E2291B89BB3A007D1696 /* RecommendTableViewController.m */,
-				B34A34AF1BBFBFC7009F42A4 /* ResumeDetailTVC.h */,
-				B34A34B01BBFBFC7009F42A4 /* ResumeDetailTVC.m */,
 			);
 			path = Recommend;
 			sourceTree = "<group>";
@@ -1716,8 +1734,11 @@
 		B3FB2A501BC3AD65003ACC5D /* resume */ = {
 			isa = PBXGroup;
 			children = (
+				139DC5451BCE6DC000AA9C27 /* comment */,
 				B3FB2A511BC3AD82003ACC5D /* MyResumeTVC.h */,
 				B3FB2A521BC3AD82003ACC5D /* MyResumeTVC.m */,
+				B34A34AF1BBFBFC7009F42A4 /* ResumeDetailTVC.h */,
+				B34A34B01BBFBFC7009F42A4 /* ResumeDetailTVC.m */,
 			);
 			name = resume;
 			sourceTree = "<group>";
@@ -1984,6 +2005,7 @@
 				1506E1361B89B646007D1696 /* RSADataSigner.m in Sources */,
 				1506E01F1B89B521007D1696 /* UIScrollView+MJExtension.m in Sources */,
 				1506E1321B89B646007D1696 /* DataVerifier.m in Sources */,
+				139DC5481BCE6DE500AA9C27 /* CommentViewController.m in Sources */,
 				137BBBE01B9DA9F5004571C6 /* UserInfo.m in Sources */,
 				1506E0A91B89B582007D1696 /* UIView+WebCacheOperation.m in Sources */,
 				13B6CACD1B9C1928003EC8A9 /* OrderListViewController.m in Sources */,

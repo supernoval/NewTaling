@@ -80,6 +80,115 @@
             </objects>
             <point key="canvasLocation" x="852" y="655.5"/>
         </scene>
+        <!--Comment View Controller-->
+        <scene sceneID="6Nj-bS-MbM">
+            <objects>
+                <viewController storyboardIdentifier="CommentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PJl-V9-EzV" customClass="CommentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ofQ-Fi-RQ9"/>
+                        <viewControllerLayoutGuide type="bottom" id="LKh-Sh-IbO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1M4-so-ToB">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VK-wY-NXe">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="q3F-b6-JX5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="添加评价">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="q3F-b6-JX5"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="q3F-b6-JX5"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="sumitAction:" destination="PJl-V9-EzV" eventType="touchUpInside" id="vnm-RN-2cg"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="s31-v0-I5R">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="138" id="rvR-cb-tQv">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="150"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="rvR-cb-tQv"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="rvR-cb-tQv"/>
+                                    </mask>
+                                </variation>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LKh-Sh-IbO" firstAttribute="top" secondItem="1VK-wY-NXe" secondAttribute="bottom" constant="48" id="27m-gh-8jL"/>
+                            <constraint firstAttribute="trailing" secondItem="1VK-wY-NXe" secondAttribute="trailing" constant="10" id="HTc-rG-BPN">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="1VK-wY-NXe" firstAttribute="top" secondItem="s31-v0-I5R" secondAttribute="bottom" constant="45" id="LX2-of-IQ0"/>
+                            <constraint firstAttribute="trailing" secondItem="s31-v0-I5R" secondAttribute="trailing" constant="10" id="ZMO-XF-rdN"/>
+                            <constraint firstItem="s31-v0-I5R" firstAttribute="top" secondItem="ofQ-Fi-RQ9" secondAttribute="bottom" constant="8" id="kts-6R-di6"/>
+                            <constraint firstItem="s31-v0-I5R" firstAttribute="leading" secondItem="1M4-so-ToB" secondAttribute="leading" constant="10" id="qRg-y1-VDu"/>
+                            <constraint firstItem="1VK-wY-NXe" firstAttribute="leading" secondItem="1M4-so-ToB" secondAttribute="leading" constant="20" id="xaJ-Ud-Ska"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="1VK-wY-NXe"/>
+                                <exclude reference="s31-v0-I5R"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="ZMO-XF-rdN"/>
+                                <exclude reference="kts-6R-di6"/>
+                                <exclude reference="qRg-y1-VDu"/>
+                                <exclude reference="HTc-rG-BPN"/>
+                                <exclude reference="LX2-of-IQ0"/>
+                                <exclude reference="xaJ-Ud-Ska"/>
+                                <exclude reference="27m-gh-8jL"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="1VK-wY-NXe"/>
+                                <include reference="s31-v0-I5R"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="ZMO-XF-rdN"/>
+                                <include reference="kts-6R-di6"/>
+                                <include reference="qRg-y1-VDu"/>
+                                <include reference="HTc-rG-BPN"/>
+                                <include reference="LX2-of-IQ0"/>
+                                <include reference="xaJ-Ud-Ska"/>
+                                <exclude reference="27m-gh-8jL"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="textView" destination="s31-v0-I5R" id="QPa-7r-WGp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0VZ-cs-zv6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1477.5" y="655.5"/>
+        </scene>
         <!--Pick Address View Controller-->
         <scene sceneID="F06-oY-X13">
             <objects>

@@ -12,6 +12,7 @@
 #import "ResumeOpetationCell.h"
 #import "CommentCell.h"
 #import "ConstantsHeaders.h"
+#import "CommentViewController.h"
 
 
 @interface ResumeDetailTVC ()
@@ -32,7 +33,7 @@
     
     _commentArry = [[NSMutableArray alloc]init];
     
-    self.tableView.tableFooterView = [self tableFooterView];
+  
     
 //    [self addHeaderRefresh];
 //    [self addFooterRefresh];
@@ -40,9 +41,19 @@
     _index = 1;
     _size = 10;
     
-    [self getData];
+
     
 //    [self.tableView.header beginRefreshing];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    _index = 1;
+    
+    [self getData];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -131,6 +142,12 @@
         //购买
     }else if (self.type == 2){
         //评价
+        
+        CommentViewController *commentVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CommentViewController"];
+        commentVC.resumeid = self.item.resumesId;
+        [self.navigationController pushViewController:commentVC animated:YES];
+        
+        
     }
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -146,6 +163,28 @@
     }
     
     return 1;
+}
+
+- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    
+    if (section < 4) {
+        
+        return nil;
+        
+    }
+    return [self tableFooterView];
+    
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    
+    if (section < 4) {
+        
+        return 0;
+    }
+    return 40;
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -254,6 +293,8 @@
             
             NSDictionary *oneComment = [_commentArry objectAtIndex:indexPath.row];
             commentCell.commentLabel.text = [oneComment objectForKey:@"comment"];
+            
+            commentCell.selectionStyle = UITableViewCellSelectionStyleNone;
             
             return commentCell;
         }
