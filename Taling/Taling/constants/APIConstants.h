@@ -9,10 +9,10 @@
 
 
 //本地测试
-#define  kRequestHeader  @"http://192.168.40.138/taling-api"
+//#define  kRequestHeader  @"http://192.168.40.138/taling-api"
 //正式
-//#define  kRequestHeader  @"http://183.131.151.50/taling-api"
-//#define  kRequestHeader    @"http://192.168.40.138/taling-api"  //本地
+#define  kRequestHeader  @"http://183.131.151.50/taling-api"
+
 
 
 
@@ -107,6 +107,6 @@
  buyer_id  这个是买家ID也是 登录用户的ID  也就是 你登录APP的时候  我会返回给你的用户相关信息
  order_price  这个是简历价格   会在简历相关信息里面。
  */
-#define kcreatOrder @"order/createOrder"
+#define kcreatOrder @"/order/createOrder"
 
 

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface ModelItem : NSObject
-
+//简历
 @property (strong, nonatomic) NSString *age;
 @property (strong, nonatomic) NSString *appraiseNum;
 @property (strong, nonatomic) NSString *buyNum;
@@ -35,5 +35,26 @@
 @property (strong, nonatomic) NSString *summary;
 @property (strong, nonatomic) NSString *url;
 @property (strong, nonatomic) NSString *userId;
+
+//HR
+@property (strong, nonatomic) NSString *dateJoined;
+@property (strong, nonatomic) NSString *firstName;
+@property (strong, nonatomic) NSString *id;
+@property (nonatomic) BOOL isActive;
+@property (nonatomic) BOOL isSuperuser;
+@property (strong, nonatomic) NSString *lastLogin;
+@property (strong, nonatomic) NSString *lastName;
+@property (strong, nonatomic) NSString *password;
+@property (strong, nonatomic) NSString *username;
+
+
+//下单成功返回
+@property (strong, nonatomic) NSString *buyerId;
+@property (strong, nonatomic) NSString *fcd;
+@property (strong, nonatomic) NSString *lmd;
+@property (strong, nonatomic) NSString *orderNo;
+@property (strong, nonatomic) NSString *orderPrice;
+@property (strong, nonatomic) NSString *resumeId;
+@property (strong, nonatomic) NSString *sellerId;
 
 @end

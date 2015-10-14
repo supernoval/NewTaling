@@ -20,6 +20,4 @@
 +(NSString*)getuserid;
 
 
-
-
 @end

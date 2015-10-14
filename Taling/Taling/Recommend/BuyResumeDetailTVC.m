@@ -10,6 +10,7 @@
 
 @interface BuyResumeDetailTVC ()
 @property (nonatomic)NSInteger payType;// 1 微信 2 支付宝
+@property (strong, nonatomic)ModelItem *buyItem;//下单成功后的返回数据
 
 @end
 
@@ -20,6 +21,8 @@
     [super viewDidLoad];
     self.title = @"购买简历";
     _payType = 1;
+    
+    _buyItem = [[ModelItem alloc]init];
     
     _wechatButton.selected = YES;
     _alipayButton.selected = NO;
@@ -90,7 +93,7 @@
 - (void)payAction{
     
     NSLog(@"支付方式：%li",(long)_payType);
-    NSString *buy_id = [[NSUserDefaults standardUserDefaults]objectForKey:kusername];
+    NSString *buy_id = [UserInfo getuserid];
     NSLog(@"username:%@",buy_id);
     NSLog(@"resumeId:%@",self.item.resumesId);
     NSLog(@"userId:%@",self.item.userId);
@@ -102,6 +105,11 @@
     [[TLRequest shareRequest] tlRequestWithAction:kcreatOrder Params:param result:^(BOOL isSuccess, id data) {
         
         if (isSuccess) {
+            
+            if ([data isKindOfClass:[NSDictionary class]]) {
+                NSDictionary *dic = data;
+                [_buyItem setValuesForKeysWithDictionary:dic];
+            }
             
             
         }

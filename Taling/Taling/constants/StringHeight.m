@@ -45,28 +45,31 @@
         
         return 0;
     }
+    
+    
+//    CGRect sizeRect = [text boundingRectWithSize:CGSizeMake(1000, height) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:font} context:nil];
+//    
+//    return sizeRect.size.width;
+    
     // Get text
-//    CFMutableAttributedStringRef attrString =CFAttributedStringCreateMutable(kCFAllocatorDefault,0);
-//    CFAttributedStringReplaceString (attrString,CFRangeMake(0,0), (CFStringRef) text);
-//    CFIndex stringLength = CFStringGetLength((CFStringRef) attrString);
-//    
-//    // Change font
-//    CTFontRef ctFont = CTFontCreateWithName((__bridge CFStringRef) font.fontName, font.pointSize,NULL);
-//    CFAttributedStringSetAttribute(attrString, CFRangeMake(0, stringLength), kCTFontAttributeName, ctFont);
-//    
-//    // Calc the size
-//    CTFramesetterRef framesetter =CTFramesetterCreateWithAttributedString(attrString);
-//    CFRange fitRange;
-//    CGSize frameSize = CTFramesetterSuggestFrameSizeWithConstraints(framesetter, CFRangeMake(0, stringLength), NULL, CGSizeMake(CGFLOAT_MAX, height), &fitRange);
-//    CFRelease(ctFont);
-//    CFRelease(framesetter);
-//    CFRelease(attrString);
+    CFMutableAttributedStringRef attrString =CFAttributedStringCreateMutable(kCFAllocatorDefault,0);
+    CFAttributedStringReplaceString (attrString,CFRangeMake(0,0), (CFStringRef) text);
+    CFIndex stringLength = CFStringGetLength((CFStringRef) attrString);
+    
+    // Change font
+    CTFontRef ctFont = CTFontCreateWithName((__bridge CFStringRef) font.fontName, font.pointSize,NULL);
+    CFAttributedStringSetAttribute(attrString, CFRangeMake(0, stringLength), kCTFontAttributeName, ctFont);
+    
+    // Calc the size
+    CTFramesetterRef framesetter =CTFramesetterCreateWithAttributedString(attrString);
+    CFRange fitRange;
+    CGSize frameSize = CTFramesetterSuggestFrameSizeWithConstraints(framesetter, CFRangeMake(0, stringLength), NULL, CGSizeMake(CGFLOAT_MAX, height), &fitRange);
+    CFRelease(ctFont);
+    CFRelease(framesetter);
+    CFRelease(attrString);
     //NSLog(@"frameSize=======:%f", frameSize.height);
     
-    
-    CGRect sizeRect = [text boundingRectWithSize:CGSizeMake(1000, height) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:font} context:nil];
-    
-    return sizeRect.size.width;
+    return frameSize.width + 5;
 }
 
 @end

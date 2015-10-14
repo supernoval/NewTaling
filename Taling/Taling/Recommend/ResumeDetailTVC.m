@@ -12,7 +12,11 @@
 #import "ResumeOpetationCell.h"
 #import "CommentCell.h"
 #import "ConstantsHeaders.h"
+<<<<<<< .mine
+#import "BuyResumeDetailTVC.h"
+=======
 #import "CommentViewController.h"
+>>>>>>> .r44
 
 
 @interface ResumeDetailTVC ()
@@ -140,6 +144,10 @@
     
     if (self.type == 1) {
         //购买
+        
+        BuyResumeDetailTVC *buy = [self.storyboard instantiateViewControllerWithIdentifier:@"BuyResumeDetailTVC"];
+        buy.item = self.item;
+        [self.navigationController pushViewController:buy animated:YES];
     }else if (self.type == 2){
         //评价
         
@@ -291,8 +299,8 @@
         case 4:
         {
             
-            NSDictionary *oneComment = [_commentArry objectAtIndex:indexPath.row];
-            commentCell.commentLabel.text = [oneComment objectForKey:@"comment"];
+//            NSDictionary *oneComment = [_commentArry objectAtIndex:indexPath.row];
+//            commentCell.commentLabel.text = [oneComment objectForKey:@"comment"];
             
             commentCell.selectionStyle = UITableViewCellSelectionStyleNone;
             
