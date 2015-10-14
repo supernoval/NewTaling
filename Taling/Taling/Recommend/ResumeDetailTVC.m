@@ -12,11 +12,9 @@
 #import "ResumeOpetationCell.h"
 #import "CommentCell.h"
 #import "ConstantsHeaders.h"
-<<<<<<< .mine
 #import "BuyResumeDetailTVC.h"
-=======
 #import "CommentViewController.h"
->>>>>>> .r44
+
 
 
 @interface ResumeDetailTVC ()
