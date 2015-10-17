@@ -31,10 +31,13 @@ static NSString *cellId = @"ChatListCellTableViewCell";
     
     [super viewDidLoad];
   
+    self.title = @"消息";
+    
+    
     _conversations = [[NSMutableArray alloc]init];
     
-    [self addHeaderRefresh];
-    [self addFooterRefresh];
+//    [self addHeaderRefresh];
+//    [self addFooterRefresh];
     
     
     
@@ -46,6 +49,16 @@ static NSString *cellId = @"ChatListCellTableViewCell";
     [self reFreshDataSource];
     
     [self registerNotifications];
+    
+}
+
+-(void)headerRefresh
+{
+    
+}
+
+-(void)footerRefresh
+{
     
 }
 

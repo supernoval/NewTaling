@@ -35,6 +35,8 @@
     
     
 #warning 打包注意修改 certname
+    
+    
     //注册环信
     [[EaseMob sharedInstance] registerSDKWithAppKey:kEaseMobAppKey apnsCertName:kEaseMobPushCertNameDEV];
     [[EaseMob sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];

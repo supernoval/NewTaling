@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 
+//环信账号是否登陆
+#define kEasyMobHadLogin   @"EasyMobHadLogin"
 
 // 是否登录
 #define kHadLogin    @"HadLogin"

@@ -10,6 +10,8 @@
 #import "ConstantsHeaders.h"
 #import "ResumeDetailTVC.h"
 #import "BuyResumeDetailTVC.h"
+#import "ChatAccountManager.h"
+
 @interface RecommendTableViewController ()<UISearchBarDelegate,UISearchDisplayDelegate>
 {
     UISearchBar *_searchBar;
@@ -52,7 +54,7 @@
     
     _tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(resign)];
     
-    [self addHeaderRefresh];
+//    [self addHeaderRefresh];
     [self addFooterRefresh];
     
     index = 1;
@@ -60,7 +62,10 @@
     
     [self.tableView.header beginRefreshing];
     
-  
+    
+    //登陆注册环信账号
+    [self CheckEasyMobLogin];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -75,18 +80,22 @@
     [super viewDidAppear:animated];
     
     
-    if (![[NSUserDefaults standardUserDefaults]boolForKey:kHadLogin])
-    {
-        
-        
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        
-        UINavigationController *loginNav = [sb instantiateViewControllerWithIdentifier:@"LoginNav"];
-        
-        [self presentViewController:loginNav animated:YES completion:nil];
-        
-        
-    }
+//    if (![[NSUserDefaults standardUserDefaults]boolForKey:kHadLogin])
+//    {
+//        
+//        
+//        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+//        
+//        UINavigationController *loginNav = [sb instantiateViewControllerWithIdentifier:@"LoginNav"];
+//        
+//        [self presentViewController:loginNav animated:YES completion:nil];
+//        
+//        
+//    }
+    
+
+  
+    
 }
 -(void)viewWillDisappear:(BOOL)animated
 {
@@ -94,6 +103,28 @@
     
     [_selectedView removeFromSuperview];
     
+}
+
+-(void)CheckEasyMobLogin
+{
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:kEasyMobHadLogin]) {
+        
+        NSString *account = @"15900785196";
+        [[ChatAccountManager shareChatAccountManager] loginWithAccount:account successBlock:^(BOOL isSuccess) {
+            
+            if (isSuccess) {
+                
+                NSLog(@"Login EaseMob Success:%@",account);
+                
+                
+            }
+            else
+            {
+                
+            }
+            
+        }];
+    }
 }
 
 -(void)headerRefresh
