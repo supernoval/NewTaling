@@ -12,6 +12,7 @@
 #import "CommonMethods.h"
 #import "MyProgressHUD.h"
 #import "ConstantsHeaders.h"
+#import "EaseMob.h"
 
 
 #import "UIImageView+WebCache.h"

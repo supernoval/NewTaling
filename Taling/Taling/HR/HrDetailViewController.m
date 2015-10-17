@@ -7,6 +7,7 @@
 //
 
 #import "HrDetailViewController.h"
+#import "ChatViewController.h"
 
 @interface HrDetailViewController ()
 
@@ -30,8 +31,11 @@
 
 - (IBAction)chatAction:(id)sender {
     
-    
-    
+//    NSString *chatter = @"15900785196";
+    NSString *chatter = @"15201931110";
+    ChatViewController *chatVC = [[ChatViewController alloc] initWithChatter:chatter isGroup:NO];
+    chatVC.title =chatter;
+    [self.navigationController pushViewController:chatVC animated:YES];
     
     
     

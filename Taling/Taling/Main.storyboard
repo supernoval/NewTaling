@@ -6061,7 +6061,7 @@
         <scene sceneID="gUL-jo-lfl">
             <objects>
                 <tableViewController storyboardIdentifier="ChatListTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qeD-Rd-7cG" customClass="ChatListTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="Zdj-D3-xpX">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Zdj-D3-xpX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
@@ -6179,16 +6179,16 @@
                                             <exclude reference="DOX-DE-nPh"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <exclude reference="Ksn-wv-i12"/>
-                                            <exclude reference="lg9-Ee-e24"/>
-                                            <exclude reference="ubi-eJ-jMi"/>
+                                            <exclude reference="TQj-gz-Lhn"/>
+                                            <exclude reference="oAI-va-Qsd"/>
                                             <exclude reference="dfu-8q-hHF"/>
                                             <exclude reference="fRW-xI-WSg"/>
                                             <exclude reference="fiv-tv-Kb8"/>
                                             <exclude reference="nhP-Kb-EJL"/>
                                             <exclude reference="uEe-M2-OLZ"/>
-                                            <exclude reference="TQj-gz-Lhn"/>
-                                            <exclude reference="oAI-va-Qsd"/>
+                                            <exclude reference="Ksn-wv-i12"/>
+                                            <exclude reference="lg9-Ee-e24"/>
+                                            <exclude reference="ubi-eJ-jMi"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
@@ -6199,16 +6199,16 @@
                                             <include reference="DOX-DE-nPh"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="Ksn-wv-i12"/>
-                                            <include reference="lg9-Ee-e24"/>
-                                            <include reference="ubi-eJ-jMi"/>
+                                            <include reference="TQj-gz-Lhn"/>
+                                            <include reference="oAI-va-Qsd"/>
                                             <include reference="dfu-8q-hHF"/>
                                             <include reference="fRW-xI-WSg"/>
                                             <include reference="fiv-tv-Kb8"/>
                                             <include reference="nhP-Kb-EJL"/>
                                             <include reference="uEe-M2-OLZ"/>
-                                            <include reference="TQj-gz-Lhn"/>
-                                            <include reference="oAI-va-Qsd"/>
+                                            <include reference="Ksn-wv-i12"/>
+                                            <include reference="lg9-Ee-e24"/>
+                                            <include reference="ubi-eJ-jMi"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>

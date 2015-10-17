@@ -11,7 +11,7 @@
 #import "IChatManagerDelegate.h"
 #import "NSDate+Category.h"
 #import "ConvertToCommonEmoticonsHelper.h"
-
+#import "ChatViewController.h"
 
 static NSString *cellId = @"ChatListCellTableViewCell";
 
@@ -63,18 +63,53 @@ static NSString *cellId = @"ChatListCellTableViewCell";
 }
 
 #pragma mark - UITableViewDataSource
+
+-(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *blankView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 1)];
+    
+    blankView.backgroundColor = [UIColor clearColor];
+    
+    return blankView;
+    
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 1;
+    
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return 60;
+    
+    
+}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return _conversations.count;
+    return 1;
     
+    
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+       return _conversations.count;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ChatListCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     
+    EMConversation *conversation = [_conversations objectAtIndex:indexPath.row];
     
+    cell.titleLabel.text = conversation.chatter;
+    
+    
+    cell.lastestChatlabel.text = [self subTitleMessageByConversation:conversation];
+    
+    cell.timeLabel.text = [self lastMessageTimeByConversation:conversation];
     
     
     
@@ -83,8 +118,22 @@ static NSString *cellId = @"ChatListCellTableViewCell";
     
 }
 
+#pragma mark - UITableViewDelegate
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    EMConversation *conversation = [_conversations objectAtIndex:indexPath.section];
+    
+    ChatViewController *chatVC = [[ChatViewController alloc] initWithChatter:conversation.chatter isGroup:NO];
+    chatVC.title =conversation.chatter;
+    chatVC.hidesBottomBarWhenPushed = YES;
+    
+    [self.navigationController pushViewController:chatVC animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+}
 
-// 得到最后消息时间
+#pragma mark -  得到最后消息时间
 -(NSString *)lastMessageTimeByConversation:(EMConversation *)conversation
 {
     NSString *ret = @"";
@@ -96,7 +145,7 @@ static NSString *cellId = @"ChatListCellTableViewCell";
     return ret;
 }
 
-// 得到未读消息条数
+#pragma mark -  得到未读消息条数
 - (NSInteger)unreadMessageCountByConversation:(EMConversation *)conversation
 {
     NSInteger ret = 0;
@@ -105,7 +154,7 @@ static NSString *cellId = @"ChatListCellTableViewCell";
     return  ret;
 }
 
-// 得到最后消息文字或者类型
+#pragma mark -  得到最后消息文字或者类型
 -(NSString *)subTitleMessageByConversation:(EMConversation *)conversation
 {
     NSString *ret = @"";
@@ -161,7 +210,7 @@ static NSString *cellId = @"ChatListCellTableViewCell";
 - (NSMutableArray *)loadDataSource
 {
     NSMutableArray *ret = nil;
-    NSArray *conversations = [[EaseMob sharedInstance].chatManager conversations];
+    NSArray *conversations = [[EaseMob sharedInstance].chatManager loadAllConversationsFromDatabaseWithAppend2Chat:NO];
     
     NSArray* sorte = [conversations sortedArrayUsingComparator:
                       ^(EMConversation *obj1, EMConversation* obj2){

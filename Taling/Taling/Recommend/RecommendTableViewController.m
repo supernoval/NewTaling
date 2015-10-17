@@ -110,6 +110,7 @@
     if (![[NSUserDefaults standardUserDefaults] boolForKey:kEasyMobHadLogin]) {
         
         NSString *account = @"15900785196";
+//        NSString *account = @"15201931110";
         [[ChatAccountManager shareChatAccountManager] loginWithAccount:account successBlock:^(BOOL isSuccess) {
             
             if (isSuccess) {
