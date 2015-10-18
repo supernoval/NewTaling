@@ -3598,26 +3598,6 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上海  本科" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZ4-8h-aHx">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="WxU-3z-D0M"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="WxU-3z-D0M"/>
-                                                        </mask>
-                                                    </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
-                                                        <mask key="constraints">
-                                                            <include reference="WxU-3z-D0M"/>
-                                                        </mask>
-                                                    </variation>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="职业:营销专员" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="942-y9-d4w">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <animations/>
@@ -3840,6 +3820,26 @@
                                                         </mask>
                                                     </variation>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上海  本科" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZ4-8h-aHx">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="WxU-3z-D0M"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="WxU-3z-D0M"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="WxU-3z-D0M"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
@@ -3879,7 +3879,6 @@
                                                     <exclude reference="SmE-Hu-stC"/>
                                                     <exclude reference="Tfv-x7-iKZ"/>
                                                     <exclude reference="qUb-Tv-buS"/>
-                                                    <exclude reference="cZ4-8h-aHx"/>
                                                     <exclude reference="942-y9-d4w"/>
                                                     <exclude reference="lIm-VA-1Bh"/>
                                                     <exclude reference="VB3-G3-KOl"/>
@@ -3889,6 +3888,7 @@
                                                     <exclude reference="1AN-US-gMJ"/>
                                                     <exclude reference="eO6-DK-VMw"/>
                                                     <exclude reference="V0B-gt-4zQ"/>
+                                                    <exclude reference="cZ4-8h-aHx"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="7ik-af-rC6"/>
@@ -3926,7 +3926,6 @@
                                                     <include reference="SmE-Hu-stC"/>
                                                     <include reference="Tfv-x7-iKZ"/>
                                                     <include reference="qUb-Tv-buS"/>
-                                                    <include reference="cZ4-8h-aHx"/>
                                                     <include reference="942-y9-d4w"/>
                                                     <include reference="lIm-VA-1Bh"/>
                                                     <include reference="VB3-G3-KOl"/>
@@ -3936,6 +3935,7 @@
                                                     <include reference="1AN-US-gMJ"/>
                                                     <include reference="eO6-DK-VMw"/>
                                                     <include reference="V0B-gt-4zQ"/>
+                                                    <include reference="cZ4-8h-aHx"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="7ik-af-rC6"/>
