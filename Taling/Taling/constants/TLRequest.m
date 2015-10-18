@@ -39,6 +39,8 @@ TLRequest *request;
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
+    manager.requestSerializer.timeoutInterval = 20.0;
+    
     [MyProgressHUD showProgress];
     
     [manager POST:url parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -51,6 +53,7 @@ TLRequest *request;
         
             [CommonMethods showDefaultErrorString:[responseObject objectForKey:@"err_str"]];
             
+             block(NO,nil);
         }
         if (result == 0)
         {
@@ -67,6 +70,9 @@ TLRequest *request;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
          [MyProgressHUD dismiss];
+        
+        block(NO,nil);
+        
         
         NSLog(@"fail:%@,%@",error,operation.responseString);
 

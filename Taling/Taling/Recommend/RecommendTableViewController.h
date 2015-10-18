@@ -9,14 +9,18 @@
 #import "BaseTableViewController.h"
 #import "SelectView.h"
 #import "RecommendCell.h"
+#import "RecommendHeaderView.h"
+#import "BaseViewController.h"
 
-
-
-@interface RecommendTableViewController : BaseTableViewController
+@interface RecommendTableViewController : BaseViewController
 {
     SelectView *_selectedView;
     
 }
 
+@property (weak, nonatomic) IBOutlet RecommendHeaderView *recomendHeader;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic)  RecommendHeaderView *headerView;
 
 @end

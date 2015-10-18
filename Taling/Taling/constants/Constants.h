@@ -48,9 +48,9 @@
 #define TabbarTintColor RGB(10,184,7,1.0)
 
 //navigationbar 颜色
-#define NavigationBarColor  RGB(255,128,0,0.9)
+#define NavigationBarColor  RGB(255,105,0,0.9)
 
-#define kOrangeTextColor   RGB(255,128,0,0.9)
+#define kOrangeTextColor    RGB(255,105,0,0.9)
 
 //背景色
 #define kBackgroundColor RGB(240,240,240,1)
@@ -62,7 +62,7 @@
 //半透明背景色
 #define kTransParentBackColor RGB(200,200,200,0.2)
 //黄色字体
-#define kYellowColor RGB(253,159,8,1)
+#define kYellowColor  RGB(255,105,0,0.9)
 
 //浅灰色气体
 #define kLightTintColor  RGB(154, 154, 154, 1)

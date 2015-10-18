@@ -220,6 +220,7 @@
 		153F3BD31BD27CBC00C86F1A /* EMVoiceConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 153F3BC81BD27CBC00C86F1A /* EMVoiceConverter.mm */; settings = {ASSET_TAGS = (); }; };
 		153F3BD41BD27CBC00C86F1A /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 153F3BCC1BD27CBC00C86F1A /* libopencore-amrnb.a */; settings = {ASSET_TAGS = (); }; };
 		153F3BD51BD27CBC00C86F1A /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 153F3BD01BD27CBC00C86F1A /* libopencore-amrwb.a */; settings = {ASSET_TAGS = (); }; };
+		153F3BD91BD3641600C86F1A /* RecommendHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 153F3BD81BD3641600C86F1A /* RecommendHeaderView.m */; settings = {ASSET_TAGS = (); }; };
 		1579153D1B8F52E100E31111 /* MineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1579153C1B8F52E100E31111 /* MineTableViewController.m */; };
 		157915411B8F54DD00E31111 /* PersonalInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 157915401B8F54DD00E31111 /* PersonalInfoTableView.m */; };
 		15EE6BE01B92D1CA00FBD86C /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EE6BDF1B92D1CA00FBD86C /* MAMapKit.framework */; };
@@ -856,6 +857,8 @@
 		153F3BCE1BD27CBC00C86F1A /* dec_if.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dec_if.h; sourceTree = "<group>"; };
 		153F3BCF1BD27CBC00C86F1A /* if_rom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = if_rom.h; sourceTree = "<group>"; };
 		153F3BD01BD27CBC00C86F1A /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
+		153F3BD71BD3641600C86F1A /* RecommendHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendHeaderView.h; sourceTree = "<group>"; };
+		153F3BD81BD3641600C86F1A /* RecommendHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendHeaderView.m; sourceTree = "<group>"; };
 		157915371B8F4F3200E31111 /* APIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIConstants.h; sourceTree = "<group>"; };
 		1579153B1B8F52E100E31111 /* MineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewController.h; sourceTree = "<group>"; };
 		1579153C1B8F52E100E31111 /* MineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewController.m; sourceTree = "<group>"; };
@@ -1883,6 +1886,7 @@
 		1506E2271B89BB23007D1696 /* Recommend */ = {
 			isa = PBXGroup;
 			children = (
+				153F3BD61BD363F000C86F1A /* recommendHeaderView */,
 				D2FCB8FA1BCBEF9400C6ACC0 /* buyResume */,
 				13D5F0F41B9FF8C4001A8AFF /* cell */,
 				139919131B9EB4F300FE56DD /* selectView */,
@@ -1963,14 +1967,14 @@
 		153F3ABA1BD277FB00C86F1A /* ChatView */ = {
 			isa = PBXGroup;
 			children = (
+				153F3ABF1BD277FB00C86F1A /* ChatViewController.h */,
+				153F3AC01BD277FB00C86F1A /* ChatViewController.m */,
 				153F3B091BD2797F00C86F1A /* UIResponder+Router.h */,
 				153F3B0A1BD2798400C86F1A /* UIResponder+Router.m */,
 				153F3ABB1BD277FB00C86F1A /* ChatSendHelper.h */,
 				153F3ABC1BD277FB00C86F1A /* ChatSendHelper.m */,
 				153F3ABD1BD277FB00C86F1A /* ChatViewController+Category.h */,
 				153F3ABE1BD277FB00C86F1A /* ChatViewController+Category.m */,
-				153F3ABF1BD277FB00C86F1A /* ChatViewController.h */,
-				153F3AC01BD277FB00C86F1A /* ChatViewController.m */,
 				153F3AC11BD277FB00C86F1A /* ConvertToCommonEmoticonsHelper.h */,
 				153F3AC21BD277FB00C86F1A /* ConvertToCommonEmoticonsHelper.m */,
 				153F3AC31BD277FB00C86F1A /* LocationViewController.h */,
@@ -2323,6 +2327,15 @@
 				153F3BD01BD27CBC00C86F1A /* libopencore-amrwb.a */,
 			);
 			path = "opencore-amrwb";
+			sourceTree = "<group>";
+		};
+		153F3BD61BD363F000C86F1A /* recommendHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				153F3BD71BD3641600C86F1A /* RecommendHeaderView.h */,
+				153F3BD81BD3641600C86F1A /* RecommendHeaderView.m */,
+			);
+			name = recommendHeaderView;
 			sourceTree = "<group>";
 		};
 		1579153A1B8F52C400E31111 /* mine */ = {
@@ -2750,6 +2763,7 @@
 				1506E03E1B89B53C007D1696 /* JSONModelClassProperty.m in Sources */,
 				153F3BAC1BD27A4200C86F1A /* EMCDDeviceManager+ProximitySensor.m in Sources */,
 				1506E0451B89B53C007D1696 /* JSONValueTransformer.m in Sources */,
+				153F3BD91BD3641600C86F1A /* RecommendHeaderView.m in Sources */,
 				1506E0A41B89B582007D1696 /* UIImage+GIF.m in Sources */,
 				153F3B731BD279E000C86F1A /* EMSDWebImageManager.m in Sources */,
 				13AA5EAF1B95CCEF00AB477E /* AFURLRequestSerialization.m in Sources */,

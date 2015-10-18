@@ -16,6 +16,11 @@ NSString *cellID = @"HRListCell";
 {
     NSMutableArray * _hrdataArray;
     
+    NSInteger index;
+    NSInteger pageSize;
+    
+    
+    
 }
 
 
@@ -29,18 +34,65 @@ NSString *cellID = @"HRListCell";
    
     _hrdataArray = [[NSMutableArray alloc]init];
     
+    [self addHeaderRefresh];
+    
+    [self addFooterRefresh];
+    
+    pageSize = 10;
+    
+    index = 1;
+    
+    
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self requestHRList];
+    
+}
+
+-(void)headerRefresh
+{
+    index = 1;
+    
+    [self requestHRList];
+    
+    
+}
+
+-(void)footerRefresh
+{
+    index ++ ;
+    
+    [self requestHRList];
+    
 }
 
 
-
-
-
+-(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *footer = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 5)];
+    
+    footer.backgroundColor = [UIColor clearColor];
+    
+    
+    return footer;
+    
+    
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 5;
+    
+}
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+
     
-    return 10;
-    
-    return _hrdataArray;
+    return _hrdataArray.count;
     
 }
 
@@ -54,6 +106,10 @@ NSString *cellID = @"HRListCell";
 {
     
     HRListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    
+    NSDictionary *hrInfo = [_hrdataArray objectAtIndex:indexPath.section];
+    
+    cell.nameLabel.text = [hrInfo objectForKey:@"username"];
     
     
     
@@ -84,7 +140,38 @@ NSString *cellID = @"HRListCell";
 }
 
 
+#pragma mark - 请求数据
+-(void)requestHRList
+{
+    NSDictionary *param =@{@"index":@(index),@"size":@(pageSize)};
+    
+    [[TLRequest shareRequest] tlRequestWithAction:kgetHrInfo Params:param result:^(BOOL isSuccess, id data) {
+       
+        if (isSuccess) {
+            
+            
+            
+            NSArray *dataArray = data;
+            
+            if (dataArray.count > 0) {
+                
+                if (index == 1) {
+                    
+                    [_hrdataArray removeAllObjects];
+                    
+                }
+                [_hrdataArray addObjectsFromArray:dataArray];
+                
+                
+                [self.tableView reloadData];
+                
+            }
+        }
+        
+        
+    }];
 
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

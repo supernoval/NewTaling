@@ -12,7 +12,8 @@
 #import "BuyResumeDetailTVC.h"
 #import "ChatAccountManager.h"
 
-@interface RecommendTableViewController ()<UISearchBarDelegate,UISearchDisplayDelegate>
+
+@interface RecommendTableViewController ()<UISearchBarDelegate,UISearchDisplayDelegate,RecommendHeaderDelegate,UITableViewDataSource,UITableViewDelegate>
 {
     UISearchBar *_searchBar;
     
@@ -39,28 +40,43 @@
     
     _JDArray = [[NSMutableArray alloc]init];
     
+
     
-    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"getdistance"] style:UIBarButtonItemStylePlain target:self action:@selector(showSortView)];
     
     
-    self.navigationItem.leftBarButtonItem = item;
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    
+    
+//    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"getdistance"] style:UIBarButtonItemStylePlain target:self action:@selector(showSortView)];
+//    
+//    
+//    self.navigationItem.leftBarButtonItem = item;
     
     _selectedView = [[SelectView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
     
     _searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(50, 0, ScreenWidth, 44)];
     _searchBar.delegate = self;
-    _searchBar.placeholder = @"搜索关键字";
+    _searchBar.placeholder = @"行业、职位、城市、资历";
     self.navigationItem.titleView = _searchBar;
     
     _tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(resign)];
     
-//    [self addHeaderRefresh];
-    [self addFooterRefresh];
+    [self.tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
+    
+    [self.tableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(footerRefresh)];
+    
+    
+    // 添加头部选择栏
+    [self.view addSubview:self.headerView];
+    
     
     index = 1;
     size = 10;
     
-    [self.tableView.header beginRefreshing];
+//    [self.tableView.header beginRefreshing];
     
     
     //登陆注册环信账号
@@ -78,6 +94,10 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+   
+    
+  
     
     
 //    if (![[NSUserDefaults standardUserDefaults]boolForKey:kHadLogin])
@@ -104,6 +124,22 @@
     [_selectedView removeFromSuperview];
     
 }
+
+-(RecommendHeaderView*)headerView
+{
+    if (!_headerView) {
+        
+        _headerView = [[RecommendHeaderView alloc]initWithFrame:CGRectMake(0, 64, ScreenWidth, 44)];
+        
+        _headerView.delegate = self;
+       
+    }
+    
+    return _headerView  ;
+    
+}
+
+
 
 -(void)CheckEasyMobLogin
 {
@@ -151,8 +187,8 @@
     
     [[TLRequest shareRequest] tlRequestWithAction:kgetCommendResumes Params:param result:^(BOOL isSuccess, id data) {
        
-        [self endHeaderRefresh];
-        [self endFooterRefresh];
+        [self.tableView.header endRefreshing];
+        [self.tableView.footer endRefreshing];
        
         
         if (isSuccess) {
@@ -320,6 +356,12 @@
     
 }
 
+
+#pragma mark - RecommendHeaderDelegate
+-(void)selectedButtonIndex:(NSInteger)index
+{
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
