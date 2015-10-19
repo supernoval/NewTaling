@@ -34,6 +34,11 @@
     return [[NSUserDefaults standardUserDefaults] objectForKey:kuserid];
 }
 
++(NSString*)getUsername
+{
+    return [[NSUserDefaults standardUserDefaults ] objectForKey:kusername];
+    
+}
 
 
 @end

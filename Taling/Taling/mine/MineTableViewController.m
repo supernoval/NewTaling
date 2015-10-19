@@ -67,7 +67,14 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:kHadLogin]) {
+        
+        
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        
+        return;
+        
+    }
     if (indexPath.section == 0) {
         
         

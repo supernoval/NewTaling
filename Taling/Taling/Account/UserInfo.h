@@ -19,5 +19,8 @@
 
 +(NSString*)getuserid;
 
++(NSString*)getUsername;
+
+
 
 @end

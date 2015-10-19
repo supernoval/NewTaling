@@ -152,7 +152,7 @@
     
     [SMS_SDK commitVerifyCode:SMSCode result:^(enum SMS_ResponseState state) {
     
-         [MyProgressHUD dismiss];
+       
         
         if (state == 1)
         {
@@ -162,6 +162,8 @@
         }
         else
         {
+              [MyProgressHUD dismiss];
+            
             [CommonMethods showDefaultErrorString:@"验证码不正确"];
             
             
@@ -179,6 +181,8 @@
     TLRequest *request = [TLRequest shareRequest];
     
     [request tlRequestWithAction:kRegist Params:param result:^(BOOL isSuccess, id data) {
+        
+          [MyProgressHUD dismiss];
         
         if (isSuccess) {
             

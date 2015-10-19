@@ -43,10 +43,10 @@
 
     
     
-    
-    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.backgroundColor = kBackgroundColor;
+    
     
     
     
@@ -76,11 +76,10 @@
     index = 1;
     size = 10;
     
-//    [self.tableView.header beginRefreshing];
+    [self.tableView.header beginRefreshing];
     
     
-    //登陆注册环信账号
-    [self CheckEasyMobLogin];
+   
     
 }
 
@@ -88,16 +87,9 @@
 {
     [super viewWillAppear:animated];
     
- 
-}
-
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
     
-   
-    
-  
+    //登陆注册环信账号
+    [self CheckEasyMobLogin];
     
     
 //    if (![[NSUserDefaults standardUserDefaults]boolForKey:kHadLogin])
@@ -113,8 +105,18 @@
 //        
 //    }
     
+    
+ 
+}
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+   
+    
   
+
     
 }
 -(void)viewWillDisappear:(BOOL)animated
@@ -143,9 +145,10 @@
 
 -(void)CheckEasyMobLogin
 {
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:kEasyMobHadLogin]) {
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:kEasyMobHadLogin] && [[NSUserDefaults standardUserDefaults] boolForKey:kHadLogin]) {
         
-        NSString *account = @"15900785196";
+        NSString *account =[UserInfo getAccount_id];
+        
 //        NSString *account = @"15201931110";
         [[ChatAccountManager shareChatAccountManager] loginWithAccount:account successBlock:^(BOOL isSuccess) {
             
@@ -239,6 +242,21 @@
     [_selectedView show];
 }
 
+#pragma mark - UITableViewDataSource
+-(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 5)];
+    
+    blankFooter.backgroundColor = [UIColor clearColor];
+    
+    return blankFooter;
+    
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 5.0;
+    
+}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 1;
@@ -275,6 +293,9 @@
     //城市、教育程度
     cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,oneItem.city];
     
+    // 简历估值
+    cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",[oneItem.price floatValue]] ;
+    
     //公司
     cell.companyLabel.text = [NSString stringWithFormat:@"公司:%@",oneItem.currentCompany];
     
@@ -296,15 +317,15 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+  
 
 
     if (indexPath.section < _JDArray.count) {
         
-    NSDictionary *dict = [_JDArray objectAtIndex:indexPath.section];
+    ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
         
-    NSString *resumesId = [dict objectForKey:@"resumesId"];
+    NSString *resumesId = oneItem.resumesId;
+        
         
       if (resumesId) {
             
@@ -314,12 +335,8 @@
             
             resumeDetail.type = 1;
             resumeDetail.hidesBottomBarWhenPushed = YES;
-          
-          
-            [self.navigationController pushViewController:resumeDetail animated:YES];
-          
-           resumeDetail.item = oneItem;
-          
+            resumeDetail.item = oneItem;
+            resumeDetail.VCtitle = @"简历详情";
           [self.navigationController pushViewController:resumeDetail animated:YES];
           
         }

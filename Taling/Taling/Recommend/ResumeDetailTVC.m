@@ -31,7 +31,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"我的简历";
+    
+    if (_VCtitle) {
+        
+         self.title = _VCtitle;
+    }
+    else
+    {
+         self.title = @"我的简历";
+    }
+
     
     _commentArry = [[NSMutableArray alloc]init];
     

@@ -17,5 +17,8 @@
 
 @property (strong, nonatomic)ModelItem *item;
 
+@property (nonatomic) NSString *VCtitle;
+
+
 
 @end
