@@ -35,12 +35,13 @@
 
 //修改个人信息
 /*
- *account_id
- *nickname 
- *password
- *is_company
- *is_attestation
- *companyId
+ *user_id     用户id
+ *work_year   工作年限
+ *nickname    昵称
+ *industry    行业
+ *summary     自我描述
+ *company     所在公司
+ *photo       图片在appendData 里加
  */
 #define kupdateUser   @"/user/updateUser"
 
@@ -69,10 +70,17 @@
  */
 #define kaddAppraise    @"/appraise/addAppraise"
 
+
+//获取推荐简历列表
+/*
+
+ *index  
+ *size
+ */
 #define kgetCommendResumes @"/resume/getCommendResumes"
 
 
-//获取我上传的简历
+//获取上传的简历
 /*
  * user_id  用户id
  * index    页码

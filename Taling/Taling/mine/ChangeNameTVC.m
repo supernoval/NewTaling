@@ -40,14 +40,14 @@
         return;
     }
     
-    NSString *account_id = [UserInfo getAccount_id];
+    NSString *user_id = [UserInfo getuserid];
     
     NSString *nickname = _inputTextField.text;
     
     NSString *username = [[NSUserDefaults standardUserDefaults ] objectForKey:kusername];
-    NSString *password = [[NSUserDefaults standardUserDefaults ] objectForKey:kpassword];
     
-    NSDictionary *param = @{@"account_id":account_id,@"nickname":nickname,@"username":username,@"password":password};
+    
+    NSDictionary *param = @{@"user_id":user_id,@"work_year":@"",@"indeustry":@"",@"summary":@"",@"company":@"",@"nickname":nickname};
     
     [[TLRequest shareRequest] tlRequestWithAction:kupdateUser Params:param result:^(BOOL isSuccess, id data) {
         

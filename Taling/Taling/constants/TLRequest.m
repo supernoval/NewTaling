@@ -34,6 +34,15 @@ TLRequest *request;
 -(void)tlRequestWithAction:(NSString *)action Params:(NSDictionary *)param result:(RequestResultBlock)block
 {
     
+
+    [self requestWithAction:action params:param data:nil fileName:nil minetype:nil result:block];
+
+     
+    
+}
+
+-(void)requestWithAction:(NSString *)action params:(NSDictionary *)param data:(id)data fileName:(NSString *)fileName minetype:(NSString *)type result:(RequestResultBlock)block
+{
     NSString *url = [NSString stringWithFormat:@"%@%@",kRequestHeader,action];
     NSLog(@"url:%@",url);
     
@@ -43,17 +52,27 @@ TLRequest *request;
     
     [MyProgressHUD showProgress];
     
-    [manager POST:url parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    
+    [manager POST:url parameters:param constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        
+        if (data)
+        {
+            
+         [formData appendPartWithFileData:data name:fileName fileName:fileName mimeType:type];
+            
+        }
+        
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         [MyProgressHUD dismiss];
         
         NSInteger result = [[responseObject objectForKey:@"result"]integerValue];
         
         if (result == 1) {
-        
+            
             [CommonMethods showDefaultErrorString:[responseObject objectForKey:@"err_str"]];
             
-             block(NO,nil);
+            block(NO,nil);
         }
         if (result == 0)
         {
@@ -65,23 +84,22 @@ TLRequest *request;
         }
         
         
-         NSLog(@"success:%@",responseObject);
+        NSLog(@"success:%@",responseObject);
+        
+        
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
-         [MyProgressHUD dismiss];
+        
+        [MyProgressHUD dismiss];
         
         block(NO,nil);
         
         
         NSLog(@"fail:%@,%@",error,operation.responseString);
-
     }];
     
-    
 
-     
-    
 }
 
 @end
