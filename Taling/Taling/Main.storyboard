@@ -6192,7 +6192,7 @@
                                                 <constraint firstAttribute="height" constant="21" id="K1m-s5-jLC"/>
                                                 <constraint firstAttribute="width" constant="97" id="Zcm-c7-xCi"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
@@ -6220,7 +6220,9 @@
                                         <constraint firstAttribute="trailing" secondItem="qNb-Kv-32T" secondAttribute="trailing" constant="19" id="nhP-Kb-EJL"/>
                                         <constraint firstItem="1La-Wz-AAN" firstAttribute="leading" secondItem="SMr-a4-nHh" secondAttribute="leading" constant="8" id="oAI-va-Qsd"/>
                                         <constraint firstItem="qNb-Kv-32T" firstAttribute="top" secondItem="DOX-DE-nPh" secondAttribute="bottom" constant="5" id="uEe-M2-OLZ"/>
-                                        <constraint firstItem="DOX-DE-nPh" firstAttribute="top" secondItem="SMr-a4-nHh" secondAttribute="top" constant="8" id="ubi-eJ-jMi"/>
+                                        <constraint firstItem="DOX-DE-nPh" firstAttribute="top" secondItem="SMr-a4-nHh" secondAttribute="top" constant="8" id="ubi-eJ-jMi">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="3"/>
+                                        </constraint>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="subviews">

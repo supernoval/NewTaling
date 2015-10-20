@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Constants.h"
-#import <SMS_SDK/SMS_SDK.h>
+#import <SMS_SDK/SMSSDK.h>
 #import "ConstantsHeaders.h"
 #import "LoginViewController.h"
 #import <MAMapKit/MAMapKit.h>
@@ -47,7 +47,7 @@
     [MAMapServices sharedServices].apiKey = kGaodeMapKey;
     
     //sharesdk sms 注册
-    [SMS_SDK registerApp:kShareSDKSMSAppKey withSecret:kShareSDKSMSAppSecret];
+    [SMSSDK registerApp:kShareSDKSMSAppKey withSecret:kShareSDKSMSAppSecret];
     
     
     if ([[UIDevice currentDevice].systemVersion floatValue] >=8.0)

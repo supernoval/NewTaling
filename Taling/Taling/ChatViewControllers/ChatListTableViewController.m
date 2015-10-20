@@ -110,6 +110,7 @@ static NSString *cellId = @"ChatListCellTableViewCell";
     cell.lastestChatlabel.text = [self subTitleMessageByConversation:conversation];
     
     cell.timeLabel.text = [self lastMessageTimeByConversation:conversation];
+    cell.timeLabel.adjustsFontSizeToFitWidth = YES;
     
     
     

@@ -7,7 +7,7 @@
 //
 
 #import "ForgetCodeTVC.h"
-#import <SMS_SDK/SMS_SDK.h>
+#import <SMS_SDK/SMSSDK.h>
 #import "CommonMethods.h"
 #import "MyProgressHUD.h"
 
@@ -74,12 +74,7 @@
         
         [self getAutoCodeTime];
         
-        [SMS_SDK getVerificationCodeBySMSWithPhone:_phoneNum.text zone:@"86" result:^(SMS_SDKError *error) {
-           
-            if (!error) {
-                
-                
-            }
+        [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:_phoneNum.text zone:@"86" customIdentifier:nil result:^(NSError *error) {
             
         }];
         
@@ -113,11 +108,12 @@
     
     [MyProgressHUD showProgress];
     
-    [SMS_SDK commitVerifyCode:SMSCode result:^(enum SMS_ResponseState state) {
+    [SMSSDK commitVerificationCode:SMSCode phoneNumber:_phoneNum.text zone:@"86" result:^(NSError *error) {
+       
         
         [MyProgressHUD dismiss];
         
-        if (state == 1)
+        if (!error)
         {
             
             
@@ -131,7 +127,7 @@
             
             
             
-        
+            
             
         }
         else
@@ -140,7 +136,11 @@
             
             
         }
+        
     }];
+    
+    
+  
     
 }
 

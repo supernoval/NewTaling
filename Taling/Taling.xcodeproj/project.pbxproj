@@ -29,6 +29,8 @@
 		13AA5EB01B95CCEF00AB477E /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AA5EA61B95CCEF00AB477E /* AFURLResponseSerialization.m */; };
 		13AA5EB11B95CCEF00AB477E /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AA5EA81B95CCEF00AB477E /* AFURLSessionManager.m */; };
 		13B6CACD1B9C1928003EC8A9 /* OrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B6CACC1B9C1928003EC8A9 /* OrderListViewController.m */; };
+		13BC872C1BD618B600D38E6E /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BC872B1BD618B600D38E6E /* MOBFoundation.framework */; settings = {ASSET_TAGS = (); }; };
+		13BC872E1BD618C300D38E6E /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BC872D1BD618C300D38E6E /* SMS_SDK.framework */; settings = {ASSET_TAGS = (); }; };
 		13C8AD611BC94587009F5B4B /* EaseMob.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 13C8AD5F1BC94587009F5B4B /* EaseMob.bundle */; settings = {ASSET_TAGS = (); }; };
 		13C8AD6F1BC947C3009F5B4B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 13C8AD6E1BC947C3009F5B4B /* libsqlite3.tbd */; };
 		13C8AD711BC947CE009F5B4B /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 13C8AD701BC947CE009F5B4B /* libstdc++.6.0.9.tbd */; };
@@ -98,7 +100,6 @@
 		1506E0B61B89B608007D1696 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E0B31B89B608007D1696 /* BaseTableViewController.m */; };
 		1506E0B71B89B608007D1696 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E0B51B89B608007D1696 /* BaseViewController.m */; };
 		1506E0C41B89B637007D1696 /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1506E0C01B89B637007D1696 /* SMS_SDKLocalizable.strings */; };
-		1506E0C51B89B637007D1696 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1506E0C21B89B637007D1696 /* SMS_SDK.framework */; };
 		1506E12B1B89B646007D1696 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1506E0C71B89B646007D1696 /* AlipaySDK.bundle */; };
 		1506E12C1B89B646007D1696 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1506E0C81B89B646007D1696 /* AlipaySDK.framework */; };
 		1506E12F1B89B646007D1696 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E1181B89B646007D1696 /* Order.m */; };
@@ -329,6 +330,8 @@
 		13AA5EA81B95CCEF00AB477E /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		13B6CACB1B9C1928003EC8A9 /* OrderListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderListViewController.h; path = Orders/OrderListViewController.h; sourceTree = "<group>"; };
 		13B6CACC1B9C1928003EC8A9 /* OrderListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderListViewController.m; path = Orders/OrderListViewController.m; sourceTree = "<group>"; };
+		13BC872B1BD618B600D38E6E /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		13BC872D1BD618C300D38E6E /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
 		13C8ACF81BC94587009F5B4B /* EMCallManagerCallDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCallManagerCallDelegate.h; sourceTree = "<group>"; };
 		13C8ACF91BC94587009F5B4B /* EMCallManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCallManagerDelegate.h; sourceTree = "<group>"; };
 		13C8ACFA1BC94587009F5B4B /* EaseMob+CallService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EaseMob+CallService.h"; sourceTree = "<group>"; };
@@ -543,7 +546,6 @@
 		1506E0B41B89B608007D1696 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		1506E0B51B89B608007D1696 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		1506E0C11B89B637007D1696 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
-		1506E0C21B89B637007D1696 /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
 		1506E0C31B89B637007D1696 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SMS_SDKLocalizable.strings"; sourceTree = "<group>"; };
 		1506E0C71B89B646007D1696 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		1506E0C81B89B646007D1696 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
@@ -966,6 +968,7 @@
 				15EE6BE41B92D21800FBD86C /* Foundation.framework in Frameworks */,
 				15EE6BE21B92D21200FBD86C /* UIKit.framework in Frameworks */,
 				1506E16A1B89B6D6007D1696 /* Security.framework in Frameworks */,
+				13BC872E1BD618C300D38E6E /* SMS_SDK.framework in Frameworks */,
 				15EE6BEA1B92D26700FBD86C /* libstdc++.6.0.9.dylib in Frameworks */,
 				13AA5E3B1B95C37E00AB477E /* libssl.a in Frameworks */,
 				1506E1651B89B6D6007D1696 /* libz.dylib in Frameworks */,
@@ -978,6 +981,7 @@
 				1506E1601B89B6D6007D1696 /* libz.1.2.5.dylib in Frameworks */,
 				1506E1611B89B6D6007D1696 /* libsqlite3.dylib in Frameworks */,
 				153F3BD51BD27CBC00C86F1A /* libopencore-amrwb.a in Frameworks */,
+				13BC872C1BD618B600D38E6E /* MOBFoundation.framework in Frameworks */,
 				1506E1621B89B6D6007D1696 /* AVFoundation.framework in Frameworks */,
 				1506E1631B89B6D6007D1696 /* MediaPlayer.framework in Frameworks */,
 				1506E1641B89B6D6007D1696 /* libicucore.dylib in Frameworks */,
@@ -986,7 +990,6 @@
 				1506E1681B89B6D6007D1696 /* AddressBookUI.framework in Frameworks */,
 				1506E16B1B89B6D6007D1696 /* MapKit.framework in Frameworks */,
 				D29BBC691B946B7E004B4021 /* libcrypto.a in Frameworks */,
-				1506E0C51B89B637007D1696 /* SMS_SDK.framework in Frameworks */,
 				D2FCB8F51BCBE7BB00C6ACC0 /* libEaseMobClientSDKLite.a in Frameworks */,
 				1506E12C1B89B646007D1696 /* AlipaySDK.framework in Frameworks */,
 			);
@@ -1718,8 +1721,9 @@
 		1506E0BF1B89B637007D1696 /* SMS_SDK */ = {
 			isa = PBXGroup;
 			children = (
+				13BC872B1BD618B600D38E6E /* MOBFoundation.framework */,
 				1506E0C01B89B637007D1696 /* SMS_SDKLocalizable.strings */,
-				1506E0C21B89B637007D1696 /* SMS_SDK.framework */,
+				13BC872D1BD618C300D38E6E /* SMS_SDK.framework */,
 			);
 			path = SMS_SDK;
 			sourceTree = "<group>";

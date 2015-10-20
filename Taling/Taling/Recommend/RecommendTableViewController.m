@@ -76,7 +76,7 @@
     index = 1;
     size = 10;
     
-    [self.tableView.header beginRefreshing];
+  
     
     
    
@@ -92,18 +92,22 @@
     [self CheckEasyMobLogin];
     
     
-//    if (![[NSUserDefaults standardUserDefaults]boolForKey:kHadLogin])
-//    {
-//        
-//        
-//        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-//        
-//        UINavigationController *loginNav = [sb instantiateViewControllerWithIdentifier:@"LoginNav"];
-//        
-//        [self presentViewController:loginNav animated:YES completion:nil];
-//        
-//        
-//    }
+    if (![[NSUserDefaults standardUserDefaults]boolForKey:kHadLogin])
+    {
+        
+        
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        
+        UINavigationController *loginNav = [sb instantiateViewControllerWithIdentifier:@"LoginNav"];
+        
+        [self presentViewController:loginNav animated:YES completion:nil];
+        
+        
+    }
+    else
+    {
+          [self.tableView.header beginRefreshing];
+    }
     
     
  
@@ -137,7 +141,7 @@
        
     }
     
-    return _headerView  ;
+    return _headerView;
     
 }
 

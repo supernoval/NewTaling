@@ -7,7 +7,7 @@
 //
 
 #import "ChangeCodeTVC.h"
-#import <SMS_SDK/SMS_SDK.h>
+#import <SMS_SDK/SMSSDK.h>
 #import "CommonMethods.h"
 #import "MyProgressHUD.h"
 
