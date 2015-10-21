@@ -15,6 +15,9 @@
 @property (nonatomic,strong) HRItem*hrInfoItem;
 
 
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @property (weak, nonatomic) IBOutlet UIImageView *headimageView;
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -26,6 +29,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *chatButton;
 
 - (IBAction)chatAction:(id)sender;
+
+
+
 
 
 @end

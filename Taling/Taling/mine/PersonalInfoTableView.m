@@ -192,9 +192,9 @@
     
     NSData *imageData = UIImagePNGRepresentation(image);
     
-    NSDictionary *param = @{@"user_id":user_id,@"work_year":@"",@"industry":@"",@"summary":@"",@"company":@"",@"nickname":@""};
+    NSDictionary *param = @{@"user_id":user_id};
     
-    [[TLRequest shareRequest] requestWithAction:kupdateUser params:param data:imageData fileName:@"photo" minetype:@"png" result:^(BOOL isSuccess, id data) {
+    [[TLRequest shareRequest] requestWithAction:kuploadPic params:param data:imageData fileName:@"pic_file" minetype:@"png" result:^(BOOL isSuccess, id data) {
        
         if (isSuccess)
         {

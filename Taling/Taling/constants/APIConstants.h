@@ -45,6 +45,15 @@
  */
 #define kupdateUser   @"/user/updateUser"
 
+
+//修改头像
+/*
+ user_id   
+ pic_file  这个是文件名
+ */
+#define kuploadPic    @"/uploadPic"
+
+
 //获取推荐列表
 // http://183.131.151.50/taling-api/resume/getCommendResumes?index=1&size=10
 /*

@@ -94,7 +94,7 @@ TLRequest *request;
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-    manager.requestSerializer.timeoutInterval = 20.0;
+    manager.requestSerializer.timeoutInterval = 50.0;
     
     [MyProgressHUD showProgress];
     
@@ -104,7 +104,7 @@ TLRequest *request;
         if (data)
         {
             
-//         [formData appendPartWithFileData:data name:fileName fileName:fileName mimeType:type];
+         [formData appendPartWithFileData:data name:fileName fileName:fileName mimeType:type];
             
 //            [formData appendPartWithFormData:data name:@"photo"];
             
