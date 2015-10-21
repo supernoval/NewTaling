@@ -9,9 +9,9 @@
 
 
 //本地测试
-//#define  kRequestHeader  @"http://192.168.40.222/taling-api"
+#define  kRequestHeader  @"http://192.168.40.222/taling-api"
 //正式
-#define  kRequestHeader  @"http://183.131.151.50/taling-api"
+//#define  kRequestHeader  @"http://183.131.151.50/taling-api"
 
 
 
