@@ -41,6 +41,36 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    switch (indexPath.section) {
+        case 0:
+        {
+            if (indexPath.row == 0) {
+                //账号与安全
+            }else if (indexPath.row == 1){
+                //通用
+            }
+        }
+            break;
+            
+        case 1:
+        {
+            if (indexPath.row == 0) {
+                //关于
+            }else if (indexPath.row == 1){
+                //评价
+//                NSString *urlStr = [NSString stringWithFormat:
+//                                    @"http://itunes.apple.com/app/id646300912"];
+//                NSURL *url =[NSURL URLWithString:urlStr];
+//                [[UIApplication sharedApplication] openURL:url];
+            }
+            
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
