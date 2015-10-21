@@ -7,8 +7,12 @@
 //
 
 #import "BaseViewController.h"
+#import "HRItem.h"
 
 @interface HrDetailViewController : BaseViewController
+
+
+@property (nonatomic,strong) HRItem*hrInfoItem;
 
 
 @property (weak, nonatomic) IBOutlet UIImageView *headimageView;

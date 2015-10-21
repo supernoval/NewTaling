@@ -104,7 +104,9 @@ TLRequest *request;
         if (data)
         {
             
-         [formData appendPartWithFileData:data name:fileName fileName:fileName mimeType:type];
+//         [formData appendPartWithFileData:data name:fileName fileName:fileName mimeType:type];
+            
+//            [formData appendPartWithFormData:data name:@"photo"];
             
         }
         

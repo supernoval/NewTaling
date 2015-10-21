@@ -9,6 +9,7 @@
 #import "HRListTableViewController.h"
 #import "HrDetailViewController.h"
 #import "HRListCell.h"
+#import "HRItem.h"
 
 NSString *cellID = @"HRListCell";
 
@@ -107,10 +108,34 @@ NSString *cellID = @"HRListCell";
     
     HRListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     
-    NSDictionary *hrInfo = [_hrdataArray objectAtIndex:indexPath.section];
+    HRItem *hrInfo = [_hrdataArray objectAtIndex:indexPath.section];
     
-    cell.nameLabel.text = [hrInfo objectForKey:@"username"];
     
+    NSString *username = hrInfo.username;
+    NSString *company = hrInfo.company;
+    NSString *industry = hrInfo.industry;
+    
+    
+    if (username.length == 0) {
+        
+        username = [NSString stringWithFormat:@"匿名用户%ld",(long)indexPath.section];
+    }
+    
+    if (company.length == 0) {
+        
+        company = [NSString stringWithFormat:@"未填写公司"];
+    }
+    
+    if (industry.length == 0) {
+        
+        industry = [NSString stringWithFormat:@"未填写行业"];
+        
+    }
+    
+    
+    cell.nameLabel.text = username;
+    cell.compayLabel.text = company;
+    cell.proffessionLabel.text = industry;
     
     
     return cell;
@@ -123,15 +148,23 @@ NSString *cellID = @"HRListCell";
 {
     
     
+    if (indexPath.section < _hrdataArray.count) {
+        
+        HRItem *_hrItem = [_hrdataArray objectAtIndex:indexPath.section];
+        
+        HrDetailViewController *_detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"HrDetailViewController"];
+        
+        
+        _detailVC.hidesBottomBarWhenPushed = YES;
+        
+        _detailVC.hrInfoItem = _hrItem;
+        
+        
+        [self.navigationController pushViewController:_detailVC animated:YES];
+        
+    }
     
-    HrDetailViewController *_detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"HrDetailViewController"];
-    
-    
-    _detailVC.hidesBottomBarWhenPushed = YES;
-    
-    
-    [self.navigationController pushViewController:_detailVC animated:YES];
-    
+ 
     
     
     
@@ -160,7 +193,21 @@ NSString *cellID = @"HRListCell";
                     [_hrdataArray removeAllObjects];
                     
                 }
-                [_hrdataArray addObjectsFromArray:dataArray];
+                
+                
+                for (int i = 0;  i < dataArray.count; i++) {
+                    
+                    NSDictionary *oneHR = [dataArray objectAtIndex:i];
+                    HRItem *item = [[HRItem alloc]init];
+                    
+                    [item setValuesForKeysWithDictionary:oneHR];
+                    
+                    [_hrdataArray addObject:item];
+                    
+                    
+                }
+                
+                
                 
                 
                 [self.tableView reloadData];

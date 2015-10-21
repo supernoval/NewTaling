@@ -43,6 +43,7 @@
 		13D5F0F71B9FF8E3001A8AFF /* RecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D5F0F61B9FF8E3001A8AFF /* RecommendCell.m */; };
 		13D5F0FB1BA04FED001A8AFF /* SellOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D5F0FA1BA04FED001A8AFF /* SellOrderCell.m */; };
 		13D5F0FE1BA05198001A8AFF /* BuyOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D5F0FD1BA05198001A8AFF /* BuyOrderCell.m */; };
+		13E47CFD1BD770240032BF9E /* HRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E47CFC1BD770240032BF9E /* HRItem.m */; settings = {ASSET_TAGS = (); }; };
 		1506DF4C1B89B36D007D1696 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF4B1B89B36D007D1696 /* main.m */; };
 		1506DF4F1B89B36D007D1696 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF4E1B89B36D007D1696 /* AppDelegate.m */; };
 		1506DF571B89B36D007D1696 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1506DF561B89B36D007D1696 /* Images.xcassets */; };
@@ -431,6 +432,8 @@
 		13D5F0FA1BA04FED001A8AFF /* SellOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SellOrderCell.m; path = Orders/SellOrderCell.m; sourceTree = "<group>"; };
 		13D5F0FC1BA05198001A8AFF /* BuyOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuyOrderCell.h; path = Orders/BuyOrderCell.h; sourceTree = "<group>"; };
 		13D5F0FD1BA05198001A8AFF /* BuyOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BuyOrderCell.m; path = Orders/BuyOrderCell.m; sourceTree = "<group>"; };
+		13E47CFB1BD770240032BF9E /* HRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HRItem.h; path = HR/HRItem.h; sourceTree = "<group>"; };
+		13E47CFC1BD770240032BF9E /* HRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HRItem.m; path = HR/HRItem.m; sourceTree = "<group>"; };
 		1506DF461B89B36D007D1696 /* Taling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1506DF4A1B89B36D007D1696 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1506DF4B1B89B36D007D1696 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -2509,6 +2512,8 @@
 			children = (
 				D2FCB8F71BCBE88D00C6ACC0 /* ModelItem.h */,
 				D2FCB8F81BCBE88D00C6ACC0 /* ModelItem.m */,
+				13E47CFB1BD770240032BF9E /* HRItem.h */,
+				13E47CFC1BD770240032BF9E /* HRItem.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -2850,6 +2855,7 @@
 				1506E0211B89B521007D1696 /* UIView+MJExtension.m in Sources */,
 				13D5F0F71B9FF8E3001A8AFF /* RecommendCell.m in Sources */,
 				153F3BD11BD27CBC00C86F1A /* amrFileCodec.mm in Sources */,
+				13E47CFD1BD770240032BF9E /* HRItem.m in Sources */,
 				153F3BAA1BD27A4200C86F1A /* EMCDDeviceManager+Media.m in Sources */,
 				1506E0191B89B521007D1696 /* MJRefreshFooter.m in Sources */,
 				153F3BD31BD27CBC00C86F1A /* EMVoiceConverter.mm in Sources */,

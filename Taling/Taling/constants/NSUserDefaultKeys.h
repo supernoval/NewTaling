@@ -13,22 +13,41 @@
 #define kEasyMobHadLogin   @"EasyMobHadLogin"
 
 // 是否登录
-#define kHadLogin    @"HadLogin"
+#define kHadLogin     @"HadLogin"
 
 //用户名
-#define kusername  @"username"
+#define kusername     @"username"
 
 //密码
-#define kpassword  @"password"
+#define kpassword     @"password"
 
 //uuid
-#define kuuid   @"uuid"
+#define kuuid          @"uuid"
 
 //nickname
-#define knickname   @"nickname"
+#define knickname      @"nickname"
+
+//industry
+#define kindustry      @"industry"
+
+//company
+#define kcompany       @"company"
+
+//phone
+#define kphone         @"phone"
+
+//photo
+#define kphoto         @"photo"
+
+//本地头像
+#define kLocatePhoto   @"LocatePhoto"
+
+//workingYears
+#define kworkingYears  @"workingYears"
+
 
 //userid
-#define kuserid   @"id"
+#define kuserid         @"id"
 
 //isAttestation
 #define kisAttestation @"isAttestation"

@@ -33,6 +33,33 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    NSString *nickName = [[NSUserDefaults standardUserDefaults ]objectForKey:knickname];
+    
+    if (nickName) {
+        
+        _nameLabel.text = nickName;
+        
+    }
+    
+    _professionLabel.text = [[NSUserDefaults standardUserDefaults ] objectForKey:kindustry];
+    _companyLabel.text = [[NSUserDefaults standardUserDefaults ] objectForKey:kcompany];
+    
+    
+    NSData *headImageData = [[NSUserDefaults standardUserDefaults] objectForKey:kLocatePhoto];
+    
+    if (headImageData) {
+        
+        _headImageView.image = [UIImage imageWithData:headImageData];
+        
+        
+    }
+    
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 3;

@@ -91,24 +91,26 @@
     //登陆注册环信账号
     [self CheckEasyMobLogin];
     
-     [self.tableView.header beginRefreshing];
+//    [self.tableView.header beginRefreshing];
     
-//    if (![[NSUserDefaults standardUserDefaults]boolForKey:kHadLogin])
-//    {
-//        
-//        
-//        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-//        
-//        UINavigationController *loginNav = [sb instantiateViewControllerWithIdentifier:@"LoginNav"];
-//        
-//        [self presentViewController:loginNav animated:YES completion:nil];
-//        
-//        
-//    }
-//    else
-//    {
-//        
-//    }
+    
+    if (![[NSUserDefaults standardUserDefaults]boolForKey:kHadLogin])
+    {
+        
+        
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        
+        UINavigationController *loginNav = [sb instantiateViewControllerWithIdentifier:@"LoginNav"];
+        
+        [self presentViewController:loginNav animated:YES completion:nil];
+        
+        
+    }
+    else
+    {
+        [self.tableView.header beginRefreshing];
+ 
+    }
     
     
  

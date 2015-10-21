@@ -44,10 +44,10 @@
     
     NSString *nickname = _inputTextField.text;
     
-    NSString *username = [[NSUserDefaults standardUserDefaults ] objectForKey:kusername];
+
     
     
-    NSDictionary *param = @{@"user_id":user_id,@"work_year":@"",@"indeustry":@"",@"summary":@"",@"company":@"",@"nickname":nickname};
+    NSDictionary *param = @{@"user_id":user_id,@"work_year":@"",@"industry":@"",@"summary":@"",@"company":@"",@"nickname":nickname};
     
     [[TLRequest shareRequest] tlRequestWithAction:kupdateUser Params:param result:^(BOOL isSuccess, id data) {
         

@@ -28,16 +28,28 @@
     
     
 }
+-(void)viewWillAppear:(BOOL)animated
+{
+    _nameLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:knickname];
+    _companyLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:kcompany];
+    _professionLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:kindustry];
+    
+    NSData *headImageData = [[NSUserDefaults standardUserDefaults] objectForKey:kLocatePhoto];
+    
+    if (headImageData) {
+        
+        _headImageView.image = [UIImage imageWithData:headImageData];
+        
+        
+    }
+}
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 15;
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    _nameLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:knickname];
-    
-}
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -153,6 +165,14 @@
     
     _headImageView.image = cutImage;
     
+    NSData *imageData = UIImagePNGRepresentation(cutImage);
+    
+    
+    [self upLoadImageWithImage:cutImage];
+    
+    
+    [[NSUserDefaults standardUserDefaults ] setObject:imageData forKey:kLocatePhoto];
+    [[NSUserDefaults standardUserDefaults ] synchronize];
     
     
     [picker dismissViewControllerAnimated:YES completion:nil];
@@ -162,6 +182,33 @@
 {
     
     [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
+-(void)upLoadImageWithImage:(UIImage*)image
+{
+    NSString *user_id = [UserInfo getuserid];
+    
+    NSData *imageData = UIImagePNGRepresentation(image);
+    
+    NSDictionary *param = @{@"user_id":user_id,@"work_year":@"",@"industry":@"",@"summary":@"",@"company":@"",@"nickname":@""};
+    
+    [[TLRequest shareRequest] requestWithAction:kupdateUser params:param data:imageData fileName:@"photo" minetype:@"png" result:^(BOOL isSuccess, id data) {
+       
+        if (isSuccess)
+        {
+            
+            
+        }
+        else
+        {
+            
+        }
+        
+        
+        
+    }];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
