@@ -14,6 +14,7 @@
 #import "ConstantsHeaders.h"
 #import "BuyResumeDetailTVC.h"
 #import "CommentViewController.h"
+#import "UIImageView+WebCache.h"
 
 
 
@@ -261,12 +262,60 @@
         nameCell = [[NSBundle mainBundle]loadNibNamed:@"ResumeNameCell" owner:self options:nil][0];
     }
     
+    
+    
+    //头像
+    if (self.item.url.length > 0) {
+        
+        [nameCell.headImageView sd_setImageWithURL:[NSURL URLWithString:self.item.url]];
+    }
+    
+    //姓名
+    nameCell.nameLabel.text = self.item.name;
+    nameCell.nameWidth.constant = [StringHeight widthtWithText:self.item.name font:FONT_15 constrainedToHeight:21];
+    //性别
+    if ([self.item.sex isEqualToString:@"男"]) {
+        nameCell.sexImageView.image = [UIImage imageNamed:@"male"];
+    }else if ([self.item.sex isEqualToString:@"女"]){
+        
+        nameCell.sexImageView.image = [UIImage imageNamed:@"female"];
+    }else{
+        
+        nameCell.sexImageView.image = [UIImage imageNamed:@""];
+    }
+    
+    // 简历估值
+    nameCell.moneyLabel.text = [NSString stringWithFormat:@"¥%.2f",[self.item.price floatValue]];
+    
+    
+    //城市、教育程度
+    NSString *edu = @"";
+    if (self.item.eduexpenrience.count > 0) {
+        NSDictionary *eduDic = [self.item.eduexpenrience firstObject];
+        edu = [eduDic objectForKey:@"degree"];
+    }
+    nameCell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",self.item.city,edu];
+    
+    //职业
+    nameCell.professionLabel.text = [NSString stringWithFormat:@"%@ %@年经验",self.item.currentPosition,self.item.workYears];
+    
     //年龄、城市、公司
     static NSString *ageId = @"ResumeAgeCell";
     UITableViewCell *ageCell = [tableView dequeueReusableCellWithIdentifier:ageId];
     if (ageCell == nil) {
         ageCell = [[NSBundle mainBundle]loadNibNamed:@"ResumeAgeCell" owner:self options:nil][0];
     }
+    //年龄
+    UILabel *ageLabel = (UILabel *)[ageCell viewWithTag:100];
+    ageLabel.text = [NSString stringWithFormat:@"年龄:%@",self.item.age];
+    
+    //城市
+    UILabel *cityLabel = (UILabel *)[ageCell viewWithTag:101];
+    cityLabel.text = [NSString stringWithFormat:@"城市:%@",self.item.city];
+    
+    //公司
+    UILabel *companyLabel = (UILabel *)[ageCell viewWithTag:102];
+    companyLabel.text = [NSString stringWithFormat:@"公司:%@",self.item.currentCompany];
     
     //经历概述
     static NSString *experenceId = @"ResumeExperienceCell";
@@ -274,6 +323,21 @@
     if (experenceCell == nil) {
         experenceCell = [[NSBundle mainBundle]loadNibNamed:@"ResumeExperienceCell" owner:self options:nil][0];
     }
+    
+    //毕业学校
+    NSString *school = @"";
+    if (self.item.eduexpenrience.count > 0 ) {
+        NSDictionary *dic = [self.item.eduexpenrience firstObject];
+        school = [dic objectForKey:@"school"];
+    }
+    experenceCell.schoolLabel.text = school;
+    
+    //实习经历
+    
+    //工作经历
+    NSString *experienceStr = [CommonMethods getTheWorkExperience:self.item.workexpenrience];
+    experenceCell.workLabel.text = experienceStr;
+    experenceCell.workHeight.constant = [StringHeight heightWithText:experienceStr font:FONT_14 constrainedToWidth:ScreenWidth-96];
     
     //评价、点赞、购买数
     static NSString *operationId = @"ResumeOperationCell";

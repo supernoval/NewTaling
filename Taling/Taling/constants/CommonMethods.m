@@ -9,6 +9,7 @@
 #import "CommonMethods.h"
 #import "Constants.h"
 #import "MyProgressHUD.h"
+#import "WorkExperienceItem.h"
 
 
 
@@ -642,6 +643,23 @@
     
     
     
+}
+
+
++ (NSString *)getTheWorkExperience:(NSArray *)workArray{
+    
+    NSString *str = @" ";
+    if (workArray.count > 0) {
+        for (NSInteger i = 0; i < workArray.count; i++) {
+            str = @"";
+            WorkExperienceItem *oneItem = [workArray objectAtIndex:i];
+            NSString *oneExperience = [NSString stringWithFormat:@"%li %@-%@ %@ %@ %@ %@\n",i+1,oneItem.periodFrom,oneItem.periodTo,oneItem.companyName,oneItem.title,oneItem.workingPosition,oneItem.main];
+            str = [str stringByAppendingString:oneExperience];
+            
+        }
+    }
+    
+    return str;
 }
 
 @end

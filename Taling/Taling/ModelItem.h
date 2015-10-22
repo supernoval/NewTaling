@@ -18,6 +18,9 @@
 @property (strong, nonatomic) NSString *currentIndustry;
 @property (strong, nonatomic) NSString *currentPosition;
 @property (strong, nonatomic) NSString *currentSalary;
+
+@property (strong, nonatomic)NSArray *eduexpenrience;
+
 @property (strong, nonatomic) NSString *email;
 @property (strong, nonatomic) NSString *expectCity;
 @property (strong, nonatomic) NSString *expectIndustry;
@@ -31,10 +34,14 @@
 @property (strong, nonatomic) NSString *price;
 @property (strong, nonatomic) NSString *resumesId;
 @property (strong, nonatomic) NSString *sex;
+
+@property (strong, nonatomic)NSArray *skills;
 @property (strong, nonatomic) NSString *status;
 @property (strong, nonatomic) NSString *summary;
 @property (strong, nonatomic) NSString *url;
 @property (strong, nonatomic) NSString *userId;
+@property (strong, nonatomic)NSArray *workexpenrience;
+@property (strong, nonatomic)NSString *workYears;
 
 
 

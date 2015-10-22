@@ -111,7 +111,8 @@ typedef void (^upLoadPhotoBlock)(BOOL success,NSArray*results);
 +(void)upLoadPhotos:(NSArray*)photos resultBlock:(upLoadPhotoBlock)block;
 
 
-
+#pragma mark- 工作经历整理
++ (NSString *)getTheWorkExperience:(NSArray *)workArray;
 @end
 
 

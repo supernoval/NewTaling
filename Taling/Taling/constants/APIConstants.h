@@ -125,6 +125,12 @@
  */
 #define kcreatOrder          @"/order/createOrder"
 
+//简历点赞
+#define ksupportTheResume @"/support/resumesSupport"
+
+
+//简历取消点赞
+#define kcancelSupportTheResume @"/support/CancelSupport"
 
 #pragma mark － 预定简历
 /*reserv/reservResume?resumes_id=1&user_id=1

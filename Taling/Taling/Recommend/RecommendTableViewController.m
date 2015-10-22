@@ -11,6 +11,7 @@
 #import "ResumeDetailTVC.h"
 #import "BuyResumeDetailTVC.h"
 #import "ChatAccountManager.h"
+#import "UIImageView+WebCache.h"
 
 
 @interface RecommendTableViewController ()<UISearchBarDelegate,UISearchDisplayDelegate,RecommendHeaderDelegate,UITableViewDataSource,UITableViewDelegate>
@@ -40,15 +41,9 @@
     
     _JDArray = [[NSMutableArray alloc]init];
     
-
-    
-    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = kBackgroundColor;
-    
-    
-    
     
 //    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"getdistance"] style:UIBarButtonItemStylePlain target:self action:@selector(showSortView)];
 //    
@@ -75,11 +70,6 @@
     
     index = 1;
     size = 10;
-    
-  
-    
-    
-   
     
 }
 
@@ -249,6 +239,42 @@
     [_selectedView show];
 }
 
+#pragma mark- 简历点赞
+- (void)supportTheResume:(UIButton *)button{
+    
+    ModelItem *oneItem = [_JDArray objectAtIndex:button.tag];
+    
+    NSString *resumes_id = oneItem.resumesId;
+    NSString *user_id = [UserInfo getuserid];
+    NSDictionary *param = @{@"resumes_id":resumes_id,@"user_id":user_id};
+    if (button.selected == NO) {//赞
+        
+        [[TLRequest shareRequest]tlRequestWithAction:ksupportTheResume Params:param result:^(BOOL isSuccess, id data){
+            
+            if (isSuccess) {
+                button.selected = YES;
+                NSInteger num = [oneItem.goodNum integerValue];
+                oneItem.goodNum = [NSString stringWithFormat:@"%li",num+1];
+            }
+        
+        }];
+    }else if (button.selected == YES){//取消点赞
+        
+        [[TLRequest shareRequest]tlRequestWithAction:kcancelSupportTheResume Params:param result:^(BOOL isSuccess, id data){
+            
+            if (isSuccess) {
+                button.selected = NO;
+                NSInteger num = [oneItem.goodNum integerValue];
+                oneItem.goodNum = [NSString stringWithFormat:@"%li",num-1];
+            }
+            
+        }];
+    }
+    
+    [self.tableView reloadData];
+    
+//    [self.tableView reloadSections:button.tag withRowAnimation:UITableViewRowAnimationAutomatic];
+}
 #pragma mark - UITableViewDataSource
 -(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
@@ -292,28 +318,67 @@
     
     RecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:@"recomendCell"];
     
+    if (_JDArray.count > indexPath.section) {
+        
     ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
+    
+    //头像
+    if (oneItem.url.length > 0) {
+        
+        [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.url]];
+    }
+    
     
     //姓名
     cell.nameLabel.text = oneItem.name;
     
+    
     //城市、教育程度
-    cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,oneItem.city];
+    NSString *edu = @"";
+    if (oneItem.eduexpenrience.count > 0) {
+        NSDictionary *eduDic = [oneItem.eduexpenrience firstObject];
+        edu = [eduDic objectForKey:@"degree"];
+    }
+    cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,edu];
     
     // 简历估值
     cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",[oneItem.price floatValue]] ;
     
+    //行业
+    cell.businessLabel.text = @"行业";
+    
+    //职业
+    cell.professionLabel.text = [NSString stringWithFormat:@"职位:%@",oneItem.currentPosition];
+    
     //公司
     cell.companyLabel.text = [NSString stringWithFormat:@"公司:%@",oneItem.currentCompany];
     
+    //资历
+    cell.yearLabel.text = [NSString stringWithFormat:@"资历:%@年",oneItem.workYears];
     
-    //点赞
+    //点赞数
     [cell.priseButton setTitle:[NSString stringWithFormat:@"%@",oneItem.goodNum] forState:UIControlStateNormal];
+    cell.priseButton.tag = indexPath.section;
+    [cell.priseButton addTarget:self action:@selector(supportTheResume:) forControlEvents:UIControlEventTouchUpInside];
+    
+    if (cell.priseButton.selected == YES) {
+        cell.priseButton.backgroundColor = [UIColor redColor];
+    }else{
+        cell.priseButton.backgroundColor = [UIColor clearColor];
+    }
+    
+    //评价数
+    [cell.messageButton setTitle:[NSString stringWithFormat:@"%@",oneItem.appraiseNum] forState:UIControlStateNormal];
+    
+    //购买数
+    [cell.buyButton setTitle:[NSString stringWithFormat:@"%@",oneItem.buyNum] forState:UIControlStateNormal];
+    
     
     [cell.buyButton addTarget:self action:@selector(buyTheResume:) forControlEvents:UIControlEventTouchUpInside];
     
     cell.buyButton.tag = indexPath.section;
-  
+        
+    }
     
     return cell;
 }
