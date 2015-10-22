@@ -9,7 +9,7 @@
 
 
 //本地测试
-#define  kRequestHeader  @"http://192.168.40.222/taling-api"
+#define  kRequestHeader  @"http://192.168.40.233/taling-api"
 //正式
 //#define  kRequestHeader  @"http://183.131.151.50/taling-api"
 
@@ -67,6 +67,8 @@
 //获取评价
 /*
  *resumes_id    简历ID
+ *index
+ *size
 
  */
 #define kgetAppraise  @"/appraise/getAppraise"
@@ -110,7 +112,7 @@
  *index
  *size
  */
-#define kgetHrInfo       @"/resume/getHrInfo"
+#define kgetHrInfo           @"/resume/getHrInfo"
 
 
 
@@ -121,6 +123,29 @@
  buyer_id  这个是买家ID也是 登录用户的ID  也就是 你登录APP的时候  我会返回给你的用户相关信息
  order_price  这个是简历价格   会在简历相关信息里面。
  */
-#define kcreatOrder @"/order/createOrder"
+#define kcreatOrder          @"/order/createOrder"
+
+
+#pragma mark － 预定简历
+/*reserv/reservResume?resumes_id=1&user_id=1
+ * resumes_id
+ * user_id
+ */
+#define kreservResume         @"/reserv/reservResume"
+
+#pragma mark - 取消预定
+/*/reserv/cancelReserv?resumes_id=1&user_id=1 
+ * resumes_id
+ * user_id
+ */
+#define kcancelReserv         @"/reserv/cancelReserv"
+
+#pragma mark - 获取预定列表
+/*/reserv/GetReservResumes?user_id=1&index=&size= 
+ * user_id
+ * index
+ * size
+ */
+#define kGetReservResumes     @"/reserv/GetReservResumes"
 
 

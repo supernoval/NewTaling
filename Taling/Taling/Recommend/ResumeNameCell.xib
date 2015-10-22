@@ -185,22 +185,22 @@
                         <exclude reference="wdw-Jb-TWy"/>
                     </mask>
                     <mask key="constraints">
-                        <exclude reference="VZR-4H-RXC"/>
-                        <exclude reference="o2v-1e-oUV"/>
-                        <exclude reference="Kdd-1k-KzF"/>
-                        <exclude reference="Yu4-HL-asa"/>
-                        <exclude reference="0mW-xZ-Lvj"/>
-                        <exclude reference="B8m-45-U23"/>
-                        <exclude reference="dyc-V1-LAu"/>
                         <exclude reference="AO2-Hs-8XY"/>
                         <exclude reference="Dhg-7X-vDv"/>
-                        <exclude reference="HaT-RX-YVy"/>
-                        <exclude reference="mps-gy-Zux"/>
                         <exclude reference="8Cm-RR-JR9"/>
                         <exclude reference="iCP-Ia-DTv"/>
                         <exclude reference="CI6-ly-8Nd"/>
                         <exclude reference="PgA-70-9gC"/>
                         <exclude reference="fWw-Mg-e0I"/>
+                        <exclude reference="0mW-xZ-Lvj"/>
+                        <exclude reference="B8m-45-U23"/>
+                        <exclude reference="dyc-V1-LAu"/>
+                        <exclude reference="HaT-RX-YVy"/>
+                        <exclude reference="mps-gy-Zux"/>
+                        <exclude reference="Kdd-1k-KzF"/>
+                        <exclude reference="Yu4-HL-asa"/>
+                        <exclude reference="VZR-4H-RXC"/>
+                        <exclude reference="o2v-1e-oUV"/>
                     </mask>
                 </variation>
                 <variation key="heightClass=regular-widthClass=compact">
@@ -211,22 +211,22 @@
                         <include reference="wdw-Jb-TWy"/>
                     </mask>
                     <mask key="constraints">
-                        <include reference="VZR-4H-RXC"/>
-                        <include reference="o2v-1e-oUV"/>
-                        <include reference="Kdd-1k-KzF"/>
-                        <include reference="Yu4-HL-asa"/>
-                        <include reference="0mW-xZ-Lvj"/>
-                        <include reference="B8m-45-U23"/>
-                        <include reference="dyc-V1-LAu"/>
                         <include reference="AO2-Hs-8XY"/>
                         <include reference="Dhg-7X-vDv"/>
-                        <include reference="HaT-RX-YVy"/>
-                        <include reference="mps-gy-Zux"/>
                         <include reference="8Cm-RR-JR9"/>
                         <include reference="iCP-Ia-DTv"/>
                         <include reference="CI6-ly-8Nd"/>
                         <include reference="PgA-70-9gC"/>
                         <include reference="fWw-Mg-e0I"/>
+                        <include reference="0mW-xZ-Lvj"/>
+                        <include reference="B8m-45-U23"/>
+                        <include reference="dyc-V1-LAu"/>
+                        <include reference="HaT-RX-YVy"/>
+                        <include reference="mps-gy-Zux"/>
+                        <include reference="Kdd-1k-KzF"/>
+                        <include reference="Yu4-HL-asa"/>
+                        <include reference="VZR-4H-RXC"/>
+                        <include reference="o2v-1e-oUV"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
@@ -240,7 +240,7 @@
                 <outlet property="professionLabel" destination="9Ka-b4-qv6" id="tf5-2f-1lK"/>
                 <outlet property="sexImageView" destination="wdw-Jb-TWy" id="s0k-mG-UAR"/>
             </connections>
-            <point key="canvasLocation" x="504" y="183.5"/>
+            <point key="canvasLocation" x="504" y="183"/>
         </tableViewCell>
     </objects>
     <resources>

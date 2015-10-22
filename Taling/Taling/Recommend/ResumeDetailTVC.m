@@ -18,6 +18,11 @@
 
 
 @interface ResumeDetailTVC ()
+{
+    NSInteger appraseIndex;
+    NSInteger appraseSize;
+    
+}
 @property (nonatomic, strong)NSMutableArray *commentArry;
 @property (nonatomic)NSInteger index;
 @property (nonatomic)NSInteger size;
@@ -52,7 +57,9 @@
     _index = 1;
     _size = 10;
     
-
+    appraseIndex = 1;
+    appraseSize = 10;
+    
     
 //    [self.tableView.header beginRefreshing];
 }
@@ -90,7 +97,7 @@
         return;
         
     }
-    NSDictionary *param = @{@"resumes_id":item.resumesId};
+    NSDictionary *param = @{@"resumes_id":item.resumesId,@"index":@(appraseIndex),@"size":@(appraseSize)};
     
     [[TLRequest shareRequest] tlRequestWithAction:kgetAppraise Params:param result:^(BOOL isSuccess, id data) {
         
@@ -121,13 +128,38 @@
     
     UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40)];
     
-    footerView.backgroundColor = NavigationBarColor;
+    footerView.backgroundColor = kBackgroundColor;
     
-    UIButton *buyBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40)];
+
+    CGFloat buttonWith = ScreenWidth/2 - 30;
+    
+    
+    UIButton *reservButton = [[UIButton alloc]initWithFrame:CGRectMake(20, 5, buttonWith, 30)];
+    reservButton.clipsToBounds = YES;
+    reservButton.layer.cornerRadius = 5;
+    
+    
+    [reservButton addTarget:self action:@selector(reservResume) forControlEvents:UIControlEventTouchUpInside];
+    
+    [reservButton setTitle:@"预定" forState:UIControlStateNormal];
+    reservButton.backgroundColor = NavigationBarColor;
+    
+    [reservButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [reservButton setTitleColor:kDarkGrayColor forState:UIControlStateHighlighted];
+    
+    [footerView addSubview:reservButton];
+    
+    
+    UIButton *buyBtn = [[UIButton alloc]initWithFrame:CGRectMake(40 + buttonWith, 5, buttonWith, 30)];
     
     [buyBtn setTintColor:[UIColor whiteColor]];
+    [buyBtn setTitleColor:kDarkGrayColor forState:UIControlStateHighlighted];
+    buyBtn.clipsToBounds = YES;
+    buyBtn.layer.cornerRadius = 5;
     
-    buyBtn.titleLabel.font = FONT_16;
+  
+    
+    buyBtn.backgroundColor = NavigationBarColor;
     
     if (self.type == 1) {
         [buyBtn setTitle:@"购买" forState:UIControlStateNormal];
@@ -260,6 +292,8 @@
     switch (indexPath.section) {
         case 0:
         {
+            
+            
             return nameCell;
         }
             break;
@@ -320,6 +354,31 @@
     }
     
     return nil;
+}
+
+#pragma mark - 预定
+-(void)reservResume
+{
+    
+    NSString *userid = [UserInfo getuserid];
+    
+    NSString *resumeid = self.item.resumesId;
+    
+    NSDictionary *param = @{@"user_id":userid,@"resumes_id":resumeid};
+    
+    [[TLRequest shareRequest] tlRequestWithAction:kreservResume Params:param result:^(BOOL isSuccess, id data) {
+        
+        if (isSuccess) {
+            
+            [CommonMethods showDefaultErrorString:@"预定成功"];
+            
+        }
+        else
+        {
+           [CommonMethods showDefaultErrorString:@"预定失败，请重试"];
+        }
+    }];
+    
 }
 
 @end

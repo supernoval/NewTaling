@@ -18,4 +18,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *moneyLabel;
 
 @property (strong, nonatomic) IBOutlet UILabel *fuzhiLabel;
+
+- (IBAction)reservAction:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton *reservButton;
+
 @end

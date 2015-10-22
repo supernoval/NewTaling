@@ -11,19 +11,31 @@
 #import "SellOrderCell.h"
 #import "ResumeDetailTVC.h"
 
+typedef NS_ENUM(NSInteger,ResumeListType)
+{
+    ResumeListTypeBuy,
+    ResumeListTypeSell,
+    ResumeListTypeReserv,
+    
+   
+};
 @interface MyResumeTVC ()
 {
     NSInteger upLoadIndex;
     NSInteger buyIndex;
+    NSInteger reservIndex;
+    
     
     NSInteger pageSize;
     
     NSMutableArray *_buyArray;
     NSMutableArray *_upLoadArray;
+    NSMutableArray *_reservArray;
+    
     
     
 }
-@property (nonatomic)BOOL isBuyOrderList;
+@property (nonatomic)ResumeListType segMentType;
 
 @end
 
@@ -31,14 +43,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _isBuyOrderList = YES;
+    _segMentType = ResumeListTypeBuy;
     self.tableView.tableHeaderView = [self buyTableHeadView];
     
     _buyArray = [[NSMutableArray alloc]init];
     _upLoadArray = [[NSMutableArray alloc]init];
-    
+    _reservArray = [[NSMutableArray alloc]init];
     pageSize = 10;
     
+    self.tableView.separatorStyle  = UITableViewCellSeparatorStyleNone;
     
     [self addHeaderRefresh];
     [self addFooterRefresh];
@@ -51,40 +64,72 @@
 -(void)headerRefresh
 {
     
-    if (_isBuyOrderList) {
-        
-        buyIndex = 1;
-        
-        [self requestBuyResumes];
-        
+    
+    switch (_segMentType) {
+        case ResumeListTypeBuy:
+        {
+            buyIndex = 1;
+            
+            [self requestBuyResumes];
+            
+        }
+            break;
+        case ResumeListTypeSell:
+        {
+            upLoadIndex = 1;
+            
+            [self requestUpLoadResumes];
+        }
+            break;
+        case ResumeListTypeReserv:
+        {
+            reservIndex = 1;
+            
+            [self requestReserv];
+            
+        }
+            break;
+            
+            
+        default:
+            break;
     }
-    else
-    {
-        upLoadIndex = 1;
-        
-        [self requestUpLoadResumes];
-        
-    }
+ 
 }
 
 
 
 -(void)footerRefresh
 {
-    if (_isBuyOrderList) {
-        
-        buyIndex ++;
-        
-        [self requestBuyResumes];
-        
+    
+    
+    switch (_segMentType) {
+        case ResumeListTypeBuy:
+        {
+            buyIndex ++;
+            
+            [self requestBuyResumes];
+        }
+            break;
+        case ResumeListTypeSell:
+        {
+            upLoadIndex ++;
+            
+            [self requestUpLoadResumes];
+        }
+            break;
+        case ResumeListTypeReserv:
+        {
+            
+        }
+            break;
+            
+            
+        default:
+            break;
     }
-    else
-    {
-        upLoadIndex ++;
-        
-        [self requestUpLoadResumes];
-        
-    }
+    
+ 
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -200,7 +245,23 @@
     return buyView;
 }
 
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return UITableViewCellEditingStyleDelete;
+    
+    
+}
 
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (reservIndex == ResumeListTypeReserv) {
+        
+        return  YES;
+    }
+    
+    return NO;
+}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -211,15 +272,36 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     
-
-        if (_isBuyOrderList) {
-    
-    
-            return _buyArray.count;
-    
+   
+    switch (_segMentType) {
+        case ResumeListTypeBuy:
+        {
+                return _buyArray.count;
         }
+            break;
+        case ResumeListTypeSell:
+        {
+                return _upLoadArray.count;
+        }
+            break;
+        case ResumeListTypeReserv:
+        {
+            return _reservArray.count;
+        }
+            break;
+            
+            
+        default:
+        {
+            return 0;
+            
+        }
+            break;
+    }
     
-        return _upLoadArray.count;
+    
+    
+ 
     
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -229,7 +311,7 @@
 }
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_isBuyOrderList == YES) {
+    if (_segMentType == ResumeListTypeBuy) {
         
         static NSString *buyId = @"BuyOrderCell";
         BuyOrderCell *buyCell = [tableView dequeueReusableCellWithIdentifier:buyId];
@@ -264,7 +346,7 @@
         return buyCell;
         
     }
-    else
+    else if (_segMentType == ResumeListTypeSell)
     {
         
         static NSString *sellId = @"SellOrderCell";
@@ -295,6 +377,43 @@
         return sellCell;
         
     }
+    else
+    {
+        static NSString *buyId = @"BuyOrderCell";
+        BuyOrderCell *reservCell = [tableView dequeueReusableCellWithIdentifier:buyId];
+        
+        if (reservCell == nil) {
+            reservCell = [[[NSBundle mainBundle]loadNibNamed:@"BuyCell" owner:self options:nil]firstObject];
+        }
+        
+        
+        if (indexPath.section < _reservArray.count) {
+            
+            ModelItem *item = [_reservArray objectAtIndex:indexPath.section];
+            
+            reservCell.nameLabel.text = item.name;
+            
+            CGFloat namewith = [StringHeight widthtWithText:item.name font:FONT_15 constrainedToHeight:20] + 5;
+            
+            reservCell.nameWidth.constant = namewith;
+            
+            reservCell.buyMoneyLabel.text = item.price;
+            
+            
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        return reservCell;
+    }
+    
+    return nil;
+    
 }
 
 
@@ -303,13 +422,13 @@
     
     ModelItem *item ;
     
-    if (_isBuyOrderList) {
+    if (_segMentType == ResumeListTypeBuy) {
         
         item = [_buyArray objectAtIndex:indexPath.section];
         
         
     }
-    else
+    else if(_segMentType == ResumeListTypeSell)
     {
         item = [_upLoadArray objectAtIndex:indexPath.section];
         
@@ -334,15 +453,21 @@
     
     UISegmentedControl *seg = sender;
     
-    if (seg.selectedSegmentIndex == 0) {
+    if (seg.selectedSegmentIndex == ResumeListTypeBuy) {
         
-        _isBuyOrderList = YES;
+        _segMentType = ResumeListTypeBuy;
         self.tableView.tableHeaderView = [self buyTableHeadView];
+    }
+    else if(seg.selectedSegmentIndex == ResumeListTypeSell)
+    {
+        _segMentType = ResumeListTypeSell;
+        self.tableView.tableHeaderView = [self sellTableHeadView];
+        
     }
     else
     {
-        _isBuyOrderList = NO;
-        self.tableView.tableHeaderView = [self sellTableHeadView];
+        _segMentType = ResumeListTypeReserv;
+        
         
     }
     
@@ -399,7 +524,7 @@
         
     }];
     
-}
+ }
 
 
 -(void)requestBuyResumes
@@ -446,5 +571,51 @@
     
 }
 
+-(void)requestReserv
+{
+    NSString *user_id = [UserInfo getuserid];
+    
+   NSDictionary *param = @{@"user_id":user_id,@"index":@(reservIndex),@"size":@(pageSize)};
+    
+    [[TLRequest shareRequest] tlRequestWithAction:kGetReservResumes Params:param result:^(BOOL isSuccess, id data) {
+        
+        [self endHeaderRefresh];
+        [self endFooterRefresh];
+        
+        if (isSuccess) {
+            
+            
+            if (reservIndex == 1) {
+                
+                [_reservArray removeAllObjects];
+                
+            }
+            
+            if ([data isKindOfClass:[NSArray class]]) {
+                
+                for (NSDictionary *dict in data) {
+                    
+                    ModelItem *item = [[ModelItem alloc]init];
+                    
+                    [item setValuesForKeysWithDictionary:dict];
+                    
+                    
+                    [_reservArray addObject:item];
+                    
+                    
+                }
+                
+                [self.tableView reloadData];
+                
+            }
+            
+        }
+        else
+        {
+            
+        }
+        
+    }];
+}
 
 @end
