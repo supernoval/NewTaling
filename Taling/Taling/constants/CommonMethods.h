@@ -113,6 +113,10 @@ typedef void (^upLoadPhotoBlock)(BOOL success,NSArray*results);
 
 #pragma mark- 工作经历整理
 + (NSString *)getTheWorkExperience:(NSArray *)workArray;
+
+#pragma mark- 工作技能
++ (NSString *)getTheSkills:(NSArray *)skillsArray;
+
 @end
 
 

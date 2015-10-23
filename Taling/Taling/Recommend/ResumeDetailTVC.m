@@ -27,7 +27,10 @@
 @property (nonatomic, strong)NSMutableArray *commentArry;
 @property (nonatomic)NSInteger index;
 @property (nonatomic)NSInteger size;
-
+@property (nonatomic)CGFloat schoolHeight;
+@property (nonatomic)CGFloat workHeight;
+@property (nonatomic)CGFloat skillsHeight;
+@property (nonatomic)CGFloat likeHeight;
 
 @end
 
@@ -123,7 +126,17 @@
     }];
     
 }
-
+- (UIView *)sectionHeaderView{
+    
+    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40)];
+    headerView.backgroundColor = kContentColor;
+    UILabel *sectionLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, 0, ScreenWidth-15, 40)];
+    sectionLabel.text = @"经历概述";
+    sectionLabel.font = [UIFont boldSystemFontOfSize:15];
+    sectionLabel.textAlignment = NSTextAlignmentLeft;
+    [headerView addSubview:sectionLabel];
+    return headerView;
+}
 
 - (UIView *)tableFooterView{
     
@@ -205,7 +218,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    if (section == 4) {
+    if (section == 2) {
+        
+        return 4;
+        
+    }else if (section == 4) {
         
         return _commentArry.count;
     }
@@ -213,6 +230,13 @@
     return 1;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    
+    if (section == 2) {
+        return [self sectionHeaderView];
+    }
+    return nil;
+}
 - (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     
@@ -223,6 +247,14 @@
     }
     return [self tableFooterView];
     
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    
+    if (section == 2) {
+        return 40;
+    }
+    return 0;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
@@ -242,7 +274,24 @@
     }else if (indexPath.section == 1){
         return 88;
     }else if (indexPath.section == 2){
-        return 209;
+        
+        if (indexPath.row == 0) {
+            return _schoolHeight;
+        }else if (indexPath.row == 1){
+            
+            return _workHeight;
+            
+        }else if (indexPath.row == 2){
+            
+            return _skillsHeight;
+            
+        }else if (indexPath.row == 3){
+            
+            return _likeHeight;
+        }
+        
+        return 0;
+        
     }else if (indexPath.section == 3){
         return 45;
     }else if (indexPath.section == 4){
@@ -324,21 +373,6 @@
         experenceCell = [[NSBundle mainBundle]loadNibNamed:@"ResumeExperienceCell" owner:self options:nil][0];
     }
     
-    //毕业学校
-    NSString *school = @"";
-    if (self.item.eduexpenrience.count > 0 ) {
-        NSDictionary *dic = [self.item.eduexpenrience firstObject];
-        school = [dic objectForKey:@"school"];
-    }
-    experenceCell.schoolLabel.text = school;
-    
-    //实习经历
-    
-    //工作经历
-    NSString *experienceStr = [CommonMethods getTheWorkExperience:self.item.workexpenrience];
-    experenceCell.workLabel.text = experienceStr;
-    experenceCell.workHeight.constant = [StringHeight heightWithText:experienceStr font:FONT_14 constrainedToWidth:ScreenWidth-96];
-    
     //评价、点赞、购买数
     static NSString *operationId = @"ResumeOperationCell";
     ResumeOpetationCell *operationCell = [tableView dequeueReusableCellWithIdentifier:operationId];
@@ -382,7 +416,49 @@
             
         case 2:
         {
-            return experenceCell;
+            if (indexPath.row == 0) {
+
+                //毕业学校
+                experenceCell.titleLabel.text = @"毕业学校:";
+                NSString *school = @" ";
+                if (self.item.eduexpenrience.count > 0 ) {
+                    NSDictionary *dic = [self.item.eduexpenrience firstObject];
+                    school = [dic objectForKey:@"school"];
+                }
+                experenceCell.textLabel.text = school;
+                _schoolHeight = [StringHeight heightWithText:school font:FONT_14 constrainedToWidth:ScreenWidth-96];
+                
+                return experenceCell;
+                
+            }else if (indexPath.row == 1){
+                
+                //工作经历
+                experenceCell.titleLabel.text = @"工作经历:";
+                NSString *experienceStr = [CommonMethods getTheWorkExperience:self.item.workexpenrience];
+                experenceCell.textLabel.text = experienceStr;
+                _workHeight = [StringHeight heightWithText:experienceStr font:FONT_14 constrainedToWidth:ScreenWidth-96];
+//                _workHeight = 100;
+                
+                return experenceCell;
+                
+            }else if (indexPath.row == 2){
+                
+                //办公技巧
+                experenceCell.titleLabel.text = @"办公技巧:";
+                experenceCell.textLabel.text = [NSString stringWithFormat:@"%@",@"技巧技巧技巧技巧技巧技巧"];
+                _skillsHeight = [StringHeight heightWithText:@"技巧技巧技巧技巧技巧技巧" font:FONT_14 constrainedToWidth:ScreenWidth-96];
+                
+                return experenceCell;
+                
+            }else if (indexPath.row == 3){
+                
+                //生活喜好
+                experenceCell.titleLabel.text = @"个人总结:";
+                experenceCell.textLabel.text = self.item.summary;
+                _likeHeight = [StringHeight heightWithText:self.item.summary font:FONT_14 constrainedToWidth:ScreenWidth-96];
+//                _likeHeight = 200;
+            }
+            return nil;
         }
             break;
             

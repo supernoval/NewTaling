@@ -648,14 +648,48 @@
 
 + (NSString *)getTheWorkExperience:(NSArray *)workArray{
     
+//    WorkExperienceItem *oneItem = [workArray firstObject];
+//    NSLog(@"1:%@  2:%@  3:%@  4:%@  5:%@  6:%@ ",oneItem.periodFrom,oneItem.periodTo,oneItem.companyName,oneItem.title,oneItem.workingPosition,oneItem.main);
+    
     NSString *str = @" ";
     if (workArray.count > 0) {
-        for (NSInteger i = 0; i < workArray.count; i++) {
-            str = @"";
-            WorkExperienceItem *oneItem = [workArray objectAtIndex:i];
-            NSString *oneExperience = [NSString stringWithFormat:@"%li %@-%@ %@ %@ %@ %@\n",i+1,oneItem.periodFrom,oneItem.periodTo,oneItem.companyName,oneItem.title,oneItem.workingPosition,oneItem.main];
+        
+        NSMutableArray *dataArray = [[NSMutableArray alloc]init];
+        
+        for (NSInteger y = 0; y < workArray.count; y++) {
+            NSDictionary *oneDic = [workArray objectAtIndex:y];
+            WorkExperienceItem *item = [[WorkExperienceItem alloc]init];
+            [item setValuesForKeysWithDictionary:oneDic];
+            [dataArray addObject:item];
+        }
+        
+        str = @"";
+        
+        for (NSInteger i = 0; i < dataArray.count; i++) {
+            
+            WorkExperienceItem *oneItem = [dataArray objectAtIndex:i];
+            NSString *oneExperience = [NSString stringWithFormat:@"%li、 %@-%@ %@ %@ %@ %@\n\n",i+1,oneItem.periodFrom,oneItem.periodTo,oneItem.companyName,oneItem.title,oneItem.workingPosition,oneItem.main];
             str = [str stringByAppendingString:oneExperience];
             
+        }
+    }
+    
+    return str;
+}
+
++ (NSString *)getTheSkills:(NSArray *)skillsArray{
+    
+    NSString *str = @" ";
+    if (skillsArray.count > 0) {
+
+        str = @"";
+        
+        for (NSInteger i = 0; i < skillsArray.count; i++) {
+            
+//            NSDictionary *oneDic = [skillsArray objectAtIndex:i];
+//            NSString *oneSkill = [NSString stringWithFormat:@"%li、 %@-%@ %@ %@ %@ %@\n\n",i+1,oneItem.periodFrom,oneItem.periodTo,oneItem.companyName,oneItem.title,oneItem.workingPosition,oneItem.main];
+//            str = [str stringByAppendingString:oneExperience];
+//            
         }
     }
     
