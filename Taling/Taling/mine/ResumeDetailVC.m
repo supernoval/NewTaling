@@ -1,12 +1,12 @@
 //
-//  ResumeDetailTVC.m
+//  ResumeDetailVC.m
 //  Taling
 //
-//  Created by Leo on 15/10/3.
+//  Created by ucan on 15/10/23.
 //  Copyright © 2015年 ZhuHaikun. All rights reserved.
 //
 
-#import "ResumeDetailTVC.h"
+#import "ResumeDetailVC.h"
 #import "ResumeNameCell.h"
 #import "ResumeExperienceCell.h"
 #import "ResumeOpetationCell.h"
@@ -16,9 +16,7 @@
 #import "CommentViewController.h"
 #import "UIImageView+WebCache.h"
 
-
-
-@interface ResumeDetailTVC ()
+@interface ResumeDetailVC ()
 {
     NSInteger appraseIndex;
     NSInteger appraseSize;
@@ -34,29 +32,31 @@
 
 @end
 
-@implementation ResumeDetailTVC
+@implementation ResumeDetailVC
 @synthesize type;//1 购买 2 评价
 @synthesize item;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
     if (_VCtitle) {
         
-         self.title = _VCtitle;
+        self.title = _VCtitle;
     }
     else
     {
-         self.title = @"我的简历";
+        self.title = @"我的简历";
     }
-
+    
     
     _commentArry = [[NSMutableArray alloc]init];
     
-  
     
-//    [self addHeaderRefresh];
-//    [self addFooterRefresh];
+    
+    //    [self addHeaderRefresh];
+    //    [self addFooterRefresh];
     
     _index = 1;
     _size = 10;
@@ -65,7 +65,13 @@
     appraseSize = 10;
     
     
-//    [self.tableView.header beginRefreshing];
+    //    [self.tableView.header beginRefreshing];
+    // Do any additional setup after loading the view.
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -76,11 +82,6 @@
     
     [self getData];
     
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)headerRefresh{
@@ -105,8 +106,8 @@
     
     [[TLRequest shareRequest] tlRequestWithAction:kgetAppraise Params:param result:^(BOOL isSuccess, id data) {
         
-        [self endHeaderRefresh];
-        [self endFooterRefresh];
+//        [self endHeaderRefresh];
+//        [self endFooterRefresh];
         
         if (isSuccess) {
             
@@ -127,70 +128,70 @@
     
 }
 /*
-- (UIView *)sectionHeaderView{
-    
-    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40)];
-    headerView.backgroundColor = kContentColor;
-    UILabel *sectionLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, 0, ScreenWidth-15, 40)];
-    sectionLabel.text = @"经历概述";
-    sectionLabel.font = [UIFont boldSystemFontOfSize:15];
-    sectionLabel.textAlignment = NSTextAlignmentLeft;
-    [headerView addSubview:sectionLabel];
-    return headerView;
-}
-
-- (UIView *)tableFooterView{
-    
-    UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40)];
-    
-    footerView.backgroundColor = kBackgroundColor;
-    
-
-    CGFloat buttonWith = ScreenWidth/2 - 30;
-    
-    
-    UIButton *reservButton = [[UIButton alloc]initWithFrame:CGRectMake(20, 5, buttonWith, 30)];
-    reservButton.clipsToBounds = YES;
-    reservButton.layer.cornerRadius = 5;
-    
-    
-    [reservButton addTarget:self action:@selector(reservResume) forControlEvents:UIControlEventTouchUpInside];
-    
-    [reservButton setTitle:@"预定" forState:UIControlStateNormal];
-    reservButton.backgroundColor = NavigationBarColor;
-    
-    [reservButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [reservButton setTitleColor:kDarkGrayColor forState:UIControlStateHighlighted];
-    
-    [footerView addSubview:reservButton];
-    
-    
-    UIButton *buyBtn = [[UIButton alloc]initWithFrame:CGRectMake(40 + buttonWith, 5, buttonWith, 30)];
-    
-    [buyBtn setTintColor:[UIColor whiteColor]];
-    [buyBtn setTitleColor:kDarkGrayColor forState:UIControlStateHighlighted];
-    buyBtn.clipsToBounds = YES;
-    buyBtn.layer.cornerRadius = 5;
-    
-  
-    
-    buyBtn.backgroundColor = NavigationBarColor;
-    
-    if (self.type == 1) {
-        [buyBtn setTitle:@"购买" forState:UIControlStateNormal];
-    }else if (self.type == 2){
-        [buyBtn setTitle:@"评价" forState:UIControlStateNormal];
-    }
-    
-    
-    
-    [buyBtn addTarget:self action:@selector(buyTheResume) forControlEvents:UIControlEventTouchUpInside];
-    
-    [footerView addSubview:buyBtn];
-    
-    return footerView;
-    
-}*/
+ - (UIView *)sectionHeaderView{
+ 
+ UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40)];
+ headerView.backgroundColor = kContentColor;
+ UILabel *sectionLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, 0, ScreenWidth-15, 40)];
+ sectionLabel.text = @"经历概述";
+ sectionLabel.font = [UIFont boldSystemFontOfSize:15];
+ sectionLabel.textAlignment = NSTextAlignmentLeft;
+ [headerView addSubview:sectionLabel];
+ return headerView;
+ }
+ 
+ - (UIView *)tableFooterView{
+ 
+ UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40)];
+ 
+ footerView.backgroundColor = kBackgroundColor;
+ 
+ 
+ CGFloat buttonWith = ScreenWidth/2 - 30;
+ 
+ 
+ UIButton *reservButton = [[UIButton alloc]initWithFrame:CGRectMake(20, 5, buttonWith, 30)];
+ reservButton.clipsToBounds = YES;
+ reservButton.layer.cornerRadius = 5;
+ 
+ 
+ [reservButton addTarget:self action:@selector(reservResume) forControlEvents:UIControlEventTouchUpInside];
+ 
+ [reservButton setTitle:@"预定" forState:UIControlStateNormal];
+ reservButton.backgroundColor = NavigationBarColor;
+ 
+ [reservButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+ [reservButton setTitleColor:kDarkGrayColor forState:UIControlStateHighlighted];
+ 
+ [footerView addSubview:reservButton];
+ 
+ 
+ UIButton *buyBtn = [[UIButton alloc]initWithFrame:CGRectMake(40 + buttonWith, 5, buttonWith, 30)];
+ 
+ [buyBtn setTintColor:[UIColor whiteColor]];
+ [buyBtn setTitleColor:kDarkGrayColor forState:UIControlStateHighlighted];
+ buyBtn.clipsToBounds = YES;
+ buyBtn.layer.cornerRadius = 5;
+ 
+ 
+ 
+ buyBtn.backgroundColor = NavigationBarColor;
+ 
+ if (self.type == 1) {
+ [buyBtn setTitle:@"购买" forState:UIControlStateNormal];
+ }else if (self.type == 2){
+ [buyBtn setTitle:@"评价" forState:UIControlStateNormal];
+ }
+ 
+ 
+ 
+ [buyBtn addTarget:self action:@selector(buyTheResume) forControlEvents:UIControlEventTouchUpInside];
+ 
+ [footerView addSubview:buyBtn];
+ 
+ return footerView;
+ 
+ }*/
 
 #pragma mark- 购买、评价简历
 
@@ -313,7 +314,7 @@
             
             //职业
             nameCell.professionLabel.text = [NSString stringWithFormat:@"%@ %@年经验",self.item.currentPosition,self.item.workYears];
-
+            
             return nameCell;
             
         }
@@ -433,32 +434,32 @@
         }
             break;
             
-//        case 3:
-//        {
-//            
-//            //评价、点赞、购买数
-//            static NSString *operationId = @"ResumeOperationCell";
-//            ResumeOpetationCell *operationCell = [tableView dequeueReusableCellWithIdentifier:operationId];
-//            if (operationCell == nil) {
-//                operationCell = [[NSBundle mainBundle]loadNibNamed:@"ResumeOperationCell" owner:self options:nil][0];
-//            }
-//            
-//            //评价
-//            [operationCell.commentBtn setTitle:@"24" forState:UIControlStateNormal];
-//            
-//            //点赞
-//            [operationCell.goodBtn setTitle:@"29" forState:UIControlStateNormal];
-//            
-//            //购买数
-//            [operationCell.buyBtn setTitle:@"24" forState:UIControlStateNormal];
-//            
-//            return operationCell;
-//        }
-//            break;
+            //        case 3:
+            //        {
+            //
+            //            //评价、点赞、购买数
+            //            static NSString *operationId = @"ResumeOperationCell";
+            //            ResumeOpetationCell *operationCell = [tableView dequeueReusableCellWithIdentifier:operationId];
+            //            if (operationCell == nil) {
+            //                operationCell = [[NSBundle mainBundle]loadNibNamed:@"ResumeOperationCell" owner:self options:nil][0];
+            //            }
+            //
+            //            //评价
+            //            [operationCell.commentBtn setTitle:@"24" forState:UIControlStateNormal];
+            //
+            //            //点赞
+            //            [operationCell.goodBtn setTitle:@"29" forState:UIControlStateNormal];
+            //
+            //            //购买数
+            //            [operationCell.buyBtn setTitle:@"24" forState:UIControlStateNormal];
+            //
+            //            return operationCell;
+            //        }
+            //            break;
             
         case 3:
         {
-
+            
             //评论
             static NSString *commentId = @"CommentCell";
             CommentCell *commentCell = [tableView dequeueReusableCellWithIdentifier:commentId];
@@ -467,8 +468,8 @@
             }
             
             
-//            NSDictionary *oneComment = [_commentArry objectAtIndex:indexPath.row];
-//            commentCell.commentLabel.text = [oneComment objectForKey:@"comment"];
+            //            NSDictionary *oneComment = [_commentArry objectAtIndex:indexPath.row];
+            //            commentCell.commentLabel.text = [oneComment objectForKey:@"comment"];
             
             commentCell.selectionStyle = UITableViewCellSelectionStyleNone;
             
@@ -502,10 +503,26 @@
         }
         else
         {
-           [CommonMethods showDefaultErrorString:@"预定失败，请重试"];
+            [CommonMethods showDefaultErrorString:@"预定失败，请重试"];
         }
     }];
     
 }
 
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+- (IBAction)adviceAction:(UIButton *)sender {
+}
+
+- (IBAction)collectAction:(UIButton *)sender {
+}
 @end

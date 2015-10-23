@@ -648,9 +648,6 @@
 
 + (NSString *)getTheWorkExperience:(NSArray *)workArray{
     
-//    WorkExperienceItem *oneItem = [workArray firstObject];
-//    NSLog(@"1:%@  2:%@  3:%@  4:%@  5:%@  6:%@ ",oneItem.periodFrom,oneItem.periodTo,oneItem.companyName,oneItem.title,oneItem.workingPosition,oneItem.main);
-    
     NSString *str = @" ";
     if (workArray.count > 0) {
         
@@ -681,15 +678,24 @@
     
     NSString *str = @" ";
     if (skillsArray.count > 0) {
-
+        
+        NSMutableArray *dataArray = [[NSMutableArray alloc]init];
+        
+        for (NSInteger y = 0; y < skillsArray.count; y++) {
+            NSDictionary *oneDic = [skillsArray objectAtIndex:y];
+            WorkExperienceItem *item = [[WorkExperienceItem alloc]init];
+            [item setValuesForKeysWithDictionary:oneDic];
+            [dataArray addObject:item];
+        }
+        
         str = @"";
         
-        for (NSInteger i = 0; i < skillsArray.count; i++) {
+        for (NSInteger i = 0; i < dataArray.count; i++) {
             
-//            NSDictionary *oneDic = [skillsArray objectAtIndex:i];
-//            NSString *oneSkill = [NSString stringWithFormat:@"%li、 %@-%@ %@ %@ %@ %@\n\n",i+1,oneItem.periodFrom,oneItem.periodTo,oneItem.companyName,oneItem.title,oneItem.workingPosition,oneItem.main];
-//            str = [str stringByAppendingString:oneExperience];
-//            
+            WorkExperienceItem *oneItem = [dataArray objectAtIndex:i];
+            NSString *oneExperience = [NSString stringWithFormat:@"%li、名称:%@  时间:%@  熟练度:%@\n\n",i+1,oneItem.skillName,oneItem.skillPeriod,oneItem.skillStatus];
+            str = [str stringByAppendingString:oneExperience];
+            
         }
     }
     

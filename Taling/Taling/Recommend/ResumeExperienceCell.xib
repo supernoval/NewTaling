@@ -17,22 +17,22 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="实习经历:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynO-0v-dTR">
                         <rect key="frame" x="15" y="66" width="65" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="65" id="3jK-WN-40a"/>
-                            <constraint firstAttribute="height" constant="21" id="e9O-Ce-eTD"/>
+                            <constraint firstAttribute="width" constant="65" id="Mhb-ZL-1uS"/>
+                            <constraint firstAttribute="height" constant="21" id="N7v-fq-Hpe"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="3jK-WN-40a"/>
-                                <exclude reference="e9O-Ce-eTD"/>
+                                <exclude reference="Mhb-ZL-1uS"/>
+                                <exclude reference="N7v-fq-Hpe"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
-                                <include reference="3jK-WN-40a"/>
-                                <include reference="e9O-Ce-eTD"/>
+                                <include reference="Mhb-ZL-1uS"/>
+                                <include reference="N7v-fq-Hpe"/>
                             </mask>
                         </variation>
                     </label>
@@ -44,36 +44,36 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="cwP-za-EDk" secondAttribute="trailing" constant="8" id="IjR-h5-IsV"/>
-                    <constraint firstAttribute="bottom" secondItem="cwP-za-EDk" secondAttribute="bottom" constant="8" id="Usv-4q-rSA"/>
-                    <constraint firstItem="ynO-0v-dTR" firstAttribute="top" secondItem="Gdf-8U-CR9" secondAttribute="top" constant="8" id="gYC-q0-1Wj"/>
-                    <constraint firstItem="ynO-0v-dTR" firstAttribute="leading" secondItem="Gdf-8U-CR9" secondAttribute="leading" constant="15" id="hM3-d0-Uu9"/>
-                    <constraint firstItem="cwP-za-EDk" firstAttribute="top" secondItem="Gdf-8U-CR9" secondAttribute="top" constant="8" id="o1c-Og-UoR"/>
-                    <constraint firstItem="cwP-za-EDk" firstAttribute="leading" secondItem="ynO-0v-dTR" secondAttribute="trailing" constant="5" id="uOS-mv-vcI"/>
+                    <constraint firstAttribute="bottom" secondItem="cwP-za-EDk" secondAttribute="bottom" constant="8" id="4Fm-im-h3h"/>
+                    <constraint firstItem="ynO-0v-dTR" firstAttribute="top" secondItem="Gdf-8U-CR9" secondAttribute="top" constant="8" id="MbX-mU-FfF"/>
+                    <constraint firstItem="cwP-za-EDk" firstAttribute="leading" secondItem="Gdf-8U-CR9" secondAttribute="leading" constant="85" id="QMf-bA-RVd"/>
+                    <constraint firstItem="ynO-0v-dTR" firstAttribute="leading" secondItem="Gdf-8U-CR9" secondAttribute="leading" constant="15" id="eT9-1f-rG7"/>
+                    <constraint firstAttribute="trailing" secondItem="cwP-za-EDk" secondAttribute="trailing" constant="8" id="mNX-Vh-oiC"/>
+                    <constraint firstItem="cwP-za-EDk" firstAttribute="top" secondItem="Gdf-8U-CR9" secondAttribute="top" constant="8" id="nLr-SQ-DXH"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
-                        <exclude reference="gYC-q0-1Wj"/>
-                        <exclude reference="hM3-d0-Uu9"/>
-                        <exclude reference="IjR-h5-IsV"/>
-                        <exclude reference="Usv-4q-rSA"/>
-                        <exclude reference="o1c-Og-UoR"/>
-                        <exclude reference="uOS-mv-vcI"/>
+                        <exclude reference="MbX-mU-FfF"/>
+                        <exclude reference="eT9-1f-rG7"/>
+                        <exclude reference="4Fm-im-h3h"/>
+                        <exclude reference="QMf-bA-RVd"/>
+                        <exclude reference="mNX-Vh-oiC"/>
+                        <exclude reference="nLr-SQ-DXH"/>
                     </mask>
                 </variation>
                 <variation key="heightClass=regular-widthClass=compact">
                     <mask key="constraints">
-                        <include reference="gYC-q0-1Wj"/>
-                        <include reference="hM3-d0-Uu9"/>
-                        <include reference="IjR-h5-IsV"/>
-                        <include reference="Usv-4q-rSA"/>
-                        <include reference="o1c-Og-UoR"/>
-                        <include reference="uOS-mv-vcI"/>
+                        <include reference="MbX-mU-FfF"/>
+                        <include reference="eT9-1f-rG7"/>
+                        <include reference="4Fm-im-h3h"/>
+                        <include reference="QMf-bA-RVd"/>
+                        <include reference="mNX-Vh-oiC"/>
+                        <include reference="nLr-SQ-DXH"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
             <connections>
-                <outlet property="textLabel" destination="cwP-za-EDk" id="TbR-uX-ZWa"/>
+                <outlet property="contentLabel" destination="cwP-za-EDk" id="GR2-px-alS"/>
                 <outlet property="titleLabel" destination="ynO-0v-dTR" id="RGT-a3-cQA"/>
             </connections>
             <point key="canvasLocation" x="325" y="233.5"/>

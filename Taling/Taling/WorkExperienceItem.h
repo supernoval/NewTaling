@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface WorkExperienceItem : NSObject
+
+//工作经历
 @property (strong, nonatomic)NSString *candidateId;
 @property (strong, nonatomic)NSString *companyDescription;
 @property (strong, nonatomic)NSString *companyIndustry;
@@ -26,5 +28,11 @@
 @property (strong, nonatomic)NSString *salary;
 @property (strong, nonatomic)NSString *title;
 @property (strong, nonatomic)NSString *workingPosition;
+
+
+//工作技能
+@property (strong, nonatomic)NSString *skillName;
+@property (strong, nonatomic)NSString *skillPeriod;
+@property (strong, nonatomic)NSString *skillStatus;
 
 @end

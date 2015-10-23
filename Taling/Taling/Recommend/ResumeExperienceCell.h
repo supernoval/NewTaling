@@ -10,6 +10,6 @@
 
 @interface ResumeExperienceCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
-@property (strong, nonatomic) IBOutlet UILabel *textLabel;
+@property (strong, nonatomic) IBOutlet UILabel *contentLabel;
 
 @end
