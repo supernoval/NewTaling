@@ -9,7 +9,7 @@
 #import "OrderListViewController.h"
 #import "SellOrderCell.h"
 #import "BuyOrderCell.h"
-#import "ResumeDetailTVC.h"
+#import "ResumeDetailVC.h"
 
 @interface OrderListViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -224,7 +224,7 @@
 {
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    ResumeDetailTVC *detail = [sb instantiateViewControllerWithIdentifier:@"ResumeDetailTVC"];
+    ResumeDetailVC *detail = [sb instantiateViewControllerWithIdentifier:@"ResumeDetailVC"];
     detail.type = 2;
     [self.navigationController pushViewController:detail animated:YES];
     

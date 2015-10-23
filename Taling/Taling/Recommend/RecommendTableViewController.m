@@ -8,7 +8,7 @@
 
 #import "RecommendTableViewController.h"
 #import "ConstantsHeaders.h"
-#import "ResumeDetailTVC.h"
+#import "ResumeDetailVC.h"
 #import "BuyResumeDetailTVC.h"
 #import "ChatAccountManager.h"
 #import "UIImageView+WebCache.h"
@@ -403,7 +403,7 @@
             
             UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
             
-            ResumeDetailTVC *resumeDetail = [sb instantiateViewControllerWithIdentifier:@"ResumeDetailTVC"];
+            ResumeDetailVC *resumeDetail = [sb instantiateViewControllerWithIdentifier:@"ResumeDetailVC"];
             
             resumeDetail.type = 1;
             resumeDetail.hidesBottomBarWhenPushed = YES;

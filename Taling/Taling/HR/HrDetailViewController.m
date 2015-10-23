@@ -9,7 +9,7 @@
 #import "HrDetailViewController.h"
 #import "ChatViewController.h"
 #import "RecommendCell.h"
-#import "ResumeDetailTVC.h"
+#import "ResumeDetailVC.h"
 
 @interface HrDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -152,7 +152,7 @@
             
             UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
             
-            ResumeDetailTVC *resumeDetail = [sb instantiateViewControllerWithIdentifier:@"ResumeDetailTVC"];
+            ResumeDetailVC *resumeDetail = [sb instantiateViewControllerWithIdentifier:@"ResumeDetailVC"];
             
             resumeDetail.type = 1;
             resumeDetail.hidesBottomBarWhenPushed = YES;

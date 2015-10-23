@@ -250,7 +250,6 @@
 		B30000A91BC3D449006B7B08 /* CommentMeaageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30000A81BC3D449006B7B08 /* CommentMeaageCell.xib */; settings = {ASSET_TAGS = (); }; };
 		B30000AC1BC3D78C006B7B08 /* LikeMessageTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B30000AB1BC3D78C006B7B08 /* LikeMessageTVC.m */; settings = {ASSET_TAGS = (); }; };
 		B31A95A91BBFBD5100DF1939 /* ResumeExperienceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B31A95A81BBFBD5100DF1939 /* ResumeExperienceCell.m */; settings = {ASSET_TAGS = (); }; };
-		B34A34B11BBFBFC7009F42A4 /* ResumeDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B34A34B01BBFBFC7009F42A4 /* ResumeDetailTVC.m */; settings = {ASSET_TAGS = (); }; };
 		B3D3F9CC1BC0D85900044F0F /* ResumeOperationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D3F9CB1BC0D85900044F0F /* ResumeOperationCell.xib */; settings = {ASSET_TAGS = (); }; };
 		B3D3F9CF1BC0DC9900044F0F /* ResumeOpetationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3F9CE1BC0DC9900044F0F /* ResumeOpetationCell.m */; settings = {ASSET_TAGS = (); }; };
 		B3D3F9D11BC0F14300044F0F /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D3F9D01BC0F14300044F0F /* CommentCell.xib */; settings = {ASSET_TAGS = (); }; };
@@ -910,8 +909,6 @@
 		B30000AB1BC3D78C006B7B08 /* LikeMessageTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikeMessageTVC.m; sourceTree = "<group>"; };
 		B31A95A71BBFBD5100DF1939 /* ResumeExperienceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResumeExperienceCell.h; sourceTree = "<group>"; };
 		B31A95A81BBFBD5100DF1939 /* ResumeExperienceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResumeExperienceCell.m; sourceTree = "<group>"; };
-		B34A34AF1BBFBFC7009F42A4 /* ResumeDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResumeDetailTVC.h; path = ../Recommend/ResumeDetailTVC.h; sourceTree = "<group>"; };
-		B34A34B01BBFBFC7009F42A4 /* ResumeDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResumeDetailTVC.m; path = ../Recommend/ResumeDetailTVC.m; sourceTree = "<group>"; };
 		B3D3F9CB1BC0D85900044F0F /* ResumeOperationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResumeOperationCell.xib; sourceTree = "<group>"; };
 		B3D3F9CD1BC0DC9900044F0F /* ResumeOpetationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResumeOpetationCell.h; sourceTree = "<group>"; };
 		B3D3F9CE1BC0DC9900044F0F /* ResumeOpetationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResumeOpetationCell.m; sourceTree = "<group>"; };
@@ -2501,8 +2498,6 @@
 				139DC5451BCE6DC000AA9C27 /* comment */,
 				B3FB2A511BC3AD82003ACC5D /* MyResumeTVC.h */,
 				B3FB2A521BC3AD82003ACC5D /* MyResumeTVC.m */,
-				B34A34AF1BBFBFC7009F42A4 /* ResumeDetailTVC.h */,
-				B34A34B01BBFBFC7009F42A4 /* ResumeDetailTVC.m */,
 				D2D9220B1BDA31BE00CE91D2 /* ResumeDetailVC.h */,
 				D2D9220C1BDA31BE00CE91D2 /* ResumeDetailVC.m */,
 			);
@@ -2853,7 +2848,6 @@
 				153F3B001BD277FB00C86F1A /* EMChatViewBaseCell.m in Sources */,
 				1506E01A1B89B521007D1696 /* MJRefreshGifFooter.m in Sources */,
 				153F3AF51BD277FB00C86F1A /* DXFaceView.m in Sources */,
-				B34A34B11BBFBFC7009F42A4 /* ResumeDetailTVC.m in Sources */,
 				153F3BD21BD27CBC00C86F1A /* wav.mm in Sources */,
 				1506E1361B89B646007D1696 /* RSADataSigner.m in Sources */,
 				153F3B701BD279E000C86F1A /* EMSDWebImageDecoder.m in Sources */,

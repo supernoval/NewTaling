@@ -127,92 +127,11 @@
     }];
     
 }
-/*
- - (UIView *)sectionHeaderView{
- 
- UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40)];
- headerView.backgroundColor = kContentColor;
- UILabel *sectionLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, 0, ScreenWidth-15, 40)];
- sectionLabel.text = @"经历概述";
- sectionLabel.font = [UIFont boldSystemFontOfSize:15];
- sectionLabel.textAlignment = NSTextAlignmentLeft;
- [headerView addSubview:sectionLabel];
- return headerView;
- }
- 
- - (UIView *)tableFooterView{
- 
- UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40)];
- 
- footerView.backgroundColor = kBackgroundColor;
- 
- 
- CGFloat buttonWith = ScreenWidth/2 - 30;
- 
- 
- UIButton *reservButton = [[UIButton alloc]initWithFrame:CGRectMake(20, 5, buttonWith, 30)];
- reservButton.clipsToBounds = YES;
- reservButton.layer.cornerRadius = 5;
- 
- 
- [reservButton addTarget:self action:@selector(reservResume) forControlEvents:UIControlEventTouchUpInside];
- 
- [reservButton setTitle:@"预定" forState:UIControlStateNormal];
- reservButton.backgroundColor = NavigationBarColor;
- 
- [reservButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
- [reservButton setTitleColor:kDarkGrayColor forState:UIControlStateHighlighted];
- 
- [footerView addSubview:reservButton];
- 
- 
- UIButton *buyBtn = [[UIButton alloc]initWithFrame:CGRectMake(40 + buttonWith, 5, buttonWith, 30)];
- 
- [buyBtn setTintColor:[UIColor whiteColor]];
- [buyBtn setTitleColor:kDarkGrayColor forState:UIControlStateHighlighted];
- buyBtn.clipsToBounds = YES;
- buyBtn.layer.cornerRadius = 5;
- 
- 
- 
- buyBtn.backgroundColor = NavigationBarColor;
- 
- if (self.type == 1) {
- [buyBtn setTitle:@"购买" forState:UIControlStateNormal];
- }else if (self.type == 2){
- [buyBtn setTitle:@"评价" forState:UIControlStateNormal];
- }
- 
- 
- 
- [buyBtn addTarget:self action:@selector(buyTheResume) forControlEvents:UIControlEventTouchUpInside];
- 
- [footerView addSubview:buyBtn];
- 
- return footerView;
- 
- }*/
+
 
 #pragma mark- 购买、评价简历
 
-- (void)buyTheResume{
-    
-    if (self.type == 1) {
-        //购买
-        
-        BuyResumeDetailTVC *buy = [self.storyboard instantiateViewControllerWithIdentifier:@"BuyResumeDetailTVC"];
-        buy.item = self.item;
-        [self.navigationController pushViewController:buy animated:YES];
-    }else if (self.type == 2){
-        //评价
-        
-        CommentViewController *commentVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CommentViewController"];
-        commentVC.resumeid = self.item.resumesId;
-        [self.navigationController pushViewController:commentVC animated:YES];
-        
-        
-    }
-}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
     return 4;
@@ -524,5 +443,42 @@
 }
 
 - (IBAction)collectAction:(UIButton *)sender {
+    
+    NSString *userid = [UserInfo getuserid];
+    
+    NSString *resumeid = self.item.resumesId;
+    
+    NSDictionary *param = @{@"user_id":userid,@"resumes_id":resumeid};
+    
+    [[TLRequest shareRequest] tlRequestWithAction:kreservResume Params:param result:^(BOOL isSuccess, id data) {
+        
+        if (isSuccess) {
+            
+            [CommonMethods showDefaultErrorString:@"预定成功"];
+            
+        }
+        else
+        {
+            [CommonMethods showDefaultErrorString:@"预定失败，请重试"];
+        }
+    }];
+}
+- (IBAction)buyOrAppraiseAction:(UIButton *)sender {
+    
+    if (self.type == 1) {
+        //购买
+        
+        BuyResumeDetailTVC *buy = [self.storyboard instantiateViewControllerWithIdentifier:@"BuyResumeDetailTVC"];
+        buy.item = self.item;
+        [self.navigationController pushViewController:buy animated:YES];
+    }else if (self.type == 2){
+        //评价
+        
+        CommentViewController *commentVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CommentViewController"];
+        commentVC.resumeid = self.item.resumesId;
+        [self.navigationController pushViewController:commentVC animated:YES];
+        
+        
+    }
 }
 @end

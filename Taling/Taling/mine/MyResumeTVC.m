@@ -9,7 +9,7 @@
 #import "MyResumeTVC.h"
 #import "BuyOrderCell.h"
 #import "SellOrderCell.h"
-#import "ResumeDetailTVC.h"
+#import "ResumeDetailVC.h"
 
 typedef NS_ENUM(NSInteger,ResumeListType)
 {
@@ -436,7 +436,7 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    ResumeDetailTVC *detail = [sb instantiateViewControllerWithIdentifier:@"ResumeDetailTVC"];
+    ResumeDetailVC *detail = [sb instantiateViewControllerWithIdentifier:@"ResumeDetailVC"];
     
     detail.type = 2;
     detail.item = item;
