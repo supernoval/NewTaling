@@ -237,6 +237,7 @@
 		15EE6BF51B93072500FBD86C /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EE6BF41B93072500FBD86C /* MapAnnotation.m */; };
 		15F33AED1BDC8C9300F34B6B /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F33AEC1BDC8C9300F34B6B /* SearchTableViewController.m */; };
 		15F33AF21BDCC41F00F34B6B /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F33AEF1BDCC41F00F34B6B /* libWeChatSDK.a */; };
+		15F33AF61BDD237C00F34B6B /* PrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F33AF51BDD237C00F34B6B /* PrivacyViewController.m */; };
 		15F7CB0B1BD1E6A5008BB231 /* Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F7CB081BD1E6A5008BB231 /* Emoji.m */; };
 		15F7CB0C1BD1E6A5008BB231 /* EmojiEmoticons.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F7CB0A1BD1E6A5008BB231 /* EmojiEmoticons.m */; };
 		B300008C1BC3B276006B7B08 /* MessageTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B300008B1BC3B276006B7B08 /* MessageTVC.m */; };
@@ -890,6 +891,8 @@
 		15F33AEF1BDCC41F00F34B6B /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		15F33AF01BDCC41F00F34B6B /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		15F33AF11BDCC41F00F34B6B /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		15F33AF41BDD237C00F34B6B /* PrivacyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyViewController.h; sourceTree = "<group>"; };
+		15F33AF51BDD237C00F34B6B /* PrivacyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyViewController.m; sourceTree = "<group>"; };
 		15F7CB071BD1E6A5008BB231 /* Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Emoji.h; sourceTree = "<group>"; };
 		15F7CB081BD1E6A5008BB231 /* Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Emoji.m; sourceTree = "<group>"; };
 		15F7CB091BD1E6A5008BB231 /* EmojiEmoticons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmojiEmoticons.h; sourceTree = "<group>"; };
@@ -1922,6 +1925,7 @@
 		1506E23C1B89BD65007D1696 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				15F33AF31BDD233F00F34B6B /* privacy */,
 				1506E2491B89BD87007D1696 /* ChangeCodeTVC.h */,
 				1506E24A1B89BD87007D1696 /* ChangeCodeTVC.m */,
 				1506E24B1B89BD87007D1696 /* ForgetCodeTVC.h */,
@@ -2420,6 +2424,16 @@
 			path = WeiChatPay;
 			sourceTree = "<group>";
 		};
+		15F33AF31BDD233F00F34B6B /* privacy */ = {
+			isa = PBXGroup;
+			children = (
+				15F33AF41BDD237C00F34B6B /* PrivacyViewController.h */,
+				15F33AF51BDD237C00F34B6B /* PrivacyViewController.m */,
+			);
+			name = privacy;
+			path = ../mine;
+			sourceTree = "<group>";
+		};
 		15F7CB061BD1E6A5008BB231 /* Emoji */ = {
 			isa = PBXGroup;
 			children = (
@@ -2783,6 +2797,7 @@
 				B300009E1BC3CFCC006B7B08 /* BuyMessageCell.m in Sources */,
 				1506DFFB1B89B506007D1696 /* SDPhotoGroup.m in Sources */,
 				B30000A41BC3D41A006B7B08 /* CommentMessageTVC.m in Sources */,
+				15F33AF61BDD237C00F34B6B /* PrivacyViewController.m in Sources */,
 				B3D3F9D41BC0F32B00044F0F /* CommentCell.m in Sources */,
 				13AA5EAA1B95CCEF00AB477E /* AFHTTPRequestOperationManager.m in Sources */,
 				153F3B841BD279E000C86F1A /* PSTCollectionViewItemKey.m in Sources */,
@@ -3097,7 +3112,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "c90ed3b9-4342-4315-9350-85b0f2adeb30";
 			};
 			name = Release;
 		};

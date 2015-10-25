@@ -10,6 +10,8 @@
 #import <SMS_SDK/SMSSDK.h>
 #import "CommonMethods.h"
 #import "MyProgressHUD.h"
+#import "PrivacyViewController.h"
+
 
 
 
@@ -199,6 +201,12 @@
 }
 
 - (IBAction)showPrivacy:(id)sender {
+    
+    UINavigationController *_privacy = [self.storyboard instantiateViewControllerWithIdentifier:@"privacyNav"];
+    
+    [self presentViewController:_privacy animated:YES completion:nil];
+    
+    
 }
 
 
