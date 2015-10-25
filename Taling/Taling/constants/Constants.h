@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 
 
+//微信支付
+#define kWeiChatAPPID                 @"wx324fc4f1945fcaac"
+
+
+
 
 //环信
 #define kEaseMobAppKey                @"15900785196#taling"

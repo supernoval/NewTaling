@@ -146,6 +146,8 @@
     
 }
 
+
+#pragma mark - 顶部 付费 免费 热门
 -(RecommendHeaderView*)headerView
 {
     if (!_headerView) {
@@ -504,6 +506,7 @@
 #pragma mark - RecommendHeaderDelegate
 -(void)selectedButtonIndex:(NSInteger)index
 {
+    [self headerRefresh];
     
 }
 

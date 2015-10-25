@@ -13,6 +13,8 @@
 #import "LoginViewController.h"
 #import <MAMapKit/MAMapKit.h>
 #import "EaseMob.h"
+#import "WXApi.h"
+
 
 @interface AppDelegate ()
 
@@ -63,6 +65,9 @@
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes: UIRemoteNotificationTypeBadge |UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert];
     }
     
+    
+    //注册微信
+    [WXApi registerApp:kWeiChatAPPID];
     
  
     
