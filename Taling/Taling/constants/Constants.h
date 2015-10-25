@@ -32,6 +32,7 @@
 
 
 /*字体*/
+#define FONT_20 [UIFont systemFontOfSize:20]
 #define FONT_18 [UIFont systemFontOfSize:18]
 #define FONT_17 [UIFont systemFontOfSize:17]
 #define FONT_16 [UIFont systemFontOfSize:16]
@@ -45,7 +46,10 @@
 
 #define RGB(a,b,c,d) [UIColor colorWithRed:a/255.0 green:b/255.0 blue:c/255.0 alpha:d]
 //tabar 选中颜色
-#define TabbarTintColor RGB(10,184,7,1.0)
+#define kTabbarTintColor RGB(255,105,0,1.0)
+
+//tabar 未选中颜色
+#define kTabbarUnSelectTintColor  RGB(216,216,216,0)
 
 //navigationbar 颜色
 #define NavigationBarColor  RGB(255,105,0,0.9)
@@ -66,6 +70,16 @@
 
 //浅灰色气体
 #define kLightTintColor  RGB(154, 154, 154, 1)
+
+//标题颜色
+#define kTitleColor     RGB(11,30,48,1)
+//正文灰色
+#define kTextLightGrayColor  RGB(119,119,119,1)
+
+
+//说明浅灰色
+#define kExtralLightGrayColor  RGB(181,181,181,1)
+
 
 #define kDarkGrayColor   RGB(85,85,85,1.0)
 

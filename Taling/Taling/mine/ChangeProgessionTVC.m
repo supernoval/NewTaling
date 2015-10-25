@@ -41,6 +41,8 @@
         return;
     }
     
+    [_inputTextField resignFirstResponder];
+    
     NSString *user_id = [UserInfo getuserid];
     
     NSString *industry = _inputTextField.text;

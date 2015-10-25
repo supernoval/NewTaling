@@ -9,7 +9,8 @@
 #import "RecommendHeaderView.h"
 #import "ConstantsHeaders.h"
 
-CGFloat buttonHeight = 42;
+
+CGFloat buttonHeight = 33;
 
 @implementation RecommendHeaderView
 
@@ -47,6 +48,8 @@ CGFloat buttonHeight = 42;
         [_payButton addTarget:self action:@selector(selectPayButton) forControlEvents:UIControlEventTouchUpInside];
         [_payButton setTitleColor:kDarkTintColor forState:UIControlStateHighlighted];
         
+        _payButton.titleLabel.font = FONT_14;
+        
         
     }
     
@@ -62,11 +65,12 @@ CGFloat buttonHeight = 42;
         
         [_freeButton setTitle:@"免费" forState:UIControlStateNormal];
         
-        [_freeButton setTitleColor:kDarkGrayColor forState:UIControlStateNormal];
+        [_freeButton setTitleColor:kTextLightGrayColor forState:UIControlStateNormal];
         
         [_freeButton addTarget:self action:@selector(selectFreeButton) forControlEvents:UIControlEventTouchUpInside];
         [_freeButton setTitleColor:kDarkTintColor forState:UIControlStateHighlighted];
         
+        _freeButton.titleLabel.font = FONT_14;
         
     }
     
@@ -82,12 +86,12 @@ CGFloat buttonHeight = 42;
         
         [_hotButton setTitle:@"热门" forState:UIControlStateNormal];
         
-        [_hotButton setTitleColor:kDarkGrayColor forState:UIControlStateNormal];
+        [_hotButton setTitleColor:kTextLightGrayColor forState:UIControlStateNormal];
         
         [_hotButton addTarget:self action:@selector(selectHotButton) forControlEvents:UIControlEventTouchUpInside];
         [_hotButton setTitleColor:kDarkTintColor forState:UIControlStateHighlighted];
         
-        
+        _hotButton.titleLabel.font = FONT_14;
     }
     
     return _hotButton;
@@ -98,7 +102,7 @@ CGFloat buttonHeight = 42;
 {
     if (!_slideView) {
         
-        _slideView = [[UIView alloc]initWithFrame:CGRectMake(0, buttonHeight, ScreenWidth/3, 2)];
+        _slideView = [[UIView alloc]initWithFrame:CGRectMake(0, buttonHeight, ScreenWidth/3, 3)];
         
         _slideView.backgroundColor = NavigationBarColor;
         
@@ -126,8 +130,8 @@ CGFloat buttonHeight = 42;
     [self animateSlideView:0];
     
     [self.payButton setTitleColor:kOrangeTextColor forState:UIControlStateNormal];
-    [self.freeButton setTitleColor:kDarkGrayColor forState:UIControlStateNormal];
-    [self.hotButton setTitleColor:kDarkGrayColor forState:UIControlStateNormal];
+    [self.freeButton setTitleColor:kTextLightGrayColor forState:UIControlStateNormal];
+    [self.hotButton setTitleColor:kTextLightGrayColor forState:UIControlStateNormal];
     
     
     if (self.delegate) {
@@ -141,9 +145,9 @@ CGFloat buttonHeight = 42;
 {
     [self animateSlideView:1];
     
-    [self.payButton setTitleColor:kDarkGrayColor forState:UIControlStateNormal];
+    [self.payButton setTitleColor:kTextLightGrayColor forState:UIControlStateNormal];
     [self.freeButton setTitleColor:kOrangeTextColor forState:UIControlStateNormal];
-    [self.hotButton setTitleColor:kDarkGrayColor forState:UIControlStateNormal];
+    [self.hotButton setTitleColor:kTextLightGrayColor forState:UIControlStateNormal];
     
     
     if (self.delegate) {
@@ -158,8 +162,8 @@ CGFloat buttonHeight = 42;
     
     [self animateSlideView:2];
     
-    [self.payButton setTitleColor:kDarkGrayColor forState:UIControlStateNormal];
-    [self.freeButton setTitleColor:kDarkGrayColor forState:UIControlStateNormal];
+    [self.payButton setTitleColor:kTextLightGrayColor forState:UIControlStateNormal];
+    [self.freeButton setTitleColor:kTextLightGrayColor forState:UIControlStateNormal];
     [self.hotButton setTitleColor:kOrangeTextColor forState:UIControlStateNormal];
     
     

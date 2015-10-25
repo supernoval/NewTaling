@@ -13,6 +13,8 @@
 #import "ForgetCodeTVC.h"
 #import "MyProgressHUD.h"
 #import "Location.h"
+#import "ChatAccountManager.h"
+
 
 
 @interface LoginViewController ()
@@ -73,6 +75,8 @@
             
             [self dismissViewControllerAnimated:YES completion:nil];
             
+            [self CheckEasyMobLogin];
+            
         }
         
     }];
@@ -103,4 +107,29 @@
     [self.navigationController pushViewController:fTVC animated:YES];
     
 }
+
+-(void)CheckEasyMobLogin
+{
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:kEasyMobHadLogin] && [[NSUserDefaults standardUserDefaults] boolForKey:kHadLogin]) {
+        
+        NSString *account =[UserInfo getUsername];
+        
+        //        NSString *account = @"15201931110";
+        [[ChatAccountManager shareChatAccountManager] loginWithAccount:account successBlock:^(BOOL isSuccess) {
+            
+            if (isSuccess) {
+                
+                NSLog(@"Login EaseMob Success:%@",account);
+                
+                
+            }
+            else
+            {
+                
+            }
+            
+        }];
+    }
+}
+
 @end

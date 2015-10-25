@@ -105,6 +105,8 @@
     {
 
         [[NSUserDefaults standardUserDefaults ] setObject:@(0) forKey:kHadLogin];
+        [[NSUserDefaults standardUserDefaults ] setBool:NO forKey:kEasyMobHadLogin];
+        
         [[NSUserDefaults standardUserDefaults ] synchronize];
 
         UINavigationController *loginNav = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];

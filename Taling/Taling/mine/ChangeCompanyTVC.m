@@ -40,7 +40,11 @@
      [CommonMethods showDefaultErrorString:@"公司不能为空"];
      return;
      }
-     
+    
+    
+    [_inputTextField resignFirstResponder];
+    
+    
     NSString *user_id = [UserInfo getuserid];
     
     NSString *company = _inputTextField.text;

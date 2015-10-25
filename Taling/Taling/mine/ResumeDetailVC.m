@@ -440,6 +440,10 @@
 */
 
 - (IBAction)adviceAction:(UIButton *)sender {
+    
+    
+    
+    
 }
 
 - (IBAction)collectAction:(UIButton *)sender {

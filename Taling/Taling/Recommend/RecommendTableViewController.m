@@ -12,13 +12,17 @@
 #import "BuyResumeDetailTVC.h"
 #import "ChatAccountManager.h"
 #import "UIImageView+WebCache.h"
+#import "SearchTableViewController.h"
 
 
-@interface RecommendTableViewController ()<UISearchBarDelegate,UISearchDisplayDelegate,RecommendHeaderDelegate,UITableViewDataSource,UITableViewDelegate>
+
+
+
+@interface RecommendTableViewController ()<UISearchBarDelegate,RecommendHeaderDelegate,UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate>
 {
     UISearchBar *_searchBar;
     
-    UISearchDisplayController *_displayController;
+  
     
     UITapGestureRecognizer *_tap;
     
@@ -26,6 +30,13 @@
     NSInteger size;
     
     NSMutableArray *_JDArray;
+    
+    NSMutableArray *_searchResultsArray;
+    
+    
+ 
+    
+    UISearchDisplayController *_searchController;
     
     
     
@@ -40,6 +51,7 @@
     self.title = @"推荐";
     
     _JDArray = [[NSMutableArray alloc]init];
+    _searchResultsArray = [[NSMutableArray alloc]init];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -56,6 +68,13 @@
     _searchBar.delegate = self;
     _searchBar.placeholder = @"行业、职位、城市、资历";
     self.navigationItem.titleView = _searchBar;
+
+    
+    
+    
+    
+
+    
     
     _tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(resign)];
     
@@ -63,13 +82,16 @@
     
     [self.tableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(footerRefresh)];
     
-    
-    // 添加头部选择栏
+//    
+//    // 添加头部选择栏
     [self.view addSubview:self.headerView];
     
     
     index = 1;
     size = 10;
+    
+    
+    [self setTabBarColor];
     
 }
 
@@ -128,7 +150,7 @@
 {
     if (!_headerView) {
         
-        _headerView = [[RecommendHeaderView alloc]initWithFrame:CGRectMake(0, 64, ScreenWidth, 44)];
+        _headerView = [[RecommendHeaderView alloc]initWithFrame:CGRectMake(0, 64, ScreenWidth, 36)];
         
         _headerView.delegate = self;
        
@@ -144,9 +166,9 @@
 {
     if (![[NSUserDefaults standardUserDefaults] boolForKey:kEasyMobHadLogin] && [[NSUserDefaults standardUserDefaults] boolForKey:kHadLogin]) {
         
-        NSString *account =[UserInfo getAccount_id];
+        NSString *account =[UserInfo getUsername];
         
-//        NSString *account = @"15201931110";
+
         [[ChatAccountManager shareChatAccountManager] loginWithAccount:account successBlock:^(BOOL isSuccess) {
             
             if (isSuccess) {
@@ -287,7 +309,7 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 5.0;
+    return 1.0;
     
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -301,13 +323,18 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    return 176;
+    return 172;
 }
 
 
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    if (tableView == _searchController.searchResultsTableView) {
+        
+        return _searchResultsArray.count;
+        
+    }
     return _JDArray.count;
 }
 
@@ -316,11 +343,23 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    
+   
+     ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
+    
+     //搜索界面
+    
+    if (tableView == _searchController.searchResultsTableView ) {
+        
+        oneItem = [_searchResultsArray objectAtIndex:indexPath.section];
+        
+    }
+    
     RecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:@"recomendCell"];
     
     if (_JDArray.count > indexPath.section) {
         
-    ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
+   
     
     //头像
     if (oneItem.url.length > 0) {
@@ -361,11 +400,11 @@
     cell.priseButton.tag = indexPath.section;
     [cell.priseButton addTarget:self action:@selector(supportTheResume:) forControlEvents:UIControlEventTouchUpInside];
     
-    if (cell.priseButton.selected == YES) {
-        cell.priseButton.backgroundColor = [UIColor redColor];
-    }else{
-        cell.priseButton.backgroundColor = [UIColor clearColor];
-    }
+//    if (cell.priseButton.selected == YES) {
+//        cell.priseButton.backgroundColor = [UIColor redColor];
+//    }else{
+//        cell.priseButton.backgroundColor = [UIColor clearColor];
+//    }
     
     //评价数
     [cell.messageButton setTitle:[NSString stringWithFormat:@"%@",oneItem.appraiseNum] forState:UIControlStateNormal];
@@ -413,9 +452,6 @@
           
         }
   
-        
-    
-
     
 
   
@@ -430,20 +466,39 @@
 
 
 #pragma mark -  UISearchBarDelegate
+-(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
+{
+    SearchTableViewController *searchTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchTableViewController"];
+    
+    
+    searchTVC.hidesBottomBarWhenPushed =YES;
+    
+    [self.navigationController pushViewController:searchTVC animated:YES];
+    
+    
+    return NO;
+    
+}
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    [self.view removeGestureRecognizer:_tap];
+//    [self.view removeGestureRecognizer:_tap];
     
-    [searchBar resignFirstResponder];
+//    [searchBar resignFirstResponder];
     
     
 }
 
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
-    [self.view addGestureRecognizer:_tap];
+    
+
+    
+    
+    
+//    [self.view addGestureRecognizer:_tap];
     
 }
+
 
 
 #pragma mark - RecommendHeaderDelegate
@@ -473,6 +528,35 @@
 }
 
 
+-(void)setTabBarColor
+{
+    UITabBar*tabbar = self.tabBarController.tabBar;
+   
+//    tabbar.backgroundColor = [UIColor whiteColor];
+   
+    
+    
+//
+    UITabBarItem *item0 = [tabbar.items objectAtIndex:0];
+    UITabBarItem *item1 = [tabbar.items objectAtIndex:1];
+    UITabBarItem *item2 = [tabbar.items objectAtIndex:2];
+    UITabBarItem *item3 = [tabbar.items objectAtIndex:3];
+//
+//    item0.selectedImage = [UIImage imageNamed:@"chonen on"];
+    item0.image = [[UIImage imageNamed:@"chonen off"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+//    item1.selectedImage = [UIImage imageNamed:@"chonen"];
+    item1.image = [[UIImage imageNamed:@"orders off"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+//    item2.selectedImage = [UIImage imageNamed:@"chonen"];
+    item2.image = [[UIImage imageNamed:@"message off"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+//    item3.selectedImage = [UIImage imageNamed:@"chonen"];
+    item3.image = [[UIImage imageNamed:@"mine off"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    
+    
+}
 
 
 @end

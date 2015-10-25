@@ -10,6 +10,8 @@
 #import "ChatViewController.h"
 #import "RecommendCell.h"
 #import "ResumeDetailVC.h"
+#import "BuyResumeDetailTVC.h"
+
 
 @interface HrDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -42,7 +44,7 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     pageSize = 10;
     pageIndex = 1;
     
@@ -237,15 +239,30 @@
 
 - (IBAction)chatAction:(id)sender {
     
-//    NSString *chatter = @"15900785196";
-//    NSString *chatter = @"15201931110";
-//    ChatViewController *chatVC = [[ChatViewController alloc] initWithChatter:chatter isGroup:NO];
-//    chatVC.title =chatter;
-//    [self.navigationController pushViewController:chatVC animated:YES];
+    
+    NSString *chatter = _hrInfoItem.username;
+    ChatViewController *chatVC = [[ChatViewController alloc] initWithChatter:chatter isGroup:NO];
+    chatVC.title =chatter;
+    [self.navigationController pushViewController:chatVC animated:YES];
     
     
     
 }
+
+#pragma mark- 购买建立
+- (void)buyTheResume:(UIButton *)btn{
+    
+    ModelItem *buyItem = [_JDArray objectAtIndex:btn.tag];
+    
+    BuyResumeDetailTVC *buy = [self.storyboard instantiateViewControllerWithIdentifier:@"BuyResumeDetailTVC"];
+    
+    buy.item = buyItem;
+    
+    [self.navigationController pushViewController:buy animated:YES];
+    
+    
+}
+
 
 
 @end

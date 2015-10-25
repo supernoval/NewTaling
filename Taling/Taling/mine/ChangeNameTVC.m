@@ -40,6 +40,9 @@
         return;
     }
     
+    
+    [_inputTextField resignFirstResponder];
+    
     NSString *user_id = [UserInfo getuserid];
     
     NSString *nickname = _inputTextField.text;

@@ -31,10 +31,13 @@
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:20],NSForegroundColorAttributeName:[UIColor whiteColor]}];
 
-    [[UITabBar appearance] setTintColor:NavigationBarColor];
+    [[UITabBar appearance] setTintColor:kTabbarTintColor];
+    [[UITabBar appearance]setBarTintColor:[UIColor whiteColor]];
+    
+
     
     
-#warning 打包注意修改 certname
+   #warning 打包注意修改 certname
     
     
     //注册环信

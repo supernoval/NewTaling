@@ -28,6 +28,15 @@
     _buyButton.clipsToBounds = YES;
     _buyButton.layer.cornerRadius = 5.0;
     
+    _placeLabel.textColor = kExtralLightGrayColor;
+    _nameLabel.textColor = kTitleColor;
+    
+    _companyLabel.textColor = kTextLightGrayColor;
+    _professionLabel.textColor = kTextLightGrayColor;
+    _yearLabel.textColor = kTextLightGrayColor;
+    _businessLabel.textColor = kTextLightGrayColor;
+    
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
