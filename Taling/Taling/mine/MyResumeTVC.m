@@ -144,7 +144,7 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     buyNum.font = FONT_17;
     buyNum.textAlignment = NSTextAlignmentCenter;
     buyNum.textColor = [UIColor blackColor];
-    buyNum.text = @"128份";
+    buyNum.text = @"0份";
     [buyView addSubview:buyNum];
     
     UILabel *buyLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 45, ScreenWidth/3, 20)];
@@ -158,7 +158,7 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     sellMoney.font = FONT_17;
     sellMoney.textAlignment = NSTextAlignmentCenter;
     sellMoney.textColor = [UIColor blackColor];
-    sellMoney.text = @"7590元";
+    sellMoney.text = @"0元";
     [buyView addSubview:sellMoney];
     
     UILabel *sellLabel = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth/3, 45, ScreenWidth/3, 20)];
@@ -173,7 +173,7 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     earnMoney.font = FONT_17;
     earnMoney.textAlignment = NSTextAlignmentCenter;
     earnMoney.textColor = [UIColor blackColor];
-    earnMoney.text = @"7590元";
+    earnMoney.text = @"0元";
     [buyView addSubview:earnMoney];
     
     UILabel *earnLabel = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth*2/3, 45, ScreenWidth/3, 20)];
@@ -199,7 +199,7 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     buyNum.font = FONT_17;
     buyNum.textAlignment = NSTextAlignmentCenter;
     buyNum.textColor = [UIColor blackColor];
-    buyNum.text = @"128份";
+    buyNum.text = @"0份";
     [buyView addSubview:buyNum];
     
     UILabel *buyLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 45, ScreenWidth/3, 20)];
@@ -213,7 +213,7 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     sellMoney.font = FONT_17;
     sellMoney.textAlignment = NSTextAlignmentCenter;
     sellMoney.textColor = [UIColor blackColor];
-    sellMoney.text = @"7590元";
+    sellMoney.text = @"0元";
     [buyView addSubview:sellMoney];
     
     UILabel *sellLabel = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth/3, 45, ScreenWidth/3, 20)];
@@ -228,7 +228,7 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     earnMoney.font = FONT_17;
     earnMoney.textAlignment = NSTextAlignmentCenter;
     earnMoney.textColor = [UIColor blackColor];
-    earnMoney.text = @"7590元";
+    earnMoney.text = @"0元";
     [buyView addSubview:earnMoney];
     
     UILabel *earnLabel = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth*2/3, 45, ScreenWidth/3, 20)];
@@ -467,6 +467,9 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     else
     {
         _segMentType = ResumeListTypeReserv;
+        
+        self.tableView.tableHeaderView = nil;
+        
         
         
     }

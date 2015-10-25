@@ -69,12 +69,7 @@
     _searchBar.placeholder = @"行业、职位、城市、资历";
     self.navigationItem.titleView = _searchBar;
 
-    
-    
-    
-    
 
-    
     
     _tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(resign)];
     
