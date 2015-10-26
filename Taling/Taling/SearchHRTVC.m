@@ -1,41 +1,30 @@
 //
-//  HRListTableViewController.m
+//  SearchHRTVC.m
 //  Taling
 //
-//  Created by ZhuHaikun on 15/10/17.
+//  Created by ucan on 15/10/26.
 //  Copyright © 2015年 ZhuHaikun. All rights reserved.
 //
 
-#import "HRListTableViewController.h"
-#import "HrDetailViewController.h"
-#import "HRListCell.h"
-#import "HRItem.h"
 #import "SearchHRTVC.h"
+#import "HRListCell.h"
+#import "HrDetailViewController.h"
 
-NSString *cellID = @"HRListCell";
-
-@interface HRListTableViewController ()<UISearchBarDelegate>
+@interface SearchHRTVC ()<UISearchBarDelegate>
 {
     NSMutableArray * _hrdataArray;
-    
     NSInteger index;
     NSInteger pageSize;
-    
-    UISearchBar *_searchBar;
-    
-    
-    
 }
 
-
-
+@property (nonatomic,strong) UISearchBar *searchBar;
 @end
 
-@implementation HRListTableViewController
+@implementation SearchHRTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    
     _hrdataArray = [[NSMutableArray alloc]init];
     
     [self addHeaderRefresh];
@@ -46,49 +35,47 @@ NSString *cellID = @"HRListCell";
     
     index = 1;
     
-    _searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(50, 0, ScreenWidth, 44)];
+    _searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
     _searchBar.delegate = self;
-    _searchBar.placeholder = @"姓名、城市、行业";
+    
+    _searchBar.placeholder = @"人才官姓名、城市";
+    
     self.navigationItem.titleView = _searchBar;
-    
-    
-    
+    // Do any additional setup after loading the view.
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    [self requestHRList];
+    [_searchBar becomeFirstResponder];
     
 }
 
--(void)headerRefresh
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - UISearchBarDelegate
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    index = 1;
     
     [self requestHRList];
     
+    [_searchBar resignFirstResponder];
+    
     
 }
-
--(void)footerRefresh
-{
-    index ++ ;
-    
-    [self requestHRList];
-    
-}
-
-
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 0.1;
 }
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 0.1;
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     
+    return 0.1;
+
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -97,7 +84,7 @@ NSString *cellID = @"HRListCell";
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
+    
     
     return 1;
     
@@ -105,12 +92,14 @@ NSString *cellID = @"HRListCell";
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    
     return _hrdataArray.count;
     
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    static NSString *cellID = @"HRListCell";
     
     HRListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     
@@ -141,7 +130,7 @@ NSString *cellID = @"HRListCell";
     
     cell.nameLabel.text = username;
     cell.compayLabel.text = [NSString stringWithFormat:@"%@ %@",company,industry];
-
+    
     return cell;
     
     
@@ -168,7 +157,7 @@ NSString *cellID = @"HRListCell";
         
     }
     
- 
+    
     
     
     
@@ -180,10 +169,10 @@ NSString *cellID = @"HRListCell";
 #pragma mark - 请求数据
 -(void)requestHRList
 {
-    NSDictionary *param =@{@"index":@(index),@"size":@(pageSize)};
+    NSDictionary *param =@{@"index":@(index),@"size":@(pageSize),@"search":_searchBar.text};
     
     [[TLRequest shareRequest] tlRequestWithAction:kgetHrInfo Params:param result:^(BOOL isSuccess, id data) {
-       
+        
         if (isSuccess) {
             
             
@@ -221,51 +210,8 @@ NSString *cellID = @"HRListCell";
         
         
     }];
-
-}
-
-
-#pragma mark -  UISearchBarDelegate
--(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
-{
-    SearchHRTVC *searchTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchHRTVC"];
-    
-    
-    searchTVC.hidesBottomBarWhenPushed =YES;
-    
-    [self.navigationController pushViewController:searchTVC animated:YES];
-    
-    
-    return NO;
     
 }
--(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
-{
-    //    [self.view removeGestureRecognizer:_tap];
-    
-    //    [searchBar resignFirstResponder];
-    
-    
-}
-
--(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
-{
-    
-    
-    
-    
-    
-    //    [self.view addGestureRecognizer:_tap];
-    
-}
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 
 @end

@@ -381,7 +381,7 @@
     cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",[oneItem.price floatValue]] ;
     
     //行业
-    cell.businessLabel.text = @"行业";
+    cell.businessLabel.text = [NSString stringWithFormat:@"行业:%@",oneItem.currentIndustry];
     
     //职业
     cell.professionLabel.text = [NSString stringWithFormat:@"职位:%@",oneItem.currentPosition];

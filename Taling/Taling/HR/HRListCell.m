@@ -11,6 +11,9 @@
 @implementation HRListCell
 
 - (void)awakeFromNib {
+    
+    self.headImageView.clipsToBounds = YES;
+    self.headImageView.layer.cornerRadius = 5.0;
     // Initialization code
 }
 

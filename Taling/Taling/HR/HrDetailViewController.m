@@ -36,6 +36,9 @@
     
     self.title = @"人才官详情";
     
+    _headimageView.clipsToBounds = YES;
+    _headimageView.layer.cornerRadius = 5.0;
+    
     _chatButton.clipsToBounds = YES;
     _chatButton.layer.cornerRadius = 5.0;
     
@@ -44,7 +47,7 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     pageSize = 10;
     pageIndex = 1;
     
@@ -80,8 +83,7 @@
     }
     
     _nameLabel.text = username;
-    _companyLabel.text = company;
-    _profersionLabel.text = industry;
+    _companyLabel.text = [NSString stringWithFormat:@"%@  %@",company,industry];
     
     
  }
@@ -112,25 +114,61 @@
     
     ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
     
+    
+    //头像
+    if (oneItem.url.length > 0) {
+        
+        [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.url]];
+    }
+    
+    
     //姓名
     cell.nameLabel.text = oneItem.name;
     
+    
     //城市、教育程度
-    cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,oneItem.city];
+    NSString *edu = @"";
+    if (oneItem.eduexpenrience.count > 0) {
+        NSDictionary *eduDic = [oneItem.eduexpenrience firstObject];
+        edu = [eduDic objectForKey:@"degree"];
+    }
+    cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,edu];
     
     // 简历估值
     cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",[oneItem.price floatValue]] ;
     
+    //行业
+    cell.businessLabel.text = [NSString stringWithFormat:@"行业:%@",oneItem.currentIndustry];
+    
+    //职业
+    cell.professionLabel.text = [NSString stringWithFormat:@"职位:%@",oneItem.currentPosition];
+    
     //公司
     cell.companyLabel.text = [NSString stringWithFormat:@"公司:%@",oneItem.currentCompany];
     
+    //资历
+    cell.yearLabel.text = [NSString stringWithFormat:@"资历:%@年",oneItem.workYears];
     
-    //点赞
+    //点赞数
     [cell.priseButton setTitle:[NSString stringWithFormat:@"%@",oneItem.goodNum] forState:UIControlStateNormal];
+    cell.priseButton.tag = indexPath.section;
+    cell.priseButton.enabled = NO;
+    
+//    [cell.priseButton addTarget:self action:@selector(supportTheResume:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    //评价数
+    [cell.messageButton setTitle:[NSString stringWithFormat:@"%@",oneItem.appraiseNum] forState:UIControlStateNormal];
+    cell.messageButton.enabled = NO;
+    
+    //购买数
+    [cell.collectButton setTitle:[NSString stringWithFormat:@"%@",oneItem.buyNum] forState:UIControlStateNormal];
+    cell.collectButton.enabled = NO;
     
     [cell.buyButton addTarget:self action:@selector(buyTheResume:) forControlEvents:UIControlEventTouchUpInside];
     
     cell.buyButton.tag = indexPath.section;
+    
     
     return cell;
     
@@ -165,21 +203,19 @@
         }
         
         
-        
-        
-        
-        
-        
-        
-    }
+  }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    
-    
 }
 
-
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    
+    return 0.1;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.1;
+}
 
 #pragma mark - 获取我的简历列表
 -(void)requestUpLoadResumes
@@ -244,7 +280,6 @@
     ChatViewController *chatVC = [[ChatViewController alloc] initWithChatter:chatter isGroup:NO];
     chatVC.title =chatter;
     [self.navigationController pushViewController:chatVC animated:YES];
-    
     
     
 }

@@ -69,7 +69,7 @@
 
 -(void)getData
 {
-    NSDictionary *param = @{@"index":@(index),@"size":@(size)};
+    NSDictionary *param = @{@"index":@(index),@"size":@(size),@"search":_searchBar.text};
     
     [[TLRequest shareRequest] tlRequestWithAction:kgetCommendResumes Params:param result:^(BOOL isSuccess, id data) {
         

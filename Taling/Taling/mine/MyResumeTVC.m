@@ -10,6 +10,7 @@
 #import "BuyOrderCell.h"
 #import "SellOrderCell.h"
 #import "ResumeDetailVC.h"
+#import "UIImageView+WebCache.h"
 
 typedef NS_ENUM(NSInteger,ResumeListType)
 {
@@ -31,6 +32,8 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     NSMutableArray *_buyArray;
     NSMutableArray *_upLoadArray;
     NSMutableArray *_reservArray;
+    NSDictionary *_buyDic;//购买简历份数、金额
+    NSDictionary *_upLoadDic;//出售简历份数、金额
     
     
     
@@ -45,6 +48,9 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     [super viewDidLoad];
     _segMentType = ResumeListTypeBuy;
     self.tableView.tableHeaderView = [self buyTableHeadView];
+    
+    _buyDic = [[NSDictionary alloc]init];
+    _upLoadDic = [[NSDictionary alloc]init];
     
     _buyArray = [[NSMutableArray alloc]init];
     _upLoadArray = [[NSMutableArray alloc]init];
@@ -140,11 +146,45 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     UIView *buyView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 80)];
     buyView.backgroundColor = kContentColor;
     
+    
+    UILabel *buyNum = [[UILabel alloc]initWithFrame:CGRectMake(0, 15, ScreenWidth/2, 30)];
+    buyNum.font = FONT_17;
+    buyNum.textAlignment = NSTextAlignmentCenter;
+    buyNum.textColor = [UIColor blackColor];
+    if ([_upLoadDic objectForKey:@"resumesCountSum"] == nil) {
+        buyNum.text = @"0份";
+    }else{
+    buyNum.text = [NSString stringWithFormat:@"%@份",[_upLoadDic objectForKey:@"resumesCountSum"]];
+    }
+    [buyView addSubview:buyNum];
+    
+    UILabel *buyLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 45, ScreenWidth/2, 20)];
+    buyLabel.text = @"已售简历数";
+    buyLabel.textColor = kDarkGrayColor;
+    buyLabel.font = FONT_15;
+    buyLabel.textAlignment = NSTextAlignmentCenter;
+    [buyView addSubview:buyLabel];
+    
+    UILabel *sellMoney = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth/2, 15, ScreenWidth/2, 30)];
+    sellMoney.font = FONT_17;
+    sellMoney.textAlignment = NSTextAlignmentCenter;
+    sellMoney.textColor = [UIColor blackColor];
+    sellMoney.text = [NSString stringWithFormat:@"%.2f元",[[_upLoadDic objectForKey:@"resumesCountPrice"]floatValue]];
+    [buyView addSubview:sellMoney];
+    
+    UILabel *sellLabel = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth/2, 45, ScreenWidth/2, 20)];
+    sellLabel.text = @"已售简历总估值";
+    sellLabel.textColor = kDarkGrayColor;
+    sellLabel.font = FONT_15;
+    sellLabel.textAlignment = NSTextAlignmentCenter;
+    [buyView addSubview:sellLabel];
+    
+    /*
     UILabel *buyNum = [[UILabel alloc]initWithFrame:CGRectMake(0, 15, ScreenWidth/3, 30)];
     buyNum.font = FONT_17;
     buyNum.textAlignment = NSTextAlignmentCenter;
     buyNum.textColor = [UIColor blackColor];
-    buyNum.text = @"0份";
+    buyNum.text = [NSString stringWithFormat:@"%@份",[_upLoadDic objectForKey:@"resumesCountSum"]];
     [buyView addSubview:buyNum];
     
     UILabel *buyLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 45, ScreenWidth/3, 20)];
@@ -158,7 +198,7 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     sellMoney.font = FONT_17;
     sellMoney.textAlignment = NSTextAlignmentCenter;
     sellMoney.textColor = [UIColor blackColor];
-    sellMoney.text = @"0元";
+    sellMoney.text = [NSString stringWithFormat:@"%.2f元",[[_upLoadDic objectForKey:@"resumesCountPrice"]floatValue]];
     [buyView addSubview:sellMoney];
     
     UILabel *sellLabel = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth/3, 45, ScreenWidth/3, 20)];
@@ -173,7 +213,7 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     earnMoney.font = FONT_17;
     earnMoney.textAlignment = NSTextAlignmentCenter;
     earnMoney.textColor = [UIColor blackColor];
-    earnMoney.text = @"0元";
+    earnMoney.text = [NSString stringWithFormat:@"%.2f元",[[_upLoadDic objectForKey:@"resumesCountPrice"]floatValue]];
     [buyView addSubview:earnMoney];
     
     UILabel *earnLabel = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth*2/3, 45, ScreenWidth/3, 20)];
@@ -181,7 +221,7 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     earnLabel.textColor = kDarkGrayColor;
     earnLabel.font = FONT_15;
     earnLabel.textAlignment = NSTextAlignmentCenter;
-    [buyView addSubview:earnLabel];
+    [buyView addSubview:earnLabel];*/
     
     UIView *line = [[UIView alloc]initWithFrame:CGRectMake(15, 79, ScreenWidth-15, 1)];
     line.backgroundColor = kLineColor;
@@ -195,6 +235,41 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     UIView *buyView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 80)];
     buyView.backgroundColor = kContentColor;
     
+    UILabel *buyNum = [[UILabel alloc]initWithFrame:CGRectMake(0, 15, ScreenWidth/2, 30)];
+    buyNum.font = FONT_17;
+    buyNum.textAlignment = NSTextAlignmentCenter;
+    buyNum.textColor = [UIColor blackColor];
+    if ([_buyDic objectForKey:@"resumesCountSum"] == nil) {
+        buyNum.text = @"0份";
+    }else{
+    buyNum.text = [NSString stringWithFormat:@"%@份",[_buyDic objectForKey:@"resumesCountSum"]];
+    }
+    [buyView addSubview:buyNum];
+    
+    UILabel *buyLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 45, ScreenWidth/2, 20)];
+    buyLabel.text = @"已购简历数";
+    buyLabel.textColor = kDarkGrayColor;
+    buyLabel.font = FONT_15;
+    buyLabel.textAlignment = NSTextAlignmentCenter;
+    [buyView addSubview:buyLabel];
+    
+    UILabel *sellMoney = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth/2, 15, ScreenWidth/2, 30)];
+    sellMoney.font = FONT_17;
+    sellMoney.textAlignment = NSTextAlignmentCenter;
+    sellMoney.textColor = [UIColor blackColor];
+    
+    sellMoney.text = [NSString stringWithFormat:@"%.2f元",[[_buyDic objectForKey:@"resumesCountPrice"]floatValue]];
+    [buyView addSubview:sellMoney];
+    
+    UILabel *sellLabel = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth/2, 45, ScreenWidth/2, 20)];
+    sellLabel.text = @"已购简历总估值";
+    sellLabel.textColor = kDarkGrayColor;
+    sellLabel.font = FONT_15;
+    sellLabel.textAlignment = NSTextAlignmentCenter;
+    [buyView addSubview:sellLabel];
+
+    
+    /*
     UILabel *buyNum = [[UILabel alloc]initWithFrame:CGRectMake(0, 15, ScreenWidth/3, 30)];
     buyNum.font = FONT_17;
     buyNum.textAlignment = NSTextAlignmentCenter;
@@ -236,7 +311,7 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     earnLabel.textColor = kDarkGrayColor;
     earnLabel.font = FONT_15;
     earnLabel.textAlignment = NSTextAlignmentCenter;
-    [buyView addSubview:earnLabel];
+    [buyView addSubview:earnLabel];*/
     
     UIView *line = [[UIView alloc]initWithFrame:CGRectMake(15, 79, ScreenWidth-15, 1)];
     line.backgroundColor = kLineColor;
@@ -265,7 +340,32 @@ typedef NS_ENUM(NSInteger,ResumeListType)
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 111;
+    switch (_segMentType) {
+        case ResumeListTypeBuy:
+        {
+            return 111;
+        }
+            break;
+        case ResumeListTypeSell:
+        {
+            return 111;
+        }
+            break;
+        case ResumeListTypeReserv:
+        {
+           return 85;
+        }
+            break;
+            
+            
+        default:
+        {
+            return 0;
+            
+        }
+            break;
+    }
+
     
 }
 
@@ -300,9 +400,6 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     }
     
     
-    
- 
-    
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -323,25 +420,51 @@ typedef NS_ENUM(NSInteger,ResumeListType)
         
         if (indexPath.section < _buyArray.count) {
             
-          ModelItem *item = [_buyArray objectAtIndex:indexPath.section];
-          
-            buyCell.nameLabel.text = item.name;
+          ModelItem *oneItem = [_buyArray objectAtIndex:indexPath.section];
             
-            CGFloat namewith = [StringHeight widthtWithText:item.name font:FONT_15 constrainedToHeight:20] + 5;
+            //头像
+            if (oneItem.url.length > 0) {
+                
+                [buyCell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.url]];
+            }
+            
+            //姓名
+            buyCell.nameLabel.text = oneItem.name;
+            
+            CGFloat namewith = [StringHeight widthtWithText:oneItem.name font:FONT_15 constrainedToHeight:20] + 5;
             
             buyCell.nameWidth.constant = namewith;
             
-            buyCell.buyMoneyLabel.text = item.price;
+            //性别
+            if ([oneItem.sex isEqualToString:@"男"]) {
+                buyCell.sexImageView.image = [UIImage imageNamed:@"male"];
+            }else if ([oneItem.sex isEqualToString:@"女"]){
+                buyCell.sexImageView.image = [UIImage imageNamed:@"female"];
+            }else{
+                buyCell.sexImageView.image = [UIImage imageNamed:@""];
+            }
+            // 简历估值
+            buyCell.buyMoneyLabel.text = [NSString stringWithFormat:@"¥%.2f",[oneItem.price floatValue]] ;
             
-  
+            //城市、教育程度
+            NSString *edu = @"";
+            if (oneItem.eduexpenrience.count > 0) {
+                NSDictionary *eduDic = [oneItem.eduexpenrience firstObject];
+                edu = [eduDic objectForKey:@"degree"];
+            }
+            buyCell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,edu];
+            
+            //职业、经验
+            
+            buyCell.professionLabel.text = [NSString stringWithFormat:@"%@ %@年经验",oneItem.currentPosition,oneItem.workYears];
+            
+            //购买自
+            buyCell.buyNameLabel.text = @"购买于谁";
+            
+            //购买时间
+            buyCell.timeLabel.text = @"201111111";
             
         }
-        
-        
-        
-        
-        
-        
         
         return buyCell;
         
@@ -359,16 +482,51 @@ typedef NS_ENUM(NSInteger,ResumeListType)
         
         if (indexPath.section < _upLoadArray.count) {
             
-            ModelItem *item = [_upLoadArray objectAtIndex:indexPath.section];
+            ModelItem *oneItem = [_upLoadArray objectAtIndex:indexPath.section];
             
-            sellCell.nameLabel.text = item.name;
             
-            CGFloat namewith = [StringHeight widthtWithText:item.name font:FONT_15 constrainedToHeight:20];
+            
+            //头像
+            if (oneItem.url.length > 0) {
+                
+                [sellCell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.url]];
+            }
+            
+            //姓名
+            sellCell.nameLabel.text = oneItem.name;
+            
+            CGFloat namewith = [StringHeight widthtWithText:oneItem.name font:FONT_15 constrainedToHeight:20] + 5;
             
             sellCell.nameWidth.constant = namewith;
             
-            sellCell.buyNumLabel.text = item.price;
+            //性别
+            if ([oneItem.sex isEqualToString:@"男"]) {
+                sellCell.sexImageView.image = [UIImage imageNamed:@"male"];
+            }else if ([oneItem.sex isEqualToString:@"女"]){
+                sellCell.sexImageView.image = [UIImage imageNamed:@"female"];
+            }else{
+                sellCell.sexImageView.image = [UIImage imageNamed:@""];
+            }
+            //被购买次数
+            sellCell.buyNumLabel.text = oneItem.buyNum;
             
+            //城市、教育程度
+            NSString *edu = @"";
+            if (oneItem.eduexpenrience.count > 0) {
+                NSDictionary *eduDic = [oneItem.eduexpenrience firstObject];
+                edu = [eduDic objectForKey:@"degree"];
+            }
+            sellCell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,edu];
+            
+            //职业、经验
+            sellCell.professionLabel.text = [NSString stringWithFormat:@"%@ %@年经验",oneItem.currentPosition,oneItem.workYears];
+            
+            //最近被购买人
+            sellCell.buyNameLabel.text = @"购买于谁";
+            
+            //最近被购买时间
+            sellCell.timeLabel.text = @"201111111";
+
             
             
         }
@@ -389,26 +547,54 @@ typedef NS_ENUM(NSInteger,ResumeListType)
         
         if (indexPath.section < _reservArray.count) {
             
-            ModelItem *item = [_reservArray objectAtIndex:indexPath.section];
+            ModelItem *oneItem = [_reservArray objectAtIndex:indexPath.section];
             
-            reservCell.nameLabel.text = item.name;
+            reservCell.buyTextLabel.hidden = YES;
             
-            CGFloat namewith = [StringHeight widthtWithText:item.name font:FONT_15 constrainedToHeight:20] + 5;
+            //头像
+            if (oneItem.url.length > 0) {
+                
+                [reservCell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.url]];
+            }
+            
+            //姓名
+            reservCell.nameLabel.text = oneItem.name;
+            
+            CGFloat namewith = [StringHeight widthtWithText:oneItem.name font:FONT_15 constrainedToHeight:20] + 5;
             
             reservCell.nameWidth.constant = namewith;
             
-            reservCell.buyMoneyLabel.text = item.price;
+            //性别
+            if ([oneItem.sex isEqualToString:@"男"]) {
+                reservCell.sexImageView.image = [UIImage imageNamed:@"male"];
+            }else if ([oneItem.sex isEqualToString:@"女"]){
+                reservCell.sexImageView.image = [UIImage imageNamed:@"female"];
+            }else{
+                reservCell.sexImageView.image = [UIImage imageNamed:@""];
+            }
+            // 简历估值
+            reservCell.buyMoneyLabel.text = [NSString stringWithFormat:@"¥%.2f",[oneItem.price floatValue]] ;
             
+            //城市、教育程度
+            NSString *edu = @"";
+            if (oneItem.eduexpenrience.count > 0) {
+                NSDictionary *eduDic = [oneItem.eduexpenrience firstObject];
+                edu = [eduDic objectForKey:@"degree"];
+            }
+            reservCell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,edu];
             
+            //职业、经验
             
+            reservCell.professionLabel.text = [NSString stringWithFormat:@"%@ %@年经验",oneItem.currentPosition,oneItem.workYears];
+            
+            //最近预定人
+            reservCell.buyNameLabel.hidden = YES;
+            
+            //最近预定时间
+            reservCell.timeLabel.hidden = YES;
+  
         }
-        
-        
-        
-        
-        
-        
-        
+
         return reservCell;
     }
     
@@ -419,26 +605,30 @@ typedef NS_ENUM(NSInteger,ResumeListType)
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    ResumeDetailVC *detail = [sb instantiateViewControllerWithIdentifier:@"ResumeDetailVC"];
     
     ModelItem *item ;
     
     if (_segMentType == ResumeListTypeBuy) {
         
         item = [_buyArray objectAtIndex:indexPath.section];
+        detail.type = 2;
         
         
     }
     else if(_segMentType == ResumeListTypeSell)
     {
         item = [_upLoadArray objectAtIndex:indexPath.section];
+        detail.type = 2;
         
+    }else{
+        
+        item = [_reservArray objectAtIndex:indexPath.section];
+        detail.type = 1;
     }
     
     
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    ResumeDetailVC *detail = [sb instantiateViewControllerWithIdentifier:@"ResumeDetailVC"];
-    
-    detail.type = 2;
     detail.item = item;
     
     [self.navigationController pushViewController:detail animated:YES];
@@ -488,9 +678,9 @@ typedef NS_ENUM(NSInteger,ResumeListType)
 {
     NSString *userid = [UserInfo getuserid];
     
-    NSDictionary *param = @{@"user_id":userid,@"index":@(upLoadIndex),@"size":@(pageSize)};
+    NSDictionary *param = @{@"sale_user_id":userid,@"buy_user_id":@"",@"index":@(upLoadIndex),@"size":@(pageSize)};
     
-    [[TLRequest shareRequest] tlRequestWithAction:kgetMyResumes Params:param result:^(BOOL isSuccess, id data) {
+    [[TLRequest shareRequest] moreThanDataRequest:kgetMyResumes Params:param result:^(BOOL isSuccess, id data) {
     
         [self endFooterRefresh];
         [self endHeaderRefresh];
@@ -498,16 +688,17 @@ typedef NS_ENUM(NSInteger,ResumeListType)
         
         if (isSuccess) {
          
-            
+            _upLoadDic = [data objectForKey:@"count"];
+            NSLog(@"_________________:%@",_upLoadDic);
             if (upLoadIndex == 1) {
                 
                 [_upLoadArray removeAllObjects];
                 
             }
             
-            if ([data isKindOfClass:[NSArray class]]) {
+            if ([[data objectForKey:@"data"] isKindOfClass:[NSArray class]]) {
                 
-                for (NSDictionary *dict in data) {
+                for (NSDictionary *dict in [data objectForKey:@"data"]) {
                     
                     ModelItem *item = [[ModelItem alloc]init];
                     
@@ -534,15 +725,17 @@ typedef NS_ENUM(NSInteger,ResumeListType)
 {
     NSString *userid = [UserInfo getuserid];
     
-    NSDictionary *param = @{@"user_id":userid,@"index":@(buyIndex),@"size":@(pageSize)};
+    NSDictionary *param = @{@"buy_user_id":userid,@"sale_user_id":@"",@"index":@(buyIndex),@"size":@(pageSize)};
     
-    [[TLRequest shareRequest] tlRequestWithAction:kgetMyBuyResumes Params:param result:^(BOOL isSuccess, id data) {
+    
+    [[TLRequest shareRequest] moreThanDataRequest:kgetMyBuyResumes Params:param result:^(BOOL isSuccess, id data) {
         
         [self endFooterRefresh];
         [self endHeaderRefresh];
         
         
         if (isSuccess) {
+            _buyDic = [data objectForKey:@"count"];
             
             if (buyIndex == 1) {
                 
@@ -550,9 +743,9 @@ typedef NS_ENUM(NSInteger,ResumeListType)
                 
             }
             
-            if ([data isKindOfClass:[NSArray class]]) {
+            if ([[data objectForKey:@"data"] isKindOfClass:[NSArray class]]) {
                 
-                for (NSDictionary *dict in data) {
+                for (NSDictionary *dict in [data objectForKey:@"data"]) {
                     
                     ModelItem *item = [[ModelItem alloc]init];
                     

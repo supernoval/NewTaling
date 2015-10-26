@@ -24,7 +24,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *companyLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *profersionLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *chatButton;
 

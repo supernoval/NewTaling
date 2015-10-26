@@ -53,10 +53,8 @@
     
     _commentArry = [[NSMutableArray alloc]init];
     
-    
-    
-    //    [self addHeaderRefresh];
-    //    [self addFooterRefresh];
+    [self.tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
+    [self.tableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(footerRefresh)];
     
     _index = 1;
     _size = 10;
@@ -65,8 +63,8 @@
     appraseSize = 10;
     
     
-    //    [self.tableView.header beginRefreshing];
-    // Do any additional setup after loading the view.
+        [self.tableView.header beginRefreshing];
+  
 }
 
 - (void)didReceiveMemoryWarning {
@@ -106,8 +104,8 @@
     
     [[TLRequest shareRequest] tlRequestWithAction:kgetAppraise Params:param result:^(BOOL isSuccess, id data) {
         
-//        [self endHeaderRefresh];
-//        [self endFooterRefresh];
+        [self.tableView.header endRefreshing];
+        [self.tableView.footer endRefreshing];
         
         if (isSuccess) {
             
@@ -143,7 +141,7 @@
         
         return 4;
         
-    }else if (section == 4) {
+    }else if (section == 3) {
         
         return _commentArry.count;
     }

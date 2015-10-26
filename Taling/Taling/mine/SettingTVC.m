@@ -8,6 +8,7 @@
 
 #import "SettingTVC.h"
 #import "NSUserDefaultKeys.h"
+#import "ChangePasswordTVC.h"
 
 @interface SettingTVC ()<UIAlertViewDelegate>
 @property (strong, nonatomic)UIAlertView *logoutAlertView;
@@ -46,6 +47,8 @@
         {
             if (indexPath.row == 0) {
                 //账号与安全
+                ChangePasswordTVC *pwd = [self.storyboard instantiateViewControllerWithIdentifier:@"ChangePasswordTVC"];
+                [self.navigationController pushViewController:pwd animated:YES];
             }else if (indexPath.row == 1){
                 //通用
             }
