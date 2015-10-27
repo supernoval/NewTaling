@@ -67,7 +67,7 @@
     
     
     //注册微信
-    [WXApi registerApp:kWeiChatAPPID];
+    [WXApi registerApp:kWXAppID];
     
  
     

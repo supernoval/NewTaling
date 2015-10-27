@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1302D78C1BDF49BF00FB4D11 /* ApiXml.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1302D7871BDF49BF00FB4D11 /* ApiXml.mm */; settings = {ASSET_TAGS = (); }; };
+		1302D78D1BDF49BF00FB4D11 /* payRequsestHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1302D7891BDF49BF00FB4D11 /* payRequsestHandler.mm */; settings = {ASSET_TAGS = (); }; };
+		1302D78E1BDF49BF00FB4D11 /* WXUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1302D78B1BDF49BF00FB4D11 /* WXUtil.mm */; settings = {ASSET_TAGS = (); }; };
+		1302D7921BDF49E700FB4D11 /* PayOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1302D7911BDF49E700FB4D11 /* PayOrder.m */; settings = {ASSET_TAGS = (); }; };
+		1302D7951BDF4AAF00FB4D11 /* PayOrderInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1302D7941BDF4AAF00FB4D11 /* PayOrderInfoModel.m */; settings = {ASSET_TAGS = (); }; };
 		137BBBE01B9DA9F5004571C6 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 137BBBDF1B9DA9F5004571C6 /* UserInfo.m */; };
 		138961CC1BA98E3F009F33FA /* MyJDsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 138961CA1BA98E3F009F33FA /* MyJDsTableViewController.m */; };
 		138961CD1BA98E3F009F33FA /* MyJDsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138961CB1BA98E3F009F33FA /* MyJDsTableViewController.xib */; };
@@ -296,6 +301,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1302D7861BDF49BF00FB4D11 /* ApiXml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiXml.h; sourceTree = "<group>"; };
+		1302D7871BDF49BF00FB4D11 /* ApiXml.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ApiXml.mm; sourceTree = "<group>"; };
+		1302D7881BDF49BF00FB4D11 /* payRequsestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = payRequsestHandler.h; sourceTree = "<group>"; };
+		1302D7891BDF49BF00FB4D11 /* payRequsestHandler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = payRequsestHandler.mm; sourceTree = "<group>"; };
+		1302D78A1BDF49BF00FB4D11 /* WXUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXUtil.h; sourceTree = "<group>"; };
+		1302D78B1BDF49BF00FB4D11 /* WXUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WXUtil.mm; sourceTree = "<group>"; };
+		1302D7901BDF49E700FB4D11 /* PayOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayOrder.h; sourceTree = "<group>"; };
+		1302D7911BDF49E700FB4D11 /* PayOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayOrder.m; sourceTree = "<group>"; };
+		1302D7931BDF4AAB00FB4D11 /* PayOrderInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayOrderInfoModel.h; sourceTree = "<group>"; };
+		1302D7941BDF4AAF00FB4D11 /* PayOrderInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayOrderInfoModel.m; sourceTree = "<group>"; };
 		137BBBDE1B9DA9F5004571C6 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		137BBBDF1B9DA9F5004571C6 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		138961C91BA98E3F009F33FA /* MyJDsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyJDsTableViewController.h; sourceTree = "<group>"; };
@@ -1030,6 +1045,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1302D78F1BDF49CF00FB4D11 /* PayOrder */ = {
+			isa = PBXGroup;
+			children = (
+				1302D7931BDF4AAB00FB4D11 /* PayOrderInfoModel.h */,
+				1302D7941BDF4AAF00FB4D11 /* PayOrderInfoModel.m */,
+				1302D7901BDF49E700FB4D11 /* PayOrder.h */,
+				1302D7911BDF49E700FB4D11 /* PayOrder.m */,
+			);
+			name = PayOrder;
+			sourceTree = "<group>";
+		};
 		137BBBE11B9DB18F004571C6 /* bindThirdpart */ = {
 			isa = PBXGroup;
 			children = (
@@ -1483,6 +1509,7 @@
 		1506DF481B89B36D007D1696 /* Taling */ = {
 			isa = PBXGroup;
 			children = (
+				1302D78F1BDF49CF00FB4D11 /* PayOrder */,
 				153F3AA91BD1FD3200C86F1A /* HR */,
 				139DC54A1BCE74EC00AA9C27 /* Chat */,
 				D2FCB8F61BCBE86A00C6ACC0 /* Model */,
@@ -2424,6 +2451,12 @@
 		15F33AEE1BDCC41F00F34B6B /* WeiChatPay */ = {
 			isa = PBXGroup;
 			children = (
+				1302D7861BDF49BF00FB4D11 /* ApiXml.h */,
+				1302D7871BDF49BF00FB4D11 /* ApiXml.mm */,
+				1302D7881BDF49BF00FB4D11 /* payRequsestHandler.h */,
+				1302D7891BDF49BF00FB4D11 /* payRequsestHandler.mm */,
+				1302D78A1BDF49BF00FB4D11 /* WXUtil.h */,
+				1302D78B1BDF49BF00FB4D11 /* WXUtil.mm */,
 				15F33AEF1BDCC41F00F34B6B /* libWeChatSDK.a */,
 				15F33AF01BDCC41F00F34B6B /* WXApi.h */,
 				15F33AF11BDCC41F00F34B6B /* WXApiObject.h */,
@@ -2771,6 +2804,7 @@
 				153F3B6C1BD279E000C86F1A /* MWZoomingScrollView.m in Sources */,
 				153F3B661BD279E000C86F1A /* MWGridCell.m in Sources */,
 				153F3B891BD279E000C86F1A /* PSTGridLayoutRow.m in Sources */,
+				1302D78C1BDF49BF00FB4D11 /* ApiXml.mm in Sources */,
 				1506DF821B89B46D007D1696 /* StringHeight.m in Sources */,
 				153F3B081BD2796000C86F1A /* THProgressView.m in Sources */,
 				1506DFF91B89B506007D1696 /* SDBrowserImageView.m in Sources */,
@@ -2806,6 +2840,7 @@
 				153F3AA71BD1F05200C86F1A /* ChatAccountManager.m in Sources */,
 				1506E03C1B89B53C007D1696 /* JSONModel.m in Sources */,
 				1506E0A71B89B582007D1696 /* UIImageView+HighlightedWebCache.m in Sources */,
+				1302D78D1BDF49BF00FB4D11 /* payRequsestHandler.mm in Sources */,
 				153F3B021BD277FB00C86F1A /* MessageModel.m in Sources */,
 				D2D9220D1BDA31BE00CE91D2 /* ResumeDetailVC.m in Sources */,
 				153F3BAD1BD27A4200C86F1A /* EMCDDeviceManager+Remind.m in Sources */,
@@ -2889,6 +2924,7 @@
 				1506E1371B89B646007D1696 /* RSADataVerifier.m in Sources */,
 				153F3AF81BD277FB00C86F1A /* DXRecordView.m in Sources */,
 				1506DF4C1B89B36D007D1696 /* main.m in Sources */,
+				1302D7921BDF49E700FB4D11 /* PayOrder.m in Sources */,
 				153F3B011BD277FB00C86F1A /* EMChatViewCell.m in Sources */,
 				153F3AFC1BD277FB00C86F1A /* EMChatLocationBubbleView.m in Sources */,
 				1506E0A01B89B582007D1696 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -2903,6 +2939,7 @@
 				1506E0431B89B53C007D1696 /* JSONModel+networking.m in Sources */,
 				1506E09D1B89B582007D1696 /* SDWebImageCompat.m in Sources */,
 				1506E09B1B89B582007D1696 /* NSData+ImageContentType.m in Sources */,
+				1302D78E1BDF49BF00FB4D11 /* WXUtil.mm in Sources */,
 				153F3AF31BD277FB00C86F1A /* LocationViewController.m in Sources */,
 				1506DF811B89B46D007D1696 /* CommonMethods.m in Sources */,
 				B300008F1BC3B2A8006B7B08 /* MessageCell.m in Sources */,
@@ -2944,6 +2981,7 @@
 				153F3B7C1BD279E000C86F1A /* UIImageView+EMWebCache.m in Sources */,
 				153F3B7A1BD279E000C86F1A /* UIImage+EMWebP.m in Sources */,
 				13D5F0FB1BA04FED001A8AFF /* SellOrderCell.m in Sources */,
+				1302D7951BDF4AAF00FB4D11 /* PayOrderInfoModel.m in Sources */,
 				15EE6BF51B93072500FBD86C /* MapAnnotation.m in Sources */,
 				D27021211BC7744900428B31 /* BuyAndCashTVC.m in Sources */,
 				153F3BA81BD27A4200C86F1A /* EMAudioPlayerUtil.m in Sources */,

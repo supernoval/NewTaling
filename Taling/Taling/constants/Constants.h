@@ -9,11 +9,43 @@
 #import <Foundation/Foundation.h>
 
 
-//微信支付
-#define kWeiChatAPPID                 @"wx324fc4f1945fcaac"
+/************************支付宝*******************/
+//合作者身份 PID
+#define kAlipayParnerID @"2088021776221851"
+//账号
+#define kAliPaySellerID  @"di3zongdui@163.com"
+//URL Schemes
+#define kAliPayURLSchemes @"TalingAliPay"
+
+//回调地址
+#define kAlipayNotifyURL_1  @""
+
+//PKCS8 密匙
+#define kAlipayPriviteKey  @"MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAK4+w5zfSRAnISabBVcDu97p3MGGCnMxl0+GWTOT93T6B+wCT2qKs4mCppaSGeEMMd+u9f9LAz8vE5wRqUgC8TaWmMUO6QWYW1tA8jJTiC2f59kSwnDTH0sDQrbje677QN93IXKhthExMR6c5i+Pl5Q+3+fVI+vp/BmZaHIPlRrlAgMBAAECgYEAk7ocyEQ6QpqaLYvipBpDTsOBaQWGmJFj0oV53RPHCgLtcnem8xIzExOUvzWRAU8Afb9tSotDbm8wNfJ3TdlIvPQaICROJq73L17q5yi8MQTxg3a82oS/WKku3oIjk1jQByVnGaz3tKyK40xVUa6l+Lrn0EoAHQqJQWuJgSPS1uUCQQDWHKyqfANeGI7i7vBGlDhSvsQhYxuto/0Cew/W726QKR0TqvTyrJcEGioh8ga0DmLnYZhcrANvmuVcVfHySSXzAkEA0FVyiv9aYU3zhASMN6Eo+ikfE/Q1s+7vLkCX2Divb5/vcS/moDMR2skQNgr62l4CtzM2vAGTlrDR4GLKSYS5xwJBAKfZyN7J45XzqKhs6n5aGiF8HaOS35LrmSBFuzAjeciYAox1nBtWg/kaTedYpjqngI+lqd0UmIj4pFATrF3lTFMCQHvoxna7h8Ll/RchKVCQ7vFS8eQJVMOPMfzdeDKnDFkk0+ILLm1L0qvA+H5cK3UjgxP5Ru2tNl3jDwEZYN03LtMCQAxcLqzKtIiX7TbUiQY86z8gc1qjtn1uScCisBK1k8jqRJQtb74asUpWsG9iCiizxdRoh3xfhpAo2pxY8Q/unr8="
+/***********************************************/
 
 
 
+/*************************微信支付**************/
+//appid
+#define kWXAppID        @"wx324fc4f1945fcaac" //APPID
+#define APP_SECRET      @"681977bb4aa4fcdcd124779e83cf3ef6" //appsecret
+//商户号，填写商户对应参数
+#define MCH_ID          @"1248282001"
+//商户API密钥，填写相应参数
+#define PARTNER_ID      @"69ffe20638d752280c00e044a04b0b25"
+
+//获取服务器端支付数据地址（商户自定义）
+#define SP_URL          @"http://wxpay.weixin.qq.com/pub_v2/app/app_pay.php"
+
+//回调地址
+#define WXNOTIFY_URL_1     @""
+
+/**********************************************/
+
+
+//支付成功通知
+#define kPaySucessNotification      @"PaySuccessNotification"
 
 //环信
 #define kEaseMobAppKey                @"15900785196#taling"
