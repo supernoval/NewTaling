@@ -57,7 +57,7 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     _reservArray = [[NSMutableArray alloc]init];
     pageSize = 10;
     
-    self.tableView.separatorStyle  = UITableViewCellSeparatorStyleNone;
+//    self.tableView.separatorStyle  = UITableViewCellSeparatorStyleNone;
     
     [self addHeaderRefresh];
     [self addFooterRefresh];
@@ -338,6 +338,16 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     return NO;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    
+    return 0.1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    
+    return 0.1;
+}
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     switch (_segMentType) {
@@ -373,15 +383,21 @@ typedef NS_ENUM(NSInteger,ResumeListType)
 {
     
    
+    return 1;
+    
+    
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     switch (_segMentType) {
         case ResumeListTypeBuy:
         {
-                return _buyArray.count;
+            return _buyArray.count;
         }
             break;
         case ResumeListTypeSell:
         {
-                return _upLoadArray.count;
+            return _upLoadArray.count;
         }
             break;
         case ResumeListTypeReserv:
@@ -399,12 +415,6 @@ typedef NS_ENUM(NSInteger,ResumeListType)
             break;
     }
     
-    
-}
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 1;
-    
 }
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -418,9 +428,9 @@ typedef NS_ENUM(NSInteger,ResumeListType)
         }
         
         
-        if (indexPath.section < _buyArray.count) {
+        if (indexPath.row < _buyArray.count) {
             
-          ModelItem *oneItem = [_buyArray objectAtIndex:indexPath.section];
+          ModelItem *oneItem = [_buyArray objectAtIndex:indexPath.row];
             
             //头像
             if (oneItem.url.length > 0) {
@@ -480,9 +490,9 @@ typedef NS_ENUM(NSInteger,ResumeListType)
             
         }
         
-        if (indexPath.section < _upLoadArray.count) {
+        if (indexPath.row < _upLoadArray.count) {
             
-            ModelItem *oneItem = [_upLoadArray objectAtIndex:indexPath.section];
+            ModelItem *oneItem = [_upLoadArray objectAtIndex:indexPath.row];
             
             
             
@@ -545,9 +555,9 @@ typedef NS_ENUM(NSInteger,ResumeListType)
         }
         
         
-        if (indexPath.section < _reservArray.count) {
+        if (indexPath.row < _reservArray.count) {
             
-            ModelItem *oneItem = [_reservArray objectAtIndex:indexPath.section];
+            ModelItem *oneItem = [_reservArray objectAtIndex:indexPath.row];
             
             reservCell.buyTextLabel.hidden = YES;
             
@@ -612,19 +622,19 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     
     if (_segMentType == ResumeListTypeBuy) {
         
-        item = [_buyArray objectAtIndex:indexPath.section];
+        item = [_buyArray objectAtIndex:indexPath.row];
         detail.type = 2;
         
         
     }
     else if(_segMentType == ResumeListTypeSell)
     {
-        item = [_upLoadArray objectAtIndex:indexPath.section];
+        item = [_upLoadArray objectAtIndex:indexPath.row];
         detail.type = 2;
         
     }else{
         
-        item = [_reservArray objectAtIndex:indexPath.section];
+        item = [_reservArray objectAtIndex:indexPath.row];
         detail.type = 1;
     }
     
