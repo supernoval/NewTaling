@@ -42,9 +42,9 @@
 @property (strong, nonatomic) NSString *userId;
 @property (strong, nonatomic)NSArray *workexpenrience;
 @property (strong, nonatomic)NSString *workYears;
-
-
-
+@property (strong, nonatomic)NSString *sellerName;
+@property (strong, nonatomic)NSString *buyerName;
+@property (strong, nonatomic)NSString *buyTime;
 
 
 //下单成功返回

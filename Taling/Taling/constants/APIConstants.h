@@ -9,9 +9,9 @@
 
 
 //本地测试
-//#define  kRequestHeader  @"http://192.168.40.245/taling-api"
+#define  kRequestHeader  @"http://192.168.40.245/taling-api"
 //正式
-#define  kRequestHeader  @"http://183.131.151.50/taling-api"
+//#define  kRequestHeader  @"http://183.131.151.50/taling-api"
 
 
 
@@ -121,7 +121,8 @@
  */
 #define kgetHrInfo           @"/resume/getHrInfo"
 
-
+//搜索HR信息
+#define ksearchHrInfo        @"/resume/getHrInfoBySearch"
 
 //创建订单
 /*

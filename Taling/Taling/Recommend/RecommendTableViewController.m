@@ -266,6 +266,38 @@
     NSString *resumes_id = oneItem.resumesId;
     NSString *user_id = [UserInfo getuserid];
     NSDictionary *param = @{@"resumes_id":resumes_id,@"user_id":user_id};
+    
+    [[TLRequest shareRequest]moreThanDataRequest:ksupportTheResume Params:param result:^(BOOL isSuccess, id data){
+        
+        if (isSuccess) {
+            if ([[data objectForKey:@"err_str"] isEqualToString:@"您已经赞过该简历"]) {
+                
+                [[TLRequest shareRequest]tlRequestWithAction:kcancelSupportTheResume Params:param result:^(BOOL isSuccess, id data){
+                    
+                    if (isSuccess) {
+//                        button.selected = NO;
+                        NSInteger num = [oneItem.goodNum integerValue];
+                        oneItem.goodNum = [NSString stringWithFormat:@"%li",num-1];
+                    }
+                    
+                }];
+
+                
+            }else{
+                
+//                button.selected = YES;
+                NSInteger num = [oneItem.goodNum integerValue];
+                oneItem.goodNum = [NSString stringWithFormat:@"%li",num+1];
+            }
+            
+        }
+        
+    }];
+    
+    
+    
+    /*
+    
     if (button.selected == NO) {//赞
         
         [[TLRequest shareRequest]tlRequestWithAction:ksupportTheResume Params:param result:^(BOOL isSuccess, id data){
@@ -289,7 +321,7 @@
             
         }];
     }
-    
+    */
     [self.tableView reloadData];
     
 //    [self.tableView reloadSections:button.tag withRowAnimation:UITableViewRowAnimationAutomatic];

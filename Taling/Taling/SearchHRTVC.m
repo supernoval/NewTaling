@@ -171,7 +171,7 @@
 {
     NSDictionary *param =@{@"index":@(index),@"size":@(pageSize),@"search":_searchBar.text};
     
-    [[TLRequest shareRequest] tlRequestWithAction:kgetHrInfo Params:param result:^(BOOL isSuccess, id data) {
+    [[TLRequest shareRequest] tlRequestWithAction:ksearchHrInfo Params:param result:^(BOOL isSuccess, id data) {
         
         if (isSuccess) {
             

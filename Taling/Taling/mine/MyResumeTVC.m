@@ -459,10 +459,10 @@ typedef NS_ENUM(NSInteger,ResumeListType)
             buyCell.professionLabel.text = [NSString stringWithFormat:@"%@ %@年经验",oneItem.currentPosition,oneItem.workYears];
             
             //购买自
-            buyCell.buyNameLabel.text = @"购买于谁";
+            buyCell.buyNameLabel.text = oneItem.sellerName;
             
             //购买时间
-            buyCell.timeLabel.text = @"201111111";
+            buyCell.timeLabel.text = oneItem.buyTime;
             
         }
         
@@ -521,11 +521,11 @@ typedef NS_ENUM(NSInteger,ResumeListType)
             //职业、经验
             sellCell.professionLabel.text = [NSString stringWithFormat:@"%@ %@年经验",oneItem.currentPosition,oneItem.workYears];
             
-            //最近被购买人
-            sellCell.buyNameLabel.text = @"购买于谁";
+            //最近购买人
+            sellCell.buyNameLabel.text = oneItem.buyerName;
             
             //最近被购买时间
-            sellCell.timeLabel.text = @"201111111";
+            sellCell.timeLabel.text = oneItem.buyTime;
 
             
             

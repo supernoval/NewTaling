@@ -15,6 +15,7 @@
 #import "BuyResumeDetailTVC.h"
 #import "CommentViewController.h"
 #import "UIImageView+WebCache.h"
+#import "UIImageView+WebCache.h"
 
 @interface ResumeDetailVC ()
 {
@@ -57,12 +58,9 @@
     [self.tableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(footerRefresh)];
     
     _index = 1;
-    _size = 10;
+    _size = 5;
     
-    appraseIndex = 1;
-    appraseSize = 10;
-    
-    
+
         [self.tableView.header beginRefreshing];
   
 }
@@ -100,7 +98,7 @@
         return;
         
     }
-    NSDictionary *param = @{@"resumes_id":item.resumesId,@"index":@(appraseIndex),@"size":@(appraseSize)};
+    NSDictionary *param = @{@"resumes_id":item.resumesId,@"index":@(_index),@"size":@(_size)};
     
     [[TLRequest shareRequest] tlRequestWithAction:kgetAppraise Params:param result:^(BOOL isSuccess, id data) {
         
@@ -176,7 +174,15 @@
         return 0;
         
     }else if (indexPath.section == 3){
-        return 119;
+        //评价内容
+        if (indexPath.row < _commentArry.count) {
+            NSDictionary *oneComment = [_commentArry objectAtIndex:indexPath.row];
+            CGFloat height = [StringHeight heightWithText:[oneComment objectForKey:@"comment"] font:FONT_14 constrainedToWidth:ScreenWidth-15-8];
+            return 70+height;
+        }
+        
+        return 0;
+        
     }
     return 0;
 }
@@ -383,10 +389,24 @@
             if (commentCell == nil) {
                 commentCell = [[NSBundle mainBundle]loadNibNamed:@"CommentCell" owner:self options:nil][0];
             }
+            if (indexPath.row < _commentArry.count) {
+                
+                NSDictionary *oneComment = [_commentArry objectAtIndex:indexPath.row];
+                commentCell.commentLabel.text = [oneComment objectForKey:@"comment"];
+                commentCell.nameLabel.text = @"xingminig";
+                
+                if ([[oneComment objectForKey:@"addTime"] length]>10) {
+                    commentCell.timeLabel.text = [[oneComment objectForKey:@"addTime"] substringToIndex:10];
+                }else{
+                    commentCell.timeLabel.text = [oneComment objectForKey:@"addTime"];
+                }
+                
+                
+  
+            }
             
             
-            //            NSDictionary *oneComment = [_commentArry objectAtIndex:indexPath.row];
-            //            commentCell.commentLabel.text = [oneComment objectForKey:@"comment"];
+            
             
             commentCell.selectionStyle = UITableViewCellSelectionStyleNone;
             
