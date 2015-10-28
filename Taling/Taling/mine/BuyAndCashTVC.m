@@ -7,7 +7,7 @@
 //
 
 #import "BuyAndCashTVC.h"
-
+#import "PayOrder.h"
 @interface BuyAndCashTVC ()
 
 @property (nonatomic)NSInteger payType;// 1 微信 2 支付宝
@@ -94,6 +94,8 @@
 - (void)payAction{
     
     NSLog(@"1充值2体现:%li",(long)self.viewType);
+    
+
     NSLog(@"1微信2支付宝:%li",(long)_payType);
 }
 @end

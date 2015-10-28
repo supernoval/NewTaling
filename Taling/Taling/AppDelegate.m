@@ -14,9 +14,9 @@
 #import <MAMapKit/MAMapKit.h>
 #import "EaseMob.h"
 #import "WXApi.h"
+#import <AlipaySDK/AlipaySDK.h>
 
-
-@interface AppDelegate ()
+@interface AppDelegate ()<WXApiDelegate>
 
 @end
 
@@ -105,6 +105,40 @@
     }
     
 }
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    // return ([self.sinaweibo handleOpenURL:url] || [WXApi handleOpenURL:url delegate:self]);
+    NSLog(@"urlHost:%@",url.host);
+    
+    //微信支付 回调
+    if ([url.host isEqualToString:@"pay"]) {
+        
+        return  [WXApi handleOpenURL:url delegate:self];
+    }
+    
+    
+    //支付宝 支付结果回调
+    if ([url.host isEqualToString:@"safepay"]) {
+        
+        [[AlipaySDK defaultService]
+         processOrderWithPaymentResult:url
+         standbyCallback:^(NSDictionary *resultDic) {
+             NSLog(@"%s,result = %@",__func__, resultDic);
+             NSInteger resultStatus = [[resultDic objectForKey:@"resultStatus"]integerValue];
+             if (resultStatus == 9000) {
+                 [[NSNotificationCenter defaultCenter] postNotificationName:kPaySucessNotification object:nil];
+             }
+             else
+             {
+                 //                 [[NSNotificationCenter defaultCenter] postNotificationName:kPayFailNotification object:nil];
+             }
+         }];
+        
+    }
+    return YES;
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -7,6 +7,7 @@
 //
 
 #import "BuyResumeDetailTVC.h"
+#import "PayOrder.h"
 
 @interface BuyResumeDetailTVC ()
 @property (nonatomic)NSInteger payType;// 1 微信 2 支付宝
@@ -106,6 +107,8 @@
         
         if (isSuccess) {
             
+            [self loadPayAction];
+            
             if ([data isKindOfClass:[NSDictionary class]]) {
                 NSDictionary *dic = data;
                 [_buyItem setValuesForKeysWithDictionary:dic];
@@ -131,5 +134,21 @@
     _wechatButton.selected = NO;
     _alipayButton.selected = YES;
     _payType = 2;
+}
+
+-(void)loadPayAction
+{
+    PayOrderInfoModel *orderModel = [[ PayOrderInfoModel alloc]init];
+    
+    orderModel.productName = @"测试支付";
+    orderModel.productDescription = @"测试";
+    orderModel.amount = @"0.01";
+    orderModel.out_trade_no = @"4547615875451";
+    
+    if (self.payType == 2) {
+        
+        [PayOrder loadALiPaySDK:orderModel];
+        
+    }
 }
 @end
