@@ -202,7 +202,7 @@
         if (indexPath.row < _commentArry.count) {
             NSDictionary *oneComment = [_commentArry objectAtIndex:indexPath.row];
             CGFloat height = [StringHeight heightWithText:[oneComment objectForKey:@"comment"] font:FONT_14 constrainedToWidth:ScreenWidth-15-8];
-            return 70+height;
+            return 100+height;
         }
         
         return 0;
@@ -417,15 +417,17 @@
                 
                 NSDictionary *oneComment = [_commentArry objectAtIndex:indexPath.row];
                 commentCell.commentLabel.text = [oneComment objectForKey:@"comment"];
-                commentCell.nameLabel.text = @"xingminig";
+                commentCell.nameLabel.text = @"匿名用户";
                 
                 if ([[oneComment objectForKey:@"addTime"] length]>10) {
-                    commentCell.timeLabel.text = [[oneComment objectForKey:@"addTime"] substringToIndex:10];
+                    commentCell.timeLabel.text = [[oneComment objectForKey:@"time"] substringToIndex:10];
                 }else{
-                    commentCell.timeLabel.text = [oneComment objectForKey:@"addTime"];
+                    commentCell.timeLabel.text = [oneComment objectForKey:@"time"];
                 }
                 
-                
+                if ([[oneComment objectForKey:@"photo"]length] > 0) {
+                    [commentCell.headImageView sd_setImageWithURL:[oneComment objectForKey:@"photo"]];
+                }
   
             }
             

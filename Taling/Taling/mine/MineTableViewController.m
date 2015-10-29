@@ -16,6 +16,7 @@
 #import "MyResumeTVC.h"
 
 @interface MineTableViewController ()<UIAlertViewDelegate>
+@property (strong, nonatomic)NSDictionary *countDic;
 
 @end
 
@@ -30,12 +31,40 @@
     _moneyWidth.constant = (ScreenWidth-25)/2;
     _numberTextWidth.constant = (ScreenWidth-25)/2;
     _moneyTextWidth.constant = (ScreenWidth-25)/2;
+    _countDic = [[NSDictionary alloc]init];
+    
+    [self getResumeCount];
+    
+    
+}
+
+- (void)getResumeCount{
+    
+    NSDictionary *param = @{@"user_id":[UserInfo getuserid]};
+    
+    [[TLRequest shareRequest]tlRequestWithAction:kresumesCount Params:param result:^(BOOL isSuccess ,id data){
+        
+        if (isSuccess) {
+            
+            if ([data isKindOfClass:[NSDictionary class]]) {
+                _countDic = data;
+                _resumeNum.text = [NSString stringWithFormat:@"%@份",[_countDic objectForKey:@"resumesCountSum"]];
+                _resumeMoney.text = [NSString stringWithFormat:@"%@元",[_countDic objectForKey:@"resumesCountPrice"]];
+                [self.tableView reloadData];
+            }
+            
+        }
+        
+        
+    }];
     
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [self  getResumeCount];
     
     NSString *nickName = [[NSUserDefaults standardUserDefaults ]objectForKey:knickname];
     

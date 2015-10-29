@@ -61,6 +61,10 @@
 #define kupdatePwd    @"/user/updatePwd"
 
 
+//获取统计 简历、简历估值
+#define kresumesCount    @"/user/resumesCount"
+
+
 //获取推荐列表
 // http://183.131.151.50/taling-api/resume/getCommendResumes?index=1&size=10
 /*
