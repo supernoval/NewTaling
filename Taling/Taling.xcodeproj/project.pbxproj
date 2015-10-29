@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1302D78C1BDF49BF00FB4D11 /* ApiXml.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1302D7871BDF49BF00FB4D11 /* ApiXml.mm */; settings = {ASSET_TAGS = (); }; };
-		1302D78D1BDF49BF00FB4D11 /* payRequsestHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1302D7891BDF49BF00FB4D11 /* payRequsestHandler.mm */; settings = {ASSET_TAGS = (); }; };
-		1302D78E1BDF49BF00FB4D11 /* WXUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1302D78B1BDF49BF00FB4D11 /* WXUtil.mm */; settings = {ASSET_TAGS = (); }; };
-		1302D7921BDF49E700FB4D11 /* PayOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1302D7911BDF49E700FB4D11 /* PayOrder.m */; settings = {ASSET_TAGS = (); }; };
-		1302D7951BDF4AAF00FB4D11 /* PayOrderInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1302D7941BDF4AAF00FB4D11 /* PayOrderInfoModel.m */; settings = {ASSET_TAGS = (); }; };
+		1302D78C1BDF49BF00FB4D11 /* ApiXml.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1302D7871BDF49BF00FB4D11 /* ApiXml.mm */; };
+		1302D78D1BDF49BF00FB4D11 /* payRequsestHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1302D7891BDF49BF00FB4D11 /* payRequsestHandler.mm */; };
+		1302D78E1BDF49BF00FB4D11 /* WXUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1302D78B1BDF49BF00FB4D11 /* WXUtil.mm */; };
+		1302D7921BDF49E700FB4D11 /* PayOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1302D7911BDF49E700FB4D11 /* PayOrder.m */; };
+		1302D7951BDF4AAF00FB4D11 /* PayOrderInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1302D7941BDF4AAF00FB4D11 /* PayOrderInfoModel.m */; };
 		137BBBE01B9DA9F5004571C6 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 137BBBDF1B9DA9F5004571C6 /* UserInfo.m */; };
 		138961CC1BA98E3F009F33FA /* MyJDsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 138961CA1BA98E3F009F33FA /* MyJDsTableViewController.m */; };
 		138961CD1BA98E3F009F33FA /* MyJDsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138961CB1BA98E3F009F33FA /* MyJDsTableViewController.xib */; };
@@ -280,8 +280,8 @@
 		D29BBC691B946B7E004B4021 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D29BBC681B946B7E004B4021 /* libcrypto.a */; };
 		D2D9220A1BDA146C00CE91D2 /* GraduateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2D922091BDA146C00CE91D2 /* GraduateCell.xib */; };
 		D2D9220D1BDA31BE00CE91D2 /* ResumeDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D9220C1BDA31BE00CE91D2 /* ResumeDetailVC.m */; };
-		D2D922111BDDC2FF00CE91D2 /* SearchHRTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D922101BDDC2FF00CE91D2 /* SearchHRTVC.m */; settings = {ASSET_TAGS = (); }; };
-		D2D922151BDDD61500CE91D2 /* ChangePasswordTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D922141BDDD61500CE91D2 /* ChangePasswordTVC.m */; settings = {ASSET_TAGS = (); }; };
+		D2D922111BDDC2FF00CE91D2 /* SearchHRTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D922101BDDC2FF00CE91D2 /* SearchHRTVC.m */; };
+		D2D922151BDDD61500CE91D2 /* ChangePasswordTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D922141BDDD61500CE91D2 /* ChangePasswordTVC.m */; };
 		D2FCB8F51BCBE7BB00C6ACC0 /* libEaseMobClientSDKLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2FCB8F41BCBE7BB00C6ACC0 /* libEaseMobClientSDKLite.a */; };
 		D2FCB8F91BCBE88D00C6ACC0 /* ModelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FCB8F81BCBE88D00C6ACC0 /* ModelItem.m */; };
 		D2FCB8FD1BCBEFB900C6ACC0 /* BuyResumeDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FCB8FC1BCBEFB900C6ACC0 /* BuyResumeDetailTVC.m */; };
