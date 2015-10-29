@@ -89,7 +89,28 @@
     return 5;
 }
 
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if (indexPath.section == 2) {
+        
+        if (indexPath.row == 1) {
+            _wechatButton.selected = YES;
+            _alipayButton.selected = NO;
+            _payType = 1;
+            
+        }
+        else if (indexPath.row == 2)
+        {
+            _wechatButton.selected = NO;
+            _alipayButton.selected = YES;
+            _payType = 2;
+        }
+    }
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+}
 
 - (void)payAction{
     
@@ -125,15 +146,11 @@
 }
 
 - (IBAction)wechatAction:(UIButton *)sender {
-    _wechatButton.selected = YES;
-    _alipayButton.selected = NO;
-    _payType = 1;
+
 }
 
 - (IBAction)alipayAction:(UIButton *)sender {
-    _wechatButton.selected = NO;
-    _alipayButton.selected = YES;
-    _payType = 2;
+
 }
 
 -(void)loadPayAction
@@ -145,6 +162,15 @@
     orderModel.amount = @"0.01";
     orderModel.out_trade_no = @"4547615875451";
     
+    //微信支付
+    if (self.payType == 1)
+    {
+        
+        [PayOrder sendWXPay:orderModel];
+        
+    }
+    
+    //支付宝支付
     if (self.payType == 2) {
         
         [PayOrder loadALiPaySDK:orderModel];

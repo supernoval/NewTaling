@@ -14,9 +14,10 @@
 
 typedef NS_ENUM(NSInteger,ResumeListType)
 {
+    ResumeListTypeReserv,
     ResumeListTypeBuy,
     ResumeListTypeSell,
-    ResumeListTypeReserv,
+  
     
    
 };
@@ -46,8 +47,14 @@ typedef NS_ENUM(NSInteger,ResumeListType)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _segMentType = ResumeListTypeBuy;
-    self.tableView.tableHeaderView = [self buyTableHeadView];
+    
+    
+    //先设置默认为 预定简历
+    _segMentType = ResumeListTypeReserv;
+    
+    
+    
+//    self.tableView.tableHeaderView = [self buyTableHeadView];
     
     _buyDic = [[NSDictionary alloc]init];
     _upLoadDic = [[NSDictionary alloc]init];
@@ -623,7 +630,7 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     if (_segMentType == ResumeListTypeBuy) {
         
         item = [_buyArray objectAtIndex:indexPath.row];
-        detail.type = 2;
+        detail.type = 1;
         
         
     }
@@ -648,7 +655,7 @@ typedef NS_ENUM(NSInteger,ResumeListType)
 }
 
 
-
+#pragma mark -  切换
 - (IBAction)switchAction:(UISegmentedControl *)sender {
     
     UISegmentedControl *seg = sender;

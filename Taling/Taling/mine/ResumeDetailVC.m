@@ -40,12 +40,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    
     if (self.type == 1) {
+        
+       
+        
         [self.buyOrAppraiseButton setTitle:@"购买" forState:UIControlStateNormal];
-    }else if (self.type == 2){
+    }
+    else if (self.type == 2){
+        
+        
+        self.yudingButton.hidden = YES;
+        self.consoleButton.hidden = YES;
+        self.lineView.hidden  = YES;
         
         [self.buyOrAppraiseButton setTitle:@"评价" forState:UIControlStateNormal];
     }
+    
+    
+
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -80,6 +94,9 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+
+    
     
     _index = 1;
     

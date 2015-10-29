@@ -9,6 +9,7 @@
 #import "SettingTVC.h"
 #import "NSUserDefaultKeys.h"
 #import "ChangePasswordTVC.h"
+#import "SDImageCache.h"
 
 @interface SettingTVC ()<UIAlertViewDelegate>
 @property (strong, nonatomic)UIAlertView *logoutAlertView;
@@ -50,7 +51,16 @@
                 ChangePasswordTVC *pwd = [self.storyboard instantiateViewControllerWithIdentifier:@"ChangePasswordTVC"];
                 [self.navigationController pushViewController:pwd animated:YES];
             }else if (indexPath.row == 1){
-                //通用
+                // 清除缓存
+                UIAlertView *clearAlert = [[UIAlertView alloc]initWithTitle:nil message:@"确定清除缓存?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+                
+                clearAlert.tag = 999;
+                
+                [clearAlert show];
+                
+                
+                
+                
             }
         }
             break;
@@ -117,6 +127,17 @@
         [self presentViewController:loginNav animated:YES completion:nil];
 
 
+    }
+    
+    
+    if (alertView.tag == 999 && buttonIndex == 1) {
+        
+        [[SDImageCache sharedImageCache] cleanDiskWithCompletionBlock:^{
+            
+            [MyProgressHUD showError:@"清除成功"];
+            
+        }];
+        
     }
 }
 @end

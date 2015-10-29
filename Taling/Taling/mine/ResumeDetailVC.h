@@ -16,9 +16,13 @@
 
 - (IBAction)collectAction:(UIButton *)sender;
 @property (strong, nonatomic) IBOutlet UIButton *buyButton;
+@property (weak, nonatomic) IBOutlet UIButton *consoleButton;
+@property (weak, nonatomic) IBOutlet UIButton *yudingButton;
 
 @property (strong, nonatomic) IBOutlet UIButton *buyOrAppraiseButton;
 - (IBAction)buyOrAppraiseAction:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIView *lineView;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 
 @property (nonatomic) NSInteger type;//1 购买 2 评价
 
