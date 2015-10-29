@@ -433,9 +433,9 @@ typedef NS_ENUM(NSInteger,ResumeListType)
           ModelItem *oneItem = [_buyArray objectAtIndex:indexPath.row];
             
             //头像
-            if (oneItem.url.length > 0) {
+            if (oneItem.photo.length > 0) {
                 
-                [buyCell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.url]];
+                [buyCell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo]];
             }
             
             //姓名
@@ -497,9 +497,9 @@ typedef NS_ENUM(NSInteger,ResumeListType)
             
             
             //头像
-            if (oneItem.url.length > 0) {
+            if (oneItem.photo.length > 0) {
                 
-                [sellCell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.url]];
+                [sellCell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo]];
             }
             
             //姓名
@@ -562,9 +562,9 @@ typedef NS_ENUM(NSInteger,ResumeListType)
             reservCell.buyTextLabel.hidden = YES;
             
             //头像
-            if (oneItem.url.length > 0) {
+            if (oneItem.photo.length > 0) {
                 
-                [reservCell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.url]];
+                [reservCell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo]];
             }
             
             //姓名

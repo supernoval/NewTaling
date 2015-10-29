@@ -28,11 +28,15 @@
 @property (strong, nonatomic) NSString *expectSalary;
 @property (strong, nonatomic) NSString *fromResource;
 @property (strong, nonatomic) NSString *goodNum;
+@property (strong, nonatomic) NSString *interest;
 @property (strong, nonatomic) NSString *marriage;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *phone;
+@property (strong, nonatomic) NSString *photo;
 @property (strong, nonatomic) NSString *price;
+@property (strong, nonatomic) NSString *reservNum;
 @property (strong, nonatomic) NSString *resumesId;
+@property (strong, nonatomic) NSString *Resumetype;
 @property (strong, nonatomic) NSString *sex;
 
 @property (strong, nonatomic)NSArray *skills;

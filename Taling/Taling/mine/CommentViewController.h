@@ -16,5 +16,6 @@
 
 - (IBAction)sumitAction:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UIButton *appraiseButton;
 
 @end

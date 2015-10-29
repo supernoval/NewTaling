@@ -16,6 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.appraiseButton.clipsToBounds = YES;
+    self.appraiseButton.layer.cornerRadius = 5.0;
     // Do any additional setup after loading the view.
     
     self.title = @"添加评价";

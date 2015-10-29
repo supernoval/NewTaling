@@ -391,9 +391,9 @@
    
     
     //头像
-    if (oneItem.url.length > 0) {
+    if (oneItem.photo.length > 0) {
         
-        [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.url]];
+        [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo]];
     }
     
     

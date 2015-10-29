@@ -284,6 +284,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="appraiseButton" destination="1VK-wY-NXe" id="zRR-b6-OpF"/>
                         <outlet property="textView" destination="s31-v0-I5R" id="QPa-7r-WGp"/>
                     </connections>
                 </viewController>

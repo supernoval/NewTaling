@@ -39,6 +39,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if (self.type == 1) {
+        [self.buyOrAppraiseButton setTitle:@"购买" forState:UIControlStateNormal];
+    }else if (self.type == 2){
+        
+        [self.buyOrAppraiseButton setTitle:@"评价" forState:UIControlStateNormal];
+    }
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -125,7 +132,7 @@
 }
 
 
-#pragma mark- 购买、评价简历
+
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -157,10 +164,10 @@
     }else if (indexPath.section == 2){
         
         if (indexPath.row == 0) {
-            return _schoolHeight+51;
+            return _schoolHeight+46;
         }else if (indexPath.row == 1){
             
-            return _workHeight;
+            return _workHeight+18;
             
         }else if (indexPath.row == 2){
             
@@ -204,9 +211,9 @@
             
             
             //头像
-            if (self.item.url.length > 0) {
+            if (self.item.photo.length > 0) {
                 
-                [nameCell.headImageView sd_setImageWithURL:[NSURL URLWithString:self.item.url]];
+                [nameCell.headImageView sd_setImageWithURL:[NSURL URLWithString:self.item.photo]];
             }
             
             //姓名
@@ -290,7 +297,7 @@
                         school = [dic objectForKey:@"school"];
                     }
                     schoolLabel.text = school;
-                    _schoolHeight = [StringHeight heightWithText:school font:FONT_15 constrainedToWidth:ScreenWidth-96];
+                    _schoolHeight = [StringHeight heightWithText:school font:FONT_15 constrainedToWidth:ScreenWidth-93];
                     
                     return schoolCell;
                     
@@ -308,7 +315,7 @@
                     experenceCell.titleLabel.text = @"工作经历:";
                     NSString *experienceStr = [CommonMethods getTheWorkExperience:self.item.workexpenrience];
                     experenceCell.contentLabel.text = experienceStr;
-                    _workHeight = [StringHeight heightWithText:experienceStr font:FONT_15 constrainedToWidth:ScreenWidth-96];
+                    _workHeight = [StringHeight heightWithText:experienceStr font:FONT_15 constrainedToWidth:ScreenWidth-93];
                     
                     return experenceCell;
                     
@@ -326,7 +333,7 @@
                     NSString *skillsStr = [CommonMethods getTheSkills:self.item.skills];
                     experenceCell.titleLabel.text = @"办公技巧:";
                     experenceCell.contentLabel.text = skillsStr;
-                    _skillsHeight = [StringHeight heightWithText:skillsStr font:FONT_15 constrainedToWidth:ScreenWidth-96];
+                    _skillsHeight = [StringHeight heightWithText:skillsStr font:FONT_15 constrainedToWidth:ScreenWidth-93];
                     
                     return experenceCell;
                     
@@ -343,7 +350,7 @@
                     //生活喜好
                     experenceCell.titleLabel.text = @"个人总结:";
                     experenceCell.contentLabel.text = self.item.summary;
-                    _likeHeight = [StringHeight heightWithText:self.item.summary font:FONT_15 constrainedToWidth:ScreenWidth-96];
+                    _likeHeight = [StringHeight heightWithText:self.item.summary font:FONT_15 constrainedToWidth:ScreenWidth-93];
                     
                     return experenceCell;
                     
@@ -485,6 +492,8 @@
         }
     }];
 }
+
+#pragma mark- 购买、评价简历
 - (IBAction)buyOrAppraiseAction:(UIButton *)sender {
     
     if (self.type == 1) {
