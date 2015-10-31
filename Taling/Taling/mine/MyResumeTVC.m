@@ -133,7 +133,9 @@ typedef NS_ENUM(NSInteger,ResumeListType)
             break;
         case ResumeListTypeReserv:
         {
+            reservIndex ++;
             
+            [self requestReserv];
         }
             break;
             
@@ -147,6 +149,16 @@ typedef NS_ENUM(NSInteger,ResumeListType)
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (UIView*)resverTableHeadView
+{
+    UIView *headView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 1)];
+    headView.backgroundColor = [UIColor clearColor];
+    
+    
+    return headView;
+    
 }
 - (UIView *)sellTableHeadView{
     
@@ -664,38 +676,56 @@ typedef NS_ENUM(NSInteger,ResumeListType)
         
         _segMentType = ResumeListTypeBuy;
         self.tableView.tableHeaderView = [self buyTableHeadView];
+        
+        if (_buyArray.count == 0) {
+            
+               [self headerRefresh];
+        }
     }
     else if(seg.selectedSegmentIndex == ResumeListTypeSell)
     {
         _segMentType = ResumeListTypeSell;
         self.tableView.tableHeaderView = [self sellTableHeadView];
         
+        if (_upLoadArray.count == 0) {
+            
+            [self headerRefresh];
+            
+        }
     }
     else
     {
         _segMentType = ResumeListTypeReserv;
         
-        self.tableView.tableHeaderView = nil;
+        self.tableView.tableHeaderView = [self resverTableHeadView];
         
-        
+        if (_reservArray.count == 0) {
+            
+            [self headerRefresh];
+            
+        }
         
     }
     
     
-    
     [self.tableView reloadData];
     
+ 
     
-    [self headerRefresh];
+    
+    
+ 
     
 }
 
 #pragma mark - 请求数据
+
+//获取在售简历
 -(void)requestUpLoadResumes
 {
     NSString *userid = [UserInfo getuserid];
     
-    NSDictionary *param = @{@"sale_user_id":userid,@"buy_user_id":@"",@"index":@(upLoadIndex),@"size":@(pageSize)};
+    NSDictionary *param = @{@"user_id":userid,@"index":@(upLoadIndex),@"size":@(pageSize)};
     
     [[TLRequest shareRequest] moreThanDataRequest:kgetMyResumes Params:param result:^(BOOL isSuccess, id data) {
     
@@ -707,6 +737,13 @@ typedef NS_ENUM(NSInteger,ResumeListType)
          
             _upLoadDic = [data objectForKey:@"count"];
             NSLog(@"_________________:%@",_upLoadDic);
+            
+            self.tableView.tableHeaderView = [self sellTableHeadView];
+            
+       
+            
+            
+            
             if (upLoadIndex == 1) {
                 
                 [_upLoadArray removeAllObjects];
@@ -738,11 +775,12 @@ typedef NS_ENUM(NSInteger,ResumeListType)
  }
 
 
+//获取购买简历
 -(void)requestBuyResumes
 {
     NSString *userid = [UserInfo getuserid];
     
-    NSDictionary *param = @{@"buy_user_id":userid,@"sale_user_id":@"",@"index":@(buyIndex),@"size":@(pageSize)};
+    NSDictionary *param = @{@"buy_user_id":userid,@"index":@(buyIndex),@"size":@(pageSize)};
     
     
     [[TLRequest shareRequest] moreThanDataRequest:kgetMyBuyResumes Params:param result:^(BOOL isSuccess, id data) {
@@ -752,8 +790,10 @@ typedef NS_ENUM(NSInteger,ResumeListType)
         
         
         if (isSuccess) {
+            
             _buyDic = [data objectForKey:@"count"];
             
+            self.tableView.tableHeaderView = [self buyTableHeadView];
             if (buyIndex == 1) {
                 
                 [_buyArray removeAllObjects];
@@ -797,6 +837,8 @@ typedef NS_ENUM(NSInteger,ResumeListType)
         
         if (isSuccess) {
             
+            
+          
             
             if (reservIndex == 1) {
                 

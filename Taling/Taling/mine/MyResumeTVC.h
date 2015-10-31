@@ -10,5 +10,6 @@
 
 @interface MyResumeTVC : BaseTableViewController
 - (IBAction)switchAction:(UISegmentedControl *)sender;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segment;
 
 @end

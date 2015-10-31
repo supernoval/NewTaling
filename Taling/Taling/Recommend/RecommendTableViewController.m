@@ -26,7 +26,7 @@
     
     UITapGestureRecognizer *_tap;
     
-    NSInteger index;
+    NSInteger pageindex;
     NSInteger size;
     
     NSMutableArray *_JDArray;
@@ -37,6 +37,8 @@
  
     
     UISearchDisplayController *_searchController;
+    
+    NSInteger ReSumeType; // 1.免费  2.付费  3.热门
     
     
     
@@ -82,8 +84,9 @@
     [self.view addSubview:self.headerView];
     
     
-    index = 1;
+    pageindex = 1;
     size = 10;
+    ReSumeType = 2;
     
     
     [self setTabBarColor];
@@ -185,7 +188,7 @@
 
 -(void)headerRefresh
 {
-    index = 1;
+    pageindex = 1;
     
     [self getData];
     
@@ -193,7 +196,7 @@
 
 -(void)footerRefresh
 {
-    index ++;
+    pageindex ++;
     
     [self getData];
     
@@ -202,8 +205,12 @@
 
 -(void)getData
 {
-    NSDictionary *param = @{@"index":@(index),@"size":@(size)};
     
+    
+    NSDictionary *param = @{@"index":@(pageindex),@"size":@(size)};
+    
+ 
+ 
     [[TLRequest shareRequest] tlRequestWithAction:kgetCommendResumes Params:param result:^(BOOL isSuccess, id data) {
        
         [self.tableView.header endRefreshing];
@@ -224,11 +231,23 @@
                 NSDictionary *oneDic = [dataArray objectAtIndex:i];
                 ModelItem *item = [[ModelItem alloc]init];
                 [item setValuesForKeysWithDictionary:oneDic];
-                [array addObject:item];
+                
+                if (ReSumeType == 3) {
+                    
+                    [array addObject:item];
+                }
+                else
+                {
+                    if (ReSumeType == [item.Resumetype integerValue]) {
+                        
+                        [array addObject:item];
+                    }
+                }
+               
                 
             }
             
-            if (index == 1)
+            if (pageindex == 1)
             {
                 
                 [_JDArray removeAllObjects];
@@ -533,6 +552,9 @@
 #pragma mark - RecommendHeaderDelegate
 -(void)selectedButtonIndex:(NSInteger)index
 {
+    
+    ReSumeType = index;
+    
     [self headerRefresh];
     
 }

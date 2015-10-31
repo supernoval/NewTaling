@@ -9,9 +9,11 @@
 
 
 //本地测试
-//#define  kRequestHeader  @"http://192.168.40.245/taling-api"
+//#define  kRequestHeader   @"http://192.168.40.245/taling-api"
 //正式
-#define  kRequestHeader  @"http://183.131.151.50/taling-api"
+#define  kRequestHeader     @"http://183.131.151.50/taling-api"
+
+
 
 
 
@@ -98,23 +100,25 @@
 
  *index  
  *size
+ * search  //可选
  */
 #define kgetCommendResumes @"/resume/getCommendResumes"
 
 
 //获取上传的简历
 /*
- * user_id  用户id
+ * user_id
  * index    页码
- *  size    每页数量
+ * size    每页数量
  */
 #define kgetMyResumes   @"/resume/getMyResumes"
 
-//获取已购买的简历
+//获取 已买／已卖 的简历
 /*
  *index
  *size
- *user_id
+ *sale_user_id  (获取已卖时给)
+ *buy_user_id    (获取已买时给)
  */
 #define kgetMyBuyResumes   @"/resume/getMyBuyResumes"
 

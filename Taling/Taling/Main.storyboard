@@ -7394,6 +7394,9 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="segment" destination="mdy-sE-TnO" id="2gC-5c-ems"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tka-Kr-ygX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

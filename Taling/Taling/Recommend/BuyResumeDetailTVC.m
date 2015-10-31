@@ -9,7 +9,7 @@
 #import "BuyResumeDetailTVC.h"
 #import "PayOrder.h"
 
-@interface BuyResumeDetailTVC ()
+@interface BuyResumeDetailTVC ()<UIAlertViewDelegate>
 @property (nonatomic)NSInteger payType;// 1 微信 2 支付宝
 @property (strong, nonatomic)ModelItem *buyItem;//下单成功后的返回数据
 
@@ -49,6 +49,12 @@
     
     
     // Do any additional setup after loading the view.
+    
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(paySuccessNoti) name:kPaySucessNotification object:nil];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -128,7 +134,17 @@
         
         if (isSuccess) {
             
-            [self loadPayAction];
+            
+            NSString *orderNO = [data objectForKey:@"orderNo"];
+            
+            PayOrderInfoModel *orderModel = [[ PayOrderInfoModel alloc]init];
+            
+            orderModel.productName = self.item.name;
+            orderModel.productDescription = [NSString stringWithFormat:@"购买%@的简历",self.item.name];
+            orderModel.amount = order_price;
+            orderModel.out_trade_no = orderNO;
+            
+            [self loadPayAction:orderModel];
             
             if ([data isKindOfClass:[NSDictionary class]]) {
                 NSDictionary *dic = data;
@@ -147,34 +163,58 @@
 
 - (IBAction)wechatAction:(UIButton *)sender {
 
+    self.payType = 1;
+    
 }
 
 - (IBAction)alipayAction:(UIButton *)sender {
+    
+    self.payType = 2;
+    
 
 }
 
--(void)loadPayAction
+-(void)loadPayAction:(PayOrderInfoModel*)model
 {
-    PayOrderInfoModel *orderModel = [[ PayOrderInfoModel alloc]init];
-    
-    orderModel.productName = @"测试支付";
-    orderModel.productDescription = @"测试";
-    orderModel.amount = @"0.01";
-    orderModel.out_trade_no = @"4547615875451";
+   
     
     //微信支付
     if (self.payType == 1)
     {
         
-        [PayOrder sendWXPay:orderModel];
+        [PayOrder sendWXPay:model];
         
     }
     
     //支付宝支付
     if (self.payType == 2) {
         
-        [PayOrder loadALiPaySDK:orderModel];
+        [PayOrder loadALiPaySDK:model];
         
     }
+}
+
+-(void)paySuccessNoti
+{
+    [CommonMethods showAlertString:@"购买成功" delegate:self tag:99];
+    
+    
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 99) {
+        
+        [self.navigationController popViewControllerAnimated:YES];
+        
+        
+    }
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter ] removeObserver:self name:kPaySucessNotification object:nil];
+    
+    
 }
 @end
