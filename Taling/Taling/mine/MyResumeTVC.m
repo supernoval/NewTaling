@@ -473,7 +473,7 @@ typedef NS_ENUM(NSInteger,ResumeListType)
                 buyCell.sexImageView.image = [UIImage imageNamed:@""];
             }
             // 简历估值
-            buyCell.buyMoneyLabel.text = [NSString stringWithFormat:@"¥%.2f",[oneItem.price floatValue]] ;
+            buyCell.buyMoneyLabel.text = [NSString stringWithFormat:@"¥%.2f",oneItem.price] ;
             
             //城市、教育程度
             NSString *edu = @"";
@@ -485,7 +485,7 @@ typedef NS_ENUM(NSInteger,ResumeListType)
             
             //职业、经验
             
-            buyCell.professionLabel.text = [NSString stringWithFormat:@"%@ %@年经验",oneItem.currentPosition,oneItem.workYears];
+            buyCell.professionLabel.text = [NSString stringWithFormat:@"%@ %ld年经验",oneItem.currentPosition,(long)oneItem.workYears];
             
             //购买自
             buyCell.buyNameLabel.text = oneItem.sellerName;
@@ -537,7 +537,7 @@ typedef NS_ENUM(NSInteger,ResumeListType)
                 sellCell.sexImageView.image = [UIImage imageNamed:@""];
             }
             //被购买次数
-            sellCell.buyNumLabel.text = oneItem.buyNum;
+            sellCell.buyNumLabel.text = [NSString stringWithFormat:@"%ld",oneItem.buyNum];
             
             //城市、教育程度
             NSString *edu = @"";
@@ -548,7 +548,7 @@ typedef NS_ENUM(NSInteger,ResumeListType)
             sellCell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,edu];
             
             //职业、经验
-            sellCell.professionLabel.text = [NSString stringWithFormat:@"%@ %@年经验",oneItem.currentPosition,oneItem.workYears];
+            sellCell.professionLabel.text = [NSString stringWithFormat:@"%@ %ld年经验",oneItem.currentPosition,(long)oneItem.workYears];
             
             //最近购买人
             sellCell.buyNameLabel.text = oneItem.buyerName;
@@ -602,7 +602,7 @@ typedef NS_ENUM(NSInteger,ResumeListType)
                 reservCell.sexImageView.image = [UIImage imageNamed:@""];
             }
             // 简历估值
-            reservCell.buyMoneyLabel.text = [NSString stringWithFormat:@"¥%.2f",[oneItem.price floatValue]] ;
+            reservCell.buyMoneyLabel.text = [NSString stringWithFormat:@"¥%.2f",oneItem.price] ;
             
             //城市、教育程度
             NSString *edu = @"";
@@ -614,7 +614,7 @@ typedef NS_ENUM(NSInteger,ResumeListType)
             
             //职业、经验
             
-            reservCell.professionLabel.text = [NSString stringWithFormat:@"%@ %@年经验",oneItem.currentPosition,oneItem.workYears];
+            reservCell.professionLabel.text = [NSString stringWithFormat:@"%@ %ld年经验",oneItem.currentPosition,(long)oneItem.workYears];
             
             //最近预定人
             reservCell.buyNameLabel.hidden = YES;

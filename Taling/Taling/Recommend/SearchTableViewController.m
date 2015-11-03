@@ -201,7 +201,7 @@
         cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,edu];
         
         // 简历估值
-        cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",[oneItem.price floatValue]] ;
+        cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",oneItem.price] ;
         
         //行业
         cell.businessLabel.text = @"行业";
@@ -213,10 +213,10 @@
         cell.companyLabel.text = [NSString stringWithFormat:@"公司:%@",oneItem.currentCompany];
         
         //资历
-        cell.yearLabel.text = [NSString stringWithFormat:@"资历:%@年",oneItem.workYears];
+        cell.yearLabel.text = [NSString stringWithFormat:@"资历:%ld年",(long)oneItem.workYears];
         
         //点赞数
-        [cell.priseButton setTitle:[NSString stringWithFormat:@"%@",oneItem.goodNum] forState:UIControlStateNormal];
+        [cell.priseButton setTitle:[NSString stringWithFormat:@"%ld",(long)oneItem.goodNum] forState:UIControlStateNormal];
         cell.priseButton.tag = indexPath.section;
         [cell.priseButton addTarget:self action:@selector(supportTheResume:) forControlEvents:UIControlEventTouchUpInside];
          cell.priseButton.backgroundColor = [UIColor clearColor];
@@ -228,10 +228,10 @@
 //        }
         
         //评价数
-        [cell.messageButton setTitle:[NSString stringWithFormat:@"%@",oneItem.appraiseNum] forState:UIControlStateNormal];
+        [cell.messageButton setTitle:[NSString stringWithFormat:@"%ld",(long)oneItem.appraiseNum] forState:UIControlStateNormal];
         
         //购买数
-        [cell.collectButton setTitle:[NSString stringWithFormat:@"%@",oneItem.buyNum] forState:UIControlStateNormal];
+        [cell.collectButton setTitle:[NSString stringWithFormat:@"%ld",(long)oneItem.buyNum] forState:UIControlStateNormal];
         
         
         [cell.buyButton addTarget:self action:@selector(buyTheResume:) forControlEvents:UIControlEventTouchUpInside];
@@ -300,8 +300,8 @@
             
             if (isSuccess) {
                 button.selected = YES;
-                NSInteger num = [oneItem.goodNum integerValue];
-                oneItem.goodNum = [NSString stringWithFormat:@"%li",num+1];
+                
+                oneItem.goodNum = oneItem.goodNum+1;
             }
             
         }];
@@ -311,8 +311,7 @@
             
             if (isSuccess) {
                 button.selected = NO;
-                NSInteger num = [oneItem.goodNum integerValue];
-                oneItem.goodNum = [NSString stringWithFormat:@"%li",num-1];
+                oneItem.goodNum = oneItem.goodNum-1;
             }
             
         }];

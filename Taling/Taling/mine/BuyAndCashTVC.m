@@ -8,9 +8,9 @@
 
 #import "BuyAndCashTVC.h"
 #import "PayOrder.h"
-@interface BuyAndCashTVC ()
+@interface BuyAndCashTVC ()<UITextFieldDelegate>
 
-@property (nonatomic)NSInteger payType;// 1 微信 2 支付宝
+@property (nonatomic)NSInteger payType;// 1 支付宝 2 微信
 
 @end
 
@@ -19,10 +19,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _moneyTextField.delegate = self;
+    _account.delegate = self;
+    _account_again.delegate = self;
     
     _weChatBtn.selected = YES;
     _alipayBtn.selected = NO;
-    _payType = 1;
+    _payType = 2;
     
     [_weChatBtn setImage:[UIImage imageNamed:@"unselect"] forState:UIControlStateNormal];
     [_weChatBtn setImage:[UIImage imageNamed:@"selected"] forState:UIControlStateSelected];
@@ -50,6 +53,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+    if (self.viewType == 1) {
+        return 2;
+    }else if (self.viewType == 2){
+        
+        return 3;
+    }
+    
+    return 3;
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (section == 0) {
         return 15;
@@ -71,7 +85,7 @@
     payBtn.layer.cornerRadius = 5.0;
     [payBtn setTintColor:[UIColor whiteColor]];
     payBtn.titleLabel.font = FONT_16;
-    [payBtn setTitle:@"确定支付" forState:UIControlStateNormal];
+    [payBtn setTitle:@"确定" forState:UIControlStateNormal];
     payBtn.backgroundColor = NavigationBarColor;
     [payBtn addTarget:self action:@selector(payAction) forControlEvents:UIControlEventTouchUpInside];
     
@@ -82,20 +96,108 @@
 - (IBAction)wechatAction:(UIButton *)sender {
     _weChatBtn.selected = YES;
     _alipayBtn.selected = NO;
-    _payType = 1;
+    _payType = 2;
 }
 
 - (IBAction)alipayAction:(UIButton *)sender {
     _weChatBtn.selected = NO;
     _alipayBtn.selected = YES;
-    _payType = 2;
+    _payType = 1;
 }
 
 - (void)payAction{
     
-    NSLog(@"1充值2体现:%li",(long)self.viewType);
+    if (self.viewType == 1) {//充值
+        
+        if (_moneyTextField.text.length == 0) {
+            [CommonMethods showDefaultErrorString:@"请输入充值金额"];
+        }else{
+            
+            NSDictionary *param = @{@"user_id":[UserInfo getuserid],@"money":_moneyTextField.text,@"type":@(_payType),@"action":@"2",@"account":@""};
+            
+            [[TLRequest shareRequest]tlRequestWithAction:kBuyAndCash Params:param result:^(BOOL isSuccess, id data){
+                
+                if (isSuccess) {
+                    [self.navigationController popViewControllerAnimated:YES];
+                }
+                
+            }];
+            
+        }
+        
+    }else if (self.viewType == 2){//提现
+        
+        if (_moneyTextField.text.length == 0) {
+            [CommonMethods showDefaultErrorString:@"请输入提现金额"];
+        }else if (_account.text.length == 0){
+            [CommonMethods showDefaultErrorString:@"请输入提现账户"];
+        }else if (_account_again.text.length == 0){
+            [CommonMethods showDefaultErrorString:@"请再次输入提现账户"];
+        }else if (![_account.text isEqualToString:_account_again.text]){
+            [CommonMethods showDefaultErrorString:@"两次输入的提现账户不一致"];
+        }else{
+            
+            NSDictionary *param = @{@"user_id":[UserInfo getuserid],@"money":_moneyTextField.text,@"type":@(_payType),@"action":@"1",@"account":_account.text};
+            
+            [[TLRequest shareRequest]tlRequestWithAction:kBuyAndCash Params:param result:^(BOOL isSuccess, id data){
+                
+                if (isSuccess) {
+                    
+                    [self.navigationController popViewControllerAnimated:YES];
+                }
+                
+                
+            }];
+            
+        }
+        
+    }
     
+}
 
-    NSLog(@"1微信2支付宝:%li",(long)_payType);
+#pragma mark- textFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    
+    NSMutableString * futureString = [NSMutableString stringWithString:textField.text];
+    
+    [futureString  insertString:string atIndex:range.location];
+    
+    NSInteger flag=0;
+    
+    const NSInteger limited = 2;//小数点后需要限制的个数
+    
+    for (NSInteger i = futureString.length-1; i>=0; i--) {
+        
+        
+        if ([futureString characterAtIndex:i] == '.') {
+            
+            
+            
+            if (flag > limited) {
+                
+                return NO;
+                
+            }
+            
+            
+            break;
+            
+        }
+        
+        flag++;
+        
+    }
+    
+    
+    
+    return YES;
 }
 @end

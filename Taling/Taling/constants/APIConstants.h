@@ -9,9 +9,9 @@
 
 
 //本地测试
-//#define  kRequestHeader   @"http://192.168.40.245/taling-api"
+#define  kRequestHeader   @"http://192.168.40.89/taling-api"
 //正式
-#define  kRequestHeader     @"http://183.131.151.50/taling-api"
+//#define  kRequestHeader     @"http://183.131.151.50/taling-api"
 
 
 
@@ -171,3 +171,24 @@
 #define kGetReservResumes     @"/reserv/GetReservResumes"
 
 
+#pragma mark - 余额购买简历
+/*
+ * order_no 下单生成的订单号
+ */
+#define kBuyResumeByRemaim     @"/money/buyResume"
+
+#pragma mark - 获取钱包数据
+/*
+ * user_id
+ */
+#define kGetAuthMoney     @"/money/getAuthMoney"
+
+#pragma mark - 充值提现
+/*
+ * user_id
+ * money
+ * type 1 支付宝 2微信
+ * action 1 提现 2 充值
+ *account
+ */
+#define kBuyAndCash     @"/money/inpour"

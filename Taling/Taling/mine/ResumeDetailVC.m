@@ -248,7 +248,7 @@
             }
             
             // 简历估值
-            nameCell.moneyLabel.text = [NSString stringWithFormat:@"¥%.2f",[self.item.price floatValue]];
+            nameCell.moneyLabel.text = [NSString stringWithFormat:@"¥%.2f",self.item.price];
             
             
             //城市、教育程度
@@ -260,7 +260,7 @@
             nameCell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",self.item.city,edu];
             
             //职业
-            nameCell.professionLabel.text = [NSString stringWithFormat:@"%@ %@年经验",self.item.currentPosition,self.item.workYears];
+            nameCell.professionLabel.text = [NSString stringWithFormat:@"%@ %ld年经验",self.item.currentPosition,(long)self.item.workYears];
             
             return nameCell;
             
@@ -277,7 +277,7 @@
             }
             //年龄
             UILabel *ageLabel = (UILabel *)[ageCell viewWithTag:100];
-            ageLabel.text = [NSString stringWithFormat:@"年龄:%@",self.item.age];
+            ageLabel.text = [NSString stringWithFormat:@"年龄:%ld",(long)self.item.age];
             
             //城市
             UILabel *cityLabel = (UILabel *)[ageCell viewWithTag:101];

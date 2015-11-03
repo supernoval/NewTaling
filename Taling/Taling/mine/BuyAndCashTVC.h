@@ -18,6 +18,8 @@
 - (IBAction)wechatAction:(UIButton *)sender;
 - (IBAction)alipayAction:(UIButton *)sender;
 
+@property (strong, nonatomic) IBOutlet UITextField *account;
+@property (strong, nonatomic) IBOutlet UITextField *account_again;
 
 @property (nonatomic)NSInteger viewType;//1 充值 2 提现
 

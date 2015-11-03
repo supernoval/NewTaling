@@ -8,10 +8,11 @@
 
 #import "BuyResumeDetailTVC.h"
 #import "PayOrder.h"
+#import "MyResumeTVC.h"
 
 @interface BuyResumeDetailTVC ()<UIAlertViewDelegate>
-@property (nonatomic)NSInteger payType;// 1 微信 2 支付宝
-@property (strong, nonatomic)ModelItem *buyItem;//下单成功后的返回数据
+@property (nonatomic)NSInteger payType;// 1 微信 2 支付宝 3 余额支付
+
 
 @end
 
@@ -21,35 +22,59 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"购买简历";
-    _payType = 1;
-    
-    _buyItem = [[ModelItem alloc]init];
-    
     _wechatButton.selected = YES;
     _alipayButton.selected = NO;
+    _remainPayButton.selected = NO;
     _payType = 1;
     
     [_wechatButton setImage:[UIImage imageNamed:@"unselect"] forState:UIControlStateNormal];
     [_wechatButton setImage:[UIImage imageNamed:@"selected"] forState:UIControlStateSelected];
     [_alipayButton setImage:[UIImage imageNamed:@"unselect"] forState:UIControlStateNormal];
     [_alipayButton setImage:[UIImage imageNamed:@"selected"] forState:UIControlStateSelected];
+    [_remainPayButton setImage:[UIImage imageNamed:@"unselect"] forState:UIControlStateNormal];
+    [_remainPayButton setImage:[UIImage imageNamed:@"selected"] forState:UIControlStateSelected];
     
     self.tableView.tableFooterView = [self tablefooterView];
-    NSLog(@"name:%@",self.item.name);
+    
+    //姓名
     _name.text = self.item.name;
-    _nameWidth.constant = 130;
-//    _nameWidth.constant = [StringHeight widthtWithText:self.item.name font:FONT_15 constrainedToHeight:18]+5;
-//    if ([self.item.sex isEqualToString:@"男"]) {
-//        _sex.image = [UIImage imageNamed:@"male"];
-//    }else if ([self.item.sex isEqualToString:@"女"]){
-//        _sex.image = [UIImage imageNamed:@"female"];
-//    }else{
-//        _sex.image = [UIImage imageNamed:@""];
-//    }
+    
+    //性别
+    _nameWidth.constant = [StringHeight widthtWithText:self.item.name font:FONT_15 constrainedToHeight:18]+5;
+    if ([self.item.sex isEqualToString:@"男"]) {
+        _sex.image = [UIImage imageNamed:@"male"];
+    }else if ([self.item.sex isEqualToString:@"女"]){
+        _sex.image = [UIImage imageNamed:@"female"];
+    }else{
+        _sex.image = [UIImage imageNamed:@""];
+    }
     
     
-    // Do any additional setup after loading the view.
     
+    //城市、教育程度
+    NSString *edu = @"";
+    if (self.item.eduexpenrience.count > 0) {
+        NSDictionary *eduDic = [self.item.eduexpenrience firstObject];
+        edu = [eduDic objectForKey:@"degree"];
+    }
+    _place.text = [NSString stringWithFormat:@"%@ %@",self.item.city,edu];
+    
+    //职业
+    _profession.text = [NSString stringWithFormat:@"%@ %ld年经验",self.item.currentPosition,(long)self.item.workYears];
+    
+    //年龄
+    _age.text = [NSString stringWithFormat:@"年龄:%ld",self.item.age];
+    
+    //城市
+    _city.text = [NSString stringWithFormat:@"城市:%@",self.item.city];
+    
+    //公司
+    _company.text = [NSString stringWithFormat:@"公司:%@",self.item.currentCompany];
+    
+    //订单价格
+    _price.text = [NSString stringWithFormat:@"¥%.2f",self.item.price];
+
+
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(paySuccessNoti) name:kPaySucessNotification object:nil];
@@ -103,6 +128,7 @@
         if (indexPath.row == 1) {
             _wechatButton.selected = YES;
             _alipayButton.selected = NO;
+            _remainPayButton.selected = NO;
             _payType = 1;
             
         }
@@ -110,7 +136,14 @@
         {
             _wechatButton.selected = NO;
             _alipayButton.selected = YES;
+            _remainPayButton.selected = NO;
             _payType = 2;
+        }else if (indexPath.row == 3)
+        {
+            _wechatButton.selected = NO;
+            _alipayButton.selected = NO;
+            _remainPayButton.selected = YES;
+            _payType = 3;
         }
     }
     
@@ -120,56 +153,82 @@
 
 - (void)payAction{
     
-    NSLog(@"支付方式：%li",(long)_payType);
     NSString *buy_id = [UserInfo getuserid];
     NSLog(@"username:%@",buy_id);
     NSLog(@"resumeId:%@",self.item.resumesId);
     NSLog(@"userId:%@",self.item.userId);
-//    NSString *order_price = self.item.price;
-    NSString *order_price = @"0.01";
+    float order_price = self.item.price;
+   
     
-    NSDictionary *param = @{@"resumes_id":self.item.resumesId,@"seller_id":self.item.userId,@"buyer_id":buy_id,@"order_price":order_price};
+    NSDictionary *param = @{@"resumes_id":self.item.resumesId,@"seller_id":self.item.userId,@"buyer_id":buy_id,@"order_price":@(order_price)};
     
     [[TLRequest shareRequest] tlRequestWithAction:kcreatOrder Params:param result:^(BOOL isSuccess, id data) {
         
         if (isSuccess) {
             
-            
             NSString *orderNO = [data objectForKey:@"orderNo"];
+            
             
             PayOrderInfoModel *orderModel = [[ PayOrderInfoModel alloc]init];
             
             orderModel.productName = self.item.name;
             orderModel.productDescription = [NSString stringWithFormat:@"购买%@的简历",self.item.name];
-            orderModel.amount = order_price;
+            orderModel.amount = [data objectForKey:@"orderPrice"];
             orderModel.out_trade_no = orderNO;
             
-            [self loadPayAction:orderModel];
+//            [self loadPayAction:orderModel];
             
-            if ([data isKindOfClass:[NSDictionary class]]) {
-                NSDictionary *dic = data;
-                [_buyItem setValuesForKeysWithDictionary:dic];
+            
+            
+            if (_payType == 1) {//微信
+                
+            }else if (_payType == 2){//支付宝
+                
+            }else if (_payType == 3) {//余额支付
+                NSDictionary *payParam = @{@"order_no":orderNO};
+                [[TLRequest shareRequest]tlRequestWithAction:kBuyResumeByRemaim Params:payParam result:^(BOOL isSuccess, id data){
+                    
+                    if (isSuccess) {//余额购买成功
+                        
+                        [self showBuySuccessAlert];
+                    }
+                }];
+                
             }
-            
             
         }
     }];
-     
+    
         
-        
-        
-        
+}
+
+#pragma mark- 显示购买成功页面跳转提醒
+- (void)showBuySuccessAlert{
+    
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"购买简历成功" delegate:self cancelButtonTitle:nil otherButtonTitles:@"返回",@"查看", nil];
+    
+    alert.tag = 100;
+    
+    alert.delegate = self;
+    
+    [alert show];
 }
 
 - (IBAction)wechatAction:(UIButton *)sender {
 
-    self.payType = 1;
+    _wechatButton.selected = YES;
+    _alipayButton.selected = NO;
+    _remainPayButton.selected = NO;
+    _payType = 1;
     
 }
 
 - (IBAction)alipayAction:(UIButton *)sender {
     
-    self.payType = 2;
+    _wechatButton.selected = NO;
+    _alipayButton.selected = YES;
+    _remainPayButton.selected = NO;
+    _payType = 2;
     
 
 }
@@ -196,16 +255,23 @@
 
 -(void)paySuccessNoti
 {
-    [CommonMethods showAlertString:@"购买成功" delegate:self tag:99];
+    [self showBuySuccessAlert];
     
     
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (alertView.tag == 99) {
+    if (alertView.tag == 100) {
         
-        [self.navigationController popViewControllerAnimated:YES];
+        if (buttonIndex == 0) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }else if (buttonIndex == 1){//跳转到我的简历
+            
+            MyResumeTVC *myResume = [self.storyboard instantiateViewControllerWithIdentifier:@"MyResumeTVC"];
+            [self.navigationController pushViewController:myResume animated:YES];
+            
+        }
         
         
     }
@@ -216,5 +282,12 @@
     [[NSNotificationCenter defaultCenter ] removeObserver:self name:kPaySucessNotification object:nil];
     
     
+}
+- (IBAction)remainPayAction:(UIButton *)sender {
+    
+    _wechatButton.selected = NO;
+    _alipayButton.selected = NO;
+    _remainPayButton.selected = YES;
+    _payType = 3;
 }
 @end

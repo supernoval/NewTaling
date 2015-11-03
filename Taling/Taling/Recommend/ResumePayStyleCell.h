@@ -11,5 +11,6 @@
 @interface ResumePayStyleCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIButton *wechatButton;
 @property (strong, nonatomic) IBOutlet UIButton *alipayButton;
+@property (strong, nonatomic) IBOutlet UIButton *remainPayButton;
 
 @end

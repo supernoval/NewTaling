@@ -28,6 +28,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *alipayButton;
 - (IBAction)wechatAction:(UIButton *)sender;
 - (IBAction)alipayAction:(UIButton *)sender;
+@property (strong, nonatomic) IBOutlet UIButton *remainPayButton;
+- (IBAction)remainPayAction:(UIButton *)sender;
 
 
 @end

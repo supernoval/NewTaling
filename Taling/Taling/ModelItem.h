@@ -10,9 +10,9 @@
 
 @interface ModelItem : NSObject
 //简历
-@property (strong, nonatomic) NSString *age;
-@property (strong, nonatomic) NSString *appraiseNum;
-@property (strong, nonatomic) NSString *buyNum;
+@property (nonatomic) NSInteger age;
+@property (nonatomic) NSInteger appraiseNum;
+@property (nonatomic) NSInteger buyNum;
 @property (strong, nonatomic) NSString *city;
 @property (strong, nonatomic) NSString *currentCompany;
 @property (strong, nonatomic) NSString *currentIndustry;
@@ -27,37 +27,28 @@
 @property (strong, nonatomic) NSString *expectPosition;
 @property (strong, nonatomic) NSString *expectSalary;
 @property (strong, nonatomic) NSString *fromResource;
-@property (strong, nonatomic) NSString *goodNum;
+@property (nonatomic) NSInteger goodNum;
 @property (strong, nonatomic) NSString *interest;
 @property (strong, nonatomic) NSString *marriage;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *phone;
 @property (strong, nonatomic) NSString *photo;
-@property (strong, nonatomic) NSString *price;
-@property (strong, nonatomic) NSString *reservNum;
+@property (nonatomic) float price;
+@property (nonatomic) NSInteger reservNum;
 @property (strong, nonatomic) NSString *resumesId;
 @property (strong, nonatomic) NSString *Resumetype;
 @property (strong, nonatomic) NSString *sex;
 
-@property (strong, nonatomic)NSArray *skills;
+@property (strong, nonatomic) NSArray *skills;
 @property (strong, nonatomic) NSString *status;
 @property (strong, nonatomic) NSString *summary;
 @property (strong, nonatomic) NSString *url;
 @property (strong, nonatomic) NSString *userId;
-@property (strong, nonatomic)NSArray *workexpenrience;
-@property (strong, nonatomic)NSString *workYears;
-@property (strong, nonatomic)NSString *sellerName;
-@property (strong, nonatomic)NSString *buyerName;
-@property (strong, nonatomic)NSString *buyTime;
+@property (strong, nonatomic) NSArray *workexpenrience;
+@property (nonatomic) NSInteger workYears;
+@property (strong, nonatomic) NSString *sellerName;
+@property (strong, nonatomic) NSString *buyerName;
+@property (strong, nonatomic) NSString *buyTime;
 
-
-//下单成功返回
-@property (strong, nonatomic) NSString *buyerId;
-@property (strong, nonatomic) NSString *fcd;
-@property (strong, nonatomic) NSString *lmd;
-@property (strong, nonatomic) NSString *orderNo;
-@property (strong, nonatomic) NSString *orderPrice;
-@property (strong, nonatomic) NSString *resumeId;
-@property (strong, nonatomic) NSString *sellerId;
 
 @end
