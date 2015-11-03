@@ -31,15 +31,15 @@
 #define kWXAppID        @"wx324fc4f1945fcaac" //APPID
 #define APP_SECRET      @"681977bb4aa4fcdcd124779e83cf3ef6" //appsecret
 //商户号，填写商户对应参数
-#define MCH_ID          @"1248282001"
+#define MCH_ID          @"1280743201"
 //商户API密钥，填写相应参数
-#define PARTNER_ID      @"69ffe20638d752280c00e044a04b0b25"
+#define PARTNER_ID      @"681977bb4aa4fcdcd124779e83cf3ef6"
 
 //获取服务器端支付数据地址（商户自定义）
 #define SP_URL          @"http://wxpay.weixin.qq.com/pub_v2/app/app_pay.php"
 
 //回调地址
-#define WXNOTIFY_URL_1     @""
+#define WXNOTIFY_URL_1     @"http://183.131.151.50/taling-api/order/alipayCallBack"
 
 /**********************************************/
 

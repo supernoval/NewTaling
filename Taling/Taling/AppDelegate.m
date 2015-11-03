@@ -170,4 +170,70 @@
      [[EaseMob sharedInstance] applicationWillTerminate:application];
 }
 
+#pragma mark - WXApiDelegate   微信支付回调 delegate
+-(void)onResp:(BaseResp *)resp
+{
+    if([resp isKindOfClass:[PayResp class]]){
+        //支付返回结果，实际支付结果需要去微信服务器端查询
+        
+        // /*  WXErrCodeCommon     = -1,   /** 普通错误类型    */
+        //        WXErrCodeUserCancel = -2,   /**< 用户点击取消并返回    */
+        //        WXErrCodeSentFail   = -3,   /**< 发送失败    */
+        //        WXErrCodeAuthDeny   = -4,   /**< 授权失败    */
+        //        WXErrCodeUnsupport  = -5,   /**< 微信不支持    */
+        
+        // NSString * strTitle = [NSString stringWithFormat:@"支付结果"];
+        NSString *strMsg = nil;
+        switch (resp.errCode) {
+            case WXSuccess:
+                //                strMsg = @"成功！";
+                NSLog(@"支付成功－PaySuccess，retcode = %d", resp.errCode);
+                [[NSNotificationCenter defaultCenter] postNotificationName:kPaySucessNotification object:nil];
+                break;
+            case WXErrCodeUserCancel:
+            {
+                strMsg = @"用户点击取消并返回";
+            }
+                break;
+            case WXErrCodeSentFail:
+            {
+                strMsg = @"发送失败";
+            }
+                break;
+            case WXErrCodeAuthDeny:
+            {
+                strMsg = @"授权失败";
+            }
+                break;
+            case WXErrCodeUnsupport:
+            {
+                strMsg = @"微信不支持";
+            }
+                break;
+                
+                
+            default:
+            {
+                strMsg = [NSString stringWithFormat:@"支付失败"];
+                
+                NSLog(@"错误，retcode = %d, retstr = %@", resp.errCode,resp.errStr);
+            }
+                //                [[NSNotificationCenter defaultCenter] postNotificationName:kPayFailNotification object:nil];
+                break;
+        }
+        
+        if (strMsg.length > 0) {
+            
+            [[[UIAlertView alloc]initWithTitle:nil message:strMsg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil]show ];
+            
+            
+            
+        }
+        
+        
+        
+    }
+}
+
+
 @end
