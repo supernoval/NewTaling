@@ -180,11 +180,7 @@
             
             
             
-            if (_payType == 1) {//微信
-                
-            }else if (_payType == 2){//支付宝
-                
-            }else if (_payType == 3) {//余额支付
+            if (_payType == 3) {//余额支付
                 NSDictionary *payParam = @{@"order_no":orderNO};
                 [[TLRequest shareRequest]tlRequestWithAction:kBuyResumeByRemaim Params:payParam result:^(BOOL isSuccess, id data){
                     
@@ -194,6 +190,9 @@
                     }
                 }];
                 
+            }else{
+                
+                [self loadPayAction:orderModel];
             }
             
         }

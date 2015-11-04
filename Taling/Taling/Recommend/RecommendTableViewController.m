@@ -447,12 +447,6 @@
     cell.priseButton.tag = indexPath.section;
     [cell.priseButton addTarget:self action:@selector(supportTheResume:) forControlEvents:UIControlEventTouchUpInside];
     
-//    if (cell.priseButton.selected == YES) {
-//        cell.priseButton.backgroundColor = [UIColor redColor];
-//    }else{
-//        cell.priseButton.backgroundColor = [UIColor clearColor];
-//    }
-    
     //评价数
     [cell.messageButton setTitle:[NSString stringWithFormat:@"%ld",(long)oneItem.appraiseNum] forState:UIControlStateNormal];
     

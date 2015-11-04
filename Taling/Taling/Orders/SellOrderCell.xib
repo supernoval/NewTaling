@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sellCell" rowHeight="580" id="Wmt-xd-3Y8" customClass="SellOrderCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sellCell" rowHeight="648" id="Wmt-xd-3Y8" customClass="SellOrderCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wmt-xd-3Y8" id="ugE-Io-dVS">
@@ -42,7 +42,7 @@
                             <constraint firstAttribute="height" constant="18" id="ZBt-cm-hvN"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <variation key="default">
                             <mask key="constraints">
@@ -199,14 +199,14 @@
                             </mask>
                         </variation>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="288" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTI-Vm-eoL">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTI-Vm-eoL">
                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="67" id="hhN-R8-6G6"/>
                             <constraint firstAttribute="height" constant="21" id="ku4-NH-mc0"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <variation key="default">
                             <mask key="constraints">
@@ -334,10 +334,11 @@
                 <outlet property="nameWidth" destination="2Mq-1j-dyL" id="RHp-ff-D8d"/>
                 <outlet property="placeLabel" destination="GX9-bb-88j" id="8A7-xH-k7G"/>
                 <outlet property="professionLabel" destination="S7c-2x-AJ5" id="nx6-2c-Eka"/>
+                <outlet property="sellTextLabel" destination="8CK-MO-Hxj" id="Fdb-wc-lL8"/>
                 <outlet property="sexImageView" destination="hTM-Q5-Z14" id="xqf-Ng-H5K"/>
                 <outlet property="timeLabel" destination="RqE-Kx-jgM" id="aMj-y4-7ce"/>
             </connections>
-            <point key="canvasLocation" x="347" y="357.5"/>
+            <point key="canvasLocation" x="347" y="391"/>
         </tableViewCell>
     </objects>
     <resources>

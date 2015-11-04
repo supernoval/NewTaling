@@ -20,5 +20,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *buyNumLabel;
 @property (strong, nonatomic) IBOutlet UILabel *buyNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *sellTextLabel;
 
 @end

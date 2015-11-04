@@ -488,10 +488,19 @@ typedef NS_ENUM(NSInteger,ResumeListType)
             buyCell.professionLabel.text = [NSString stringWithFormat:@"%@ %ld年经验",oneItem.currentPosition,(long)oneItem.workYears];
             
             //购买自
-            buyCell.buyNameLabel.text = oneItem.sellerName;
+            buyCell.buyTextLabel.hidden = YES;
+            buyCell.buyNameLabel.hidden = YES;
             
             //购买时间
-            buyCell.timeLabel.text = oneItem.buyTime;
+            buyCell.timeLabel.hidden = NO;
+            if (oneItem.buyTime.length > 10) {
+                buyCell.timeLabel.text = [oneItem.buyTime substringToIndex:10];
+            }else{
+                
+                buyCell.timeLabel.text = oneItem.buyTime;
+            }
+            
+            
             
         }
         
@@ -551,10 +560,18 @@ typedef NS_ENUM(NSInteger,ResumeListType)
             sellCell.professionLabel.text = [NSString stringWithFormat:@"%@ %ld年经验",oneItem.currentPosition,(long)oneItem.workYears];
             
             //最近购买人
-            sellCell.buyNameLabel.text = oneItem.buyerName;
+            sellCell.buyNameLabel.hidden = YES;
+            sellCell.sellTextLabel.hidden = YES;
             
             //最近被购买时间
-            sellCell.timeLabel.text = oneItem.buyTime;
+            sellCell.timeLabel.hidden = NO;
+            if (oneItem.buyTime.length > 10) {
+                sellCell.timeLabel.text = [oneItem.buyTime substringToIndex:10];
+            }else{
+                
+                sellCell.timeLabel.text = oneItem.buyTime;
+            
+            }
 
             
             
@@ -642,7 +659,7 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     if (_segMentType == ResumeListTypeBuy) {
         
         item = [_buyArray objectAtIndex:indexPath.row];
-        detail.type = 1;
+        detail.type = 2;
         
         
     }

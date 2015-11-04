@@ -180,7 +180,7 @@
         
         
         //头像
-        if (oneItem.url.length > 0) {
+        if (oneItem.photo.length > 0) {
             
             [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.url] placeholderImage:[UIImage imageNamed:@"test"]];
             
@@ -204,7 +204,7 @@
         cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",oneItem.price] ;
         
         //行业
-        cell.businessLabel.text = @"行业";
+        cell.businessLabel.text = [NSString stringWithFormat:@"行业:%@",oneItem.currentIndustry];
         
         //职业
         cell.professionLabel.text = [NSString stringWithFormat:@"职位:%@",oneItem.currentPosition];
@@ -221,11 +221,6 @@
         [cell.priseButton addTarget:self action:@selector(supportTheResume:) forControlEvents:UIControlEventTouchUpInside];
          cell.priseButton.backgroundColor = [UIColor clearColor];
         
-//        if (cell.priseButton.selected == YES) {
-//            cell.priseButton.backgroundColor = [UIColor redColor];
-//        }else{
-//            cell.priseButton.backgroundColor = [UIColor clearColor];
-//        }
         
         //评价数
         [cell.messageButton setTitle:[NSString stringWithFormat:@"%ld",(long)oneItem.appraiseNum] forState:UIControlStateNormal];

@@ -181,7 +181,7 @@
         <!--Comment View Controller-->
         <scene sceneID="6Nj-bS-MbM">
             <objects>
-                <viewController storyboardIdentifier="CommentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PJl-V9-EzV" customClass="CommentViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CommentViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PJl-V9-EzV" customClass="CommentViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ofQ-Fi-RQ9"/>
                         <viewControllerLayoutGuide type="bottom" id="LKh-Sh-IbO"/>
@@ -296,7 +296,7 @@
         <!--Change PasswordTVC-->
         <scene sceneID="dP9-fH-8uA">
             <objects>
-                <tableViewController storyboardIdentifier="ChangePasswordTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LZD-ky-S2b" customClass="ChangePasswordTVC" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ChangePasswordTVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LZD-ky-S2b" customClass="ChangePasswordTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rD4-qS-rE1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1245,7 +1245,7 @@
         <!--Wallet View Controller-->
         <scene sceneID="s8r-Sw-ot4">
             <objects>
-                <viewController storyboardIdentifier="WalletViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yVX-oc-a7W" customClass="WalletViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalletViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yVX-oc-a7W" customClass="WalletViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IjI-43-yQY"/>
                         <viewControllerLayoutGuide type="bottom" id="VgY-NU-hHB"/>
@@ -1448,7 +1448,7 @@
         <!--Bind AccountTVC-->
         <scene sceneID="crR-YI-FfD">
             <objects>
-                <tableViewController storyboardIdentifier="BindAccountTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tl9-v1-1zm" customClass="BindAccountTVC" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="BindAccountTVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tl9-v1-1zm" customClass="BindAccountTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="PLH-Hu-K1S">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1496,7 +1496,7 @@
         <!--Bind DetailTVC-->
         <scene sceneID="IXU-0B-dE7">
             <objects>
-                <tableViewController storyboardIdentifier="BindDetailTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lMn-Ch-tsP" customClass="BindDetailTVC" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="BindDetailTVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lMn-Ch-tsP" customClass="BindDetailTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="9Gs-Av-ccz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1843,7 +1843,7 @@
         <!--SettingTVC-->
         <scene sceneID="qeW-oi-19Q">
             <objects>
-                <tableViewController storyboardIdentifier="SettingTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="T0G-aN-3A8" customClass="SettingTVC" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SettingTVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="T0G-aN-3A8" customClass="SettingTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="zHr-DJ-DUm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2104,7 +2104,7 @@
         <!--个人信息-->
         <scene sceneID="DoM-0i-Rew">
             <objects>
-                <tableViewController storyboardIdentifier="PersonalInfoTableView" title="个人信息" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4R0-m0-382" customClass="PersonalInfoTableView" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="PersonalInfoTableView" title="个人信息" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4R0-m0-382" customClass="PersonalInfoTableView" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="VHk-5A-FXW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2580,7 +2580,7 @@
         <!--SearchHRTVC-->
         <scene sceneID="eG8-Ak-NdY">
             <objects>
-                <tableViewController storyboardIdentifier="SearchHRTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7Hg-nY-F5L" customClass="SearchHRTVC" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SearchHRTVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7Hg-nY-F5L" customClass="SearchHRTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="71" sectionHeaderHeight="18" sectionFooterHeight="18" id="DwV-8Z-UPK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3708,7 +3708,7 @@
         <!--Resume DetailVC-->
         <scene sceneID="hCV-SK-k7a">
             <objects>
-                <viewController storyboardIdentifier="ResumeDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="C5z-b1-gtz" customClass="ResumeDetailVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResumeDetailVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="C5z-b1-gtz" customClass="ResumeDetailVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cGL-Fl-qk0"/>
                         <viewControllerLayoutGuide type="bottom" id="LO0-Sh-JoZ"/>
@@ -3943,7 +3943,7 @@
         <!--Buy Resume DetailTVC-->
         <scene sceneID="Zua-tz-CI7">
             <objects>
-                <tableViewController storyboardIdentifier="BuyResumeDetailTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SFy-Rq-qwc" customClass="BuyResumeDetailTVC" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="BuyResumeDetailTVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SFy-Rq-qwc" customClass="BuyResumeDetailTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Fnv-Og-d7f">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4773,7 +4773,7 @@
         <!--Search Table View Controller-->
         <scene sceneID="V86-FW-TjB">
             <objects>
-                <tableViewController storyboardIdentifier="SearchTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="r5z-rL-Ldt" customClass="SearchTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SearchTableViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="r5z-rL-Ldt" customClass="SearchTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nCw-66-Il7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5050,9 +5050,11 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6W-IY-qeE">
                                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                             <animations/>
-                                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="1" green="0.41176470590000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="65" id="rKt-Ox-LnO"/>
+                                                <constraint firstAttribute="width" constant="65" id="rKt-Ox-LnO">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="90"/>
+                                                </constraint>
                                                 <constraint firstAttribute="height" constant="30" id="vDJ-Ub-sad"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -5543,7 +5545,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V0B-gt-4zQ">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                     <animations/>
-                                                    <color key="backgroundColor" red="1" green="0.66666666666666663" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="1" green="0.41176470590000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="Puw-ZX-531"/>
                                                         <constraint firstAttribute="width" constant="65" id="aYQ-N1-1oW">
@@ -5863,7 +5865,7 @@
         <!--登录-->
         <scene sceneID="z7y-nj-0Q4">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" title="登录" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iFZ-cH-TdA" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" title="登录" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iFZ-cH-TdA" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="npR-Mn-D7D"/>
                         <viewControllerLayoutGuide type="bottom" id="ejq-if-ds6"/>
@@ -6191,7 +6193,7 @@
         <!--注册-->
         <scene sceneID="JX0-Mo-YdN">
             <objects>
-                <tableViewController storyboardIdentifier="RegistTableViewController" title="注册" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BFo-37-nbG" customClass="RegistTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="RegistTableViewController" title="注册" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BFo-37-nbG" customClass="RegistTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="jMc-gu-Zf5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -6756,7 +6758,7 @@
         <!--找回密码-->
         <scene sceneID="c4N-rC-Fp3">
             <objects>
-                <tableViewController storyboardIdentifier="ForgetCodeTVC" title="找回密码" useStoryboardIdentifierAsRestorationIdentifier="YES" id="27t-g0-LW1" customClass="ForgetCodeTVC" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ForgetCodeTVC" title="找回密码" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="27t-g0-LW1" customClass="ForgetCodeTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="jGW-Jo-nc2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -7053,7 +7055,7 @@
         <!--修改密码-->
         <scene sceneID="gVs-aq-2Eu">
             <objects>
-                <tableViewController storyboardIdentifier="ChangeCodeTVC" title="修改密码" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c8r-tc-M5m" customClass="ChangeCodeTVC" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ChangeCodeTVC" title="修改密码" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c8r-tc-M5m" customClass="ChangeCodeTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="eKo-YL-FPq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -7470,7 +7472,7 @@
         <!--My ResumeTVC-->
         <scene sceneID="3Xs-YH-99u">
             <objects>
-                <tableViewController storyboardIdentifier="MyResumeTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q8o-3p-aPt" customClass="MyResumeTVC" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MyResumeTVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q8o-3p-aPt" customClass="MyResumeTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="fqj-sq-ZSm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -7522,7 +7524,7 @@
         <!--Buy And CashTVC-->
         <scene sceneID="sBJ-F3-ARO">
             <objects>
-                <tableViewController storyboardIdentifier="BuyAndCashTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Uvx-aY-AWD" customClass="BuyAndCashTVC" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="BuyAndCashTVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Uvx-aY-AWD" customClass="BuyAndCashTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="idM-Fl-J10">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
