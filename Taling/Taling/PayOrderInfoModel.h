@@ -9,7 +9,7 @@
 #import "JSONModel.h"
 
 @interface PayOrderInfoModel : JSONModel
-@property (nonatomic, strong) NSString *producttype; //用于区别 服务类或者实物类
+@property (nonatomic, strong) NSString *producttype; //用于区别 购买或者充值  1购买   2充值
 @property (nonatomic, strong) NSString *productName; //商品名称
 @property (nonatomic, strong) NSString *productDescription; //商品详细
 @property (nonatomic, strong) NSString *amount;  //金额

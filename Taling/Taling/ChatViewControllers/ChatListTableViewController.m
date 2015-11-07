@@ -102,7 +102,7 @@ static NSString *cellId = @"ChatListCellTableViewCell";
 {
     ChatListCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     
-    EMConversation *conversation = [_conversations objectAtIndex:indexPath.row];
+    EMConversation *conversation = [_conversations objectAtIndex:indexPath.section];
     
     cell.titleLabel.text = conversation.chatter;
     

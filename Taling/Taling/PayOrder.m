@@ -65,9 +65,16 @@
     NSString *seller = kAliPaySellerID;
     NSString *privateKey = kAlipayPriviteKey;
     
+
     NSString *notifyURL = kAlipayNotifyURL_1;
- 
    
+    
+    if ([payinfo.producttype integerValue] == 2) {
+        
+        notifyURL = kAlipayNotifyURL_2;
+        
+    }
+    
     
     
  

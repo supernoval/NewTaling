@@ -17,8 +17,12 @@
 //URL Schemes
 #define kAliPayURLSchemes @"TalingAliPay"
 
-//回调地址
+//支付宝购买简历 回调地址
 #define kAlipayNotifyURL_1  @"http://183.131.151.50/taling-api/order/alipayCallBack"
+
+//支付宝充值回调
+#define kAlipayNotifyURL_2   @"http://183.131.151.50/taling-api/money/InpourAliCallBack"
+
 
 //PKCS8 密匙
 #define kAlipayPriviteKey  @"MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBANods7WAuKcVEbYvozB4Nx6s+KZ94+Xgy/N/CmssQXCtZgACCv605XVOrnlfvmwpq/7uG/OX3Xotz5n4rw/40GTotGjNnsNHeYH07715rIEsGq8nmReCdArPznZ3h63eWnDwU5ZU9LVBxOuYKvjOf5dwMSbRaRwSn2Uh0ZqZY7KlAgMBAAECgYEAyo9w+KudUNXZSAe/luDd16gtl3ksb60v22dtBpDoCTuPkYxUJ61Zt3Klx+Rp1MtyhuMcpEGyFqh6tvRjqAKbjJNbUru10U6CmjyNglT3uZN+oNCwZmP+yAI3nW6twCc3ax+A8Tpeiv86Tf2u0IZMaGFSyxlLNU+BBQllI3S4xWECQQD8DETR8XzQqKHnbBR+/lbU0dI6YaX2g6Jfa2zAeTcQUBs27PP9/g2Jm9fOJa1G4Vy2FVuIqDFD8LiDT/PYFNG5AkEA3Yk6oyws3kNGj4csNr+VxiMnRPGXZF72fnIJ4uNhieGXrWEhH/orgx+lakbIwVxTBd+glTMLelWrZLeYmyyOTQJABh1uFgHb21wcAXdXz/Tvul4U0aHI2wA6kkIS82B9e4HWBzEcgk8FmQ8U30V+vLd+/lPqUphyCYnvkBAChH2M0QJAZtYK6C/bbBliqcGfnpJ0nhM3aWOUWT1TwwKA4FeYsX6NACi0Tbm9dRK9oIXXLxsCVxml21xkmZcnBovLRUz7iQJBAMd+Iz9JG0kCqmd4fvbMQopIi8CyO1h0jUMQl7wtUEDYIiyWoP2H8V4EhtJh230R6Oo242u5wvHvURHoxvoVI6c="
@@ -38,8 +42,11 @@
 //获取服务器端支付数据地址（商户自定义）
 #define SP_URL          @"http://wxpay.weixin.qq.com/pub_v2/app/app_pay.php"
 
-//回调地址
-#define WXNOTIFY_URL_1     @"http://183.131.151.50/taling-api/order/alipayCallBack"
+//购买简历 回调地址
+#define WXNOTIFY_URL_1     @"http://183.131.151.50/taling-api/order/weChatCallBack"
+
+//充值 回调地址
+#define WXNOTIFY_URL_2     @"http://183.131.151.50/taling-api/money/InpourWeChatCallBack"
 
 /**********************************************/
 

@@ -175,7 +175,7 @@
             orderModel.productDescription = [NSString stringWithFormat:@"购买%@的简历",self.item.name];
             orderModel.amount = [data objectForKey:@"orderPrice"];
             orderModel.out_trade_no = orderNO;
-            
+            orderModel.producttype = @"1";
 //            [self loadPayAction:orderModel];
             
             

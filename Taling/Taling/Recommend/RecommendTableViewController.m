@@ -15,7 +15,13 @@
 #import "SearchTableViewController.h"
 
 
-
+typedef NS_ENUM(NSInteger,ReSumeType) {
+    
+    ResumeTypePay,
+    ResumeTypeFree,
+    ResumeTypeHot
+    
+};
 
 
 @interface RecommendTableViewController ()<UISearchBarDelegate,RecommendHeaderDelegate,UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate>
@@ -38,7 +44,7 @@
     
     UISearchDisplayController *_searchController;
     
-    NSInteger ReSumeType; // 1.免费  2.付费  3.热门
+     ReSumeType resumeType; // 1.免费  2.付费  3.热门
     
     
     
@@ -86,7 +92,8 @@
     
     pageindex = 1;
     size = 10;
-    ReSumeType = 2;
+    resumeType = ResumeTypePay;
+    
     
     
     [self setTabBarColor];
@@ -206,8 +213,21 @@
 -(void)getData
 {
     
+     NSDictionary *param = @{@"index":@(pageindex),@"size":@(size),@"isHot":@""};
     
-    NSDictionary *param = @{@"index":@(pageindex),@"size":@(size)};
+    
+    //免费加 isFree
+    if (resumeType == ResumeTypeFree) {
+        
+        param = @{@"index":@(pageindex),@"size":@(size),@"isFree":@(0)};
+        
+    }
+    
+    if (resumeType == ResumeTypeHot) {
+        
+        param = @{@"index":@(pageindex),@"size":@(size),@"isHot":@"1"};
+    }
+   
     
  
  
@@ -232,17 +252,9 @@
                 ModelItem *item = [[ModelItem alloc]init];
                 [item setValuesForKeysWithDictionary:oneDic];
                 
-                if (ReSumeType == 3) {
-                    
-                    [array addObject:item];
-                }
-                else
-                {
-                    if (ReSumeType == [item.Resumetype integerValue]) {
-                        
-                        [array addObject:item];
-                    }
-                }
+              
+                [array addObject:item];
+             
                
                 
             }
@@ -289,6 +301,8 @@
     [[TLRequest shareRequest]moreThanDataRequest:ksupportTheResume Params:param result:^(BOOL isSuccess, id data){
         
         if (isSuccess) {
+            
+            
             if ([[data objectForKey:@"err_str"] isEqualToString:@"您已经赞过该简历"]) {
                 
                 [[TLRequest shareRequest]tlRequestWithAction:kcancelSupportTheResume Params:param result:^(BOOL isSuccess, id data){
@@ -302,7 +316,7 @@
                 }];
 
                 
-            }else{
+             }else{
                 
 //                button.selected = YES;
                 oneItem.goodNum = oneItem.goodNum+1;
@@ -546,9 +560,33 @@
 -(void)selectedButtonIndex:(NSInteger)index
 {
     
-    ReSumeType = index;
+    switch (index) {
+        case 0:
+        {
+            resumeType = ResumeTypePay;
+            
+            [self headerRefresh];
+            
+        }
+            break;
+        case 1:
+        {
+            resumeType = ResumeTypeFree;
+        }
+            break;
+        case 2:
+        {
+            resumeType = ResumeTypeHot;
+        }
+            break;
+            
+            
+        default:
+            break;
+    }
     
-    [self headerRefresh];
+    
+    
     
 }
 

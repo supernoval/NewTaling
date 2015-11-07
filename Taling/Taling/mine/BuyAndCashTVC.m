@@ -8,8 +8,13 @@
 
 #import "BuyAndCashTVC.h"
 #import "PayOrder.h"
-@interface BuyAndCashTVC ()<UITextFieldDelegate>
+#import "PayOrderInfoModel.h"
 
+@interface BuyAndCashTVC ()<UITextFieldDelegate,UIAlertViewDelegate>
+{
+    UIAlertView *_successAlert;
+    
+}
 @property (nonatomic)NSInteger payType;// 1 支付宝 2 微信
 
 @end
@@ -33,6 +38,9 @@
     [_alipayBtn setImage:[UIImage imageNamed:@"selected"] forState:UIControlStateSelected];
     
     self.tableView.tableFooterView = [self tableFooterView];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(paySuccess) name:kPaySucessNotification object:nil];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -48,6 +56,15 @@
     }
 }
 
+-(void)paySuccess
+{
+    _successAlert = [[UIAlertView alloc]initWithTitle:nil message:@"充值成功" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    
+    [_successAlert show];
+    
+    
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -94,15 +111,11 @@
 }
 
 - (IBAction)wechatAction:(UIButton *)sender {
-    _weChatBtn.selected = YES;
-    _alipayBtn.selected = NO;
-    _payType = 2;
+ 
 }
 
 - (IBAction)alipayAction:(UIButton *)sender {
-    _weChatBtn.selected = NO;
-    _alipayBtn.selected = YES;
-    _payType = 1;
+   
 }
 
 - (void)payAction{
@@ -113,12 +126,38 @@
             [CommonMethods showDefaultErrorString:@"请输入充值金额"];
         }else{
             
-            NSDictionary *param = @{@"user_id":[UserInfo getuserid],@"money":_moneyTextField.text,@"type":@(_payType),@"action":@"2",@"account":@""};
+            
+            NSString *amount = [NSString stringWithFormat:@"%.2f",[_moneyTextField.text floatValue]];
+            
+            NSDictionary *param = @{@"user_id":[UserInfo getuserid],@"money":amount,@"type":@(_payType),@"action":@"2",@"account":@""};
             
             [[TLRequest shareRequest]tlRequestWithAction:kBuyAndCash Params:param result:^(BOOL isSuccess, id data){
                 
                 if (isSuccess) {
-                    [self.navigationController popViewControllerAnimated:YES];
+                    
+                    
+                    PayOrderInfoModel *orderModel = [[ PayOrderInfoModel alloc]init];
+                    
+                    orderModel.productName = @"充值测试";
+                    orderModel.productDescription = [NSString stringWithFormat:@"充值"];
+                    
+                    orderModel.amount =   [data objectForKey:@"money"];
+                    orderModel.out_trade_no = [data objectForKey:@"id"];
+                    orderModel.producttype = @"2";
+                    
+                    if (_payType == 2) {
+                        
+                        
+                        [PayOrder sendWXPay:orderModel];
+                        
+                    }
+                    else
+                    {
+                        [PayOrder loadALiPaySDK:orderModel];
+                    }
+                    
+                    
+                   
                 }
                 
             }];
@@ -143,7 +182,7 @@
                 
                 if (isSuccess) {
                     
-                    [self.navigationController popViewControllerAnimated:YES];
+                    
                 }
                 
                 
@@ -155,6 +194,30 @@
     
 }
 
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
+    if (indexPath.section == 1) {
+        
+        if (indexPath.row == 1) {
+            _weChatBtn.selected = YES;
+            _alipayBtn.selected = NO;
+            _payType = 2;
+        }
+        if (indexPath.row == 2) {
+            
+            _weChatBtn.selected = NO;
+            _alipayBtn.selected = YES;
+            _payType = 1;
+        }
+        
+    }
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+}
 #pragma mark- textFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -199,5 +262,23 @@
     
     
     return YES;
+}
+
+#pragma mark - UIAlertViewDelegate
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+    if (alertView == _successAlert) {
+        
+        [self.navigationController popViewControllerAnimated:YES];
+        
+    }
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kPaySucessNotification object:nil];
+    
+    
 }
 @end

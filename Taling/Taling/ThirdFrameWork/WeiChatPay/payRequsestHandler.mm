@@ -161,8 +161,14 @@
     
     NSInteger producttype = [orderInfo.producttype integerValue];
     
-
-    notifyURL = WXNOTIFY_URL_1;
+    if (producttype == 1) {
+        
+        notifyURL = WXNOTIFY_URL_1;
+    }
+   else
+   {
+        notifyURL = WXNOTIFY_URL_2;
+   }
     
  
     //================================

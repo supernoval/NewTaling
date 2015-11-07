@@ -101,6 +101,8 @@
  *index  
  *size
  * search  //可选
+ * isFree   // 0免费  
+ * isHot    // 1热门  不是热门空字符串
  */
 #define kgetCommendResumes @"/resume/getCommendResumes"
 
