@@ -17,4 +17,7 @@
 - (IBAction)forgetCodeAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
+@property (strong, nonatomic) IBOutlet UIView *accountView;
+@property (strong, nonatomic) IBOutlet UIView *codeView;
+
 @end

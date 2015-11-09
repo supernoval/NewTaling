@@ -13,7 +13,7 @@
 
 
 
-@interface ChangeCodeTVC ()<UIAlertViewDelegate>
+@interface ChangeCodeTVC ()
 {
      
 }
@@ -24,16 +24,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"修改密码";
+    self.title = @"找回密码";
     
-    _changeCodeButton.clipsToBounds = YES;
-    _changeCodeButton.layer.cornerRadius = 5.0;
+    self.tableView.tableFooterView = [self tableFooterView];
     
     
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    
+    return 15;
+}
 
-- (IBAction)changeCodeAction:(id)sender {
+- (void)changeCodeAction:(id)sender {
     
     if (_newpwdTF.text.length == 0)
     {
@@ -60,26 +63,48 @@
         return;
     }
     
-    NSDictionary *param = @{@"phone":_phoneNum,@"password":_newpwdTF.text};
+    NSString *nickname = [[NSUserDefaults standardUserDefaults]objectForKey:kusername];
+    NSDictionary *param = @{@"username":nickname,@"password":_newpwdTF.text};
     
-    NSLog(@"param:%@",param);
+    [[TLRequest shareRequest] tlRequestWithAction:kupdatePwd Params:param result:^(BOOL isSuccess, id data) {
+        
+        
+        
+        
+        if (isSuccess) {
+            
+            [[NSUserDefaults standardUserDefaults]setObject:_newpwdTF.text forKey:kpassword];
+            [[NSUserDefaults standardUserDefaults]synchronize];
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            
+        }
+        
+    }];
+
  
     
     
 }
 
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
+
+
+- (UIView *)tableFooterView{
     
-    if (alertView.tag == 999) {
-        
-        [self.navigationController popToRootViewControllerAnimated:YES];
-        
-    }
+    UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 100)];
+    footerView.backgroundColor = [UIColor clearColor];
+    
+    UIButton *logoutBtn = [[UIButton alloc]initWithFrame:CGRectMake(15, 30, ScreenWidth-30, 40)];
+    [logoutBtn setTintColor:[UIColor whiteColor]];
+    [logoutBtn setTitle:@"完成" forState:UIControlStateNormal];
+    logoutBtn.titleLabel.font = FONT_17;
+    logoutBtn.backgroundColor = NavigationBarColor;
+    logoutBtn.clipsToBounds = YES;
+    logoutBtn.layer.cornerRadius = 5.0;
+    [logoutBtn addTarget:self action:@selector(changeCodeAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [footerView addSubview:logoutBtn];
+    return footerView;
 }
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

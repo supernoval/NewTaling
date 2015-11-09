@@ -17,7 +17,7 @@
 
 
 
-@interface LoginViewController ()
+@interface LoginViewController ()<UITextFieldDelegate>
 
 @end
 
@@ -31,7 +31,14 @@
     _loginButton.clipsToBounds = YES;
     _loginButton.layer.cornerRadius = 5;
     
+    _accountView.clipsToBounds = YES;
+    _accountView.layer.cornerRadius = 5;
     
+    _codeView.clipsToBounds = YES;
+    _codeView.layer.cornerRadius = 5;
+    
+    _phoneTF.delegate = self;
+    _codeTF.delegate = self;
     
 }
 
@@ -130,6 +137,11 @@
             
         }];
     }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end

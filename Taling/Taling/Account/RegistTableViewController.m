@@ -35,12 +35,45 @@
     
     self.title = @"注册";
     
-    _registButton.clipsToBounds = YES;
-    _registButton.layer.cornerRadius = 5.0;
+    self.sendCodeButton.clipsToBounds = YES;
+    self.sendCodeButton.layer.cornerRadius = 5.0;
     
-
+    self.tableView.tableFooterView = [self tableFooterView];
     
 }
+
+
+- (UIView *)tableFooterView{
+    
+    UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 100)];
+    footerView.backgroundColor = [UIColor clearColor];
+    
+    UIButton *logoutBtn = [[UIButton alloc]initWithFrame:CGRectMake(15, 30, ScreenWidth-30, 40)];
+    [logoutBtn setTintColor:[UIColor whiteColor]];
+    [logoutBtn setTitle:@"用户注册" forState:UIControlStateNormal];
+    logoutBtn.titleLabel.font = FONT_17;
+    logoutBtn.backgroundColor = NavigationBarColor;
+    logoutBtn.clipsToBounds = YES;
+    logoutBtn.layer.cornerRadius = 5.0;
+    [logoutBtn addTarget:self action:@selector(registAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [footerView addSubview:logoutBtn];
+    UILabel *textLabel = [[UILabel alloc]initWithFrame:CGRectMake(logoutBtn.frame.origin.x, logoutBtn.frame.origin.y+logoutBtn.frame.size.height+3, 157, 20)];
+    textLabel.text = @"＊注册即代表您已同意她灵";
+    textLabel.font = FONT_13;
+    textLabel.textColor = kLightTintColor;
+    textLabel.textAlignment = NSTextAlignmentLeft;
+    [footerView addSubview:textLabel];
+    
+    UIButton *proBtn = [[UIButton alloc]initWithFrame:CGRectMake(textLabel.frame.origin.x+textLabel.frame.size.width, textLabel.frame.origin.y, 80, 20)];
+    [proBtn setTitle:@"《用户协议》" forState:UIControlStateNormal];
+    proBtn.titleLabel.font = FONT_13;
+    [proBtn setTitleColor:RGB(0, 122, 255, 1.0) forState:UIControlStateNormal];
+    [proBtn addTarget:self action:@selector(showPrivacy:) forControlEvents:UIControlEventTouchUpInside];
+    [footerView addSubview:proBtn];
+    return footerView;
+}
+
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -49,6 +82,10 @@
    
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    
+    return 15;
+}
 
 - (IBAction)sendCodeAction:(id)sender {
     
@@ -86,7 +123,7 @@
     }
     
 }
-- (IBAction)registAction:(id)sender {
+- (void)registAction:(id)sender {
     
     
 //     [self summitRegist];
@@ -128,14 +165,14 @@
         return;
     }
     
-    if (_recommendPhone.text.length > 0 && ![CommonMethods checkTel:_recommendPhone.text]) {
-        
-        [MyProgressHUD showError:@"推荐人手机号码不正确"];
-        
-        return;
-        
-        
-    }
+//    if (_recommendPhone.text.length > 0 && ![CommonMethods checkTel:_recommendPhone.text]) {
+//        
+//        [MyProgressHUD showError:@"推荐人手机号码不正确"];
+//        
+//        return;
+//        
+//        
+//    }
     
     
     [self checkSMSCode:_SMSCodeTF.text];

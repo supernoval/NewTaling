@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *codeTF;
 @property (weak, nonatomic) IBOutlet UIButton *sendCodeButton;
 - (IBAction)sendCodeAction:(id)sender;
-- (IBAction)summitAction:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *summitButton;
+
 
 @end

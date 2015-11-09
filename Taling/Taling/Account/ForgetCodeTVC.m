@@ -26,13 +26,20 @@
     
     self.title = @"找回密码";
     
-    _summitButton.clipsToBounds = YES;
-    _summitButton.layer.cornerRadius = 5.0;
+    _sendCodeButton.clipsToBounds = YES;
+    _sendCodeButton.layer.cornerRadius = 5.0;
+    
+    self.tableView.tableFooterView = [self tableFooterView];
+    
+
     
     
 }
 
-
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    
+    return 15;
+}
 
 
 #pragma mark - 倒计时
@@ -89,7 +96,7 @@
     
 }
 
-- (IBAction)summitAction:(id)sender {
+- (void)summitAction:(id)sender {
     
     if ([CommonMethods checkTel:_phoneNum.text] && _codeTF.text.length > 0)
     {
@@ -142,6 +149,24 @@
     
   
     
+}
+
+- (UIView *)tableFooterView{
+    
+    UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 100)];
+    footerView.backgroundColor = [UIColor clearColor];
+    
+    UIButton *logoutBtn = [[UIButton alloc]initWithFrame:CGRectMake(15, 30, ScreenWidth-30, 40)];
+    [logoutBtn setTintColor:[UIColor whiteColor]];
+    [logoutBtn setTitle:@"下一步" forState:UIControlStateNormal];
+    logoutBtn.titleLabel.font = FONT_17;
+    logoutBtn.backgroundColor = NavigationBarColor;
+    logoutBtn.clipsToBounds = YES;
+    logoutBtn.layer.cornerRadius = 5.0;
+    [logoutBtn addTarget:self action:@selector(summitAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [footerView addSubview:logoutBtn];
+    return footerView;
 }
 
 - (void)didReceiveMemoryWarning {

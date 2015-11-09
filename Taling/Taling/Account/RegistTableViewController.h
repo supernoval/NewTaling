@@ -20,11 +20,5 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *checkCodeTF;
 
-@property (weak, nonatomic) IBOutlet UITextField *recommendPhone;
-
-- (IBAction)registAction:(id)sender;
-
-- (IBAction)showPrivacy:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *registButton;
 
 @end
