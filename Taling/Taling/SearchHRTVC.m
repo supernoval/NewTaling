@@ -52,6 +52,17 @@
     
 }
 
+- (void)headerRefresh{
+    
+    index = 1;
+    [self requestHRList];
+}
+
+- (void)footerRefresh{
+    index ++;
+    [self requestHRList];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -172,6 +183,9 @@
     NSDictionary *param =@{@"index":@(index),@"size":@(pageSize),@"search":_searchBar.text};
     
     [[TLRequest shareRequest] tlRequestWithAction:ksearchHrInfo Params:param result:^(BOOL isSuccess, id data) {
+        
+        [self.tableView.header endRefreshing];
+        [self.tableView.footer endRefreshing];
         
         if (isSuccess) {
             

@@ -183,6 +183,9 @@ NSString *cellID = @"HRListCell";
     NSDictionary *param =@{@"index":@(index),@"size":@(pageSize)};
     
     [[TLRequest shareRequest] tlRequestWithAction:kgetHrInfo Params:param result:^(BOOL isSuccess, id data) {
+        
+        [self.tableView.header endRefreshing];
+        [self.tableView.footer endRefreshing];
        
         if (isSuccess) {
             
