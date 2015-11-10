@@ -144,4 +144,31 @@
     return YES;
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    
+    CGFloat y = -250;
+    
+    if ([UIScreen mainScreen].bounds.size.height == 480) {
+        y = -178;
+    }else if ([UIScreen mainScreen].bounds.size.height == 568) {
+        y = -210;
+    }
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        
+        self.view.frame = CGRectMake(0, y, self.view.frame.size.width, self.view.frame.size.height);
+        
+    
+    }];
+    
+    
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    }];
+}
+
 @end
