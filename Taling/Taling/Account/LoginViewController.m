@@ -40,6 +40,10 @@
     _phoneTF.delegate = self;
     _codeTF.delegate = self;
     
+    
+
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -146,12 +150,12 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
     
-    CGFloat y = -250;
+    CGFloat y = -200;
     
     if ([UIScreen mainScreen].bounds.size.height == 480) {
-        y = -178;
+        y = -128;
     }else if ([UIScreen mainScreen].bounds.size.height == 568) {
-        y = -210;
+        y = -160;
     }
     
     [UIView animateWithDuration:0.3 animations:^{
@@ -166,7 +170,7 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     
-    [UIView animateWithDuration:0.3 animations:^{
+    [UIView animateWithDuration:0.2 animations:^{
         self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     }];
 }
