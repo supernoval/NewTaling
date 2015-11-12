@@ -166,8 +166,16 @@
         
         if (isSuccess) {
             
-            NSString *orderNO = [data objectForKey:@"orderNo"];
             
+            if (order_price == 0) {
+                
+                
+                [self paySuccessNoti];
+                
+            }
+            else
+            {
+            NSString *orderNO = [data objectForKey:@"orderNo"];
             
             PayOrderInfoModel *orderModel = [[ PayOrderInfoModel alloc]init];
             
@@ -195,6 +203,7 @@
                 [self loadPayAction:orderModel];
             }
             
+        }
         }
     }];
     

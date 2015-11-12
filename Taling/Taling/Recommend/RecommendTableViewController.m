@@ -213,7 +213,7 @@ typedef NS_ENUM(NSInteger,ReSumeType) {
 -(void)getData
 {
     
-     NSDictionary *param = @{@"index":@(pageindex),@"size":@(size),@"isHot":@""};
+     NSDictionary *param = @{@"index":@(pageindex),@"size":@(size),@"isHot":@"",@"isFree":@(1)};
     
     
     //免费加 isFree
@@ -222,6 +222,7 @@ typedef NS_ENUM(NSInteger,ReSumeType) {
         param = @{@"index":@(pageindex),@"size":@(size),@"isFree":@(0)};
         
     }
+    
     
     if (resumeType == ResumeTypeHot) {
         
