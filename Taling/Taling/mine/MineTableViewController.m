@@ -14,6 +14,7 @@
 #import "BindAccountTVC.h"
 #import "SettingTVC.h"
 #import "MyResumeTVC.h"
+#import "BindEmailTVC.h"
 
 @interface MineTableViewController ()<UIAlertViewDelegate>
 @property (strong, nonatomic)NSDictionary *countDic;
@@ -87,18 +88,26 @@
         
     }
     
+    NSString *bindEmail = [[NSUserDefaults standardUserDefaults]objectForKey:kemail];
+    
+    if (bindEmail.length > 0) {
+        _bindEmail.text = bindEmail;
+    }else{
+        _bindEmail.text = @"未绑定";
+    }
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 4;
     
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 1) {
+    if (section == 1 || section == 2) {
         
-        return 3;
+        return 2;
     }
     
     return 1;
@@ -167,14 +176,6 @@
                 break;
                 
                 
-            case 2:
-            {
-                BindAccountTVC *bindAccount = [self.storyboard instantiateViewControllerWithIdentifier:@"BindAccountTVC"];
-                bindAccount.hidesBottomBarWhenPushed = YES;
-                
-                [self.navigationController pushViewController:bindAccount animated:YES];
-            }
-                break;
                 
             default:
                 break;
@@ -183,6 +184,39 @@
 
         
     }else if (indexPath.section == 2){
+        
+        switch (indexPath.row) {
+            case 0:
+            {
+                //绑定账号
+                BindAccountTVC *bindAccount = [self.storyboard instantiateViewControllerWithIdentifier:@"BindAccountTVC"];
+                bindAccount.hidesBottomBarWhenPushed = YES;
+                
+                [self.navigationController pushViewController:bindAccount animated:YES];
+
+            }
+                break;
+                
+                case 1:
+            {
+                //绑定邮箱
+                
+                if ([[[NSUserDefaults standardUserDefaults]objectForKey:kis_active]boolValue] == YES) {
+                    
+                    
+                }else{
+                    BindEmailTVC *bindEmail = [self.storyboard instantiateViewControllerWithIdentifier:@"BindEmailTVC"];
+                    [self.navigationController pushViewController:bindEmail animated:YES];
+                
+                }
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }
+    else if (indexPath.section == 3){
         
         SettingTVC *setting = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingTVC"];
         [self.navigationController pushViewController:setting animated:YES];

@@ -275,6 +275,7 @@
 		B3FB2A4B1BC28FFE003ACC5D /* BindDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FB2A4A1BC28FFE003ACC5D /* BindDetailTVC.m */; };
 		B3FB2A4F1BC298A0003ACC5D /* SettingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FB2A4E1BC298A0003ACC5D /* SettingTVC.m */; };
 		B3FB2A531BC3AD82003ACC5D /* MyResumeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FB2A521BC3AD82003ACC5D /* MyResumeTVC.m */; };
+		D2686F311BF1C60400C92983 /* BindEmailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2686F301BF1C60400C92983 /* BindEmailTVC.m */; settings = {ASSET_TAGS = (); }; };
 		D26C29371BD8D68E007F1EF2 /* WorkExperienceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D26C29361BD8D68E007F1EF2 /* WorkExperienceItem.m */; };
 		D27021211BC7744900428B31 /* BuyAndCashTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D27021201BC7744900428B31 /* BuyAndCashTVC.m */; };
 		D29BBC691B946B7E004B4021 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D29BBC681B946B7E004B4021 /* libcrypto.a */; };
@@ -964,6 +965,8 @@
 		B3FB2A4E1BC298A0003ACC5D /* SettingTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTVC.m; sourceTree = "<group>"; };
 		B3FB2A511BC3AD82003ACC5D /* MyResumeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyResumeTVC.h; sourceTree = "<group>"; };
 		B3FB2A521BC3AD82003ACC5D /* MyResumeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyResumeTVC.m; sourceTree = "<group>"; };
+		D2686F2F1BF1C60400C92983 /* BindEmailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindEmailTVC.h; sourceTree = "<group>"; };
+		D2686F301BF1C60400C92983 /* BindEmailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindEmailTVC.m; sourceTree = "<group>"; };
 		D26C29351BD8D68E007F1EF2 /* WorkExperienceItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkExperienceItem.h; sourceTree = "<group>"; };
 		D26C29361BD8D68E007F1EF2 /* WorkExperienceItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkExperienceItem.m; sourceTree = "<group>"; };
 		D270211F1BC7744900428B31 /* BuyAndCashTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyAndCashTVC.h; sourceTree = "<group>"; };
@@ -2402,6 +2405,7 @@
 		1579153A1B8F52C400E31111 /* mine */ = {
 			isa = PBXGroup;
 			children = (
+				D2686F2E1BF1C5D900C92983 /* bindEmail */,
 				B3FB2A501BC3AD65003ACC5D /* resume */,
 				B3FB2A4C1BC29888003ACC5D /* setting */,
 				B3FB2A421BC27191003ACC5D /* bindAccount */,
@@ -2586,6 +2590,15 @@
 				D2D9220C1BDA31BE00CE91D2 /* ResumeDetailVC.m */,
 			);
 			name = resume;
+			sourceTree = "<group>";
+		};
+		D2686F2E1BF1C5D900C92983 /* bindEmail */ = {
+			isa = PBXGroup;
+			children = (
+				D2686F2F1BF1C60400C92983 /* BindEmailTVC.h */,
+				D2686F301BF1C60400C92983 /* BindEmailTVC.m */,
+			);
+			name = bindEmail;
 			sourceTree = "<group>";
 		};
 		D270211B1BC75DFD00428B31 /* buyAndCash */ = {
@@ -2893,6 +2906,7 @@
 				13AA5EAF1B95CCEF00AB477E /* AFURLRequestSerialization.m in Sources */,
 				1506E0A81B89B582007D1696 /* UIImageView+WebCache.m in Sources */,
 				1506DFFC1B89B506007D1696 /* SDPhotoItem.m in Sources */,
+				D2686F311BF1C60400C92983 /* BindEmailTVC.m in Sources */,
 				153F3AFF1BD277FB00C86F1A /* EMChatTimeCell.m in Sources */,
 				B3FB2A3A1BC2621A003ACC5D /* ChangeCompanyTVC.m in Sources */,
 				1506E09C1B89B582007D1696 /* SDImageCache.m in Sources */,

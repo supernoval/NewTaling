@@ -9,7 +9,7 @@
 
 
 //本地测试
-//#define  kRequestHeader   @"http://192.168.40.89/taling-api"
+//#define  kRequestHeader   @"http://192.168.40.149/taling-api"
 //正式
 #define  kRequestHeader     @"http://183.131.151.50/taling-api"
 
@@ -194,3 +194,10 @@
  *account
  */
 #define kBuyAndCash     @"/money/inpour"
+
+#pragma mark - 绑定邮箱
+/*
+ * user_id
+ * email
+ */
+#define kBindingEmail     @"/user/bindingEmail"

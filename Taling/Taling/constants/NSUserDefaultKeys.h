@@ -50,5 +50,11 @@
 #define kuserid         @"id"
 
 //isAttestation
-#define kisAttestation @"isAttestation"
+#define kisAttestation  @"isAttestation"
+
+//绑定的邮箱
+#define kemail          @"email"
+
+//绑定的邮箱是否激活
+#define kis_active      @"is_active"
 

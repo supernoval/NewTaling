@@ -25,5 +25,6 @@
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *moneyWidth;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *numberTextWidth;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *moneyTextWidth;
+@property (strong, nonatomic) IBOutlet UILabel *bindEmail;
 
 @end
