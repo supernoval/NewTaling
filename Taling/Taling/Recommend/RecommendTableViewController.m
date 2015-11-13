@@ -566,7 +566,7 @@ typedef NS_ENUM(NSInteger,ReSumeType) {
         {
             resumeType = ResumeTypePay;
             
-            [self headerRefresh];
+         
             
         }
             break;
@@ -587,7 +587,7 @@ typedef NS_ENUM(NSInteger,ReSumeType) {
     }
     
     
-    
+       [self headerRefresh];
     
 }
 

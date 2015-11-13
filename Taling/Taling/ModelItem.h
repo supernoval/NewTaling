@@ -20,6 +20,8 @@
 @property (strong, nonatomic) NSString *currentSalary;
 
 @property (strong, nonatomic)NSArray *eduexpenrience;
+@property (nonatomic,strong)  NSString *username;
+
 
 @property (strong, nonatomic) NSString *email;
 @property (strong, nonatomic) NSString *expectCity;

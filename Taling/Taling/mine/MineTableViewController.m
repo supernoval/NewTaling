@@ -79,13 +79,23 @@
     _companyLabel.text = [[NSUserDefaults standardUserDefaults ] objectForKey:kcompany];
     
     
-    NSData *headImageData = [[NSUserDefaults standardUserDefaults] objectForKey:kLocatePhoto];
+    NSString *photoURL = [[NSUserDefaults standardUserDefaults ] objectForKey:kphoto];
     
-    if (headImageData) {
+    if (photoURL.length > 0) {
         
-        _headImageView.image = [UIImage imageWithData:headImageData];
+        [_headImageView sd_setImageWithURL:[NSURL URLWithString:photoURL] placeholderImage:[UIImage imageNamed:@"test"]];
         
+    }
+    else
+    {
+        NSData *headImageData = [[NSUserDefaults standardUserDefaults] objectForKey:kLocatePhoto];
         
+        if (headImageData) {
+            
+            _headImageView.image = [UIImage imageWithData:headImageData];
+            
+            
+        }
     }
     
     NSString *bindEmail = [[NSUserDefaults standardUserDefaults]objectForKey:kemail];

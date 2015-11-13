@@ -16,6 +16,8 @@
 #import "CommentViewController.h"
 #import "UIImageView+WebCache.h"
 #import "UIImageView+WebCache.h"
+#import "ChatViewController.h"
+
 
 @interface ResumeDetailVC ()
 {
@@ -40,8 +42,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    
+  
     if (self.type == 1) {
         
        
@@ -75,39 +76,48 @@
     
     _commentArry = [[NSMutableArray alloc]init];
     
-    [self.tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
+//    [self.tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
     [self.tableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(footerRefresh)];
     
     _index = 1;
     _size = 5;
     
 
-        [self.tableView.header beginRefreshing];
+//        [self.tableView.header beginRefreshing];
   
 }
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+
+    
+    
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+
+ 
+    _index = 1;
+    
+    [self getData];
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
 
-    
-    
-    _index = 1;
-    
-    [self getData];
-    
-}
-
-- (void)headerRefresh{
-    _index = 1;
-    [self getData];
-}
+//- (void)headerRefresh{
+//    _index = 1;
+//    [self getData];
+//}
 - (void)footerRefresh{
     
     _index ++;
@@ -486,7 +496,11 @@
 - (IBAction)adviceAction:(UIButton *)sender {
     
     
-    
+    NSString *chatter = item.username;
+    ChatViewController *chatVC = [[ChatViewController alloc] initWithChatter:chatter isGroup:NO];
+    chatVC.title =chatter;
+    [self.navigationController pushViewController:chatVC animated:YES];
+
     
 }
 

@@ -33,7 +33,16 @@
     _nameLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:knickname];
     _companyLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:kcompany];
     _professionLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:kindustry];
+
+    NSString *photoURL = [[NSUserDefaults standardUserDefaults ] objectForKey:kphoto];
     
+    if (photoURL.length > 0) {
+        
+        [_headImageView sd_setImageWithURL:[NSURL URLWithString:photoURL] placeholderImage:[UIImage imageNamed:@"test"]];
+        
+    }
+    else
+    {
     NSData *headImageData = [[NSUserDefaults standardUserDefaults] objectForKey:kLocatePhoto];
     
     if (headImageData) {
@@ -41,6 +50,7 @@
         _headImageView.image = [UIImage imageWithData:headImageData];
         
         
+    }
     }
 }
 
