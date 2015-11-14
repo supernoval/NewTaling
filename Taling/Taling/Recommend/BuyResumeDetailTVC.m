@@ -162,6 +162,10 @@
     
     NSDictionary *param = @{@"resumes_id":self.item.resumesId,@"seller_id":self.item.userId,@"buyer_id":buy_id,@"order_price":@(order_price)};
     
+    if ([self.item.userId isEqualToString:buy_id]) {
+        [CommonMethods showDefaultErrorString:@"不能购买自己的简历"];
+    }else{
+    
     [[TLRequest shareRequest] tlRequestWithAction:kcreatOrder Params:param result:^(BOOL isSuccess, id data) {
         
         if (isSuccess) {
@@ -206,6 +210,7 @@
         }
         }
     }];
+    }
     
         
 }
