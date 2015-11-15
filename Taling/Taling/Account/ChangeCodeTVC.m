@@ -63,8 +63,8 @@
         return;
     }
     
-    NSString *nickname = [[NSUserDefaults standardUserDefaults]objectForKey:kusername];
-    NSDictionary *param = @{@"username":nickname,@"password":_newpwdTF.text};
+    
+    NSDictionary *param = @{@"username":_phoneNum,@"password":_newpwdTF.text};
     
     [[TLRequest shareRequest] tlRequestWithAction:kupdatePwd Params:param result:^(BOOL isSuccess, id data) {
         

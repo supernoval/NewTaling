@@ -13,7 +13,7 @@
 //正式
 #define  kRequestHeader     @"http://183.131.151.50/taling-api"
 
-
+//#define  kRequestHeader     @"http://www.talentbot.cn/taling-api"
 
 
 

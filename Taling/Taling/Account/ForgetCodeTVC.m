@@ -132,6 +132,7 @@
             
             [self.navigationController pushViewController:changeCodeTVC animated:YES];
             
+            [CommonMethods showDefaultErrorString:@"密码修改成功"];
             
             
             

@@ -14,8 +14,20 @@
 {
     [userInfo enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
       
-        [[NSUserDefaults standardUserDefaults ] setObject:obj forKey:key];
-        [[NSUserDefaults standardUserDefaults ]synchronize];
+        if (![key isEqualToString:@"password"]) {
+            
+            NSCharacterSet *whitespace = [NSCharacterSet  whitespaceAndNewlineCharacterSet];
+            
+            NSString * objStr = [NSString stringWithFormat:@"%@",obj];
+            
+            
+            objStr = [objStr  stringByTrimmingCharactersInSet:whitespace];
+            
+            
+            [[NSUserDefaults standardUserDefaults ] setObject:objStr forKey:key];
+            [[NSUserDefaults standardUserDefaults ]synchronize];
+        }
+     
         
     }];
     

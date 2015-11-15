@@ -123,7 +123,9 @@
 {
     if (![[NSUserDefaults standardUserDefaults] boolForKey:kEasyMobHadLogin] && [[NSUserDefaults standardUserDefaults] boolForKey:kHadLogin]) {
         
-        NSString *account =[UserInfo getUsername];
+        
+        
+        NSString *account =[UserInfo getuserid];
         
         //        NSString *account = @"15201931110";
         [[ChatAccountManager shareChatAccountManager] loginWithAccount:account successBlock:^(BOOL isSuccess) {
