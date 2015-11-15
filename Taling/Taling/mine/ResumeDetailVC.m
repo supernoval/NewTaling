@@ -132,7 +132,7 @@
         return;
         
     }
-    NSDictionary *param = @{@"resumes_id":item.resumesId,@"index":@(_index),@"size":@(_size)};
+    NSDictionary *param = @{@"resumes_id":@(item.resumesId),@"index":@(_index),@"size":@(_size)};
     
     [[TLRequest shareRequest] tlRequestWithAction:kgetAppraise Params:param result:^(BOOL isSuccess, id data) {
         
@@ -463,9 +463,9 @@
     
     NSString *userid = [UserInfo getuserid];
     
-    NSString *resumeid = self.item.resumesId;
+    NSInteger resumeid = self.item.resumesId;
     
-    NSDictionary *param = @{@"user_id":userid,@"resumes_id":resumeid};
+    NSDictionary *param = @{@"user_id":userid,@"resumes_id":@(resumeid)};
     
     [[TLRequest shareRequest] tlRequestWithAction:kreservResume Params:param result:^(BOOL isSuccess, id data) {
         
@@ -508,9 +508,9 @@
     
     NSString *userid = [UserInfo getuserid];
     
-    NSString *resumeid = self.item.resumesId;
+    NSInteger resumeid = self.item.resumesId;
     
-    NSDictionary *param = @{@"user_id":userid,@"resumes_id":resumeid};
+    NSDictionary *param = @{@"user_id":userid,@"resumes_id":@(resumeid)};
     
     [[TLRequest shareRequest] tlRequestWithAction:kreservResume Params:param result:^(BOOL isSuccess, id data) {
         

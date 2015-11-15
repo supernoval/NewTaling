@@ -10,7 +10,7 @@
 
 @interface CommentViewController : BaseViewController
 
-@property (nonatomic) NSString *resumeid;
+@property (nonatomic) NSInteger resumeid;
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 

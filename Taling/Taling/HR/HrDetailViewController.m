@@ -185,7 +185,7 @@
         
         ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
         
-        NSString *resumesId = oneItem.resumesId;
+        NSString *resumesId = [NSString stringWithFormat:@"%li",oneItem.resumesId];
         
         
         if (resumesId) {

@@ -53,4 +53,110 @@
 }
 
 
++ (BOOL)isResuemSupport:(NSInteger)resumeId{
+    
+    NSMutableArray *array = [[NSMutableArray alloc]initWithArray:[[NSUserDefaults standardUserDefaults]objectForKey:ksupportResumeArray]]
+;
+    NSInteger theId = -9999;
+    
+    
+    if (array.count == 0) {
+        return NO;
+    }else{
+        
+        NSLog(@"resumeId:%li",resumeId);
+        
+        for (int i = 0; i < array.count; i++) {
+            NSInteger oneId = [[array objectAtIndex:i]integerValue];
+            
+            if (resumeId == oneId) {
+                theId = oneId;
+            }
+            
+        }
+        
+        if (theId != -9999) {
+            return YES;
+        }else{
+            
+            return NO;
+        }
+        
+    }
+    
+}
+
++ (BOOL)hasSupportTheResume:(NSInteger)resumeId{
+    
+    NSMutableArray *array =[[NSMutableArray alloc]initWithArray:[[NSUserDefaults standardUserDefaults]objectForKey:ksupportResumeArray]];
+    
+    
+    NSInteger theId = -88888;
+    NSInteger theNum = 0;
+    
+    
+        for (NSInteger i = 0; i < array.count; i++) {
+            NSInteger oneId = [[array objectAtIndex:i]integerValue];
+            
+            if (oneId == resumeId) {
+                theId = oneId;
+                theNum = i;
+            }
+            
+        }
+        
+        if (theId != -88888) {
+            [array removeObjectAtIndex:theNum];
+            [[NSUserDefaults standardUserDefaults]setObject:array forKey:ksupportResumeArray];
+            [[NSUserDefaults standardUserDefaults]synchronize];
+            NSLog(@"i_____d:%li",resumeId);
+            
+            NSLog(@"_____-zhanshuzhu:%@",array);
+
+            
+            return YES;
+        }else{
+            [array addObject:@(resumeId)];
+            
+            
+            NSLog(@"id:%li",resumeId);
+            
+            NSLog(@"_____-shuzhu:%@",array);
+            [[NSUserDefaults standardUserDefaults]setObject:array forKey:ksupportResumeArray];
+            [[NSUserDefaults standardUserDefaults]synchronize];
+            
+            return NO;
+        }
+        
+        
+        
+//    }
+    
+    
+}
+
+//if (array.count == 0) {
+//    
+//    [array addObject:resumeId];
+//    return NO;
+//}else{
+//    
+//    for (NSInteger i = 0; i < array.count; i++) {
+//        NSString *oneId = [array objectAtIndex:i];
+//        
+//        if ([resumeId isEqualToString:oneId]) {
+//            return YES;
+//        }else{
+//            
+//            [array addObject:resumeId];
+//            return NO;
+//        }
+//        
+//    }
+//    
+//    return NO;
+//}
+
+//return NO;
+
 @end

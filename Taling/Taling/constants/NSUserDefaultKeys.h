@@ -58,3 +58,6 @@
 //绑定的邮箱是否激活
 #define kis_active      @"is_active"
 
+//登录的账户已点赞数组
+#define ksupportResumeArray @"supportResumeArray"
+

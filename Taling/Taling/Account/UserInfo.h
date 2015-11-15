@@ -21,6 +21,14 @@
 
 +(NSString*)getUsername;
 
+#pragma mark- 界面展示时判断简历是否已经点赞
+
++ (BOOL)isResuemSupport:(NSInteger)resumeId;
+
+#pragma mark- 简历点赞存储本地
+
++ (BOOL)hasSupportTheResume:(NSInteger)resumeId;
+
 
 
 @end

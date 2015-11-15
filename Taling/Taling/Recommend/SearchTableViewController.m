@@ -251,7 +251,7 @@
         
         ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
         
-        NSString *resumesId = oneItem.resumesId;
+        NSInteger resumesId = oneItem.resumesId;
         
         
         if (resumesId) {
@@ -286,35 +286,37 @@
     
     ModelItem *oneItem = [_JDArray objectAtIndex:button.tag];
     
-    NSString *resumes_id = oneItem.resumesId;
+    NSInteger resumes_id = oneItem.resumesId;
     NSString *user_id = [UserInfo getuserid];
-    NSDictionary *param = @{@"resumes_id":resumes_id,@"user_id":user_id};
-    if (button.selected == NO) {//赞
-        
-        [[TLRequest shareRequest]tlRequestWithAction:ksupportTheResume Params:param result:^(BOOL isSuccess, id data){
-            
-            if (isSuccess) {
-                button.selected = YES;
-                
-                oneItem.goodNum = oneItem.goodNum+1;
-            }
-            
-        }];
-    }else if (button.selected == YES){//取消点赞
+    NSDictionary *param = @{@"resumes_id":@(resumes_id),@"user_id":user_id};
+    if ([UserInfo hasSupportTheResume:resumes_id] == YES) {//已经点赞了，取消点赞
         
         [[TLRequest shareRequest]tlRequestWithAction:kcancelSupportTheResume Params:param result:^(BOOL isSuccess, id data){
             
             if (isSuccess) {
-                button.selected = NO;
+                
                 oneItem.goodNum = oneItem.goodNum-1;
+                
+                [self.tableView reloadData];
             }
             
         }];
+        
+    }else{
+        
+        [[TLRequest shareRequest]moreThanDataRequest:ksupportTheResume Params:param result:^(BOOL isSuccess, id data){
+            
+            if (isSuccess) {
+                
+                oneItem.goodNum = oneItem.goodNum+1;
+                
+                [self.tableView reloadData];
+                
+            }
+        }];
+        
     }
     
-    [self.tableView reloadData];
-    
-    //    [self.tableView reloadSections:button.tag withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 

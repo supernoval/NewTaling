@@ -55,7 +55,7 @@ typedef NS_ENUM(NSInteger,ReSumeType) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+        
     self.title = @"推荐";
     
     _JDArray = [[NSMutableArray alloc]init];
@@ -295,69 +295,40 @@ typedef NS_ENUM(NSInteger,ReSumeType) {
     
     ModelItem *oneItem = [_JDArray objectAtIndex:button.tag];
     
-    NSString *resumes_id = oneItem.resumesId;
+    NSInteger resumes_id = oneItem.resumesId;
     NSString *user_id = [UserInfo getuserid];
-    NSDictionary *param = @{@"resumes_id":resumes_id,@"user_id":user_id};
-    
-    [[TLRequest shareRequest]moreThanDataRequest:ksupportTheResume Params:param result:^(BOOL isSuccess, id data){
-        
-        if (isSuccess) {
-            
-            
-            if ([[data objectForKey:@"err_str"] isEqualToString:@"您已经赞过该简历"]) {
-                
-                [[TLRequest shareRequest]tlRequestWithAction:kcancelSupportTheResume Params:param result:^(BOOL isSuccess, id data){
-                    
-                    if (isSuccess) {
-//                        button.selected = NO;
-                        
-                        oneItem.goodNum = oneItem.goodNum-1;
-                    }
-                    
-                }];
-
-                
-             }else{
-                
-//                button.selected = YES;
-                oneItem.goodNum = oneItem.goodNum+1;
-            }
-            
-        }
-        
-    }];
+    NSDictionary *param = @{@"resumes_id":@(resumes_id),@"user_id":user_id};
     
     
-    
-    /*
-    
-    if (button.selected == NO) {//赞
-        
-        [[TLRequest shareRequest]tlRequestWithAction:ksupportTheResume Params:param result:^(BOOL isSuccess, id data){
-            
-            if (isSuccess) {
-                button.selected = YES;
-                NSInteger num = [oneItem.goodNum integerValue];
-                oneItem.goodNum = [NSString stringWithFormat:@"%li",num+1];
-            }
-        
-        }];
-    }else if (button.selected == YES){//取消点赞
+    if ([UserInfo hasSupportTheResume:resumes_id] == YES) {//已经点赞了，取消点赞
         
         [[TLRequest shareRequest]tlRequestWithAction:kcancelSupportTheResume Params:param result:^(BOOL isSuccess, id data){
             
             if (isSuccess) {
-                button.selected = NO;
-                NSInteger num = [oneItem.goodNum integerValue];
-                oneItem.goodNum = [NSString stringWithFormat:@"%li",num-1];
+                //                        button.selected = NO;
+                
+                oneItem.goodNum = oneItem.goodNum-1;
+                
+                [self.tableView reloadData];
             }
             
         }];
-    }
-    */
-    [self.tableView reloadData];
+        
+    }else{
+        
+        [[TLRequest shareRequest]moreThanDataRequest:ksupportTheResume Params:param result:^(BOOL isSuccess, id data){
+            
+            if (isSuccess) {
+                
+                oneItem.goodNum = oneItem.goodNum+1;
+                
+                [self.tableView reloadData];
+            
+            }
+        }];
+        
+        }
     
-//    [self.tableView reloadSections:button.tag withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 #pragma mark - UITableViewDataSource
 -(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
@@ -458,6 +429,16 @@ typedef NS_ENUM(NSInteger,ReSumeType) {
     cell.yearLabel.text = [NSString stringWithFormat:@"资历:%ld年",(long)oneItem.workYears];
     
     //点赞数
+    
+        if ([UserInfo isResuemSupport:oneItem.resumesId] == YES) {
+            [cell.priseButton setImage:[UIImage imageNamed:@"likeRed"] forState:UIControlStateNormal];
+        }else{
+            
+            [cell.priseButton setImage:[UIImage imageNamed:@"like"] forState:UIControlStateNormal];
+        }
+        
+        
+        
     [cell.priseButton setTitle:[NSString stringWithFormat:@"%ld",(long)oneItem.goodNum] forState:UIControlStateNormal];
     cell.priseButton.tag = indexPath.section;
     [cell.priseButton addTarget:self action:@selector(supportTheResume:) forControlEvents:UIControlEventTouchUpInside];
@@ -491,7 +472,7 @@ typedef NS_ENUM(NSInteger,ReSumeType) {
         
     ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
         
-    NSString *resumesId = oneItem.resumesId;
+    NSInteger resumesId = oneItem.resumesId;
         
         
       if (resumesId) {

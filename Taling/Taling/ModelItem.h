@@ -37,7 +37,7 @@
 @property (strong, nonatomic) NSString *photo;
 @property (nonatomic) float price;
 @property (nonatomic) NSInteger reservNum;
-@property (strong, nonatomic) NSString *resumesId;
+@property (nonatomic) NSInteger resumesId;
 @property (strong, nonatomic) NSString *Resumetype;
 @property (strong, nonatomic) NSString *sex;
 

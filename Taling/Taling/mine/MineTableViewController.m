@@ -34,7 +34,7 @@
     _moneyTextWidth.constant = (ScreenWidth-25)/2;
     _countDic = [[NSDictionary alloc]init];
     
-    [self getResumeCount];
+//    [self getResumeCount];
     
     
 }
@@ -65,7 +65,7 @@
 {
     [super viewWillAppear:animated];
     
-    [self  getResumeCount];
+//    [self  getResumeCount];
     
     NSString *nickName = [[NSUserDefaults standardUserDefaults ]objectForKey:knickname];
     

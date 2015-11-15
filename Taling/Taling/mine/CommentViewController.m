@@ -66,7 +66,7 @@
     NSString *userid = [UserInfo getuserid];
     NSString *coment = self.textView.text;
     
-    NSDictionary *params = @{@"user_id":userid,@"resumes_id":_resumeid,@"comment":coment};
+    NSDictionary *params = @{@"user_id":userid,@"resumes_id":@(_resumeid),@"comment":coment};
     
     [[TLRequest shareRequest] tlRequestWithAction:kaddAppraise Params:params result:^(BOOL isSuccess, id data) {
         
