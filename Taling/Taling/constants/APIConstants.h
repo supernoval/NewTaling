@@ -140,6 +140,7 @@
  seller_id   是卖家ID  也就是简历上传者的ID  你在获取简历的时候 也会获取到这个值
  buyer_id  这个是买家ID也是 登录用户的ID  也就是 你登录APP的时候  我会返回给你的用户相关信息
  order_price  这个是简历价格   会在简历相关信息里面。
+ coupon_id   优惠券 ID
  */
 #define kcreatOrder          @"/order/createOrder"
 
