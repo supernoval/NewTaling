@@ -50,7 +50,10 @@
 
     
     
-    NSDictionary *param = @{@"user_id":user_id,@"work_year":@"",@"industry":@"",@"summary":@"",@"company":@"",@"nickname":nickname};
+//    NSDictionary *param = @{@"user_id":user_id,@"work_year":@"",@"industry":@"",@"summary":@"",@"company":@"",@"nickname":nickname,@"speciality":@""};
+    
+     NSDictionary *param = @{@"user_id":user_id,@"work_year":@"",@"industry":@"",@"summary":@"",@"company":@"",@"nickname":nickname,@"speciality":@""};
+    
     
     [[TLRequest shareRequest] tlRequestWithAction:kupdateUser Params:param result:^(BOOL isSuccess, id data) {
         

@@ -157,9 +157,14 @@
     NSLog(@"username:%@",buy_id);
     NSLog(@"userId:%@",self.item.userId);
     float order_price = self.item.price;
-   
+  
+#warning test
+    NSString *coupon_id = @"4";
     
-    NSDictionary *param = @{@"resumes_id":@(self.item.resumesId),@"seller_id":self.item.userId,@"buyer_id":buy_id,@"order_price":@(order_price)};
+    
+#warning test
+    
+    NSDictionary *param = @{@"resumes_id":@(self.item.resumesId),@"seller_id":self.item.userId,@"buyer_id":buy_id,@"order_price":@(order_price),@"coupon_id":coupon_id};
     
     if ([self.item.userId isEqualToString:buy_id]) {
         [CommonMethods showDefaultErrorString:@"不能购买自己的简历"];

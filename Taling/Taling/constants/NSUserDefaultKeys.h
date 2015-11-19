@@ -27,6 +27,14 @@
 //nickname
 #define knickname      @"nickname"
 
+//擅长
+#define kspeciality    @"speciality"
+
+//标签
+#define ksummary        @"summary"
+
+
+
 //industry
 #define kindustry      @"industry"
 

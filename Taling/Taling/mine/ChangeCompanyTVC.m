@@ -50,7 +50,7 @@
     NSString *company = _inputTextField.text;
     
     
-    NSDictionary *param = @{@"user_id":user_id,@"work_year":@"",@"industry":@"",@"summary":@"",@"company":company,@"nickname":@""};
+    NSDictionary *param = @{@"user_id":user_id,@"work_year":@"",@"industry":@"",@"summary":@"",@"company":company,@"nickname":@"",@"speciality":@""};
      
      [[TLRequest shareRequest] tlRequestWithAction:kupdateUser Params:param result:^(BOOL isSuccess, id data) {
      

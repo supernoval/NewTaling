@@ -198,11 +198,18 @@
         switch (indexPath.row) {
             case 0:
             {
-                //绑定账号
-                BindAccountTVC *bindAccount = [self.storyboard instantiateViewControllerWithIdentifier:@"BindAccountTVC"];
-                bindAccount.hidesBottomBarWhenPushed = YES;
+//                //绑定账号
+//                BindAccountTVC *bindAccount = [self.storyboard instantiateViewControllerWithIdentifier:@"BindAccountTVC"];
+//                bindAccount.hidesBottomBarWhenPushed = YES;
+//                
+//                [self.navigationController pushViewController:bindAccount animated:YES];
                 
-                [self.navigationController pushViewController:bindAccount animated:YES];
+                [[TLRequest shareRequest ] tlRequestWithAction:kGetMyCoupon Params:@{@"user_id":[UserInfo getuserid]} result:^(BOOL isSuccess, id data) {
+                   
+                    
+                }];
+                
+                
 
             }
                 break;

@@ -7,6 +7,7 @@
 //
 
 #import "BaseTableViewController.h"
+#import "ShareH5.h"
 
 @interface MineTableViewController : BaseTableViewController
 @property (strong, nonatomic) IBOutlet UIImageView *headImageView;

@@ -47,6 +47,10 @@ typedef NS_ENUM(NSInteger,ReSumeType) {
      ReSumeType resumeType; // 1.免费  2.付费  3.热门
     
     
+    NSString *_searchTag;
+    
+    
+    
     
 }
 @end
@@ -56,7 +60,7 @@ typedef NS_ENUM(NSInteger,ReSumeType) {
 - (void)viewDidLoad {
     [super viewDidLoad];
         
-    self.title = @"推荐";
+//    self.title = @"";
     
     _JDArray = [[NSMutableArray alloc]init];
     _searchResultsArray = [[NSMutableArray alloc]init];
@@ -87,13 +91,16 @@ typedef NS_ENUM(NSInteger,ReSumeType) {
     
 //    
 //    // 添加头部选择栏
-    [self.view addSubview:self.headerView];
+
+    
     
     
     pageindex = 1;
     size = 10;
     resumeType = ResumeTypePay;
     
+    
+    [self getMyTags];
     
     
     [self setTabBarColor];
@@ -151,21 +158,90 @@ typedef NS_ENUM(NSInteger,ReSumeType) {
     
 }
 
-
-#pragma mark - 顶部 付费 免费 热门
--(RecommendHeaderView*)headerView
+#pragma mark - 获取我的标签
+-(void)getMyTags
 {
-    if (!_headerView) {
+    NSString *user_id = [UserInfo getuserid];
+    
+    if (!user_id) {
         
-        _headerView = [[RecommendHeaderView alloc]initWithFrame:CGRectMake(0, 64, ScreenWidth, 36)];
-        
-        _headerView.delegate = self;
-       
+        return;
     }
     
-    return _headerView;
+    NSDictionary *param = @{@"user_id":user_id};
+    
+    [[TLRequest shareRequest ] tlRequestWithAction:kgetUserLabel Params:param result:^(BOOL isSuccess, id data) {
+        
+        if (isSuccess) {
+            
+            
+        }
+    }];
+    
     
 }
+#pragma mark  - 通过标签搜索
+-(void)searchFromTag
+{
+    
+    NSString *user_id = [UserInfo getuserid];
+    
+    _searchTag = @"电子";
+    
+    if (!user_id || !_searchTag) {
+        
+        
+        return;
+    }
+    NSDictionary *param = @{@"search":_searchTag,@"index":@(pageindex),@"size":@(10),@"user_id":user_id};
+    
+    
+    
+    [[TLRequest shareRequest] tlRequestWithAction:ksearchResumes Params:param result:^(BOOL isSuccess, id data) {
+       
+        
+        [self.tableView.header endRefreshing];
+        [self.tableView.footer endRefreshing];
+        
+        
+        if (isSuccess) {
+            
+            NSArray *dataArray = [[NSArray alloc]init];//请求获取到的数据
+            
+            NSMutableArray *array = [[NSMutableArray alloc]init];//解析后的数据
+            
+            if ([data isKindOfClass:[NSArray class]]) {
+                dataArray = data;
+            }
+            
+            for (NSInteger i = 0; i < dataArray.count; i++) {
+                NSDictionary *oneDic = [dataArray objectAtIndex:i];
+                ModelItem *item = [[ModelItem alloc]init];
+                [item setValuesForKeysWithDictionary:oneDic];
+                
+                
+                [array addObject:item];
+                
+                
+                
+            }
+            
+            if (pageindex == 1)
+            {
+                
+                [_JDArray removeAllObjects];
+                
+            }
+            
+            [_JDArray addObjectsFromArray:array];
+            
+            [self.tableView reloadData];
+            
+        }
+    }];
+}
+
+
 
 
 
@@ -197,7 +273,10 @@ typedef NS_ENUM(NSInteger,ReSumeType) {
 {
     pageindex = 1;
     
-    [self getData];
+//    [self getData];
+    
+    [self searchFromTag];
+    
     
 }
 
@@ -210,28 +289,13 @@ typedef NS_ENUM(NSInteger,ReSumeType) {
 }
 
 
+#pragma mark - 默认获取简历列表  或者 搜索 行业 职位 等关键字
 -(void)getData
 {
     
-     NSDictionary *param = @{@"index":@(pageindex),@"size":@(size),@"isHot":@"",@"isFree":@(1)};
+     NSDictionary *param = @{@"index":@(pageindex),@"size":@(size),@"search":@""};
     
     
-    //免费加 isFree
-    if (resumeType == ResumeTypeFree) {
-        
-        param = @{@"index":@(pageindex),@"size":@(size),@"isFree":@(0)};
-        
-    }
-    
-    
-    if (resumeType == ResumeTypeHot) {
-        
-        param = @{@"index":@(pageindex),@"size":@(size),@"isHot":@"1"};
-    }
-   
-    
- 
- 
     [[TLRequest shareRequest] tlRequestWithAction:kgetCommendResumes Params:param result:^(BOOL isSuccess, id data) {
        
         [self.tableView.header endRefreshing];
@@ -271,7 +335,7 @@ typedef NS_ENUM(NSInteger,ReSumeType) {
             
             [self.tableView reloadData];
             
-        }
+         }
         
     }];
     

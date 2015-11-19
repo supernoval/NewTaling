@@ -9,9 +9,9 @@
 
 
 //本地测试
-//#define  kRequestHeader   @"http://192.168.40.159/taling-api"
+#define  kRequestHeader   @"http://192.168.40.176/taling-api"
 //正式
-#define  kRequestHeader     @"http://183.131.151.50/taling-api"
+//#define  kRequestHeader     @"http://183.131.151.50/taling-api"
 
 //#define  kRequestHeader     @"http://www.talentbot.cn/taling-api"
 
@@ -21,8 +21,11 @@
 //注册
 /*
  
- * username
+ * username      公司账号传 公司邮箱
  * password
+ 
+ * is_company     公司 1   个人 0
+ * phone          只有公司注册 并且通过手机验证才有
  */
 #define kRegist       @"/user/register"
 
@@ -41,9 +44,11 @@
  *work_year   工作年限
  *nickname    昵称
  *industry    行业
- *summary     自我描述
+ *summary     自我描述  标签 
  *company     所在公司
  *photo       图片在appendData 里加
+ *speciality   擅长
+ 
  */
 #define kupdateUser   @"/user/updateUser"
 
@@ -101,11 +106,26 @@
  *index  
  *size
  * search  //可选
- * isFree   // 0免费  
- * isHot    // 1热门  不是热门空字符串
+
  */
 #define kgetCommendResumes @"/resume/getCommendResumes"
 
+
+//搜索标签 获取简历数据
+/*
+ search
+ index
+ size
+ user_id
+ */
+#define ksearchResumes    @"/resume/searchResumes"
+
+
+// 获取我搜索过的标签记录
+/*
+ user_id    用户id
+ */
+#define kgetUserLabel      @"/resume/getUserLabel"
 
 //获取上传的简历
 /*
@@ -192,7 +212,7 @@
  * money
  * type 1 支付宝 2微信
  * action 1 提现 2 充值
- *account
+ *account  //提现的时候账号     /充值的时候如果需要发票，则为发票抬头
  */
 #define kBuyAndCash     @"/money/inpour"
 
@@ -202,3 +222,18 @@
  * email
  */
 #define kBindingEmail     @"/user/bindingEmail"
+
+
+#pragma mark -获取我的优惠券
+/*
+ * user_id   用户id
+ *
+ */
+#define kGetMyCoupon    @"/user/getMyCoupon"
+
+
+#pragma mark - H5分享地址
+/*
+ *app      填用户id  user_id
+ */
+#define kShareH5         @"/test.jsp"

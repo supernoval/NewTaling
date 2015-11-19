@@ -129,7 +129,7 @@
             
             NSString *amount = [NSString stringWithFormat:@"%.2f",[_moneyTextField.text floatValue]];
             
-            NSDictionary *param = @{@"user_id":[UserInfo getuserid],@"money":amount,@"type":@(_payType),@"action":@"2",@"account":@""};
+            NSDictionary *param = @{@"user_id":[UserInfo getuserid],@"money":amount,@"type":@(_payType),@"action":@"2",@"account":@"发票抬头"};
             
             [[TLRequest shareRequest]tlRequestWithAction:kBuyAndCash Params:param result:^(BOOL isSuccess, id data){
                 

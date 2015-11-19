@@ -213,7 +213,7 @@
 #pragma mark - 提交注册
 -(void)summitRegist
 {
-    NSDictionary *param = @{@"username":_phoneTF.text,@"password":_codeTF.text};
+    NSDictionary *param = @{@"username":_phoneTF.text,@"password":_codeTF.text,@"is_company":@"0"};
     
     
     TLRequest *request = [TLRequest shareRequest];

@@ -230,6 +230,7 @@
 		153F3BD91BD3641600C86F1A /* RecommendHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 153F3BD81BD3641600C86F1A /* RecommendHeaderView.m */; };
 		1579153D1B8F52E100E31111 /* MineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1579153C1B8F52E100E31111 /* MineTableViewController.m */; };
 		157915411B8F54DD00E31111 /* PersonalInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 157915401B8F54DD00E31111 /* PersonalInfoTableView.m */; };
+		15E4FBFB1BFDAE23003EA18A /* ShareH5.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E4FBFA1BFDAE23003EA18A /* ShareH5.m */; };
 		15EE6BE01B92D1CA00FBD86C /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EE6BDF1B92D1CA00FBD86C /* MAMapKit.framework */; };
 		15EE6BE21B92D21200FBD86C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EE6BE11B92D21200FBD86C /* UIKit.framework */; };
 		15EE6BE41B92D21800FBD86C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EE6BE31B92D21800FBD86C /* Foundation.framework */; };
@@ -892,6 +893,8 @@
 		1579153C1B8F52E100E31111 /* MineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewController.m; sourceTree = "<group>"; };
 		1579153F1B8F54DD00E31111 /* PersonalInfoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfoTableView.h; sourceTree = "<group>"; };
 		157915401B8F54DD00E31111 /* PersonalInfoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoTableView.m; sourceTree = "<group>"; };
+		15E4FBF91BFDAE23003EA18A /* ShareH5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareH5.h; sourceTree = "<group>"; };
+		15E4FBFA1BFDAE23003EA18A /* ShareH5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareH5.m; sourceTree = "<group>"; };
 		15EE6BDF1B92D1CA00FBD86C /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		15EE6BE11B92D21200FBD86C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		15EE6BE31B92D21800FBD86C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -1512,6 +1515,7 @@
 		1506DF481B89B36D007D1696 /* Taling */ = {
 			isa = PBXGroup;
 			children = (
+				15E4FBF81BFDADE7003EA18A /* ShareH5 */,
 				1302D78F1BDF49CF00FB4D11 /* PayOrder */,
 				153F3AA91BD1FD3200C86F1A /* HR */,
 				139DC54A1BCE74EC00AA9C27 /* Chat */,
@@ -2432,6 +2436,15 @@
 			name = personalInfo;
 			sourceTree = "<group>";
 		};
+		15E4FBF81BFDADE7003EA18A /* ShareH5 */ = {
+			isa = PBXGroup;
+			children = (
+				15E4FBF91BFDAE23003EA18A /* ShareH5.h */,
+				15E4FBFA1BFDAE23003EA18A /* ShareH5.m */,
+			);
+			name = ShareH5;
+			sourceTree = "<group>";
+		};
 		15EE6BED1B92F61700FBD86C /* addressPickVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -2815,6 +2828,7 @@
 				13AA5EAD1B95CCEF00AB477E /* AFSecurityPolicy.m in Sources */,
 				B3FB2A3D1BC26235003ACC5D /* ChangeProgessionTVC.m in Sources */,
 				153F3B6C1BD279E000C86F1A /* MWZoomingScrollView.m in Sources */,
+				15E4FBFB1BFDAE23003EA18A /* ShareH5.m in Sources */,
 				153F3B661BD279E000C86F1A /* MWGridCell.m in Sources */,
 				153F3B891BD279E000C86F1A /* PSTGridLayoutRow.m in Sources */,
 				1302D78C1BDF49BF00FB4D11 /* ApiXml.mm in Sources */,
@@ -3156,7 +3170,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "13e810d6-e6a1-4e00-b3c8-7e640424bb50";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};

@@ -35,7 +35,6 @@ TLRequest *request;
 {
     
     NSString *url = [NSString stringWithFormat:@"%@%@",kRequestHeader,action];
-    NSLog(@"url:%@,param:%@",url,param);
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
@@ -64,6 +63,7 @@ TLRequest *request;
             
         }
         
+        NSLog(@"url:%@,param:%@",url,param);
         
         NSLog(@"success:%@",responseObject);
         
