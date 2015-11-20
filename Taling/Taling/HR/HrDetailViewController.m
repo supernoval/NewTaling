@@ -55,11 +55,26 @@
     
     [self requestUpLoadResumes];
     
+    
+    [self getGuanZhuList];
+    
   
     
 
 }
 
+-(void)getGuanZhuList
+{
+    NSDictionary *param = @{@"user_id":[UserInfo getuserid],@"index":@"1",@"size":@"20"};
+    
+    [[TLRequest shareRequest ] tlRequestWithAction:kgetAttention Params:param result:^(BOOL isSuccess, id data) {
+      
+        if (isSuccess) {
+            
+            
+        }
+    }];
+}
 -(void)setHrInfoItem
 {
     NSString *username = _hrInfoItem.username;
@@ -260,7 +275,6 @@
             
             
      }else
-            
         {
             
         }
@@ -276,10 +290,40 @@
 - (IBAction)chatAction:(id)sender {
     
     
-    NSString *chatter = _hrInfoItem.username;
-    ChatViewController *chatVC = [[ChatViewController alloc] initWithChatter:chatter isGroup:NO];
-    chatVC.title =chatter;
-    [self.navigationController pushViewController:chatVC animated:YES];
+//    NSString *chatter = _hrInfoItem.username;
+//    ChatViewController *chatVC = [[ChatViewController alloc] initWithChatter:chatter isGroup:NO];
+//    chatVC.title =chatter;
+//    [self.navigationController pushViewController:chatVC animated:YES];
+    
+    
+    
+     //关注
+    
+//    NSDictionary *param = @{@"hr_id":_hrInfoItem.id,@"user_id":[UserInfo getuserid]};
+//    
+//    [[TLRequest shareRequest]  tlRequestWithAction:kAttentionHr Params:param result:^(BOOL isSuccess, id data) {
+//       
+//        if (isSuccess) {
+//            
+//            [CommonMethods showDefaultErrorString:@"关注成功"];
+//            
+//            
+//        }
+//    }];
+//    
+    
+    
+    //取消关注
+#warning 测试
+    NSDictionary *cancelParam = @{@"hr_id":_hrInfoItem.id,@"user_id":[UserInfo getuserid]};
+    
+    [[TLRequest shareRequest ] tlRequestWithAction:kcancelAttention Params:cancelParam result:^(BOOL isSuccess, id data) {
+       
+        if (isSuccess) {
+            
+            
+        }
+    }];
     
     
 }

@@ -29,6 +29,7 @@
 
 - (IBAction)chatAction:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *guanzhuButton;
 
 
 

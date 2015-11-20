@@ -76,7 +76,7 @@ TLRequest *request;
         
         block(NO,nil);
         
-        
+        NSLog(@"url:%@,param:%@",url,param);
         NSLog(@"fail:%@,%@",error,operation.responseString);
     }];
     

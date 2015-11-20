@@ -14,6 +14,8 @@
 #import "MyProgressHUD.h"
 #import "Location.h"
 #import "ChatAccountManager.h"
+#import "EmailRegistTVC.h"
+
 
 
 
@@ -102,10 +104,14 @@
     
     
     
-    RegistTableViewController *registTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RegistTableViewController"];
+//    RegistTableViewController *registTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RegistTableViewController"];
+//    
+//    [self.navigationController pushViewController:registTVC animated:YES];
+//    
     
-    [self.navigationController pushViewController:registTVC animated:YES];
+    EmailRegistTVC *_emailReistTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"EmailRegistTVC"];
     
+    [self.navigationController pushViewController:_emailReistTVC animated:YES];
     
     
     

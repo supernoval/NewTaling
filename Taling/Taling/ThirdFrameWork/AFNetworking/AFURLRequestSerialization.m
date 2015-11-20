@@ -120,7 +120,7 @@ static NSString * AFQueryStringFromParametersWithEncoding(NSDictionary *paramete
         [mutablePairs addObject:[pair URLEncodedStringValueWithEncoding:stringEncoding]];
     }
 
-    NSLog(@">>>>>>>>>>>%@",mutablePairs);
+  
     
     return [mutablePairs componentsJoinedByString:@"&"];
 }

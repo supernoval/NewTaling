@@ -29,12 +29,26 @@
  */
 #define kRegist       @"/user/register"
 
-
+//上传公司信息
+/*
+    user_id
+    company_name
+    company_code     税务登记号
+    company_number   组织机构代码
+    pic_license    //营业执照
+    pic_IDCARD1
+    pic_IDCARD2
+ 
+ */
+#define kuploadCompanyInfo   @"/user/uploadCompanyInfo"
 
 //登陆
 /*
  * username
  * password
+ 
+ 返回 is_active   0未激活 1已激活
+ 返回  userStatus  0已传公司信息   1公司账号未激活   2账号已激活 未传资料
  */
 #define kLogin     @"/user/login"
 
@@ -237,3 +251,26 @@
  *app      填用户id  user_id
  */
 #define kShareH5         @"/test.jsp"
+
+
+#pragma mark 添加关注 
+/*
+ * hr_id
+ * user_id  
+ */
+#define kAttentionHr    @"/attention/attentionHr"
+
+#pragma mark - 取消关注
+/*
+ *  hr_id
+    user_id
+ */
+#define kcancelAttention  @"/attention/cancelAttention"
+
+
+
+#pragma mark - 获取关注列表
+/*
+ * user_id
+ */
+#define kgetAttention    @"/attention/getAttention"
