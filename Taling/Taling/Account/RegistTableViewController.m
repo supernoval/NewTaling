@@ -237,7 +237,7 @@
     
 }
 
-- (IBAction)showPrivacy:(id)sender {
+- (void)showPrivacy:(id)sender {
     
     UINavigationController *_privacy = [self.storyboard instantiateViewControllerWithIdentifier:@"privacyNav"];
     
