@@ -126,6 +126,7 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     RecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:@"recomendCell"];
+    /*
     
     ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
     
@@ -182,7 +183,7 @@
     
     [cell.buyButton addTarget:self action:@selector(buyTheResume:) forControlEvents:UIControlEventTouchUpInside];
     
-    cell.buyButton.tag = indexPath.section;
+    cell.buyButton.tag = indexPath.section;*/
     
     
     return cell;

@@ -174,6 +174,7 @@
 
     
     RecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:@"recomendCell"];
+    /*
     
     if (_JDArray.count > indexPath.section) {
         
@@ -233,7 +234,7 @@
         
         cell.buyButton.tag = indexPath.section;
         
-    }
+    }*/
     
     return cell;
 }

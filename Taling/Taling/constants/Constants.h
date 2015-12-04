@@ -73,6 +73,7 @@
 /*宽高*/
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
+#define TagGap 10
 
 
 /*字体*/
@@ -103,7 +104,7 @@
 //背景色
 #define kBackgroundColor RGB(240,240,240,1)
 #define kContentColor [UIColor whiteColor]
-#define kLineColor RGB(240,240,240,1)
+#define kLineColor RGB(226,226,226,1)
 //蓝绿字体
 #define kBlueColor RGB(65,174,158,1)
 

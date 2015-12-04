@@ -17,24 +17,6 @@
     _headImageView.clipsToBounds = YES;
     _headImageView.layer.cornerRadius = 5.0;
     
-    _businessWidth.constant = (ScreenWidth - 31)/2;
-    
-    _companyWidth.constant = (ScreenWidth - 31)/2;
-    
-    _professionWidth.constant = (ScreenWidth - 31)/2;
-    
-    _yeatWidth.constant = (ScreenWidth - 31)/2;
-    
-    _buyButton.clipsToBounds = YES;
-    _buyButton.layer.cornerRadius = 5.0;
-    
-    _placeLabel.textColor = kExtralLightGrayColor;
-    _nameLabel.textColor = kTitleColor;
-    
-    _companyLabel.textColor = kTextLightGrayColor;
-    _professionLabel.textColor = kTextLightGrayColor;
-    _yearLabel.textColor = kTextLightGrayColor;
-    _businessLabel.textColor = kTextLightGrayColor;
     
     
 }

@@ -12,43 +12,18 @@
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
 
 
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *idLabel;
 
 
-@property (weak, nonatomic) IBOutlet UILabel *placeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *placeLabel;//地点&行业
 
 
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 
-@property (strong, nonatomic) IBOutlet UILabel *businessLabel;
-
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *businessWidth;
 
 
-@property (strong, nonatomic) IBOutlet UILabel *companyLabel;
-
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *companyWidth;
+@property (strong, nonatomic) IBOutlet UILabel *companyLabel;//公司&职业
 
 
-@property (strong, nonatomic) IBOutlet UILabel *professionLabel;
-
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *professionWidth;
-
-
-@property (strong, nonatomic) IBOutlet UILabel *yearLabel;
-
-
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *yeatWidth;
-
-
-@property (strong, nonatomic) IBOutlet UIButton *priseButton;
-
-
-@property (strong, nonatomic) IBOutlet UIButton *messageButton;
-
-
-@property (strong, nonatomic) IBOutlet UIButton *collectButton;
-
-@property (weak, nonatomic) IBOutlet UIButton *buyButton;
 
 @end

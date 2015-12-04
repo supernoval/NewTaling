@@ -13,6 +13,8 @@
 #import "ChatAccountManager.h"
 #import "UIImageView+WebCache.h"
 #import "SearchTableViewController.h"
+#import "RecommendCell.h"
+
 
 
 typedef NS_ENUM(NSInteger,ReSumeType) {
@@ -68,14 +70,7 @@ typedef NS_ENUM(NSInteger,ReSumeType) {
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = kBackgroundColor;
-    
-//    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"getdistance"] style:UIBarButtonItemStylePlain target:self action:@selector(showSortView)];
-//    
-//    
-//    self.navigationItem.leftBarButtonItem = item;
-    
-    _selectedView = [[SelectView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
-    
+        
     _searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(50, 0, ScreenWidth, 44)];
     _searchBar.delegate = self;
     _searchBar.placeholder = @"行业、职位、城市、资历";
@@ -143,9 +138,6 @@ typedef NS_ENUM(NSInteger,ReSumeType) {
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-   
-    
   
 
     
@@ -465,58 +457,21 @@ typedef NS_ENUM(NSInteger,ReSumeType) {
     }
     
     
-    //姓名
-    cell.nameLabel.text = oneItem.name;
-    
-    
-    //城市、教育程度
-    NSString *edu = @"";
-    if (oneItem.eduexpenrience.count > 0) {
-        NSDictionary *eduDic = [oneItem.eduexpenrience firstObject];
-        edu = [eduDic objectForKey:@"degree"];
-    }
-    cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,edu];
-    
+    //ID
+//    cell.idLabel.text = oneItem.name;
+        
     // 简历估值
-    cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",oneItem.price] ;
-    
-    //行业
-    cell.businessLabel.text = [NSString stringWithFormat:@"行业:%@",oneItem.currentIndustry];
-    
-    //职业
-    cell.professionLabel.text = [NSString stringWithFormat:@"职位:%@",oneItem.currentPosition];
-    
-    //公司
-    cell.companyLabel.text = [NSString stringWithFormat:@"公司:%@",oneItem.currentCompany];
-    
-    //资历
-    cell.yearLabel.text = [NSString stringWithFormat:@"资历:%ld年",(long)oneItem.workYears];
-    
-    //点赞数
-    
-        if ([UserInfo isResuemSupport:oneItem.resumesId] == YES) {
-            [cell.priseButton setImage:[UIImage imageNamed:@"likeRed"] forState:UIControlStateNormal];
-        }else{
-            
-            [cell.priseButton setImage:[UIImage imageNamed:@"like"] forState:UIControlStateNormal];
-        }
-        
-        
-        
-    [cell.priseButton setTitle:[NSString stringWithFormat:@"%ld",(long)oneItem.goodNum] forState:UIControlStateNormal];
-    cell.priseButton.tag = indexPath.section;
-    [cell.priseButton addTarget:self action:@selector(supportTheResume:) forControlEvents:UIControlEventTouchUpInside];
-    
-    //评价数
-    [cell.messageButton setTitle:[NSString stringWithFormat:@"%ld",(long)oneItem.appraiseNum] forState:UIControlStateNormal];
-    
-    //购买数
-    [cell.collectButton setTitle:[NSString stringWithFormat:@"%ld",(long)oneItem.buyNum] forState:UIControlStateNormal];
+//    cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",oneItem.price] ;
     
     
-    [cell.buyButton addTarget:self action:@selector(buyTheResume:) forControlEvents:UIControlEventTouchUpInside];
+    //城市&行业
     
-    cell.buyButton.tag = indexPath.section;
+//    cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,edu];
+
+    
+    //公司&职业
+//    cell.companyLabel.text = [NSString stringWithFormat:@"公司:%@",oneItem.currentCompany];
+    
         
     }
     

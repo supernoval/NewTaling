@@ -7,9 +7,6 @@
 //
 
 #import "ResumeDetailVC.h"
-#import "ResumeNameCell.h"
-#import "ResumeExperienceCell.h"
-#import "ResumeOpetationCell.h"
 #import "CommentCell.h"
 #import "ConstantsHeaders.h"
 #import "BuyResumeDetailTVC.h"
@@ -229,51 +226,51 @@
             //姓名等基本信息
             static NSString *nameId = @"ResumeNameCell";
             
-            ResumeNameCell *nameCell = [tableView dequeueReusableCellWithIdentifier:nameId];
-            
-            if (nameCell == nil) {
-                nameCell = [[NSBundle mainBundle]loadNibNamed:@"ResumeNameCell" owner:self options:nil][0];
-            }
-            
-            
-            
-            //头像
-            if (self.item.photo.length > 0) {
-                
-                [nameCell.headImageView sd_setImageWithURL:[NSURL URLWithString:self.item.photo]];
-            }
-            
-            //姓名
-            nameCell.nameLabel.text = self.item.name;
-            nameCell.nameWidth.constant = [StringHeight widthtWithText:self.item.name font:FONT_15 constrainedToHeight:21];
-            //性别
-            if ([self.item.sex isEqualToString:@"男"]) {
-                nameCell.sexImageView.image = [UIImage imageNamed:@"male"];
-            }else if ([self.item.sex isEqualToString:@"女"]){
-                
-                nameCell.sexImageView.image = [UIImage imageNamed:@"female"];
-            }else{
-                
-                nameCell.sexImageView.image = [UIImage imageNamed:@""];
-            }
-            
-            // 简历估值
-            nameCell.moneyLabel.text = [NSString stringWithFormat:@"¥%.2f",self.item.price];
-            
-            
-            //城市、教育程度
-            NSString *edu = @"";
-            if (self.item.eduexpenrience.count > 0) {
-                NSDictionary *eduDic = [self.item.eduexpenrience firstObject];
-                edu = [eduDic objectForKey:@"degree"];
-            }
-            nameCell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",self.item.city,edu];
-            
-            //职业
-            nameCell.professionLabel.text = [NSString stringWithFormat:@"%@ %ld年经验",self.item.currentPosition,(long)self.item.workYears];
-            
-            return nameCell;
-            
+//            ResumeNameCell *nameCell = [tableView dequeueReusableCellWithIdentifier:nameId];
+//            
+//            if (nameCell == nil) {
+//                nameCell = [[NSBundle mainBundle]loadNibNamed:@"ResumeNameCell" owner:self options:nil][0];
+//            }
+//            
+//            
+//            
+//            //头像
+//            if (self.item.photo.length > 0) {
+//                
+//                [nameCell.headImageView sd_setImageWithURL:[NSURL URLWithString:self.item.photo]];
+//            }
+//            
+//            //姓名
+//            nameCell.nameLabel.text = self.item.name;
+//            nameCell.nameWidth.constant = [StringHeight widthtWithText:self.item.name font:FONT_15 constrainedToHeight:21];
+//            //性别
+//            if ([self.item.sex isEqualToString:@"男"]) {
+//                nameCell.sexImageView.image = [UIImage imageNamed:@"male"];
+//            }else if ([self.item.sex isEqualToString:@"女"]){
+//                
+//                nameCell.sexImageView.image = [UIImage imageNamed:@"female"];
+//            }else{
+//                
+//                nameCell.sexImageView.image = [UIImage imageNamed:@""];
+//            }
+//            
+//            // 简历估值
+//            nameCell.moneyLabel.text = [NSString stringWithFormat:@"¥%.2f",self.item.price];
+//            
+//            
+//            //城市、教育程度
+//            NSString *edu = @"";
+//            if (self.item.eduexpenrience.count > 0) {
+//                NSDictionary *eduDic = [self.item.eduexpenrience firstObject];
+//                edu = [eduDic objectForKey:@"degree"];
+//            }
+//            nameCell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",self.item.city,edu];
+//            
+//            //职业
+//            nameCell.professionLabel.text = [NSString stringWithFormat:@"%@ %ld年经验",self.item.currentPosition,(long)self.item.workYears];
+//            
+//            return nameCell;
+//            
         }
             break;
             
@@ -333,54 +330,54 @@
                     
                 case 1:
                 {
-                    static NSString *experenceId = @"ResumeExperienceCell";
-                    ResumeExperienceCell *experenceCell = [tableView dequeueReusableCellWithIdentifier:experenceId];
-                    if (experenceCell == nil) {
-                        experenceCell = [[NSBundle mainBundle]loadNibNamed:@"ResumeExperienceCell" owner:self options:nil][0];
-                    }
-                    //工作经历
-                    experenceCell.titleLabel.text = @"工作经历:";
-                    NSString *experienceStr = [CommonMethods getTheWorkExperience:self.item.workexpenrience];
-                    experenceCell.contentLabel.text = experienceStr;
-                    _workHeight = [StringHeight heightWithText:experienceStr font:FONT_15 constrainedToWidth:ScreenWidth-93];
-                    
-                    return experenceCell;
+//                    static NSString *experenceId = @"ResumeExperienceCell";
+//                    ResumeExperienceCell *experenceCell = [tableView dequeueReusableCellWithIdentifier:experenceId];
+//                    if (experenceCell == nil) {
+//                        experenceCell = [[NSBundle mainBundle]loadNibNamed:@"ResumeExperienceCell" owner:self options:nil][0];
+//                    }
+//                    //工作经历
+//                    experenceCell.titleLabel.text = @"工作经历:";
+//                    NSString *experienceStr = [CommonMethods getTheWorkExperience:self.item.workexpenrience];
+//                    experenceCell.contentLabel.text = experienceStr;
+//                    _workHeight = [StringHeight heightWithText:experienceStr font:FONT_15 constrainedToWidth:ScreenWidth-93];
+//                    
+//                    return experenceCell;
                     
                 }
                     break;
                     
                 case 2:
                 {
-                    static NSString *experenceId = @"ResumeExperienceCell";
-                    ResumeExperienceCell *experenceCell = [tableView dequeueReusableCellWithIdentifier:experenceId];
-                    if (experenceCell == nil) {
-                        experenceCell = [[NSBundle mainBundle]loadNibNamed:@"ResumeExperienceCell" owner:self options:nil][0];
-                    }
-                    //办公技巧
-                    NSString *skillsStr = [CommonMethods getTheSkills:self.item.skills];
-                    experenceCell.titleLabel.text = @"办公技巧:";
-                    experenceCell.contentLabel.text = skillsStr;
-                    _skillsHeight = [StringHeight heightWithText:skillsStr font:FONT_15 constrainedToWidth:ScreenWidth-93];
-                    
-                    return experenceCell;
+//                    static NSString *experenceId = @"ResumeExperienceCell";
+//                    ResumeExperienceCell *experenceCell = [tableView dequeueReusableCellWithIdentifier:experenceId];
+//                    if (experenceCell == nil) {
+//                        experenceCell = [[NSBundle mainBundle]loadNibNamed:@"ResumeExperienceCell" owner:self options:nil][0];
+//                    }
+//                    //办公技巧
+//                    NSString *skillsStr = [CommonMethods getTheSkills:self.item.skills];
+//                    experenceCell.titleLabel.text = @"办公技巧:";
+//                    experenceCell.contentLabel.text = skillsStr;
+//                    _skillsHeight = [StringHeight heightWithText:skillsStr font:FONT_15 constrainedToWidth:ScreenWidth-93];
+//                    
+//                    return experenceCell;
                     
                 }
                     break;
                     
                 case 3:
                 {
-                    static NSString *experenceId = @"ResumeExperienceCell";
-                    ResumeExperienceCell *experenceCell = [tableView dequeueReusableCellWithIdentifier:experenceId];
-                    if (experenceCell == nil) {
-                        experenceCell = [[NSBundle mainBundle]loadNibNamed:@"ResumeExperienceCell" owner:self options:nil][0];
-                    }
-                    //生活喜好
-                    experenceCell.titleLabel.text = @"个人总结:";
-                    experenceCell.contentLabel.text = self.item.summary;
-                    _likeHeight = [StringHeight heightWithText:self.item.summary font:FONT_15 constrainedToWidth:ScreenWidth-93];
-                    
-                    return experenceCell;
-                    
+//                    static NSString *experenceId = @"ResumeExperienceCell";
+//                    ResumeExperienceCell *experenceCell = [tableView dequeueReusableCellWithIdentifier:experenceId];
+//                    if (experenceCell == nil) {
+//                        experenceCell = [[NSBundle mainBundle]loadNibNamed:@"ResumeExperienceCell" owner:self options:nil][0];
+//                    }
+//                    //生活喜好
+//                    experenceCell.titleLabel.text = @"个人总结:";
+//                    experenceCell.contentLabel.text = self.item.summary;
+//                    _likeHeight = [StringHeight heightWithText:self.item.summary font:FONT_15 constrainedToWidth:ScreenWidth-93];
+//                    
+//                    return experenceCell;
+//                    
                 }
                     break;
                     

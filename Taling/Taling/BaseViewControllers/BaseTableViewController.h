@@ -26,6 +26,8 @@
 
 #import "ConstantsHeaders.h"
 
+#import "TagLabel.h"
+
 @interface BaseTableViewController : UITableViewController
 {
     
