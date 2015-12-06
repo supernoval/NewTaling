@@ -1,21 +1,20 @@
 //
-//  FocusCell.m
+//  HRDetailCell.m
 //  Taling
 //
 //  Created by Leo on 15/12/5.
 //  Copyright © 2015年 ZhuHaikun. All rights reserved.
 //
 
-#import "FocusCell.h"
+#import "HRDetailCell.h"
 
-@implementation FocusCell
+@implementation HRDetailCell
 
 - (void)awakeFromNib {
-    // Initialization code
     _headImageView.clipsToBounds = YES;
-    _headImageView.layer.cornerRadius = 4.0;
+    _headImageView.layer.cornerRadius = 5.0;
     _focusButton.clipsToBounds = YES;
-    _focusButton.layer.cornerRadius = 4.0;
+    _focusButton.layer.cornerRadius = 5.0;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

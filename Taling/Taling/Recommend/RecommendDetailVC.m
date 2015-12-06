@@ -11,6 +11,7 @@
 #import "SummaryCell.h"
 #import "FocusCell.h"
 #import "CommentCell.h"
+#import "BuyResumeDetailTVC.h"
 
 @interface RecommendDetailVC ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -46,7 +47,7 @@
         tagRow = count/4 + 1;
     }
     
-    UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40*tagRow+10)];
+    UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40*tagRow)];
     
     blankFooter.backgroundColor = [UIColor whiteColor];
     for (NSInteger i = 0; i < count; i++) {
@@ -57,9 +58,9 @@
         
     }
     
-    UIView *gap = [[UIView alloc]initWithFrame:CGRectMake(0, blankFooter.frame.size.height-10, ScreenWidth, 10)];
-    gap.backgroundColor = kBackgroundColor;
-    [blankFooter addSubview:gap];
+//    UIView *gap = [[UIView alloc]initWithFrame:CGRectMake(0, blankFooter.frame.size.height-10, ScreenWidth, 10)];
+//    gap.backgroundColor = kBackgroundColor;
+//    [blankFooter addSubview:gap];
     
     if (section == 3) {
         return blankFooter;
@@ -82,6 +83,10 @@
     commentNum.textColor = [UIColor blackColor];
     [blankFooter addSubview:commentNum];
     
+    UILabel *line = [[UILabel alloc]initWithFrame:CGRectMake(0, blankFooter.frame.size.height-1, ScreenWidth, 0.3)];
+    line.backgroundColor = kLineColor;
+    [blankFooter addSubview:line];
+    
     if (section == 3) {
         return blankFooter;
     }else{
@@ -92,9 +97,9 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     if (section == 3) {
-        return 90;
+        return 80;
     }
-    return 0.1;
+    return 0.8;
     
 }
 
@@ -271,4 +276,12 @@
 }
 
 
+- (IBAction)collecAction:(UIButton *)sender {
+}
+
+- (IBAction)buyAction:(id)sender {
+    
+    BuyResumeDetailTVC *buy = [self.storyboard instantiateViewControllerWithIdentifier:@"BuyResumeDetailTVC"];
+    [self.navigationController pushViewController:buy animated:YES];
+}
 @end

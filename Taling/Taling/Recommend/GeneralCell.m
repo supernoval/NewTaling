@@ -1,21 +1,17 @@
 //
-//  FocusCell.m
+//  GeneralCell.m
 //  Taling
 //
 //  Created by Leo on 15/12/5.
 //  Copyright © 2015年 ZhuHaikun. All rights reserved.
 //
 
-#import "FocusCell.h"
+#import "GeneralCell.h"
 
-@implementation FocusCell
+@implementation GeneralCell
 
 - (void)awakeFromNib {
     // Initialization code
-    _headImageView.clipsToBounds = YES;
-    _headImageView.layer.cornerRadius = 4.0;
-    _focusButton.clipsToBounds = YES;
-    _focusButton.layer.cornerRadius = 4.0;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

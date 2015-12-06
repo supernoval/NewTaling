@@ -16,4 +16,6 @@
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *collectWidth;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *buyWidth;
 
+- (IBAction)collecAction:(UIButton *)sender;
+- (IBAction)buyAction:(id)sender;
 @end

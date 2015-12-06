@@ -80,7 +80,7 @@
     }
     else
     {
-        [self.tableView.header beginRefreshing];
+//        [self.tableView.header beginRefreshing];
         
     }
     
@@ -279,7 +279,7 @@
         tagRow = count/4 + 1;
     }
     
-    UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40*tagRow+10)];
+    UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40*tagRow+1)];
     
     blankFooter.backgroundColor = [UIColor whiteColor];
     for (NSInteger i = 0; i < count; i++) {
@@ -290,16 +290,21 @@
         
     }
     
-    UIView *gap = [[UIView alloc]initWithFrame:CGRectMake(0, blankFooter.frame.size.height-10, ScreenWidth, 10)];
-    gap.backgroundColor = kBackgroundColor;
-    [blankFooter addSubview:gap];
+//    UIView *gap = [[UIView alloc]initWithFrame:CGRectMake(15, blankFooter.frame.size.height-1, ScreenWidth-15, 1)];
+//    gap.backgroundColor = kLineColor;
+//    [blankFooter addSubview:gap];
+    
+    UIButton *detailAction = [[UIButton alloc]initWithFrame:blankFooter.frame];
+    [detailAction addTarget:self action:@selector(pushToDetailAction:) forControlEvents:UIControlEventTouchUpInside];
+    detailAction.tag = section;
+    [blankFooter addSubview:detailAction];
     
     return blankFooter;
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 90;
+    return 80;
     
 }
 
@@ -455,7 +460,12 @@
     
 }
 
-
+- (void)pushToDetailAction:(UIButton *)btn{
+    
+    RecommendDetailVC *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"RecommendDetailVC"];
+    [self.navigationController pushViewController:detail animated:YES];
+    
+}
 
 -(void)setTabBarColor
 {

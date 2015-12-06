@@ -104,9 +104,8 @@
 //背景色
 #define kBackgroundColor RGB(240,240,240,1)
 #define kContentColor [UIColor whiteColor]
-#define kLineColor RGB(226,226,226,1)
 //蓝绿字体
-#define kBlueColor RGB(65,174,158,1)
+#define kBlueColor RGB(131,205,219,1)
 
 //半透明背景色
 #define kTransParentBackColor RGB(200,200,200,0.2)

@@ -260,6 +260,8 @@
 		B30000A71BC3D435006B7B08 /* CommentMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B30000A61BC3D435006B7B08 /* CommentMessageCell.m */; };
 		B30000A91BC3D449006B7B08 /* CommentMeaageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30000A81BC3D449006B7B08 /* CommentMeaageCell.xib */; };
 		B30000AC1BC3D78C006B7B08 /* LikeMessageTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B30000AB1BC3D78C006B7B08 /* LikeMessageTVC.m */; };
+		B3CF9D171C13305700AD158F /* RecommendTalentTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CF9D161C13305700AD158F /* RecommendTalentTVC.m */; settings = {ASSET_TAGS = (); }; };
+		B3CF9D1A1C13307100AD158F /* RecommendAppraiseTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CF9D191C13307100AD158F /* RecommendAppraiseTVC.m */; settings = {ASSET_TAGS = (); }; };
 		B3D3F9D11BC0F14300044F0F /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D3F9D01BC0F14300044F0F /* CommentCell.xib */; };
 		B3D3F9D41BC0F32B00044F0F /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3F9D31BC0F32B00044F0F /* CommentCell.m */; };
 		B3F2D3BC1C11B5D80061F2A2 /* RecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F2D3BB1C11B5D80061F2A2 /* RecommendCell.xib */; settings = {ASSET_TAGS = (); }; };
@@ -270,6 +272,14 @@
 		B3F2D3D51C11FA060061F2A2 /* FocusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F2D3D41C11FA060061F2A2 /* FocusCell.xib */; settings = {ASSET_TAGS = (); }; };
 		B3F2D3D81C11FB9F0061F2A2 /* FocusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3D71C11FB9F0061F2A2 /* FocusCell.m */; settings = {ASSET_TAGS = (); }; };
 		B3F2D3DE1C120D630061F2A2 /* RecommendDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3DD1C120D630061F2A2 /* RecommendDetailVC.m */; settings = {ASSET_TAGS = (); }; };
+		B3F2D3E11C12C4440061F2A2 /* HRListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3E01C12C4440061F2A2 /* HRListVC.m */; settings = {ASSET_TAGS = (); }; };
+		B3F2D3E31C12C7850061F2A2 /* HRListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F2D3E21C12C7850061F2A2 /* HRListCell.xib */; settings = {ASSET_TAGS = (); }; };
+		B3F2D3E61C12DD250061F2A2 /* HRDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3E51C12DD250061F2A2 /* HRDetailTVC.m */; settings = {ASSET_TAGS = (); }; };
+		B3F2D3E81C12DD5D0061F2A2 /* HRDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F2D3E71C12DD5D0061F2A2 /* HRDetailCell.xib */; settings = {ASSET_TAGS = (); }; };
+		B3F2D3EB1C12DD920061F2A2 /* HRDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3EA1C12DD920061F2A2 /* HRDetailCell.m */; settings = {ASSET_TAGS = (); }; };
+		B3F2D3ED1C1302640061F2A2 /* GeneralCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F2D3EC1C1302640061F2A2 /* GeneralCell.xib */; settings = {ASSET_TAGS = (); }; };
+		B3F2D3F01C1303B10061F2A2 /* GeneralCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3EF1C1303B10061F2A2 /* GeneralCell.m */; settings = {ASSET_TAGS = (); }; };
+		B3F2D3F31C1315A30061F2A2 /* ComBuyResumeDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3F21C1315A30061F2A2 /* ComBuyResumeDetailTVC.m */; settings = {ASSET_TAGS = (); }; };
 		B3FB2A351BC25A19003ACC5D /* ChangeNameTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FB2A341BC25A19003ACC5D /* ChangeNameTVC.m */; };
 		B3FB2A3A1BC2621A003ACC5D /* ChangeCompanyTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FB2A391BC2621A003ACC5D /* ChangeCompanyTVC.m */; };
 		B3FB2A3D1BC26235003ACC5D /* ChangeProgessionTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FB2A3C1BC26235003ACC5D /* ChangeProgessionTVC.m */; };
@@ -944,6 +954,10 @@
 		B30000A81BC3D449006B7B08 /* CommentMeaageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentMeaageCell.xib; sourceTree = "<group>"; };
 		B30000AA1BC3D78C006B7B08 /* LikeMessageTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikeMessageTVC.h; sourceTree = "<group>"; };
 		B30000AB1BC3D78C006B7B08 /* LikeMessageTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikeMessageTVC.m; sourceTree = "<group>"; };
+		B3CF9D151C13305600AD158F /* RecommendTalentTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendTalentTVC.h; sourceTree = "<group>"; };
+		B3CF9D161C13305700AD158F /* RecommendTalentTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendTalentTVC.m; sourceTree = "<group>"; };
+		B3CF9D181C13307100AD158F /* RecommendAppraiseTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendAppraiseTVC.h; sourceTree = "<group>"; };
+		B3CF9D191C13307100AD158F /* RecommendAppraiseTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendAppraiseTVC.m; sourceTree = "<group>"; };
 		B3D3F9D01BC0F14300044F0F /* CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
 		B3D3F9D21BC0F32B00044F0F /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
 		B3D3F9D31BC0F32B00044F0F /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
@@ -960,6 +974,19 @@
 		B3F2D3D71C11FB9F0061F2A2 /* FocusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusCell.m; sourceTree = "<group>"; };
 		B3F2D3DC1C120D630061F2A2 /* RecommendDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendDetailVC.h; sourceTree = "<group>"; };
 		B3F2D3DD1C120D630061F2A2 /* RecommendDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendDetailVC.m; sourceTree = "<group>"; };
+		B3F2D3DF1C12C4440061F2A2 /* HRListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRListVC.h; sourceTree = "<group>"; };
+		B3F2D3E01C12C4440061F2A2 /* HRListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRListVC.m; sourceTree = "<group>"; };
+		B3F2D3E21C12C7850061F2A2 /* HRListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HRListCell.xib; sourceTree = "<group>"; };
+		B3F2D3E41C12DD250061F2A2 /* HRDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDetailTVC.h; sourceTree = "<group>"; };
+		B3F2D3E51C12DD250061F2A2 /* HRDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDetailTVC.m; sourceTree = "<group>"; };
+		B3F2D3E71C12DD5D0061F2A2 /* HRDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HRDetailCell.xib; sourceTree = "<group>"; };
+		B3F2D3E91C12DD920061F2A2 /* HRDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDetailCell.h; sourceTree = "<group>"; };
+		B3F2D3EA1C12DD920061F2A2 /* HRDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDetailCell.m; sourceTree = "<group>"; };
+		B3F2D3EC1C1302640061F2A2 /* GeneralCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralCell.xib; sourceTree = "<group>"; };
+		B3F2D3EE1C1303B10061F2A2 /* GeneralCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralCell.h; sourceTree = "<group>"; };
+		B3F2D3EF1C1303B10061F2A2 /* GeneralCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralCell.m; sourceTree = "<group>"; };
+		B3F2D3F11C1315A30061F2A2 /* ComBuyResumeDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComBuyResumeDetailTVC.h; sourceTree = "<group>"; };
+		B3F2D3F21C1315A30061F2A2 /* ComBuyResumeDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComBuyResumeDetailTVC.m; sourceTree = "<group>"; };
 		B3FB2A331BC25A19003ACC5D /* ChangeNameTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeNameTVC.h; sourceTree = "<group>"; };
 		B3FB2A341BC25A19003ACC5D /* ChangeNameTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeNameTVC.m; sourceTree = "<group>"; };
 		B3FB2A381BC2621A003ACC5D /* ChangeCompanyTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeCompanyTVC.h; sourceTree = "<group>"; };
@@ -2026,12 +2053,17 @@
 		153F3AA91BD1FD3200C86F1A /* HR */ = {
 			isa = PBXGroup;
 			children = (
+				B3CF9D141C13303400AD158F /* 推荐的评价 */,
+				B3CF9D131C13302800AD158F /* 推荐的人才 */,
 				D2D9220E1BDDC2D900CE91D2 /* searchHR */,
 				153F3AB31BD2018700C86F1A /* HrDetail */,
 				153F3AAD1BD1FD8F00C86F1A /* HRListTableViewController.h */,
 				153F3AAE1BD1FD8F00C86F1A /* HRListTableViewController.m */,
+				B3F2D3E21C12C7850061F2A2 /* HRListCell.xib */,
 				153F3AB01BD1FDB200C86F1A /* HRListCell.h */,
 				153F3AB11BD1FDB200C86F1A /* HRListCell.m */,
+				B3F2D3DF1C12C4440061F2A2 /* HRListVC.h */,
+				B3F2D3E01C12C4440061F2A2 /* HRListVC.m */,
 			);
 			name = HR;
 			sourceTree = "<group>";
@@ -2041,6 +2073,11 @@
 			children = (
 				153F3AB41BD201AC00C86F1A /* HrDetailViewController.h */,
 				153F3AB51BD201AC00C86F1A /* HrDetailViewController.m */,
+				B3F2D3E41C12DD250061F2A2 /* HRDetailTVC.h */,
+				B3F2D3E51C12DD250061F2A2 /* HRDetailTVC.m */,
+				B3F2D3E71C12DD5D0061F2A2 /* HRDetailCell.xib */,
+				B3F2D3E91C12DD920061F2A2 /* HRDetailCell.h */,
+				B3F2D3EA1C12DD920061F2A2 /* HRDetailCell.m */,
 			);
 			name = HrDetail;
 			sourceTree = "<group>";
@@ -2548,6 +2585,24 @@
 			name = likeMessage;
 			sourceTree = "<group>";
 		};
+		B3CF9D131C13302800AD158F /* 推荐的人才 */ = {
+			isa = PBXGroup;
+			children = (
+				B3CF9D151C13305600AD158F /* RecommendTalentTVC.h */,
+				B3CF9D161C13305700AD158F /* RecommendTalentTVC.m */,
+			);
+			name = "推荐的人才";
+			sourceTree = "<group>";
+		};
+		B3CF9D141C13303400AD158F /* 推荐的评价 */ = {
+			isa = PBXGroup;
+			children = (
+				B3CF9D181C13307100AD158F /* RecommendAppraiseTVC.h */,
+				B3CF9D191C13307100AD158F /* RecommendAppraiseTVC.m */,
+			);
+			name = "推荐的评价";
+			sourceTree = "<group>";
+		};
 		B3F2D3C81C11C63C0061F2A2 /* TagLabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -2555,6 +2610,24 @@
 				B3F2D3CA1C11C65B0061F2A2 /* TagLabel.m */,
 			);
 			name = TagLabel;
+			sourceTree = "<group>";
+		};
+		B3F2D3F41C1316C30061F2A2 /* 公司购买详情 */ = {
+			isa = PBXGroup;
+			children = (
+				B3F2D3F11C1315A30061F2A2 /* ComBuyResumeDetailTVC.h */,
+				B3F2D3F21C1315A30061F2A2 /* ComBuyResumeDetailTVC.m */,
+			);
+			name = "公司购买详情";
+			sourceTree = "<group>";
+		};
+		B3F2D3F51C1316E00061F2A2 /* 个人购买详情 */ = {
+			isa = PBXGroup;
+			children = (
+				D2FCB8FB1BCBEFB900C6ACC0 /* BuyResumeDetailTVC.h */,
+				D2FCB8FC1BCBEFB900C6ACC0 /* BuyResumeDetailTVC.m */,
+			);
+			name = "个人购买详情";
 			sourceTree = "<group>";
 		};
 		B3FB2A361BC261A8003ACC5D /* changeCompany */ = {
@@ -2679,9 +2752,9 @@
 		D2FCB8FA1BCBEF9400C6ACC0 /* buyResume */ = {
 			isa = PBXGroup;
 			children = (
+				B3F2D3F51C1316E00061F2A2 /* 个人购买详情 */,
+				B3F2D3F41C1316C30061F2A2 /* 公司购买详情 */,
 				D2FCB8FE1BCBF10100C6ACC0 /* buyCell */,
-				D2FCB8FB1BCBEFB900C6ACC0 /* BuyResumeDetailTVC.h */,
-				D2FCB8FC1BCBEFB900C6ACC0 /* BuyResumeDetailTVC.m */,
 			);
 			name = buyResume;
 			sourceTree = "<group>";
@@ -2693,6 +2766,9 @@
 				D2FCB9011BCBF14200C6ACC0 /* ResumePayStyleCell.xib */,
 				D2FCB9031BCBF27200C6ACC0 /* ResumePayStyleCell.h */,
 				D2FCB9041BCBF27200C6ACC0 /* ResumePayStyleCell.m */,
+				B3F2D3EC1C1302640061F2A2 /* GeneralCell.xib */,
+				B3F2D3EE1C1303B10061F2A2 /* GeneralCell.h */,
+				B3F2D3EF1C1303B10061F2A2 /* GeneralCell.m */,
 			);
 			name = buyCell;
 			sourceTree = "<group>";
@@ -2794,6 +2870,7 @@
 				153F3BB71BD27AA300C86F1A /* sr_refresh.png in Resources */,
 				D2FCB9001BCBF12200C6ACC0 /* ResumePriceCell.xib in Resources */,
 				B3F2D3D51C11FA060061F2A2 /* FocusCell.xib in Resources */,
+				B3F2D3ED1C1302640061F2A2 /* GeneralCell.xib in Resources */,
 				D2FCB9021BCBF14200C6ACC0 /* ResumePayStyleCell.xib in Resources */,
 				B3D3F9D11BC0F14300044F0F /* CommentCell.xib in Resources */,
 				1506DF5A1B89B36D007D1696 /* LaunchScreen.xib in Resources */,
@@ -2803,7 +2880,9 @@
 				B30000931BC3C52E006B7B08 /* NotifiCell.xib in Resources */,
 				B30000911BC3B2BB006B7B08 /* MessageCell.xib in Resources */,
 				1506E0C41B89B637007D1696 /* SMS_SDKLocalizable.strings in Resources */,
+				B3F2D3E31C12C7850061F2A2 /* HRListCell.xib in Resources */,
 				13C8AD611BC94587009F5B4B /* EaseMob.bundle in Resources */,
+				B3F2D3E81C12DD5D0061F2A2 /* HRDetailCell.xib in Resources */,
 				1506DF571B89B36D007D1696 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2837,6 +2916,7 @@
 				1506E1351B89B646007D1696 /* openssl_wrapper.m in Sources */,
 				1506DFFA1B89B506007D1696 /* SDPhotoBrowser.m in Sources */,
 				1506E25B1B89BDE5007D1696 /* Location.m in Sources */,
+				B3F2D3EB1C12DD920061F2A2 /* HRDetailCell.m in Sources */,
 				B3F2D3CE1C11C8720061F2A2 /* RecomnendTVC.m in Sources */,
 				153F3AF61BD277FB00C86F1A /* FacialView.m in Sources */,
 				B30000AC1BC3D78C006B7B08 /* LikeMessageTVC.m in Sources */,
@@ -2851,6 +2931,7 @@
 				15E4FBFB1BFDAE23003EA18A /* ShareH5.m in Sources */,
 				153F3B661BD279E000C86F1A /* MWGridCell.m in Sources */,
 				153F3B891BD279E000C86F1A /* PSTGridLayoutRow.m in Sources */,
+				B3CF9D171C13305700AD158F /* RecommendTalentTVC.m in Sources */,
 				1302D78C1BDF49BF00FB4D11 /* ApiXml.mm in Sources */,
 				1506DF821B89B46D007D1696 /* StringHeight.m in Sources */,
 				153F3B081BD2796000C86F1A /* THProgressView.m in Sources */,
@@ -2873,6 +2954,7 @@
 				1579153D1B8F52E100E31111 /* MineTableViewController.m in Sources */,
 				153F3B851BD279E000C86F1A /* PSTCollectionViewLayout.m in Sources */,
 				1506E2521B89BD87007D1696 /* ForgetCodeTVC.m in Sources */,
+				B3F2D3F31C1315A30061F2A2 /* ComBuyResumeDetailTVC.m in Sources */,
 				153F3AF11BD277FB00C86F1A /* ChatViewController.m in Sources */,
 				1506E0171B89B521007D1696 /* MJRefreshComponent.m in Sources */,
 				B3FB2A4F1BC298A0003ACC5D /* SettingTVC.m in Sources */,
@@ -2885,6 +2967,7 @@
 				153F3AB61BD201AC00C86F1A /* HrDetailViewController.m in Sources */,
 				139DC5541BCE875000AA9C27 /* NSDate+Category.m in Sources */,
 				153F3AA71BD1F05200C86F1A /* ChatAccountManager.m in Sources */,
+				B3F2D3E11C12C4440061F2A2 /* HRListVC.m in Sources */,
 				1506E03C1B89B53C007D1696 /* JSONModel.m in Sources */,
 				1506E0A71B89B582007D1696 /* UIImageView+HighlightedWebCache.m in Sources */,
 				1302D78D1BDF49BF00FB4D11 /* payRequsestHandler.mm in Sources */,
@@ -2905,12 +2988,14 @@
 				153F3AFE1BD277FB00C86F1A /* EMChatVideoBubbleView.m in Sources */,
 				B300009E1BC3CFCC006B7B08 /* BuyMessageCell.m in Sources */,
 				1506DFFB1B89B506007D1696 /* SDPhotoGroup.m in Sources */,
+				B3CF9D1A1C13307100AD158F /* RecommendAppraiseTVC.m in Sources */,
 				B30000A41BC3D41A006B7B08 /* CommentMessageTVC.m in Sources */,
 				15F33AF61BDD237C00F34B6B /* PrivacyViewController.m in Sources */,
 				B3D3F9D41BC0F32B00044F0F /* CommentCell.m in Sources */,
 				13AA5EAA1B95CCEF00AB477E /* AFHTTPRequestOperationManager.m in Sources */,
 				153F3B841BD279E000C86F1A /* PSTCollectionViewItemKey.m in Sources */,
 				153F3B681BD279E000C86F1A /* MWPhoto.m in Sources */,
+				B3F2D3E61C12DD250061F2A2 /* HRDetailTVC.m in Sources */,
 				153F3B8A1BD279E000C86F1A /* PSTGridLayoutSection.m in Sources */,
 				153F3BC01BD27B7700C86F1A /* XHMessageTextView.m in Sources */,
 				1506E0411B89B53C007D1696 /* JSONAPI.m in Sources */,
@@ -3011,6 +3096,7 @@
 				153F3AF51BD277FB00C86F1A /* DXFaceView.m in Sources */,
 				153F3BD21BD27CBC00C86F1A /* wav.mm in Sources */,
 				1506E1361B89B646007D1696 /* RSADataSigner.m in Sources */,
+				B3F2D3F01C1303B10061F2A2 /* GeneralCell.m in Sources */,
 				153F3B701BD279E000C86F1A /* EMSDWebImageDecoder.m in Sources */,
 				1506E01F1B89B521007D1696 /* UIScrollView+MJExtension.m in Sources */,
 				1506E1321B89B646007D1696 /* DataVerifier.m in Sources */,

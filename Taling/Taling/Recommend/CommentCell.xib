@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="119" id="IV6-Re-qrw" customClass="CommentCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="119" id="IV6-Re-qrw" customClass="CommentCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IV6-Re-qrw" id="0pf-gK-TsT">
@@ -125,19 +125,19 @@
                         <exclude reference="y1z-cR-NfP"/>
                     </mask>
                     <mask key="constraints">
+                        <exclude reference="HLF-5g-s3z"/>
+                        <exclude reference="Qld-bl-bex"/>
                         <exclude reference="6sF-kX-t4q"/>
                         <exclude reference="gxA-E1-DWW"/>
+                        <exclude reference="T4i-bW-JCy"/>
+                        <exclude reference="fR3-xZ-ehn"/>
                         <exclude reference="8F9-ZG-NhT"/>
                         <exclude reference="B23-gk-9bf"/>
                         <exclude reference="GAr-ta-emF"/>
                         <exclude reference="lnL-jF-kRI"/>
-                        <exclude reference="T4i-bW-JCy"/>
-                        <exclude reference="fR3-xZ-ehn"/>
                         <exclude reference="05Z-Sc-rWu"/>
                         <exclude reference="Ztq-Jq-9lK"/>
                         <exclude reference="fGA-fi-lKv"/>
-                        <exclude reference="HLF-5g-s3z"/>
-                        <exclude reference="Qld-bl-bex"/>
                     </mask>
                 </variation>
                 <variation key="heightClass=regular-widthClass=compact">
@@ -145,19 +145,19 @@
                         <include reference="y1z-cR-NfP"/>
                     </mask>
                     <mask key="constraints">
+                        <include reference="HLF-5g-s3z"/>
+                        <include reference="Qld-bl-bex"/>
                         <include reference="6sF-kX-t4q"/>
                         <include reference="gxA-E1-DWW"/>
+                        <include reference="T4i-bW-JCy"/>
+                        <include reference="fR3-xZ-ehn"/>
                         <include reference="8F9-ZG-NhT"/>
                         <include reference="B23-gk-9bf"/>
                         <include reference="GAr-ta-emF"/>
                         <include reference="lnL-jF-kRI"/>
-                        <include reference="T4i-bW-JCy"/>
-                        <include reference="fR3-xZ-ehn"/>
                         <include reference="05Z-Sc-rWu"/>
                         <include reference="Ztq-Jq-9lK"/>
                         <include reference="fGA-fi-lKv"/>
-                        <include reference="HLF-5g-s3z"/>
-                        <include reference="Qld-bl-bex"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>

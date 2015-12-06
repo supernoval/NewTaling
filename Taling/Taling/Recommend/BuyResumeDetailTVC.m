@@ -11,7 +11,7 @@
 #import "MyResumeTVC.h"
 
 @interface BuyResumeDetailTVC ()<UIAlertViewDelegate>
-@property (nonatomic)NSInteger payType;// 1 微信 2 支付宝 3 余额支付
+@property (nonatomic)NSInteger payType;// 1 余额支付 2 微信 3 支付宝
 
 
 @end
@@ -22,9 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"购买简历";
-    _wechatButton.selected = YES;
+    _wechatButton.selected = NO;
     _alipayButton.selected = NO;
-    _remainPayButton.selected = NO;
+    _remainPayButton.selected = YES;
     _payType = 1;
     
     [_wechatButton setImage:[UIImage imageNamed:@"unselect"] forState:UIControlStateNormal];
@@ -36,46 +36,25 @@
     
     self.tableView.tableFooterView = [self tablefooterView];
     
-    //姓名
-    _name.text = self.item.name;
-    
-    //性别
-    _nameWidth.constant = [StringHeight widthtWithText:self.item.name font:FONT_15 constrainedToHeight:18]+5;
-    if ([self.item.sex isEqualToString:@"男"]) {
-        _sex.image = [UIImage imageNamed:@"male"];
-    }else if ([self.item.sex isEqualToString:@"女"]){
-        _sex.image = [UIImage imageNamed:@"female"];
-    }else{
-        _sex.image = [UIImage imageNamed:@""];
-    }
+   
     
     
-    
-    //城市、教育程度
-    NSString *edu = @"";
-    if (self.item.eduexpenrience.count > 0) {
-        NSDictionary *eduDic = [self.item.eduexpenrience firstObject];
-        edu = [eduDic objectForKey:@"degree"];
-    }
-    _place.text = [NSString stringWithFormat:@"%@ %@",self.item.city,edu];
-    
-    //职业
-    _profession.text = [NSString stringWithFormat:@"%@ %ld年经验",self.item.currentPosition,(long)self.item.workYears];
-    
-    //年龄
-    _age.text = [NSString stringWithFormat:@"年龄:%ld",self.item.age];
     
     //城市
-    _city.text = [NSString stringWithFormat:@"城市:%@",self.item.city];
+//    _place.text = [NSString stringWithFormat:@"%@ %@",self.item.city,edu];
     
+   
     //公司
-    _company.text = [NSString stringWithFormat:@"公司:%@",self.item.currentCompany];
+//    _company.text = [NSString stringWithFormat:@"公司:%@",self.item.currentCompany];
     
     //订单价格
-    _price.text = [NSString stringWithFormat:@"¥%.2f",self.item.price];
+//    _price.text = [NSString stringWithFormat:@"¥%.2f",self.item.price];
 
+    //账户余额
+//    _accountMoney
 
-    
+    //需支付
+//    _orderPrice
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(paySuccessNoti) name:kPaySucessNotification object:nil];
     
@@ -126,24 +105,28 @@
     if (indexPath.section == 2) {
         
         if (indexPath.row == 1) {
-            _wechatButton.selected = YES;
+            _wechatButton.selected = NO;
             _alipayButton.selected = NO;
-            _remainPayButton.selected = NO;
+            _remainPayButton.selected = YES;
             _payType = 1;
             
         }
         else if (indexPath.row == 2)
         {
-            _wechatButton.selected = NO;
-            _alipayButton.selected = YES;
+            _wechatButton.selected = YES;
+            _alipayButton.selected = NO;
             _remainPayButton.selected = NO;
             _payType = 2;
         }else if (indexPath.row == 3)
         {
             _wechatButton.selected = NO;
-            _alipayButton.selected = NO;
-            _remainPayButton.selected = YES;
+            _alipayButton.selected = YES;
+            _remainPayButton.selected = NO;
             _payType = 3;
+        }
+    }else if (indexPath.section == 1){
+        if (indexPath.row == 0) {
+            //优惠券
         }
     }
     
@@ -158,11 +141,8 @@
     NSLog(@"userId:%@",self.item.userId);
     float order_price = self.item.price;
   
-#warning test
     NSString *coupon_id = @"4";
     
-    
-#warning test
     
     NSDictionary *param = @{@"resumes_id":@(self.item.resumesId),@"seller_id":self.item.userId,@"buyer_id":buy_id,@"order_price":@(order_price),@"coupon_id":coupon_id};
     
@@ -236,7 +216,7 @@
     _wechatButton.selected = YES;
     _alipayButton.selected = NO;
     _remainPayButton.selected = NO;
-    _payType = 1;
+    _payType = 2;
     
 }
 
@@ -245,7 +225,7 @@
     _wechatButton.selected = NO;
     _alipayButton.selected = YES;
     _remainPayButton.selected = NO;
-    _payType = 2;
+    _payType = 3;
     
 
 }
@@ -305,6 +285,6 @@
     _wechatButton.selected = NO;
     _alipayButton.selected = NO;
     _remainPayButton.selected = YES;
-    _payType = 3;
+    _payType = 1;
 }
 @end

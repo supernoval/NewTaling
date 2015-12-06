@@ -14,7 +14,6 @@
     
     self.headImageView.clipsToBounds = YES;
     self.headImageView.layer.cornerRadius = 5.0;
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

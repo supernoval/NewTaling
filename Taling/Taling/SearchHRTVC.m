@@ -114,33 +114,33 @@
     
     HRListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     
-    HRItem *hrInfo = [_hrdataArray objectAtIndex:indexPath.row];
-    
-    
-    NSString *username = hrInfo.username;
-    NSString *company = hrInfo.company;
-    NSString *industry = hrInfo.industry;
-    
-    
-    if (username.length == 0) {
-        
-        username = [NSString stringWithFormat:@"匿名用户%ld",(long)indexPath.row];
-    }
-    
-    if (company.length == 0) {
-        
-        company = [NSString stringWithFormat:@"未填写公司"];
-    }
-    
-    if (industry.length == 0) {
-        
-        industry = [NSString stringWithFormat:@"未填写行业"];
-        
-    }
-    
-    
-    cell.nameLabel.text = username;
-    cell.compayLabel.text = [NSString stringWithFormat:@"%@ %@",company,industry];
+//    HRItem *hrInfo = [_hrdataArray objectAtIndex:indexPath.row];
+//    
+//    
+//    NSString *username = hrInfo.username;
+//    NSString *company = hrInfo.company;
+//    NSString *industry = hrInfo.industry;
+//    
+//    
+//    if (username.length == 0) {
+//        
+//        username = [NSString stringWithFormat:@"匿名用户%ld",(long)indexPath.row];
+//    }
+//    
+//    if (company.length == 0) {
+//        
+//        company = [NSString stringWithFormat:@"未填写公司"];
+//    }
+//    
+//    if (industry.length == 0) {
+//        
+//        industry = [NSString stringWithFormat:@"未填写行业"];
+//        
+//    }
+//    
+//    
+//    cell.nameLabel.text = username;
+//    cell.compayLabel.text = [NSString stringWithFormat:@"%@ %@",company,industry];
     
     return cell;
     

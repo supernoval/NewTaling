@@ -7,23 +7,33 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SummaryCell" rowHeight="100" id="Hwg-Aq-azC" customClass="SummaryCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SummaryCell" rowHeight="89" id="Hwg-Aq-azC" customClass="SummaryCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hwg-Aq-azC" id="rhR-os-Xik">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="简历概述" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLF-qB-Bai">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="简历概述" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLF-qB-Bai">
                         <rect key="frame" x="15" y="8" width="290" height="18"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="18" id="twX-TH-Xic"/>
+                            <constraint firstAttribute="height" constant="18" id="cIh-2W-mtD"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="cIh-2W-mtD"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="cIh-2W-mtD"/>
+                            </mask>
+                        </variation>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这是一份什么样的简历这是一份什么样的简历这是一份什么样的简历这是一份什么样的简历这是一份什么样的简历这是一份这是一份" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMq-Wb-c69">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="这是一份什么样的简历这是一份什么样的简历这是一份什么样的简历这是一份什么样的简历这是一份什么样的简历这是一份这是一份" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMq-Wb-c69">
                         <rect key="frame" x="15" y="29" width="290" height="62"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -31,20 +41,42 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="BMq-Wb-c69" secondAttribute="bottom" constant="8" id="BC7-OQ-op0"/>
-                    <constraint firstItem="BMq-Wb-c69" firstAttribute="leading" secondItem="rhR-os-Xik" secondAttribute="leading" constant="15" id="MKv-w0-XhK"/>
-                    <constraint firstItem="vLF-qB-Bai" firstAttribute="leading" secondItem="rhR-os-Xik" secondAttribute="leading" constant="15" id="P6T-f2-qwv"/>
-                    <constraint firstItem="vLF-qB-Bai" firstAttribute="top" secondItem="rhR-os-Xik" secondAttribute="top" constant="8" id="sJw-oD-6UF"/>
-                    <constraint firstAttribute="trailing" secondItem="vLF-qB-Bai" secondAttribute="trailing" constant="15" id="v6p-sA-gmm"/>
-                    <constraint firstItem="BMq-Wb-c69" firstAttribute="top" secondItem="vLF-qB-Bai" secondAttribute="bottom" constant="3" id="wtG-q4-0Ci"/>
-                    <constraint firstAttribute="trailing" secondItem="BMq-Wb-c69" secondAttribute="trailing" constant="15" id="yVl-4s-8vE"/>
+                    <constraint firstItem="BMq-Wb-c69" firstAttribute="leading" secondItem="rhR-os-Xik" secondAttribute="leading" constant="15" id="5ni-pG-wXf"/>
+                    <constraint firstAttribute="trailing" secondItem="vLF-qB-Bai" secondAttribute="trailing" constant="15" id="K7m-cS-q0J"/>
+                    <constraint firstAttribute="bottom" secondItem="BMq-Wb-c69" secondAttribute="bottom" constant="4" id="ULa-df-RTb"/>
+                    <constraint firstAttribute="trailing" secondItem="BMq-Wb-c69" secondAttribute="trailing" constant="15" id="iRg-kK-cTQ"/>
+                    <constraint firstItem="vLF-qB-Bai" firstAttribute="top" secondItem="rhR-os-Xik" secondAttribute="top" constant="8" id="juL-uA-Rdu"/>
+                    <constraint firstItem="BMq-Wb-c69" firstAttribute="top" secondItem="vLF-qB-Bai" secondAttribute="bottom" id="lOE-fQ-wKp"/>
+                    <constraint firstItem="vLF-qB-Bai" firstAttribute="leading" secondItem="rhR-os-Xik" secondAttribute="leading" constant="15" id="p38-L2-wcp"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="K7m-cS-q0J"/>
+                        <exclude reference="juL-uA-Rdu"/>
+                        <exclude reference="p38-L2-wcp"/>
+                        <exclude reference="5ni-pG-wXf"/>
+                        <exclude reference="ULa-df-RTb"/>
+                        <exclude reference="iRg-kK-cTQ"/>
+                        <exclude reference="lOE-fQ-wKp"/>
+                    </mask>
+                </variation>
+                <variation key="heightClass=regular-widthClass=compact">
+                    <mask key="constraints">
+                        <include reference="K7m-cS-q0J"/>
+                        <include reference="juL-uA-Rdu"/>
+                        <include reference="p38-L2-wcp"/>
+                        <include reference="5ni-pG-wXf"/>
+                        <include reference="ULa-df-RTb"/>
+                        <include reference="iRg-kK-cTQ"/>
+                        <include reference="lOE-fQ-wKp"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="contentLabel" destination="BMq-Wb-c69" id="8vt-tm-9vG"/>
                 <outlet property="titleLabel" destination="vLF-qB-Bai" id="4BW-dV-2fh"/>
             </connections>
-            <point key="canvasLocation" x="351" y="234"/>
+            <point key="canvasLocation" x="351" y="228.5"/>
         </tableViewCell>
     </objects>
 </document>
