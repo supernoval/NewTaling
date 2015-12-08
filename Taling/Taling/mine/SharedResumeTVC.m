@@ -1,15 +1,15 @@
 //
-//  RecommendTalentTVC.m
+//  SharedResumeTVC.m
 //  Taling
 //
-//  Created by Leo on 15/12/5.
+//  Created by ucan on 15/12/8.
 //  Copyright © 2015年 ZhuHaikun. All rights reserved.
 //
 
-#import "RecommendTalentTVC.h"
-#import "RecommendCell.h"
-#import "RecommendDetailVC.h"
-@interface RecommendTalentTVC ()
+#import "SharedResumeTVC.h"
+#import "SharedCell.h"
+
+@interface SharedResumeTVC ()
 {
     NSInteger pageindex;
     NSInteger size;
@@ -18,13 +18,13 @@
 
 @end
 
-@implementation RecommendTalentTVC
+@implementation SharedResumeTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"分享的简历";
     _JDArray = [[NSMutableArray alloc]init];
     
-    self.title = @"推荐的人才";
     [self.tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
     
     [self.tableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(footerRefresh)];
@@ -43,9 +43,6 @@
     pageindex = 1;
     
     //        [self getData];
-    
-    //    [self searchFromTag];
-    
     
 }
 
@@ -110,50 +107,10 @@
 }
 
 #pragma mark - UITableViewDataSource
--(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    float tagWidth = (ScreenWidth-30-3*TagGap)/4;
-    float tagHeight = 30;
-    NSInteger count = 7;
-    NSInteger tagRow;
-    if (count%4 == 0) {
-        tagRow = count/4;
-    }else{
-        tagRow = count/4 + 1;
-    }
-    
-    UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40*tagRow+1)];
-    
-    blankFooter.backgroundColor = [UIColor whiteColor];
-    for (NSInteger i = 0; i < count; i++) {
-        
-        TagLabel *tagLabel = [[TagLabel alloc]initWithFrame:CGRectMake(15+(i%4)*(tagWidth+TagGap), i/4*(tagHeight+TagGap), tagWidth, tagHeight)];
-        tagLabel.text = [NSString stringWithFormat:@"高级%li",(long)i];
-        [blankFooter addSubview:tagLabel];
-        
-    }
-    
-    //    UIView *gap = [[UIView alloc]initWithFrame:CGRectMake(15, blankFooter.frame.size.height-1, ScreenWidth-15, 1)];
-    //    gap.backgroundColor = kLineColor;
-    //    [blankFooter addSubview:gap];
-    
-    UIButton *detailAction = [[UIButton alloc]initWithFrame:blankFooter.frame];
-    [detailAction addTarget:self action:@selector(pushToDetailAction:) forControlEvents:UIControlEventTouchUpInside];
-    detailAction.tag = section;
-    [blankFooter addSubview:detailAction];
-    
-    return blankFooter;
-    
-}
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 80;
-    
-}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
-    return 1.0;
+    return 0.1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -166,7 +123,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    return 73;
+    return 109;
 }
 
 
@@ -185,10 +142,10 @@
     
     
     //    ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
-    static NSString *cellId = @"RecommendCell";
-    RecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    static NSString *cellId = @"BoughtCell";
+    SharedCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (cell == nil) {
-        cell = [[NSBundle mainBundle]loadNibNamed:@"RecommendCell" owner:self options:nil][0];
+        cell = [[NSBundle mainBundle]loadNibNamed:@"SharedCell" owner:self options:nil][0];
     }
     
     //    if (_JDArray.count > indexPath.section) {
@@ -201,21 +158,26 @@
     //            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo]];
     //        }
     
-    
-    //ID
-    //    cell.idLabel.text = oneItem.name;
-    
-    // 简历估值
-    //    cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",oneItem.price] ;
-    
-    
-    //城市&行业
-    
-    //    cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,edu];
-    
+    //姓名
+    //    cell.nameLabel
     
     //公司&职业
-    //    cell.companyLabel.text = [NSString stringWithFormat:@"公司:%@",oneItem.currentCompany];
+    //    cell.companyLabel
+    
+    //地点&行业
+    //        cell.placeLabel.text = oneItem.name;
+    
+    // 被购买次数
+//            cell.boughtNum.text = [NSString stringWithFormat:@"¥%.2f",oneItem.price] ;
+    
+    
+    //购买自
+    
+    //        cell.idLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,edu];
+    
+    
+    //时间
+    //        cell.timeLabel.text = [NSString stringWithFormat:@"公司:%@",oneItem.currentCompany];
     
     
     //    }
@@ -228,8 +190,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    RecommendDetailVC *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"RecommendDetailVC"];
-    [self.navigationController pushViewController:detail animated:YES];
+    //    RecommendDetailVC *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"RecommendDetailVC"];
+    //    [self.navigationController pushViewController:detail animated:YES];
     
     
     
@@ -266,13 +228,6 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     
-    
-}
-
-- (void)pushToDetailAction:(UIButton *)btn{
-    
-    RecommendDetailVC *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"RecommendDetailVC"];
-    [self.navigationController pushViewController:detail animated:YES];
     
 }
 

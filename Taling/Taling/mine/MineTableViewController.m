@@ -15,6 +15,9 @@
 #import "SettingTVC.h"
 #import "MyResumeTVC.h"
 #import "BindEmailTVC.h"
+#import "BoughtResumeTVC.h"
+#import "SharedResumeTVC.h"
+#import "CollectedResumeTVC.h"
 
 @interface MineTableViewController ()<UIAlertViewDelegate>
 @property (strong, nonatomic)NSDictionary *countDic;
@@ -156,14 +159,14 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:kHadLogin]) {
-        
-        
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        
-        return;
-        
-    }
+//    if (![[NSUserDefaults standardUserDefaults] boolForKey:kHadLogin]) {
+//        
+//        
+//        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//        
+//        return;
+//        
+//    }
     if (indexPath.section == 0) {
         
         
@@ -181,17 +184,32 @@
         switch (indexPath.row) {
             case 0:
             {
-                //简历
-                MyResumeTVC *resume = [self.storyboard instantiateViewControllerWithIdentifier:@"MyResumeTVC"];
-                resume.hidesBottomBarWhenPushed = YES;
-                
-                [self.navigationController pushViewController:resume animated:YES];
+                //购买的简历
+                BoughtResumeTVC *bought = [self.storyboard instantiateViewControllerWithIdentifier:@"BoughtResumeTVC"];
+                [self.navigationController pushViewController:bought animated:YES];
             }
                 break;
                 
-                case 1:
+            case 1:
             {
-                //钱包
+                //购买的简历
+                SharedResumeTVC *bought = [self.storyboard instantiateViewControllerWithIdentifier:@"SharedResumeTVC"];
+                [self.navigationController pushViewController:bought animated:YES];
+                
+            }
+                break;
+                
+            case 2:
+            {
+                //收藏的简历
+                CollectedResumeTVC *bought = [self.storyboard instantiateViewControllerWithIdentifier:@"CollectedResumeTVC"];
+                [self.navigationController pushViewController:bought animated:YES];
+            }
+                break;
+                
+            case 3:
+            {
+                //我的钱包
                 WalletViewController *wallet = [self.storyboard instantiateViewControllerWithIdentifier:@"WalletViewController"];
                 wallet.hidesBottomBarWhenPushed = YES;
                 
@@ -199,59 +217,34 @@
             }
                 break;
                 
+                case 4:
+            {
+                //我的优惠券
+                
+                [[TLRequest shareRequest ] tlRequestWithAction:kGetMyCoupon Params:@{@"user_id":[UserInfo getuserid]} result:^(BOOL isSuccess, id data) {
+                    
+                    
+                }];
+//                WalletViewController *wallet = [self.storyboard instantiateViewControllerWithIdentifier:@"WalletViewController"];
+//                wallet.hidesBottomBarWhenPushed = YES;
+//                
+//                [self.navigationController pushViewController:wallet animated:YES];
+            }
+                break;
+                
                 
                 
             default:
                 break;
         }
-        
-
         
     }else if (indexPath.section == 2){
         
-        switch (indexPath.row) {
-            case 0:
-            {
-//                //绑定账号
-//                BindAccountTVC *bindAccount = [self.storyboard instantiateViewControllerWithIdentifier:@"BindAccountTVC"];
-//                bindAccount.hidesBottomBarWhenPushed = YES;
-//                
-//                [self.navigationController pushViewController:bindAccount animated:YES];
-                
-                [[TLRequest shareRequest ] tlRequestWithAction:kGetMyCoupon Params:@{@"user_id":[UserInfo getuserid]} result:^(BOOL isSuccess, id data) {
-                   
-                    
-                }];
-                
-                
-
-            }
-                break;
-                
-                case 1:
-            {
-                //绑定邮箱
-                
-                if ([[[NSUserDefaults standardUserDefaults]objectForKey:kis_active]boolValue] == YES) {
-                    
-                    
-                }else{
-                    BindEmailTVC *bindEmail = [self.storyboard instantiateViewControllerWithIdentifier:@"BindEmailTVC"];
-                    [self.navigationController pushViewController:bindEmail animated:YES];
-                
-                }
-            }
-                break;
-                
-            default:
-                break;
-        }
-    }
-    else if (indexPath.section == 3){
-        
         SettingTVC *setting = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingTVC"];
         [self.navigationController pushViewController:setting animated:YES];
+        
     }
+
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     

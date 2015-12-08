@@ -25,8 +25,8 @@
     self.title = @"姓名的简历";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.collectWidth.constant = ScreenWidth/2;
-    self.buyWidth.constant = ScreenWidth/2;
+    _collectWidth.constant = ScreenWidth/2;
+    _buyWidth.constant = ScreenWidth/2;
 }
 
 - (void)didReceiveMemoryWarning {

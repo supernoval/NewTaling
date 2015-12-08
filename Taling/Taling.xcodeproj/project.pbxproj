@@ -290,6 +290,14 @@
 		D26C29371BD8D68E007F1EF2 /* WorkExperienceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D26C29361BD8D68E007F1EF2 /* WorkExperienceItem.m */; };
 		D27021211BC7744900428B31 /* BuyAndCashTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D27021201BC7744900428B31 /* BuyAndCashTVC.m */; };
 		D29BBC691B946B7E004B4021 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D29BBC681B946B7E004B4021 /* libcrypto.a */; };
+		D2B8E7961C16662E00445EA6 /* BoughtResumeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B8E7951C16662E00445EA6 /* BoughtResumeTVC.m */; };
+		D2B8E7991C16665100445EA6 /* SharedResumeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B8E7981C16665100445EA6 /* SharedResumeTVC.m */; };
+		D2B8E79C1C16666A00445EA6 /* CollectedResumeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B8E79B1C16666A00445EA6 /* CollectedResumeTVC.m */; };
+		D2B8E79E1C16686F00445EA6 /* BoughtCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2B8E79D1C16686F00445EA6 /* BoughtCell.xib */; };
+		D2B8E7A01C166E3900445EA6 /* SharedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2B8E79F1C166E3900445EA6 /* SharedCell.xib */; };
+		D2B8E7A31C1670B700445EA6 /* SharedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B8E7A21C1670B700445EA6 /* SharedCell.m */; };
+		D2B8E7A61C1673A600445EA6 /* BoughtCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B8E7A51C1673A600445EA6 /* BoughtCell.m */; };
+		D2B8E7AA1C169E3400445EA6 /* BoughtResumeDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B8E7A91C169E3400445EA6 /* BoughtResumeDetailVC.m */; };
 		D2D9220D1BDA31BE00CE91D2 /* ResumeDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D9220C1BDA31BE00CE91D2 /* ResumeDetailVC.m */; };
 		D2D922111BDDC2FF00CE91D2 /* SearchHRTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D922101BDDC2FF00CE91D2 /* SearchHRTVC.m */; };
 		D2D922151BDDD61500CE91D2 /* ChangePasswordTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D922141BDDD61500CE91D2 /* ChangePasswordTVC.m */; };
@@ -1003,6 +1011,20 @@
 		D270211F1BC7744900428B31 /* BuyAndCashTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyAndCashTVC.h; sourceTree = "<group>"; };
 		D27021201BC7744900428B31 /* BuyAndCashTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyAndCashTVC.m; sourceTree = "<group>"; };
 		D29BBC681B946B7E004B4021 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		D2B8E7941C16662E00445EA6 /* BoughtResumeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoughtResumeTVC.h; sourceTree = "<group>"; };
+		D2B8E7951C16662E00445EA6 /* BoughtResumeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoughtResumeTVC.m; sourceTree = "<group>"; };
+		D2B8E7971C16665100445EA6 /* SharedResumeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedResumeTVC.h; sourceTree = "<group>"; };
+		D2B8E7981C16665100445EA6 /* SharedResumeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedResumeTVC.m; sourceTree = "<group>"; };
+		D2B8E79A1C16666A00445EA6 /* CollectedResumeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectedResumeTVC.h; sourceTree = "<group>"; };
+		D2B8E79B1C16666A00445EA6 /* CollectedResumeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectedResumeTVC.m; sourceTree = "<group>"; };
+		D2B8E79D1C16686F00445EA6 /* BoughtCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoughtCell.xib; sourceTree = "<group>"; };
+		D2B8E79F1C166E3900445EA6 /* SharedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SharedCell.xib; sourceTree = "<group>"; };
+		D2B8E7A11C1670B700445EA6 /* SharedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedCell.h; sourceTree = "<group>"; };
+		D2B8E7A21C1670B700445EA6 /* SharedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedCell.m; sourceTree = "<group>"; };
+		D2B8E7A41C1673A600445EA6 /* BoughtCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoughtCell.h; sourceTree = "<group>"; };
+		D2B8E7A51C1673A600445EA6 /* BoughtCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoughtCell.m; sourceTree = "<group>"; };
+		D2B8E7A81C169E3400445EA6 /* BoughtResumeDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoughtResumeDetailVC.h; sourceTree = "<group>"; };
+		D2B8E7A91C169E3400445EA6 /* BoughtResumeDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoughtResumeDetailVC.m; sourceTree = "<group>"; };
 		D2D9220B1BDA31BE00CE91D2 /* ResumeDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResumeDetailVC.h; sourceTree = "<group>"; };
 		D2D9220C1BDA31BE00CE91D2 /* ResumeDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResumeDetailVC.m; sourceTree = "<group>"; };
 		D2D9220F1BDDC2FF00CE91D2 /* SearchHRTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchHRTVC.h; sourceTree = "<group>"; };
@@ -2696,6 +2718,12 @@
 		D2B8E7901C1578C100445EA6 /* 购买的简历 */ = {
 			isa = PBXGroup;
 			children = (
+				D2B8E7A71C169E0600445EA6 /* 详情 */,
+				D2B8E7941C16662E00445EA6 /* BoughtResumeTVC.h */,
+				D2B8E7951C16662E00445EA6 /* BoughtResumeTVC.m */,
+				D2B8E79D1C16686F00445EA6 /* BoughtCell.xib */,
+				D2B8E7A41C1673A600445EA6 /* BoughtCell.h */,
+				D2B8E7A51C1673A600445EA6 /* BoughtCell.m */,
 			);
 			name = "购买的简历";
 			sourceTree = "<group>";
@@ -2703,6 +2731,11 @@
 		D2B8E7911C1578D200445EA6 /* 分享的简历 */ = {
 			isa = PBXGroup;
 			children = (
+				D2B8E7971C16665100445EA6 /* SharedResumeTVC.h */,
+				D2B8E7981C16665100445EA6 /* SharedResumeTVC.m */,
+				D2B8E79F1C166E3900445EA6 /* SharedCell.xib */,
+				D2B8E7A11C1670B700445EA6 /* SharedCell.h */,
+				D2B8E7A21C1670B700445EA6 /* SharedCell.m */,
 			);
 			name = "分享的简历";
 			sourceTree = "<group>";
@@ -2710,6 +2743,8 @@
 		D2B8E7921C1578E000445EA6 /* 收藏的简历 */ = {
 			isa = PBXGroup;
 			children = (
+				D2B8E79A1C16666A00445EA6 /* CollectedResumeTVC.h */,
+				D2B8E79B1C16666A00445EA6 /* CollectedResumeTVC.m */,
 			);
 			name = "收藏的简历";
 			sourceTree = "<group>";
@@ -2719,6 +2754,15 @@
 			children = (
 			);
 			name = "我的优惠券";
+			sourceTree = "<group>";
+		};
+		D2B8E7A71C169E0600445EA6 /* 详情 */ = {
+			isa = PBXGroup;
+			children = (
+				D2B8E7A81C169E3400445EA6 /* BoughtResumeDetailVC.h */,
+				D2B8E7A91C169E3400445EA6 /* BoughtResumeDetailVC.m */,
+			);
+			name = "详情";
 			sourceTree = "<group>";
 		};
 		D2D9220E1BDDC2D900CE91D2 /* searchHR */ = {
@@ -2876,11 +2920,13 @@
 				D2FCB9021BCBF14200C6ACC0 /* ResumePayStyleCell.xib in Resources */,
 				B3D3F9D11BC0F14300044F0F /* CommentCell.xib in Resources */,
 				1506DF5A1B89B36D007D1696 /* LaunchScreen.xib in Resources */,
+				D2B8E79E1C16686F00445EA6 /* BoughtCell.xib in Resources */,
 				153F3B8B1BD279E000C86F1A /* MWPhotoBrowser.bundle in Resources */,
 				1506E0161B89B521007D1696 /* MJRefresh.bundle in Resources */,
 				B300009B1BC3CB5F006B7B08 /* BuyMessageCell.xib in Resources */,
 				B30000931BC3C52E006B7B08 /* NotifiCell.xib in Resources */,
 				B30000911BC3B2BB006B7B08 /* MessageCell.xib in Resources */,
+				D2B8E7A01C166E3900445EA6 /* SharedCell.xib in Resources */,
 				1506E0C41B89B637007D1696 /* SMS_SDKLocalizable.strings in Resources */,
 				B3F2D3E31C12C7850061F2A2 /* HRListCell.xib in Resources */,
 				13C8AD611BC94587009F5B4B /* EaseMob.bundle in Resources */,
@@ -2903,6 +2949,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2B8E7A61C1673A600445EA6 /* BoughtCell.m in Sources */,
 				B30000A71BC3D435006B7B08 /* CommentMessageCell.m in Sources */,
 				13AA5EAE1B95CCEF00AB477E /* AFURLConnectionOperation.m in Sources */,
 				B3FB2A411BC26BBA003ACC5D /* WalletViewController.m in Sources */,
@@ -3018,6 +3065,7 @@
 				153F3B741BD279E000C86F1A /* EMSDWebImagePrefetcher.m in Sources */,
 				15F7CB0B1BD1E6A5008BB231 /* Emoji.m in Sources */,
 				13AA5EA91B95CCEF00AB477E /* AFHTTPRequestOperation.m in Sources */,
+				D2B8E7961C16662E00445EA6 /* BoughtResumeTVC.m in Sources */,
 				1506E03E1B89B53C007D1696 /* JSONModelClassProperty.m in Sources */,
 				153F3BAC1BD27A4200C86F1A /* EMCDDeviceManager+ProximitySensor.m in Sources */,
 				1506E0451B89B53C007D1696 /* JSONValueTransformer.m in Sources */,
@@ -3030,9 +3078,12 @@
 				D2686F311BF1C60400C92983 /* BindEmailTVC.m in Sources */,
 				153F3AFF1BD277FB00C86F1A /* EMChatTimeCell.m in Sources */,
 				B3FB2A3A1BC2621A003ACC5D /* ChangeCompanyTVC.m in Sources */,
+				D2B8E7991C16665100445EA6 /* SharedResumeTVC.m in Sources */,
 				1506E09C1B89B582007D1696 /* SDImageCache.m in Sources */,
+				D2B8E79C1C16666A00445EA6 /* CollectedResumeTVC.m in Sources */,
 				153F3B6A1BD279E000C86F1A /* MWTapDetectingImageView.m in Sources */,
 				153F3AF41BD277FB00C86F1A /* DXMessageToolBar.m in Sources */,
+				D2B8E7A31C1670B700445EA6 /* SharedCell.m in Sources */,
 				153F3B831BD279E000C86F1A /* PSTCollectionViewFlowLayout.m in Sources */,
 				1506E0441B89B53C007D1696 /* JSONKeyMapper.m in Sources */,
 				139DC54E1BCE75ED00AA9C27 /* ChatListTableViewController.m in Sources */,
@@ -3123,6 +3174,7 @@
 				15EE6BF51B93072500FBD86C /* MapAnnotation.m in Sources */,
 				D27021211BC7744900428B31 /* BuyAndCashTVC.m in Sources */,
 				153F3BA81BD27A4200C86F1A /* EMAudioPlayerUtil.m in Sources */,
+				D2B8E7AA1C169E3400445EA6 /* BoughtResumeDetailVC.m in Sources */,
 				D2D922111BDDC2FF00CE91D2 /* SearchHRTVC.m in Sources */,
 				153F3B771BD279E000C86F1A /* UIButton+EMWebCache.m in Sources */,
 				D26C29371BD8D68E007F1EF2 /* WorkExperienceItem.m in Sources */,

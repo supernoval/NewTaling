@@ -39,7 +39,6 @@
     
     _JDArray = [[NSMutableArray alloc]init];
     
-    self.tableView.backgroundColor = kBackgroundColor;
     
     _searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(50, 0, ScreenWidth, 44)];
     _searchBar.delegate = self;

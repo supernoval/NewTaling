@@ -1,30 +1,34 @@
 //
-//  RecommendTalentTVC.m
+//  CollectedResumeTVC.m
 //  Taling
 //
-//  Created by Leo on 15/12/5.
+//  Created by ucan on 15/12/8.
 //  Copyright © 2015年 ZhuHaikun. All rights reserved.
 //
 
-#import "RecommendTalentTVC.h"
+#import "CollectedResumeTVC.h"
+#import "UIImageView+WebCache.h"
 #import "RecommendCell.h"
+#import "TagLabel.h"
 #import "RecommendDetailVC.h"
-@interface RecommendTalentTVC ()
+
+@interface CollectedResumeTVC ()
 {
     NSInteger pageindex;
     NSInteger size;
+    
     NSMutableArray *_JDArray;
 }
 
 @end
 
-@implementation RecommendTalentTVC
+@implementation CollectedResumeTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"收藏的简历";
     _JDArray = [[NSMutableArray alloc]init];
     
-    self.title = @"推荐的人才";
     [self.tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
     
     [self.tableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(footerRefresh)];
@@ -42,7 +46,7 @@
 {
     pageindex = 1;
     
-    //        [self getData];
+    [self getData];
     
     //    [self searchFromTag];
     
@@ -53,15 +57,15 @@
 {
     pageindex ++;
     
-    //    [self getData];
+    [self getData];
     
 }
-
-
+#pragma mark - 获取收藏的简历
 -(void)getData
 {
+    NSString *search;
     
-    NSDictionary *param = @{@"index":@(pageindex),@"size":@(size),@"search":@""};
+    NSDictionary *param = @{@"index":@(pageindex),@"size":@(size),@"search":search};
     
     
     [[TLRequest shareRequest] tlRequestWithAction:kgetCommendResumes Params:param result:^(BOOL isSuccess, id data) {
@@ -108,7 +112,6 @@
     }];
     
 }
-
 #pragma mark - UITableViewDataSource
 -(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
@@ -255,10 +258,6 @@
     //
     //        }
     //
-    //
-    //
-    //
-    //
     //    }
     
     
@@ -268,13 +267,11 @@
     
     
 }
-
 - (void)pushToDetailAction:(UIButton *)btn{
     
     RecommendDetailVC *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"RecommendDetailVC"];
     [self.navigationController pushViewController:detail animated:YES];
     
 }
-
 
 @end
