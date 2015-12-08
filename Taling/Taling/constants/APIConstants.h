@@ -11,9 +11,9 @@
 //本地测试
 //#define  kRequestHeader   @"http://192.168.40.176/taling-api"
 //正式
-#define  kRequestHeader     @"http://183.131.151.50/taling-api"
+//#define  kRequestHeader     @"http://183.131.151.50/taling-api"
 
-//#define  kRequestHeader     @"http://www.talentbot.cn/taling-api"
+#define  kRequestHeader     @"http://www.talentbot.cn/taling-api"
 
 
 

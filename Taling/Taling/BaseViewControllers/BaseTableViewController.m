@@ -95,10 +95,7 @@
 {
     [self.tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
     
-    
-    
-    
-    
+      
 }
 -(void)headerRefresh
 {

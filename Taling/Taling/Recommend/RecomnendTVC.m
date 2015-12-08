@@ -23,6 +23,8 @@
     
     NSMutableArray *_JDArray;
     
+    BOOL _isSearch;//是不是搜索
+    
 
 }
 
@@ -32,6 +34,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _isSearch = NO;
     
     _JDArray = [[NSMutableArray alloc]init];
     
@@ -70,11 +74,12 @@
     {
         
         
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+//        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+//        
+//        UINavigationController *loginNav = [sb instantiateViewControllerWithIdentifier:@"LoginNav"];
+//        
+//        [self presentViewController:loginNav animated:YES completion:nil];
         
-        UINavigationController *loginNav = [sb instantiateViewControllerWithIdentifier:@"LoginNav"];
-        
-        [self presentViewController:loginNav animated:YES completion:nil];
         
         
     }
@@ -134,7 +139,7 @@
 {
     pageindex = 1;
     
-//        [self getData];
+    [self getData];
     
 //    [self searchFromTag];
     
@@ -145,7 +150,7 @@
 {
     pageindex ++;
     
-//    [self getData];
+    [self getData];
     
 }
 
@@ -153,8 +158,16 @@
 #pragma mark - 默认获取简历列表  或者 搜索 行业 职位 等关键字
 -(void)getData
 {
+    NSString *search;
+    if (_isSearch) {
+        search = _searchBar.text;
+    }else{
+        search = @"";
+    }
     
-    NSDictionary *param = @{@"index":@(pageindex),@"size":@(size),@"search":@""};
+    NSLog(@"search:%@",search);
+    
+    NSDictionary *param = @{@"index":@(pageindex),@"size":@(size),@"search":search};
     
     
     [[TLRequest shareRequest] tlRequestWithAction:kgetCommendResumes Params:param result:^(BOOL isSuccess, id data) {
@@ -411,11 +424,7 @@
 //            [self.navigationController pushViewController:resumeDetail animated:YES];
 //            
 //        }
-//        
-//        
-//        
-//        
-//        
+//
 //    }
     
     
@@ -430,35 +439,76 @@
 #pragma mark -  UISearchBarDelegate
 -(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
 {
-//    SearchTableViewController *searchTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchTableViewController"];
-//    
-//    
-//    searchTVC.hidesBottomBarWhenPushed =YES;
-//    
-//    [self.navigationController pushViewController:searchTVC animated:YES];
-    
-    
-    return NO;
+
+    return YES;
     
 }
--(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
-{
+
+- (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar{
     
-    //    [searchBar resignFirstResponder];
+    [searchBar resignFirstResponder];
     
-    
+    return YES;
 }
 
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
-    
-    
-    
-    
-    
-    //    [self.view addGestureRecognizer:_tap];
+    searchBar.showsCancelButton = YES;
+    NSArray *subViews;
+    subViews = [_searchBar.subviews[0] subviews];
+    for (id view in subViews) {
+        if ([view isKindOfClass:[UIButton class]]) {
+            UIButton *cancelBtn = (UIButton *)view;
+            [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+            [cancelBtn setTitleColor:kTextLightGrayColor forState:UIControlStateNormal];
+            cancelBtn.userInteractionEnabled = YES;
+            cancelBtn.enabled = YES;
+            break;
+        }
+    }
     
 }
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
+    
+    [searchBar resignFirstResponder];
+    searchBar.showsCancelButton = NO;
+}
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+    [self.view endEditing:YES];
+    searchBar.showsCancelButton = YES;
+    NSArray *subViews;
+    subViews = [(_searchBar.subviews[0]) subviews];
+    
+    for (id view in subViews) {
+        if ([view isKindOfClass:[UIButton class]]) {
+            UIButton* cancelbutton = (UIButton* )view;
+            [cancelbutton setTitle:@"取消" forState:UIControlStateNormal];
+            [cancelbutton setTitleColor:kTextLightGrayColor forState:UIControlStateNormal];
+            cancelbutton.userInteractionEnabled =YES;
+            cancelbutton.enabled = YES;
+            break;
+        }
+    }
+    _isSearch = YES;
+    pageindex = 1;
+    //请求搜索数据
+    [self getData];
+    
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    [self.view endEditing:YES];
+    searchBar.text = @"";
+    searchBar.showsCancelButton = NO;
+    _isSearch = NO;
+    pageindex = 1;
+    [self getData];
+}
+
+
 
 - (void)pushToDetailAction:(UIButton *)btn{
     
@@ -473,9 +523,6 @@
     
     //    tabbar.backgroundColor = [UIColor whiteColor];
     
-    
-    
-    //
     UITabBarItem *item0 = [tabbar.items objectAtIndex:0];
     UITabBarItem *item1 = [tabbar.items objectAtIndex:1];
     UITabBarItem *item2 = [tabbar.items objectAtIndex:2];

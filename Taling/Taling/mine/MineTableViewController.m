@@ -28,10 +28,6 @@
     self.title = @"我的";
     _headImageView.clipsToBounds = YES;
     _headImageView.layer.cornerRadius = 5.0;
-    _numberWidth.constant = (ScreenWidth-25)/2;
-    _moneyWidth.constant = (ScreenWidth-25)/2;
-    _numberTextWidth.constant = (ScreenWidth-25)/2;
-    _moneyTextWidth.constant = (ScreenWidth-25)/2;
     _countDic = [[NSDictionary alloc]init];
     
 //    [self getResumeCount];
@@ -49,8 +45,8 @@
             
             if ([data isKindOfClass:[NSDictionary class]]) {
                 _countDic = data;
-                _resumeNum.text = [NSString stringWithFormat:@"%@份",[_countDic objectForKey:@"resumesCountSum"]];
-                _resumeMoney.text = [NSString stringWithFormat:@"%@元",[_countDic objectForKey:@"resumesCountPrice"]];
+//                _resumeNum.text = [NSString stringWithFormat:@"%@份",[_countDic objectForKey:@"resumesCountSum"]];
+//                _resumeMoney.text = [NSString stringWithFormat:@"%@元",[_countDic objectForKey:@"resumesCountPrice"]];
                 [self.tableView reloadData];
             }
             
@@ -64,7 +60,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+    /*
 //    [self  getResumeCount];
     
     NSString *nickName = [[NSUserDefaults standardUserDefaults ]objectForKey:knickname];
@@ -75,8 +71,8 @@
         
     }
     
-    _professionLabel.text = [[NSUserDefaults standardUserDefaults ] objectForKey:kindustry];
-    _companyLabel.text = [[NSUserDefaults standardUserDefaults ] objectForKey:kcompany];
+//    _professionLabel.text = [[NSUserDefaults standardUserDefaults ] objectForKey:kindustry];
+//    _companyLabel.text = [[NSUserDefaults standardUserDefaults ] objectForKey:kcompany];
     
     
     NSString *photoURL = [[NSUserDefaults standardUserDefaults ] objectForKey:kphoto];
@@ -100,27 +96,45 @@
     
     NSString *bindEmail = [[NSUserDefaults standardUserDefaults]objectForKey:kemail];
     
-    if (bindEmail.length > 0) {
-        _bindEmail.text = bindEmail;
-    }else{
-        _bindEmail.text = @"未绑定";
-    }
+//    if (bindEmail.length > 0) {
+//        _bindEmail.text = bindEmail;
+//    }else{
+//        _bindEmail.text = @"未绑定";
+//    }*/
     
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    return 3;
     
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 1 || section == 2) {
-        
-        return 2;
+    switch (section) {
+        case 0:
+        {
+            return 1;
+        }
+            break;
+            
+        case 1:
+        {
+            return 5;
+        }
+            break;
+            
+        case 2:
+        {
+            return 1;
+        }
+            break;
+            
+        default:
+            break;
     }
     
-    return 1;
+    return 0;
     
    
 }

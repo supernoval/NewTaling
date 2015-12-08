@@ -12,7 +12,6 @@
 #import "BuyResumeDetailTVC.h"
 #import "ChatAccountManager.h"
 #import "UIImageView+WebCache.h"
-#import "SearchTableViewController.h"
 #import "RecommendCell.h"
 
 
@@ -524,14 +523,14 @@ typedef NS_ENUM(NSInteger,ReSumeType) {
 #pragma mark -  UISearchBarDelegate
 -(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
 {
-    SearchTableViewController *searchTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchTableViewController"];
-    
-    
-    searchTVC.hidesBottomBarWhenPushed =YES;
-    
-    [self.navigationController pushViewController:searchTVC animated:YES];
-    
-    
+//    SearchTableViewController *searchTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchTableViewController"];
+//    
+//    
+//    searchTVC.hidesBottomBarWhenPushed =YES;
+//    
+//    [self.navigationController pushViewController:searchTVC animated:YES];
+//    
+//    
     return NO;
     
 }

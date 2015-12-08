@@ -13,8 +13,6 @@
 		1302D7921BDF49E700FB4D11 /* PayOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1302D7911BDF49E700FB4D11 /* PayOrder.m */; };
 		1302D7951BDF4AAF00FB4D11 /* PayOrderInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1302D7941BDF4AAF00FB4D11 /* PayOrderInfoModel.m */; };
 		137BBBE01B9DA9F5004571C6 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 137BBBDF1B9DA9F5004571C6 /* UserInfo.m */; };
-		138961CC1BA98E3F009F33FA /* MyJDsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 138961CA1BA98E3F009F33FA /* MyJDsTableViewController.m */; };
-		138961CD1BA98E3F009F33FA /* MyJDsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138961CB1BA98E3F009F33FA /* MyJDsTableViewController.xib */; };
 		139919161B9EB69900FE56DD /* SelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 139919151B9EB69900FE56DD /* SelectView.m */; };
 		139DC5481BCE6DE500AA9C27 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 139DC5471BCE6DE500AA9C27 /* CommentViewController.m */; };
 		139DC54E1BCE75ED00AA9C27 /* ChatListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 139DC54D1BCE75ED00AA9C27 /* ChatListTableViewController.m */; };
@@ -243,7 +241,6 @@
 		15EE6BF01B92F64800FBD86C /* PickAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EE6BEF1B92F64800FBD86C /* PickAddressViewController.m */; };
 		15EE6BF21B92FB9300FBD86C /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 15EE6BF11B92FB9300FBD86C /* AMap.bundle */; };
 		15EE6BF51B93072500FBD86C /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EE6BF41B93072500FBD86C /* MapAnnotation.m */; };
-		15F33AED1BDC8C9300F34B6B /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F33AEC1BDC8C9300F34B6B /* SearchTableViewController.m */; };
 		15F33AF21BDCC41F00F34B6B /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F33AEF1BDCC41F00F34B6B /* libWeChatSDK.a */; };
 		15F33AF61BDD237C00F34B6B /* PrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F33AF51BDD237C00F34B6B /* PrivacyViewController.m */; };
 		15F7CB0B1BD1E6A5008BB231 /* Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F7CB081BD1E6A5008BB231 /* Emoji.m */; };
@@ -260,26 +257,26 @@
 		B30000A71BC3D435006B7B08 /* CommentMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B30000A61BC3D435006B7B08 /* CommentMessageCell.m */; };
 		B30000A91BC3D449006B7B08 /* CommentMeaageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30000A81BC3D449006B7B08 /* CommentMeaageCell.xib */; };
 		B30000AC1BC3D78C006B7B08 /* LikeMessageTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B30000AB1BC3D78C006B7B08 /* LikeMessageTVC.m */; };
-		B3CF9D171C13305700AD158F /* RecommendTalentTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CF9D161C13305700AD158F /* RecommendTalentTVC.m */; settings = {ASSET_TAGS = (); }; };
-		B3CF9D1A1C13307100AD158F /* RecommendAppraiseTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CF9D191C13307100AD158F /* RecommendAppraiseTVC.m */; settings = {ASSET_TAGS = (); }; };
+		B3CF9D171C13305700AD158F /* RecommendTalentTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CF9D161C13305700AD158F /* RecommendTalentTVC.m */; };
+		B3CF9D1A1C13307100AD158F /* RecommendAppraiseTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CF9D191C13307100AD158F /* RecommendAppraiseTVC.m */; };
 		B3D3F9D11BC0F14300044F0F /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D3F9D01BC0F14300044F0F /* CommentCell.xib */; };
 		B3D3F9D41BC0F32B00044F0F /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3F9D31BC0F32B00044F0F /* CommentCell.m */; };
-		B3F2D3BC1C11B5D80061F2A2 /* RecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F2D3BB1C11B5D80061F2A2 /* RecommendCell.xib */; settings = {ASSET_TAGS = (); }; };
-		B3F2D3CB1C11C65B0061F2A2 /* TagLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3CA1C11C65B0061F2A2 /* TagLabel.m */; settings = {ASSET_TAGS = (); }; };
-		B3F2D3CE1C11C8720061F2A2 /* RecomnendTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3CD1C11C8720061F2A2 /* RecomnendTVC.m */; settings = {ASSET_TAGS = (); }; };
-		B3F2D3D01C11F7BF0061F2A2 /* SummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F2D3CF1C11F7BF0061F2A2 /* SummaryCell.xib */; settings = {ASSET_TAGS = (); }; };
-		B3F2D3D31C11F8E10061F2A2 /* SummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3D21C11F8E10061F2A2 /* SummaryCell.m */; settings = {ASSET_TAGS = (); }; };
-		B3F2D3D51C11FA060061F2A2 /* FocusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F2D3D41C11FA060061F2A2 /* FocusCell.xib */; settings = {ASSET_TAGS = (); }; };
-		B3F2D3D81C11FB9F0061F2A2 /* FocusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3D71C11FB9F0061F2A2 /* FocusCell.m */; settings = {ASSET_TAGS = (); }; };
-		B3F2D3DE1C120D630061F2A2 /* RecommendDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3DD1C120D630061F2A2 /* RecommendDetailVC.m */; settings = {ASSET_TAGS = (); }; };
-		B3F2D3E11C12C4440061F2A2 /* HRListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3E01C12C4440061F2A2 /* HRListVC.m */; settings = {ASSET_TAGS = (); }; };
-		B3F2D3E31C12C7850061F2A2 /* HRListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F2D3E21C12C7850061F2A2 /* HRListCell.xib */; settings = {ASSET_TAGS = (); }; };
-		B3F2D3E61C12DD250061F2A2 /* HRDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3E51C12DD250061F2A2 /* HRDetailTVC.m */; settings = {ASSET_TAGS = (); }; };
-		B3F2D3E81C12DD5D0061F2A2 /* HRDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F2D3E71C12DD5D0061F2A2 /* HRDetailCell.xib */; settings = {ASSET_TAGS = (); }; };
-		B3F2D3EB1C12DD920061F2A2 /* HRDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3EA1C12DD920061F2A2 /* HRDetailCell.m */; settings = {ASSET_TAGS = (); }; };
-		B3F2D3ED1C1302640061F2A2 /* GeneralCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F2D3EC1C1302640061F2A2 /* GeneralCell.xib */; settings = {ASSET_TAGS = (); }; };
-		B3F2D3F01C1303B10061F2A2 /* GeneralCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3EF1C1303B10061F2A2 /* GeneralCell.m */; settings = {ASSET_TAGS = (); }; };
-		B3F2D3F31C1315A30061F2A2 /* ComBuyResumeDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3F21C1315A30061F2A2 /* ComBuyResumeDetailTVC.m */; settings = {ASSET_TAGS = (); }; };
+		B3F2D3BC1C11B5D80061F2A2 /* RecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F2D3BB1C11B5D80061F2A2 /* RecommendCell.xib */; };
+		B3F2D3CB1C11C65B0061F2A2 /* TagLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3CA1C11C65B0061F2A2 /* TagLabel.m */; };
+		B3F2D3CE1C11C8720061F2A2 /* RecomnendTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3CD1C11C8720061F2A2 /* RecomnendTVC.m */; };
+		B3F2D3D01C11F7BF0061F2A2 /* SummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F2D3CF1C11F7BF0061F2A2 /* SummaryCell.xib */; };
+		B3F2D3D31C11F8E10061F2A2 /* SummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3D21C11F8E10061F2A2 /* SummaryCell.m */; };
+		B3F2D3D51C11FA060061F2A2 /* FocusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F2D3D41C11FA060061F2A2 /* FocusCell.xib */; };
+		B3F2D3D81C11FB9F0061F2A2 /* FocusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3D71C11FB9F0061F2A2 /* FocusCell.m */; };
+		B3F2D3DE1C120D630061F2A2 /* RecommendDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3DD1C120D630061F2A2 /* RecommendDetailVC.m */; };
+		B3F2D3E11C12C4440061F2A2 /* HRListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3E01C12C4440061F2A2 /* HRListVC.m */; };
+		B3F2D3E31C12C7850061F2A2 /* HRListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F2D3E21C12C7850061F2A2 /* HRListCell.xib */; };
+		B3F2D3E61C12DD250061F2A2 /* HRDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3E51C12DD250061F2A2 /* HRDetailTVC.m */; };
+		B3F2D3E81C12DD5D0061F2A2 /* HRDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F2D3E71C12DD5D0061F2A2 /* HRDetailCell.xib */; };
+		B3F2D3EB1C12DD920061F2A2 /* HRDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3EA1C12DD920061F2A2 /* HRDetailCell.m */; };
+		B3F2D3ED1C1302640061F2A2 /* GeneralCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F2D3EC1C1302640061F2A2 /* GeneralCell.xib */; };
+		B3F2D3F01C1303B10061F2A2 /* GeneralCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3EF1C1303B10061F2A2 /* GeneralCell.m */; };
+		B3F2D3F31C1315A30061F2A2 /* ComBuyResumeDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D3F21C1315A30061F2A2 /* ComBuyResumeDetailTVC.m */; };
 		B3FB2A351BC25A19003ACC5D /* ChangeNameTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FB2A341BC25A19003ACC5D /* ChangeNameTVC.m */; };
 		B3FB2A3A1BC2621A003ACC5D /* ChangeCompanyTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FB2A391BC2621A003ACC5D /* ChangeCompanyTVC.m */; };
 		B3FB2A3D1BC26235003ACC5D /* ChangeProgessionTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FB2A3C1BC26235003ACC5D /* ChangeProgessionTVC.m */; };
@@ -327,9 +324,6 @@
 		1302D7941BDF4AAF00FB4D11 /* PayOrderInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayOrderInfoModel.m; sourceTree = "<group>"; };
 		137BBBDE1B9DA9F5004571C6 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		137BBBDF1B9DA9F5004571C6 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
-		138961C91BA98E3F009F33FA /* MyJDsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyJDsTableViewController.h; sourceTree = "<group>"; };
-		138961CA1BA98E3F009F33FA /* MyJDsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyJDsTableViewController.m; sourceTree = "<group>"; };
-		138961CB1BA98E3F009F33FA /* MyJDsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyJDsTableViewController.xib; sourceTree = "<group>"; };
 		139919141B9EB69900FE56DD /* SelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectView.h; sourceTree = "<group>"; };
 		139919151B9EB69900FE56DD /* SelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectView.m; sourceTree = "<group>"; };
 		139DC5461BCE6DE500AA9C27 /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
@@ -923,8 +917,6 @@
 		15EE6BF11B92FB9300FBD86C /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
 		15EE6BF31B93072500FBD86C /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
 		15EE6BF41B93072500FBD86C /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
-		15F33AEB1BDC8C9300F34B6B /* SearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewController.h; sourceTree = "<group>"; };
-		15F33AEC1BDC8C9300F34B6B /* SearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewController.m; sourceTree = "<group>"; };
 		15F33AEF1BDCC41F00F34B6B /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		15F33AF01BDCC41F00F34B6B /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		15F33AF11BDCC41F00F34B6B /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
@@ -1102,16 +1094,6 @@
 			children = (
 			);
 			name = bindThirdpart;
-			sourceTree = "<group>";
-		};
-		138961C51BA98B4D009F33FA /* MyJDs */ = {
-			isa = PBXGroup;
-			children = (
-				138961C91BA98E3F009F33FA /* MyJDsTableViewController.h */,
-				138961CA1BA98E3F009F33FA /* MyJDsTableViewController.m */,
-				138961CB1BA98E3F009F33FA /* MyJDsTableViewController.xib */,
-			);
-			name = MyJDs;
 			sourceTree = "<group>";
 		};
 		139919131B9EB4F300FE56DD /* selectView */ = {
@@ -1983,7 +1965,6 @@
 		1506E2271B89BB23007D1696 /* Recommend */ = {
 			isa = PBXGroup;
 			children = (
-				15F33AEA1BDC8BC200F34B6B /* searchTableViewController */,
 				153F3BD61BD363F000C86F1A /* recommendHeaderView */,
 				D2FCB8FA1BCBEF9400C6ACC0 /* buyResume */,
 				13D5F0F41B9FF8C4001A8AFF /* cell */,
@@ -2459,12 +2440,15 @@
 		1579153A1B8F52C400E31111 /* mine */ = {
 			isa = PBXGroup;
 			children = (
+				D2B8E7931C1578F100445EA6 /* 我的优惠券 */,
+				D2B8E7921C1578E000445EA6 /* 收藏的简历 */,
+				D2B8E7911C1578D200445EA6 /* 分享的简历 */,
+				D2B8E7901C1578C100445EA6 /* 购买的简历 */,
 				D2686F2E1BF1C5D900C92983 /* bindEmail */,
 				B3FB2A501BC3AD65003ACC5D /* resume */,
 				B3FB2A4C1BC29888003ACC5D /* setting */,
 				B3FB2A421BC27191003ACC5D /* bindAccount */,
 				B3FB2A3E1BC26B8F003ACC5D /* wallet */,
-				138961C51BA98B4D009F33FA /* MyJDs */,
 				15EE6BED1B92F61700FBD86C /* addressPickVC */,
 				1579153E1B8F54AB00E31111 /* personalInfo */,
 				1579153B1B8F52E100E31111 /* MineTableViewController.h */,
@@ -2504,15 +2488,6 @@
 				15EE6BF41B93072500FBD86C /* MapAnnotation.m */,
 			);
 			name = addressPickVC;
-			sourceTree = "<group>";
-		};
-		15F33AEA1BDC8BC200F34B6B /* searchTableViewController */ = {
-			isa = PBXGroup;
-			children = (
-				15F33AEB1BDC8C9300F34B6B /* SearchTableViewController.h */,
-				15F33AEC1BDC8C9300F34B6B /* SearchTableViewController.m */,
-			);
-			name = searchTableViewController;
 			sourceTree = "<group>";
 		};
 		15F33AEE1BDCC41F00F34B6B /* WeiChatPay */ = {
@@ -2718,6 +2693,34 @@
 			name = buyAndCash;
 			sourceTree = "<group>";
 		};
+		D2B8E7901C1578C100445EA6 /* 购买的简历 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "购买的简历";
+			sourceTree = "<group>";
+		};
+		D2B8E7911C1578D200445EA6 /* 分享的简历 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "分享的简历";
+			sourceTree = "<group>";
+		};
+		D2B8E7921C1578E000445EA6 /* 收藏的简历 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "收藏的简历";
+			sourceTree = "<group>";
+		};
+		D2B8E7931C1578F100445EA6 /* 我的优惠券 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "我的优惠券";
+			sourceTree = "<group>";
+		};
 		D2D9220E1BDDC2D900CE91D2 /* searchHR */ = {
 			isa = PBXGroup;
 			children = (
@@ -2855,7 +2858,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				138961CD1BA98E3F009F33FA /* MyJDsTableViewController.xib in Resources */,
 				13CD97661BA15213007763E0 /* SellOrderCell.xib in Resources */,
 				1506DF921B89B4A0007D1696 /* ProgressHUD.bundle in Resources */,
 				B3F2D3BC1C11B5D80061F2A2 /* RecommendCell.xib in Resources */,
@@ -2904,7 +2906,6 @@
 				B30000A71BC3D435006B7B08 /* CommentMessageCell.m in Sources */,
 				13AA5EAE1B95CCEF00AB477E /* AFURLConnectionOperation.m in Sources */,
 				B3FB2A411BC26BBA003ACC5D /* WalletViewController.m in Sources */,
-				138961CC1BA98E3F009F33FA /* MyJDsTableViewController.m in Sources */,
 				153F3B6F1BD279E000C86F1A /* EMSDWebImageCompat.m in Sources */,
 				B30000961BC3C838006B7B08 /* NotifiCell.m in Sources */,
 				153F3BBD1BD27B1000C86F1A /* UIViewController+HUD.m in Sources */,
@@ -3064,7 +3065,6 @@
 				B3F2D3D81C11FB9F0061F2A2 /* FocusCell.m in Sources */,
 				153F3AFC1BD277FB00C86F1A /* EMChatLocationBubbleView.m in Sources */,
 				1506E0A01B89B582007D1696 /* SDWebImageDownloaderOperation.m in Sources */,
-				15F33AED1BDC8C9300F34B6B /* SearchTableViewController.m in Sources */,
 				153F3B871BD279E000C86F1A /* PSTGridLayoutInfo.m in Sources */,
 				153F3B6D1BD279E000C86F1A /* DACircularProgressView.m in Sources */,
 				1506E22A1B89BB3A007D1696 /* RecommendTableViewController.m in Sources */,
