@@ -14,6 +14,7 @@
 #import "ConstantsHeaders.h"
 #import "EaseMob.h"
 #import "TagLabel.h"
+#import "TagButton.h"
 
 
 #import "UIImageView+WebCache.h"

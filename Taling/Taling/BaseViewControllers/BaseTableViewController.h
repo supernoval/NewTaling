@@ -28,6 +28,8 @@
 
 #import "TagLabel.h"
 
+#import "TagButton.h"
+
 @interface BaseTableViewController : UITableViewController
 {
     

@@ -11,6 +11,7 @@
 #import "SummaryCell.h"
 #import "FocusCell.h"
 #import "CommentCell.h"
+#import "CommentTVC.h"
 
 @interface BoughtResumeDetailVC ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -147,7 +148,7 @@
             
         case 3:
         {
-            return 100+[StringHeight heightWithText:@"丰富经历：描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历\n专家擅长：主要擅长什么主要擅长什么主要擅长什么主要擅长什么主要擅长什么\n关键业绩：关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩\n优缺点：你的也有缺点赶紧爆出来你会打篮球吗" font:FONT_14 constrainedToWidth:ScreenWidth-30];
+            return 80+[StringHeight heightWithText:@"丰富经历：描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历\n\n专家擅长：主要擅长什么主要擅长什么主要擅长什么主要擅长什么主要擅长什么\n\n关键业绩：关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩\n\n优缺点：你的也有缺点赶紧爆出来你会打篮球吗" font:FONT_14 constrainedToWidth:ScreenWidth-30];
         }
             break;
             
@@ -259,7 +260,7 @@
             //评论内容
             //            cell.commentLabel
             
-            NSString *text = @"丰富经历：描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历\n专家擅长：主要擅长什么主要擅长什么主要擅长什么主要擅长什么主要擅长什么\n关键业绩：关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩\n优缺点：你的也有缺点赶紧爆出来你会打篮球吗";
+            NSString *text = @"丰富经历：描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历\n\n专家擅长：主要擅长什么主要擅长什么主要擅长什么主要擅长什么主要擅长什么\n\n关键业绩：关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩\n\n优缺点：你的也有缺点赶紧爆出来你会打篮球吗";
             cell.commentLabel.text = text;
             
             return cell;
@@ -278,6 +279,9 @@
 
 #pragma mark- 评论分享
 - (IBAction)appraiseAction:(UIButton *)sender {
+    
+    CommentTVC *comment = [self.storyboard instantiateViewControllerWithIdentifier:@"CommentTVC"];
+    [self.navigationController pushViewController:comment animated:YES];
 }
 
 #pragma mark- 立即联系

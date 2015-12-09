@@ -10,7 +10,6 @@
 #import "HrDetailViewController.h"
 #import "HRListCell.h"
 #import "HRItem.h"
-#import "SearchHRTVC.h"
 
 NSString *cellID = @"HRListCell";
 
@@ -231,12 +230,12 @@ NSString *cellID = @"HRListCell";
 #pragma mark -  UISearchBarDelegate
 -(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
 {
-    SearchHRTVC *searchTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchHRTVC"];
-    
-    
-    searchTVC.hidesBottomBarWhenPushed =YES;
-    
-    [self.navigationController pushViewController:searchTVC animated:YES];
+//    SearchHRTVC *searchTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchHRTVC"];
+//    
+//    
+//    searchTVC.hidesBottomBarWhenPushed =YES;
+//    
+//    [self.navigationController pushViewController:searchTVC animated:YES];
     
     
     return NO;

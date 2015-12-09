@@ -325,6 +325,7 @@
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
     [self.view endEditing:YES];
+    [searchBar resignFirstResponder];
     searchBar.text = @"";
     searchBar.showsCancelButton = NO;
     _isSearch = NO;
