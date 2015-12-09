@@ -73,26 +73,13 @@
     {
         
         
-<<<<<<< .mine
 //        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
 //        
 //        UINavigationController *loginNav = [sb instantiateViewControllerWithIdentifier:@"LoginNav"];
 //        
 //        [self presentViewController:loginNav animated:YES completion:nil];
 //        
-=======
-//        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-//        
-//        UINavigationController *loginNav = [sb instantiateViewControllerWithIdentifier:@"LoginNav"];
-//        
-//        [self presentViewController:loginNav animated:YES completion:nil];
->>>>>>> .r109
-        
-        
-<<<<<<< .mine
-=======
-        
->>>>>>> .r109
+
     }
     else
     {
