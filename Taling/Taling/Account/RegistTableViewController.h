@@ -10,6 +10,12 @@
 #import "TLRequest.h"
 
 @interface RegistTableViewController : BaseTableViewController
+
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segment;
+- (IBAction)switch:(id)sender;
+
+
 @property (weak, nonatomic) IBOutlet UITextField *phoneTF;
 @property (weak, nonatomic) IBOutlet UIButton *sendCodeButton;
 - (IBAction)sendCodeAction:(id)sender;
