@@ -73,12 +73,12 @@
     {
         
         
-//        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-//        
-//        UINavigationController *loginNav = [sb instantiateViewControllerWithIdentifier:@"LoginNav"];
-//        
-//        [self presentViewController:loginNav animated:YES completion:nil];
-//        
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        
+        UINavigationController *loginNav = [sb instantiateViewControllerWithIdentifier:@"LoginNav"];
+        
+        [self presentViewController:loginNav animated:YES completion:nil];
+//
 
     }
     else
@@ -188,7 +188,6 @@
                 NSDictionary *oneDic = [dataArray objectAtIndex:i];
                 ModelItem *item = [[ModelItem alloc]init];
                 [item setValuesForKeysWithDictionary:oneDic];
-                
                 
                 [array addObject:item];
                 

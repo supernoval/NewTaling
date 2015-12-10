@@ -57,4 +57,6 @@
 @property (strong, nonatomic) NSString *buyTime;
 
 
+
+
 @end
