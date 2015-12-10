@@ -8,7 +8,7 @@
 
 #import "BuyResumeDetailTVC.h"
 #import "PayOrder.h"
-#import "MyResumeTVC.h"
+#import "BoughtResumeTVC.h"
 
 @interface BuyResumeDetailTVC ()<UIAlertViewDelegate>
 @property (nonatomic)NSInteger payType;// 1 余额支付 2 微信 3 支付宝
@@ -33,22 +33,33 @@
     [_alipayButton setImage:[UIImage imageNamed:@"selected"] forState:UIControlStateSelected];
     [_remainPayButton setImage:[UIImage imageNamed:@"unselect"] forState:UIControlStateNormal];
     [_remainPayButton setImage:[UIImage imageNamed:@"selected"] forState:UIControlStateSelected];
-    
+    _headImageView.clipsToBounds = YES;
+    _headImageView.layer.cornerRadius = 5.0;
     self.tableView.tableFooterView = [self tablefooterView];
     
    
     
     
+    //头像
+    if (item.photo.length > 0) {
+        
+        [_headImageView sd_setImageWithURL:[NSURL URLWithString:item.photo]];
+    }
     
-    //城市
-//    _place.text = [NSString stringWithFormat:@"%@ %@",self.item.city,edu];
     
-   
-    //公司
-//    _company.text = [NSString stringWithFormat:@"公司:%@",self.item.currentCompany];
+    //人才估值
+    _price.text = [NSString stringWithFormat:@"¥%.2f",item.price];
     
-    //订单价格
-//    _price.text = [NSString stringWithFormat:@"¥%.2f",self.item.price];
+    //简历ID
+    _idLabel.text = [NSString stringWithFormat:@"简历ID %li",(long)item.resumesId];
+    
+    
+    //公司&职业
+    _company.text = [NSString stringWithFormat:@"%@ %@",item.currentCompany,item.currentPosition];
+    
+    //城市&行业
+    _place.text = [NSString stringWithFormat:@"%@ %@",item.city,item.currentIndustry];
+
 
     //账户余额
 //    _accountMoney
@@ -97,6 +108,27 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     
     return 5;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    switch (indexPath.section) {
+        case 0:
+        {
+            //公司&职业
+            NSString *text = [NSString stringWithFormat:@"%@ %@",item.currentCompany,item.currentPosition];
+            
+            return 57+[StringHeight heightWithText:text font:FONT_14 constrainedToWidth:ScreenWidth-153];
+        }
+            break;
+            
+            
+        default:
+        {
+            return 44;
+        }
+            break;
+    }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -172,11 +204,9 @@
             orderModel.amount = [data objectForKey:@"orderPrice"];
             orderModel.out_trade_no = orderNO;
             orderModel.producttype = @"1";
-//            [self loadPayAction:orderModel];
             
             
-            
-            if (_payType == 3) {//余额支付
+            if (_payType == 1) {//余额支付
                 NSDictionary *payParam = @{@"order_no":orderNO};
                 [[TLRequest shareRequest]tlRequestWithAction:kBuyResumeByRemaim Params:payParam result:^(BOOL isSuccess, id data){
                     
@@ -235,7 +265,7 @@
    
     
     //微信支付
-    if (self.payType == 1)
+    if (self.payType == 2)
     {
         
         [PayOrder sendWXPay:model];
@@ -243,7 +273,7 @@
     }
     
     //支付宝支付
-    if (self.payType == 2) {
+    if (self.payType == 3) {
         
         [PayOrder loadALiPaySDK:model];
         
@@ -263,9 +293,9 @@
         
         if (buttonIndex == 0) {
             [self.navigationController popViewControllerAnimated:YES];
-        }else if (buttonIndex == 1){//跳转到我的简历
+        }else if (buttonIndex == 1){//跳转到购买的简历
             
-            MyResumeTVC *myResume = [self.storyboard instantiateViewControllerWithIdentifier:@"MyResumeTVC"];
+            BoughtResumeTVC *myResume = [self.storyboard instantiateViewControllerWithIdentifier:@"BoughtResumeTVC"];
             [self.navigationController pushViewController:myResume animated:YES];
             
         }

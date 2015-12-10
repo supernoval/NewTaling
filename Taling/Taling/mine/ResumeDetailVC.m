@@ -111,10 +111,10 @@
 }
 
 
-//- (void)headerRefresh{
-//    _index = 1;
-//    [self getData];
-//}
+- (void)headerRefresh{
+    _index = 1;
+    [self getData];
+}
 - (void)footerRefresh{
     
     _index ++;

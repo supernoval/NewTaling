@@ -161,7 +161,7 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 5;
+    return _hrdataArray.count;
 }
 
 
@@ -174,25 +174,23 @@
     if (cell == nil) {
         cell = [[NSBundle mainBundle]loadNibNamed:@"HRListCell" owner:self options:nil][0];
     }
-    
-//        if (_hrdataArray.count > indexPath.section) {
-    
-    
-    
-    //头像
-    //        if (oneItem.photo.length > 0) {
-    //
-    //            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo]];
-    //        }
-    
-    //姓名
-//    cell.nameLabel
-    
-    //ID
-    //    cell.idLabel.text = oneItem.name;
+    if (_hrdataArray.count > indexPath.section) {
+        HRItem *oneItem = [_hrdataArray objectAtIndex:indexPath.section];
+        //头像
+        if (oneItem.photo.length > 0) {
+            
+            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo]];
+        }
+        
+        //姓名
+        cell.nameLabel.text = oneItem.nickname;
+        
+        
+        //ID
+        cell.idLabel.text = [NSString stringWithFormat:@"人才官ID %@",oneItem.id];
     
     // 推荐净值
-//        cell.recomValue.text = [NSString stringWithFormat:@"¥%.2f",oneItem.price] ;
+//        cell.recomValue.text = [NSString stringWithFormat:@"¥%.f",oneItem.price] ;
     
     
     //城市&擅长行业
@@ -208,8 +206,8 @@
         cell.servicedCom.text = @"百度 百度 百度 百度 百度 百度 百度 百度 百度百度 百度 百度百度 百度 百度";
     
     
-    //    }
-    
+        }
+
     return cell;
 }
 
@@ -218,40 +216,15 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    HRDetailTVC *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"HRDetailTVC"];
-    [self.navigationController pushViewController:detail animated:YES];
-    
-    
-    
-    
-    //    if (indexPath.section < _JDArray.count) {
-    //
-    //        ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
-    //
-    //        NSInteger resumesId = oneItem.resumesId;
-    //
-    //
-    //        if (resumesId) {
-    //
-    //            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    //
-    //            ResumeDetailVC *resumeDetail = [sb instantiateViewControllerWithIdentifier:@"ResumeDetailVC"];
-    //
-    //            resumeDetail.type = 1;
-    //            resumeDetail.hidesBottomBarWhenPushed = YES;
-    //            resumeDetail.item = oneItem;
-    //            resumeDetail.VCtitle = @"简历详情";
-    //            [self.navigationController pushViewController:resumeDetail animated:YES];
-    //
-    //        }
-    //
-    //
-    //
-    //
-    //
-    //    }
-    
-    
+    if (_hrdataArray.count > indexPath.section) {
+        HRItem *oneItem = [_hrdataArray objectAtIndex:indexPath.section];
+        
+        HRDetailTVC *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"HRDetailTVC"];
+        
+        detail.hRitem = oneItem;
+        
+        [self.navigationController pushViewController:detail animated:YES];
+    }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     

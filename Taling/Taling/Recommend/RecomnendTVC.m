@@ -280,48 +280,58 @@
 #pragma mark - UITableViewDataSource
 -(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    float tagWidth = (ScreenWidth-30-3*TagGap)/4;
-    float tagHeight = 30;
-    NSInteger count = 7;
-    NSInteger tagRow;
-    if (count%4 == 0) {
-        tagRow = count/4;
-    }else{
-        tagRow = count/4 + 1;
+    if (_JDArray.count > section) {
+        ModelItem *oneItem = [_JDArray objectAtIndex:section];
+        
+        float tagWidth = (ScreenWidth-30-3*TagGap)/4;
+        float tagHeight = 30;
+        NSInteger count = oneItem.resumesLabel.count;
+        NSInteger tagRow = count%4==0 ? count/4:count/4 + 1 ;
+        
+        UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40*tagRow)];
+        
+        blankFooter.backgroundColor = [UIColor whiteColor];
+        for (NSInteger i = 0; i < count; i++) {
+            NSDictionary *oneLabel = [oneItem.resumesLabel objectAtIndex:i];
+            
+            TagLabel *tagLabel = [[TagLabel alloc]initWithFrame:CGRectMake(15+(i%4)*(tagWidth+TagGap), i/4*(tagHeight+TagGap), tagWidth, tagHeight)];
+            tagLabel.text = [NSString stringWithFormat:@"%@",[oneLabel objectForKey:@"word"]];
+            [blankFooter addSubview:tagLabel];
+            
+        }
+        
+        //    UIView *gap = [[UIView alloc]initWithFrame:CGRectMake(15, blankFooter.frame.size.height-1, ScreenWidth-15, 1)];
+        //    gap.backgroundColor = kLineColor;
+        //    [blankFooter addSubview:gap];
+        
+        UIButton *detailAction = [[UIButton alloc]initWithFrame:blankFooter.frame];
+        [detailAction addTarget:self action:@selector(pushToDetailAction:) forControlEvents:UIControlEventTouchUpInside];
+        detailAction.tag = section;
+        [blankFooter addSubview:detailAction];
+        
+        return blankFooter;
     }
     
-    UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40*tagRow+1)];
+    return nil;
     
-    blankFooter.backgroundColor = [UIColor whiteColor];
-    for (NSInteger i = 0; i < count; i++) {
-        
-        TagLabel *tagLabel = [[TagLabel alloc]initWithFrame:CGRectMake(15+(i%4)*(tagWidth+TagGap), i/4*(tagHeight+TagGap), tagWidth, tagHeight)];
-        tagLabel.text = [NSString stringWithFormat:@"高级%li",(long)i];
-        [blankFooter addSubview:tagLabel];
-        
-    }
-    
-//    UIView *gap = [[UIView alloc]initWithFrame:CGRectMake(15, blankFooter.frame.size.height-1, ScreenWidth-15, 1)];
-//    gap.backgroundColor = kLineColor;
-//    [blankFooter addSubview:gap];
-    
-    UIButton *detailAction = [[UIButton alloc]initWithFrame:blankFooter.frame];
-    [detailAction addTarget:self action:@selector(pushToDetailAction:) forControlEvents:UIControlEventTouchUpInside];
-    detailAction.tag = section;
-    [blankFooter addSubview:detailAction];
-    
-    return blankFooter;
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 80;
+    if (_JDArray.count > section) {
+        ModelItem *oneItem = [_JDArray objectAtIndex:section];
+        NSInteger count = oneItem.resumesLabel.count;
+        NSInteger tagRow = count%4==0 ? count/4:count/4 + 1 ;
+        return 40*tagRow;
+    }
+
+    return 0.1;
     
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
-    return 1.0;
+    return 0.8;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -333,16 +343,18 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
+    //公司&职业
+    NSString *text = [NSString stringWithFormat:@"%@ %@",oneItem.currentCompany,oneItem.currentPosition];
     
-    return 73;
+    return 57+[StringHeight heightWithText:text font:FONT_14 constrainedToWidth:ScreenWidth-153];
 }
 
 
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 5;
-//    return _JDArray.count;
+    return _JDArray.count;
 }
 
 
@@ -350,43 +362,38 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    
-    
-//    ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
     static NSString *cellId = @"RecommendCell";
     RecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (cell == nil) {
         cell = [[NSBundle mainBundle]loadNibNamed:@"RecommendCell" owner:self options:nil][0];
     }
     
-//    if (_JDArray.count > indexPath.section) {
+    if (_JDArray.count > indexPath.section) {
+        
+        ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
     
-        
-        
         //头像
-//        if (oneItem.photo.length > 0) {
-//            
-//            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo]];
-//        }
+        if (oneItem.photo.length > 0) {
+            
+            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo]];
+        }
         
+        //人才估值
+        cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",oneItem.price];
         
-        //ID
-        //    cell.idLabel.text = oneItem.name;
-        
-        // 简历估值
-        //    cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",oneItem.price] ;
-        
-        
-        //城市&行业
-        
-        //    cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,edu];
+        //简历ID
+        cell.idLabel.text = [NSString stringWithFormat:@"简历ID %li",(long)oneItem.resumesId];
         
         
         //公司&职业
-        //    cell.companyLabel.text = [NSString stringWithFormat:@"公司:%@",oneItem.currentCompany];
+        cell.companyLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.currentCompany,oneItem.currentPosition];
+        
+        //城市&行业
+        cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,oneItem.currentIndustry];
         
         
-//    }
+        
+    }
     
     return cell;
 }
@@ -396,40 +403,24 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    RecommendDetailVC *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"RecommendDetailVC"];
-    [self.navigationController pushViewController:detail animated:YES];
     
-    
-    
-    
-//    if (indexPath.section < _JDArray.count) {
-//        
-//        ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
-//        
-//        NSInteger resumesId = oneItem.resumesId;
-//        
-//        
-//        if (resumesId) {
-//            
-//            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-//            
-//            ResumeDetailVC *resumeDetail = [sb instantiateViewControllerWithIdentifier:@"ResumeDetailVC"];
-//            
-//            resumeDetail.type = 1;
-//            resumeDetail.hidesBottomBarWhenPushed = YES;
-//            resumeDetail.item = oneItem;
-//            resumeDetail.VCtitle = @"简历详情";
-//            [self.navigationController pushViewController:resumeDetail animated:YES];
-//            
-//        }
-//
-//    }
-    
-    
-    
+    if (indexPath.section < _JDArray.count) {
+        
+        ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
+        
+        NSInteger resumesId = oneItem.resumesId;
+        
+        
+        if (resumesId) {
+            
+            RecommendDetailVC *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"RecommendDetailVC"];
+            detail.item = oneItem;
+            [self.navigationController pushViewController:detail animated:YES];
+        }
+
+    }
+
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    
     
 }
 
@@ -512,6 +503,8 @@
 - (void)pushToDetailAction:(UIButton *)btn{
     
     RecommendDetailVC *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"RecommendDetailVC"];
+    ModelItem *oneItem = [_JDArray objectAtIndex:btn.tag];
+    detail.item = oneItem;
     [self.navigationController pushViewController:detail animated:YES];
     
 }

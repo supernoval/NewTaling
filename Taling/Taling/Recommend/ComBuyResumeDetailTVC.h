@@ -9,6 +9,7 @@
 #import "BaseTableViewController.h"
 
 @interface ComBuyResumeDetailTVC : BaseTableViewController
+@property (strong, nonatomic)ModelItem *item;
 @property (strong, nonatomic) IBOutlet UIImageView *headImageView;
 @property (strong, nonatomic) IBOutlet UILabel *idLabel;
 

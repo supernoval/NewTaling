@@ -19,10 +19,11 @@
 @end
 
 @implementation HRDetailTVC
+@synthesize hRitem;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"王女士";
+    self.title = hRitem.nickname;
     self.view.backgroundColor = kBackgroundColor;
 }
 
@@ -275,7 +276,8 @@
             
         case 2:
         {
-            return 80;
+            
+            return 80+[StringHeight heightWithText:@"丰富经历：描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历\n\n专家擅长：主要擅长什么主要擅长什么主要擅长什么主要擅长什么主要擅长什么\n\n关键业绩：关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩\n\n优缺点：你的也有缺点赶紧爆出来你会打篮球吗" font:FONT_14 constrainedToWidth:ScreenWidth-30];
         }
             break;
             
@@ -310,24 +312,23 @@
                         cell = [[NSBundle mainBundle]loadNibNamed:@"HRDetailCell" owner:self options:nil][0];
                     }
                     
-                    
                     //头像
-                    //        if (oneItem.photo.length > 0) {
-                    //
-                    //            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo]];
-                    //        }
+                    if (hRitem.photo.length > 0) {
+                        
+                        [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:hRitem.photo]];
+                    }
                     
                     //姓名
-                    //    cell.nameLabel
+                    cell.nameLabel.text = hRitem.nickname;
                     
                     //ID
-                    cell.idLabel.text = @"人才官ID 123333";
+                    cell.idLabel.text = [NSString stringWithFormat:@"人才官ID %@",hRitem.id];
                     
                     //城市
                     cell.disLabel.text = @"上海 上海";
                     
                     // 推荐净值
-                    //        cell.recomValue.text = [NSString stringWithFormat:@"¥%.2f",oneItem.price] ;
+//                    cell.recomValue.text = [NSString stringWithFormat:@"¥%.f",hRitem.] ;
 
                     return cell;
                 }
@@ -380,35 +381,30 @@
             if (cell == nil) {
                 cell = [[NSBundle mainBundle]loadNibNamed:@"RecommendCell" owner:self options:nil][0];
             }
-            
-            //    if (_JDArray.count > indexPath.section) {
-            
-            
-            
+            /*
+            if (_JDArray.count > indexPath.section) {
+                
             //头像
-            //        if (oneItem.photo.length > 0) {
-            //
-            //            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo]];
-            //        }
+            if (oneItem.photo.length > 0) {
+                
+                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo]];
+            }
             
+            //人才估值
+            cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",oneItem.price];
             
-            //ID
-            //    cell.idLabel.text = oneItem.name;
-            
-            // 简历估值
-            //    cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",oneItem.price] ;
-            
-            
-            //城市&行业
-            
-            //    cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,edu];
+            //简历ID
+            cell.idLabel.text = [NSString stringWithFormat:@"简历ID %li",(long)oneItem.resumesId];
             
             
             //公司&职业
-            //    cell.companyLabel.text = [NSString stringWithFormat:@"公司:%@",oneItem.currentCompany];
+            cell.companyLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.currentCompany,oneItem.currentPosition];
             
+            //城市&行业
+            cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,oneItem.currentIndustry];
             
-            //    }
+
+            }*/
             
             return cell;
         }
@@ -435,7 +431,8 @@
             //            cell.timeLabel
             
             //评论内容
-            //            cell.commentLabel
+            cell.commentLabel.text = @"丰富经历：描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历\n\n专家擅长：主要擅长什么主要擅长什么主要擅长什么主要擅长什么主要擅长什么\n\n关键业绩：关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩\n\n优缺点：你的也有缺点赶紧爆出来你会打篮球吗";
+            
             return cell;
         }
             break;

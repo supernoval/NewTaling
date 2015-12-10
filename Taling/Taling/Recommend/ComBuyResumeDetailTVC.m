@@ -8,12 +8,14 @@
 
 #import "ComBuyResumeDetailTVC.h"
 #import "PayOrder.h"
+#import "BoughtResumeTVC.h"
 
 @interface ComBuyResumeDetailTVC ()<UIAlertViewDelegate>
 
 @end
 
 @implementation ComBuyResumeDetailTVC
+@synthesize item;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,22 +25,36 @@
     
     
     
-    //城市
-    //    _place.text = [NSString stringWithFormat:@"%@ %@",self.item.city,edu];
+    
+    //头像
+    if (item.photo.length > 0) {
+        
+        [_headImageView sd_setImageWithURL:[NSURL URLWithString:item.photo]];
+    }
     
     
-    //公司
-    //    _company.text = [NSString stringWithFormat:@"公司:%@",self.item.currentCompany];
+    //人才估值
+    _price.text = [NSString stringWithFormat:@"¥%.2f",item.price];
     
-    //订单价格
-    //    _price.text = [NSString stringWithFormat:@"¥%.2f",self.item.price];
+    //简历ID
+    _idLabel.text = [NSString stringWithFormat:@"简历ID %li",(long)item.resumesId];
+    
+    
+    //公司&职业
+    _company.text = [NSString stringWithFormat:@"%@ %@",item.currentCompany,item.currentPosition];
+    
+    //城市&行业
+    _place.text = [NSString stringWithFormat:@"%@ %@",item.city,item.currentIndustry];
+    
     
     //账户余额
     //    _accountMoney
     
-    
+    //需支付
+    //    _orderPrice
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(paySuccessNoti) name:kPaySucessNotification object:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,6 +95,27 @@
     return 5;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    switch (indexPath.section) {
+        case 0:
+        {
+            //公司&职业
+            NSString *text = [NSString stringWithFormat:@"%@ %@",item.currentCompany,item.currentPosition];
+            
+            return 57+[StringHeight heightWithText:text font:FONT_14 constrainedToWidth:ScreenWidth-153];
+        }
+            break;
+            
+            
+        default:
+        {
+            return 44;
+        }
+            break;
+    }
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 1){
@@ -92,7 +129,6 @@
 }
 
 - (void)payAction{
-    /*
     
     NSString *buy_id = [UserInfo getuserid];
     NSLog(@"username:%@",buy_id);
@@ -122,39 +158,20 @@
                 else
                 {
                     NSString *orderNO = [data objectForKey:@"orderNo"];
-                    
-                    PayOrderInfoModel *orderModel = [[ PayOrderInfoModel alloc]init];
-                    
-                    orderModel.productName = self.item.name;
-                    orderModel.productDescription = [NSString stringWithFormat:@"购买%@的简历",self.item.name];
-                    orderModel.amount = [data objectForKey:@"orderPrice"];
-                    orderModel.out_trade_no = orderNO;
-                    orderModel.producttype = @"1";
-                    //            [self loadPayAction:orderModel];
-                    
-                    
-                    
-                    if (_payType == 3) {//余额支付
-                        NSDictionary *payParam = @{@"order_no":orderNO};
-                        [[TLRequest shareRequest]tlRequestWithAction:kBuyResumeByRemaim Params:payParam result:^(BOOL isSuccess, id data){
+                    NSDictionary *payParam = @{@"order_no":orderNO};
+                    [[TLRequest shareRequest]tlRequestWithAction:kBuyResumeByRemaim Params:payParam result:^(BOOL isSuccess, id data){
                             
                             if (isSuccess) {//余额购买成功
                                 
                                 [self showBuySuccessAlert];
                             }
                         }];
-                        
-                    }else{
-                        
-                        [self loadPayAction:orderModel];
-                    }
-                    
                 }
             }
         }];
     }
     
-    */
+    
 }
 
 #pragma mark- 显示购买成功页面跳转提醒
@@ -171,25 +188,6 @@
 
 
 
--(void)loadPayAction:(PayOrderInfoModel*)model
-{
-    /*
-    
-    //微信支付
-    if (self.payType == 1)
-    {
-        
-        [PayOrder sendWXPay:model];
-        
-    }
-    
-    //支付宝支付
-    if (self.payType == 2) {
-        
-        [PayOrder loadALiPaySDK:model];
-        
-    }*/
-}
 
 -(void)paySuccessNoti
 {
@@ -200,20 +198,18 @@
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    /*
     if (alertView.tag == 100) {
         
         if (buttonIndex == 0) {
             [self.navigationController popViewControllerAnimated:YES];
-        }else if (buttonIndex == 1){//跳转到我的简历
+        }else if (buttonIndex == 1){//跳转购买的简历
             
-            MyResumeTVC *myResume = [self.storyboard instantiateViewControllerWithIdentifier:@"MyResumeTVC"];
+            BoughtResumeTVC *myResume = [self.storyboard instantiateViewControllerWithIdentifier:@"BoughtResumeTVC"];
             [self.navigationController pushViewController:myResume animated:YES];
             
         }
         
-        
-    }*/
+    }
 }
 
 -(void)dealloc

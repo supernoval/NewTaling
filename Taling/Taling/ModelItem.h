@@ -20,7 +20,7 @@
 @property (strong, nonatomic) NSString *currentSalary;
 
 @property (strong, nonatomic)NSArray *eduexpenrience;
-@property (nonatomic,strong)  NSString *username;
+
 
 
 @property (strong, nonatomic) NSString *email;
@@ -38,6 +38,7 @@
 @property (nonatomic) float price;
 @property (nonatomic) NSInteger reservNum;
 @property (nonatomic) NSInteger resumesId;
+@property (strong, nonatomic)NSArray *resumesLabel;
 @property (strong, nonatomic) NSString *Resumetype;
 @property (strong, nonatomic) NSString *sex;
 
@@ -46,8 +47,11 @@
 @property (strong, nonatomic) NSString *summary;
 @property (strong, nonatomic) NSString *url;
 @property (strong, nonatomic) NSString *userId;
+@property (nonatomic,strong)  NSString *username;
 @property (strong, nonatomic) NSArray *workexpenrience;
 @property (nonatomic) NSInteger workYears;
+
+
 @property (strong, nonatomic) NSString *sellerName;
 @property (strong, nonatomic) NSString *buyerName;
 @property (strong, nonatomic) NSString *buyTime;

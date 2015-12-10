@@ -7,7 +7,9 @@
 //
 
 #import "BaseTableViewController.h"
+#import "HRItem.h"
 
 @interface HRDetailTVC : BaseTableViewController
+@property (strong, nonatomic)HRItem *hRitem;
 
 @end
