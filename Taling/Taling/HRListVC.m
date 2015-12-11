@@ -43,6 +43,8 @@
     pageSize = 10;
     
     index = 1;
+    
+    [self requestHRList];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -108,6 +110,21 @@
     }];
     
 }
+
+
+-(void)getGuanZhuList
+{
+    NSDictionary *param = @{@"user_id":[UserInfo getuserid],@"index":@"1",@"size":@"20"};
+    
+    [[TLRequest shareRequest ] tlRequestWithAction:kgetAttention Params:param result:^(BOOL isSuccess, id data) {
+        
+        if (isSuccess) {
+            
+            
+        }
+    }];
+}
+
 
 - (void)headerRefresh
 {

@@ -289,6 +289,7 @@
 		D2686F311BF1C60400C92983 /* BindEmailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2686F301BF1C60400C92983 /* BindEmailTVC.m */; };
 		D26C29371BD8D68E007F1EF2 /* WorkExperienceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D26C29361BD8D68E007F1EF2 /* WorkExperienceItem.m */; };
 		D27021211BC7744900428B31 /* BuyAndCashTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D27021201BC7744900428B31 /* BuyAndCashTVC.m */; };
+		D27D7CFD1C1A96C800C97F67 /* CommentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D27D7CFC1C1A96C800C97F67 /* CommentItem.m */; };
 		D29BBC691B946B7E004B4021 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D29BBC681B946B7E004B4021 /* libcrypto.a */; };
 		D2B8E7961C16662E00445EA6 /* BoughtResumeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B8E7951C16662E00445EA6 /* BoughtResumeTVC.m */; };
 		D2B8E7991C16665100445EA6 /* SharedResumeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B8E7981C16665100445EA6 /* SharedResumeTVC.m */; };
@@ -1011,6 +1012,8 @@
 		D26C29361BD8D68E007F1EF2 /* WorkExperienceItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkExperienceItem.m; sourceTree = "<group>"; };
 		D270211F1BC7744900428B31 /* BuyAndCashTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyAndCashTVC.h; sourceTree = "<group>"; };
 		D27021201BC7744900428B31 /* BuyAndCashTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyAndCashTVC.m; sourceTree = "<group>"; };
+		D27D7CFB1C1A96C800C97F67 /* CommentItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentItem.h; sourceTree = "<group>"; };
+		D27D7CFC1C1A96C800C97F67 /* CommentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentItem.m; sourceTree = "<group>"; };
 		D29BBC681B946B7E004B4021 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		D2B8E7941C16662E00445EA6 /* BoughtResumeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoughtResumeTVC.h; sourceTree = "<group>"; };
 		D2B8E7951C16662E00445EA6 /* BoughtResumeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoughtResumeTVC.m; sourceTree = "<group>"; };
@@ -2789,6 +2792,8 @@
 				13E47CFC1BD770240032BF9E /* HRItem.m */,
 				D26C29351BD8D68E007F1EF2 /* WorkExperienceItem.h */,
 				D26C29361BD8D68E007F1EF2 /* WorkExperienceItem.m */,
+				D27D7CFB1C1A96C800C97F67 /* CommentItem.h */,
+				D27D7CFC1C1A96C800C97F67 /* CommentItem.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -3031,6 +3036,7 @@
 				153F3B791BD279E000C86F1A /* UIImage+EMMultiFormat.m in Sources */,
 				153F3B6B1BD279E000C86F1A /* MWTapDetectingView.m in Sources */,
 				153F3AFE1BD277FB00C86F1A /* EMChatVideoBubbleView.m in Sources */,
+				D27D7CFD1C1A96C800C97F67 /* CommentItem.m in Sources */,
 				B300009E1BC3CFCC006B7B08 /* BuyMessageCell.m in Sources */,
 				1506DFFB1B89B506007D1696 /* SDPhotoGroup.m in Sources */,
 				B3CF9D1A1C13307100AD158F /* RecommendAppraiseTVC.m in Sources */,

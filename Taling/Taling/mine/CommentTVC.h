@@ -7,6 +7,7 @@
 //
 
 #import "BaseTableViewController.h"
+#import "ModelItem.h"
 
 @interface CommentTVC : BaseTableViewController
 
@@ -22,4 +23,6 @@
 @property (strong, nonatomic) IBOutlet UITextView *advantageTextView;
 
 @property (strong, nonatomic) IBOutlet UILabel *advantageLabel;
+
+@property (nonatomic, strong)ModelItem *item;
 @end

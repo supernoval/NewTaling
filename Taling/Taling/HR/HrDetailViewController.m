@@ -269,6 +269,8 @@
             [_JDArray removeAllObjects];
             
         }
+            
+            
         
         [_JDArray addObjectsFromArray:array];
         

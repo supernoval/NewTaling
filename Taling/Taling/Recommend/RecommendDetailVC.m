@@ -13,6 +13,7 @@
 #import "CommentCell.h"
 #import "BuyResumeDetailTVC.h"
 #import "ComBuyResumeDetailTVC.h"
+#import "CommentItem.h"
 
 @interface RecommendDetailVC ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong)NSMutableArray *commentArry;
@@ -77,6 +78,28 @@
         
         if (isSuccess) {
             
+            NSArray *dataArray = [[NSArray alloc]init];//请求获取到的数据
+            
+            NSMutableArray *array = [[NSMutableArray alloc]init];//解析后的数据
+            
+            if ([data isKindOfClass:[NSArray class]]) {
+                dataArray = data;
+            }
+            
+            for (NSInteger i = 0; i < dataArray.count; i++) {
+                NSDictionary *oneDic = [dataArray objectAtIndex:i];
+                CommentItem *cItem = [[CommentItem alloc]init];
+                [cItem setValuesForKeysWithDictionary:oneDic];
+                
+                
+                [array addObject:cItem];
+                
+                
+                
+            }
+            
+            
+            
             if (_index == 1)
             {
                 
@@ -84,7 +107,7 @@
                 
             }
             
-            [_commentArry addObjectsFromArray:data];
+            [_commentArry addObjectsFromArray:array];
             
             [self.tableView reloadData];
             
@@ -313,21 +336,37 @@
             }
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
+            if (_commentArry.count > 0) {
+                
+                CommentItem *oneComment = [_commentArry objectAtIndex:(indexPath.section-3)];
+                
+                //头像
+                if (oneComment.photo.length > 0 ) {
+                    [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneComment.photo]];
+                }
+                
+                
+                //姓名
+                cell.nameLabel.text = oneComment.commentUser;
+                
+                //id
+                
+//                cell.idLabel.text = [NSString stringWithFormat:@"人才官ID %@",oneComment.];
+                
+                //time
+                if (oneComment.time.length > 10) {
+                    cell.timeLabel.text = [oneComment.time substringToIndex:10];
+                }else{
+                    cell.timeLabel.text = oneComment.time;
+                }
+                
+                //评论内容
+                
+//                cell.commentLabel.text = oneComment.comment;
+                cell.commentLabel.text = @"丰富经历：描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历\n\n专家擅长：主要擅长什么主要擅长什么主要擅长什么主要擅长什么主要擅长什么\n\n关键业绩：关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩\n\n优缺点：你的也有缺点赶紧爆出来你会打篮球吗";
+                
+            }
             
-            //头像
-            //            cell.headImageView
-            
-            //姓名
-            //            cell.nameLabel
-            
-            //id
-            //            cell.idLabel
-            
-            //time
-            //            cell.timeLabel
-            
-            //评论内容
-            cell.commentLabel.text = @"丰富经历：描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历\n\n专家擅长：主要擅长什么主要擅长什么主要擅长什么主要擅长什么主要擅长什么\n\n关键业绩：关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩\n\n优缺点：你的也有缺点赶紧爆出来你会打篮球吗";
             return cell;
         }
             break;
@@ -375,6 +414,25 @@
 
 
 - (IBAction)collecAction:(UIButton *)sender {
+    
+    NSString *userid = [UserInfo getuserid];
+    
+    NSInteger resumeid = self.item.resumesId;
+    
+    NSDictionary *param = @{@"user_id":userid,@"resumes_id":@(resumeid)};
+    
+    [[TLRequest shareRequest] tlRequestWithAction:kreservResume Params:param result:^(BOOL isSuccess, id data) {
+        
+        if (isSuccess) {
+            
+            [CommonMethods showDefaultErrorString:@"收藏成功"];
+            
+        }
+        else
+        {
+            [CommonMethods showDefaultErrorString:@"收藏失败，请重试"];
+        }
+    }];
 }
 
 - (IBAction)buyAction:(id)sender {

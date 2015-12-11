@@ -8,13 +8,14 @@
 
 #import "CommentTVC.h"
 
-@interface CommentTVC ()<UITextViewDelegate>
+@interface CommentTVC ()<UITextViewDelegate,UIAlertViewDelegate>
 @property (strong,nonatomic)NSMutableArray *tagArray;
 @property (nonatomic)NSInteger chooseNum;
 
 @end
 
 @implementation CommentTVC
+@synthesize item;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -260,5 +261,41 @@
 //完成
 - (IBAction)completeAction:(id)sender {
     [self alertWithNoContent];
+}
+
+-(void)sumitRequest
+{
+    NSString *userid = [UserInfo getuserid];
+    NSString *coment = @"";
+    
+    NSDictionary *params = @{@"user_id":userid,@"resumes_id":@(item.resumesId),@"comment":coment};
+    
+    [[TLRequest shareRequest] tlRequestWithAction:kaddAppraise Params:params result:^(BOOL isSuccess, id data) {
+        
+        if (isSuccess) {
+            
+            [CommonMethods showAlertString:@"评价成功" delegate:self tag:100];
+            
+            
+        }
+        else
+        {
+            [CommonMethods showDefaultErrorString:@"评价失败，请重试"];
+            
+            
+        }
+        
+    }];
+    
+}
+
+#pragma mark- alertViewDelegate
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 100) {
+        
+        [self.navigationController popViewControllerAnimated:YES];
+        
+    }
 }
 @end

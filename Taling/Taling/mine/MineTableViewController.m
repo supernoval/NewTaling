@@ -33,7 +33,7 @@
     _headImageView.layer.cornerRadius = 5.0;
     _countDic = [[NSDictionary alloc]init];
     
-//    [self getResumeCount];
+    [self getResumeCount];
     
     
 }

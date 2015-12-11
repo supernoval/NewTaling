@@ -8,6 +8,7 @@
 
 #import "SharedResumeTVC.h"
 #import "SharedCell.h"
+#import "BoughtResumeDetailVC.h"
 
 @interface SharedResumeTVC ()
 {
@@ -31,6 +32,8 @@
     
     pageindex = 1;
     size = 10;
+    
+    [self getData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,7 +45,7 @@
 {
     pageindex = 1;
     
-    //        [self getData];
+    [self getData];
     
 }
 
@@ -50,7 +53,7 @@
 {
     pageindex ++;
     
-    //    [self getData];
+    [self getData];
     
 }
 
@@ -58,16 +61,19 @@
 -(void)getData
 {
     
-    NSDictionary *param = @{@"index":@(pageindex),@"size":@(size),@"search":@""};
+    NSString *userid = [UserInfo getuserid];
     
+    NSDictionary *param = @{@"user_id":userid,@"index":@(pageindex),@"size":@(size)};
     
-    [[TLRequest shareRequest] tlRequestWithAction:kgetCommendResumes Params:param result:^(BOOL isSuccess, id data) {
+    [[TLRequest shareRequest] tlRequestWithAction:kgetMyResumes Params:param result:^(BOOL isSuccess, id data) {
         
         [self.tableView.header endRefreshing];
         [self.tableView.footer endRefreshing];
         
         
         if (isSuccess) {
+            
+            
             
             NSArray *dataArray = [[NSArray alloc]init];//请求获取到的数据
             
@@ -81,11 +87,7 @@
                 NSDictionary *oneDic = [dataArray objectAtIndex:i];
                 ModelItem *item = [[ModelItem alloc]init];
                 [item setValuesForKeysWithDictionary:oneDic];
-                
-                
                 [array addObject:item];
-                
-                
                 
             }
             
@@ -100,6 +102,10 @@
             
             [self.tableView reloadData];
             
+            
+        }else
+        {
+            
         }
         
     }];
@@ -110,6 +116,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
+    return 0.1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 0.1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -123,15 +133,20 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    return 109;
+    ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
+    
+    //公司&职业
+    NSString *text = [NSString stringWithFormat:@"%@ %@",oneItem.currentCompany,oneItem.currentPosition];
+    
+    return 91+[StringHeight heightWithText:text font:FONT_13 constrainedToWidth:ScreenWidth-151];
 }
 
 
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 5;
-    //    return _JDArray.count;
+    
+    return _JDArray.count;
 }
 
 
@@ -140,47 +155,49 @@
 {
     
     
-    
-    //    ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
-    static NSString *cellId = @"BoughtCell";
+    static NSString *cellId = @"SharedCell";
     SharedCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (cell == nil) {
         cell = [[NSBundle mainBundle]loadNibNamed:@"SharedCell" owner:self options:nil][0];
     }
     
-    //    if (_JDArray.count > indexPath.section) {
+        if (_JDArray.count > indexPath.section) {
+            
+            ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
     
     
     
     //头像
-    //        if (oneItem.photo.length > 0) {
-    //
-    //            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo]];
-    //        }
+            if (oneItem.photo.length > 0) {
+    
+                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo]];
+            }
     
     //姓名
-    //    cell.nameLabel
+            cell.nameLabel.text = oneItem.name;
+            
+            
     
     //公司&职业
-    //    cell.companyLabel
+        cell.companyLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.currentCompany,oneItem.currentPosition];
     
     //地点&行业
-    //        cell.placeLabel.text = oneItem.name;
+            cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,oneItem.currentIndustry];
     
-    // 被购买次数
-//            cell.boughtNum.text = [NSString stringWithFormat:@"¥%.2f",oneItem.price] ;
+     //被购买次数
+            cell.boughtNum.text = [NSString stringWithFormat:@"%li",(long)oneItem.buyNum] ;
     
     
-    //购买自
+    //最近购买
     
-    //        cell.idLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,edu];
+//            cell.nearestBuy.text = ;
     
     
     //时间
-    //        cell.timeLabel.text = [NSString stringWithFormat:@"公司:%@",oneItem.currentCompany];
+//            cell.timeLabel.text = ;
     
     
-    //    }
+        }
     
     return cell;
 }
@@ -190,38 +207,17 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //    RecommendDetailVC *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"RecommendDetailVC"];
-    //    [self.navigationController pushViewController:detail animated:YES];
-    
-    
-    
-    
-    //    if (indexPath.section < _JDArray.count) {
-    //
-    //        ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
-    //
-    //        NSInteger resumesId = oneItem.resumesId;
-    //
-    //
-    //        if (resumesId) {
-    //
-    //            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    //
-    //            ResumeDetailVC *resumeDetail = [sb instantiateViewControllerWithIdentifier:@"ResumeDetailVC"];
-    //
-    //            resumeDetail.type = 1;
-    //            resumeDetail.hidesBottomBarWhenPushed = YES;
-    //            resumeDetail.item = oneItem;
-    //            resumeDetail.VCtitle = @"简历详情";
-    //            [self.navigationController pushViewController:resumeDetail animated:YES];
-    //
-    //        }
-    //
-    //
-    //
-    //
-    //
-    //    }
+    if (indexPath.section < _JDArray.count) {
+        
+        ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
+        
+        BoughtResumeDetailVC *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"BoughtResumeDetailVC"];
+        
+        detail.item = oneItem;
+        [self.navigationController pushViewController:detail animated:YES];
+        
+        
+    }
     
     
     

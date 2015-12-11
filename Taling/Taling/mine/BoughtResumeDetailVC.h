@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "ModelItem.h"
 
 @interface BoughtResumeDetailVC : BaseViewController
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -16,5 +17,7 @@
 - (IBAction)contactAction:(UIButton *)sender;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *appraiseWidth;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *collectWidth;
+
+@property (nonatomic, strong)ModelItem *item;
 
 @end
