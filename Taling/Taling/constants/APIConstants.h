@@ -165,6 +165,11 @@
 #define kgetHrInfo           @"/resume/getHrInfo"
 
 //搜索HR信息
+/*
+ *  index
+ *  size
+ *  search
+ */
 #define ksearchHrInfo        @"/resume/getHrInfoBySearch"
 
 //创建订单

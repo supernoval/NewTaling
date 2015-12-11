@@ -1,21 +1,28 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7eaeacd9-2d0e-93bf-dca0-ce57b7db7bff++505",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6BCA3D8D6A2B523019A2511FC394B8964EAEFA59",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
     "7eaeacd9-2d0e-93bf-dca0-ce57b7db7bff++505" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "7eaeacd9-2d0e-93bf-dca0-ce57b7db7bff++505" : 0
+    "7eaeacd9-2d0e-93bf-dca0-ce57b7db7bff++505" : 0,
+    "6BCA3D8D6A2B523019A2511FC394B8964EAEFA59" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E9C8EB71-5FAF-4EE0-AB35-E5AC7DD04DEC",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "7eaeacd9-2d0e-93bf-dca0-ce57b7db7bff++505" : "NewTaling\/"
+    "7eaeacd9-2d0e-93bf-dca0-ce57b7db7bff++505" : "NewTaling\/",
+    "6BCA3D8D6A2B523019A2511FC394B8964EAEFA59" : "NewTaling_git\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Taling",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Taling\/Taling.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/supernoval\/NewTaling.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6BCA3D8D6A2B523019A2511FC394B8964EAEFA59"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/supernoval\/NewTaling",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
