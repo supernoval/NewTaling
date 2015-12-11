@@ -340,7 +340,37 @@
 #pragma mark- 关注人才官
 - (void)focusOnTheHR:(UIButton *)button{
     
-    self.view.backgroundColor = [UIColor redColor];
+    /*
+    
+    //关注
+    
+        NSDictionary *param = @{@"hr_id":_hrInfoItem.id,@"user_id":[UserInfo getuserid]};
+    
+        [[TLRequest shareRequest]  tlRequestWithAction:kAttentionHr Params:param result:^(BOOL isSuccess, id data) {
+    
+            if (isSuccess) {
+    
+                [CommonMethods showDefaultErrorString:@"关注成功"];
+    
+    
+            }
+        }];
+    
+    
+    
+    //取消关注
+    
+    NSDictionary *cancelParam = @{@"hr_id":_hrInfoItem.id,@"user_id":[UserInfo getuserid]};
+    
+    [[TLRequest shareRequest ] tlRequestWithAction:kcancelAttention Params:cancelParam result:^(BOOL isSuccess, id data) {
+        
+        if (isSuccess) {
+            
+            
+        }
+    }];
+    
+   */
 }
 
 

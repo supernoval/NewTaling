@@ -315,7 +315,7 @@
     
     
     //取消关注
-#warning 测试
+
     NSDictionary *cancelParam = @{@"hr_id":_hrInfoItem.id,@"user_id":[UserInfo getuserid]};
     
     [[TLRequest shareRequest ] tlRequestWithAction:kcancelAttention Params:cancelParam result:^(BOOL isSuccess, id data) {
