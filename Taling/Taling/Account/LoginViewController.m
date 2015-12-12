@@ -15,6 +15,7 @@
 #import "Location.h"
 #import "ChatAccountManager.h"
 #import "EmailRegistTVC.h"
+#import "NewRegistViewController.h"
 
 
 
@@ -98,20 +99,19 @@
     
     
     
+    
 }
 
 - (IBAction)registAction:(id)sender {
     
     
     
-//    RegistTableViewController *registTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RegistTableViewController"];
-//    
-//    [self.navigationController pushViewController:registTVC animated:YES];
-//    
+    NewRegistViewController *_registVC = [self.storyboard instantiateViewControllerWithIdentifier:@"NewRegistViewController"];
     
-    EmailRegistTVC *_emailReistTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"EmailRegistTVC"];
     
-    [self.navigationController pushViewController:_emailReistTVC animated:YES];
+    
+    [self.navigationController pushViewController:_registVC animated:YES];
+    
     
     
     

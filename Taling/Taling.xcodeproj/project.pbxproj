@@ -228,6 +228,12 @@
 		153F3BD91BD3641600C86F1A /* RecommendHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 153F3BD81BD3641600C86F1A /* RecommendHeaderView.m */; };
 		1579153D1B8F52E100E31111 /* MineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1579153C1B8F52E100E31111 /* MineTableViewController.m */; };
 		157915411B8F54DD00E31111 /* PersonalInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 157915401B8F54DD00E31111 /* PersonalInfoTableView.m */; };
+		157C02C91C1C48F40092AFA1 /* CompanyFirstTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 157C02C81C1C48F40092AFA1 /* CompanyFirstTVC.m */; };
+		157C02CC1C1C4C160092AFA1 /* NewRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157C02CB1C1C4C160092AFA1 /* NewRegistViewController.m */; };
+		157C02D11C1C5C360092AFA1 /* PersonInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 157C02D01C1C5C360092AFA1 /* PersonInfoTVC.m */; };
+		157C02D41C1C7F4D0092AFA1 /* ChangePerInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 157C02D31C1C7F4D0092AFA1 /* ChangePerInfoVC.m */; };
+		157C02D71C1C85B70092AFA1 /* PickInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 157C02D61C1C85B70092AFA1 /* PickInfoTVC.m */; };
+		157C02DA1C1C909D0092AFA1 /* DonePeronRegist.m in Sources */ = {isa = PBXBuildFile; fileRef = 157C02D91C1C909D0092AFA1 /* DonePeronRegist.m */; };
 		15D51A0C1BFEFB2D002EEB5C /* CompanyRegistTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D51A0B1BFEFB2D002EEB5C /* CompanyRegistTVC.m */; };
 		15D51A0F1BFF04E3002EEB5C /* EmailRegistTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D51A0E1BFF04E3002EEB5C /* EmailRegistTVC.m */; };
 		15E4FBFB1BFDAE23003EA18A /* ShareH5.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E4FBFA1BFDAE23003EA18A /* ShareH5.m */; };
@@ -909,6 +915,18 @@
 		1579153C1B8F52E100E31111 /* MineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewController.m; sourceTree = "<group>"; };
 		1579153F1B8F54DD00E31111 /* PersonalInfoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfoTableView.h; sourceTree = "<group>"; };
 		157915401B8F54DD00E31111 /* PersonalInfoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoTableView.m; sourceTree = "<group>"; };
+		157C02C71C1C48F40092AFA1 /* CompanyFirstTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyFirstTVC.h; sourceTree = "<group>"; };
+		157C02C81C1C48F40092AFA1 /* CompanyFirstTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyFirstTVC.m; sourceTree = "<group>"; };
+		157C02CA1C1C4C160092AFA1 /* NewRegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRegistViewController.h; sourceTree = "<group>"; };
+		157C02CB1C1C4C160092AFA1 /* NewRegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRegistViewController.m; sourceTree = "<group>"; };
+		157C02CF1C1C5C360092AFA1 /* PersonInfoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfoTVC.h; sourceTree = "<group>"; };
+		157C02D01C1C5C360092AFA1 /* PersonInfoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInfoTVC.m; sourceTree = "<group>"; };
+		157C02D21C1C7F4D0092AFA1 /* ChangePerInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePerInfoVC.h; sourceTree = "<group>"; };
+		157C02D31C1C7F4D0092AFA1 /* ChangePerInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePerInfoVC.m; sourceTree = "<group>"; };
+		157C02D51C1C85B70092AFA1 /* PickInfoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickInfoTVC.h; sourceTree = "<group>"; };
+		157C02D61C1C85B70092AFA1 /* PickInfoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickInfoTVC.m; sourceTree = "<group>"; };
+		157C02D81C1C909D0092AFA1 /* DonePeronRegist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DonePeronRegist.h; sourceTree = "<group>"; };
+		157C02D91C1C909D0092AFA1 /* DonePeronRegist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DonePeronRegist.m; sourceTree = "<group>"; };
 		15D51A0A1BFEFB2D002EEB5C /* CompanyRegistTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyRegistTVC.h; sourceTree = "<group>"; };
 		15D51A0B1BFEFB2D002EEB5C /* CompanyRegistTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyRegistTVC.m; sourceTree = "<group>"; };
 		15D51A0D1BFF04E3002EEB5C /* EmailRegistTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailRegistTVC.h; sourceTree = "<group>"; };
@@ -2012,6 +2030,7 @@
 		1506E23C1B89BD65007D1696 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				157C02CD1C1C5BE90092AFA1 /* newRegist */,
 				15F33AF31BDD233F00F34B6B /* privacy */,
 				1506E2491B89BD87007D1696 /* ChangeCodeTVC.h */,
 				1506E24A1B89BD87007D1696 /* ChangeCodeTVC.m */,
@@ -2027,6 +2046,8 @@
 				15D51A0B1BFEFB2D002EEB5C /* CompanyRegistTVC.m */,
 				15D51A0D1BFF04E3002EEB5C /* EmailRegistTVC.h */,
 				15D51A0E1BFF04E3002EEB5C /* EmailRegistTVC.m */,
+				157C02C71C1C48F40092AFA1 /* CompanyFirstTVC.h */,
+				157C02C81C1C48F40092AFA1 /* CompanyFirstTVC.m */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -2499,6 +2520,39 @@
 			name = personalInfo;
 			sourceTree = "<group>";
 		};
+		157C02CD1C1C5BE90092AFA1 /* newRegist */ = {
+			isa = PBXGroup;
+			children = (
+				157C02DB1C1C920F0092AFA1 /* companyregist */,
+				157C02CE1C1C5BF70092AFA1 /* personInfo */,
+				157C02CA1C1C4C160092AFA1 /* NewRegistViewController.h */,
+				157C02CB1C1C4C160092AFA1 /* NewRegistViewController.m */,
+				157C02D81C1C909D0092AFA1 /* DonePeronRegist.h */,
+				157C02D91C1C909D0092AFA1 /* DonePeronRegist.m */,
+			);
+			name = newRegist;
+			sourceTree = "<group>";
+		};
+		157C02CE1C1C5BF70092AFA1 /* personInfo */ = {
+			isa = PBXGroup;
+			children = (
+				157C02CF1C1C5C360092AFA1 /* PersonInfoTVC.h */,
+				157C02D01C1C5C360092AFA1 /* PersonInfoTVC.m */,
+				157C02D21C1C7F4D0092AFA1 /* ChangePerInfoVC.h */,
+				157C02D31C1C7F4D0092AFA1 /* ChangePerInfoVC.m */,
+				157C02D51C1C85B70092AFA1 /* PickInfoTVC.h */,
+				157C02D61C1C85B70092AFA1 /* PickInfoTVC.m */,
+			);
+			name = personInfo;
+			sourceTree = "<group>";
+		};
+		157C02DB1C1C920F0092AFA1 /* companyregist */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = companyregist;
+			sourceTree = "<group>";
+		};
 		15E4FBF81BFDADE7003EA18A /* ShareH5 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2955,6 +3009,7 @@
 				B30000A71BC3D435006B7B08 /* CommentMessageCell.m in Sources */,
 				13AA5EAE1B95CCEF00AB477E /* AFURLConnectionOperation.m in Sources */,
 				B3FB2A411BC26BBA003ACC5D /* WalletViewController.m in Sources */,
+				157C02D11C1C5C360092AFA1 /* PersonInfoTVC.m in Sources */,
 				153F3B6F1BD279E000C86F1A /* EMSDWebImageCompat.m in Sources */,
 				B30000961BC3C838006B7B08 /* NotifiCell.m in Sources */,
 				153F3BBD1BD27B1000C86F1A /* UIViewController+HUD.m in Sources */,
@@ -2995,6 +3050,7 @@
 				B30000A11BC3CFE2006B7B08 /* BuyMessageTVC.m in Sources */,
 				153F3B041BD277FB00C86F1A /* MessageReadManager.m in Sources */,
 				1506E0181B89B521007D1696 /* MJRefreshConst.m in Sources */,
+				157C02D41C1C7F4D0092AFA1 /* ChangePerInfoVC.m in Sources */,
 				13AA5E5D1B95C4F900AB477E /* TLRequest.m in Sources */,
 				153F3B711BD279E000C86F1A /* EMSDWebImageDownloader.m in Sources */,
 				153F3B651BD279E000C86F1A /* MWCaptionView.m in Sources */,
@@ -3033,6 +3089,7 @@
 				153F3AAF1BD1FD8F00C86F1A /* HRListTableViewController.m in Sources */,
 				1506DF911B89B4A0007D1696 /* MyProgressHUD.m in Sources */,
 				153F3AF21BD277FB00C86F1A /* ConvertToCommonEmoticonsHelper.m in Sources */,
+				157C02CC1C1C4C160092AFA1 /* NewRegistViewController.m in Sources */,
 				153F3B791BD279E000C86F1A /* UIImage+EMMultiFormat.m in Sources */,
 				153F3B6B1BD279E000C86F1A /* MWTapDetectingView.m in Sources */,
 				153F3AFE1BD277FB00C86F1A /* EMChatVideoBubbleView.m in Sources */,
@@ -3048,6 +3105,7 @@
 				153F3B681BD279E000C86F1A /* MWPhoto.m in Sources */,
 				B3F2D3E61C12DD250061F2A2 /* HRDetailTVC.m in Sources */,
 				153F3B8A1BD279E000C86F1A /* PSTGridLayoutSection.m in Sources */,
+				157C02D71C1C85B70092AFA1 /* PickInfoTVC.m in Sources */,
 				153F3BC01BD27B7700C86F1A /* XHMessageTextView.m in Sources */,
 				1506E0411B89B53C007D1696 /* JSONAPI.m in Sources */,
 				153F3AF71BD277FB00C86F1A /* DXChatBarMoreView.m in Sources */,
@@ -3060,6 +3118,7 @@
 				153F3BA91BD27A4200C86F1A /* EMAudioRecorderUtil.m in Sources */,
 				1506E01E1B89B521007D1696 /* MJRefreshLegendHeader.m in Sources */,
 				15EE6BF01B92F64800FBD86C /* PickAddressViewController.m in Sources */,
+				157C02DA1C1C909D0092AFA1 /* DonePeronRegist.m in Sources */,
 				13AA5EAB1B95CCEF00AB477E /* AFHTTPSessionManager.m in Sources */,
 				153F3B7F1BD279E000C86F1A /* PSTCollectionView.m in Sources */,
 				1506E1331B89B646007D1696 /* MD5DataSigner.m in Sources */,
@@ -3143,6 +3202,7 @@
 				153F3BBA1BD27AA400C86F1A /* SRSlimeView.m in Sources */,
 				1506E03F1B89B53C007D1696 /* JSONModelError.m in Sources */,
 				153F3B721BD279E000C86F1A /* EMSDWebImageDownloaderOperation.m in Sources */,
+				157C02C91C1C48F40092AFA1 /* CompanyFirstTVC.m in Sources */,
 				153F3B861BD279E000C86F1A /* PSTCollectionViewUpdateItem.m in Sources */,
 				1506E0A31B89B582007D1696 /* UIButton+WebCache.m in Sources */,
 				B3FB2A451BC271CF003ACC5D /* BindAccountTVC.m in Sources */,

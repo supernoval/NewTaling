@@ -23,6 +23,9 @@
     
     UIAlertView *_dviceHadRegist;
     
+    CompanyFirstTVC *_companyTVC;
+    
+    
     
     
 }
@@ -39,6 +42,9 @@
     self.sendCodeButton.layer.cornerRadius = 5.0;
     
     self.tableView.tableFooterView = [self tableFooterView];
+    
+    _companyTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CompanyFirstTVC"];
+    
     
 }
 
@@ -82,10 +88,7 @@
    
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    
-    return 15;
-}
+
 
 - (IBAction)sendCodeAction:(id)sender {
     
@@ -311,11 +314,34 @@
 
     
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 - (IBAction)switch:(id)sender {
+    
+    
+    UISegmentedControl *segment = (UISegmentedControl*)sender;
+    
+    if(segment.selectedSegmentIndex == 0)
+    {
+        
+        self.tableView.hidden = NO;
+        
+        [_companyTVC.view removeFromSuperview];
+        
+        
+    }
+    else
+    {
+//        self.tableView.hidden = YES;
+        
+        
+        [self.view addSubview:_companyTVC.view];
+         
+    }
+    
+    
+    
+    
+    
 }
 @end

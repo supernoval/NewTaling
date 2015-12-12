@@ -8,6 +8,7 @@
 
 #import "BaseTableViewController.h"
 #import "TLRequest.h"
+#import "CompanyFirstTVC.h"
 
 @interface RegistTableViewController : BaseTableViewController
 
