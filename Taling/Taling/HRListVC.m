@@ -114,12 +114,46 @@
 
 -(void)getGuanZhuList
 {
-    NSDictionary *param = @{@"user_id":[UserInfo getuserid],@"index":@"1",@"size":@"20"};
+//    ,@"index":@(index),@"size":@"20"
+    NSDictionary *param = @{@"user_id":[UserInfo getuserid]};
     
     [[TLRequest shareRequest ] tlRequestWithAction:kgetAttention Params:param result:^(BOOL isSuccess, id data) {
         
+        [self.tableView.header endRefreshing];
+        [self.tableView.footer endRefreshing];
+        
         if (isSuccess) {
             
+            NSArray *dataArray = [[NSArray alloc]init];//请求获取到的数据
+            
+            NSMutableArray *array = [[NSMutableArray alloc]init];//解析后的数据
+            
+            if ([data isKindOfClass:[NSArray class]]) {
+                dataArray = data;
+            }
+            
+            for (NSInteger i = 0; i < dataArray.count; i++) {
+                NSDictionary *oneDic = [dataArray objectAtIndex:i];
+                HRItem *item = [[HRItem alloc]init];
+                [item setValuesForKeysWithDictionary:oneDic];
+                
+                
+                [array addObject:item];
+                
+                
+                
+            }
+            
+            if (index == 1)
+            {
+                
+                [_hrdataArray removeAllObjects];
+                
+            }
+            
+            [_hrdataArray addObjectsFromArray:array];
+            
+            [self.tableView reloadData];
             
         }
     }];
@@ -129,13 +163,33 @@
 - (void)headerRefresh
 {
     index = 1;
-    [self requestHRList];
+    
+    if (_isRecommendType) {
+        
+        [self requestHRList];
+    }
+   else
+   {
+       [self getGuanZhuList];
+       
+   }
     
 }
 - (void)footerRefresh
 {
     index ++;
-    [self requestHRList];
+    
+    if (_isRecommendType) {
+        
+        [self requestHRList];
+    }
+    else
+    {
+         [self getGuanZhuList];
+    }
+    
+    
+    
     
 }
 
@@ -220,7 +274,7 @@
     
     
     //服务过的企业
-        cell.servicedCom.text = @"百度 百度 百度 百度 百度 百度 百度 百度 百度百度 百度 百度百度 百度 百度";
+        cell.servicedCom.text = @"";
     
     
         }
@@ -239,6 +293,7 @@
         HRDetailTVC *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"HRDetailTVC"];
         
         detail.hRitem = oneItem;
+        detail.hidesBottomBarWhenPushed = YES;
         
         [self.navigationController pushViewController:detail animated:YES];
     }
@@ -341,10 +396,26 @@
 
 
 - (IBAction)switchAction:(UISegmentedControl *)sender {
+    
+    
     if (sender.selectedSegmentIndex == 0) {
+    
         _isRecommendType = YES;
+        
+        [_hrdataArray removeAllObjects];
+    
+        [self headerRefresh];
+        
+        
+        
+        
     }else{
         _isRecommendType = NO;
+        
+        [_hrdataArray removeAllObjects];
+        
+        [self headerRefresh];
+        
     }
 }
 @end

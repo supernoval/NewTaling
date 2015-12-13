@@ -19,6 +19,10 @@
 #import "SharedResumeTVC.h"
 #import "CollectedResumeTVC.h"
 
+#import "PersonInfoTVC.h"
+#import "CompanyInfoTableView.h"
+
+
 @interface MineTableViewController ()<UIAlertViewDelegate>
 @property (strong, nonatomic)NSDictionary *countDic;
 
@@ -172,11 +176,23 @@
         
     
     
-            PersonalInfoTableView *personInfoTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PersonalInfoTableView"];
-            
-            personInfoTVC.hidesBottomBarWhenPushed = YES;
-            
-            [self.navigationController pushViewController:personInfoTVC animated:YES];
+//            PersonalInfoTableView *personInfoTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PersonalInfoTableView"];
+//            
+//            personInfoTVC.hidesBottomBarWhenPushed = YES;
+//            
+//            [self.navigationController pushViewController:personInfoTVC animated:YES];
+        
+        
+        PersonInfoTVC *_personInfo = [self.storyboard instantiateViewControllerWithIdentifier:@"PersonInfoTVC"];
+        
+        
+        _personInfo.hidesBottomBarWhenPushed = YES;
+        
+        _personInfo.isShowed = YES;
+        
+        [self.navigationController pushViewController:_personInfo animated:YES];
+        
+        
       
         
     }else if (indexPath.section == 1) {

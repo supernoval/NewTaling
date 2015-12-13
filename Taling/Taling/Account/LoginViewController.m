@@ -9,12 +9,12 @@
 #import "LoginViewController.h"
 #import "ConstantsHeaders.h"
 #import "CommonMethods.h"
-#import "RegistTableViewController.h"
+
 #import "ForgetCodeTVC.h"
 #import "MyProgressHUD.h"
 #import "Location.h"
 #import "ChatAccountManager.h"
-#import "EmailRegistTVC.h"
+
 #import "NewRegistViewController.h"
 
 

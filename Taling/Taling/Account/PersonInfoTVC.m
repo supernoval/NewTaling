@@ -26,13 +26,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    self.title = @"填写个人信息";
-    _footerView.frame = CGRectMake(0, 0, ScreenWidth, 140);
+    if (_isShowed) {
+        
+        self.title = @"个人信息";
+        
+        _footerView.hidden = YES;
+        
+    }
+    else
+    {
+       self.title = @"填写个人信息";
+        
+        _footerView.frame = CGRectMake(0, 0, ScreenWidth, 140);
+        
+        _doneButton.clipsToBounds = YES;
+        
+        _doneButton.layer.cornerRadius = 5;
+        
+    }
     
-    _doneButton.clipsToBounds = YES;
-    
-    _doneButton.layer.cornerRadius = 5;
-    
+   
 
     
     
@@ -305,13 +318,6 @@
 - (IBAction)doneAction:(id)sender {
     
     
-    
-
-    
-    
-   
-    
-    
     if (!_headImageView.image || _nickNameLabel.text.length == 0 || _sexLabel.text == 0 || _cityLabel.text.length == 0 || _hangyeLabel.text.length == 0 || _qiyeLabel.text.length == 0 || _gangweiLabel.text.length == 0 || !_personCardImageView.image ) {
         
         
@@ -324,7 +330,7 @@
     }
     
     
-    
+#warning  test
     DonePeronRegist *_doneRegist = [self.storyboard instantiateViewControllerWithIdentifier:@"DonePeronRegist"];
     
     [self.navigationController pushViewController:_doneRegist animated:YES];

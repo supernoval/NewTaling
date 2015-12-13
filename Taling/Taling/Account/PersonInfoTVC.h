@@ -10,6 +10,7 @@
 
 @interface PersonInfoTVC : BaseTableViewController
 
+@property (nonatomic) BOOL isShowed;  //是否只是显示
 
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
 

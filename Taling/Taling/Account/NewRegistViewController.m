@@ -7,12 +7,14 @@
 //
 
 #import "NewRegistViewController.h"
-#import "RegistTableViewController.h"
-#import "CompanyFirstTVC.h"
+
+
 #import <SMS_SDK/SMSSDK.h>
 #import "CommonMethods.h"
 #import "MyProgressHUD.h"
 #import "PersonInfoTVC.h"
+#import "YanZhengViewController.h"
+
 
 @interface NewRegistViewController ()
 {
@@ -51,6 +53,7 @@
 
 - (IBAction)personAction:(id)sender {
     
+    isCompany = NO;
     
     [_personButton setTitleColor:kOrangeTextColor
                         forState:UIControlStateNormal];
@@ -71,6 +74,7 @@
 }
 - (IBAction)companyAction:(id)sender {
     
+    isCompany = YES;
     
     [_personButton setTitleColor:kDarkGrayColor
                         forState:UIControlStateNormal];
@@ -227,21 +231,29 @@
     
     
     
-#warning test
-    PersonInfoTVC *_personTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PersonInfoTVC"];
-    
-    [self.navigationController pushViewController:_personTVC animated:YES];
-    
-    
-    return;
+
     
     
     if (isCompany) {
+        
+        YanZhengViewController *_yanzhengVC = [self.storyboard instantiateViewControllerWithIdentifier:@"YanZhengViewController"];
+        
+        [self.navigationController pushViewController:_yanzhengVC animated:YES];
+        
         
         
     }
     else
     {
+        
+#warning test
+        PersonInfoTVC *_personTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PersonInfoTVC"];
+        
+        [self.navigationController pushViewController:_personTVC animated:YES];
+        
+        
+        return;
+        
         
         if ([CommonMethods checkTel:_firstTextField.text]) {
             
