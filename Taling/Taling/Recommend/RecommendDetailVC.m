@@ -314,10 +314,10 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
             //姓名
-            //                        cell.nameLabel.text = @"";
+            cell.nameLabel.text = [NSString stringWithFormat:@"人才官ID %@",item.userId];
             
             //人才官
-            //            cell.disLabel.text =
+            cell.disLabel.text = @"人才官";
             
             //加关注
             [cell.focusButton addTarget:self action:@selector(focusOnTheHR:) forControlEvents:UIControlEventTouchUpInside];
@@ -379,11 +379,11 @@
 #pragma mark- 关注人才官
 - (void)focusOnTheHR:(UIButton *)button{
     
-    /*
+    
     
     //关注
     
-        NSDictionary *param = @{@"hr_id":_hrInfoItem.id,@"user_id":[UserInfo getuserid]};
+        NSDictionary *param = @{@"hr_id":item.userId,@"user_id":[UserInfo getuserid]};
     
         [[TLRequest shareRequest]  tlRequestWithAction:kAttentionHr Params:param result:^(BOOL isSuccess, id data) {
     
@@ -396,7 +396,7 @@
         }];
     
     
-    
+    /*
     //取消关注
     
     NSDictionary *cancelParam = @{@"hr_id":_hrInfoItem.id,@"user_id":[UserInfo getuserid]};

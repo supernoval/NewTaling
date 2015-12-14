@@ -120,6 +120,9 @@ typedef void (^upLoadPhotoBlock)(BOOL success,NSArray*results);
 #pragma mark- 将颜色转换为图片
 +(UIImage*) createImageWithColor:(UIColor*) color;
 
+#pragma mark- 获取服务过的企业列表
++ (NSString *)getServicedComList:(NSArray *)array;
+
 
 @end
 

@@ -715,4 +715,20 @@
     return theImage;
 }
 
+
++ (NSString *)getServicedComList:(NSArray *)array{
+    if (array == nil || array.count == 0) {
+        return @"暂无数据";
+    }else{
+        NSString *list = @"";
+        for (NSInteger i = 0; i<array.count; i++) {
+            NSString *oneCom = [array objectAtIndex:i];
+            NSString *one = [oneCom stringByAppendingString:@" "];
+            list = [list stringByAppendingString:one];
+            
+        }
+        
+        return list;
+    }
+}
 @end

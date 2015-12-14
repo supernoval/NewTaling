@@ -14,9 +14,6 @@
 #define  kRequestHeader     @"http://183.131.151.50/taling-api"
 
 
-
-
-
 //注册
 /*
  
@@ -92,16 +89,7 @@
  *size
  */
 
-#define kgetCommendResumes @"/resume/getCommendResumes"
 
-
-//获取评价
-/*
- *resumes_id    简历ID
- *index
- *size
-
- */
 #define kgetAppraise  @"/appraise/getAppraise"
 
 //评价简历

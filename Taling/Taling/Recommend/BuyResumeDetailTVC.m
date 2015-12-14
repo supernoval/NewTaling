@@ -176,7 +176,7 @@
     NSString *coupon_id = @"4";
     
     
-    NSDictionary *param = @{@"resumes_id":@(self.item.resumesId),@"seller_id":self.item.userId,@"buyer_id":buy_id,@"order_price":@(order_price),@"coupon_id":coupon_id};
+    NSDictionary *param = @{@"resumes_id":@(self.item.resumesId),@"seller_id":self.item.userId,@"buyer_id":buy_id,@"order_price":@(order_price),@"coupon_id":@""};
     
     if ([self.item.userId isEqualToString:buy_id]) {
         [CommonMethods showDefaultErrorString:@"不能购买自己的人才"];

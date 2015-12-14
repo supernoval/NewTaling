@@ -224,8 +224,9 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    return 162;
+    HRItem *oneItem = [_hrdataArray objectAtIndex:indexPath.section];
+ 
+    return 68+ [StringHeight heightWithText:@"上海 擅长行业：移动互联 移动互联 移动互联 移动互联 移动互联 移动互联 移动互联 移动互联 " font:FONT_13 constrainedToWidth:ScreenWidth-151]+[StringHeight heightWithText:[CommonMethods getServicedComList:oneItem.customerCompany] font:FONT_14 constrainedToWidth:ScreenWidth-124];
 }
 
 
@@ -274,7 +275,7 @@
     
     
     //服务过的企业
-        cell.servicedCom.text = @"";
+        cell.servicedCom.text = [CommonMethods getServicedComList:oneItem.customerCompany];
     
     
         }
