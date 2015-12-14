@@ -502,7 +502,7 @@ typedef NS_ENUM(NSInteger,ReSumeType) {
             resumeDetail.type = 1;
             resumeDetail.hidesBottomBarWhenPushed = YES;
             resumeDetail.item = oneItem;
-            resumeDetail.VCtitle = @"简历详情";
+            resumeDetail.VCtitle = @"人才详情";
           [self.navigationController pushViewController:resumeDetail animated:YES];
           
         }

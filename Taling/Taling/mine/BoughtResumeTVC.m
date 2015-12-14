@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"购买的简历";
+    self.title = @"购买的人才";
     _JDArray = [[NSMutableArray alloc]init];
     
     [self.tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];

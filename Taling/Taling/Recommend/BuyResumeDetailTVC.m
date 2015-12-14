@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"购买简历";
+    self.title = @"购买人才";
     _wechatButton.selected = NO;
     _alipayButton.selected = NO;
     _remainPayButton.selected = YES;
@@ -51,7 +51,7 @@
     _price.text = [NSString stringWithFormat:@"¥%.2f",item.price];
     
     //简历ID
-    _idLabel.text = [NSString stringWithFormat:@"简历ID %li",(long)item.resumesId];
+    _idLabel.text = [NSString stringWithFormat:@"人才ID %li",(long)item.resumesId];
     
     
     //公司&职业
@@ -179,7 +179,7 @@
     NSDictionary *param = @{@"resumes_id":@(self.item.resumesId),@"seller_id":self.item.userId,@"buyer_id":buy_id,@"order_price":@(order_price),@"coupon_id":coupon_id};
     
     if ([self.item.userId isEqualToString:buy_id]) {
-        [CommonMethods showDefaultErrorString:@"不能购买自己的简历"];
+        [CommonMethods showDefaultErrorString:@"不能购买自己的人才"];
     }else{
     
     [[TLRequest shareRequest] tlRequestWithAction:kcreatOrder Params:param result:^(BOOL isSuccess, id data) {
@@ -200,7 +200,7 @@
             PayOrderInfoModel *orderModel = [[ PayOrderInfoModel alloc]init];
             
             orderModel.productName = self.item.name;
-            orderModel.productDescription = [NSString stringWithFormat:@"购买%@的简历",self.item.name];
+            orderModel.productDescription = [NSString stringWithFormat:@"购买%@的人才",self.item.name];
             orderModel.amount = [data objectForKey:@"orderPrice"];
             orderModel.out_trade_no = orderNO;
             orderModel.producttype = @"1";
@@ -232,7 +232,7 @@
 #pragma mark- 显示购买成功页面跳转提醒
 - (void)showBuySuccessAlert{
     
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"购买简历成功" delegate:self cancelButtonTitle:nil otherButtonTitles:@"返回",@"查看", nil];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"购买人才成功" delegate:self cancelButtonTitle:nil otherButtonTitles:@"返回",@"查看", nil];
     
     alert.tag = 100;
     

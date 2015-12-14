@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = kBackgroundColor;
-    self.title = @"简历详情";
+    self.title = @"人才详情";
     
     _commentArry = [[NSMutableArray alloc]init];
     
@@ -273,7 +273,7 @@
             cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",item.price];
             
             //简历ID
-            cell.idLabel.text = [NSString stringWithFormat:@"简历ID %li",(long)item.resumesId];
+            cell.idLabel.text = [NSString stringWithFormat:@"人才ID %li",(long)item.resumesId];
             
             
             //公司&职业

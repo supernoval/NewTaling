@@ -26,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = [NSString stringWithFormat:@"%@的简历",item.name];
+    self.title = @"人才详情";
     self.tableView.backgroundColor = kBackgroundColor;
     
     _commentArry = [[NSMutableArray alloc]init];
@@ -361,7 +361,7 @@
             }
             
             if (indexPath.row == 0) {
-                cell.titleLabel.text = @"简历概述";
+                cell.titleLabel.text = @"人才概述";
                 cell.contentLabel.text = item.summary;
                 return cell;
                 

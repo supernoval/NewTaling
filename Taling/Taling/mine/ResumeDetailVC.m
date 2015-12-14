@@ -67,7 +67,7 @@
     }
     else
     {
-        self.title = @"我的简历";
+        self.title = @"我的人才";
     }
     
     

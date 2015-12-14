@@ -225,7 +225,7 @@
             cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",oneItem.price];
             
             //简历ID
-            cell.idLabel.text = [NSString stringWithFormat:@"简历ID %li",(long)oneItem.resumesId];
+            cell.idLabel.text = [NSString stringWithFormat:@"人才ID %li",(long)oneItem.resumesId];
             
             
             //公司&职业
