@@ -14,7 +14,7 @@
 #import "CommentTVC.h"
 #import "CommentItem.h"
 
-@interface BoughtResumeDetailVC ()<UITableViewDataSource,UITableViewDelegate>
+@interface BoughtResumeDetailVC ()<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
 @property (nonatomic, strong)NSMutableArray *commentArry;
 @property (nonatomic)NSInteger index;
 @property (nonatomic)NSInteger size;
@@ -382,9 +382,18 @@
                 cell = [[NSBundle mainBundle]loadNibNamed:cellId owner:self options:nil][0];
             }
 //            cell.headImageView
-//            cell.nameLabel
-//            cell.disLabel
-//            cell.focusButton
+            cell.nameLabel.text = [NSString stringWithFormat:@"人才官ID %@",item.userId];
+            cell.disLabel.text = @"人才官";
+            //加关注
+            
+            if ([UserInfo isFocusedHR:[item.userId integerValue]] == YES) {
+                [cell.focusButton setTitle:@"取消关注" forState:UIControlStateNormal];
+            }else{
+                [cell.focusButton setTitle:@"加关注" forState:UIControlStateNormal];
+                
+            }
+            
+            [cell.focusButton addTarget:self action:@selector(focusOnAction:) forControlEvents:UIControlEventTouchUpInside];
             return cell;
             
             
@@ -441,6 +450,49 @@
     return nil;
 }
 
+#pragma mark- 加关注
+- (void)focusOnAction:(UIButton *)button{
+    
+    if ([UserInfo isFocusedHR:[item.userId integerValue]] == YES) {
+        
+        //取消关注
+        
+        NSDictionary *cancelParam = @{@"hr_id":item.userId,@"user_id":[UserInfo getuserid]};
+        
+        [[TLRequest shareRequest ] tlRequestWithAction:kcancelAttention Params:cancelParam result:^(BOOL isSuccess, id data) {
+            
+            if (isSuccess) {
+                
+                [UserInfo hasFocusedHR:[item.userId integerValue]];
+                
+                [CommonMethods showAlertString:@"取消关注成功" delegate:self tag:66];
+                
+                
+            }
+        }];
+        
+    }else{
+        
+        //关注
+        
+        NSDictionary *param = @{@"hr_id":item.userId,@"user_id":[UserInfo getuserid]};
+        
+        [[TLRequest shareRequest]  tlRequestWithAction:kAttentionHr Params:param result:^(BOOL isSuccess, id data) {
+            
+            if (isSuccess) {
+                [UserInfo hasFocusedHR:[item.userId integerValue]];
+                
+                [CommonMethods showAlertString:@"关注成功" delegate:self tag:66];
+                
+                
+            }
+        }];
+        
+        
+    }
+    
+    
+}
 
 
 
@@ -454,5 +506,16 @@
 
 #pragma mark- 立即联系
 - (IBAction)contactAction:(UIButton *)sender {
+}
+
+#pragma mark- alertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (alertView.tag == 66) {
+        if (buttonIndex == 0) {
+            
+            
+            [self.tableView reloadData];
+        }
+    }
 }
 @end

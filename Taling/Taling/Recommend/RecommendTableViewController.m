@@ -348,41 +348,6 @@ typedef NS_ENUM(NSInteger,ReSumeType) {
 #pragma mark- 简历点赞
 - (void)supportTheResume:(UIButton *)button{
     
-    ModelItem *oneItem = [_JDArray objectAtIndex:button.tag];
-    
-    NSInteger resumes_id = oneItem.resumesId;
-    NSString *user_id = [UserInfo getuserid];
-    NSDictionary *param = @{@"resumes_id":@(resumes_id),@"user_id":user_id};
-    
-    
-    if ([UserInfo hasSupportTheResume:resumes_id] == YES) {//已经点赞了，取消点赞
-        
-        [[TLRequest shareRequest]tlRequestWithAction:kcancelSupportTheResume Params:param result:^(BOOL isSuccess, id data){
-            
-            if (isSuccess) {
-                //                        button.selected = NO;
-                
-                oneItem.goodNum = oneItem.goodNum-1;
-                
-                [self.tableView reloadData];
-            }
-            
-        }];
-        
-    }else{
-        
-        [[TLRequest shareRequest]moreThanDataRequest:ksupportTheResume Params:param result:^(BOOL isSuccess, id data){
-            
-            if (isSuccess) {
-                
-                oneItem.goodNum = oneItem.goodNum+1;
-                
-                [self.tableView reloadData];
-            
-            }
-        }];
-        
-        }
     
 }
 #pragma mark - UITableViewDataSource

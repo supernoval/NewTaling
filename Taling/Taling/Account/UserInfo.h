@@ -21,14 +21,12 @@
 
 +(NSString*)getUsername;
 
-#pragma mark- 界面展示时判断简历是否已经点赞
+#pragma mark- 界面展示时判断HR是否已经关注
 
-+ (BOOL)isResuemSupport:(NSInteger)resumeId;
++ (BOOL)isFocusedHR:(NSInteger)userId;
 
-#pragma mark- 简历点赞存储本地
+#pragma mark- 关注人才官存储本地
 
-+ (BOOL)hasSupportTheResume:(NSInteger)resumeId;
-
-
++ (BOOL)hasFocusedHR:(NSInteger)userId;
 
 @end

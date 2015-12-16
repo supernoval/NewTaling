@@ -15,7 +15,7 @@
 #import "ComBuyResumeDetailTVC.h"
 #import "CommentItem.h"
 
-@interface RecommendDetailVC ()<UITableViewDataSource,UITableViewDelegate>
+@interface RecommendDetailVC ()<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
 @property (nonatomic, strong)NSMutableArray *commentArry;
 @property (nonatomic)NSInteger index;
 @property (nonatomic)NSInteger size;
@@ -320,6 +320,14 @@
             cell.disLabel.text = @"人才官";
             
             //加关注
+            
+            if ([UserInfo isFocusedHR:[item.userId integerValue]] == YES) {
+                [cell.focusButton setTitle:@"取消关注" forState:UIControlStateNormal];
+            }else{
+                [cell.focusButton setTitle:@"加关注" forState:UIControlStateNormal];
+                
+            }
+            
             [cell.focusButton addTarget:self action:@selector(focusOnTheHR:) forControlEvents:UIControlEventTouchUpInside];
             
             return cell;
@@ -380,36 +388,45 @@
 - (void)focusOnTheHR:(UIButton *)button{
     
     
-    
-    //关注
-    
-        NSDictionary *param = @{@"hr_id":item.userId,@"user_id":[UserInfo getuserid]};
-    
-        [[TLRequest shareRequest]  tlRequestWithAction:kAttentionHr Params:param result:^(BOOL isSuccess, id data) {
-    
+    if ([UserInfo isFocusedHR:[item.userId integerValue]] == YES) {
+        
+        //取消关注
+        
+        NSDictionary *cancelParam = @{@"hr_id":item.userId,@"user_id":[UserInfo getuserid]};
+        
+        [[TLRequest shareRequest ] tlRequestWithAction:kcancelAttention Params:cancelParam result:^(BOOL isSuccess, id data) {
+            
             if (isSuccess) {
-    
-                [CommonMethods showDefaultErrorString:@"关注成功"];
-    
-    
+                
+                [UserInfo hasFocusedHR:[item.userId integerValue]];
+                
+                [CommonMethods showAlertString:@"取消关注成功" delegate:self tag:66];
+                
+                
             }
         }];
-    
-    
-    /*
-    //取消关注
-    
-    NSDictionary *cancelParam = @{@"hr_id":_hrInfoItem.id,@"user_id":[UserInfo getuserid]};
-    
-    [[TLRequest shareRequest ] tlRequestWithAction:kcancelAttention Params:cancelParam result:^(BOOL isSuccess, id data) {
         
-        if (isSuccess) {
+    }else{
+        
+        //关注
+        
+        NSDictionary *param = @{@"hr_id":item.userId,@"user_id":[UserInfo getuserid]};
+        
+        [[TLRequest shareRequest]  tlRequestWithAction:kAttentionHr Params:param result:^(BOOL isSuccess, id data) {
             
-            
-        }
-    }];
+            if (isSuccess) {
+                [UserInfo hasFocusedHR:[item.userId integerValue]];
+                
+                [CommonMethods showAlertString:@"关注成功" delegate:self tag:66];
+                
+                
+            }
+        }];
+        
+        
+    }
     
-   */
+   
 }
 
 
@@ -444,5 +461,15 @@
     BuyResumeDetailTVC *buy = [self.storyboard instantiateViewControllerWithIdentifier:@"BuyResumeDetailTVC"];
     buy.item = item;
     [self.navigationController pushViewController:buy animated:YES];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (alertView.tag == 66) {
+        if (buttonIndex == 0) {
+            
+            
+            [self.tableView reloadData];
+        }
+    }
 }
 @end

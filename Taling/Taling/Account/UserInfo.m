@@ -53,10 +53,11 @@
 }
 
 
-+ (BOOL)isResuemSupport:(NSInteger)resumeId{
++ (BOOL)isFocusedHR:(NSInteger)userId{
     
-    NSMutableArray *array = [[NSMutableArray alloc]initWithArray:[[NSUserDefaults standardUserDefaults]objectForKey:ksupportResumeArray]]
-;
+    NSMutableArray *array = [[NSMutableArray alloc]initWithArray:[[NSUserDefaults standardUserDefaults]objectForKey:kfocusdHRArray]];
+    
+    NSLog(@"_____%@",array);
     NSInteger theId = -9999;
     
     
@@ -64,12 +65,11 @@
         return NO;
     }else{
         
-        NSLog(@"resumeId:%li",resumeId);
-        
+      
         for (int i = 0; i < array.count; i++) {
             NSInteger oneId = [[array objectAtIndex:i]integerValue];
             
-            if (resumeId == oneId) {
+            if (oneId == userId) {
                 theId = oneId;
             }
             
@@ -86,9 +86,9 @@
     
 }
 
-+ (BOOL)hasSupportTheResume:(NSInteger)resumeId{
++ (BOOL)hasFocusedHR:(NSInteger)userId{
     
-    NSMutableArray *array =[[NSMutableArray alloc]initWithArray:[[NSUserDefaults standardUserDefaults]objectForKey:ksupportResumeArray]];
+    NSMutableArray *array =[[NSMutableArray alloc]initWithArray:[[NSUserDefaults standardUserDefaults]objectForKey:kfocusdHRArray]];
     
     
     NSInteger theId = -88888;
@@ -98,7 +98,7 @@
         for (NSInteger i = 0; i < array.count; i++) {
             NSInteger oneId = [[array objectAtIndex:i]integerValue];
             
-            if (oneId == resumeId) {
+            if (oneId == userId) {
                 theId = oneId;
                 theNum = i;
             }
@@ -107,56 +107,21 @@
         
         if (theId != -88888) {
             [array removeObjectAtIndex:theNum];
-            [[NSUserDefaults standardUserDefaults]setObject:array forKey:ksupportResumeArray];
+            [[NSUserDefaults standardUserDefaults]setObject:array forKey:kfocusdHRArray];
             [[NSUserDefaults standardUserDefaults]synchronize];
-            NSLog(@"i_____d:%li",resumeId);
-            
-            NSLog(@"_____-zhanshuzhu:%@",array);
-
-            
             return YES;
         }else{
-            [array addObject:@(resumeId)];
+            [array addObject:@(userId)];
             
-            
-            NSLog(@"id:%li",resumeId);
-            
-            NSLog(@"_____-shuzhu:%@",array);
-            [[NSUserDefaults standardUserDefaults]setObject:array forKey:ksupportResumeArray];
+        
+            [[NSUserDefaults standardUserDefaults]setObject:array forKey:kfocusdHRArray];
             [[NSUserDefaults standardUserDefaults]synchronize];
             
             return NO;
         }
-        
-        
-        
-//    }
     
     
 }
 
-//if (array.count == 0) {
-//    
-//    [array addObject:resumeId];
-//    return NO;
-//}else{
-//    
-//    for (NSInteger i = 0; i < array.count; i++) {
-//        NSString *oneId = [array objectAtIndex:i];
-//        
-//        if ([resumeId isEqualToString:oneId]) {
-//            return YES;
-//        }else{
-//            
-//            [array addObject:resumeId];
-//            return NO;
-//        }
-//        
-//    }
-//    
-//    return NO;
-//}
-
-//return NO;
 
 @end

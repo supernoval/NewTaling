@@ -14,7 +14,7 @@
 #import "RecommendTalentTVC.h"
 #import "RecommendAppraiseTVC.h"
 
-@interface HRDetailTVC ()
+@interface HRDetailTVC ()<UIAlertViewDelegate>
 {
     NSInteger pageIndex;
     
@@ -449,6 +449,14 @@
                     // 推荐净值
 //                    cell.recomValue.text = [NSString stringWithFormat:@"¥%.f",hRitem.] ;
                     //加关注
+                    
+                    if ([UserInfo isFocusedHR:[hRitem.id integerValue]] == YES) {
+                        [cell.focusButton setTitle:@"取消关注" forState:UIControlStateNormal];
+                    }else{
+                        [cell.focusButton setTitle:@"加关注" forState:UIControlStateNormal];
+                        
+                    }
+            
                     [cell.focusButton addTarget:self action:@selector(focusOnAction:) forControlEvents:UIControlEventTouchUpInside];
 
                     return cell;
@@ -586,37 +594,44 @@
 #pragma mark- 加关注
 - (void)focusOnAction:(UIButton *)button{
     
-   
-     
-     //关注
-     
-     NSDictionary *param = @{@"hr_id":hRitem.id,@"user_id":[UserInfo getuserid]};
-     
-     [[TLRequest shareRequest]  tlRequestWithAction:kAttentionHr Params:param result:^(BOOL isSuccess, id data) {
-     
-     if (isSuccess) {
-     
-     [CommonMethods showDefaultErrorString:@"关注成功"];
-     
-     
-     }
-     }];
-     
-     
-      /*
-     //取消关注
-     
-     NSDictionary *cancelParam = @{@"hr_id":_hrInfoItem.id,@"user_id":[UserInfo getuserid]};
-     
-     [[TLRequest shareRequest ] tlRequestWithAction:kcancelAttention Params:cancelParam result:^(BOOL isSuccess, id data) {
-     
-     if (isSuccess) {
-     
-     
-     }
-     }];
-     
-     */
+    if ([UserInfo isFocusedHR:[hRitem.id integerValue]] == YES) {
+        
+        //取消关注
+        
+        NSDictionary *cancelParam = @{@"hr_id":hRitem.id,@"user_id":[UserInfo getuserid]};
+        
+        [[TLRequest shareRequest ] tlRequestWithAction:kcancelAttention Params:cancelParam result:^(BOOL isSuccess, id data) {
+            
+            if (isSuccess) {
+                
+                [UserInfo hasFocusedHR:[hRitem.id integerValue]];
+                
+                [CommonMethods showAlertString:@"取消关注成功" delegate:self tag:66];
+                
+                
+            }
+        }];
+        
+    }else{
+        
+        //关注
+        
+        NSDictionary *param = @{@"hr_id":hRitem.id,@"user_id":[UserInfo getuserid]};
+        
+        [[TLRequest shareRequest]  tlRequestWithAction:kAttentionHr Params:param result:^(BOOL isSuccess, id data) {
+            
+            if (isSuccess) {
+                [UserInfo hasFocusedHR:[hRitem.id integerValue]];
+                
+                [CommonMethods showAlertString:@"关注成功" delegate:self tag:66];
+                
+                
+            }
+        }];
+        
+        
+    }
+
 
 }
 
@@ -635,5 +650,14 @@
     [self.navigationController pushViewController:talent animated:YES];
 }
 
-
+#pragma mark- alertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (alertView.tag == 66) {
+        if (buttonIndex == 0) {
+            
+            
+            [self.tableView reloadData];
+        }
+    }
+}
 @end
