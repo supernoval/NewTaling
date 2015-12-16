@@ -171,7 +171,8 @@
     NSString *buy_id = [UserInfo getuserid];
     NSLog(@"username:%@",buy_id);
     NSLog(@"userId:%@",self.item.userId);
-    float order_price = self.item.price;
+    float order_price = 0.1;
+//    self.item.price;
   
     NSString *coupon_id = @"4";
     
