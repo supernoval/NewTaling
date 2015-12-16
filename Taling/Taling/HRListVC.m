@@ -64,7 +64,7 @@
     
 //    _isRecommendType 推荐、关注
     
-    NSDictionary *param =@{@"index":@(index),@"size":@(pageSize)};
+    NSDictionary *param =@{@"index":@(index),@"size":@(pageSize),@"search":search};
     
     [[TLRequest shareRequest] tlRequestWithAction:kgetHrInfo Params:param result:^(BOOL isSuccess, id data) {
         
