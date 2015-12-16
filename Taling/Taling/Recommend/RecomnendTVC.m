@@ -67,8 +67,6 @@
     //登陆注册环信账号
     [self CheckEasyMobLogin];
     
-    //    [self.tableView.header beginRefreshing];
-    
     
     if (![[NSUserDefaults standardUserDefaults]boolForKey:kHadLogin])
     {
@@ -79,7 +77,6 @@
         UINavigationController *loginNav = [sb instantiateViewControllerWithIdentifier:@"LoginNav"];
         
         [self presentViewController:loginNav animated:YES completion:nil];
-//
 
     }
     else
