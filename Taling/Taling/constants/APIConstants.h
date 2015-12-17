@@ -9,9 +9,9 @@
 
 
 //本地测试
-//#define  kRequestHeader   @"http://192.168.40.176/taling-api"
+#define  kRequestHeader   @"http://192.168.40.126/taling-api"
 //正式
-#define  kRequestHeader     @"http://183.131.151.50/taling-api"
+//#define  kRequestHeader     @"http://183.131.151.50/taling-api"
 
 
 //注册
@@ -29,6 +29,8 @@
 /*
     user_id
     company_name
+    company_URL      企业链接
+    company_description  企业描述
     company_code     税务登记号
     company_number   组织机构代码
     pic_license    //营业执照
@@ -66,7 +68,8 @@
 //修改头像
 /*
  user_id   
- pic_file  这个是文件名
+ pic_file       头像
+ calling_card   名片
  */
 #define kuploadPic    @"/uploadPic"
 
@@ -97,6 +100,7 @@
  *user_id  用户id
  *resumes_id  简历id
  *comment     评价内容
+ lable       标签 字符串  用 英文逗号隔开 
  */
 #define kaddAppraise    @"/appraise/addAppraise"
 

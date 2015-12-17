@@ -27,22 +27,11 @@
     _chooseNum = 0;
     
     NSArray *array = @[
-                          @{@"title":@"ios开发",@"selected":@"0"},
-                          @{@"title":@"ios开发",@"selected":@"0"},
-                          @{@"title":@"ios开发",@"selected":@"0"},
-                          @{@"title":@"ios开发",@"selected":@"0"},
-                          @{@"title":@"ios开发",@"selected":@"0"},
-                          @{@"title":@"ios开发",@"selected":@"0"},
-                          @{@"title":@"ios开发",@"selected":@"0"},
-                          @{@"title":@"ios开发",@"selected":@"0"},
-                          @{@"title":@"ios开发",@"selected":@"0"},
-                          @{@"title":@"ios开发",@"selected":@"0"},
-                          @{@"title":@"ios开发",@"selected":@"0"},
-                          @{@"title":@"ios开发",@"selected":@"0"},
-                          @{@"title":@"ios开发",@"selected":@"0"},
-                          @{@"title":@"ios开发",@"selected":@"0"},
-                          @{@"title":@"ios开发",@"selected":@"0"},
-                          @{@"title":@"ios开发",@"selected":@"0"}
+                          @{@"title":@"善于沟通",@"selected":@"0"},
+                          @{@"title":@"经验丰富",@"selected":@"1"},
+                          @{@"title":@"技术良好",@"selected":@"2"},
+                          @{@"title":@"总体满意",@"selected":@"3"},
+        
                           ];
     
     _tagArray = [[NSMutableArray alloc]initWithArray:array];

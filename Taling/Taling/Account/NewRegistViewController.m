@@ -197,7 +197,7 @@
 {
     
     
-    NSDictionary *param = @{@"username":_firstTextField.text,@"password":_checkSMSCodeTF.text,@"is_company":@"0"};
+    NSDictionary *param = @{@"username":_firstTextField.text,@"password":_checkSMSCodeTF.text,@"is_company":@(isCompany)};
     
     
     TLRequest *request = [TLRequest shareRequest];
@@ -208,8 +208,22 @@
         
         if (isSuccess) {
             
-#warning 填写个人信息
+
             
+            if (isCompany) {
+                
+                YanZhengViewController *_yanzhengVC = [self.storyboard instantiateViewControllerWithIdentifier:@"YanZhengViewController"];
+                
+                [self.navigationController pushViewController:_yanzhengVC animated:YES];
+            }
+            else
+            {
+                PersonInfoTVC *_personTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PersonInfoTVC"];
+                
+                [self.navigationController pushViewController:_personTVC animated:YES];
+            }
+            
+     
             
             
             
@@ -236,9 +250,28 @@
     
     if (isCompany) {
         
-        YanZhengViewController *_yanzhengVC = [self.storyboard instantiateViewControllerWithIdentifier:@"YanZhengViewController"];
+
         
-        [self.navigationController pushViewController:_yanzhengVC animated:YES];
+        
+        if ([CommonMethods checkTel:_firstTextField.text]) {
+            
+            [CommonMethods showDefaultErrorString:@"请填写企业邮箱"];
+            
+            return;
+            
+        }
+  
+        
+        if (_passwordTF.text.length < 6) {
+            
+            [CommonMethods showDefaultErrorString:@"请填写6位以上的密码"];
+            
+            
+            return;
+            
+        }
+        
+        [self summitRegist];
         
         
         
@@ -246,11 +279,13 @@
     else
     {
         
-#warning test
+
+    
+        
+#warning  test
         PersonInfoTVC *_personTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PersonInfoTVC"];
         
         [self.navigationController pushViewController:_personTVC animated:YES];
-        
         
         return;
         

@@ -203,4 +203,68 @@ TLRequest *request;
 
 }
 
+-(void)requestWithAction:(NSString *)action params:(NSDictionary *)params datas:(NSDictionary *)dataDict result:(RequestResultBlock)block
+{
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",kRequestHeader,action];
+    NSLog(@"url:%@,param:%@",url,params);
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.requestSerializer.timeoutInterval = 20.0;
+    
+    [MyProgressHUD showProgress];
+    
+    
+    [manager POST:url parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        
+        [dataDict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+           
+            [formData appendPartWithFileData:obj name:key fileName:key mimeType:@"png"];
+            
+            
+        }];
+        
+        
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        [MyProgressHUD dismiss];
+        
+        NSInteger result = [[responseObject objectForKey:@"result"]integerValue];
+        
+        if (result == 1) {
+            
+            [CommonMethods showDefaultErrorString:[responseObject objectForKey:@"err_str"]];
+            
+            block(NO,nil);
+        }
+        if (result == 0)
+        {
+            //            id data = [responseObject objectForKey:@"data"];
+            
+            block(YES,responseObject);
+            
+            
+        }
+        
+        
+        NSLog(@"success:%@",responseObject);
+        
+        
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        
+        [MyProgressHUD dismiss];
+        
+        block(NO,nil);
+        
+        
+        NSLog(@"fail:%@,%@",error,operation.responseString);
+        
+    }];
+    
+}
+
 @end

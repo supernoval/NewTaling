@@ -329,11 +329,13 @@
         
     }
     
+    [self uploadHeadImage];
     
-#warning  test
-    DonePeronRegist *_doneRegist = [self.storyboard instantiateViewControllerWithIdentifier:@"DonePeronRegist"];
     
-    [self.navigationController pushViewController:_doneRegist animated:YES];
+//#warning  test
+//    DonePeronRegist *_doneRegist = [self.storyboard instantiateViewControllerWithIdentifier:@"DonePeronRegist"];
+//    
+//    [self.navigationController pushViewController:_doneRegist animated:YES];
     
     
     
@@ -347,30 +349,30 @@
 {
     
     
-    [MyProgressHUD showProgress];
-    
-    
     NSString *user_id = [UserInfo getuserid];
     
     NSData *imageData = UIImagePNGRepresentation(_headImageView.image);
     
     NSDictionary *param = @{@"user_id":user_id};
     
-    [[TLRequest shareRequest] requestWithAction:kuploadPic params:param data:imageData fileName:@"pic_file" minetype:@"png" result:^(BOOL isSuccess, id data) {
-        
-        if (isSuccess)
-        {
-            
-            
-        }
-        else
-        {
-            
-        }
-        
-        
-        
-    }];
+    NSData *cartData = UIImagePNGRepresentation(_personCardImageView.image);
+    
+    NSDictionary *dataDic = @{@"pic_file":imageData,@"calling_card":cartData};
+    
+     [[TLRequest shareRequest] requestWithAction:kuploadPic params:param datas:dataDic result:^(BOOL isSuccess, id data) {
+    
+         if (isSuccess) {
+             
+             [self saveInfo];
+             
+         }
+         else
+         {
+             [CommonMethods showDefaultErrorString:@"保存失败，请重试"];
+             
+         }
+     }];
+    
 }
 
 -(void)saveInfo
@@ -385,7 +387,28 @@
 //    *speciality   擅长
     
     
+    NSString *user_id = [UserInfo getuserid];
     
+    NSDictionary *param = @{@"user_id":user_id,@"work_year":@"",@"nickname":_nickNameLabel.text,@"industry":_hangyeLabel.text,@"company":_qiyeLabel.text,@"speciality":_gangweiLabel.text};
+    
+    
+    [[TLRequest shareRequest] tlRequestWithAction:kupdateUser Params:param result:^(BOOL isSuccess, id data) {
+       
+        if (isSuccess) {
+            
+        DonePeronRegist *_doneRegist = [self.storyboard instantiateViewControllerWithIdentifier:@"DonePeronRegist"];
+            
+        [self.navigationController pushViewController:_doneRegist animated:YES];
+            
+            
+            
+        }
+        else
+        {
+             [CommonMethods showDefaultErrorString:@"保存失败，请重试"];
+        }
+        
+    }];
     
 }
 @end

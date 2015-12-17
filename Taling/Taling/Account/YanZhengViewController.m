@@ -10,7 +10,7 @@
 #import "CompanyInfoTableView.h"
 #import "CompanyDoneVC.h"
 
-@interface YanZhengViewController ()
+@interface YanZhengViewController ()<UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 {
     BOOL isEmailCheck;
     
@@ -24,6 +24,7 @@
    
     
     self.title = @"验证";
+    
     _deleteButton.hidden = YES;
     
     _sendCodeButton.clipsToBounds =YES;
@@ -75,17 +76,77 @@
 - (IBAction)sendCodeAction:(id)sender {
     
     
+    if ([CommonMethods checkTel:_phoneNunTF.text])
+    {
+        
+        
+        
+        _sendCodeButton.enabled = NO;
+        
+        [self getAutoCodeTime];
+        
+        [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:_phoneNunTF.text zone:@"86" customIdentifier:nil result:^(NSError *error) {
+            if (!error) {
+                
+                NSLog(@"sendsms!");
+                
+                
+            }
+            else
+            {
+                NSLog(@"error:%@",error);
+                
+            }
+        }];
+        
+        
+        
+        
+    }
+    else
+    {
+        [MyProgressHUD showError:@"手机号码不正确"];
+        
+    }
+    
+    
+    
+    
 }
 - (IBAction)deleteAction:(id)sender {
+    
+    
+    
+    _cartimageView.image = nil;
+    
+    
+    
+    
 }
 - (IBAction)addPhoto:(id)sender {
+    
+    
+    UIActionSheet *_pickActionSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil, nil];
+    _pickActionSheet.delegate = self;
+    
+    [_pickActionSheet addButtonWithTitle:@"相册"];
+    [_pickActionSheet addButtonWithTitle:@"照相"];
+    
+    [_pickActionSheet addButtonWithTitle:@"取消"];
+    
+    _pickActionSheet.cancelButtonIndex = 2;
+    
+    _pickActionSheet.tag = 99;
+    
+    [_pickActionSheet showInView:self.view];
+    
+    
+    
 }
 - (IBAction)doneAction:(id)sender {
     
     
-    CompanyInfoTableView *_infoTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CompanyInfoTableView"];
-    
-    [self.navigationController pushViewController:_infoTVC animated:YES];
+
     
 
     
@@ -93,13 +154,208 @@
     if (isEmailCheck) {
     
         
+        [self uploadpicture];
+        
+        [CommonMethods showDefaultErrorString:@"已发送验证邮件到您的邮箱，请点击里面的链接激活账号"];
+        
+        
     }
     else
     {
+        
+        if (_codeTF.text.length == 0) {
+            
+            
+            [CommonMethods showDefaultErrorString:@"请填写验证码"];
+            
+            return;
+            
+            
+        }
+        
+        if (_cartimageView.image == nil) {
+            
+            [CommonMethods showDefaultErrorString:@"请上传工作证照片"];
+            
+            return;
+        }
+        
+        
+        
+        [self checkSMSCode:_codeTF.text];
         
     }
     
     
     
 }
+
+
+#pragma mark - 倒计时
+-(void)getAutoCodeTime{
+    __block int timeout=30;
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
+    dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0);
+    dispatch_source_set_event_handler(_timer, ^{
+        if(timeout<=0){
+            dispatch_source_cancel(_timer);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [_sendCodeButton setTitle:@"获取验证码" forState:UIControlStateNormal] ;
+                _sendCodeButton.enabled = YES;
+                
+            });
+        }else{
+            int seconds = timeout % 31;
+            NSString *strTime = [NSString stringWithFormat:@"%.2d", seconds];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //                NSLog(@"____%@",strTime);
+                
+                [_sendCodeButton setTitle:[NSString stringWithFormat:@"%@s",strTime] forState:UIControlStateNormal] ;
+                
+                
+                
+                
+            });
+            timeout--;
+        }
+    });
+    dispatch_resume(_timer);
+}
+
+#pragma mark -  校验验证码
+-(void)checkSMSCode:(NSString *)SMSCode
+{
+    
+    [MyProgressHUD showProgress];
+    
+    [SMSSDK commitVerificationCode:SMSCode phoneNumber:_phoneNunTF.text zone:@"86" result:^(NSError *error) {
+        
+        
+        if (!error)
+        {
+            
+            
+            [self uploadpicture];
+            
+        }
+        else
+        {
+            [MyProgressHUD dismiss];
+            
+            [CommonMethods showDefaultErrorString:@"验证码不正确"];
+            
+            
+        }
+    }];
+    
+    
+    
+}
+
+
+#pragma  mark - UIActionSheetDelegate
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (actionSheet.tag == 99) {
+        
+        switch (buttonIndex) {
+            case 0:
+            {
+                UIImagePickerController *_picker = [[UIImagePickerController alloc]init];
+                _picker.editing = NO;
+                _picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                _picker.delegate = self;
+                
+                [self presentViewController:_picker animated:YES completion:nil];
+                
+            }
+                break;
+            case 1:
+            {
+                UIImagePickerController *_picker = [[UIImagePickerController alloc]init];
+                _picker.editing = NO;
+                _picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                _picker.delegate = self;
+                
+                [self presentViewController:_picker animated:YES completion:nil];
+            }
+                break;
+                
+                
+            default:
+                break;
+        }
+    }
+    
+    
+    
+    
+}
+
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    
+    UIImage *editImage          = [info objectForKey:UIImagePickerControllerOriginalImage];
+    //    UIImage *cutImage           = [self cutImage:editImage size:CGSizeMake(160, 160)];
+    UIImage *cutImage  = [CommonMethods  imageWithImage:editImage scaledToSize:CGSizeMake(300, 300)];
+    
+    _cartimageView.image = cutImage;
+
+    
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+
+-(void)uploadpicture
+{
+//    //修改头像
+//    /*
+//     user_id
+//     pic_file       头像
+//     calling_card   名片
+//     */
+//#define kuploadPic    @"/uploadPic"
+    
+    
+    
+    NSString *user_id = [UserInfo getuserid];
+    
+    
+    NSData *calling_card = UIImagePNGRepresentation(_cartimageView.image);
+    
+    
+    [[TLRequest shareRequest] requestWithAction:kuploadPic params:@{@"user_id":user_id} data:calling_card fileName:@"calling_card" minetype:@"png" result:^(BOOL isSuccess, id data) {
+      
+        if (isSuccess) {
+            
+            NSLog(@"名片上传成功");
+            
+            
+                CompanyInfoTableView *_infoTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CompanyInfoTableView"];
+            
+                [self.navigationController pushViewController:_infoTVC animated:YES];
+            
+        }
+        else
+        {
+            
+            NSLog(@"名片上传失败");
+            
+        }
+    }];
+    
+}
+
 @end
