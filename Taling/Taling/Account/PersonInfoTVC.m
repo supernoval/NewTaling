@@ -32,6 +32,9 @@
         
         _footerView.hidden = YES;
         
+        [self showInfo];
+        
+        
     }
     else
     {
@@ -47,6 +50,19 @@
     
    
 
+    
+    
+}
+
+-(void)showInfo
+{
+    _nickNameLabel.text =[UserInfo getnickName];
+    
+    _hangyeLabel.text = [UserInfo getindustry];
+    
+    _qiyeLabel.text = [UserInfo getcompany];
+    
+    _gangweiLabel.text = [UserInfo getspecaility];
     
     
 }
@@ -83,6 +99,14 @@
             _changeVC.block = ^(NSString *string)
             {
                 _nickNameLabel.text = string;
+                
+                if (_isShowed) {
+                    
+                    [UserInfo saveInfo:string key:knickname];
+                    
+                    [self saveInfo];
+                    
+                }
             };
             
             
@@ -130,6 +154,8 @@
                 
                 _cityLabel.text = string;
                 
+                
+                
             };
             
             [self.navigationController pushViewController:_pickInfo animated:YES];
@@ -150,6 +176,15 @@
                 
                 _hangyeLabel.text = string;
                 
+                if (_isShowed) {
+                    
+                     [UserInfo saveInfo:string key:kindustry];
+                    
+                    [self saveInfo];
+                    
+                }
+                
+                
             };
             
             [self.navigationController pushViewController:_pickInfo animated:YES];
@@ -162,6 +197,13 @@
             _changeVC.block = ^(NSString *string)
             {
                 _qiyeLabel.text = string;
+                
+                if (_isShowed) {
+                    
+                     [UserInfo saveInfo:string key:kcompany];
+                    [self saveInfo];
+                    
+                }
             };
             
             
@@ -187,6 +229,13 @@
             {
               
                 _gangweiLabel.text = string;
+                
+                if (_isShowed) {
+                    
+                     [UserInfo saveInfo:string key:kspeciality];
+                    [self saveInfo];
+                    
+                }
                 
             };
             [self.navigationController pushViewController:_pickInfo animated:YES];
@@ -285,6 +334,10 @@
     if (selectedIndex == 0) {
         
        _headImageView.image = cutImage;
+        
+       
+        
+        
     }
     else if (selectedIndex == 7)
     {
@@ -294,12 +347,12 @@
     }
    
     
-    NSData *imageData = UIImagePNGRepresentation(cutImage);
+    if (_isShowed) {
+        
+        [self uploadHeadImage];
+        
+    }
     
-    
-
-    [[NSUserDefaults standardUserDefaults ] setObject:imageData forKey:kLocatePhoto];
-    [[NSUserDefaults standardUserDefaults ] synchronize];
     
     
     [picker dismissViewControllerAnimated:YES completion:nil];
@@ -357,13 +410,35 @@
     
     NSData *cartData = UIImagePNGRepresentation(_personCardImageView.image);
     
-    NSDictionary *dataDic = @{@"pic_file":imageData,@"calling_card":cartData};
+    NSDictionary *dataDic ;
     
+    //如果是显示
+    if (_isShowed) {
+        
+        if (selectedIndex == 0) {
+            
+            dataDic = @{@"pic_file":imageData};
+        }
+        
+        if (selectedIndex == 7) {
+            
+            dataDic = @{@"calling_card":cartData};
+        }
+        
+    }
+    else
+    {
+       dataDic = @{@"pic_file":imageData,@"calling_card":cartData};
+    }
      [[TLRequest shareRequest] requestWithAction:kuploadPic params:param datas:dataDic result:^(BOOL isSuccess, id data) {
     
          if (isSuccess) {
              
-             [self saveInfo];
+             if (!_isShowed) {
+                 
+                 [self saveInfo];
+             }
+             
              
          }
          else
@@ -391,14 +466,58 @@
     
     NSDictionary *param = @{@"user_id":user_id,@"work_year":@"",@"nickname":_nickNameLabel.text,@"industry":_hangyeLabel.text,@"company":_qiyeLabel.text,@"speciality":_gangweiLabel.text};
     
+    if (_isShowed) {
+        
+        switch (selectedIndex) {
+            case 1:
+            {
+                param = @{@"user_id":user_id,@"work_year":@"",@"nickname":_nickNameLabel.text,@"industry":@"",@"company":@"",@"speciality":@""};
+            }
+                break;
+            case 2://性别
+            {
+                
+            }
+                break;
+            case 3:  //城市
+            {
+               
+            }
+                break;
+            case 4:  //所在行业
+            {
+                param = @{@"user_id":user_id,@"work_year":@"",@"nickname":@"",@"industry":_hangyeLabel.text,@"company":@"",@"speciality":@""};
+            }
+                break;
+            case 5: //服务过的企业
+            {
+                param = @{@"user_id":user_id,@"work_year":@"",@"nickname":@"",@"industry":@"",@"company":_qiyeLabel.text,@"speciality":@""};
+            }
+                break;
+            case 6://擅长岗位
+            {
+                param = @{@"user_id":user_id,@"work_year":@"",@"nickname":@"",@"industry":@"",@"company":@"",@"speciality":_gangweiLabel.text};
+            }
+                break;
+            
+                
+            default:
+                break;
+        }
+    }
     
     [[TLRequest shareRequest] tlRequestWithAction:kupdateUser Params:param result:^(BOOL isSuccess, id data) {
        
         if (isSuccess) {
-            
-        DonePeronRegist *_doneRegist = [self.storyboard instantiateViewControllerWithIdentifier:@"DonePeronRegist"];
-            
-        [self.navigationController pushViewController:_doneRegist animated:YES];
+           
+            if (!_isShowed) {
+                
+                DonePeronRegist *_doneRegist = [self.storyboard instantiateViewControllerWithIdentifier:@"DonePeronRegist"];
+                
+                [self.navigationController pushViewController:_doneRegist animated:YES];
+                
+            }
+     
             
             
             

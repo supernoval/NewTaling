@@ -14,12 +14,18 @@
 
 
 +(void)saveUserInfo:(NSDictionary*)userInfo;
++(void)saveInfo:(NSString*)value key:(NSString*)key;
 
 +(NSString*)getAccount_id; //uuid
 
 +(NSString*)getuserid;
 
 +(NSString*)getUsername;
++(NSString*)getnickName;
++(NSString*)getindustry;
++(NSString*)getcompany;
++(NSString*)getspecaility;
+
 
 #pragma mark- 界面展示时判断HR是否已经关注
 

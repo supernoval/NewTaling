@@ -54,6 +54,14 @@
                 _countDic = data;
 //                _resumeNum.text = [NSString stringWithFormat:@"%@份",[_countDic objectForKey:@"resumesCountSum"]];
 //                _resumeMoney.text = [NSString stringWithFormat:@"%@元",[_countDic objectForKey:@"resumesCountPrice"]];
+                
+                _boughtLabel.text = [NSString stringWithFormat:@"%@份",[_countDic objectForKey:@"buyresumesCountSum"]];
+                
+                _sharedLabel.text = [NSString stringWithFormat:@"%@份",[_countDic objectForKey:@"resumesCountSum"]];
+                
+                _collectedLabel.text = [NSString stringWithFormat:@"%@份,",[_countDic objectForKey:@"saleresumesCountSum"]];
+                
+                
                 [self.tableView reloadData];
             }
             

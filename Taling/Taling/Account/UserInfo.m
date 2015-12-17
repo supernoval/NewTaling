@@ -34,6 +34,15 @@
     
 }
 
++(void)saveInfo:(NSString*)value key:(NSString*)key
+{
+    [[NSUserDefaults standardUserDefaults] setObject:value forKey:key];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    
+}
+
 +(NSString*)getAccount_id
 {
   
@@ -51,7 +60,22 @@
     return [[NSUserDefaults standardUserDefaults ] objectForKey:kusername];
     
 }
-
++(NSString*)getnickName
+{
+    return [[NSUserDefaults standardUserDefaults ] objectForKey:knickname];
+}
++(NSString*)getindustry
+{
+    return [[NSUserDefaults standardUserDefaults ] objectForKey:kindustry];
+}
++(NSString*)getcompany
+{
+    return [[NSUserDefaults standardUserDefaults ] objectForKey:kcompany];
+}
++(NSString*)getspecaility
+{
+    return [[NSUserDefaults standardUserDefaults ] objectForKey:kspeciality];
+}
 
 + (BOOL)isFocusedHR:(NSInteger)userId{
     
