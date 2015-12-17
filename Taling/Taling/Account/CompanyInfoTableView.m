@@ -337,6 +337,10 @@
           
             NSLog(@"company info uploadSuccess");
             
+                CompanyDoneVC *_companyDoneVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CompanyDoneVC"];
+            
+            
+                [self.navigationController pushViewController:_companyDoneVC animated:YES];
             
             
         }

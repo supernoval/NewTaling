@@ -11,6 +11,8 @@
 @interface YanZhengViewController : BaseViewController
 
 
+@property (nonatomic,strong) NSString *email;
+
 @property (weak, nonatomic) IBOutlet UIButton *phoneCheckButton;
 
 
@@ -34,6 +36,9 @@
 - (IBAction)deleteAction:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIImageView *cartimageView;
+
+@property (weak, nonatomic) IBOutlet UIView *secondView;
+
 
 
 - (IBAction)addPhoto:(id)sender;

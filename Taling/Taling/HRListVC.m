@@ -115,7 +115,7 @@
 -(void)getGuanZhuList
 {
 //    ,@"index":@(index),@"size":@"20"
-    NSDictionary *param = @{@"user_id":[UserInfo getuserid]};
+    NSDictionary *param = @{@"user_id":[UserInfo getuserid],@"index":@(index),@"size":@(pageSize)};
     
     [[TLRequest shareRequest ] tlRequestWithAction:kgetAttention Params:param result:^(BOOL isSuccess, id data) {
         
@@ -199,7 +199,7 @@
     
     UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 0.8)];
     
-    blankFooter.backgroundColor = kLineColor;
+    blankFooter.backgroundColor = [UIColor clearColor];
     
     return blankFooter;
     
@@ -224,9 +224,16 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    HRItem *oneItem = [_hrdataArray objectAtIndex:indexPath.section];
- 
-    return 68+ [StringHeight heightWithText:@"上海 擅长行业：移动互联 移动互联 移动互联 移动互联 移动互联 移动互联 移动互联 移动互联 " font:FONT_13 constrainedToWidth:ScreenWidth-151]+[StringHeight heightWithText:[CommonMethods getServicedComList:oneItem.customerCompany] font:FONT_14 constrainedToWidth:ScreenWidth-124];
+    if (_hrdataArray.count > indexPath.section) {
+        HRItem *oneItem = [_hrdataArray objectAtIndex:indexPath.section];
+        
+        return 68+ [StringHeight heightWithText:@"上海 擅长行业：移动互联 移动互联 移动互联 移动互联 移动互联 移动互联 移动互联 移动互联 " font:FONT_13 constrainedToWidth:ScreenWidth-151]+[StringHeight heightWithText:[CommonMethods getServicedComList:oneItem.customerCompany] font:FONT_14 constrainedToWidth:ScreenWidth-124];
+        
+    }
+    
+    return 68;
+    
+   
 }
 
 

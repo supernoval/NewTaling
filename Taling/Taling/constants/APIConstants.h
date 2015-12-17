@@ -9,9 +9,9 @@
 
 
 //本地测试
-#define  kRequestHeader   @"http://192.168.40.126/taling-api"
+//#define  kRequestHeader   @"http://192.168.40.126/taling-api"
 //正式
-//#define  kRequestHeader     @"http://183.131.151.50/taling-api"
+#define  kRequestHeader     @"http://183.131.151.50/taling-api"
 
 
 //注册
@@ -100,7 +100,7 @@
  *user_id  用户id
  *resumes_id  简历id
  *comment     评价内容
- lable       标签 字符串  用 英文逗号隔开 
+ lable       标签 字符串  用 英文逗号隔开
  */
 #define kaddAppraise    @"/appraise/addAppraise"
 
@@ -268,5 +268,7 @@
 #pragma mark - 获取关注列表
 /*
  * user_id
+   index
+    size
  */
 #define kgetAttention    @"/attention/getAttention"

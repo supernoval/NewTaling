@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tk8-l5-mdB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tk8-l5-mdB">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -6130,7 +6130,7 @@
                                             <constraint firstAttribute="width" constant="234" id="zKx-Bt-SZO"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="BTP-c9-a1S"/>
@@ -7017,6 +7017,7 @@
                         <outlet property="emailcheckbutton" destination="tRK-u9-ClZ" id="591-0f-0AZ"/>
                         <outlet property="phoneCheckButton" destination="PqE-zv-Q55" id="Nw7-1x-z30"/>
                         <outlet property="phoneNunTF" destination="L9k-aR-qDw" id="S2A-g9-yS1"/>
+                        <outlet property="secondView" destination="1k0-Qt-5Xd" id="AO4-wZ-Cmy"/>
                         <outlet property="sendCodeButton" destination="WXO-EW-Ezx" id="jkv-Ls-19S"/>
                     </connections>
                 </viewController>

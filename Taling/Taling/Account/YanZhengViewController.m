@@ -46,6 +46,7 @@
 
 - (IBAction)phoneAction:(id)sender {
     
+    isEmailCheck = NO;
     
     
     [_phoneCheckButton setTitleColor:kOrangeTextColor forState:UIControlStateNormal];
@@ -56,18 +57,34 @@
     
     _phoneNunTF.placeholder = @"手机号";
     
+    _secondView.hidden = NO;
     
+    _sendCodeButton.hidden = NO;
+    
+    
+    
+    _phoneNunTF.userInteractionEnabled = YES;
     
 }
 - (IBAction)emailAction:(id)sender {
     
+    isEmailCheck = YES;
+    
     [_phoneCheckButton setTitleColor:kDarkGrayColor forState:UIControlStateNormal];
     
     [_emailcheckbutton setTitleColor:kOrangeTextColor forState:UIControlStateNormal];
-    
-    _phoneNunTF.text = nil;
+
     
     _phoneNunTF.placeholder  = @"邮箱";
+    
+    _secondView.hidden = YES;
+    
+    _sendCodeButton.hidden = YES;
+    
+    
+    _phoneNunTF.text = _email;
+    
+    _phoneNunTF.userInteractionEnabled = NO;
     
     
     
@@ -154,9 +171,9 @@
     if (isEmailCheck) {
     
         
-        [self uploadpicture];
+        [self bindEmail];
         
-        [CommonMethods showDefaultErrorString:@"已发送验证邮件到您的邮箱，请点击里面的链接激活账号"];
+      
         
         
     }
@@ -358,4 +375,32 @@
     
 }
 
+-(void)bindEmail
+{
+    
+    NSString *user_id = [UserInfo getuserid];
+    
+    
+    NSDictionary *param = @{@"user_id":user_id,@"email":_email};
+    
+    
+    [[TLRequest shareRequest] tlRequestWithAction:kBindingEmail Params:param result:^(BOOL isSuccess, id data) {
+       
+        
+        if (isSuccess) {
+            
+            
+            [CommonMethods showDefaultErrorString:@"已发送验证邮件到您的邮箱，请点击里面的链接激活账号"];
+            
+            [self uploadpicture];
+            
+        }
+        else
+        {
+             [CommonMethods showDefaultErrorString:@"发送验证链接失败，请重试"];
+        }
+        
+    }];
+    
+}
 @end

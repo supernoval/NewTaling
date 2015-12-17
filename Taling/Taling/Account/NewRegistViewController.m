@@ -86,6 +86,7 @@
     
     _sendCodeButton.hidden = YES;
     
+    
     _firstTextField.text = nil;
     
     _firstTextField.placeholder = @"企业邮箱";
@@ -197,7 +198,7 @@
 {
     
     
-    NSDictionary *param = @{@"username":_firstTextField.text,@"password":_checkSMSCodeTF.text,@"is_company":@(isCompany)};
+    NSDictionary *param = @{@"username":_firstTextField.text,@"password":_passwordTF.text,@"is_company":@(isCompany)};
     
     
     TLRequest *request = [TLRequest shareRequest];
@@ -208,12 +209,12 @@
         
         if (isSuccess) {
             
-
+             [UserInfo saveUserInfo:data];
             
             if (isCompany) {
                 
                 YanZhengViewController *_yanzhengVC = [self.storyboard instantiateViewControllerWithIdentifier:@"YanZhengViewController"];
-                
+                _yanzhengVC.email = _firstTextField.text;
                 [self.navigationController pushViewController:_yanzhengVC animated:YES];
             }
             else
@@ -281,13 +282,7 @@
         
 
     
-        
-#warning  test
-        PersonInfoTVC *_personTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PersonInfoTVC"];
-        
-        [self.navigationController pushViewController:_personTVC animated:YES];
-        
-        return;
+    
         
         
         if ([CommonMethods checkTel:_firstTextField.text]) {
