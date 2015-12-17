@@ -3483,20 +3483,20 @@
                                     </mask>
                                 </variation>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gze-yg-gxd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gze-yg-gxd">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gze-yg-gxd" firstAttribute="leading" secondItem="e82-dx-dru" secondAttribute="leading" id="1vD-on-7cw"/>
-                            <constraint firstAttribute="trailing" secondItem="gze-yg-gxd" secondAttribute="trailing" id="7gy-sX-iaP"/>
-                            <constraint firstItem="gze-yg-gxd" firstAttribute="top" secondItem="9eg-gS-NVn" secondAttribute="bottom" id="PB1-MQ-6LS"/>
+                            <constraint firstItem="gze-yg-gxd" firstAttribute="top" secondItem="9eg-gS-NVn" secondAttribute="bottom" id="O4Z-lW-4G6"/>
                             <constraint firstItem="9eg-gS-NVn" firstAttribute="leading" secondItem="e82-dx-dru" secondAttribute="leading" id="a8k-hB-GUn"/>
+                            <constraint firstAttribute="trailing" secondItem="gze-yg-gxd" secondAttribute="trailing" id="bi9-qb-5nd"/>
                             <constraint firstItem="9eg-gS-NVn" firstAttribute="top" secondItem="xqL-BW-BB4" secondAttribute="bottom" id="kKL-Sb-Fru"/>
                             <constraint firstAttribute="trailing" secondItem="9eg-gS-NVn" secondAttribute="trailing" id="oCW-Aw-bKd"/>
-                            <constraint firstItem="cJf-99-vsH" firstAttribute="top" secondItem="gze-yg-gxd" secondAttribute="bottom" id="omN-KM-ICn"/>
+                            <constraint firstItem="gze-yg-gxd" firstAttribute="leading" secondItem="e82-dx-dru" secondAttribute="leading" id="tgG-Im-87e"/>
+                            <constraint firstAttribute="bottom" secondItem="gze-yg-gxd" secondAttribute="bottom" id="wyX-co-dBe"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -3504,13 +3504,13 @@
                                 <exclude reference="gze-yg-gxd"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="omN-KM-ICn"/>
                                 <exclude reference="a8k-hB-GUn"/>
                                 <exclude reference="kKL-Sb-Fru"/>
                                 <exclude reference="oCW-Aw-bKd"/>
-                                <exclude reference="1vD-on-7cw"/>
-                                <exclude reference="7gy-sX-iaP"/>
-                                <exclude reference="PB1-MQ-6LS"/>
+                                <exclude reference="O4Z-lW-4G6"/>
+                                <exclude reference="bi9-qb-5nd"/>
+                                <exclude reference="tgG-Im-87e"/>
+                                <exclude reference="wyX-co-dBe"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -3519,13 +3519,13 @@
                                 <include reference="gze-yg-gxd"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="omN-KM-ICn"/>
                                 <include reference="a8k-hB-GUn"/>
                                 <include reference="kKL-Sb-Fru"/>
                                 <include reference="oCW-Aw-bKd"/>
-                                <include reference="1vD-on-7cw"/>
-                                <include reference="7gy-sX-iaP"/>
-                                <include reference="PB1-MQ-6LS"/>
+                                <include reference="O4Z-lW-4G6"/>
+                                <include reference="bi9-qb-5nd"/>
+                                <include reference="tgG-Im-87e"/>
+                                <include reference="wyX-co-dBe"/>
                             </mask>
                         </variation>
                     </view>
