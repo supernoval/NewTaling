@@ -33,7 +33,8 @@
 //标签
 #define ksummary        @"summary"
 
-
+//是否公司
+#define kisCompany       @"is_company"
 
 //industry
 #define kindustry      @"industry"

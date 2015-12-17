@@ -25,6 +25,8 @@
 +(NSString*)getindustry;
 +(NSString*)getcompany;
 +(NSString*)getspecaility;
++(BOOL)getIsCompany;
+
 
 
 #pragma mark- 界面展示时判断HR是否已经关注

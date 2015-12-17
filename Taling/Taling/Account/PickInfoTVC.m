@@ -11,6 +11,8 @@
 @interface PickInfoTVC ()
 {
     NSArray *_dataSource;
+    NSMutableString*_goodAtStr;
+    
     
 }
 @end
@@ -19,6 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _goodAtStr = [[NSMutableString alloc]initWithString:_beforeString];
     
     
     NSArray *citys = @[@"北京市",@"上海市",@"广州市",@"深圳市",@"杭州市",@"成都市",@"南京市",@"武汉市",@"厦门市",@"天津市"];
@@ -45,10 +49,29 @@
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(done)];
+    
+    self.navigationItem.rightBarButtonItem = barButton;
     
     
 }
 
+-(void)done
+{
+    if (_goodAtStr.length == 0) {
+        
+        
+        return;
+    }
+    
+    if (_block) {
+        
+        _block(_goodAtStr);
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return _dataSource.count;
@@ -95,6 +118,34 @@
     
     cell.textLabel.text = [_dataSource objectAtIndex:indexPath.section];
   
+    if (_type == 3) {
+        
+        
+        NSArray *strings = [_goodAtStr componentsSeparatedByString:@","];
+        
+        BOOL hadSelected = NO;
+        
+        for (NSString *str in strings) {
+            
+            if ([str isEqualToString:[_dataSource objectAtIndex:indexPath.section]]) {
+                
+                hadSelected = YES;
+                
+            }
+          
+        }
+        
+        if (hadSelected) {
+            
+             cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+        else
+        {
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        }
+        
+    }
+    else{
     if ([_beforeString isEqualToString:[_dataSource objectAtIndex:indexPath.section]]) {
         
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -103,6 +154,7 @@
     {
         cell.accessoryType = UITableViewCellAccessoryNone;
         
+    }
     }
     
     return cell;
@@ -116,18 +168,90 @@
     
     NSString *string = [_dataSource objectAtIndex:indexPath.section];
     
+    if (_type == 3) {
+       
+        
+        NSArray *strings = [_goodAtStr componentsSeparatedByString:@","];
+        
+        NSMutableArray *muArray = [[NSMutableArray alloc]initWithArray:strings];
+        
+        BOOL hadSelected = NO;
+        
+        for (int i = 0; i < strings.count; i++) {
+            
+            NSString *str = [strings objectAtIndex:i];
+            
+            if ([str isEqualToString:string]) {
+                
+                [muArray removeObjectAtIndex:i];
+                
+                hadSelected = YES;
+                
+            }
+            
+            
+        }
+        
+        if (hadSelected) {
+            
+            _goodAtStr = [[NSMutableString alloc]init];
+            
+            for (NSString *temstr in muArray) {
+                
+                if (_goodAtStr.length == 0) {
+                    
+                    [_goodAtStr appendString:temstr];
+                }
+                else
+                {
+                    [_goodAtStr appendFormat:@",%@",temstr];
+                    
+                }
+            }
+        }
+        
+        else
+        {
+        if (_goodAtStr.length == 0) {
+            
+    
+            [_goodAtStr appendString:string];
+            
+            
+            
+        }
+        else
+        {
+            
+            [_goodAtStr appendFormat:@",%@",string];
+            
+            
+            
+        }
+             }
+        
+        [self.tableView reloadData];
+        
+       
+    }
+    else
+    {
+        
     if (_block) {
         
         _block(string);
         
     }
-    
+        
+         [self.navigationController popViewControllerAnimated:YES];
+        
+    }
     
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     
-    [self.navigationController popViewControllerAnimated:YES];
+   
     
     
 }

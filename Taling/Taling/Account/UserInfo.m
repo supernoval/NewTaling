@@ -76,7 +76,12 @@
 {
     return [[NSUserDefaults standardUserDefaults ] objectForKey:kspeciality];
 }
-
++(BOOL)getIsCompany
+{
+    
+    return [[NSUserDefaults standardUserDefaults]boolForKey:kisCompany];
+    
+}
 + (BOOL)isFocusedHR:(NSInteger)userId{
     
     NSMutableArray *array = [[NSMutableArray alloc]initWithArray:[[NSUserDefaults standardUserDefaults]objectForKey:kfocusdHRArray]];
