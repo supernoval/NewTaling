@@ -132,15 +132,12 @@
 		1506E1691B89B6D6007D1696 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1506E1461B89B68E007D1696 /* CoreLocation.framework */; };
 		1506E16A1B89B6D6007D1696 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1506E1471B89B68E007D1696 /* Security.framework */; };
 		1506E16B1B89B6D6007D1696 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1506E1481B89B68E007D1696 /* MapKit.framework */; };
-		1506E22A1B89BB3A007D1696 /* RecommendTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E2291B89BB3A007D1696 /* RecommendTableViewController.m */; };
 		1506E2511B89BD87007D1696 /* ChangeCodeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E24A1B89BD87007D1696 /* ChangeCodeTVC.m */; };
 		1506E2521B89BD87007D1696 /* ForgetCodeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E24C1B89BD87007D1696 /* ForgetCodeTVC.m */; };
 		1506E2531B89BD87007D1696 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E24E1B89BD87007D1696 /* LoginViewController.m */; };
 		1506E25B1B89BDE5007D1696 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E25A1B89BDE5007D1696 /* Location.m */; };
 		153F3AA71BD1F05200C86F1A /* ChatAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 153F3AA61BD1F05200C86F1A /* ChatAccountManager.m */; };
-		153F3AAF1BD1FD8F00C86F1A /* HRListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 153F3AAE1BD1FD8F00C86F1A /* HRListTableViewController.m */; };
 		153F3AB21BD1FDB200C86F1A /* HRListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 153F3AB11BD1FDB200C86F1A /* HRListCell.m */; };
-		153F3AB61BD201AC00C86F1A /* HrDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 153F3AB51BD201AC00C86F1A /* HrDetailViewController.m */; };
 		153F3AEF1BD277FB00C86F1A /* ChatSendHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 153F3ABC1BD277FB00C86F1A /* ChatSendHelper.m */; };
 		153F3AF01BD277FB00C86F1A /* ChatViewController+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 153F3ABE1BD277FB00C86F1A /* ChatViewController+Category.m */; };
 		153F3AF11BD277FB00C86F1A /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 153F3AC01BD277FB00C86F1A /* ChatViewController.m */; };
@@ -297,6 +294,9 @@
 		D27021211BC7744900428B31 /* BuyAndCashTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D27021201BC7744900428B31 /* BuyAndCashTVC.m */; };
 		D27D7CFD1C1A96C800C97F67 /* CommentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D27D7CFC1C1A96C800C97F67 /* CommentItem.m */; };
 		D29BBC691B946B7E004B4021 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D29BBC681B946B7E004B4021 /* libcrypto.a */; };
+		D2A108111C23AB110086E4F8 /* MyCouponTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A108101C23AB110086E4F8 /* MyCouponTVC.m */; };
+		D2A108131C23AB310086E4F8 /* CouponCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A108121C23AB310086E4F8 /* CouponCell.xib */; };
+		D2A108191C23B3290086E4F8 /* CouponCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A108181C23B3290086E4F8 /* CouponCell.m */; };
 		D2B8E7961C16662E00445EA6 /* BoughtResumeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B8E7951C16662E00445EA6 /* BoughtResumeTVC.m */; };
 		D2B8E7991C16665100445EA6 /* SharedResumeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B8E7981C16665100445EA6 /* SharedResumeTVC.m */; };
 		D2B8E79C1C16666A00445EA6 /* CollectedResumeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B8E79B1C16666A00445EA6 /* CollectedResumeTVC.m */; };
@@ -710,8 +710,6 @@
 		1506E1461B89B68E007D1696 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1506E1471B89B68E007D1696 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1506E1481B89B68E007D1696 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		1506E2281B89BB3A007D1696 /* RecommendTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendTableViewController.h; sourceTree = "<group>"; };
-		1506E2291B89BB3A007D1696 /* RecommendTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendTableViewController.m; sourceTree = "<group>"; };
 		1506E2491B89BD87007D1696 /* ChangeCodeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeCodeTVC.h; sourceTree = "<group>"; };
 		1506E24A1B89BD87007D1696 /* ChangeCodeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeCodeTVC.m; sourceTree = "<group>"; };
 		1506E24B1B89BD87007D1696 /* ForgetCodeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetCodeTVC.h; sourceTree = "<group>"; };
@@ -724,12 +722,8 @@
 		1506E25F1B89BF92007D1696 /* ConstantsHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantsHeaders.h; sourceTree = "<group>"; };
 		153F3AA51BD1F05200C86F1A /* ChatAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatAccountManager.h; path = ChatViewControllers/ChatAccountManager.h; sourceTree = "<group>"; };
 		153F3AA61BD1F05200C86F1A /* ChatAccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatAccountManager.m; path = ChatViewControllers/ChatAccountManager.m; sourceTree = "<group>"; };
-		153F3AAD1BD1FD8F00C86F1A /* HRListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HRListTableViewController.h; path = HR/HRListTableViewController.h; sourceTree = "<group>"; };
-		153F3AAE1BD1FD8F00C86F1A /* HRListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HRListTableViewController.m; path = HR/HRListTableViewController.m; sourceTree = "<group>"; };
 		153F3AB01BD1FDB200C86F1A /* HRListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HRListCell.h; path = HR/HRListCell.h; sourceTree = "<group>"; };
 		153F3AB11BD1FDB200C86F1A /* HRListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HRListCell.m; path = HR/HRListCell.m; sourceTree = "<group>"; };
-		153F3AB41BD201AC00C86F1A /* HrDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HrDetailViewController.h; path = HR/HrDetailViewController.h; sourceTree = "<group>"; };
-		153F3AB51BD201AC00C86F1A /* HrDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HrDetailViewController.m; path = HR/HrDetailViewController.m; sourceTree = "<group>"; };
 		153F3ABB1BD277FB00C86F1A /* ChatSendHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatSendHelper.h; sourceTree = "<group>"; };
 		153F3ABC1BD277FB00C86F1A /* ChatSendHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatSendHelper.m; sourceTree = "<group>"; };
 		153F3ABD1BD277FB00C86F1A /* ChatViewController+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ChatViewController+Category.h"; sourceTree = "<group>"; };
@@ -1033,6 +1027,11 @@
 		D27D7CFB1C1A96C800C97F67 /* CommentItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentItem.h; sourceTree = "<group>"; };
 		D27D7CFC1C1A96C800C97F67 /* CommentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentItem.m; sourceTree = "<group>"; };
 		D29BBC681B946B7E004B4021 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		D2A1080F1C23AB110086E4F8 /* MyCouponTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCouponTVC.h; sourceTree = "<group>"; };
+		D2A108101C23AB110086E4F8 /* MyCouponTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCouponTVC.m; sourceTree = "<group>"; };
+		D2A108121C23AB310086E4F8 /* CouponCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CouponCell.xib; sourceTree = "<group>"; };
+		D2A108171C23B3290086E4F8 /* CouponCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponCell.h; sourceTree = "<group>"; };
+		D2A108181C23B3290086E4F8 /* CouponCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponCell.m; sourceTree = "<group>"; };
 		D2B8E7941C16662E00445EA6 /* BoughtResumeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoughtResumeTVC.h; sourceTree = "<group>"; };
 		D2B8E7951C16662E00445EA6 /* BoughtResumeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoughtResumeTVC.m; sourceTree = "<group>"; };
 		D2B8E7971C16665100445EA6 /* SharedResumeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedResumeTVC.h; sourceTree = "<group>"; };
@@ -2017,8 +2016,6 @@
 				D2FCB8FA1BCBEF9400C6ACC0 /* buyResume */,
 				13D5F0F41B9FF8C4001A8AFF /* cell */,
 				139919131B9EB4F300FE56DD /* selectView */,
-				1506E2281B89BB3A007D1696 /* RecommendTableViewController.h */,
-				1506E2291B89BB3A007D1696 /* RecommendTableViewController.m */,
 				B3F2D3CC1C11C8720061F2A2 /* RecomnendTVC.h */,
 				B3F2D3CD1C11C8720061F2A2 /* RecomnendTVC.m */,
 				B3F2D3DC1C120D630061F2A2 /* RecommendDetailVC.h */,
@@ -2082,8 +2079,6 @@
 				B3CF9D141C13303400AD158F /* 推荐的评价 */,
 				B3CF9D131C13302800AD158F /* 推荐的人才 */,
 				153F3AB31BD2018700C86F1A /* HrDetail */,
-				153F3AAD1BD1FD8F00C86F1A /* HRListTableViewController.h */,
-				153F3AAE1BD1FD8F00C86F1A /* HRListTableViewController.m */,
 				B3F2D3E21C12C7850061F2A2 /* HRListCell.xib */,
 				153F3AB01BD1FDB200C86F1A /* HRListCell.h */,
 				153F3AB11BD1FDB200C86F1A /* HRListCell.m */,
@@ -2096,8 +2091,6 @@
 		153F3AB31BD2018700C86F1A /* HrDetail */ = {
 			isa = PBXGroup;
 			children = (
-				153F3AB41BD201AC00C86F1A /* HrDetailViewController.h */,
-				153F3AB51BD201AC00C86F1A /* HrDetailViewController.m */,
 				B3F2D3E41C12DD250061F2A2 /* HRDetailTVC.h */,
 				B3F2D3E51C12DD250061F2A2 /* HRDetailTVC.m */,
 				B3F2D3E71C12DD5D0061F2A2 /* HRDetailCell.xib */,
@@ -2815,6 +2808,11 @@
 		D2B8E7931C1578F100445EA6 /* 我的优惠券 */ = {
 			isa = PBXGroup;
 			children = (
+				D2A1080F1C23AB110086E4F8 /* MyCouponTVC.h */,
+				D2A108101C23AB110086E4F8 /* MyCouponTVC.m */,
+				D2A108121C23AB310086E4F8 /* CouponCell.xib */,
+				D2A108171C23B3290086E4F8 /* CouponCell.h */,
+				D2A108181C23B3290086E4F8 /* CouponCell.m */,
 			);
 			name = "我的优惠券";
 			sourceTree = "<group>";
@@ -2975,6 +2973,7 @@
 				B3F2D3ED1C1302640061F2A2 /* GeneralCell.xib in Resources */,
 				D2FCB9021BCBF14200C6ACC0 /* ResumePayStyleCell.xib in Resources */,
 				B3D3F9D11BC0F14300044F0F /* CommentCell.xib in Resources */,
+				D2A108131C23AB310086E4F8 /* CouponCell.xib in Resources */,
 				1506DF5A1B89B36D007D1696 /* LaunchScreen.xib in Resources */,
 				D2B8E79E1C16686F00445EA6 /* BoughtCell.xib in Resources */,
 				153F3B8B1BD279E000C86F1A /* MWPhotoBrowser.bundle in Resources */,
@@ -3064,6 +3063,7 @@
 				153F3B851BD279E000C86F1A /* PSTCollectionViewLayout.m in Sources */,
 				1506E2521B89BD87007D1696 /* ForgetCodeTVC.m in Sources */,
 				B3F2D3F31C1315A30061F2A2 /* ComBuyResumeDetailTVC.m in Sources */,
+				D2A108191C23B3290086E4F8 /* CouponCell.m in Sources */,
 				153F3AF11BD277FB00C86F1A /* ChatViewController.m in Sources */,
 				1506E0171B89B521007D1696 /* MJRefreshComponent.m in Sources */,
 				B3FB2A4F1BC298A0003ACC5D /* SettingTVC.m in Sources */,
@@ -3073,7 +3073,6 @@
 				1506E0401B89B53C007D1696 /* NSArray+JSONModel.m in Sources */,
 				13AA5EB11B95CCEF00AB477E /* AFURLSessionManager.m in Sources */,
 				1506E0201B89B521007D1696 /* UIScrollView+MJRefresh.m in Sources */,
-				153F3AB61BD201AC00C86F1A /* HrDetailViewController.m in Sources */,
 				139DC5541BCE875000AA9C27 /* NSDate+Category.m in Sources */,
 				153F3AA71BD1F05200C86F1A /* ChatAccountManager.m in Sources */,
 				B3F2D3E11C12C4440061F2A2 /* HRListVC.m in Sources */,
@@ -3089,7 +3088,6 @@
 				1506E09E1B89B582007D1696 /* SDWebImageDecoder.m in Sources */,
 				1506E0A21B89B582007D1696 /* SDWebImagePrefetcher.m in Sources */,
 				B3F2D3DE1C120D630061F2A2 /* RecommendDetailVC.m in Sources */,
-				153F3AAF1BD1FD8F00C86F1A /* HRListTableViewController.m in Sources */,
 				1506DF911B89B4A0007D1696 /* MyProgressHUD.m in Sources */,
 				153F3AF21BD277FB00C86F1A /* ConvertToCommonEmoticonsHelper.m in Sources */,
 				157C02CC1C1C4C160092AFA1 /* NewRegistViewController.m in Sources */,
@@ -3184,7 +3182,6 @@
 				1506E0A01B89B582007D1696 /* SDWebImageDownloaderOperation.m in Sources */,
 				153F3B871BD279E000C86F1A /* PSTGridLayoutInfo.m in Sources */,
 				153F3B6D1BD279E000C86F1A /* DACircularProgressView.m in Sources */,
-				1506E22A1B89BB3A007D1696 /* RecommendTableViewController.m in Sources */,
 				139DC5511BCE82BC00AA9C27 /* ChatListCellTableViewCell.m in Sources */,
 				B3FB2A351BC25A19003ACC5D /* ChangeNameTVC.m in Sources */,
 				1506E2511B89BD87007D1696 /* ChangeCodeTVC.m in Sources */,
@@ -3198,6 +3195,7 @@
 				B300008F1BC3B2A8006B7B08 /* MessageCell.m in Sources */,
 				153F3BB91BD27AA300C86F1A /* SRRefreshView.m in Sources */,
 				1506E01B1B89B521007D1696 /* MJRefreshGifHeader.m in Sources */,
+				D2A108111C23AB110086E4F8 /* MyCouponTVC.m in Sources */,
 				153F3B7B1BD279E000C86F1A /* UIImageView+EMHighlightedWebCache.m in Sources */,
 				153F3BAB1BD27A4200C86F1A /* EMCDDeviceManager+Microphone.m in Sources */,
 				153F3BBA1BD27AA400C86F1A /* SRSlimeView.m in Sources */,
