@@ -32,7 +32,7 @@
     _commentArry = [[NSMutableArray alloc]init];
     
     _index = 1;
-    _size = 5;
+    _size = 3;
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -171,6 +171,16 @@
             text.textColor = kTextLightGrayColor;
             text.text = [NSString stringWithFormat:@"联系电话:%@\n电子邮箱:%@",item.phone,item.email];
             [view_1 addSubview:text];
+            
+            UILabel *line = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 1)];
+            line.backgroundColor = kLineColor;
+            [view_1 addSubview:line];
+            
+            UILabel *oline = [[UILabel alloc]initWithFrame:CGRectMake(0, 49, ScreenWidth, 1)];
+            oline.backgroundColor = kLineColor;
+            [view_1 addSubview:oline];
+            
+            
             return view_1;
         }
             break;
@@ -359,6 +369,10 @@
             if (cell == nil) {
                 cell = [[NSBundle mainBundle]loadNibNamed:cellId owner:self options:nil][0];
             }
+            
+            UILabel *line = [[UILabel alloc]initWithFrame:CGRectMake(0, cell.frame.size.height-1, ScreenWidth, 1)];
+            line.backgroundColor = kLineColor;
+            [cell addSubview:line];
             
             if (indexPath.row == 0) {
                 cell.titleLabel.text = @"人才概述";

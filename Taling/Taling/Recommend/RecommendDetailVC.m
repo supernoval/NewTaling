@@ -33,7 +33,7 @@
     _commentArry = [[NSMutableArray alloc]init];
     
     _index = 1;
-    _size = 5;
+    _size = 3;
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -205,6 +205,11 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    CommentItem *oneCom = [[CommentItem alloc]init];
+    if (indexPath.section > 2) {
+        oneCom = [_commentArry objectAtIndex:indexPath.section-3];
+    }
+    
     
     switch (indexPath.section) {
         case 0:
@@ -233,7 +238,7 @@
         default:
         {
             
-            return 80+[StringHeight heightWithText:@"丰富经历：描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历\n\n专家擅长：主要擅长什么主要擅长什么主要擅长什么主要擅长什么主要擅长什么\n\n关键业绩：关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩\n\n优缺点：你的也有缺点赶紧爆出来你会打篮球吗" font:FONT_14 constrainedToWidth:ScreenWidth-30];
+            return 80+[StringHeight heightWithText:oneCom.comment font:FONT_14 constrainedToWidth:ScreenWidth-30];
         }
             break;
     }
@@ -370,8 +375,8 @@
                 
                 //评论内容
                 
-//                cell.commentLabel.text = oneComment.comment;
-                cell.commentLabel.text = @"丰富经历：描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历\n\n专家擅长：主要擅长什么主要擅长什么主要擅长什么主要擅长什么主要擅长什么\n\n关键业绩：关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩\n\n优缺点：你的也有缺点赶紧爆出来你会打篮球吗";
+                cell.commentLabel.text = oneComment.comment;
+
                 
             }
             

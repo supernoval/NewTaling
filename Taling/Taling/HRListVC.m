@@ -227,7 +227,7 @@
     if (_hrdataArray.count > indexPath.section) {
         HRItem *oneItem = [_hrdataArray objectAtIndex:indexPath.section];
         
-        return 68+ [StringHeight heightWithText:@"上海 擅长行业：移动互联 移动互联 移动互联 移动互联 移动互联 移动互联 移动互联 移动互联 " font:FONT_13 constrainedToWidth:ScreenWidth-151]+[StringHeight heightWithText:[CommonMethods getServicedComList:oneItem.customerCompany] font:FONT_14 constrainedToWidth:ScreenWidth-124];
+        return 68+ [StringHeight heightWithText:[NSString stringWithFormat:@"%@ 擅长行业:%@",@"城市",oneItem.speciality] font:FONT_13 constrainedToWidth:ScreenWidth-151]+[StringHeight heightWithText:[CommonMethods getServicedComList:oneItem.customerCompany] font:FONT_14 constrainedToWidth:ScreenWidth-124];
         
     }
     
@@ -273,10 +273,12 @@
     
     
     //城市&擅长行业
+        
     
-        cell.disLabel.text = @"上海 擅长行业：移动互联 移动互联 移动互联 移动互联 移动互联 移动互联 移动互联 移动互联 ";
+    cell.disLabel.text = [NSString stringWithFormat:@"%@ 擅长行业:%@",@"城市",oneItem.speciality];
+
     
-    cell.disHeight.constant = [StringHeight heightWithText:@"上海 擅长行业：移动互联 移动互联 移动互联 移动互联 移动互联 移动互联 移动互联 移动互联 " font:FONT_13 constrainedToWidth:ScreenWidth-151];
+    cell.disHeight.constant = [StringHeight heightWithText:[NSString stringWithFormat:@"%@ 擅长行业:%@",@"城市",oneItem.speciality] font:FONT_13 constrainedToWidth:ScreenWidth-151];
     
     NSLog(@"+++++height:%f",cell.disLabel.frame.size.height);
     

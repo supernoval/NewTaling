@@ -7,7 +7,6 @@
 //
 
 #import "MineTableViewController.h"
-#import "PersonalInfoTableView.h"
 #import "NSUserDefaultKeys.h"
 #import "LoginViewController.h"
 #import "WalletViewController.h"
@@ -21,10 +20,13 @@
 
 #import "PersonInfoTVC.h"
 #import "CompanyInfoTableView.h"
+#import "ShareH5.h"
+#import "MyCouponTVC.h"
 
 
-@interface MineTableViewController ()<UIAlertViewDelegate>
+@interface MineTableViewController ()<UIAlertViewDelegate,UIActionSheetDelegate>
 @property (strong, nonatomic)NSDictionary *countDic;
+@property (strong, nonatomic)UIActionSheet *shareAC;
 
 @end
 
@@ -135,7 +137,7 @@
             
         case 1:
         {
-            return 5;
+            return 6;
         }
             break;
             
@@ -180,16 +182,6 @@
 //        
 //    }
     if (indexPath.section == 0) {
-        
-        
-    
-    
-//            PersonalInfoTableView *personInfoTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PersonalInfoTableView"];
-//            
-//            personInfoTVC.hidesBottomBarWhenPushed = YES;
-//            
-//            [self.navigationController pushViewController:personInfoTVC animated:YES];
-        
         
         PersonInfoTVC *_personInfo = [self.storyboard instantiateViewControllerWithIdentifier:@"PersonInfoTVC"];
         
@@ -244,15 +236,24 @@
                 case 4:
             {
                 //我的优惠券
+                MyCouponTVC *coupon = [self.storyboard instantiateViewControllerWithIdentifier:@"MyCouponTVC"];
+                [self.navigationController pushViewController:coupon animated:YES];
                 
-                [[TLRequest shareRequest ] tlRequestWithAction:kGetMyCoupon Params:@{@"user_id":[UserInfo getuserid]} result:^(BOOL isSuccess, id data) {
-                    
-                    
-                }];
-//                WalletViewController *wallet = [self.storyboard instantiateViewControllerWithIdentifier:@"WalletViewController"];
-//                wallet.hidesBottomBarWhenPushed = YES;
-//                
-//                [self.navigationController pushViewController:wallet animated:YES];
+
+            }
+                break;
+                
+            case 5:
+            {
+                //分享
+                _shareAC = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"分享到朋友圈",@"分享给微信好友", nil];
+                [_shareAC addButtonWithTitle:@"取消"];
+                _shareAC.cancelButtonIndex = 2;
+                [_shareAC showInView:self.view];
+                
+                
+                
+                
             }
                 break;
                 
@@ -283,6 +284,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    if (actionSheet == _shareAC) {
+        if (buttonIndex == 0) {
+            //分享到朋友圈
+            [ShareH5 shareWechatPengYouQuan];
+            
+        }else if (buttonIndex == 1){
+            //分享到微信好友
+            [ShareH5 shareWechatHaoYou];
+        }
+    }
+}
 
 @end

@@ -112,7 +112,7 @@
     title.font = FONT_15;
     [headView addSubview:title];
     
-    UIImageView *indicator = [[UIImageView alloc]initWithFrame:CGRectMake(ScreenWidth-15-13, 4, 13, 22)];
+    UIImageView *indicator = [[UIImageView alloc]initWithFrame:CGRectMake(ScreenWidth-15-13, 7, 10, 16)];
     indicator.image = [UIImage imageNamed:@"point_go"];
     [headView addSubview:indicator];
     
@@ -120,7 +120,7 @@
     numLabel.textColor = kTextLightGrayColor;
     numLabel.font = FONT_14;
     numLabel.textAlignment = NSTextAlignmentRight;
-    numLabel.text = @"12份";
+//    numLabel.text = @"12份";
     [headView addSubview:numLabel];
     
     UIButton *pushButton = [[UIButton alloc]initWithFrame:headView.frame];
@@ -359,13 +359,13 @@
                     
                 case 1:
                 {
-                    return 100;
+                    return 32+ [StringHeight heightWithText:hRitem.speciality font:FONT_14 constrainedToWidth:ScreenWidth-30];
                 }
                     break;
                     
                 case 2:
                 {
-                    return 60;
+                    return 32+ [StringHeight heightWithText:[CommonMethods getServicedComList:hRitem.customerCompany] font:FONT_14 constrainedToWidth:ScreenWidth-30];
                 }
                     break;
                     
@@ -431,6 +431,10 @@
                         cell = [[NSBundle mainBundle]loadNibNamed:@"HRDetailCell" owner:self options:nil][0];
                     }
                     
+                    UILabel *line = [[UILabel alloc]initWithFrame:CGRectMake(0, cell.frame.size.height-1, ScreenWidth, 1)];
+                    line.backgroundColor = kLineColor;
+                    [cell addSubview:line];
+                    
                     //头像
                     if (hRitem.photo.length > 0) {
                         
@@ -444,7 +448,7 @@
                     cell.idLabel.text = [NSString stringWithFormat:@"人才官ID %@",hRitem.id];
                     
                     //城市
-                    cell.disLabel.text = @"上海 上海";
+                    cell.disLabel.text = @"城市";
                     
                     // 推荐净值
 //                    cell.recomValue.text = [NSString stringWithFormat:@"¥%.f",hRitem.] ;
@@ -458,6 +462,7 @@
                     }
             
                     [cell.focusButton addTarget:self action:@selector(focusOnAction:) forControlEvents:UIControlEventTouchUpInside];
+                    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
                     return cell;
                 }
@@ -470,11 +475,15 @@
                     if (cell == nil) {
                         cell = [[NSBundle mainBundle]loadNibNamed:@"SummaryCell" owner:self options:nil][0];
                     }
+                    UILabel *line = [[UILabel alloc]initWithFrame:CGRectMake(0, cell.frame.size.height-1, ScreenWidth, 1)];
+                    line.backgroundColor = kLineColor;
+                    [cell addSubview:line];
+                    
                     cell.titleLabel.text = @"擅长招聘岗位:";
                     cell.titleLabel.textColor = kTextLightGrayColor;
                     cell.titleLabel.font = FONT_14;
                     
-                    cell.contentLabel.text = @"移动互联网 移动互联网 移动互联网 移动互联网 电子商务 电子商务 电子商务 电子商务";
+                    cell.contentLabel.text = hRitem.speciality;
                     return cell;
                 }
                     break;
@@ -491,8 +500,9 @@
                     cell.titleLabel.font = FONT_14;
                     
                     cell.contentLabel.textColor = kBlueColor;
-                    cell.contentLabel.text = @"移动互联网 移动互联网 移动互联网 移动互联网";
+                    cell.contentLabel.text = [CommonMethods getServicedComList:hRitem.customerCompany];
                     return cell;
+                    
                 }
                     break;
                     

@@ -19,5 +19,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *price;
 @property (strong, nonatomic) IBOutlet UILabel *accountMoney;
 @property (strong, nonatomic) IBOutlet UILabel *orderPrice;
-
+@property (strong, nonatomic) IBOutlet UILabel *couponLabel;//优惠券
 @end

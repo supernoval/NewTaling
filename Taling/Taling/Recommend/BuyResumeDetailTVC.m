@@ -9,9 +9,12 @@
 #import "BuyResumeDetailTVC.h"
 #import "PayOrder.h"
 #import "BoughtResumeTVC.h"
+#import "MyCouponTVC.h"
 
 @interface BuyResumeDetailTVC ()<UIAlertViewDelegate>
 @property (nonatomic)NSInteger payType;// 1 余额支付 2 微信 3 支付宝
+@property (nonatomic)CGFloat payMoney;
+@property (nonatomic)NSString *couponId;
 
 
 @end
@@ -22,6 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"购买人才";
+    
+    _payMoney = item.price;
+    _couponId = @"";
     _wechatButton.selected = NO;
     _alipayButton.selected = NO;
     _remainPayButton.selected = YES;
@@ -60,18 +66,18 @@
     //城市&行业
     _place.text = [NSString stringWithFormat:@"%@ %@",item.city,item.currentIndustry];
 
-
-    //账户余额
-//    _accountMoney
-
     //需支付
-//    _orderPrice
+    _orderPrice.text = [NSString stringWithFormat:@"%.2f元",_payMoney];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(paySuccessNoti) name:kPaySucessNotification object:nil];
     
     
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self getWalletData];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -159,6 +165,22 @@
     }else if (indexPath.section == 1){
         if (indexPath.row == 0) {
             //优惠券
+            MyCouponTVC *coupon = [self.storyboard instantiateViewControllerWithIdentifier:@"MyCouponTVC"];
+            [self.navigationController pushViewController:coupon animated:YES];
+            [coupon chooseCoupon:^(NSDictionary *dic){
+                CGFloat couponMoney = [[dic objectForKey:@"money"] floatValue];
+                _couponId = [dic objectForKey:@"id"];
+                _couponLabel.text = [NSString stringWithFormat:@"%.2f元优惠券",couponMoney];
+                
+                if (item.price <= couponMoney) {
+                    _payMoney = 0.00;
+                    _orderPrice.text = [NSString stringWithFormat:@"%.2f元",_payMoney];
+                }else{
+                    _payMoney = item.price - couponMoney;
+                    _orderPrice.text = [NSString stringWithFormat:@"%.2f元",_payMoney];
+                    
+                }
+            }];
         }
     }
     
@@ -171,11 +193,8 @@
     NSString *buy_id = [UserInfo getuserid];
     NSLog(@"username:%@",buy_id);
     NSLog(@"userId:%@",self.item.userId);
-    float order_price = 0.1;
-//    self.item.price;
-  
-    NSString *coupon_id = @"4";
-    
+    float order_price = _payMoney;
+//  _couponId 优惠券ID
     
     NSDictionary *param = @{@"resumes_id":@(self.item.resumesId),@"seller_id":self.item.userId,@"buyer_id":buy_id,@"order_price":@(order_price),@"coupon_id":@""};
     
@@ -228,6 +247,26 @@
     }
     
         
+}
+
+
+#pragma mark- 获取钱包数据
+- (void)getWalletData{
+    
+    NSString *user_id = [UserInfo getuserid];
+    NSDictionary *param = @{@"user_id":user_id};
+    [[TLRequest shareRequest]tlRequestWithAction:kGetAuthMoney Params:param result:^(BOOL isSuccess, id data){
+        
+        if (isSuccess) {
+            
+            if ([data isKindOfClass:[NSDictionary class]]) {
+               NSDictionary *walletDic = data;
+                _accountMoney.text = [NSString stringWithFormat:@"%@元",[walletDic objectForKey:@"money"]];
+            }
+            
+        }
+        
+    }];
 }
 
 #pragma mark- 显示购买成功页面跳转提醒
