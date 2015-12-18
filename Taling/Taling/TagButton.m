@@ -25,7 +25,7 @@
         [self setTitleColor:kTextLightGrayColor forState:UIControlStateNormal];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         [self setBackgroundImage:[CommonMethods createImageWithColor:[UIColor clearColor]] forState:UIControlStateNormal];
-        [self setBackgroundImage:[CommonMethods createImageWithColor:[UIColor redColor]] forState:UIControlStateSelected];
+        [self setBackgroundImage:[CommonMethods createImageWithColor:kYellowColor] forState:UIControlStateSelected];
         
         
     }

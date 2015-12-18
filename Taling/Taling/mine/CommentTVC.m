@@ -27,10 +27,23 @@
     _chooseNum = 0;
     
     NSArray *array = @[
+                          @{@"title":@"性格开朗",@"selected":@"0"},
+                          @{@"title":@"待人友好",@"selected":@"0"},
+                          @{@"title":@"诚实谦逊",@"selected":@"0"},
+                          @{@"title":@"态度积极",@"selected":@"0"},
+                          @{@"title":@"工作勤奋",@"selected":@"0"},
+                          @{@"title":@"认真负责",@"selected":@"0"},
+                          @{@"title":@"吃苦耐劳",@"selected":@"0"},
+                          @{@"title":@"尽职尽责",@"selected":@"0"},
+                          @{@"title":@"有耐心",@"selected":@"0"},
+                          @{@"title":@"平易近人",@"selected":@"0"},
+                          @{@"title":@"经验丰富",@"selected":@"0"},
                           @{@"title":@"善于沟通",@"selected":@"0"},
-                          @{@"title":@"经验丰富",@"selected":@"1"},
-                          @{@"title":@"技术良好",@"selected":@"2"},
-                          @{@"title":@"总体满意",@"selected":@"3"},
+                          @{@"title":@"善于思考",@"selected":@"0"},
+                          @{@"title":@"团队合作",@"selected":@"0"},
+                          @{@"title":@"服从安排",@"selected":@"0"},
+                          @{@"title":@"技术专业",@"selected":@"0"}
+                          
         
                           ];
     
@@ -93,9 +106,6 @@
 
 - (void)chooseTagAction:(UIButton *)button{
     
-    
-    
-    
     NSInteger i = button.tag;
     NSDictionary *replaceDic;
     NSDictionary *oneDic = [_tagArray objectAtIndex:i];
@@ -141,12 +151,18 @@
 - (void)alertWithNoContent{
     if (_experenceTextView.text.length == 0) {
         [CommonMethods showDefaultErrorString:@"请输入对人才经历的评价"];
+        return;
     }else if (_skillsTextView.text.length == 0) {
         [CommonMethods showDefaultErrorString:@"请输入对人才专长的评价"];
+        return;
     }else if (_performTextView.text.length == 0) {
         [CommonMethods showDefaultErrorString:@"请输入对人才关键业绩的评价"];
+        return;
     }else if (_advantageTextView.text.length == 0) {
         [CommonMethods showDefaultErrorString:@"请输入对人才优势缺点的评价"];
+        return;
+    }else{
+        [self sumitRequest];
     }
 }
 
@@ -239,6 +255,7 @@
 - (void)completeAndShareAction{
     
     [self alertWithNoContent];
+    
 }
 
 //取消
@@ -250,14 +267,32 @@
 //完成
 - (IBAction)completeAction:(id)sender {
     [self alertWithNoContent];
+    
 }
 
 -(void)sumitRequest
 {
-    NSString *userid = [UserInfo getuserid];
-    NSString *coment = @"";
+    NSString *label = @"";//标签
     
-    NSDictionary *params = @{@"user_id":userid,@"resumes_id":@(item.resumesId),@"comment":coment};
+    for (NSInteger i = 0; i < _tagArray.count; i++) {
+        NSDictionary *oneTag = [_tagArray objectAtIndex:i];
+        if ([[oneTag objectForKey:@"selected"] isEqualToString:@"1"]) {
+            NSString *oneComment = [[oneTag objectForKey:@"title"] stringByAppendingString:@","];
+            label = [label stringByAppendingString:oneComment];
+        }
+    }
+    
+    if (label.length > 0) {
+        label = [label substringToIndex:label.length-1];
+    }
+    
+    NSLog(@"label:%@",label);
+    
+    //评价内容
+    NSString *comment = [NSString stringWithFormat:@"丰富经历:%@\n\n专家擅长:%@\n\n关键业绩:%@\n\n优势缺点:%@",_experenceTextView.text,_skillsTextView.text,_performTextView.text,_advantageTextView.text];
+    NSString *userid = [UserInfo getuserid];
+    
+    NSDictionary *params = @{@"user_id":userid,@"resumes_id":@(item.resumesId),@"comment":comment,@"label":label};
     
     [[TLRequest shareRequest] tlRequestWithAction:kaddAppraise Params:params result:^(BOOL isSuccess, id data) {
         
