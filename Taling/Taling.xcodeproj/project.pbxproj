@@ -260,6 +260,7 @@
 		B30000A71BC3D435006B7B08 /* CommentMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B30000A61BC3D435006B7B08 /* CommentMessageCell.m */; };
 		B30000A91BC3D449006B7B08 /* CommentMeaageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30000A81BC3D449006B7B08 /* CommentMeaageCell.xib */; };
 		B30000AC1BC3D78C006B7B08 /* LikeMessageTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B30000AB1BC3D78C006B7B08 /* LikeMessageTVC.m */; };
+		B38446141C257C48005DF99C /* ContactTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B38446131C257C48005DF99C /* ContactTVC.m */; settings = {ASSET_TAGS = (); }; };
 		B3CF9D171C13305700AD158F /* RecommendTalentTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CF9D161C13305700AD158F /* RecommendTalentTVC.m */; };
 		B3CF9D1A1C13307100AD158F /* RecommendAppraiseTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CF9D191C13307100AD158F /* RecommendAppraiseTVC.m */; };
 		B3D3F9D11BC0F14300044F0F /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D3F9D01BC0F14300044F0F /* CommentCell.xib */; };
@@ -968,6 +969,8 @@
 		B30000A81BC3D449006B7B08 /* CommentMeaageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentMeaageCell.xib; sourceTree = "<group>"; };
 		B30000AA1BC3D78C006B7B08 /* LikeMessageTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikeMessageTVC.h; sourceTree = "<group>"; };
 		B30000AB1BC3D78C006B7B08 /* LikeMessageTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikeMessageTVC.m; sourceTree = "<group>"; };
+		B38446121C257C48005DF99C /* ContactTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTVC.h; sourceTree = "<group>"; };
+		B38446131C257C48005DF99C /* ContactTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTVC.m; sourceTree = "<group>"; };
 		B3CF9D151C13305600AD158F /* RecommendTalentTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendTalentTVC.h; sourceTree = "<group>"; };
 		B3CF9D161C13305700AD158F /* RecommendTalentTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendTalentTVC.m; sourceTree = "<group>"; };
 		B3CF9D181C13307100AD158F /* RecommendAppraiseTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendAppraiseTVC.h; sourceTree = "<group>"; };
@@ -2477,6 +2480,7 @@
 		1579153A1B8F52C400E31111 /* mine */ = {
 			isa = PBXGroup;
 			children = (
+				B38446111C257C21005DF99C /* 立即联系 */,
 				D2B8E7931C1578F100445EA6 /* 我的优惠券 */,
 				D2B8E7921C1578E000445EA6 /* 收藏的简历 */,
 				D2B8E7911C1578D200445EA6 /* 分享的简历 */,
@@ -2634,6 +2638,15 @@
 				B30000AB1BC3D78C006B7B08 /* LikeMessageTVC.m */,
 			);
 			name = likeMessage;
+			sourceTree = "<group>";
+		};
+		B38446111C257C21005DF99C /* 立即联系 */ = {
+			isa = PBXGroup;
+			children = (
+				B38446121C257C48005DF99C /* ContactTVC.h */,
+				B38446131C257C48005DF99C /* ContactTVC.m */,
+			);
+			name = "立即联系";
 			sourceTree = "<group>";
 		};
 		B3CF9D131C13302800AD158F /* 推荐的人才 */ = {
@@ -3079,6 +3092,7 @@
 				1506E03C1B89B53C007D1696 /* JSONModel.m in Sources */,
 				1506E0A71B89B582007D1696 /* UIImageView+HighlightedWebCache.m in Sources */,
 				1302D78D1BDF49BF00FB4D11 /* payRequsestHandler.mm in Sources */,
+				B38446141C257C48005DF99C /* ContactTVC.m in Sources */,
 				153F3B021BD277FB00C86F1A /* MessageModel.m in Sources */,
 				D2D9220D1BDA31BE00CE91D2 /* ResumeDetailVC.m in Sources */,
 				153F3BAD1BD27A4200C86F1A /* EMCDDeviceManager+Remind.m in Sources */,

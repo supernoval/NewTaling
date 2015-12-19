@@ -13,6 +13,7 @@
 #import "CommentCell.h"
 #import "CommentTVC.h"
 #import "CommentItem.h"
+#import "ContactTVC.h"
 
 @interface BoughtResumeDetailVC ()<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
 @property (nonatomic, strong)NSMutableArray *commentArry;
@@ -559,6 +560,9 @@
 
 #pragma mark- 立即联系
 - (IBAction)contactAction:(UIButton *)sender {
+    ContactTVC *contact = [self.storyboard instantiateViewControllerWithIdentifier:@"ContactTVC"];
+    contact.oneItem = item;
+    [self.navigationController pushViewController:contact animated:YES];
 }
 
 #pragma mark- alertViewDelegate

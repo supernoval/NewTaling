@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RecommendCell" rowHeight="-76" id="79P-re-B1S" customClass="RecommendCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RecommendCell" rowHeight="-150" id="79P-re-B1S" customClass="RecommendCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="79P-re-B1S" id="Sle-3S-ZAf">
@@ -183,12 +183,13 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="companyLabel" destination="jCg-ba-N3n" id="Yz0-Lm-v5y"/>
+                <outlet property="guzhiLabel" destination="HyB-kg-mh6" id="3zY-9F-ddJ"/>
                 <outlet property="headImageView" destination="4Y6-pR-wh4" id="d9r-M2-q2t"/>
                 <outlet property="idLabel" destination="cpL-IE-f70" id="d11-aO-gnK"/>
                 <outlet property="placeLabel" destination="ca6-af-u4V" id="rdg-9s-08w"/>
                 <outlet property="priceLabel" destination="ga5-ei-0lh" id="JpD-7o-29L"/>
             </connections>
-            <point key="canvasLocation" x="260" y="187"/>
+            <point key="canvasLocation" x="260" y="149.5"/>
         </tableViewCell>
     </objects>
     <resources>

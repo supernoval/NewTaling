@@ -10,6 +10,7 @@
 #import "BoughtCell.h"
 #import "BoughtResumeDetailVC.h"
 
+
 @interface BoughtResumeTVC ()
 {
     NSInteger pageindex;

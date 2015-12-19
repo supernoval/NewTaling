@@ -25,5 +25,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *companyLabel;//公司&职业
 
 
+@property (strong, nonatomic) IBOutlet UILabel *guzhiLabel;
 
 @end

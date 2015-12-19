@@ -4009,7 +4009,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cmh-Nt-O1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3343" y="233"/>
+            <point key="canvasLocation" x="3172.5" y="120"/>
         </scene>
         <!--Shared ResumeTVC-->
         <scene sceneID="nOB-wE-idH">
@@ -4039,6 +4039,165 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V0U-Kr-pnb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3856.5" y="131.25"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="Peo-Si-ZM8">
+            <objects>
+                <tableViewController storyboardIdentifier="ContactTVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UHR-eI-2dz" customClass="ContactTVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="G6c-03-FV1">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="Ifi-gF-sbE">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="**先生/小姐:您好，我是**公司的招聘负责人，目前在网络上看浏览到您的简历信息，同时我单位有" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNu-Nk-VKq">
+                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="blG-Z4-Sh5"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="blG-Z4-Sh5"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="blG-Z4-Sh5"/>
+                                        </mask>
+                                    </variation>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="招聘职位正在公开招聘，欢迎联系，谢谢" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAv-OB-oQW">
+                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="6yO-84-pIz">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="21"/>
+                                        </constraint>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="6yO-84-pIz"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="6yO-84-pIz"/>
+                                        </mask>
+                                    </variation>
+                                </label>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入您招聘的职位名称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hh8-9G-bcy">
+                                    <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="qvt-qQ-jkn"/>
+                                    </constraints>
+                                    <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="qvt-qQ-jkn"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="qvt-qQ-jkn"/>
+                                        </mask>
+                                    </variation>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="DAv-OB-oQW" firstAttribute="top" secondItem="hh8-9G-bcy" secondAttribute="bottom" constant="8" id="7Jj-Cs-2L0"/>
+                                <constraint firstItem="hh8-9G-bcy" firstAttribute="top" secondItem="qNu-Nk-VKq" secondAttribute="bottom" constant="8" id="DJX-kv-5DW"/>
+                                <constraint firstItem="qNu-Nk-VKq" firstAttribute="top" secondItem="Ifi-gF-sbE" secondAttribute="top" constant="8" id="JRU-bO-6tX"/>
+                                <constraint firstItem="qNu-Nk-VKq" firstAttribute="leading" secondItem="Ifi-gF-sbE" secondAttribute="leading" constant="15" id="Z6k-W6-gtL"/>
+                                <constraint firstItem="DAv-OB-oQW" firstAttribute="leading" secondItem="Ifi-gF-sbE" secondAttribute="leading" constant="15" id="Zai-be-NdB"/>
+                                <constraint firstAttribute="trailing" secondItem="qNu-Nk-VKq" secondAttribute="trailing" constant="15" id="eGK-kE-L4Q"/>
+                                <constraint firstItem="hh8-9G-bcy" firstAttribute="leading" secondItem="Ifi-gF-sbE" secondAttribute="leading" constant="15" id="eHT-Xg-4mN"/>
+                                <constraint firstAttribute="trailing" secondItem="DAv-OB-oQW" secondAttribute="trailing" constant="15" id="iks-om-hhD"/>
+                                <constraint firstAttribute="trailing" secondItem="hh8-9G-bcy" secondAttribute="trailing" constant="15" id="n34-aw-6AP"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="subviews">
+                                    <exclude reference="qNu-Nk-VKq"/>
+                                    <exclude reference="DAv-OB-oQW"/>
+                                    <exclude reference="hh8-9G-bcy"/>
+                                </mask>
+                                <mask key="constraints">
+                                    <exclude reference="JRU-bO-6tX"/>
+                                    <exclude reference="Z6k-W6-gtL"/>
+                                    <exclude reference="eGK-kE-L4Q"/>
+                                    <exclude reference="DJX-kv-5DW"/>
+                                    <exclude reference="eHT-Xg-4mN"/>
+                                    <exclude reference="n34-aw-6AP"/>
+                                    <exclude reference="7Jj-Cs-2L0"/>
+                                    <exclude reference="Zai-be-NdB"/>
+                                    <exclude reference="iks-om-hhD"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <mask key="subviews">
+                                    <include reference="qNu-Nk-VKq"/>
+                                    <include reference="DAv-OB-oQW"/>
+                                    <include reference="hh8-9G-bcy"/>
+                                </mask>
+                                <mask key="constraints">
+                                    <include reference="JRU-bO-6tX"/>
+                                    <include reference="Z6k-W6-gtL"/>
+                                    <include reference="eGK-kE-L4Q"/>
+                                    <include reference="DJX-kv-5DW"/>
+                                    <include reference="eHT-Xg-4mN"/>
+                                    <include reference="n34-aw-6AP"/>
+                                    <include reference="7Jj-Cs-2L0"/>
+                                    <include reference="Zai-be-NdB"/>
+                                    <include reference="iks-om-hhD"/>
+                                </mask>
+                            </variation>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ahE-Xe-arq">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ahE-Xe-arq" id="Eve-aj-3bw">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="UHR-eI-2dz" id="vzo-pB-jpH"/>
+                            <outlet property="delegate" destination="UHR-eI-2dz" id="gLO-HH-ap7"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="lfo-QU-Izr">
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="eBC-ef-QpV">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="cancelAction:" destination="UHR-eI-2dz" id="Hpx-6S-Kd4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="发送" id="daD-Li-mOQ">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="sendAction:" destination="UHR-eI-2dz" id="T5V-AH-yel"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="infoLabel" destination="DAv-OB-oQW" id="bgl-uE-iFR"/>
+                        <outlet property="positionTF" destination="hh8-9G-bcy" id="dJm-V7-G6V"/>
+                        <outlet property="titleLabel" destination="qNu-Nk-VKq" id="LqN-SA-mhY"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vp3-fY-jCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4395" y="157.5"/>
         </scene>
         <!--RecomnendTVC-->
         <scene sceneID="eux-mz-F7x">
