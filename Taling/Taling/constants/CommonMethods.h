@@ -123,6 +123,8 @@ typedef void (^upLoadPhotoBlock)(BOOL success,NSArray*results);
 #pragma mark- 获取服务过的企业列表
 + (NSString *)getServicedComList:(NSArray *)array;
 
+#pragma mark- 将评价标签分割
++ (NSArray *)sepretTheAppraiseLabel:(NSString *)label;
 
 @end
 

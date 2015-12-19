@@ -121,36 +121,67 @@
 #pragma mark - UITableViewDataSource
 -(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    
-    if (section > 2) {
-        float tagWidth = (ScreenWidth-30-3*TagGap)/4;
-        float tagHeight = 30;
-        NSInteger count = 7;
-        NSInteger tagRow;
-        if (count%4 == 0) {
-            tagRow = count/4;
-        }else{
-            tagRow = count/4 + 1;
+    switch (section) {
+        case 0:
+        {
+            return nil;
         }
-        
-        UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40*tagRow)];
-        
-        blankFooter.backgroundColor = [UIColor whiteColor];
-        for (NSInteger i = 0; i < count; i++) {
+            break;
             
-            TagLabel *tagLabel = [[TagLabel alloc]initWithFrame:CGRectMake(15+(i%4)*(tagWidth+TagGap), i/4*(tagHeight+TagGap), tagWidth, tagHeight)];
-            tagLabel.text = [NSString stringWithFormat:@"高级%li",(long)i];
-            [blankFooter addSubview:tagLabel];
-            
+        case 1:
+        {
+            return nil;
         }
-        
-        //    UIView *gap = [[UIView alloc]initWithFrame:CGRectMake(0, blankFooter.frame.size.height-10, ScreenWidth, 10)];
-        //    gap.backgroundColor = kBackgroundColor;
-        //    [blankFooter addSubview:gap];
-        return blankFooter;
-    }else{
-        return nil;
+            break;
+            
+        case 2:
+        {
+            return nil;
+        }
+            break;
+            
+        default:
+        {
+            if (_commentArry.count>0) {
+                
+                float tagWidth = (ScreenWidth-30-3*TagGap)/4;
+                float tagHeight = 30;
+                CommentItem *commentItem = [_commentArry objectAtIndex:section-3];
+                NSArray *labelArray =[CommonMethods sepretTheAppraiseLabel:commentItem.lable];
+                NSInteger count = labelArray.count;
+                NSInteger tagRow;
+                if (count%4 == 0) {
+                    tagRow = count/4;
+                }else{
+                    tagRow = count/4 + 1;
+                }
+                
+                UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40*tagRow+0.5)];
+                
+                blankFooter.backgroundColor = [UIColor whiteColor];
+                for (NSInteger i = 0; i < count; i++) {
+                    NSString *oneLabel = [labelArray objectAtIndex:i];
+                    
+                    TagLabel *tagLabel = [[TagLabel alloc]initWithFrame:CGRectMake(15+(i%4)*(tagWidth+TagGap), i/4*(tagHeight+TagGap), tagWidth, tagHeight)];
+                    tagLabel.text = oneLabel;
+                    [blankFooter addSubview:tagLabel];
+                    
+                }
+                            UIView *gap = [[UIView alloc]initWithFrame:CGRectMake(0, blankFooter.frame.size.height-0.5, ScreenWidth, 1)];
+                            gap.backgroundColor = kLineColor;
+                            [blankFooter addSubview:gap];
+                
+                return blankFooter;
+                
+                
+                
+            }else{
+                return nil;
+            }
+        }
+            break;
     }
+
     
 }
 
@@ -178,10 +209,41 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    if (section > 2) {
-        return 80;
+    switch (section) {
+        case 0:
+        {
+            return 0.8;
+        }
+            break;
+            
+        case 1:
+        {
+            return 0.8;
+        }
+            break;
+            
+        case 2:
+        {
+            return 0.8;
+        }
+            break;
+            
+        default:
+        {
+            if (_commentArry.count>0) {
+                CommentItem *oneItem = [_commentArry objectAtIndex:section-3];
+                NSInteger count = [CommonMethods sepretTheAppraiseLabel:oneItem.lable].count;
+                NSInteger tagRow = count%4==0 ? count/4:count/4 + 1 ;
+                
+                return 40*tagRow+0.5;
+            
+        
+            }else{
+                return 0.0;
+            }
+        }
+            break;
     }
-    return 0.8;
     
 }
 

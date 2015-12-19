@@ -197,9 +197,12 @@
                 UIView *appraiseView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 30)];
                 appraiseView.backgroundColor = [UIColor whiteColor];
                 UILabel *appraiseLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, 5, ScreenWidth-30, 25)];
-                appraiseLabel.text = @"评价(15)";
+                appraiseLabel.text = @"评价";
                 appraiseLabel.font = FONT_15;
                 [appraiseView addSubview:appraiseLabel];
+                UILabel *line = [[UILabel alloc]initWithFrame:CGRectMake(0, appraiseView.frame.size.height-1, ScreenWidth, 1)];
+                line.backgroundColor = kLineColor;
+                [appraiseView addSubview:line];
                 return appraiseView;
             }else{
                 
@@ -210,33 +213,42 @@
             
         default://评价
         {
-            
-            float tagWidth = (ScreenWidth-30-3*TagGap)/4;
-            float tagHeight = 30;
-            NSInteger count = 7;
-            NSInteger tagRow;
-            if (count%4 == 0) {
-                tagRow = count/4;
+            if (_commentArry.count>0) {
+                CommentItem *commentItem = [_commentArry objectAtIndex:section-3];
+                
+                float tagWidth = (ScreenWidth-30-3*TagGap)/4;
+                float tagHeight = 30;
+                NSArray *labelArray = [CommonMethods sepretTheAppraiseLabel:commentItem.lable];
+                NSInteger count = labelArray.count;
+                NSInteger tagRow;
+                if (count%4 == 0) {
+                    tagRow = count/4;
+                }else{
+                    tagRow = count/4 + 1;
+                }
+                
+                UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40*tagRow)];
+                
+                blankFooter.backgroundColor = [UIColor whiteColor];
+                for (NSInteger i = 0; i < count; i++) {
+                    
+                    NSString *oneLabel = [labelArray objectAtIndex:i];
+                    TagLabel *tagLabel = [[TagLabel alloc]initWithFrame:CGRectMake(15+(i%4)*(tagWidth+TagGap), i/4*(tagHeight+TagGap), tagWidth, tagHeight)];
+                    tagLabel.text = oneLabel;
+                    [blankFooter addSubview:tagLabel];
+                    
+                }
+                
+                UIView *gap = [[UIView alloc]initWithFrame:CGRectMake(0, blankFooter.frame.size.height-1, ScreenWidth, 1)];
+                gap.backgroundColor = kLineColor;
+                [blankFooter addSubview:gap];
+                
+                return blankFooter;
             }else{
-                tagRow = count/4 + 1;
+                return nil;
             }
             
-            UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40*tagRow)];
             
-            blankFooter.backgroundColor = [UIColor whiteColor];
-            for (NSInteger i = 0; i < count; i++) {
-                
-                TagLabel *tagLabel = [[TagLabel alloc]initWithFrame:CGRectMake(15+(i%4)*(tagWidth+TagGap), i/4*(tagHeight+TagGap), tagWidth, tagHeight)];
-                tagLabel.text = [NSString stringWithFormat:@"高级%li",(long)i];
-                [blankFooter addSubview:tagLabel];
-                
-            }
-            
-            //    UIView *gap = [[UIView alloc]initWithFrame:CGRectMake(0, blankFooter.frame.size.height-1, ScreenWidth, 1)];
-            //    gap.backgroundColor = kLineColor;
-            //    [blankFooter addSubview:gap];
-            
-            return blankFooter;
         }
             break;
     }
@@ -279,8 +291,17 @@
             
         default://评价
         {
+            if (_commentArry.count >0) {
+                
+                CommentItem *oneItem = [_commentArry objectAtIndex:section-3];
+                NSInteger count = [CommonMethods sepretTheAppraiseLabel:oneItem.lable].count;
+                NSInteger tagRow = count%4==0 ? count/4:count/4 + 1 ;
+                return 40*tagRow;
+                
+            }else{
+                return 0.0;
+            }
             
-            return 80;
             
         }
             break;
@@ -319,7 +340,13 @@
             
         default://评价
         {
-            return 80+[StringHeight heightWithText:@"丰富经历：描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历\n\n专家擅长：主要擅长什么主要擅长什么主要擅长什么主要擅长什么主要擅长什么\n\n关键业绩：关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩\n\n优缺点：你的也有缺点赶紧爆出来你会打篮球吗" font:FONT_14 constrainedToWidth:ScreenWidth-30];
+            if (_commentArry.count>0) {
+                CommentItem *oneItem = [_commentArry objectAtIndex:indexPath.section-3];
+                return 80+[StringHeight heightWithText:oneItem.comment font:FONT_14 constrainedToWidth:ScreenWidth-30];
+            }else{
+                return 0;
+            }
+            
         }
             break;
     }
@@ -364,22 +391,26 @@
             
         case 1:
         {
-            static NSString *cellId = @"SummaryCell";
-            SummaryCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-            if (cell == nil) {
-                cell = [[NSBundle mainBundle]loadNibNamed:cellId owner:self options:nil][0];
-            }
-            
-            UILabel *line = [[UILabel alloc]initWithFrame:CGRectMake(0, cell.frame.size.height-1, ScreenWidth, 1)];
-            line.backgroundColor = kLineColor;
-            [cell addSubview:line];
+           
             
             if (indexPath.row == 0) {
+                static NSString *cellId = @"SummaryCell";
+                SummaryCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+                if (cell == nil) {
+                    cell = [[NSBundle mainBundle]loadNibNamed:cellId owner:self options:nil][0];
+                }
+                
                 cell.titleLabel.text = @"人才概述";
                 cell.contentLabel.text = item.summary;
                 return cell;
                 
             }else if (indexPath.row == 1){
+                static NSString *cellId = @"SummaryCellExperence";
+                SummaryCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+                if (cell == nil) {
+                    cell = [[NSBundle mainBundle]loadNibNamed:@"SummaryCell" owner:self options:nil][0];
+                }
+
                 cell.titleLabel.text = @"经历概述";
                 
                 cell.contentLabel.text = [self getResumeExperience];
@@ -407,7 +438,16 @@
                 
             }
             
-            [cell.focusButton addTarget:self action:@selector(focusOnAction:) forControlEvents:UIControlEventTouchUpInside];
+            [cell.focusButton addTarget:self action:@selector(focusOnAction:) forControlEvents:
+             UIControlEventTouchUpInside];
+            
+            UILabel *line_0 = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 1)];
+            line_0.backgroundColor = kLineColor;
+            [cell addSubview:line_0];
+            
+            UILabel *line = [[UILabel alloc]initWithFrame:CGRectMake(0, cell.frame.size.height-1, ScreenWidth, 1)];
+            line.backgroundColor = kLineColor;
+            [cell addSubview:line];
             return cell;
             
             
@@ -450,8 +490,7 @@
                 
                 //评论内容
                 
-                //                cell.commentLabel.text = oneComment.comment;
-                cell.commentLabel.text = @"丰富经历：描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历描述丰富的经历\n\n专家擅长：主要擅长什么主要擅长什么主要擅长什么主要擅长什么主要擅长什么\n\n关键业绩：关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩关键干了做了什么好的业绩\n\n优缺点：你的也有缺点赶紧爆出来你会打篮球吗";
+                cell.commentLabel.text = oneComment.comment;
                 
             }
             

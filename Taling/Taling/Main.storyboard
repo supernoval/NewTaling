@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tk8-l5-mdB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tk8-l5-mdB">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -2002,7 +2002,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="45" id="iGq-Il-ESm">
-                                        <rect key="frame" x="0.0" y="379" width="375" height="45"/>
+                                        <rect key="frame" x="0.0" y="424" width="375" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iGq-Il-ESm" id="kdw-Is-k45">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
@@ -2083,12 +2083,12 @@
                                                     <exclude reference="Bzt-Fy-2kr"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <exclude reference="Omo-45-eYT"/>
+                                                    <exclude reference="PvW-rJ-7pb"/>
+                                                    <exclude reference="dxZ-p3-3In"/>
                                                     <exclude reference="KAp-Cd-Grn"/>
                                                     <exclude reference="YzB-Qe-T1c"/>
                                                     <exclude reference="rc3-54-jeq"/>
-                                                    <exclude reference="dxZ-p3-3In"/>
-                                                    <exclude reference="Omo-45-eYT"/>
-                                                    <exclude reference="PvW-rJ-7pb"/>
                                                     <exclude reference="GHq-dV-rxc"/>
                                                     <exclude reference="zwu-Ow-5JW"/>
                                                 </mask>
@@ -2100,12 +2100,12 @@
                                                     <include reference="Bzt-Fy-2kr"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <include reference="Omo-45-eYT"/>
+                                                    <include reference="PvW-rJ-7pb"/>
+                                                    <include reference="dxZ-p3-3In"/>
                                                     <include reference="KAp-Cd-Grn"/>
                                                     <include reference="YzB-Qe-T1c"/>
                                                     <include reference="rc3-54-jeq"/>
-                                                    <include reference="dxZ-p3-3In"/>
-                                                    <include reference="Omo-45-eYT"/>
-                                                    <include reference="PvW-rJ-7pb"/>
                                                     <include reference="GHq-dV-rxc"/>
                                                     <include reference="zwu-Ow-5JW"/>
                                                 </mask>
@@ -2117,7 +2117,7 @@
                             <tableViewSection id="q7O-rV-ZcF">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="45" id="LB4-re-YPa">
-                                        <rect key="frame" x="0.0" y="460" width="375" height="45"/>
+                                        <rect key="frame" x="0.0" y="505" width="375" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LB4-re-YPa" id="cwT-sY-gh2">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
@@ -3607,7 +3607,7 @@
                                 <rect key="frame" x="0.0" y="114" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a3c-8l-3AZ" id="A8J-L3-sne">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -3773,7 +3773,7 @@
                                 <rect key="frame" x="0.0" y="50" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j9v-rO-bZ9" id="sCO-FL-tHR">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -10088,12 +10088,15 @@
             <objects>
                 <tableViewController storyboardIdentifier="MyCouponTVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="la9-Vr-5UU" customClass="MyCouponTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="A3J-W4-Kwh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="9EL-Sd-alH">
+                                <rect key="frame" x="0.0" y="114" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9EL-Sd-alH" id="GwK-zE-R6R">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>

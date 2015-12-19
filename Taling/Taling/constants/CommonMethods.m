@@ -731,4 +731,15 @@
         return list;
     }
 }
+
++ (NSArray *)sepretTheAppraiseLabel:(NSString *)label{
+    
+    if (label == nil || label.length == 0) {
+        return nil;
+    }else{
+        NSArray *list = [label componentsSeparatedByString:@","];
+        
+        return list;
+    }
+}
 @end
