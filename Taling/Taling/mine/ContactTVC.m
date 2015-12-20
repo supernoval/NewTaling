@@ -56,7 +56,7 @@
     NSString *photo = [[NSUserDefaults standardUserDefaults] objectForKey:@"photo"];
         if (photo.length > 0) {
             
-            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo]];
+            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:photo]];
         }
     
         

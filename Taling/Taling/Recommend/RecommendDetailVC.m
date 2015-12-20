@@ -521,13 +521,19 @@
 
 - (IBAction)buyAction:(id)sender {
     
-    //公司购买
-//    ComBuyResumeDetailTVC *comBuy = [self.storyboard instantiateViewControllerWithIdentifier:@"ComBuyResumeDetailTVC"];
+    if ([UserInfo getIsCompany] == YES) {
+        //公司购买
+            ComBuyResumeDetailTVC *comBuy = [self.storyboard instantiateViewControllerWithIdentifier:@"ComBuyResumeDetailTVC"];
+        comBuy.item = item;
+        [self.navigationController pushViewController:comBuy animated:YES];
+    }else{
+        
+        //个人购买
+        BuyResumeDetailTVC *buy = [self.storyboard instantiateViewControllerWithIdentifier:@"BuyResumeDetailTVC"];
+        buy.item = item;
+        [self.navigationController pushViewController:buy animated:YES];
+    }
     
-    //个人购买
-    BuyResumeDetailTVC *buy = [self.storyboard instantiateViewControllerWithIdentifier:@"BuyResumeDetailTVC"];
-    buy.item = item;
-    [self.navigationController pushViewController:buy animated:YES];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{

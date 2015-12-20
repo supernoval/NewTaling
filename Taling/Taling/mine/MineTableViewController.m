@@ -37,6 +37,19 @@
     self.title = @"我的";
     _headImageView.clipsToBounds = YES;
     _headImageView.layer.cornerRadius = 5.0;
+    
+    NSString *photo = [[NSUserDefaults standardUserDefaults] objectForKey:@"photo"];
+    if (photo.length > 0) {
+        [_headImageView sd_setImageWithURL:[NSURL URLWithString:photo]];
+    }
+    
+    _nameLabel.text = [UserInfo getnickName];
+    
+    if ([UserInfo getIsCompany] == YES) {
+        _idLabel.text = [NSString stringWithFormat:@"企业 ID%@",[UserInfo getuserid]];
+    }else{
+         _idLabel.text = [NSString stringWithFormat:@"人才官 ID%@",[UserInfo getuserid]];
+    }
     _countDic = [[NSDictionary alloc]init];
     
     [self getResumeCount];
@@ -77,47 +90,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    /*
-//    [self  getResumeCount];
-    
-    NSString *nickName = [[NSUserDefaults standardUserDefaults ]objectForKey:knickname];
-    
-    if (nickName) {
-        
-        _nameLabel.text = nickName;
-        
-    }
-    
-//    _professionLabel.text = [[NSUserDefaults standardUserDefaults ] objectForKey:kindustry];
-//    _companyLabel.text = [[NSUserDefaults standardUserDefaults ] objectForKey:kcompany];
-    
-    
-    NSString *photoURL = [[NSUserDefaults standardUserDefaults ] objectForKey:kphoto];
-    
-    if (photoURL.length > 0) {
-        
-        [_headImageView sd_setImageWithURL:[NSURL URLWithString:photoURL] placeholderImage:[UIImage imageNamed:@"test"]];
-        
-    }
-    else
-    {
-        NSData *headImageData = [[NSUserDefaults standardUserDefaults] objectForKey:kLocatePhoto];
-        
-        if (headImageData) {
-            
-            _headImageView.image = [UIImage imageWithData:headImageData];
-            
-            
-        }
-    }
-    
-    NSString *bindEmail = [[NSUserDefaults standardUserDefaults]objectForKey:kemail];
-    
-//    if (bindEmail.length > 0) {
-//        _bindEmail.text = bindEmail;
-//    }else{
-//        _bindEmail.text = @"未绑定";
-//    }*/
+  
     
 }
 
@@ -173,14 +146,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    if (![[NSUserDefaults standardUserDefaults] boolForKey:kHadLogin]) {
-//        
-//        
-//        [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//        
-//        return;
-//        
-//    }
+
     if (indexPath.section == 0) {
         
         PersonInfoTVC *_personInfo = [self.storyboard instantiateViewControllerWithIdentifier:@"PersonInfoTVC"];
