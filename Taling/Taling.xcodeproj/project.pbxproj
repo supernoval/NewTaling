@@ -260,7 +260,7 @@
 		B30000A71BC3D435006B7B08 /* CommentMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B30000A61BC3D435006B7B08 /* CommentMessageCell.m */; };
 		B30000A91BC3D449006B7B08 /* CommentMeaageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30000A81BC3D449006B7B08 /* CommentMeaageCell.xib */; };
 		B30000AC1BC3D78C006B7B08 /* LikeMessageTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B30000AB1BC3D78C006B7B08 /* LikeMessageTVC.m */; };
-		B38446141C257C48005DF99C /* ContactTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B38446131C257C48005DF99C /* ContactTVC.m */; settings = {ASSET_TAGS = (); }; };
+		B38446141C257C48005DF99C /* ContactTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B38446131C257C48005DF99C /* ContactTVC.m */; };
 		B3CF9D171C13305700AD158F /* RecommendTalentTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CF9D161C13305700AD158F /* RecommendTalentTVC.m */; };
 		B3CF9D1A1C13307100AD158F /* RecommendAppraiseTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CF9D191C13307100AD158F /* RecommendAppraiseTVC.m */; };
 		B3D3F9D11BC0F14300044F0F /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D3F9D01BC0F14300044F0F /* CommentCell.xib */; };
@@ -3444,7 +3444,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a7a4b34a-76d2-457b-aa3a-d0f510b6b260";
 			};
 			name = Release;
 		};
