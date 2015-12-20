@@ -13,7 +13,7 @@
 #import "RecommendCell.h"
 #import "UserInfo.h"
 
-@interface ContactTVC ()<UITextFieldDelegate>
+@interface ContactTVC ()<UITextFieldDelegate,MFMessageComposeViewControllerDelegate>
 @property (nonatomic, strong)NSString *titleStr;
 @property (nonatomic, strong)NSString *infoStr;
 
@@ -127,5 +127,12 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     
     return YES;
+}
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
+{
+    
+    [controller dismissViewControllerAnimated:YES completion:nil];
+    
 }
 @end
