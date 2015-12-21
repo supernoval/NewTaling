@@ -63,11 +63,9 @@
                 
                 _collectedLabel.text = [NSString stringWithFormat:@"%@份",[_countDic objectForKey:@"reservNum"]];
                 
-<<<<<<< .mine
+                
                 _walletLabel.text = [NSString stringWithFormat:@"￥%@",[_countDic objectForKey:@"money"]];
-=======
-                _walletLabel.text = [NSString stringWithFormat:@"%@元",[_countDic objectForKey:@"money"]];
->>>>>>> .r155
+
                 
                 _coupleLabel.text = [NSString stringWithFormat:@"%@张",[_countDic objectForKey:@"couponNum"]];
                 
