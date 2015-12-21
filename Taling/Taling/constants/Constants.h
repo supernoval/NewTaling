@@ -135,6 +135,7 @@
 //线颜色
 #define kLineColor     RGB(240,240,240,1)
 
-
+//默认头像
+#define kDefaultHeadImage  [UIImage imageNamed:@"test"] 
 
 

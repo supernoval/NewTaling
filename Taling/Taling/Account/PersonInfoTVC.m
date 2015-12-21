@@ -66,6 +66,22 @@
     
     [_headImageView sd_setImageWithURL:[NSURL URLWithString:[UserInfo getphoto]]];
     
+    _cityLabel.text = [UserInfo  getcity];
+    
+    NSInteger sex = [[UserInfo getsex]integerValue];
+    
+    if (sex == 1) {
+        
+        _sexLabel.text = @"男";
+    }
+    else
+    {
+        _sexLabel.text = @"女";
+        
+    }
+    
+    
+    
     
     
     
@@ -157,6 +173,12 @@
             {
                 
                 _cityLabel.text = string;
+                
+                
+                [UserInfo saveUserInfo:string key:kcity];
+                
+                [self saveInfo];
+                
                 
                 
                 
@@ -318,10 +340,19 @@
         if (buttonIndex == 0) {
             
             _sexLabel.text = @"男";
+            [self saveInfo];
+            
+            [UserInfo saveUserInfo:@(1) key:ksex];
+            
+            
         }
         else
         {
             _sexLabel.text = @"女";
+            
+            [self saveInfo];
+            
+            [UserInfo saveUserInfo:@(0) key:ksex];
         }
     }
 }
@@ -339,7 +370,12 @@
         
        _headImageView.image = cutImage;
         
-       
+        NSData *headImageData = UIImagePNGRepresentation(cutImage);
+        
+        if (headImageData) {
+            
+//            [UserInfo saveUserInfo:<#(id)#> key:<#(NSString *)#>]
+        }
         
         
     }

@@ -63,7 +63,7 @@
                 
                 _collectedLabel.text = [NSString stringWithFormat:@"%@份",[_countDic objectForKey:@"reservNum"]];
                 
-                _walletLabel.text = [NSString stringWithFormat:@"%@份",[_countDic objectForKey:@"money"]];
+                _walletLabel.text = [NSString stringWithFormat:@"%@元",[_countDic objectForKey:@"money"]];
                 
                 _coupleLabel.text = [NSString stringWithFormat:@"%@份",[_countDic objectForKey:@"couponNum"]];
                 
@@ -89,6 +89,7 @@
         _idLabel.text = [NSString stringWithFormat:@"人才官ID:%@",[UserInfo getuserid]];
     }
     
+    [_headImageView sd_setImageWithURL:[NSURL URLWithString:[UserInfo getphoto]] placeholderImage:kDefaultHeadImage];
     
     [self getResumeCount];
     

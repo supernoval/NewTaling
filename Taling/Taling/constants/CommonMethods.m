@@ -32,6 +32,10 @@
     NSString *timeStr = [dateformatter stringFromDate:formateDate] ;
     
     return timeStr;
+    
+   
+    
+    
 }
 + (NSString*)getYYYYMMddHHmmssDateStr:(NSDate *)date
 {

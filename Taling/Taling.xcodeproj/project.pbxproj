@@ -223,7 +223,6 @@
 		153F3BD51BD27CBC00C86F1A /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 153F3BD01BD27CBC00C86F1A /* libopencore-amrwb.a */; };
 		153F3BD91BD3641600C86F1A /* RecommendHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 153F3BD81BD3641600C86F1A /* RecommendHeaderView.m */; };
 		1579153D1B8F52E100E31111 /* MineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1579153C1B8F52E100E31111 /* MineTableViewController.m */; };
-		157915411B8F54DD00E31111 /* PersonalInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 157915401B8F54DD00E31111 /* PersonalInfoTableView.m */; };
 		157C02CC1C1C4C160092AFA1 /* NewRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157C02CB1C1C4C160092AFA1 /* NewRegistViewController.m */; };
 		157C02D11C1C5C360092AFA1 /* PersonInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 157C02D01C1C5C360092AFA1 /* PersonInfoTVC.m */; };
 		157C02D41C1C7F4D0092AFA1 /* ChangePerInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 157C02D31C1C7F4D0092AFA1 /* ChangePerInfoVC.m */; };
@@ -906,8 +905,6 @@
 		157915371B8F4F3200E31111 /* APIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIConstants.h; sourceTree = "<group>"; };
 		1579153B1B8F52E100E31111 /* MineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewController.h; sourceTree = "<group>"; };
 		1579153C1B8F52E100E31111 /* MineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewController.m; sourceTree = "<group>"; };
-		1579153F1B8F54DD00E31111 /* PersonalInfoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfoTableView.h; sourceTree = "<group>"; };
-		157915401B8F54DD00E31111 /* PersonalInfoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoTableView.m; sourceTree = "<group>"; };
 		157C02CA1C1C4C160092AFA1 /* NewRegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRegistViewController.h; sourceTree = "<group>"; };
 		157C02CB1C1C4C160092AFA1 /* NewRegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRegistViewController.m; sourceTree = "<group>"; };
 		157C02CF1C1C5C360092AFA1 /* PersonInfoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfoTVC.h; sourceTree = "<group>"; };
@@ -2505,8 +2502,6 @@
 				B3FB2A361BC261A8003ACC5D /* changeCompany */,
 				137BBBE11B9DB18F004571C6 /* bindThirdpart */,
 				13B6CAD21B9C25A9003EC8A9 /* changeNickName */,
-				1579153F1B8F54DD00E31111 /* PersonalInfoTableView.h */,
-				157915401B8F54DD00E31111 /* PersonalInfoTableView.m */,
 			);
 			name = personalInfo;
 			sourceTree = "<group>";
@@ -3137,7 +3132,6 @@
 				153F3B7F1BD279E000C86F1A /* PSTCollectionView.m in Sources */,
 				1506E1331B89B646007D1696 /* MD5DataSigner.m in Sources */,
 				13AA5EAC1B95CCEF00AB477E /* AFNetworkReachabilityManager.m in Sources */,
-				157915411B8F54DD00E31111 /* PersonalInfoTableView.m in Sources */,
 				153F3B741BD279E000C86F1A /* EMSDWebImagePrefetcher.m in Sources */,
 				15F7CB0B1BD1E6A5008BB231 /* Emoji.m in Sources */,
 				13AA5EA91B95CCEF00AB477E /* AFHTTPRequestOperation.m in Sources */,
@@ -3444,7 +3438,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a7a4b34a-76d2-457b-aa3a-d0f510b6b260";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

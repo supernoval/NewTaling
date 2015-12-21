@@ -36,6 +36,12 @@
 
 +(void)saveInfo:(NSString*)value key:(NSString*)key
 {
+    
+    if (!value) {
+        
+        return;
+        
+    }
     [[NSUserDefaults standardUserDefaults] setObject:value forKey:key];
     
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -81,6 +87,47 @@
 {
     
     return [[NSUserDefaults standardUserDefaults] objectForKey:kphoto];
+    
+}
+
++(NSString*)getcity
+{
+    
+    return [[NSUserDefaults standardUserDefaults] objectForKey:kcity];
+    
+}
+
++(NSString*)getsex
+{
+    
+    return [[NSUserDefaults standardUserDefaults] objectForKey:ksex];
+    
+}
+
++(BOOL)savecity:(NSString*)city
+{
+    if (!city) {
+        
+        return  NO;
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setObject:city forKey:kcity];
+    
+    return [[NSUserDefaults standardUserDefaults] synchronize];
+    
+}
+
++(BOOL)saveUserInfo:(id)value key:(NSString *)key
+{
+    if (!value) {
+        
+        return NO;
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setObject:value forKey:key];
+    
+    return [[NSUserDefaults standardUserDefaults] synchronize];
+    
     
 }
 +(BOOL)getIsCompany

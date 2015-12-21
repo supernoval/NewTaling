@@ -33,7 +33,7 @@
     _commentArry = [[NSMutableArray alloc]init];
     
     _index = 1;
-    _size = 3;
+    _size = 10;
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;

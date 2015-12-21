@@ -48,6 +48,12 @@
 //photo
 #define kphoto         @"photo"
 
+//city
+#define kcity             @"city"
+
+//sex
+#define ksex           @"sex"
+
 //本地头像
 #define kLocatePhoto   @"LocatePhoto"
 

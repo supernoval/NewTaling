@@ -27,6 +27,16 @@
 +(NSString*)getspecaility;
 +(BOOL)getIsCompany;
 +(NSString*)getphoto;
++(NSString*)getcity;
++(BOOL)savecity:(NSString*)city;
+
++(BOOL)savesex:(NSString*)sex;
+
++(BOOL)saveUserInfo:(id)value key:(NSString*)key;
+
++(NSString*)getsex;
+
+
 
 
 
