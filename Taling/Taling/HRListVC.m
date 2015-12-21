@@ -114,7 +114,6 @@
 
 -(void)getGuanZhuList
 {
-//    ,@"index":@(index),@"size":@"20"
     NSDictionary *param = @{@"user_id":[UserInfo getuserid],@"index":@(index),@"size":@(pageSize)};
     
     [[TLRequest shareRequest ] tlRequestWithAction:kgetAttention Params:param result:^(BOOL isSuccess, id data) {

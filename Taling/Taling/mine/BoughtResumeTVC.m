@@ -189,9 +189,9 @@
      
     
     
-    //购买自 姓名改为ID
+    //购买自 ID
     
-        cell.idLabel.text = oneItem.sellerName;
+            cell.idLabel.text = [NSString stringWithFormat:@"人才官 ID%@",oneItem.userId];
     
     
     //时间

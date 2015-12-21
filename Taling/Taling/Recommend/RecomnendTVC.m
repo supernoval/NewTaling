@@ -81,7 +81,7 @@
     }
     else
     {
-//        [self.tableView.header beginRefreshing];
+
         
     }
     
@@ -104,7 +104,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  
 }
 
 -(void)CheckEasyMobLogin
@@ -137,7 +137,6 @@
     
     [self getData];
     
-//    [self searchFromTag];
     
     
 }

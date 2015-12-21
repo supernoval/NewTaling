@@ -20,6 +20,7 @@
 @property (nonatomic) BOOL isActive;
 @property (nonatomic) BOOL isStaff;
 @property (nonatomic) BOOL isSuperuser;
+@property (nonatomic) BOOL isCompany;
 @property (strong, nonatomic) NSString *lastLogin;
 @property (strong, nonatomic) NSString *lastName;
 @property (strong,nonatomic)  NSString *nickname;

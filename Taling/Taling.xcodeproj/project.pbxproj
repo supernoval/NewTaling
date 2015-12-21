@@ -2082,8 +2082,8 @@
 				B3F2D3E21C12C7850061F2A2 /* HRListCell.xib */,
 				153F3AB01BD1FDB200C86F1A /* HRListCell.h */,
 				153F3AB11BD1FDB200C86F1A /* HRListCell.m */,
-				B3F2D3DF1C12C4440061F2A2 /* HRListVC.h */,
 				B3F2D3E01C12C4440061F2A2 /* HRListVC.m */,
+				B3F2D3DF1C12C4440061F2A2 /* HRListVC.h */,
 			);
 			name = HR;
 			sourceTree = "<group>";

@@ -17,5 +17,5 @@
 @property (nonatomic)NSInteger resumesId;
 @property (nonatomic, strong)NSString *startpage;
 @property (nonatomic, strong)NSString *time;
-
+@property (nonatomic, strong)NSString *userId;
 @end

@@ -137,9 +137,6 @@
             
         }
         
-        //    UIView *gap = [[UIView alloc]initWithFrame:CGRectMake(15, blankFooter.frame.size.height-1, ScreenWidth-15, 1)];
-        //    gap.backgroundColor = kLineColor;
-        //    [blankFooter addSubview:gap];
         
         UIButton *detailAction = [[UIButton alloc]initWithFrame:blankFooter.frame];
         [detailAction addTarget:self action:@selector(pushToDetailAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -150,6 +147,7 @@
     }
     
     return nil;
+
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section

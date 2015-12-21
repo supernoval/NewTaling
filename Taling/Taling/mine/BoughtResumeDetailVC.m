@@ -480,7 +480,7 @@
                 
                 //id
                 
-                //                cell.idLabel.text = [NSString stringWithFormat:@"人才官ID %@",oneComment.];
+                cell.idLabel.text = [NSString stringWithFormat:@"人才官ID %@",oneComment.userId];
                 
                 //time
                 if (oneComment.time.length > 10) {

@@ -7,7 +7,9 @@
 //
 
 #import "BaseTableViewController.h"
+#import "HRItem.h"
 
 @interface RecommendAppraiseTVC : BaseTableViewController
+@property (strong, nonatomic)HRItem *hritem;
 
 @end
