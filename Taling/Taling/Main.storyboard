@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tk8-l5-mdB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tk8-l5-mdB">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -4045,10 +4045,11 @@
             <objects>
                 <tableViewController storyboardIdentifier="ContactTVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UHR-eI-2dz" customClass="ContactTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="G6c-03-FV1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="Ifi-gF-sbE">
-                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <rect key="frame" x="0.0" y="136" width="320" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="**先生/小姐:您好，我是**公司的招聘负责人，目前在网络上看浏览到您的简历信息，同时我单位有" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNu-Nk-VKq">
@@ -4130,15 +4131,15 @@
                                     <exclude reference="hh8-9G-bcy"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <exclude reference="JRU-bO-6tX"/>
-                                    <exclude reference="Z6k-W6-gtL"/>
-                                    <exclude reference="eGK-kE-L4Q"/>
                                     <exclude reference="DJX-kv-5DW"/>
                                     <exclude reference="eHT-Xg-4mN"/>
                                     <exclude reference="n34-aw-6AP"/>
                                     <exclude reference="7Jj-Cs-2L0"/>
                                     <exclude reference="Zai-be-NdB"/>
                                     <exclude reference="iks-om-hhD"/>
+                                    <exclude reference="JRU-bO-6tX"/>
+                                    <exclude reference="Z6k-W6-gtL"/>
+                                    <exclude reference="eGK-kE-L4Q"/>
                                 </mask>
                             </variation>
                             <variation key="heightClass=regular-widthClass=compact">
@@ -4148,22 +4149,24 @@
                                     <include reference="hh8-9G-bcy"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <include reference="JRU-bO-6tX"/>
-                                    <include reference="Z6k-W6-gtL"/>
-                                    <include reference="eGK-kE-L4Q"/>
                                     <include reference="DJX-kv-5DW"/>
                                     <include reference="eHT-Xg-4mN"/>
                                     <include reference="n34-aw-6AP"/>
                                     <include reference="7Jj-Cs-2L0"/>
                                     <include reference="Zai-be-NdB"/>
                                     <include reference="iks-om-hhD"/>
+                                    <include reference="JRU-bO-6tX"/>
+                                    <include reference="Z6k-W6-gtL"/>
+                                    <include reference="eGK-kE-L4Q"/>
                                 </mask>
                             </variation>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ahE-Xe-arq">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ahE-Xe-arq" id="Eve-aj-3bw">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -10249,7 +10252,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="A3J-W4-Kwh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="9EL-Sd-alH">
                                 <rect key="frame" x="0.0" y="114" width="320" height="44"/>

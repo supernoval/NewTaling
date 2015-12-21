@@ -123,6 +123,10 @@
 //    numLabel.text = @"12份";
     [headView addSubview:numLabel];
     
+    UILabel *line = [[UILabel alloc]initWithFrame:CGRectMake(0, headView.frame.size.height-1, ScreenWidth, 1)];
+    line.backgroundColor = kLineColor;
+    [headView addSubview:line];
+    
     UIButton *pushButton = [[UIButton alloc]initWithFrame:headView.frame];
     [headView addSubview:pushButton];
     
