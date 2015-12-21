@@ -9,9 +9,9 @@
 
 
 //本地测试
-//#define  kRequestHeader   @"http://192.168.40.126/taling-api"
+#define  kRequestHeader   @"http://192.168.40.164/taling-api"
 //正式
-#define  kRequestHeader     @"http://183.131.151.50/taling-api"
+//#define  kRequestHeader     @"http://183.131.151.50/taling-api"
 
 
 //注册
@@ -60,6 +60,9 @@
  *company     所在公司
  *photo       图片在appendData 里加
  *speciality   擅长
+ *sex         性别   0女 1男
+ *city       城市
+ *callingCard   名片
  
  */
 #define kupdateUser   @"/user/updateUser"
@@ -82,6 +85,14 @@
 
 
 //获取统计 简历、简历估值
+/*
+ user_id
+ */
+/*
+ 返回  1）购买的简历数  2）出售的简历数   3）收藏的简历数   4)钱包余额  5)优惠券张数
+ 
+ 1 buyresumesCountSum 2 saleresumesCountSum   3 reservNum  4 money    5 couponNum
+ */
 #define kresumesCount    @"/user/resumesCount"
 
 
@@ -93,7 +104,7 @@
  */
 
 
-#define kgetAppraise  @"/appraise/getAppraise"
+
 
 //评价简历
 /*
@@ -103,6 +114,13 @@
  lable       标签 字符串  用 英文逗号隔开
  */
 #define kaddAppraise    @"/appraise/addAppraise"
+
+//获取评价列表
+/*
+ *简历评价  @{@"resumes_id":@(item.resumesId),@"index":@(_index),@"size":@(_size)}
+ *发出的评价   user_id   index   size
+ */
+#define kgetAppraise   @"/appraise/getAppraise"
 
 
 //获取推荐简历列表

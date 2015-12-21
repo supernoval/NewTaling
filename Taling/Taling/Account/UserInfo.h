@@ -26,6 +26,8 @@
 +(NSString*)getcompany;
 +(NSString*)getspecaility;
 +(BOOL)getIsCompany;
++(NSString*)getphoto;
+
 
 
 

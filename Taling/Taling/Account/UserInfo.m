@@ -76,6 +76,13 @@
 {
     return [[NSUserDefaults standardUserDefaults ] objectForKey:kspeciality];
 }
+
++(NSString*)getphoto
+{
+    
+    return [[NSUserDefaults standardUserDefaults] objectForKey:kphoto];
+    
+}
 +(BOOL)getIsCompany
 {
     

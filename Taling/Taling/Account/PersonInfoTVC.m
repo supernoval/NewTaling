@@ -64,6 +64,10 @@
     
     _gangweiLabel.text = [UserInfo getspecaility];
     
+    [_headImageView sd_setImageWithURL:[NSURL URLWithString:[UserInfo getphoto]]];
+    
+    
+    
     
 }
 
@@ -460,27 +464,43 @@
 //    *company     所在公司
 //    *photo       图片在appendData 里加
 //    *speciality   擅长
+//    *sex         性别
+//    *city       城市
+//    *callingCard   名片
     
     
     NSString *user_id = [UserInfo getuserid];
     
-    NSDictionary *param = @{@"user_id":user_id,@"work_year":@"",@"nickname":_nickNameLabel.text,@"industry":_hangyeLabel.text,@"company":_qiyeLabel.text,@"speciality":_gangweiLabel.text};
+    NSString *sex = nil;
+    
+    if ([_sexLabel.text isEqualToString:@"男"]) {
+    
+        sex = @"1";
+    }
+    else
+    {
+        sex = @"0";
+        
+    }
+    
+    NSDictionary *param = @{@"user_id":user_id,@"work_year":@"",@"nickname":_nickNameLabel.text,@"industry":_hangyeLabel.text,@"company":_qiyeLabel.text,@"speciality":_gangweiLabel.text,@"sex":sex,@"city":_cityLabel.text};
     
     if (_isShowed) {
         
         switch (selectedIndex) {
             case 1:
             {
-                param = @{@"user_id":user_id,@"work_year":@"",@"nickname":_nickNameLabel.text,@"industry":@"",@"company":@"",@"speciality":@""};
+                param = @{@"user_id":user_id,@"work_year":@"",@"nickname":_nickNameLabel.text,@"industry":@"",@"company":@"",@"speciality":@"",@"sex":@"",@"city":@""};
             }
                 break;
             case 2://性别
             {
-                
+                 param = @{@"user_id":user_id,@"work_year":@"",@"nickname":@"",@"industry":@"",@"company":@"",@"speciality":@"",@"sex":sex,@"city":@""};
             }
                 break;
             case 3:  //城市
             {
+                param = @{@"user_id":user_id,@"work_year":@"",@"nickname":@"",@"industry":@"",@"company":@"",@"speciality":@"",@"sex":@"",@"city":_cityLabel.text};
                
             }
                 break;

@@ -36,6 +36,9 @@
     pageSize = 1;
     pageIndex = 1;
     [self requestUpLoadResumes];
+    
+    [self getAppraise];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,6 +46,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - 获取评价
+-(void)getAppraise
+{
+    NSDictionary *param = @{@"user_id":hRitem.id,@"index":@"1",@"size":@"10"};
+    
+    [[TLRequest shareRequest] tlRequestWithAction:kgetAppraise Params:param result:^(BOOL isSuccess, id data) {
+       
+        
+    }];
+}
 #pragma mark - 获取人才官推荐的简历
 -(void)requestUpLoadResumes
 {

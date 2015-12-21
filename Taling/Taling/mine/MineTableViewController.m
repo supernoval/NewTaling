@@ -37,23 +37,11 @@
     self.title = @"我的";
     _headImageView.clipsToBounds = YES;
     _headImageView.layer.cornerRadius = 5.0;
+     _countDic = [[NSDictionary alloc]init];
     
-    NSString *photo = [[NSUserDefaults standardUserDefaults] objectForKey:@"photo"];
-    if (photo.length > 0) {
-        [_headImageView sd_setImageWithURL:[NSURL URLWithString:photo]];
-    }
+
     
-    _nameLabel.text = [UserInfo getnickName];
-    
-    if ([UserInfo getIsCompany] == YES) {
-        _idLabel.text = [NSString stringWithFormat:@"企业 ID%@",[UserInfo getuserid]];
-    }else{
-         _idLabel.text = [NSString stringWithFormat:@"人才官 ID%@",[UserInfo getuserid]];
-    }
-    _countDic = [[NSDictionary alloc]init];
-    
-    [self getResumeCount];
-    
+  
     
 }
 
@@ -67,15 +55,17 @@
             
             if ([data isKindOfClass:[NSDictionary class]]) {
                 _countDic = data;
-//                _resumeNum.text = [NSString stringWithFormat:@"%@份",[_countDic objectForKey:@"resumesCountSum"]];
-//                _resumeMoney.text = [NSString stringWithFormat:@"%@元",[_countDic objectForKey:@"resumesCountPrice"]];
+
                 
                 _boughtLabel.text = [NSString stringWithFormat:@"%@份",[_countDic objectForKey:@"buyresumesCountSum"]];
                 
-                _sharedLabel.text = [NSString stringWithFormat:@"%@份",[_countDic objectForKey:@"resumesCountSum"]];
+                _sharedLabel.text = [NSString stringWithFormat:@"%@份",[_countDic objectForKey:@"saleresumesCountSum"]];
                 
-                _collectedLabel.text = [NSString stringWithFormat:@"%@份,",[_countDic objectForKey:@"saleresumesCountSum"]];
+                _collectedLabel.text = [NSString stringWithFormat:@"%@份",[_countDic objectForKey:@"reservNum"]];
                 
+                _walletLabel.text = [NSString stringWithFormat:@"%@份",[_countDic objectForKey:@"money"]];
+                
+                _coupleLabel.text = [NSString stringWithFormat:@"%@份",[_countDic objectForKey:@"couponNum"]];
                 
                 [self.tableView reloadData];
             }
@@ -91,6 +81,16 @@
 {
     [super viewWillAppear:animated];
   
+    _nameLabel.text = [UserInfo getnickName];
+    
+    if ([UserInfo getIsCompany] == YES) {
+        _idLabel.text = [NSString stringWithFormat:@"企业ID:%@",[UserInfo getuserid]];
+    }else{
+        _idLabel.text = [NSString stringWithFormat:@"人才官ID:%@",[UserInfo getuserid]];
+    }
+    
+    
+    [self getResumeCount];
     
 }
 
