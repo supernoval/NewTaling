@@ -10,6 +10,54 @@
 
 @implementation UserInfo
 
+
++(void)saveModeValue:(id)value key:(NSString*)mykey
+{
+    NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:kUserInfoDic];
+    
+    if (dic) {
+        
+        NSMutableDictionary *muDic = [[NSMutableDictionary alloc]initWithDictionary:dic];
+        
+        [muDic setObject:value forKey:mykey];
+        [[NSUserDefaults standardUserDefaults ] setObject:muDic forKey:kUserInfoDic];
+        
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+     
+    }
+}
++(UserModel*)getUserInfoModel
+{
+    NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:kUserInfoDic];
+    
+       UserModel *model = [[UserModel alloc]init];
+    if (dic) {
+        
+     
+        
+        [model setValuesForKeysWithDictionary:dic];
+        
+        return model;
+    }
+    
+    
+    return model;
+    
+}
++(void)saveUserInfoDic:(NSDictionary *)dic
+{
+    
+    if (!dic) {
+        
+        return;
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:dic forKey:kUserInfoDic];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    
+}
 +(void)saveUserInfo:(NSDictionary *)userInfo
 {
     [userInfo enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {

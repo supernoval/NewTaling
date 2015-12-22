@@ -10,6 +10,10 @@
 
 @interface CompanyInfoTableView : BaseTableViewController
 
+
+@property (nonatomic) NSString *accountName;
+
+
 @property (nonatomic) BOOL isShow;
 
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;

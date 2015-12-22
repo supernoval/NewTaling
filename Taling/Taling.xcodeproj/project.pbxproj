@@ -136,6 +136,7 @@
 		1506E2521B89BD87007D1696 /* ForgetCodeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E24C1B89BD87007D1696 /* ForgetCodeTVC.m */; };
 		1506E2531B89BD87007D1696 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E24E1B89BD87007D1696 /* LoginViewController.m */; };
 		1506E25B1B89BDE5007D1696 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506E25A1B89BDE5007D1696 /* Location.m */; };
+		151932FC1C291AFD009C5ECC /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 151932FB1C291AFD009C5ECC /* UserModel.m */; };
 		153F3AA71BD1F05200C86F1A /* ChatAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 153F3AA61BD1F05200C86F1A /* ChatAccountManager.m */; };
 		153F3AB21BD1FDB200C86F1A /* HRListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 153F3AB11BD1FDB200C86F1A /* HRListCell.m */; };
 		153F3AEF1BD277FB00C86F1A /* ChatSendHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 153F3ABC1BD277FB00C86F1A /* ChatSendHelper.m */; };
@@ -720,6 +721,8 @@
 		1506E25A1B89BDE5007D1696 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		1506E25C1B89BF5F007D1696 /* NSUserDefaultKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSUserDefaultKeys.h; sourceTree = "<group>"; };
 		1506E25F1B89BF92007D1696 /* ConstantsHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantsHeaders.h; sourceTree = "<group>"; };
+		151932FA1C291AFD009C5ECC /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		151932FB1C291AFD009C5ECC /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		153F3AA51BD1F05200C86F1A /* ChatAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatAccountManager.h; path = ChatViewControllers/ChatAccountManager.h; sourceTree = "<group>"; };
 		153F3AA61BD1F05200C86F1A /* ChatAccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatAccountManager.m; path = ChatViewControllers/ChatAccountManager.m; sourceTree = "<group>"; };
 		153F3AB01BD1FDB200C86F1A /* HRListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HRListCell.h; path = HR/HRListCell.h; sourceTree = "<group>"; };
@@ -2854,6 +2857,8 @@
 				D26C29361BD8D68E007F1EF2 /* WorkExperienceItem.m */,
 				D27D7CFB1C1A96C800C97F67 /* CommentItem.h */,
 				D27D7CFC1C1A96C800C97F67 /* CommentItem.m */,
+				151932FA1C291AFD009C5ECC /* UserModel.h */,
+				151932FB1C291AFD009C5ECC /* UserModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -3023,6 +3028,7 @@
 				153F3B911BD27A0800C86F1A /* MBProgressHUD+Add.m in Sources */,
 				153F3B921BD27A0800C86F1A /* MBProgressHUD.m in Sources */,
 				153F3AF91BD277FB00C86F1A /* EMChatAudioBubbleView.m in Sources */,
+				151932FC1C291AFD009C5ECC /* UserModel.m in Sources */,
 				1506E0421B89B53C007D1696 /* JSONHTTPClient.m in Sources */,
 				1506E1301B89B646007D1696 /* base64.m in Sources */,
 				1506E1351B89B646007D1696 /* openssl_wrapper.m in Sources */,

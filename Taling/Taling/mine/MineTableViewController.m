@@ -83,15 +83,33 @@
 {
     [super viewWillAppear:animated];
   
-    _nameLabel.text = [UserInfo getnickName];
+   
     
     if ([UserInfo getIsCompany] == YES) {
         _idLabel.text = [NSString stringWithFormat:@"企业ID:%@",[UserInfo getuserid]];
+        UserModel *model = [UserInfo getUserInfoModel];
+        
+        _nameLabel.text = model.companyName;
+        
     }else{
+        
         _idLabel.text = [NSString stringWithFormat:@"人才官ID:%@",[UserInfo getuserid]];
+         _nameLabel.text = [UserInfo getnickName];
+        
     }
     
-    [_headImageView sd_setImageWithURL:[NSURL URLWithString:[UserInfo getphoto]] placeholderImage:kDefaultHeadImage];
+    UserModel *model = [UserInfo getUserInfoModel];
+    
+    if (model.photo_data) {
+        
+        _headImageView.image = [UIImage imageWithData:model.photo_data];
+        
+    }
+    else
+    {
+         [_headImageView sd_setImageWithURL:[NSURL URLWithString:model.photo] placeholderImage:kDefaultHeadImage];
+    }
+   
     
     [self getResumeCount];
     
@@ -152,6 +170,24 @@
 
     if (indexPath.section == 0) {
         
+        
+        BOOL is_company = [UserInfo getIsCompany];
+        
+        if (is_company) {
+            
+            
+            CompanyInfoTableView *_company = [self.storyboard instantiateViewControllerWithIdentifier:@"CompanyInfoTableView"];
+            
+            _company.hidesBottomBarWhenPushed = YES;
+            
+            _company.isShow = YES;
+            
+            [self.navigationController pushViewController:_company animated:YES];
+            
+        }
+        else
+        {
+        
         PersonInfoTVC *_personInfo = [self.storyboard instantiateViewControllerWithIdentifier:@"PersonInfoTVC"];
         
         
@@ -161,7 +197,7 @@
         
         [self.navigationController pushViewController:_personInfo animated:YES];
         
-        
+        }
       
         
     }else if (indexPath.section == 1) {

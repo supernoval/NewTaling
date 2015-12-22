@@ -64,7 +64,18 @@
     
     _gangweiLabel.text = [UserInfo getspecaility];
     
-    [_headImageView sd_setImageWithURL:[NSURL URLWithString:[UserInfo getphoto]]];
+    UserModel *model = [UserInfo getUserInfoModel];
+    
+    if (model.photo_data) {
+        
+        _headImageView.image = [UIImage imageWithData:model.photo_data];
+        
+    }
+    else
+    {
+        [_headImageView sd_setImageWithURL:[NSURL URLWithString:model.photo]];
+    }
+    
     
     _cityLabel.text = [UserInfo  getcity];
     
@@ -366,6 +377,7 @@
     //    UIImage *cutImage           = [self cutImage:editImage size:CGSizeMake(160, 160)];
     UIImage *cutImage  = [CommonMethods  imageWithImage:editImage scaledToSize:CGSizeMake(300, 300)];
     
+    NSData *imagedata = UIImagePNGRepresentation(cutImage);
     if (selectedIndex == 0) {
         
        _headImageView.image = cutImage;
@@ -374,7 +386,9 @@
         
         if (headImageData) {
             
-//            [UserInfo saveUserInfo:<#(id)#> key:<#(NSString *)#>]
+            [UserInfo saveModeValue:imagedata key:@"photo_data"];
+            
+            
         }
         
         

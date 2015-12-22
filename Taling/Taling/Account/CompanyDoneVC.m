@@ -23,6 +23,11 @@
     
     _doneButton.layer.cornerRadius = 5;
     
+    _companyNameLabel.text = _companyName;
+    
+    _accountNameLabel.text = _accountName;
+    
+    
     
 }
 

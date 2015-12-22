@@ -17,6 +17,8 @@
 
 
 #pragma mark - 登录后个人信息
+//用户信息dic
+#define kUserInfoDic     @"UserInfoDic"
 //用户名
 #define kusername     @"username"
 

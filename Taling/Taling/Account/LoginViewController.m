@@ -80,6 +80,8 @@
             
             [UserInfo saveUserInfo:data];
             
+            [UserInfo saveUserInfoDic:data];
+            
             [[NSUserDefaults standardUserDefaults ] setObject:@YES forKey:kHadLogin];
             
             [[NSUserDefaults standardUserDefaults ] setObject:_codeTF.text forKey:kpassword];

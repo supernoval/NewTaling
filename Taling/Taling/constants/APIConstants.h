@@ -257,7 +257,7 @@
  * user_id   用户id
  *
  */
-//response :key:(id ,couponPrice ,startTime,endTime,status,userId), (格式:data{ {id:xx,coupon:xx，……,userId:xx}           })
+//response :key:(id ,couponPrice ,startTime,endTime,status,userId), (格式:data{ {id:xx,couponPrice:xx，……,userId:xx}           })
 #define kGetMyCoupon    @"/user/getMyCoupon"
 
 

@@ -9,10 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "NSUserDefaultKeys.h"
 #import "Constants.h"
+#import "UserModel.h"
 
 @interface UserInfo : NSObject
 
++(void)saveModeValue:(id)value key:(NSString*)mykey;
 
++(UserModel*)getUserInfoModel;
+
++(void)saveUserInfoDic:(NSDictionary*)dic;
 +(void)saveUserInfo:(NSDictionary*)userInfo;
 +(void)saveInfo:(NSString*)value key:(NSString*)key;
 
@@ -30,7 +35,7 @@
 +(NSString*)getcity;
 +(BOOL)savecity:(NSString*)city;
 
-+(BOOL)savesex:(NSString*)sex;
+
 
 +(BOOL)saveUserInfo:(id)value key:(NSString*)key;
 

@@ -361,6 +361,7 @@
             
             
                 CompanyInfoTableView *_infoTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CompanyInfoTableView"];
+                 _infoTVC.accountName = _email;
             
                 [self.navigationController pushViewController:_infoTVC animated:YES];
             

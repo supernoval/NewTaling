@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tk8-l5-mdB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tk8-l5-mdB">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -2027,7 +2027,7 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分享" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4G-GD-cbF">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="推荐有奖" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4G-GD-cbF">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="75" id="sCE-FJ-pcT"/>
@@ -7882,11 +7882,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doneImage" translatesAutoresizingMaskIntoConstraints="NO" id="XRs-gT-C1A">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="approval" translatesAutoresizingMaskIntoConstraints="NO" id="XRs-gT-C1A">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="80q-mJ-HHU"/>
-                                    <constraint firstAttribute="height" constant="114" id="9DI-WR-ncR"/>
+                                    <constraint firstAttribute="width" constant="100" id="80q-mJ-HHU">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="74"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="114" id="9DI-WR-ncR">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="104"/>
+                                    </constraint>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -8941,11 +8945,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doneImage" translatesAutoresizingMaskIntoConstraints="NO" id="Z3o-Fn-I6P">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="approval" translatesAutoresizingMaskIntoConstraints="NO" id="Z3o-Fn-I6P">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="HP4-k7-trm"/>
-                                    <constraint firstAttribute="height" constant="114" id="eRK-tw-jn6"/>
+                                    <constraint firstAttribute="width" constant="100" id="HP4-k7-trm">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="74"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="114" id="eRK-tw-jn6">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="104"/>
+                                    </constraint>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -11672,6 +11680,7 @@
     <resources>
         <image name="account_balance" width="36" height="36"/>
         <image name="alipay" width="36" height="36"/>
+        <image name="approval" width="77" height="104"/>
         <image name="big passcode" width="18" height="22"/>
         <image name="big_phone" width="18" height="23"/>
         <image name="bund" width="21" height="19"/>
@@ -11679,7 +11688,6 @@
         <image name="chonen off" width="18" height="19"/>
         <image name="chonen on" width="18" height="19"/>
         <image name="collection_mine" width="24" height="24"/>
-        <image name="doneImage" width="50" height="57"/>
         <image name="file_detail collect" width="19" height="19"/>
         <image name="head_default_9" width="60" height="60"/>
         <image name="logo_name" width="78" height="115"/>

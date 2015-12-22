@@ -26,6 +26,9 @@
     if (_isShow) {
         
          _nextButton.hidden = YES;
+        
+        [self showInfo];
+        
     }
     else
     {
@@ -37,6 +40,65 @@
     self.title = @"企业信息";
     
 
+    
+    
+}
+
+-(void)showInfo
+{
+    UserModel *model = [UserInfo getUserInfoModel];
+    
+    
+    _nameLabel.text = model.companyName;
+    
+    
+    if (model.photo_data) {
+        
+        _headImageView.image = [UIImage imageWithData:model.photo_data];
+        
+    }
+    else
+    {
+        [_headImageView sd_setImageWithURL:[NSURL URLWithString:model.photo] placeholderImage:kDefaultHeadImage];
+        
+        
+    }
+    
+    
+
+    _companDesLabel.text = model.companyDescription;
+    
+    _linkLabel.text = model.companyURL;
+    
+    if (model.pic_license_data) {
+        
+        _zhizhaoImageView.image = [UIImage imageWithData:model.pic_license_data];
+        
+    }
+    else
+    {
+    [_zhizhaoImageView sd_setImageWithURL:[NSURL URLWithString:model.companyLicense] placeholderImage:kDefaultHeadImage];
+    }
+    
+    if (model.company_number_data) {
+        
+        _shuiwuImageView.image = [UIImage imageWithData:model.company_number_data];
+    }
+    else{
+         [_shuiwuImageView sd_setImageWithURL:[NSURL URLWithString:model.companyNum] placeholderImage:kDefaultHeadImage];
+    }
+    
+    if (model.company_code_data) {
+        
+        _jigouImageView.image = [UIImage imageWithData:model.company_code_data];
+    }
+    else
+    {
+         [_jigouImageView sd_setImageWithURL:[NSURL URLWithString:model.companyCode] placeholderImage:kDefaultHeadImage];
+    }
+   
+    
+   
     
     
 }
@@ -72,6 +134,18 @@
             _changeVC.block = ^(NSString *string)
             {
                 _nameLabel.text = string;
+                
+                
+                if (_isShow) {
+                    
+                    [self updateCompanyInfoWithValue:string key:@"company_name" type:NO];
+                    
+                    [UserInfo saveModeValue:string key:@"companyName"];
+                    
+                    
+                }
+                
+                
             };
             
             
@@ -89,6 +163,18 @@
             _changeVC.block = ^(NSString *string)
             {
                 _companDesLabel.text = string;
+                
+                if (_isShow) {
+                    
+                    [self updateCompanyInfoWithValue:string key:@"company_description" type:NO];
+                    
+                    
+                    
+                    
+                     [UserInfo saveModeValue:string key:@"companyDescription"];
+                    
+                }
+                
             };
             
             
@@ -108,6 +194,17 @@
             _changeVC.block = ^(NSString *string)
             {
                 _linkLabel.text = string;
+                
+                
+                if (_isShow) {
+                    
+                    [self updateCompanyInfoWithValue:string key:@"company_URL" type:NO];
+                    
+                     [UserInfo saveModeValue:string key:@"companyURL"];
+                    
+                }
+                
+                
             };
             
             
@@ -232,14 +329,40 @@
     //    UIImage *cutImage           = [self cutImage:editImage size:CGSizeMake(160, 160)];
     UIImage *cutImage  = [CommonMethods  imageWithImage:editImage scaledToSize:CGSizeMake(300, 300)];
     
+    NSData *data = UIImagePNGRepresentation(cutImage);
+    
     if (selectedIndex == 0) {
         
         _headImageView.image = cutImage;
+        
+    
+        if (_isShow) {
+            
+            [self uploadHeadImage];
+            
+//            UserModel *model ;
+            
+            [UserInfo saveModeValue:data key:@"photo_data"];
+            
+            
+        }
+        
     }
     else if (selectedIndex == 4)
     {
         
         _zhizhaoImageView.image = cutImage;
+        
+        if (_isShow) {
+            
+            [self updateCompanyInfoWithValue:cutImage key:@"pic_license" type:YES];
+            
+            [UserInfo saveModeValue:data key:@"pic_license_data"];
+            
+        }
+        
+      
+        
         
         
     }
@@ -247,10 +370,31 @@
     {
         _shuiwuImageView.image = cutImage;
         
+        if (_isShow) {
+            
+            [self updateCompanyInfoWithValue:cutImage key:@"company_number" type:YES];
+            
+              [UserInfo saveModeValue:data key:@"company_number_data"];
+            
+        }
+       
+        
+        
     }
     else if (selectedIndex == 6)
     {
         _jigouImageView.image = cutImage;
+        
+        if (_isShow) {
+            
+            [self updateCompanyInfoWithValue:cutImage key:@"company_code" type:YES];
+            
+            [UserInfo saveModeValue:data key:@"company_code_data"];
+            
+            
+            
+        }
+        
         
     }
     
@@ -335,12 +479,11 @@
         
         if (isSuccess) {
           
+            [self uploadHeadImage];
+            
             NSLog(@"company info uploadSuccess");
             
-                CompanyDoneVC *_companyDoneVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CompanyDoneVC"];
-            
-            
-                [self.navigationController pushViewController:_companyDoneVC animated:YES];
+          
             
             
         }
@@ -350,6 +493,112 @@
     }];
     
     
+    
+}
+
+
+#pragma mark 更新企业信息
+-(void)updateCompanyInfoWithValue:(id)value key:(NSString*)key type:(BOOL)isData
+{
+    
+    NSString *user_id = [UserInfo getuserid];
+    
+//    NSString *company_name = _nameLabel.text;
+//    
+//    NSString *company_URL = _linkLabel.text;
+//    
+//    NSString *company_description = _companDesLabel.text;
+//    
+//    NSData *pic_license = UIImagePNGRepresentation(_zhizhaoImageView.image);
+//    
+//    NSData *company_code = UIImagePNGRepresentation(_shuiwuImageView.image);
+//    
+//    NSData *company_number = UIImagePNGRepresentation(_jigouImageView.image);
+    NSDictionary *datas = nil;
+    NSDictionary *params = nil;
+    
+    if (isData) {
+        
+        params = @{@"user_id":user_id};
+        
+         NSData *data = UIImagePNGRepresentation(value);
+        
+        datas = @{key:data};
+        
+       
+        
+       
+    }
+    else
+    {
+       
+        params = @{@"user_id":user_id,key:value};
+    }
+   
+    
+    
+    
+    [[TLRequest shareRequest] requestWithAction:kuploadCompanyInfo params:params datas:datas result:^(BOOL isSuccess, id data) {
+        
+        
+        if (isSuccess) {
+            
+            NSLog(@"company info updateSuccess!");
+            
+
+            
+            
+        }
+        
+        
+        
+    }];
+}
+
+#pragma mark -  更新头像
+-(void)uploadHeadImage
+{
+    
+    
+    NSString *user_id = [UserInfo getuserid];
+    
+    NSData *imageData = UIImagePNGRepresentation(_headImageView.image);
+    
+    NSDictionary *param = @{@"user_id":user_id};
+    
+
+    
+    NSDictionary *dataDic ;
+    
+    dataDic = @{@"pic_file":imageData};
+    
+    
+    
+    [[TLRequest shareRequest] requestWithAction:kuploadPic params:param datas:dataDic result:^(BOOL isSuccess, id data) {
+        
+        if (isSuccess) {
+            
+         
+            if (_isShow) {
+                
+                
+            }
+            else
+            {
+                CompanyDoneVC *_companyDoneVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CompanyDoneVC"];
+                
+                _companyDoneVC.companyName = _nameLabel.text;
+                _companyDoneVC.accountName = _accountName;
+                [self.navigationController pushViewController:_companyDoneVC animated:YES];
+            }
+            
+        }
+        else
+        {
+            [CommonMethods showDefaultErrorString:@"保存失败，请重试"];
+            
+        }
+    }];
     
 }
 @end
