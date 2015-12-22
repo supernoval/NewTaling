@@ -55,6 +55,7 @@
 @property (strong, nonatomic) NSString *sellerName;
 @property (strong, nonatomic) NSString *buyerName;
 @property (strong, nonatomic) NSString *buyTime;
+@property (nonatomic,strong) NSString *userPhoto; // 头像
 
 
 

@@ -726,8 +726,8 @@
     }else{
         NSString *list = @"";
         for (NSInteger i = 0; i<array.count; i++) {
-            NSString *oneCom = [array objectAtIndex:i];
-            NSString *one = [oneCom stringByAppendingString:@" "];
+            NSDictionary *oneCom = [array objectAtIndex:i];
+            NSString *one = [oneCom objectForKey:@"companyName"];
             list = [list stringByAppendingString:one];
             
         }

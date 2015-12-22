@@ -292,7 +292,7 @@
     NSString *comment = [NSString stringWithFormat:@"丰富经历:%@\n\n专家擅长:%@\n\n关键业绩:%@\n\n优势缺点:%@",_experenceTextView.text,_skillsTextView.text,_performTextView.text,_advantageTextView.text];
     NSString *userid = [UserInfo getuserid];
     
-    NSDictionary *params = @{@"user_id":userid,@"resumes_id":@(item.resumesId),@"comment":comment,@"label":label};
+    NSDictionary *params = @{@"user_id":userid,@"resumes_id":@(item.resumesId),@"comment":comment,@"lable":label};
     
     [[TLRequest shareRequest] tlRequestWithAction:kaddAppraise Params:params result:^(BOOL isSuccess, id data) {
         

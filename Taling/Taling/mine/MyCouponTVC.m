@@ -30,7 +30,10 @@
     
     [[TLRequest shareRequest ] tlRequestWithAction:kGetMyCoupon Params:@{@"user_id":[UserInfo getuserid]} result:^(BOOL isSuccess, id data) {
         
-        
+        if (isSuccess) {
+            
+            
+        }
     }];
 }
 

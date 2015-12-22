@@ -15,6 +15,8 @@
 // 是否登录
 #define kHadLogin     @"HadLogin"
 
+
+#pragma mark - 登录后个人信息
 //用户名
 #define kusername     @"username"
 
@@ -63,6 +65,26 @@
 
 //userid
 #define kuserid         @"id"
+
+//公司名称
+#define kcompanyName    @"companyName"
+
+//企业链接
+#define kcompanyURL    @"companyURL"
+
+//企业描述
+#define kcompanydescription  @"companyDescription"
+
+//税务登记号、
+#define kcompany_code     @"companyCode"
+
+//组织机构代码
+#define kcompany_number    @"companyNum"
+
+//营业执照
+#define kcompanyLicense   @"companyLicense"
+
+
 
 //isAttestation
 #define kisAttestation  @"isAttestation"

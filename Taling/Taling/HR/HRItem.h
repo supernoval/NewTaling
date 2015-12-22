@@ -11,7 +11,7 @@
 @interface HRItem : NSObject
 //HR
 @property (strong, nonatomic) NSString *company;
-@property (strong, nonatomic) NSArray *customerCompany;
+@property (strong, nonatomic) NSArray *customerCompany; //@[@"id":xxx,@"companyName":@"name",@"license":@""]
 @property (strong, nonatomic) NSString *dateJoined;
 @property (strong,nonatomic)  NSString *email;
 @property (strong, nonatomic) NSString *firstName;
