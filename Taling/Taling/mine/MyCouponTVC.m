@@ -50,7 +50,10 @@
                     NSDictionary *oneDic = [dataArray objectAtIndex:i];
                     CouponItem *item = [[CouponItem alloc]init];
                     [item setValuesForKeysWithDictionary:oneDic];
-                    [array addObject:item];
+                    if ([item.status integerValue] == 1) {
+                        [array addObject:item];
+                    }
+                    
                 }
                 [_couponArray removeAllObjects];
                 [_couponArray addObjectsFromArray:array];

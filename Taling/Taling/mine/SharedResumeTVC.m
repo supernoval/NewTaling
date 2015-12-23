@@ -138,7 +138,7 @@
     //公司&职业
     NSString *text = [NSString stringWithFormat:@"%@ %@",oneItem.currentCompany,oneItem.currentPosition];
     
-    return 91+[StringHeight heightWithText:text font:FONT_13 constrainedToWidth:ScreenWidth-151];
+    return 70+[StringHeight heightWithText:text font:FONT_13 constrainedToWidth:ScreenWidth-151];
 }
 
 
@@ -189,12 +189,14 @@
     
     
     //最近购买
+            
+            cell.buyTitleLabel.hidden = YES;
     
-//            cell.nearestBuy.text = ;
+            cell.nearestBuy.hidden = YES;
     
     
     //时间
-//            cell.timeLabel.text = ;
+            cell.timeLabel.hidden = YES;;
     
     
         }

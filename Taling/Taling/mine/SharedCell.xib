@@ -73,16 +73,6 @@
                             </mask>
                         </variation>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最近购买:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTH-vy-a2o">
-                        <rect key="frame" x="15" y="80" width="56" height="18"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="18" id="f7r-yq-ztg"/>
-                            <constraint firstAttribute="width" constant="56" id="xup-ej-iO1"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-12-9" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYo-NX-82r">
                         <rect key="frame" x="214" y="80" width="91" height="18"/>
                         <constraints>
@@ -100,6 +90,16 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.51372549020000002" green="0.80392156859999997" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最近购买:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTH-vy-a2o">
+                        <rect key="frame" x="15" y="80" width="56" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="f7r-yq-ztg"/>
+                            <constraint firstAttribute="width" constant="56" id="xup-ej-iO1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -153,6 +153,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="boughtNum" destination="m5o-SF-0ox" id="S2N-ep-qJP"/>
+                <outlet property="buyTitleLabel" destination="yTH-vy-a2o" id="fEn-YT-br8"/>
                 <outlet property="companyLabel" destination="jOw-3N-tgn" id="Kaa-Ak-siq"/>
                 <outlet property="headImageView" destination="B4L-6b-GaN" id="p3Z-1n-G4W"/>
                 <outlet property="nameLabel" destination="VWK-un-j0J" id="LrF-E9-fh8"/>

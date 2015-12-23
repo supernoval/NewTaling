@@ -17,4 +17,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *boughtNum;
 @property (strong, nonatomic) IBOutlet UILabel *nearestBuy;
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *buyTitleLabel;
 @end
