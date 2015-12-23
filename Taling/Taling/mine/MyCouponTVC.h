@@ -7,8 +7,9 @@
 //
 
 #import "BaseTableViewController.h"
+#import "CouponItem.h"
 
-typedef void (^CouponBlock)(NSDictionary *dic);
+typedef void (^CouponBlock)(CouponItem *item);
 
 @interface MyCouponTVC : BaseTableViewController
 @property (nonatomic, copy)CouponBlock couponBlock;

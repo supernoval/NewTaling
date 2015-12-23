@@ -427,7 +427,10 @@
             if (cell == nil) {
                 cell = [[NSBundle mainBundle]loadNibNamed:cellId owner:self options:nil][0];
             }
-//            cell.headImageView
+            if (item.userPhoto.length>0) {
+                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:item.userPhoto]];
+            }
+            
             cell.nameLabel.text = [NSString stringWithFormat:@"人才官ID %@",item.userId];
             cell.disLabel.text = @"人才官";
             //加关注

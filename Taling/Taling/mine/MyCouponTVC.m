@@ -9,7 +9,9 @@
 #import "MyCouponTVC.h"
 #import "CouponCell.h"
 
+
 @interface MyCouponTVC ()
+@property(nonatomic, strong) NSMutableArray *couponArray;
 
 @end
 
@@ -18,19 +20,42 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"我的优惠券";
+    _couponArray = [[NSMutableArray alloc]init];
+    [self.tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(headRefresh)];
+    [self getMyCoupon];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self getMyCoupon];
     
+    
+}
+
+- (void)headRefresh{
+    [self getMyCoupon];
 }
 
 - (void)getMyCoupon{
     
     [[TLRequest shareRequest ] tlRequestWithAction:kGetMyCoupon Params:@{@"user_id":[UserInfo getuserid]} result:^(BOOL isSuccess, id data) {
         
+        [self.tableView.header endRefreshing];
         if (isSuccess) {
+            if ([data isKindOfClass:[NSArray class]]) {
+                
+                NSArray *dataArray = [[NSArray alloc]init];
+                NSMutableArray *array = [[NSMutableArray alloc]init];
+                dataArray = data;
+                for (NSInteger i=0; i<dataArray.count; i++) {
+                    NSDictionary *oneDic = [dataArray objectAtIndex:i];
+                    CouponItem *item = [[CouponItem alloc]init];
+                    [item setValuesForKeysWithDictionary:oneDic];
+                    [array addObject:item];
+                }
+                [_couponArray removeAllObjects];
+                [_couponArray addObjectsFromArray:array];
+                [self.tableView reloadData];
+            }
             
             
         }
@@ -44,26 +69,36 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *cellId = @"CouponCell";
     
-    CouponCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    if (cell == nil) {
-        cell = [[NSBundle mainBundle] loadNibNamed:cellId owner:self options:nil][0];
+    if (_couponArray.count > indexPath.section) {
+        
+        CouponItem *oneItem = [_couponArray objectAtIndex:indexPath.section];
+        static NSString *cellId = @"CouponCell";
+        
+        CouponCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        if (cell == nil) {
+            cell = [[NSBundle mainBundle] loadNibNamed:cellId owner:self options:nil][0];
+        }
+        //标题
+        NSString *titleStr = [NSString stringWithFormat:@"¥%f 优惠券",oneItem.couponPrice];
+        NSMutableAttributedString *title = [[NSMutableAttributedString alloc]initWithString:titleStr];
+        [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:20] range:NSMakeRange(0, 1)];
+        [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:20] range:NSMakeRange(title.length-3, 3)];
+        cell.titleLabel.attributedText = title;
+        
+        //有效期
+        cell.timeLabel.text = [NSString stringWithFormat:@"有效期:%@-%@",oneItem.startTime,oneItem.endTime];
+        return cell;
+    }else{
+        
+        return nil;
     }
     
-    //标题
-    NSMutableAttributedString *title = [[NSMutableAttributedString alloc]initWithString:@"¥50 优惠券"];
-    [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:20] range:NSMakeRange(0, 1)];
-    [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:20] range:NSMakeRange(title.length-3, 3)];
-    cell.titleLabel.attributedText = title;
     
-    //有效期
-    cell.timeLabel.text = @"有效期:2015.10.02-2015.12.20";
-    return cell;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 5;
+    return _couponArray.count;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 1;
@@ -79,11 +114,14 @@
     return 0.1;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSDictionary *dic = @{@"money":@(50),@"time":@"2015.02.02-2016.10.10"};
-    if (self.couponBlock) {
-        self.couponBlock(dic);
+    
+    if (_couponArray.count > indexPath.section) {
+        CouponItem *item = [_couponArray objectAtIndex:indexPath.section];
+        if (self.couponBlock) {
+            self.couponBlock(item);
+        }
+        [self.navigationController popViewControllerAnimated:YES];
     }
-    [self.navigationController popViewControllerAnimated:YES];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

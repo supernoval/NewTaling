@@ -274,10 +274,10 @@
     //城市&擅长行业
         
     
-    cell.disLabel.text = [NSString stringWithFormat:@"%@ 擅长行业:%@",@"城市",oneItem.speciality];
+    cell.disLabel.text = [NSString stringWithFormat:@"%@ 擅长行业:%@",oneItem.city,oneItem.speciality];
 
     
-    cell.disHeight.constant = [StringHeight heightWithText:[NSString stringWithFormat:@"%@ 擅长行业:%@",@"城市",oneItem.speciality] font:FONT_13 constrainedToWidth:ScreenWidth-151];
+    cell.disHeight.constant = [StringHeight heightWithText:[NSString stringWithFormat:@"%@ 擅长行业:%@",oneItem.city,oneItem.speciality] font:FONT_13 constrainedToWidth:ScreenWidth-151];
     
     NSLog(@"+++++height:%f",cell.disLabel.frame.size.height);
     

@@ -380,6 +380,11 @@
             }
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
+            //头像
+            if (item.userPhoto.length>0) {
+                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:item.userPhoto]];
+            }
+            
             //姓名
             cell.nameLabel.text = [NSString stringWithFormat:@"人才官ID %@",item.userId];
             

@@ -167,9 +167,9 @@
             //优惠券
             MyCouponTVC *coupon = [self.storyboard instantiateViewControllerWithIdentifier:@"MyCouponTVC"];
             [self.navigationController pushViewController:coupon animated:YES];
-            [coupon chooseCoupon:^(NSDictionary *dic){
-                CGFloat couponMoney = [[dic objectForKey:@"money"] floatValue];
-                _couponId = [dic objectForKey:@"id"];
+            [coupon chooseCoupon:^(CouponItem *couponItem){
+                CGFloat couponMoney = couponItem.couponPrice;
+                _couponId = couponItem.id;
                 _couponLabel.text = [NSString stringWithFormat:@"%.2f元优惠券",couponMoney];
                 
                 if (item.price <= couponMoney) {
@@ -196,7 +196,7 @@
     float order_price = _payMoney;
 //  _couponId 优惠券ID
     
-    NSDictionary *param = @{@"resumes_id":@(self.item.resumesId),@"seller_id":self.item.userId,@"buyer_id":buy_id,@"order_price":@(order_price),@"coupon_id":@""};
+    NSDictionary *param = @{@"resumes_id":@(self.item.resumesId),@"seller_id":self.item.userId,@"buyer_id":buy_id,@"order_price":@(order_price),@"coupon_id":_couponId};
     
     if ([self.item.userId isEqualToString:buy_id]) {
         [CommonMethods showDefaultErrorString:@"不能购买自己的人才"];
