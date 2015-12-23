@@ -39,6 +39,10 @@
 @property (nonatomic) NSString *username;
 @property (nonatomic) NSString *workingYears;
 
+@property (nonatomic) NSString *callingCard;
+@property (nonatomic) NSData *callingCard_data;
+
+
 @property (nonatomic) NSData *photo_data;
 @property (nonatomic) NSData *pic_license_data;
 @property  (nonatomic) NSData *company_code_data;

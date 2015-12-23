@@ -76,6 +76,17 @@
         [_headImageView sd_setImageWithURL:[NSURL URLWithString:model.photo]];
     }
     
+    if (model.callingCard_data) {
+        
+        _personCardImageView.image = [UIImage imageWithData:model.callingCard_data];
+        
+    }
+    else
+    {
+        
+        [_personCardImageView sd_setImageWithURL:[NSURL URLWithString:model.callingCard]];
+        
+    }
     
     _cityLabel.text = [UserInfo  getcity];
     
@@ -396,6 +407,12 @@
     else if (selectedIndex == 7)
     {
         _personCardImageView.image = cutImage;
+        
+        if (imagedata) {
+            
+            [UserInfo saveModeValue:imagedata key:@"callingCard_data"];
+            
+        }
         
         
     }
