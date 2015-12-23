@@ -308,6 +308,7 @@
 		D2B8E7AA1C169E3400445EA6 /* BoughtResumeDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B8E7A91C169E3400445EA6 /* BoughtResumeDetailVC.m */; };
 		D2B8E7AD1C17B6B300445EA6 /* CommentTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B8E7AC1C17B6B300445EA6 /* CommentTVC.m */; };
 		D2B8E7B01C17B7FC00445EA6 /* TagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B8E7AF1C17B7FC00445EA6 /* TagButton.m */; };
+		D2CA5F171C2A5C6900A7D1FF /* CouponItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CA5F161C2A5C6900A7D1FF /* CouponItem.m */; };
 		D2D9220D1BDA31BE00CE91D2 /* ResumeDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D9220C1BDA31BE00CE91D2 /* ResumeDetailVC.m */; };
 		D2D922151BDDD61500CE91D2 /* ChangePasswordTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D922141BDDD61500CE91D2 /* ChangePasswordTVC.m */; };
 		D2FCB8F51BCBE7BB00C6ACC0 /* libEaseMobClientSDKLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2FCB8F41BCBE7BB00C6ACC0 /* libEaseMobClientSDKLite.a */; };
@@ -1053,6 +1054,8 @@
 		D2B8E7AC1C17B6B300445EA6 /* CommentTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTVC.m; sourceTree = "<group>"; };
 		D2B8E7AE1C17B7FC00445EA6 /* TagButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagButton.h; sourceTree = "<group>"; };
 		D2B8E7AF1C17B7FC00445EA6 /* TagButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagButton.m; sourceTree = "<group>"; };
+		D2CA5F151C2A5C6900A7D1FF /* CouponItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponItem.h; sourceTree = "<group>"; };
+		D2CA5F161C2A5C6900A7D1FF /* CouponItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponItem.m; sourceTree = "<group>"; };
 		D2D9220B1BDA31BE00CE91D2 /* ResumeDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResumeDetailVC.h; sourceTree = "<group>"; };
 		D2D9220C1BDA31BE00CE91D2 /* ResumeDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResumeDetailVC.m; sourceTree = "<group>"; };
 		D2D922131BDDD61500CE91D2 /* ChangePasswordTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordTVC.h; sourceTree = "<group>"; };
@@ -2859,6 +2862,8 @@
 				D27D7CFC1C1A96C800C97F67 /* CommentItem.m */,
 				151932FA1C291AFD009C5ECC /* UserModel.h */,
 				151932FB1C291AFD009C5ECC /* UserModel.m */,
+				D2CA5F151C2A5C6900A7D1FF /* CouponItem.h */,
+				D2CA5F161C2A5C6900A7D1FF /* CouponItem.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -3093,6 +3098,7 @@
 				1506E03C1B89B53C007D1696 /* JSONModel.m in Sources */,
 				1506E0A71B89B582007D1696 /* UIImageView+HighlightedWebCache.m in Sources */,
 				1302D78D1BDF49BF00FB4D11 /* payRequsestHandler.mm in Sources */,
+				D2CA5F171C2A5C6900A7D1FF /* CouponItem.m in Sources */,
 				B38446141C257C48005DF99C /* ContactTVC.m in Sources */,
 				153F3B021BD277FB00C86F1A /* MessageModel.m in Sources */,
 				D2D9220D1BDA31BE00CE91D2 /* ResumeDetailVC.m in Sources */,
