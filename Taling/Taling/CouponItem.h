@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface CouponItem : NSObject
-@property (strong, nonatomic) NSString *id;
-@property (nonatomic) float couponPrice;
-@property (strong, nonatomic) NSString *startTime;
-@property (strong, nonatomic) NSString *endTime;
-@property (strong, nonatomic) NSString *status;
-@property (strong, nonatomic) NSString *userId;
+@property(nonatomic, strong)NSString *id;
+@property(nonatomic)float couponPrice;
+@property(nonatomic, strong)NSString *startTime;
+@property(nonatomic, strong)NSString *endTime;
+@property(nonatomic, strong)NSString *status;
+@property(nonatomic, strong)NSString *userId;
+
 
 @end
