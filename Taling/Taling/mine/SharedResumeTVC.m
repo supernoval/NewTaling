@@ -83,6 +83,7 @@
                 dataArray = data;
             }
             
+            
             for (NSInteger i = 0; i < dataArray.count; i++) {
                 NSDictionary *oneDic = [dataArray objectAtIndex:i];
                 ModelItem *item = [[ModelItem alloc]init];
