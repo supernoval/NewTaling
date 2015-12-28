@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HRListCell" rowHeight="135" id="Wny-x0-f4b" customClass="HRListCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HRListCell" rowHeight="165" id="Wny-x0-f4b" customClass="HRListCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wny-x0-f4b" id="BLE-gK-3Fs">
@@ -256,7 +256,7 @@
                 <outlet property="recomValue" destination="J3L-kv-tEC" id="1tg-cB-gP7"/>
                 <outlet property="servicedCom" destination="VJi-Xs-RoS" id="vJn-Yg-6xE"/>
             </connections>
-            <point key="canvasLocation" x="260" y="292"/>
+            <point key="canvasLocation" x="260" y="306.5"/>
         </tableViewCell>
     </objects>
     <resources>

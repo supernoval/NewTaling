@@ -266,8 +266,21 @@
 
 - (void)pushToDetailAction:(UIButton *)btn{
     
-    RecommendDetailVC *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"RecommendDetailVC"];
-    [self.navigationController pushViewController:detail animated:YES];
+    
+        
+        ModelItem *oneItem = [_JDArray objectAtIndex:btn.tag];
+        
+        NSInteger resumesId = oneItem.resumesId;
+        
+        
+        if (resumesId) {
+            
+            RecommendDetailVC *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"RecommendDetailVC"];
+            detail.item = oneItem;
+            [self.navigationController pushViewController:detail animated:YES];
+        }
+        
+
     
 }
 
