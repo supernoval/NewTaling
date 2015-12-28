@@ -155,7 +155,7 @@
         CommentItem *oneItem = [_commentArray objectAtIndex:section];
         NSInteger count = [CommonMethods sepretTheAppraiseLabel:oneItem.lable].count;
         NSInteger tagRow = count%4==0 ? count/4:count/4 + 1 ;
-        return 40*tagRow;
+        return 40*tagRow+0.1;
         
     }else{
         return 0.0;
@@ -210,7 +210,7 @@
         
         //头像
         if (oneComment.photo.length > 0 ) {
-            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneComment.photo]];
+            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneComment.photo] placeholderImage:kDefaultHeadImage];
         }
         
         

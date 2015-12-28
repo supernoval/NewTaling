@@ -218,7 +218,7 @@
             //头像
             if (oneItem.photo.length > 0) {
                 
-                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo]];
+                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo] placeholderImage:kDefaultHeadImage];
             }
             
             //人才估值
@@ -266,8 +266,21 @@
 
 - (void)pushToDetailAction:(UIButton *)btn{
     
-    RecommendDetailVC *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"RecommendDetailVC"];
-    [self.navigationController pushViewController:detail animated:YES];
+    
+        
+        ModelItem *oneItem = [_JDArray objectAtIndex:btn.tag];
+        
+        NSInteger resumesId = oneItem.resumesId;
+        
+        
+        if (resumesId) {
+            
+            RecommendDetailVC *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"RecommendDetailVC"];
+            detail.item = oneItem;
+            [self.navigationController pushViewController:detail animated:YES];
+        }
+        
+
     
 }
 

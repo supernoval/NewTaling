@@ -348,7 +348,7 @@
                 CommentItem *oneItem = [_commentArray firstObject];
                 NSInteger count = [CommonMethods sepretTheAppraiseLabel:oneItem.lable].count;
                 NSInteger tagRow = count%4==0 ? count/4:count/4 + 1 ;
-                return 40*tagRow;
+                return 40*tagRow+0.1;
                 
             }else{
                 return 0.1;
@@ -527,7 +527,9 @@
                     //头像
                     if (hRitem.photo.length > 0) {
                         
-                        [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:hRitem.photo]placeholderImage:kDefaultHeadImage];
+
+                        [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:hRitem.photo] placeholderImage:kDefaultHeadImage];
+
                     }
                     
                     //姓名
@@ -617,7 +619,9 @@
             //头像
             if (oneItem.photo.length > 0) {
                 
-                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo]placeholderImage:kDefaultHeadImage];
+
+                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo] placeholderImage:kDefaultHeadImage];
+
             }
             
             //人才估值
@@ -659,7 +663,9 @@
                 
                 //头像
                 if (oneComment.photo.length > 0 ) {
-                    [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneComment.photo]placeholderImage:kDefaultHeadImage];
+
+                    [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneComment.photo] placeholderImage:kDefaultHeadImage];
+
                 }
                 
                 
