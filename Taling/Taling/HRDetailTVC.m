@@ -527,14 +527,14 @@
                     //头像
                     if (hRitem.photo.length > 0) {
                         
-                        [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:hRitem.photo]];
+                        [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:hRitem.photo]placeholderImage:kDefaultHeadImage];
                     }
                     
                     //姓名
                     cell.nameLabel.text = hRitem.nickname;
                     
                     //ID
-                    cell.idLabel.text = [NSString stringWithFormat:@"人才官ID %@",hRitem.id];
+                    cell.idLabel.text = [NSString stringWithFormat:@"ID%@",hRitem.id];
                     
                     //城市
                     cell.disLabel.text = @"城市";
@@ -617,14 +617,14 @@
             //头像
             if (oneItem.photo.length > 0) {
                 
-                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo]];
+                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo]placeholderImage:kDefaultHeadImage];
             }
             
             //人才估值
             cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",oneItem.price];
             
             //简历ID
-            cell.idLabel.text = [NSString stringWithFormat:@"人才ID %li",(long)oneItem.resumesId];
+            cell.idLabel.text = [NSString stringWithFormat:@"ID%li",(long)oneItem.resumesId];
             
             
             //公司&职业
@@ -659,7 +659,7 @@
                 
                 //头像
                 if (oneComment.photo.length > 0 ) {
-                    [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneComment.photo]];
+                    [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneComment.photo]placeholderImage:kDefaultHeadImage];
                 }
                 
                 

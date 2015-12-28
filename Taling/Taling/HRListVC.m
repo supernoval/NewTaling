@@ -257,7 +257,7 @@
         //头像
         if (oneItem.photo.length > 0) {
             
-            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo]];
+            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo] placeholderImage:kDefaultHeadImage];
         }
         
         //姓名
@@ -265,7 +265,7 @@
         
         
         //ID
-        cell.idLabel.text = [NSString stringWithFormat:@"人才官ID %@",oneItem.id];
+        cell.idLabel.text = [NSString stringWithFormat:@"ID%@",oneItem.id];
     
     // 推荐净值
 //        cell.recomValue.text = [NSString stringWithFormat:@"¥%.f",oneItem.price] ;
@@ -273,7 +273,10 @@
     
     //城市&擅长行业
         
-    
+        if (!oneItem.city) {
+            
+            oneItem.city = @"";
+        }
     cell.disLabel.text = [NSString stringWithFormat:@"%@ 擅长行业:%@",oneItem.city,oneItem.speciality];
 
     

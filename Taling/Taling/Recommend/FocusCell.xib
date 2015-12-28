@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -41,11 +41,11 @@
                         <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTC-Zd-q5b">
-                        <rect key="frame" x="237" y="14" width="68" height="25"/>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTC-Zd-q5b">
+                        <rect key="frame" x="238" y="12" width="68" height="30"/>
                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="25" id="Pza-cJ-8zY"/>
+                            <constraint firstAttribute="height" constant="30" id="Pza-cJ-8zY"/>
                             <constraint firstAttribute="width" constant="68" id="gbH-5m-pFk"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -57,7 +57,7 @@
                 <constraints>
                     <constraint firstItem="ldD-ZT-1wi" firstAttribute="leading" secondItem="Aa0-Sc-hZA" secondAttribute="trailing" constant="8" id="8ZE-hd-Thj"/>
                     <constraint firstItem="ldD-ZT-1wi" firstAttribute="top" secondItem="DBH-4I-qoi" secondAttribute="top" constant="8" id="IKq-JL-lOs"/>
-                    <constraint firstItem="JTC-Zd-q5b" firstAttribute="top" secondItem="DBH-4I-qoi" secondAttribute="top" constant="14" id="SAr-H4-BHh"/>
+                    <constraint firstItem="JTC-Zd-q5b" firstAttribute="centerY" secondItem="DBH-4I-qoi" secondAttribute="centerY" id="WKm-nu-qEo"/>
                     <constraint firstAttribute="trailing" secondItem="JTC-Zd-q5b" secondAttribute="trailing" constant="15" id="ZjJ-Al-ptp"/>
                     <constraint firstItem="Aa0-Sc-hZA" firstAttribute="leading" secondItem="DBH-4I-qoi" secondAttribute="leading" constant="15" id="aVx-zr-sB6"/>
                     <constraint firstItem="Aa0-Sc-hZA" firstAttribute="top" secondItem="DBH-4I-qoi" secondAttribute="top" constant="8" id="crN-ob-Ucp"/>

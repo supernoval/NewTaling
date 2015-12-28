@@ -33,7 +33,7 @@
     //头像
     if (item.photo.length > 0) {
         
-        [_headImageView sd_setImageWithURL:[NSURL URLWithString:item.photo]];
+        [_headImageView sd_setImageWithURL:[NSURL URLWithString:item.photo]placeholderImage:kDefaultHeadImage];
     }
     
     

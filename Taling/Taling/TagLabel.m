@@ -23,8 +23,8 @@
         self.font = FONT_14;
         self.textColor = kTextLightGrayColor;
         self.textAlignment = NSTextAlignmentCenter;
-        
-        
+        self.shadowColor = [UIColor clearColor];
+        self.shadowOffset = CGSizeMake(0, 0);
     }
     
     return self;

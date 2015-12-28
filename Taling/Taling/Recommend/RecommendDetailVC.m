@@ -193,7 +193,7 @@
         
         blankFooter.backgroundColor = [UIColor whiteColor];
         UILabel *commentNum = [[UILabel alloc]initWithFrame:CGRectMake(15, 8, 200, 32)];
-        commentNum.text = @"评论(15)";
+        commentNum.text = @"评论";
         commentNum.font = FONT_15;
         commentNum.textColor = [UIColor blackColor];
         [blankFooter addSubview:commentNum];
@@ -332,7 +332,7 @@
             //头像
             if (item.photo.length > 0) {
                 
-                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:item.photo]];
+                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:item.photo] placeholderImage:kDefaultHeadImage];
             }
             
             
@@ -340,7 +340,7 @@
             cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",item.price];
             
             //简历ID
-            cell.idLabel.text = [NSString stringWithFormat:@"人才ID %li",(long)item.resumesId];
+            cell.idLabel.text = [NSString stringWithFormat:@"人才%li",(long)item.resumesId];
             
             
             //公司&职业
@@ -382,11 +382,11 @@
             
             //头像
             if (item.userPhoto.length>0) {
-                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:item.userPhoto]];
+                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:item.userPhoto] placeholderImage:kDefaultHeadImage];
             }
             
             //姓名
-            cell.nameLabel.text = [NSString stringWithFormat:@"人才官ID %@",item.userId];
+            cell.nameLabel.text = [NSString stringWithFormat:@"人才官%@",item.userId];
             
             //人才官
             cell.disLabel.text = @"人才官";
@@ -422,7 +422,7 @@
                 
                 //头像
                 if (oneComment.photo.length > 0 ) {
-                    [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneComment.photo]];
+                    [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneComment.photo] placeholderImage:kDefaultHeadImage];
                 }
                 
                 
@@ -431,7 +431,7 @@
                 
                 //id
                 
-                cell.idLabel.text = [NSString stringWithFormat:@"人才官ID %@",oneComment.userId];
+                cell.idLabel.text = [NSString stringWithFormat:@"ID%@",oneComment.userId];
                 
                 //time
                 if (oneComment.time.length > 10) {

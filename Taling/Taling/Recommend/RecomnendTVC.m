@@ -368,14 +368,15 @@
         //头像
         if (oneItem.photo.length > 0) {
             
-            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.userPhoto]];
+            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.userPhoto] placeholderImage:kDefaultHeadImage];
+            
         }
         
         //人才估值
         cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",oneItem.price];
         
         //简历ID
-        cell.idLabel.text = [NSString stringWithFormat:@"人才ID %li",(long)oneItem.resumesId];
+        cell.idLabel.text = [NSString stringWithFormat:@"人才%li",(long)oneItem.resumesId];
         
         
         //公司&职业
