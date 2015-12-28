@@ -257,7 +257,8 @@
         //头像
         if (oneItem.photo.length > 0) {
             
-            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo]];
+            
+            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo] placeholderImage:kDefaultHeadImage];
         }
         
         //姓名

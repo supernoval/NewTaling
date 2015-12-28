@@ -369,7 +369,7 @@
             //头像
             if (item.photo.length > 0) {
                 
-                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:item.photo]];
+                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:item.photo] placeholderImage:kDefaultHeadImage];
             }
             
             //人才估值
@@ -428,7 +428,7 @@
                 cell = [[NSBundle mainBundle]loadNibNamed:cellId owner:self options:nil][0];
             }
             if (item.userPhoto.length>0) {
-                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:item.userPhoto]];
+                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:item.userPhoto] placeholderImage:kDefaultHeadImage];
             }
             
             cell.nameLabel.text = [NSString stringWithFormat:@"人才官ID %@",item.userId];
@@ -474,7 +474,7 @@
                 
                 //头像
                 if (oneComment.photo.length > 0 ) {
-                    [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneComment.photo]];
+                    [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneComment.photo] placeholderImage:kDefaultHeadImage];
                 }
                 
                 

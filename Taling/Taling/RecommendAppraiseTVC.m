@@ -210,7 +210,7 @@
         
         //头像
         if (oneComment.photo.length > 0 ) {
-            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneComment.photo]];
+            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneComment.photo] placeholderImage:kDefaultHeadImage];
         }
         
         

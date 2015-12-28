@@ -332,7 +332,7 @@
             //头像
             if (item.photo.length > 0) {
                 
-                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:item.photo]];
+                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:item.photo] placeholderImage:kDefaultHeadImage];
             }
             
             
@@ -382,7 +382,7 @@
             
             //头像
             if (item.userPhoto.length>0) {
-                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:item.userPhoto]];
+                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:item.userPhoto] placeholderImage:kDefaultHeadImage];
             }
             
             //姓名
@@ -422,7 +422,7 @@
                 
                 //头像
                 if (oneComment.photo.length > 0 ) {
-                    [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneComment.photo]];
+                    [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneComment.photo] placeholderImage:kDefaultHeadImage];
                 }
                 
                 
