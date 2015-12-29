@@ -31,6 +31,8 @@
 @property (strong, nonatomic) NSString *speciality;
 @property (strong, nonatomic) NSString *summary;
 @property (strong, nonatomic) NSString *username;
+@property (nonatomic,strong) NSString *recommend;
+
 
 
 

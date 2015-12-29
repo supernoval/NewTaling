@@ -542,7 +542,13 @@
                     cell.disLabel.text = @"城市";
                     
                     // 推荐净值
-//                    cell.recomValue.text = [NSString stringWithFormat:@"¥%.f",hRitem.] ;
+                    cell.recomValue.text = [NSString stringWithFormat:@"%@",hRitem.recommend] ;
+                    
+                    if (cell.recomValue.text.length == 0) {
+                        
+                        cell.recomValue.text = @"1.0";
+                        
+                    }
                     //加关注
                     
                     if ([UserInfo isFocusedHR:[hRitem.id integerValue]] == YES) {

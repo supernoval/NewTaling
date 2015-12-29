@@ -269,9 +269,12 @@
         cell.idLabel.text = [NSString stringWithFormat:@"ID%@",oneItem.id];
     
     // 推荐净值
-//        cell.recomValue.text = [NSString stringWithFormat:@"¥%.f",oneItem.price] ;
+        cell.recomValue.text = [NSString stringWithFormat:@"%@",oneItem.recommend] ;
     
-    
+        if (cell.recomValue.text.length == 0) {
+            
+            cell.recomValue.text = @"1.0";
+        }
     //城市&擅长行业
         
         if (!oneItem.city) {
