@@ -40,7 +40,11 @@ TLRequest *request;
     
     manager.requestSerializer.timeoutInterval = 20.0;
     
-    [MyProgressHUD showProgress];
+    if ([self showProgress:action]) {
+        
+        [MyProgressHUD showProgress];
+        
+    };
     
     [manager POST:url parameters:param  success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
@@ -96,7 +100,12 @@ TLRequest *request;
     
     manager.requestSerializer.timeoutInterval = 50.0;
     
-    [MyProgressHUD showProgress];
+    if ([self showProgress:action]) {
+        
+        [MyProgressHUD showProgress];
+        
+    }
+    
     
     
     [manager POST:url parameters:param constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
@@ -264,6 +273,20 @@ TLRequest *request;
         NSLog(@"fail:%@,%@",error,operation.responseString);
         
     }];
+    
+}
+
+
+-(BOOL )showProgress:(NSString *)interface
+{
+    if ([interface isEqualToString:kgetHrInfo] || [interface isEqualToString:kgetCommendResumes] || [interface isEqualToString:kgetAttention] || [interface isEqualToString:kresumesCount] ) {
+        
+        return NO;
+        
+    }
+    
+    return YES;
+    
     
 }
 
