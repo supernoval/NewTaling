@@ -337,7 +337,7 @@
             
             
             //人才估值
-            cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",item.price];
+            cell.priceLabel.text = [NSString stringWithFormat:@"¥%.0f元",item.price];
             
             //简历ID
             cell.idLabel.text = [NSString stringWithFormat:@"人才%li",(long)item.resumesId];
