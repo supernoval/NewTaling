@@ -373,10 +373,10 @@
         }
         
         //人才估值
-        cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",oneItem.price];
+        cell.priceLabel.text = [NSString stringWithFormat:@"¥%.0f元",oneItem.price];
         
-        //简历ID
-        cell.idLabel.text = [NSString stringWithFormat:@"人才%li",(long)oneItem.resumesId];
+        //人才名称
+        cell.idLabel.text = [NSString stringWithFormat:@"%@",oneItem.name];
         
         
         //公司&职业
