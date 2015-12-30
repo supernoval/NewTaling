@@ -9,5 +9,9 @@
 #import "CouponItem.h"
 
 @implementation CouponItem
-
+-(void)setValue:(id)value forUndefinedKey:(NSString *)key
+{
+    NSLog(@"couponItem undefinedKey:%@",key);
+    
+}
 @end

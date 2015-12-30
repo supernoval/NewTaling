@@ -15,6 +15,8 @@
 @property(nonatomic, strong)NSString *endTime;
 @property(nonatomic, strong)NSString *status;
 @property(nonatomic, strong)NSString *userId;
+@property (nonatomic,strong) NSString *fcd;
+
 
 
 @end
