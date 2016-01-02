@@ -33,7 +33,7 @@
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:20],NSForegroundColorAttributeName:[UIColor whiteColor]}];
 
-    [[UITabBar appearance] setTintColor:kTabbarTintColor];
+    [[UITabBar appearance] setTintColor:[UIColor redColor]];
     [[UITabBar appearance]setBarTintColor:[UIColor whiteColor]];
     
 
