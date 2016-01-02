@@ -134,12 +134,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
-    
-    //公司&职业
-    NSString *text = [NSString stringWithFormat:@"%@ %@",oneItem.currentCompany,oneItem.currentPosition];
-    
-    return 91+[StringHeight heightWithText:text font:FONT_13 constrainedToWidth:ScreenWidth-151];
+    return 122;
    
 }
 
@@ -165,36 +160,43 @@
         if (_JDArray.count > indexPath.section) {
             
         ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
-    
-    
-    
-    //头像
+            
+            
+            
+            //头像
             if (oneItem.photo.length > 0) {
-    
-                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo] placeholderImage:kDefaultHeadImage];
+                
+                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.userPhoto] placeholderImage:kDefaultHeadImage];
+                
             }
             
-            //人才估值
-            cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",oneItem.price] ;
+            //估值
+            
+            NSString *titleStr = [NSString stringWithFormat:@"估值  ¥%.0f",oneItem.price];
+            NSMutableAttributedString *title = [[NSMutableAttributedString alloc]initWithString:titleStr];
+            [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, 2)];
+            [title addAttribute:NSForegroundColorAttributeName value:kTextLightGrayColor range:NSMakeRange(0, 2)];
+            cell.priceLabel.attributedText = title;
+            
+            
+            //人才名称
+            cell.idLabel.text = [NSString stringWithFormat:@"%@",oneItem.name];
+            
+            
+            //地址&公式名称
+            cell.companyLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,oneItem.currentCompany];
+            
+            //行业&职位
+            cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.currentIndustry,oneItem.currentPosition];
+            
+
+ 
+           //购买自 ID
     
-    //姓名
-            cell.nameLabel.text = oneItem.name;
-    
-    //公司&职业
-            cell.companyLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.currentCompany,oneItem.currentPosition];
-    
-    //城市&行业
-            cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,oneItem.currentIndustry];
-    
-     
+            cell.idLabel.text = [NSString stringWithFormat:@"人才官ID  %@",oneItem.userId];
     
     
-    //购买自 ID
-    
-            cell.idLabel.text = [NSString stringWithFormat:@"人才官 ID%@",oneItem.userId];
-    
-    
-    //时间
+        //时间
             if (oneItem.buyTime.length > 10) {
                 cell.timeLabel.text = [oneItem.buyTime substringToIndex:10];
             }else{
