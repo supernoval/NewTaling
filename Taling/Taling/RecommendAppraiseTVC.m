@@ -113,7 +113,7 @@
     if (_commentArray.count>section) {
         
         float tagWidth = (ScreenWidth-30-3*TagGap)/4;
-        float tagHeight = 30;
+        float tagHeight = 24;
         CommentItem *commentItem = [_commentArray objectAtIndex:section];
         NSArray *labelArray =[CommonMethods sepretTheAppraiseLabel:commentItem.lable];
         NSInteger count = labelArray.count;
@@ -124,7 +124,7 @@
             tagRow = count/4 + 1;
         }
         
-        UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40*tagRow+0.5)];
+        UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 34*tagRow+0.5)];
         
         blankFooter.backgroundColor = [UIColor whiteColor];
         for (NSInteger i = 0; i < count; i++) {
@@ -155,7 +155,12 @@
         CommentItem *oneItem = [_commentArray objectAtIndex:section];
         NSInteger count = [CommonMethods sepretTheAppraiseLabel:oneItem.lable].count;
         NSInteger tagRow = count%4==0 ? count/4:count/4 + 1 ;
-        return 40*tagRow+0.1;
+        if (tagRow>0) {
+            return 34*tagRow+5;
+        }else{
+            return 34*tagRow+0.1;
+        }
+
         
     }else{
         return 0.0;
@@ -180,7 +185,7 @@
     
     if (_commentArray.count>indexPath.section) {
         CommentItem *oneItem = [_commentArray objectAtIndex:indexPath.section];
-        return 80+[StringHeight heightWithText:oneItem.comment font:FONT_14 constrainedToWidth:ScreenWidth-30];
+        return 78+[StringHeight heightWithText:oneItem.comment font:FONT_14 constrainedToWidth:ScreenWidth-30];
     }else{
         return 0;
     }

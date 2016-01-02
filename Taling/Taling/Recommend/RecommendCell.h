@@ -12,19 +12,18 @@
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
 
 
-@property (weak, nonatomic) IBOutlet UILabel *idLabel;
+@property (weak, nonatomic) IBOutlet UILabel *idLabel;//姓名
 
 
-@property (weak, nonatomic) IBOutlet UILabel *placeLabel;//地点&行业
+@property (weak, nonatomic) IBOutlet UILabel *placeLabel;//行业&职位
 
 
-@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;//估值
 
 
 
-@property (strong, nonatomic) IBOutlet UILabel *companyLabel;//公司&职业
+@property (strong, nonatomic) IBOutlet UILabel *companyLabel;//地址&公司名称
 
 
-@property (strong, nonatomic) IBOutlet UILabel *guzhiLabel;
 
 @end

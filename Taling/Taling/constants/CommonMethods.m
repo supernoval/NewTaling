@@ -728,6 +728,12 @@
         for (NSInteger i = 0; i<array.count; i++) {
             NSDictionary *oneCom = [array objectAtIndex:i];
             NSString *one = [oneCom objectForKey:@"companyName"];
+            
+            if (!one) {
+                one =@"";
+            }
+            
+            
             list = [list stringByAppendingString:one];
             
         }

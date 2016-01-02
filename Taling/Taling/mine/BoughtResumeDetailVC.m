@@ -195,11 +195,11 @@
         case 2:
         {
             if (_commentArry.count > 0) {
-                UIView *appraiseView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 30)];
+                UIView *appraiseView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 50)];
                 appraiseView.backgroundColor = [UIColor whiteColor];
-                UILabel *appraiseLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, 5, ScreenWidth-30, 25)];
+                UILabel *appraiseLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, 15, ScreenWidth-30, 35)];
                 appraiseLabel.text = @"评价";
-                appraiseLabel.font = FONT_15;
+                appraiseLabel.font = FONT_14;
                 [appraiseView addSubview:appraiseLabel];
                 UILabel *line = [[UILabel alloc]initWithFrame:CGRectMake(0, appraiseView.frame.size.height-1, ScreenWidth, 1)];
                 line.backgroundColor = kLineColor;
@@ -218,7 +218,7 @@
                 CommentItem *commentItem = [_commentArry objectAtIndex:section-3];
                 
                 float tagWidth = (ScreenWidth-30-3*TagGap)/4;
-                float tagHeight = 30;
+                float tagHeight = 24;
                 NSArray *labelArray = [CommonMethods sepretTheAppraiseLabel:commentItem.lable];
                 NSInteger count = labelArray.count;
                 NSInteger tagRow;
@@ -228,7 +228,7 @@
                     tagRow = count/4 + 1;
                 }
                 
-                UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40*tagRow)];
+                UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 34*tagRow+10)];
                 
                 blankFooter.backgroundColor = [UIColor whiteColor];
                 for (NSInteger i = 0; i < count; i++) {
@@ -268,7 +268,7 @@
     switch (section) {
         case 0:
         {
-            return 50;
+            return 69;
         }
             break;
             
@@ -282,7 +282,7 @@
         {
             if (_commentArry.count > 0) {
                 
-                return 30;
+                return 50;
             }else{
                 
                 return 0.01;
@@ -297,7 +297,11 @@
                 CommentItem *oneItem = [_commentArry objectAtIndex:section-3];
                 NSInteger count = [CommonMethods sepretTheAppraiseLabel:oneItem.lable].count;
                 NSInteger tagRow = count%4==0 ? count/4:count/4 + 1 ;
-                return 40*tagRow;
+                if (tagRow>0) {
+                    return 34*tagRow+15;
+                }else{
+                    return 34*tagRow;
+                }
                 
             }else{
                 return 0.0;
@@ -315,10 +319,7 @@
     switch (indexPath.section) {
         case 0:
         {
-            //公司&职业
-            NSString *text = [NSString stringWithFormat:@"%@ %@",item.currentCompany,item.currentPosition];
-            
-            return 57+[StringHeight heightWithText:text font:FONT_14 constrainedToWidth:ScreenWidth-153];
+            return 79;
         }
             break;
             
@@ -334,7 +335,7 @@
             
         case 2:
         {
-            return 55;
+            return 69;
         }
             break;
             
@@ -343,7 +344,7 @@
         {
             if (_commentArry.count>0) {
                 CommentItem *oneItem = [_commentArry objectAtIndex:indexPath.section-3];
-                return 80+[StringHeight heightWithText:oneItem.comment font:FONT_14 constrainedToWidth:ScreenWidth-30];
+                return 78+[StringHeight heightWithText:oneItem.comment font:FONT_14 constrainedToWidth:ScreenWidth-30];
             }else{
                 return 0;
             }
@@ -365,24 +366,34 @@
                 cell = [[NSBundle mainBundle]loadNibNamed:cellId owner:self options:nil][0];
             }
             
-
+            
+            
             //头像
             if (item.photo.length > 0) {
                 
-                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:item.photo] placeholderImage:kDefaultHeadImage];
+                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:item.userPhoto] placeholderImage:kDefaultHeadImage];
+                
             }
             
-            //人才估值
-            cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",item.price] ;
+            //估值
             
-            //姓名
-            cell.idLabel.text = item.name;
+            NSString *titleStr = [NSString stringWithFormat:@"估值  ¥%.0f",item.price];
+            NSMutableAttributedString *title = [[NSMutableAttributedString alloc]initWithString:titleStr];
+            [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, 2)];
+            [title addAttribute:NSForegroundColorAttributeName value:kTextLightGrayColor range:NSMakeRange(0, 2)];
+            cell.priceLabel.attributedText = title;
             
-            //公司&职业
-            cell.companyLabel.text = [NSString stringWithFormat:@"%@ %@",item.currentCompany,item.currentPosition];
             
-            //城市&行业
-            cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",item.city,item.currentIndustry];
+            //人才名称
+            cell.idLabel.text = [NSString stringWithFormat:@"%@",item.name];
+            
+            
+            //地址&公式名称
+            cell.companyLabel.text = [NSString stringWithFormat:@"%@ %@",item.city,item.currentCompany];
+            
+            //行业&职位
+            cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",item.currentIndustry,item.currentPosition];
+            
             
             return cell;
             

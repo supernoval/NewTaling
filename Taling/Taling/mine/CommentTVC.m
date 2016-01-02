@@ -65,7 +65,7 @@
     float gap = 15;
     
     float tagWidth = (ScreenWidth-30-3*TagGap)/4;
-    float tagHeight = 30;
+    float tagHeight = 24;
     NSInteger count = _tagArray.count;
     NSInteger tagRow;
     if (count%4 == 0) {
@@ -74,7 +74,7 @@
         tagRow = count/4 + 1;
     }
     
-    UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40*tagRow+gap)];
+    UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 34*tagRow+gap+5)];
     
     blankFooter.backgroundColor = [UIColor whiteColor];
     for (NSInteger i = 0; i < count; i++) {

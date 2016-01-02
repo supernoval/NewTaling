@@ -121,11 +121,11 @@
         ModelItem *oneItem = [_JDArray objectAtIndex:section];
         
         float tagWidth = (ScreenWidth-30-3*TagGap)/4;
-        float tagHeight = 30;
+        float tagHeight = 24;
         NSInteger count = oneItem.resumesLabel.count;
         NSInteger tagRow = count%4==0 ? count/4:count/4 + 1 ;
         
-        UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40*tagRow)];
+        UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 34*tagRow)];
         
         blankFooter.backgroundColor = [UIColor whiteColor];
         for (NSInteger i = 0; i < count; i++) {
@@ -156,7 +156,12 @@
         ModelItem *oneItem = [_JDArray objectAtIndex:section];
         NSInteger count = oneItem.resumesLabel.count;
         NSInteger tagRow = count%4==0 ? count/4:count/4 + 1 ;
-        return 40*tagRow;
+        if (tagRow>0) {
+            return 34*tagRow+5;
+        }else{
+            return 34*tagRow;
+        }
+
     }
     
     return 0.1;
@@ -178,11 +183,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
-    //公司&职业
-    NSString *text = [NSString stringWithFormat:@"%@ %@",oneItem.currentCompany,oneItem.currentPosition];
-    
-    return 57+[StringHeight heightWithText:text font:FONT_14 constrainedToWidth:ScreenWidth-153];
+    return 79;
 
 }
 
@@ -207,25 +208,32 @@
         
         ModelItem *oneItem = [_JDArray objectAtIndex:indexPath.section];
         
+        
         //头像
         if (oneItem.photo.length > 0) {
             
-            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo] placeholderImage:kDefaultHeadImage];
+            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.userPhoto] placeholderImage:kDefaultHeadImage];
+            
         }
         
-        //人才估值
-        cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",oneItem.price];
+        //估值
         
-        //简历ID
-        cell.idLabel.text = [NSString stringWithFormat:@"人才ID %li",(long)oneItem.resumesId];
+        NSString *titleStr = [NSString stringWithFormat:@"估值  ¥%.0f",oneItem.price];
+        NSMutableAttributedString *title = [[NSMutableAttributedString alloc]initWithString:titleStr];
+        [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, 2)];
+        [title addAttribute:NSForegroundColorAttributeName value:kTextLightGrayColor range:NSMakeRange(0, 2)];
+        cell.priceLabel.attributedText = title;
         
         
-        //公司&职业
-        cell.companyLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.currentCompany,oneItem.currentPosition];
+        //人才名称
+        cell.idLabel.text = [NSString stringWithFormat:@"%@",oneItem.name];
         
-        //城市&行业
-        cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,oneItem.currentIndustry];
         
+        //地址&公式名称
+        cell.companyLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,oneItem.currentCompany];
+        
+        //行业&职位
+        cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.currentIndustry,oneItem.currentPosition];
         
         
     }

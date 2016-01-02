@@ -47,7 +47,6 @@
         cell = [[NSBundle mainBundle]loadNibNamed:@"RecommendCell" owner:self options:nil][0];
     }
     
-    cell.guzhiLabel.hidden = YES;
     cell.priceLabel.hidden = YES;
     
     
@@ -83,7 +82,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 75;
+    return 79;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;

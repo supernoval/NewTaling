@@ -19,8 +19,8 @@
         self.clipsToBounds = YES;
         self.layer.cornerRadius = 4.0;
         self.layer.borderWidth = 1.0;
-        self.layer.borderColor = kTextLightGrayColor.CGColor;
-        self.font = FONT_14;
+        self.layer.borderColor = RGB(151, 151, 151, 1).CGColor;
+        self.font = FONT_12;
         self.textColor = kTextLightGrayColor;
         self.textAlignment = NSTextAlignmentCenter;
         self.shadowColor = [UIColor clearColor];
