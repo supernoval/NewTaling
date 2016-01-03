@@ -59,8 +59,6 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>请允许定位功能</string>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

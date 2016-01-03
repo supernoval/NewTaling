@@ -50,7 +50,6 @@
 		1506DF4C1B89B36D007D1696 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF4B1B89B36D007D1696 /* main.m */; };
 		1506DF4F1B89B36D007D1696 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF4E1B89B36D007D1696 /* AppDelegate.m */; };
 		1506DF571B89B36D007D1696 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1506DF561B89B36D007D1696 /* Images.xcassets */; };
-		1506DF5A1B89B36D007D1696 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1506DF581B89B36D007D1696 /* LaunchScreen.xib */; };
 		1506DF661B89B36D007D1696 /* TalingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF651B89B36D007D1696 /* TalingTests.m */; };
 		1506DF7B1B89B457007D1696 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1506DF7A1B89B457007D1696 /* Main.storyboard */; };
 		1506DF811B89B46D007D1696 /* CommonMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 1506DF7D1B89B46D007D1696 /* CommonMethods.m */; };
@@ -488,7 +487,6 @@
 		1506DF4D1B89B36D007D1696 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1506DF4E1B89B36D007D1696 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1506DF561B89B36D007D1696 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		1506DF591B89B36D007D1696 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1506DF5F1B89B36D007D1696 /* TalingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TalingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1506DF641B89B36D007D1696 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1506DF651B89B36D007D1696 /* TalingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TalingTests.m; sourceTree = "<group>"; };
@@ -1600,7 +1598,6 @@
 				1506DF4E1B89B36D007D1696 /* AppDelegate.m */,
 				1506DF7A1B89B457007D1696 /* Main.storyboard */,
 				1506DF561B89B36D007D1696 /* Images.xcassets */,
-				1506DF581B89B36D007D1696 /* LaunchScreen.xib */,
 				1506DF491B89B36D007D1696 /* Supporting Files */,
 			);
 			path = Taling;
@@ -2992,7 +2989,6 @@
 				D2FCB9021BCBF14200C6ACC0 /* ResumePayStyleCell.xib in Resources */,
 				B3D3F9D11BC0F14300044F0F /* CommentCell.xib in Resources */,
 				D2A108131C23AB310086E4F8 /* CouponCell.xib in Resources */,
-				1506DF5A1B89B36D007D1696 /* LaunchScreen.xib in Resources */,
 				D2B8E79E1C16686F00445EA6 /* BoughtCell.xib in Resources */,
 				153F3B8B1BD279E000C86F1A /* MWPhotoBrowser.bundle in Resources */,
 				1506E0161B89B521007D1696 /* MJRefresh.bundle in Resources */,
@@ -3282,14 +3278,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1506DF581B89B36D007D1696 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1506DF591B89B36D007D1696 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
 		1506E0C01B89B637007D1696 /* SMS_SDKLocalizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -3386,6 +3374,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
@@ -3422,6 +3411,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;

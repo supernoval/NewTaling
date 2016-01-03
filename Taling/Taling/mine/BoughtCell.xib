@@ -7,14 +7,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BoughtCell" rowHeight="119" id="xMU-LH-PHX" customClass="BoughtCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BoughtCell" rowHeight="128" id="xMU-LH-PHX" customClass="BoughtCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xMU-LH-PHX" id="WaD-QL-xvM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="108"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="iTh-cG-ZOE">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="iTh-cG-ZOE">
                         <rect key="frame" x="15" y="15" width="50" height="50"/>
                         <animations/>
                         <constraints>
@@ -34,7 +34,7 @@
                             </mask>
                         </variation>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名的简历" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVx-a0-Vgu">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="姓名的简历" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVx-a0-Vgu">
                         <rect key="frame" x="73" y="15" width="159" height="18"/>
                         <animations/>
                         <constraints>
@@ -73,7 +73,7 @@
                             </mask>
                         </variation>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="估值  ¥88" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jN-Ui-F7C">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="估值  ¥88" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jN-Ui-F7C">
                         <rect key="frame" x="245" y="36" width="60" height="18"/>
                         <animations/>
                         <constraints>
@@ -116,7 +116,7 @@
                             </mask>
                         </variation>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最购买自:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upv-G9-C5a">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="最购买自:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upv-G9-C5a">
                         <rect key="frame" x="15" y="80" width="56" height="18"/>
                         <animations/>
                         <constraints>
@@ -139,7 +139,7 @@
                             </mask>
                         </variation>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-12-9" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlF-cN-V7d">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="2015-12-9" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlF-cN-V7d">
                         <rect key="frame" x="214" y="80" width="91" height="18"/>
                         <animations/>
                         <constraints>
@@ -162,7 +162,7 @@
                             </mask>
                         </variation>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人才官ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyR-H9-Y4T">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="人才官ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyR-H9-Y4T">
                         <rect key="frame" x="73" y="80" width="140" height="18"/>
                         <animations/>
                         <constraints>
@@ -212,22 +212,22 @@
                         <exclude reference="uNZ-0J-LSn"/>
                         <exclude reference="RsT-6j-sBc"/>
                         <exclude reference="yyQ-fh-iDz"/>
-                        <exclude reference="fmX-es-gyA"/>
-                        <exclude reference="mtm-ja-nxP"/>
                         <exclude reference="FZB-C4-6xG"/>
                         <exclude reference="cda-Qq-yN7"/>
                         <exclude reference="gLi-OR-Meh"/>
+                        <exclude reference="fmX-es-gyA"/>
+                        <exclude reference="mtm-ja-nxP"/>
                         <exclude reference="bfn-w6-eDv"/>
                         <exclude reference="i32-1u-aUg"/>
                         <exclude reference="ihB-Ld-mNx"/>
                         <exclude reference="2zJ-O3-Sah"/>
                         <exclude reference="l6s-iw-e3Y"/>
-                        <exclude reference="6El-u9-IJs"/>
-                        <exclude reference="bMH-Lk-PdN"/>
-                        <exclude reference="ogK-ME-Hr6"/>
                         <exclude reference="As0-qN-aX7"/>
                         <exclude reference="OxX-Uk-iMI"/>
                         <exclude reference="nFJ-Bb-kXG"/>
+                        <exclude reference="6El-u9-IJs"/>
+                        <exclude reference="bMH-Lk-PdN"/>
+                        <exclude reference="ogK-ME-Hr6"/>
                     </mask>
                 </variation>
                 <variation key="heightClass=regular-widthClass=compact">
@@ -236,22 +236,22 @@
                         <include reference="uNZ-0J-LSn"/>
                         <include reference="RsT-6j-sBc"/>
                         <include reference="yyQ-fh-iDz"/>
-                        <include reference="fmX-es-gyA"/>
-                        <include reference="mtm-ja-nxP"/>
                         <include reference="FZB-C4-6xG"/>
                         <include reference="cda-Qq-yN7"/>
                         <include reference="gLi-OR-Meh"/>
+                        <include reference="fmX-es-gyA"/>
+                        <include reference="mtm-ja-nxP"/>
                         <include reference="bfn-w6-eDv"/>
                         <include reference="i32-1u-aUg"/>
                         <include reference="ihB-Ld-mNx"/>
                         <include reference="2zJ-O3-Sah"/>
                         <include reference="l6s-iw-e3Y"/>
-                        <include reference="6El-u9-IJs"/>
-                        <include reference="bMH-Lk-PdN"/>
-                        <include reference="ogK-ME-Hr6"/>
                         <include reference="As0-qN-aX7"/>
                         <include reference="OxX-Uk-iMI"/>
                         <include reference="nFJ-Bb-kXG"/>
+                        <include reference="6El-u9-IJs"/>
+                        <include reference="bMH-Lk-PdN"/>
+                        <include reference="ogK-ME-Hr6"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
@@ -265,7 +265,7 @@
                 <outlet property="priceLabel" destination="3jN-Ui-F7C" id="IMy-9U-DVD"/>
                 <outlet property="timeLabel" destination="DlF-cN-V7d" id="6VU-0B-EHi"/>
             </connections>
-            <point key="canvasLocation" x="393" y="206"/>
+            <point key="canvasLocation" x="393" y="210"/>
         </tableViewCell>
     </objects>
     <resources>

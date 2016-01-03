@@ -19,8 +19,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *recomValue;
 
 @property (strong, nonatomic) IBOutlet UILabel *servicedCom;
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *disHeight;
-
-
 
 @end

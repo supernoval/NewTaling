@@ -223,14 +223,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_hrdataArray.count > indexPath.section) {
-        HRItem *oneItem = [_hrdataArray objectAtIndex:indexPath.section];
-        
-        return 68+ [StringHeight heightWithText:[NSString stringWithFormat:@"%@ 擅长行业:%@",@"城市",oneItem.speciality] font:FONT_13 constrainedToWidth:ScreenWidth-151]+[StringHeight heightWithText:[CommonMethods getServicedComList:oneItem.customerCompany] font:FONT_14 constrainedToWidth:ScreenWidth-124];
-        
-    }
-    
-    return 68;
+    return 117;
     
    
 }
@@ -266,15 +259,23 @@
         
         
         //ID
-        cell.idLabel.text = [NSString stringWithFormat:@"ID%@",oneItem.id];
+        cell.idLabel.text = [NSString stringWithFormat:@"人才官ID  %@",oneItem.id];
     
     // 推荐净值
-        cell.recomValue.text = [NSString stringWithFormat:@"%@",oneItem.recommend] ;
-    
-        if (cell.recomValue.text.length == 0) {
+        
+        NSString *value = [NSString stringWithFormat:@"%@",oneItem.recommend];
+        if (value.length == 0) {
             
-            cell.recomValue.text = @"1.0";
+            value = @"1.0";
         }
+        
+        NSString *titleStr = [NSString stringWithFormat:@"推荐净值  %@",value];
+        NSMutableAttributedString *title = [[NSMutableAttributedString alloc]initWithString:titleStr];
+        [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, 4)];
+        [title addAttribute:NSForegroundColorAttributeName value:kTextLightGrayColor range:NSMakeRange(0, 4)];
+        cell.recomValue.attributedText = title;
+        
+        
     //城市&擅长行业
         
         if (!oneItem.city) {
@@ -283,10 +284,6 @@
         }
     cell.disLabel.text = [NSString stringWithFormat:@"%@ 擅长行业:%@",oneItem.city,oneItem.speciality];
 
-    
-    cell.disHeight.constant = [StringHeight heightWithText:[NSString stringWithFormat:@"%@ 擅长行业:%@",oneItem.city,oneItem.speciality] font:FONT_13 constrainedToWidth:ScreenWidth-151];
-    
-    NSLog(@"+++++height:%f",cell.disLabel.frame.size.height);
     
     
     //服务过的企业
