@@ -41,6 +41,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (UIView *)noDataFooterView{
+    UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 20, ScreenWidth, 30)];
+    footerView.backgroundColor = [UIColor clearColor];
+    UILabel *textLabel = [[UILabel alloc]initWithFrame:footerView.frame];
+    textLabel.font = FONT_14;
+    textLabel.textColor = kTextLightGrayColor;
+    textLabel.textAlignment = NSTextAlignmentCenter;
+    textLabel.text = @"暂无分享的人才";
+    [footerView addSubview:textLabel];
+    return footerView;
+}
+
 -(void)headerRefresh
 {
     pageindex = 1;
@@ -100,6 +112,13 @@
             }
             
             [_JDArray addObjectsFromArray:array];
+            
+            
+            if (_JDArray.count == 0) {
+                self.tableView.tableFooterView = [self noDataFooterView];
+            }else{
+                self.tableView.tableFooterView = nil;
+            }
             
             [self.tableView reloadData];
             

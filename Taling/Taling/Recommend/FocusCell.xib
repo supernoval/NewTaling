@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -16,6 +16,7 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="Aa0-Sc-hZA">
                         <rect key="frame" x="15" y="15" width="38" height="38"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="38" id="K3P-N9-ijN"/>
                             <constraint firstAttribute="width" constant="38" id="OFk-U5-UMq"/>
@@ -23,6 +24,7 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="王女士" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldD-ZT-1wi">
                         <rect key="frame" x="63" y="16" width="159" height="18"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="ZAE-oR-nwH"/>
                         </constraints>
@@ -32,6 +34,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人才官" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqW-rW-MWG">
                         <rect key="frame" x="63" y="36" width="159" height="18"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="5nB-NG-YTI"/>
                         </constraints>
@@ -41,6 +44,7 @@
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTC-Zd-q5b">
                         <rect key="frame" x="230" y="20" width="75" height="28"/>
+                        <animations/>
                         <color key="backgroundColor" red="0.38039215686274508" green="0.74117647058823533" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="28" id="81W-DZ-6KI"/>
@@ -52,6 +56,7 @@
                         </state>
                     </button>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstItem="ldD-ZT-1wi" firstAttribute="leading" secondItem="Aa0-Sc-hZA" secondAttribute="trailing" constant="10" id="DkX-eV-Epc"/>
                     <constraint firstItem="sqW-rW-MWG" firstAttribute="leading" secondItem="Aa0-Sc-hZA" secondAttribute="trailing" constant="10" id="EpC-54-hA9"/>
@@ -65,6 +70,7 @@
                     <constraint firstItem="JTC-Zd-q5b" firstAttribute="top" secondItem="DBH-4I-qoi" secondAttribute="top" constant="20" id="sKa-q1-wdV"/>
                 </constraints>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="disLabel" destination="sqW-rW-MWG" id="GLt-sq-pXl"/>
                 <outlet property="focusButton" destination="JTC-Zd-q5b" id="Zsh-0P-ymi"/>

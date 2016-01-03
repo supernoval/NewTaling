@@ -45,6 +45,11 @@
     _collectWidth.constant = ScreenWidth/2;
     
 
+//    [self getData];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self getData];
 }
 

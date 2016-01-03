@@ -95,8 +95,8 @@
     UIButton *logoutBtn = [[UIButton alloc]initWithFrame:CGRectMake(15, 30, ScreenWidth-30, 40)];
     [logoutBtn setTintColor:[UIColor whiteColor]];
     [logoutBtn setTitle:@"退出登录" forState:UIControlStateNormal];
-    logoutBtn.titleLabel.font = FONT_17;
-    logoutBtn.backgroundColor = NavigationBarColor;
+    logoutBtn.titleLabel.font = FONT_18;
+    logoutBtn.backgroundColor = kBlueColor;
     logoutBtn.clipsToBounds = YES;
     logoutBtn.layer.cornerRadius = 5.0;
     [logoutBtn addTarget:self action:@selector(logoutAction) forControlEvents:UIControlEventTouchUpInside];

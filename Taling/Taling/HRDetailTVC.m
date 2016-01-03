@@ -247,8 +247,14 @@
                 float tagHeight = 24;
                 NSInteger count = oneItem.resumesLabel.count;
                 NSInteger tagRow = count%4==0 ? count/4:count/4 + 1 ;
+                UIView *blankFooter = [[UIView alloc]init];
                 
-                UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 34*tagRow+10)];
+                if (tagRow>0) {
+                    blankFooter.frame = CGRectMake(0, 0, ScreenWidth, 34*tagRow+15);
+                }else{
+                     blankFooter.frame = CGRectMake(0, 0, ScreenWidth, 34*tagRow+10);
+                }
+                
                 
                 blankFooter.backgroundColor = [UIColor whiteColor];
                 for (NSInteger i = 0; i < count; i++) {
@@ -443,7 +449,7 @@
             switch (indexPath.row) {
                 case 0:
                 {
-                    return 87;
+                    return 81;
                 }
                     break;
                     
@@ -538,19 +544,26 @@
                     cell.nameLabel.text = hRitem.nickname;
                     
                     //ID
-                    cell.idLabel.text = [NSString stringWithFormat:@"ID%@",hRitem.id];
+                    cell.idLabel.text = [NSString stringWithFormat:@"ID  %@",hRitem.id];
                     
                     //城市
                     cell.disLabel.text = @"城市";
                     
                     // 推荐净值
-                    cell.recomValue.text = [NSString stringWithFormat:@"%@",hRitem.recommend] ;
+                    NSString *value = [NSString stringWithFormat:@"%@",hRitem.recommend] ;
                     
-                    if (cell.recomValue.text.length == 0) {
+                    if (value.length == 0) {
                         
-                        cell.recomValue.text = @"1.0";
+                        value = @"1.0";
                         
                     }
+                    NSString *titleStr = [NSString stringWithFormat:@"推荐净值  %@",value];
+                    
+                    NSMutableAttributedString *title = [[NSMutableAttributedString alloc]initWithString:titleStr];
+                    [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, 4)];
+                    [title addAttribute:NSForegroundColorAttributeName value:kTextLightGrayColor range:NSMakeRange(0, 4)];
+                    cell.recomValue.attributedText = title;
+                    
                     //加关注
                     
                     if ([UserInfo isFocusedHR:[hRitem.id integerValue]] == YES) {

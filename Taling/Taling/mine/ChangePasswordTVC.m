@@ -34,7 +34,7 @@
     UIButton *confirm = [[UIButton alloc]initWithFrame:CGRectMake(15, 30, ScreenWidth-30, 40)];
     [confirm setTitle:@"确认" forState:UIControlStateNormal];
     [confirm setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [confirm setBackgroundColor:kYellowColor];
+    [confirm setBackgroundColor:kBlueColor];
     confirm.clipsToBounds = YES;
     confirm.layer.cornerRadius = 5.0;
     [confirm addTarget:self action:@selector(confirmAction) forControlEvents:UIControlEventTouchUpInside];

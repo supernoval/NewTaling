@@ -37,21 +37,27 @@
     }
     
     
-    //人才估值
-    _price.text = [NSString stringWithFormat:@"¥%.2f",item.price];
+    //估值
     
-    //简历ID
-    _idLabel.text = [NSString stringWithFormat:@"人才ID %li",(long)item.resumesId];
+    NSString *titleStr = [NSString stringWithFormat:@"估值  ¥%.0f",item.price];
+    NSMutableAttributedString *title = [[NSMutableAttributedString alloc]initWithString:titleStr];
+    [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, 2)];
+    [title addAttribute:NSForegroundColorAttributeName value:kTextLightGrayColor range:NSMakeRange(0, 2)];
+    _price.attributedText = title;
     
     
-    //公司&职业
-    _company.text = [NSString stringWithFormat:@"%@ %@",item.currentCompany,item.currentPosition];
+    //人才名称
+    _idLabel.text = [NSString stringWithFormat:@"%@",item.name];
     
-    //城市&行业
-    _place.text = [NSString stringWithFormat:@"%@ %@",item.city,item.currentIndustry];
+    
+    //地址&公式名称
+    _company.text = [NSString stringWithFormat:@"%@ %@",item.city,item.currentCompany];
+    
+    //行业&职位
+    _place.text = [NSString stringWithFormat:@"%@ %@",item.currentIndustry,item.currentPosition];
     
     //需支付
-    _orderPrice.text = [NSString stringWithFormat:@"%.2f元",_payMoney];
+    _orderPrice.text = [NSString stringWithFormat:@"%.0f元",_payMoney];
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(paySuccessNoti) name:kPaySucessNotification object:nil];
@@ -73,13 +79,13 @@
     UIView *footerview = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 100)];
     footerview.backgroundColor = [UIColor clearColor];
     
-    UIButton *payBtn = [[UIButton alloc]initWithFrame:CGRectMake(15, 20, ScreenWidth-30, 40)];
+    UIButton *payBtn = [[UIButton alloc]initWithFrame:CGRectMake(15, 20, ScreenWidth-30, 48)];
     payBtn.clipsToBounds = YES;
     payBtn.layer.cornerRadius = 5.0;
     [payBtn setTintColor:[UIColor whiteColor]];
-    payBtn.titleLabel.font = FONT_16;
+    payBtn.titleLabel.font = FONT_18;
     [payBtn setTitle:@"确定购买" forState:UIControlStateNormal];
-    payBtn.backgroundColor = NavigationBarColor;
+    payBtn.backgroundColor = RGB(86, 222, 124, 1);
     [payBtn addTarget:self action:@selector(payAction) forControlEvents:UIControlEventTouchUpInside];
     
     [footerview addSubview:payBtn];
@@ -106,10 +112,7 @@
     switch (indexPath.section) {
         case 0:
         {
-            //公司&职业
-            NSString *text = [NSString stringWithFormat:@"%@ %@",item.currentCompany,item.currentPosition];
-            
-            return 57+[StringHeight heightWithText:text font:FONT_14 constrainedToWidth:ScreenWidth-153];
+            return 81;
         }
             break;
             
@@ -132,14 +135,14 @@
             [coupon chooseCoupon:^(CouponItem *couponItem){
                 CGFloat couponMoney = couponItem.couponPrice;
                 _couponId = couponItem.id;
-                _couponLabel.text = [NSString stringWithFormat:@"%.2f元优惠券",couponMoney];
+                _couponLabel.text = [NSString stringWithFormat:@"%.0f元优惠券",couponMoney];
                 
                 if (item.price <= couponMoney) {
                     _payMoney = 0.00;
-                    _orderPrice.text = [NSString stringWithFormat:@"%.2f元",_payMoney];
+                    _orderPrice.text = [NSString stringWithFormat:@"%.0f元",_payMoney];
                 }else{
                     _payMoney = item.price - couponMoney;
-                    _orderPrice.text = [NSString stringWithFormat:@"%.2f元",_payMoney];
+                    _orderPrice.text = [NSString stringWithFormat:@"%.0f元",_payMoney];
                     
                 }
             }];

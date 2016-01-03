@@ -31,6 +31,18 @@
     
 }
 
+- (UIView *)noDataFooterView{
+    UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 20, ScreenWidth, 30)];
+    footerView.backgroundColor = [UIColor clearColor];
+    UILabel *textLabel = [[UILabel alloc]initWithFrame:footerView.frame];
+    textLabel.font = FONT_14;
+    textLabel.textColor = kTextLightGrayColor;
+    textLabel.textAlignment = NSTextAlignmentCenter;
+    textLabel.text = @"暂无优惠券";
+    [footerView addSubview:textLabel];
+    return footerView;
+}
+
 - (void)headRefresh{
     [self getMyCoupon];
 }
@@ -57,6 +69,11 @@
                 }
                 [_couponArray removeAllObjects];
                 [_couponArray addObjectsFromArray:array];
+                if (_couponArray.count==0) {
+                    self.tableView.tableFooterView = [self noDataFooterView];
+                }else{
+                    self.tableView.tableFooterView = nil;
+                }
                 [self.tableView reloadData];
             }
             
@@ -83,14 +100,23 @@
             cell = [[NSBundle mainBundle] loadNibNamed:cellId owner:self options:nil][0];
         }
         //标题
-        NSString *titleStr = [NSString stringWithFormat:@"¥%f 优惠券",oneItem.couponPrice];
+        NSString *titleStr = [NSString stringWithFormat:@"¥%.0f 优惠券",oneItem.couponPrice];
         NSMutableAttributedString *title = [[NSMutableAttributedString alloc]initWithString:titleStr];
         [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:20] range:NSMakeRange(0, 1)];
         [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:20] range:NSMakeRange(title.length-3, 3)];
         cell.titleLabel.attributedText = title;
         
         //有效期
-        cell.timeLabel.text = [NSString stringWithFormat:@"有效期:%@-%@",oneItem.startTime,oneItem.endTime];
+        NSString *startTime = oneItem.startTime;
+        if (startTime.length>10) {
+            startTime = [startTime substringFromIndex:10];
+        }
+        
+        NSString *endTime = oneItem.endTime;
+        if (endTime.length>10) {
+            endTime = [endTime substringFromIndex:10];
+        }
+        cell.timeLabel.text = [NSString stringWithFormat:@"有效期:%@-%@",startTime,endTime];
         return cell;
     }else{
         

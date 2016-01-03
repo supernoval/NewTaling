@@ -13,6 +13,7 @@
 @interface BuyAndCashTVC ()<UITextFieldDelegate,UIAlertViewDelegate>
 {
     UIAlertView *_successAlert;
+    UIAlertView *_cashAlert;
     
 }
 @property (nonatomic)NSInteger payType;// 1 支付宝 2 微信
@@ -97,13 +98,13 @@
     UIView *footerview = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 100)];
     footerview.backgroundColor = [UIColor clearColor];
     
-    UIButton *payBtn = [[UIButton alloc]initWithFrame:CGRectMake(15, 20, ScreenWidth-30, 40)];
+    UIButton *payBtn = [[UIButton alloc]initWithFrame:CGRectMake(15, 20, ScreenWidth-30, 48)];
     payBtn.clipsToBounds = YES;
     payBtn.layer.cornerRadius = 5.0;
     [payBtn setTintColor:[UIColor whiteColor]];
-    payBtn.titleLabel.font = FONT_16;
+    payBtn.titleLabel.font = FONT_18;
     [payBtn setTitle:@"确定" forState:UIControlStateNormal];
-    payBtn.backgroundColor = NavigationBarColor;
+    payBtn.backgroundColor = RGB(86, 222, 124, 1);
     [payBtn addTarget:self action:@selector(payAction) forControlEvents:UIControlEventTouchUpInside];
     
     [footerview addSubview:payBtn];
@@ -111,10 +112,16 @@
 }
 
 - (IBAction)wechatAction:(UIButton *)sender {
+    _weChatBtn.selected = YES;
+    _alipayBtn.selected = NO;
+    _payType = 2;
  
 }
 
 - (IBAction)alipayAction:(UIButton *)sender {
+    _weChatBtn.selected = NO;
+    _alipayBtn.selected = YES;
+    _payType = 1;
    
 }
 
@@ -138,7 +145,7 @@
                     
                     PayOrderInfoModel *orderModel = [[ PayOrderInfoModel alloc]init];
                     
-                    orderModel.productName = @"充值测试";
+                    orderModel.productName = @"账户充值";
                     orderModel.productDescription = [NSString stringWithFormat:@"充值"];
                     
                     orderModel.amount =   [data objectForKey:@"money"];
@@ -181,8 +188,10 @@
             [[TLRequest shareRequest]tlRequestWithAction:kBuyAndCash Params:param result:^(BOOL isSuccess, id data){
                 
                 if (isSuccess) {
+                    NSString *messageStr = [NSString stringWithFormat:@"提现申请%@元已提交，根据公司规定系统将在两个月内帮您处理提现",_moneyTextField.text];
                     
-                    
+                    _cashAlert = [[UIAlertView alloc]initWithTitle:@"提现成功" message:messageStr delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+                    [_cashAlert show];
                 }
                 
                 
@@ -272,6 +281,8 @@
         
         [self.navigationController popViewControllerAnimated:YES];
         
+    }else if (alertView == _cashAlert){
+         [self.navigationController popViewControllerAnimated:YES];
     }
 }
 

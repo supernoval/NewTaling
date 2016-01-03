@@ -1514,7 +1514,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="购买的人才" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7V2-Ai-9Qz">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已购买" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7V2-Ai-9Qz">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <animations/>
                                                     <constraints>
@@ -1650,7 +1650,7 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分享的人才" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sss-qW-eUN">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已分享" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sss-qW-eUN">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <animations/>
                                                     <constraints>
@@ -1766,7 +1766,7 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收藏的人才" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duI-PJ-1Hz">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已收藏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duI-PJ-1Hz">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <animations/>
                                                     <constraints>
@@ -2356,7 +2356,7 @@
                                     <constraint firstAttribute="height" constant="21" id="UZE-Zu-Vuy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.70980392160000005" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -2392,11 +2392,13 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssh-MJ-nev">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.33725490200000002" green="0.87058823529999996" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="VP6-5h-xnH"/>
+                                    <constraint firstAttribute="height" constant="35" id="VP6-5h-xnH">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                    </constraint>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="充值">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -2418,11 +2420,13 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="hiX-rF-6ZX"/>
+                                    <constraint firstAttribute="height" constant="35" id="hiX-rF-6ZX">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                    </constraint>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="提现">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.70980392160000005" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -4716,74 +4720,39 @@
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <animations/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="8qE-0D-3iS"/>
+                                                        <constraint firstAttribute="height" constant="21" id="1iH-al-jsC"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="8qE-0D-3iS"/>
+                                                            <exclude reference="1iH-al-jsC"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
-                                                            <include reference="8qE-0D-3iS"/>
+                                                            <include reference="1iH-al-jsC"/>
                                                         </mask>
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上海某公司 HR专员" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sp-4N-7MW">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥88" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMf-vG-Agh">
-                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                    <animations/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="18" id="KPP-6P-Rdf"/>
-                                                        <constraint firstAttribute="width" constant="55" id="YCb-9z-WSU">
-                                                            <variation key="heightClass=regular-widthClass=compact" constant="61"/>
-                                                        </constraint>
+                                                        <constraint firstAttribute="height" constant="10" id="JlM-LK-MbJ"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" red="0.70980392160000005" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="KPP-6P-Rdf"/>
-                                                            <exclude reference="YCb-9z-WSU"/>
+                                                            <exclude reference="JlM-LK-MbJ"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
-                                                            <include reference="KPP-6P-Rdf"/>
-                                                            <include reference="YCb-9z-WSU"/>
-                                                        </mask>
-                                                    </variation>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人才估值" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCh-t1-lcx">
-                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                    <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="61" id="IfZ-bK-iPY"/>
-                                                        <constraint firstAttribute="height" constant="18" id="QQy-s5-ftx"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="IfZ-bK-iPY"/>
-                                                            <exclude reference="QQy-s5-ftx"/>
-                                                        </mask>
-                                                    </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
-                                                        <mask key="constraints">
-                                                            <include reference="IfZ-bK-iPY"/>
-                                                            <include reference="QQy-s5-ftx"/>
+                                                            <include reference="JlM-LK-MbJ"/>
                                                         </mask>
                                                     </variation>
                                                 </label>
@@ -4791,68 +4760,84 @@
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <animations/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="18" id="NeB-WE-9No"/>
+                                                        <constraint firstAttribute="height" constant="10" id="IOy-n7-f9z"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" red="0.70980392160000005" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="NeB-WE-9No"/>
+                                                            <exclude reference="IOy-n7-f9z"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
-                                                            <include reference="NeB-WE-9No"/>
+                                                            <include reference="IOy-n7-f9z"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="估值  ￥88" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMf-vG-Agh">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="Hm4-Dj-SG2"/>
+                                                        <constraint firstAttribute="width" constant="82" id="nx2-D7-944"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="1" green="0.41176470590000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Hm4-Dj-SG2"/>
+                                                            <exclude reference="nx2-D7-944"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="Hm4-Dj-SG2"/>
+                                                            <include reference="nx2-D7-944"/>
                                                         </mask>
                                                     </variation>
                                                 </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="4sp-4N-7MW" firstAttribute="top" secondItem="nEF-FM-ESS" secondAttribute="top" constant="31" id="4F9-cS-Kwq"/>
-                                                <constraint firstAttribute="trailing" secondItem="cMf-vG-Agh" secondAttribute="trailing" constant="15" id="857-3g-hCc"/>
-                                                <constraint firstItem="cMf-vG-Agh" firstAttribute="leading" secondItem="4sp-4N-7MW" secondAttribute="trailing" constant="2" id="B5m-bb-NRH"/>
+                                                <constraint firstAttribute="trailing" secondItem="Zgv-l1-r8n" secondAttribute="trailing" constant="99" id="1zf-9s-sxe"/>
+                                                <constraint firstItem="cMf-vG-Agh" firstAttribute="top" secondItem="nEF-FM-ESS" secondAttribute="top" constant="15" id="6g4-xq-PuE"/>
+                                                <constraint firstItem="4sp-4N-7MW" firstAttribute="leading" secondItem="opy-9P-X93" secondAttribute="trailing" constant="10" id="8eH-OV-QjY"/>
+                                                <constraint firstAttribute="trailing" secondItem="4sp-4N-7MW" secondAttribute="trailing" constant="99" id="CUE-uy-WE5"/>
                                                 <constraint firstItem="opy-9P-X93" firstAttribute="leading" secondItem="nEF-FM-ESS" secondAttribute="leading" constant="15" id="Cd0-Td-cpC"/>
-                                                <constraint firstItem="cMf-vG-Agh" firstAttribute="top" secondItem="GCh-t1-lcx" secondAttribute="bottom" constant="3" id="FUn-MH-uCu"/>
-                                                <constraint firstItem="4sp-4N-7MW" firstAttribute="leading" secondItem="opy-9P-X93" secondAttribute="trailing" constant="8" id="FoV-FK-PdK"/>
-                                                <constraint firstAttribute="bottom" secondItem="Zgv-l1-r8n" secondAttribute="bottom" constant="14" id="HrL-jw-5fG"/>
-                                                <constraint firstAttribute="trailing" secondItem="GCh-t1-lcx" secondAttribute="trailing" constant="15" id="NQ0-JW-UR8"/>
-                                                <constraint firstItem="Zgv-l1-r8n" firstAttribute="leading" secondItem="opy-9P-X93" secondAttribute="trailing" constant="8" id="SCX-Fd-c4F"/>
-                                                <constraint firstItem="Ljf-Le-kiH" firstAttribute="leading" secondItem="opy-9P-X93" secondAttribute="trailing" constant="8" id="TLf-4t-n8D"/>
-                                                <constraint firstItem="GCh-t1-lcx" firstAttribute="leading" secondItem="Ljf-Le-kiH" secondAttribute="trailing" constant="2" id="Vur-TG-ZwK"/>
-                                                <constraint firstItem="Ljf-Le-kiH" firstAttribute="top" secondItem="nEF-FM-ESS" secondAttribute="top" constant="12" id="Xuf-tj-dBQ"/>
-                                                <constraint firstItem="GCh-t1-lcx" firstAttribute="top" secondItem="nEF-FM-ESS" secondAttribute="top" constant="10" id="ieb-AX-HXv"/>
+                                                <constraint firstAttribute="trailing" secondItem="cMf-vG-Agh" secondAttribute="trailing" constant="15" id="OyR-Py-A8x"/>
+                                                <constraint firstItem="Zgv-l1-r8n" firstAttribute="leading" secondItem="opy-9P-X93" secondAttribute="trailing" constant="10" id="XAX-Bv-LiV"/>
+                                                <constraint firstItem="Zgv-l1-r8n" firstAttribute="top" secondItem="4sp-4N-7MW" secondAttribute="bottom" constant="6" id="YQH-Bb-z2S"/>
+                                                <constraint firstItem="Ljf-Le-kiH" firstAttribute="leading" secondItem="opy-9P-X93" secondAttribute="trailing" constant="10" id="dxH-O3-w2Y"/>
+                                                <constraint firstItem="cMf-vG-Agh" firstAttribute="leading" secondItem="Ljf-Le-kiH" secondAttribute="trailing" constant="2" id="gmC-PJ-d0O"/>
                                                 <constraint firstItem="opy-9P-X93" firstAttribute="top" secondItem="nEF-FM-ESS" secondAttribute="top" constant="15" id="ijA-pp-L82"/>
-                                                <constraint firstAttribute="trailing" secondItem="Zgv-l1-r8n" secondAttribute="trailing" constant="78" id="t7h-aT-nZr"/>
-                                                <constraint firstAttribute="bottom" secondItem="4sp-4N-7MW" secondAttribute="bottom" constant="31" id="uN3-bV-RFV"/>
+                                                <constraint firstItem="Ljf-Le-kiH" firstAttribute="top" secondItem="nEF-FM-ESS" secondAttribute="top" constant="15" id="jSr-vq-CjN"/>
+                                                <constraint firstItem="4sp-4N-7MW" firstAttribute="top" secondItem="Ljf-Le-kiH" secondAttribute="bottom" constant="2" id="ydh-XO-P9O"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="opy-9P-X93"/>
                                                     <exclude reference="Ljf-Le-kiH"/>
                                                     <exclude reference="4sp-4N-7MW"/>
-                                                    <exclude reference="cMf-vG-Agh"/>
-                                                    <exclude reference="GCh-t1-lcx"/>
                                                     <exclude reference="Zgv-l1-r8n"/>
+                                                    <exclude reference="cMf-vG-Agh"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="4F9-cS-Kwq"/>
-                                                    <exclude reference="FoV-FK-PdK"/>
-                                                    <exclude reference="uN3-bV-RFV"/>
-                                                    <exclude reference="NQ0-JW-UR8"/>
-                                                    <exclude reference="Vur-TG-ZwK"/>
-                                                    <exclude reference="ieb-AX-HXv"/>
-                                                    <exclude reference="TLf-4t-n8D"/>
-                                                    <exclude reference="Xuf-tj-dBQ"/>
-                                                    <exclude reference="HrL-jw-5fG"/>
-                                                    <exclude reference="SCX-Fd-c4F"/>
-                                                    <exclude reference="t7h-aT-nZr"/>
-                                                    <exclude reference="857-3g-hCc"/>
-                                                    <exclude reference="B5m-bb-NRH"/>
-                                                    <exclude reference="FUn-MH-uCu"/>
                                                     <exclude reference="Cd0-Td-cpC"/>
                                                     <exclude reference="ijA-pp-L82"/>
+                                                    <exclude reference="dxH-O3-w2Y"/>
+                                                    <exclude reference="jSr-vq-CjN"/>
+                                                    <exclude reference="8eH-OV-QjY"/>
+                                                    <exclude reference="CUE-uy-WE5"/>
+                                                    <exclude reference="ydh-XO-P9O"/>
+                                                    <exclude reference="1zf-9s-sxe"/>
+                                                    <exclude reference="XAX-Bv-LiV"/>
+                                                    <exclude reference="YQH-Bb-z2S"/>
+                                                    <exclude reference="6g4-xq-PuE"/>
+                                                    <exclude reference="OyR-Py-A8x"/>
+                                                    <exclude reference="gmC-PJ-d0O"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -4860,27 +4845,23 @@
                                                     <include reference="opy-9P-X93"/>
                                                     <include reference="Ljf-Le-kiH"/>
                                                     <include reference="4sp-4N-7MW"/>
-                                                    <include reference="cMf-vG-Agh"/>
-                                                    <include reference="GCh-t1-lcx"/>
                                                     <include reference="Zgv-l1-r8n"/>
+                                                    <include reference="cMf-vG-Agh"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="4F9-cS-Kwq"/>
-                                                    <include reference="FoV-FK-PdK"/>
-                                                    <include reference="uN3-bV-RFV"/>
-                                                    <include reference="NQ0-JW-UR8"/>
-                                                    <include reference="Vur-TG-ZwK"/>
-                                                    <include reference="ieb-AX-HXv"/>
-                                                    <include reference="TLf-4t-n8D"/>
-                                                    <include reference="Xuf-tj-dBQ"/>
-                                                    <include reference="HrL-jw-5fG"/>
-                                                    <include reference="SCX-Fd-c4F"/>
-                                                    <include reference="t7h-aT-nZr"/>
-                                                    <include reference="857-3g-hCc"/>
-                                                    <include reference="B5m-bb-NRH"/>
-                                                    <include reference="FUn-MH-uCu"/>
                                                     <include reference="Cd0-Td-cpC"/>
                                                     <include reference="ijA-pp-L82"/>
+                                                    <include reference="dxH-O3-w2Y"/>
+                                                    <include reference="jSr-vq-CjN"/>
+                                                    <include reference="8eH-OV-QjY"/>
+                                                    <include reference="CUE-uy-WE5"/>
+                                                    <include reference="ydh-XO-P9O"/>
+                                                    <include reference="1zf-9s-sxe"/>
+                                                    <include reference="XAX-Bv-LiV"/>
+                                                    <include reference="YQH-Bb-z2S"/>
+                                                    <include reference="6g4-xq-PuE"/>
+                                                    <include reference="OyR-Py-A8x"/>
+                                                    <include reference="gmC-PJ-d0O"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -4890,7 +4871,7 @@
                             </tableViewSection>
                             <tableViewSection id="47H-kd-T6F">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="Aoa-SW-lND">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="Aoa-SW-lND">
                                         <rect key="frame" x="0.0" y="216" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Aoa-SW-lND" id="wdu-2X-f6c">
@@ -4921,7 +4902,7 @@
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="0.41176470590000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -5767,7 +5748,7 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xgF-c7-er8">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="账号密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xgF-c7-er8">
                                         <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -5839,7 +5820,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jIy-wS-5bg">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="账号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GBB-Sd-SPC">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号或者企业邮箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GBB-Sd-SPC">
                                         <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -5911,11 +5892,11 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7A-Kg-ZwZ">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
-                                <color key="backgroundColor" red="1" green="0.41176470590000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.14509803921568626" green="0.51372549019607838" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="PkV-fn-4Tg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="登录">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -5995,7 +5976,7 @@
                                     <constraint firstAttribute="height" constant="18" id="zjp-RS-hN5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="1" green="0.41176470590000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.16470588235294117" green="0.51764705882352935" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -10873,7 +10854,7 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="45" id="FUc-NJ-B89">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="45" id="FUc-NJ-B89">
                                         <rect key="frame" x="0.0" y="223" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FUc-NJ-B89" id="zID-yc-4Ux">
@@ -10994,7 +10975,7 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="45" id="zMv-qj-uTL">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="45" id="zMv-qj-uTL">
                                         <rect key="frame" x="0.0" y="268" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zMv-qj-uTL" id="WJ3-m0-nwD">
@@ -11592,74 +11573,62 @@
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <animations/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="Xvc-5h-VzK"/>
+                                                        <constraint firstAttribute="height" constant="21" id="NeW-0e-tGR"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="Xvc-5h-VzK"/>
+                                                            <exclude reference="NeW-0e-tGR"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
-                                                            <include reference="Xvc-5h-VzK"/>
+                                                            <include reference="NeW-0e-tGR"/>
                                                         </mask>
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上海某公司 HR专员" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akX-NF-2eY">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥88" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mjp-Sl-3tq">
-                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                    <animations/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="55" id="NH0-nj-T2I">
-                                                            <variation key="heightClass=regular-widthClass=compact" constant="61"/>
-                                                        </constraint>
-                                                        <constraint firstAttribute="height" constant="18" id="rUc-Td-QqC"/>
+                                                        <constraint firstAttribute="height" constant="10" id="D1v-8Q-LC4"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" red="0.70980392160000005" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="NH0-nj-T2I"/>
-                                                            <exclude reference="rUc-Td-QqC"/>
+                                                            <exclude reference="D1v-8Q-LC4"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
-                                                            <include reference="NH0-nj-T2I"/>
-                                                            <include reference="rUc-Td-QqC"/>
+                                                            <include reference="D1v-8Q-LC4"/>
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人才估值" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHP-R3-UBy">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="估值  ￥88" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mjp-Sl-3tq">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <animations/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="61" id="eH3-cI-3V4"/>
-                                                        <constraint firstAttribute="height" constant="18" id="uP3-rB-Lqk"/>
+                                                        <constraint firstAttribute="width" constant="85" id="LYG-go-UZR"/>
+                                                        <constraint firstAttribute="height" constant="18" id="uOc-Yl-v15"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="1" green="0.41176470590000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="eH3-cI-3V4"/>
-                                                            <exclude reference="uP3-rB-Lqk"/>
+                                                            <exclude reference="LYG-go-UZR"/>
+                                                            <exclude reference="uOc-Yl-v15"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
-                                                            <include reference="eH3-cI-3V4"/>
-                                                            <include reference="uP3-rB-Lqk"/>
+                                                            <include reference="LYG-go-UZR"/>
+                                                            <include reference="uOc-Yl-v15"/>
                                                         </mask>
                                                     </variation>
                                                 </label>
@@ -11667,19 +11636,19 @@
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <animations/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="18" id="flR-KR-HeG"/>
+                                                        <constraint firstAttribute="height" constant="10" id="o3s-2D-wnc"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" red="0.70980392160000005" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="flR-KR-HeG"/>
+                                                            <exclude reference="o3s-2D-wnc"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
-                                                            <include reference="flR-KR-HeG"/>
+                                                            <include reference="o3s-2D-wnc"/>
                                                         </mask>
                                                     </variation>
                                                 </label>
@@ -11687,21 +11656,18 @@
                                             <animations/>
                                             <constraints>
                                                 <constraint firstItem="kWc-1E-j6o" firstAttribute="leading" secondItem="U7J-B4-y84" secondAttribute="leading" constant="15" id="4Sj-L5-2aU"/>
-                                                <constraint firstAttribute="trailing" secondItem="uHP-R3-UBy" secondAttribute="trailing" constant="15" id="5hI-nG-9s1"/>
-                                                <constraint firstAttribute="bottom" secondItem="akX-NF-2eY" secondAttribute="bottom" constant="31" id="74x-SY-Ckr"/>
-                                                <constraint firstItem="akX-NF-2eY" firstAttribute="top" secondItem="U7J-B4-y84" secondAttribute="top" constant="31" id="B1b-0s-aUA"/>
-                                                <constraint firstItem="uHP-R3-UBy" firstAttribute="top" secondItem="U7J-B4-y84" secondAttribute="top" constant="10" id="IDr-sA-PGt"/>
-                                                <constraint firstItem="Mjp-Sl-3tq" firstAttribute="leading" secondItem="akX-NF-2eY" secondAttribute="trailing" constant="2" id="OwE-R9-yTH"/>
-                                                <constraint firstItem="Mjp-Sl-3tq" firstAttribute="top" secondItem="uHP-R3-UBy" secondAttribute="bottom" constant="3" id="PnL-n5-Zzf"/>
-                                                <constraint firstItem="2d0-Z2-6Cr" firstAttribute="leading" secondItem="kWc-1E-j6o" secondAttribute="trailing" constant="8" id="Qds-UP-R8x"/>
-                                                <constraint firstAttribute="bottom" secondItem="2d0-Z2-6Cr" secondAttribute="bottom" constant="14" id="SHH-ml-6ao"/>
-                                                <constraint firstItem="beE-a5-ZSX" firstAttribute="leading" secondItem="kWc-1E-j6o" secondAttribute="trailing" constant="8" id="Y3g-fU-0hi"/>
-                                                <constraint firstAttribute="trailing" secondItem="2d0-Z2-6Cr" secondAttribute="trailing" constant="78" id="bxM-0Q-aUD"/>
+                                                <constraint firstItem="2d0-Z2-6Cr" firstAttribute="top" secondItem="akX-NF-2eY" secondAttribute="bottom" constant="6" id="Elx-IK-Rsu"/>
+                                                <constraint firstItem="beE-a5-ZSX" firstAttribute="top" secondItem="U7J-B4-y84" secondAttribute="top" constant="15" id="Fz3-jb-Ppp"/>
+                                                <constraint firstItem="Mjp-Sl-3tq" firstAttribute="leading" secondItem="beE-a5-ZSX" secondAttribute="trailing" constant="2" id="LQo-kp-S7Z"/>
                                                 <constraint firstItem="kWc-1E-j6o" firstAttribute="top" secondItem="U7J-B4-y84" secondAttribute="top" constant="15" id="cnf-H3-qji"/>
-                                                <constraint firstItem="uHP-R3-UBy" firstAttribute="leading" secondItem="beE-a5-ZSX" secondAttribute="trailing" constant="2" id="dsC-OW-pyG"/>
-                                                <constraint firstItem="akX-NF-2eY" firstAttribute="leading" secondItem="kWc-1E-j6o" secondAttribute="trailing" constant="8" id="hH9-Mb-5gh"/>
-                                                <constraint firstItem="beE-a5-ZSX" firstAttribute="top" secondItem="U7J-B4-y84" secondAttribute="top" constant="12" id="puR-jH-pSt"/>
-                                                <constraint firstAttribute="trailing" secondItem="Mjp-Sl-3tq" secondAttribute="trailing" constant="15" id="xsA-nx-QtE"/>
+                                                <constraint firstItem="akX-NF-2eY" firstAttribute="leading" secondItem="kWc-1E-j6o" secondAttribute="trailing" constant="10" id="eJs-Xq-aB1"/>
+                                                <constraint firstItem="beE-a5-ZSX" firstAttribute="leading" secondItem="kWc-1E-j6o" secondAttribute="trailing" constant="10" id="jz9-6E-tLh"/>
+                                                <constraint firstItem="akX-NF-2eY" firstAttribute="top" secondItem="beE-a5-ZSX" secondAttribute="bottom" id="oIg-90-YZ1"/>
+                                                <constraint firstAttribute="trailing" secondItem="2d0-Z2-6Cr" secondAttribute="trailing" constant="102" id="pWG-zM-hGn"/>
+                                                <constraint firstAttribute="trailing" secondItem="akX-NF-2eY" secondAttribute="trailing" constant="102" id="reh-CC-8p7"/>
+                                                <constraint firstItem="2d0-Z2-6Cr" firstAttribute="leading" secondItem="kWc-1E-j6o" secondAttribute="trailing" constant="10" id="voJ-yW-ysv"/>
+                                                <constraint firstAttribute="trailing" secondItem="Mjp-Sl-3tq" secondAttribute="trailing" constant="15" id="yO8-Sq-qvK"/>
+                                                <constraint firstItem="Mjp-Sl-3tq" firstAttribute="top" secondItem="U7J-B4-y84" secondAttribute="top" constant="15" id="ymC-vr-qx2"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
@@ -11709,26 +11675,22 @@
                                                     <exclude reference="beE-a5-ZSX"/>
                                                     <exclude reference="akX-NF-2eY"/>
                                                     <exclude reference="Mjp-Sl-3tq"/>
-                                                    <exclude reference="uHP-R3-UBy"/>
                                                     <exclude reference="2d0-Z2-6Cr"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="Qds-UP-R8x"/>
-                                                    <exclude reference="SHH-ml-6ao"/>
-                                                    <exclude reference="bxM-0Q-aUD"/>
-                                                    <exclude reference="OwE-R9-yTH"/>
-                                                    <exclude reference="PnL-n5-Zzf"/>
-                                                    <exclude reference="xsA-nx-QtE"/>
-                                                    <exclude reference="74x-SY-Ckr"/>
-                                                    <exclude reference="B1b-0s-aUA"/>
-                                                    <exclude reference="hH9-Mb-5gh"/>
-                                                    <exclude reference="Y3g-fU-0hi"/>
-                                                    <exclude reference="puR-jH-pSt"/>
-                                                    <exclude reference="5hI-nG-9s1"/>
-                                                    <exclude reference="IDr-sA-PGt"/>
-                                                    <exclude reference="dsC-OW-pyG"/>
                                                     <exclude reference="4Sj-L5-2aU"/>
                                                     <exclude reference="cnf-H3-qji"/>
+                                                    <exclude reference="Fz3-jb-Ppp"/>
+                                                    <exclude reference="jz9-6E-tLh"/>
+                                                    <exclude reference="eJs-Xq-aB1"/>
+                                                    <exclude reference="oIg-90-YZ1"/>
+                                                    <exclude reference="reh-CC-8p7"/>
+                                                    <exclude reference="Elx-IK-Rsu"/>
+                                                    <exclude reference="pWG-zM-hGn"/>
+                                                    <exclude reference="voJ-yW-ysv"/>
+                                                    <exclude reference="LQo-kp-S7Z"/>
+                                                    <exclude reference="yO8-Sq-qvK"/>
+                                                    <exclude reference="ymC-vr-qx2"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -11737,26 +11699,22 @@
                                                     <include reference="beE-a5-ZSX"/>
                                                     <include reference="akX-NF-2eY"/>
                                                     <include reference="Mjp-Sl-3tq"/>
-                                                    <include reference="uHP-R3-UBy"/>
                                                     <include reference="2d0-Z2-6Cr"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="Qds-UP-R8x"/>
-                                                    <include reference="SHH-ml-6ao"/>
-                                                    <include reference="bxM-0Q-aUD"/>
-                                                    <include reference="OwE-R9-yTH"/>
-                                                    <include reference="PnL-n5-Zzf"/>
-                                                    <include reference="xsA-nx-QtE"/>
-                                                    <include reference="74x-SY-Ckr"/>
-                                                    <include reference="B1b-0s-aUA"/>
-                                                    <include reference="hH9-Mb-5gh"/>
-                                                    <include reference="Y3g-fU-0hi"/>
-                                                    <include reference="puR-jH-pSt"/>
-                                                    <include reference="5hI-nG-9s1"/>
-                                                    <include reference="IDr-sA-PGt"/>
-                                                    <include reference="dsC-OW-pyG"/>
                                                     <include reference="4Sj-L5-2aU"/>
                                                     <include reference="cnf-H3-qji"/>
+                                                    <include reference="Fz3-jb-Ppp"/>
+                                                    <include reference="jz9-6E-tLh"/>
+                                                    <include reference="eJs-Xq-aB1"/>
+                                                    <include reference="oIg-90-YZ1"/>
+                                                    <include reference="reh-CC-8p7"/>
+                                                    <include reference="Elx-IK-Rsu"/>
+                                                    <include reference="pWG-zM-hGn"/>
+                                                    <include reference="voJ-yW-ysv"/>
+                                                    <include reference="LQo-kp-S7Z"/>
+                                                    <include reference="yO8-Sq-qvK"/>
+                                                    <include reference="ymC-vr-qx2"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -11766,7 +11724,7 @@
                             </tableViewSection>
                             <tableViewSection id="nz1-Mk-5gS">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="EZf-If-mZr">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="EZf-If-mZr">
                                         <rect key="frame" x="0.0" y="216" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EZf-If-mZr" id="pND-WI-ypg">
@@ -11797,7 +11755,7 @@
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="0.41176470590000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
