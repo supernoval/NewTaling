@@ -446,7 +446,7 @@
                 
                 //id
                 
-                cell.idLabel.text = [NSString stringWithFormat:@"ID%@",oneComment.userId];
+                cell.idLabel.text = [NSString stringWithFormat:@"ID  %@",oneComment.userId];
                 
                 //time
                 if (oneComment.time.length > 10) {
