@@ -28,6 +28,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *firstTextField;
 
 
+@property (weak, nonatomic) IBOutlet UILabel *countDownLabel;
+
+
 @property (weak, nonatomic) IBOutlet UIButton *sendCodeButton;
 
 - (IBAction)sendCodeAction:(id)sender;

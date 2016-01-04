@@ -25,6 +25,10 @@
 
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneNunTF;
+
+@property (weak, nonatomic) IBOutlet UILabel *coundownLabel;
+
+
 @property (weak, nonatomic) IBOutlet UIButton *sendCodeButton;
 
 - (IBAction)sendCodeAction:(id)sender;

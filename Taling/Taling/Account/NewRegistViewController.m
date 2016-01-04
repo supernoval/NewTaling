@@ -34,7 +34,7 @@
     
     
     
-    [_personButton setTitleColor:kOrangeTextColor
+    [_personButton setTitleColor:kBlueColor
                         forState:UIControlStateNormal];
     
     [_companybutton setTitleColor:kDarkGrayColor forState:UIControlStateNormal];
@@ -55,7 +55,7 @@
     
     isCompany = NO;
     
-    [_personButton setTitleColor:kOrangeTextColor
+    [_personButton setTitleColor:kBlueColor
                         forState:UIControlStateNormal];
     
     [_companybutton setTitleColor:kDarkGrayColor forState:UIControlStateNormal];
@@ -79,7 +79,7 @@
     [_personButton setTitleColor:kDarkGrayColor
                         forState:UIControlStateNormal];
     
-    [_companybutton setTitleColor:kOrangeTextColor forState:UIControlStateNormal];
+    [_companybutton setTitleColor:kBlueColor forState:UIControlStateNormal];
     
     
     _secViewHeight.constant = 0;
@@ -141,6 +141,11 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [_sendCodeButton setTitle:@"获取验证码" forState:UIControlStateNormal] ;
                 _sendCodeButton.enabled = YES;
+                _sendCodeButton.hidden = NO;
+                
+                _countDownLabel.text = nil;
+                _countDownLabel.hidden = YES;
+                
                 
             });
         }else{
@@ -149,7 +154,13 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 //                NSLog(@"____%@",strTime);
                 
-                [_sendCodeButton setTitle:[NSString stringWithFormat:@"%@s",strTime] forState:UIControlStateNormal] ;
+                _sendCodeButton.hidden = YES;
+                
+                _countDownLabel.hidden = NO;
+                
+                _countDownLabel.text = [NSString stringWithFormat:@"%@s",strTime];
+                
+//                [_sendCodeButton setTitle:[NSString stringWithFormat:@"%@s",strTime] forState:UIControlStateNormal] ;
                 
                 
                 

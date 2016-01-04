@@ -220,6 +220,13 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [_sendCodeButton setTitle:@"获取验证码" forState:UIControlStateNormal] ;
                 _sendCodeButton.enabled = YES;
+                _sendCodeButton.hidden = NO;
+                
+                _coundownLabel.text = nil;
+                
+                _coundownLabel.hidden = YES;
+                
+                
                 
             });
         }else{
@@ -228,7 +235,16 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 //                NSLog(@"____%@",strTime);
                 
-                [_sendCodeButton setTitle:[NSString stringWithFormat:@"%@s",strTime] forState:UIControlStateNormal] ;
+                
+                _sendCodeButton.alpha = 0;
+                
+                _sendCodeButton.hidden = YES;
+                
+                _coundownLabel.hidden = NO;
+                _coundownLabel.text = [NSString stringWithFormat:@"%@s",strTime];
+                
+                
+//                [_sendCodeButton setTitle:[NSString stringWithFormat:@"%@s",strTime] forState:UIControlStateNormal] ;
                 
                 
                 
