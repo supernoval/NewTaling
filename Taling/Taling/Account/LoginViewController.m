@@ -16,6 +16,8 @@
 #import "ChatAccountManager.h"
 
 #import "NewRegistViewController.h"
+#import "CompanyInfoTableView.h"
+
 
 
 
@@ -89,9 +91,41 @@
             
             [[NSUserDefaults standardUserDefaults ] synchronize];
             
-            [self dismissViewControllerAnimated:YES completion:nil];
+
             
-            [self CheckEasyMobLogin];
+//            [self CheckEasyMobLogin];
+            
+            
+            BOOL isCompany = [[data objectForKey:@"is_company"]boolValue];
+            if (isCompany) {
+                
+                NSInteger userStatus = [[data objectForKey:@"userStatus"]integerValue];
+                
+                NSString *email = [data objectForKey:@"email"];
+                
+                
+                if (userStatus != 0) {
+                    
+                    CompanyInfoTableView *_infoTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CompanyInfoTableView"];
+                    _infoTVC.accountName = email;
+                    
+                      [self.navigationController pushViewController:_infoTVC animated:YES];
+                }
+                else
+                {
+                      [self dismissViewControllerAnimated:YES completion:nil];
+                }
+                
+                
+                
+                
+                
+            }
+          else
+          {
+                      [self dismissViewControllerAnimated:YES completion:nil];
+          }
+            
             
         }
         

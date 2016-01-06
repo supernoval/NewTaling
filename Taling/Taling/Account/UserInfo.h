@@ -33,6 +33,7 @@
 +(BOOL)getIsCompany;
 +(NSString*)getphoto;
 +(NSString*)getcity;
++(NSString*)getEmail;
 +(BOOL)savecity:(NSString*)city;
 
 

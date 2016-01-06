@@ -54,7 +54,12 @@ TLRequest *request;
         
         if (result == 1) {
             
-            [CommonMethods showDefaultErrorString:[responseObject objectForKey:@"err_str"]];
+            
+            if (![action isEqualToString:kRegist]) {
+                
+                [CommonMethods showDefaultErrorString:[responseObject objectForKey:@"err_str"]];
+            }
+            
             
             block(NO,nil);
         }

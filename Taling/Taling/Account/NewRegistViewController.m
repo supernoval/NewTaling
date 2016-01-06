@@ -248,6 +248,9 @@
         }
         else
         {
+           
+                
+             [CommonMethods showDefaultErrorString:@"该账号已被注册"];
             
         }
         
