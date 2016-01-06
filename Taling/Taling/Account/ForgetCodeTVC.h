@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *codeTF;
 @property (weak, nonatomic) IBOutlet UIButton *sendCodeButton;
 - (IBAction)sendCodeAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *countDownLabel;
 
 
 @end

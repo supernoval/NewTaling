@@ -49,7 +49,7 @@
     isEmailCheck = NO;
     
     
-    [_phoneCheckButton setTitleColor:kOrangeTextColor forState:UIControlStateNormal];
+    [_phoneCheckButton setTitleColor:kButtonBackGroundColor forState:UIControlStateNormal];
     
     [_emailcheckbutton setTitleColor:kDarkGrayColor forState:UIControlStateNormal];
     
@@ -72,7 +72,7 @@
     
     [_phoneCheckButton setTitleColor:kDarkGrayColor forState:UIControlStateNormal];
     
-    [_emailcheckbutton setTitleColor:kOrangeTextColor forState:UIControlStateNormal];
+    [_emailcheckbutton setTitleColor:kButtonBackGroundColor forState:UIControlStateNormal];
 
     
     _phoneNunTF.placeholder  = @"邮箱";

@@ -34,7 +34,7 @@
     
     
     
-    [_personButton setTitleColor:kBlueColor
+    [_personButton setTitleColor:kButtonBackGroundColor
                         forState:UIControlStateNormal];
     
     [_companybutton setTitleColor:kDarkGrayColor forState:UIControlStateNormal];
@@ -55,7 +55,7 @@
     
     isCompany = NO;
     
-    [_personButton setTitleColor:kBlueColor
+    [_personButton setTitleColor:kButtonBackGroundColor
                         forState:UIControlStateNormal];
     
     [_companybutton setTitleColor:kDarkGrayColor forState:UIControlStateNormal];
@@ -63,11 +63,13 @@
     _secViewHeight.constant = 44;
     
     _sendCodeButton.hidden = NO;
+    _countDownLabel.hidden =NO;
     
     _firstTextField.text = nil;
     
     _firstTextField.placeholder = @"手机号";
     
+    _passwordTF.text = nil;
     
     
     
@@ -79,15 +81,19 @@
     [_personButton setTitleColor:kDarkGrayColor
                         forState:UIControlStateNormal];
     
-    [_companybutton setTitleColor:kBlueColor forState:UIControlStateNormal];
+    [_companybutton setTitleColor:kButtonBackGroundColor forState:UIControlStateNormal];
     
     
     _secViewHeight.constant = 0;
     
     _sendCodeButton.hidden = YES;
     
+    _countDownLabel.hidden = YES;
+    
     
     _firstTextField.text = nil;
+    _passwordTF.text = nil;
+    
     
     _firstTextField.placeholder = @"企业邮箱";
     

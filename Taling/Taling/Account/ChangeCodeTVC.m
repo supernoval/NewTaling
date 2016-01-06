@@ -75,6 +75,9 @@
             
             [[NSUserDefaults standardUserDefaults]setObject:_newpwdTF.text forKey:kpassword];
             [[NSUserDefaults standardUserDefaults]synchronize];
+            
+            [CommonMethods showDefaultErrorString:@"密码修改成功"];
+            
             [self.navigationController popToRootViewControllerAnimated:YES];
             
         }

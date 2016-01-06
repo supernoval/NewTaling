@@ -54,6 +54,11 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [_sendCodeButton setTitle:@"获取验证码" forState:UIControlStateNormal] ;
                 _sendCodeButton.enabled = YES;
+                _sendCodeButton.hidden = NO;
+                
+                _countDownLabel.text = nil;
+                
+                _countDownLabel.hidden = YES;
                 
             });
         }else{
@@ -62,8 +67,14 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSLog(@"____%@",strTime);
                 
-                [_sendCodeButton setTitle:[NSString stringWithFormat:@"%@s",strTime] forState:UIControlStateNormal] ;
+         
                 _sendCodeButton.enabled = NO;
+                _sendCodeButton.hidden = YES;
+                
+                
+                _countDownLabel.hidden = NO;
+                
+                _countDownLabel.text = [NSString stringWithFormat:@"%@s",strTime];
                 
                 
                 
@@ -131,8 +142,7 @@
             
             
             [self.navigationController pushViewController:changeCodeTVC animated:YES];
-            
-            [CommonMethods showDefaultErrorString:@"密码修改成功"];
+        
             
             
             
