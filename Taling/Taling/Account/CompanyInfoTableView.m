@@ -193,8 +193,9 @@
             
             _changeVC.block = ^(NSString *string)
             {
-                _linkLabel.text = string;
+               
                 
+                [_companyLink setTitle:string forState:UIControlStateNormal];
                 
                 if (_isShow) {
                     
@@ -431,6 +432,8 @@
 }
 
 
+
+
 #pragma mark - 上传信息
 -(void)uploadInfo
 {
@@ -601,4 +604,30 @@
     }];
     
 }
+
+- (IBAction)showCompanyLink:(id)sender {
+    
+    
+    UIButton *button = (UIButton*)sender;
+    
+    NSString *title = button.titleLabel.text;
+    
+    
+    if (title.length == 0) {
+        
+        return;
+        
+    }
+    
+    WebView *_webView = [self.storyboard instantiateViewControllerWithIdentifier:@"WebView"];
+    
+    _webView.url = title;
+    
+    
+    [self.navigationController pushViewController:_webView animated:YES];
+    
+    
+    
+}
+
 @end

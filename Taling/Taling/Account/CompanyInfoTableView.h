@@ -7,6 +7,7 @@
 //
 
 #import "BaseTableViewController.h"
+#import "WebView.h"
 
 @interface CompanyInfoTableView : BaseTableViewController
 
@@ -27,6 +28,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *zhizhaoImageView;
 
+@property (weak, nonatomic) IBOutlet UIButton *companyLink;
 
 @property (weak, nonatomic) IBOutlet UIImageView *shuiwuImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *jigouImageView;
@@ -37,6 +39,7 @@
 
 - (IBAction)nextAction:(id)sender;
 
+- (IBAction)showCompanyLink:(id)sender;
 
 
 @end
