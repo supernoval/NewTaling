@@ -68,7 +68,13 @@
 
     _companDesLabel.text = model.companyDescription;
     
-    _linkLabel.text = model.companyURL;
+    
+    
+    if (model.companyURL) {
+        
+        [_companyLink setTitle:model.companyURL forState:UIControlStateNormal];
+        
+    }
     
     if (model.pic_license_data) {
         
@@ -106,6 +112,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+     UserModel *model = [UserInfo getUserInfoModel];
     
     selectedIndex = indexPath.row;
     
@@ -148,15 +156,32 @@
                 
             };
             
+           
+            
+            NSString *companyname = model.companyName;
+            
+            if (_isShow && companyname)
+            {
+                
+                     _changeVC.placeHolder = companyname;
+            }
+            else
+            {
+              
+                     _changeVC.placeHolder = @"请填写企业简称";
+                
+            }
             
             _changeVC.title = @"企业简称";
             
-            _changeVC.placeHolder = @"请填写企业简称";
-            
+       
             [self.navigationController pushViewController:_changeVC animated:YES];
+            
+            
+            
         }
             break;
-        case 2:  //企业描述
+        case 2:  //企业全称
         {
             ChangePerInfoVC *_changeVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ChangePerInfoVC"];
             
@@ -177,10 +202,20 @@
                 
             };
             
+            if (_isShow && model.companyDescription) {
+                
+                _changeVC.placeHolder = model.companyDescription;
+                
+            }
+            else
+            {
+               _changeVC.placeHolder = @"请填写企业全称";
+                
+                
+            }
+            _changeVC.title = @"企业全称";
             
-            _changeVC.title = @"企业描述";
             
-            _changeVC.placeHolder = @"请填写企业描述";
             
             [self.navigationController pushViewController:_changeVC animated:YES];
             
@@ -208,10 +243,21 @@
                 
             };
             
+            if (_isShow && model.companyURL) {
+                
+                _changeVC.placeHolder = model.companyURL;
+                
+            }
+            else
+            {
+                _changeVC.placeHolder = @"请填写企业链接";
+                
+                
+            }
             
             _changeVC.title = @"企业链接";
             
-            _changeVC.placeHolder = @"请填写企业链接";
+        
             
             [self.navigationController pushViewController:_changeVC animated:YES];
         }
@@ -619,12 +665,17 @@
         
     }
     
-    WebView *_webView = [self.storyboard instantiateViewControllerWithIdentifier:@"WebView"];
-    
-    _webView.url = title;
     
     
-    [self.navigationController pushViewController:_webView animated:YES];
+    WebViewController * _webViewVC = [[WebViewController alloc]init];
+    
+    
+    
+    _webViewVC.url = title;
+    
+    _webViewVC.title = @"企业网址";
+    
+    [self.navigationController pushViewController:_webViewVC animated:YES];
     
     
     

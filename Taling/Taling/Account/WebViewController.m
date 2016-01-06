@@ -6,21 +6,34 @@
 //  Copyright © 2016年 ZhuHaikun. All rights reserved.
 //
 
-#import "WebView.h"
+#import "WebViewController.h"
 
-@interface WebView ()<UIWebViewDelegate>
+@interface WebViewController ()<UIWebViewDelegate>
 
 @end
 
-@implementation WebView
+@implementation WebViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
  
+    _myWebView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
+    
+    _myWebView.delegate = self;
+    
+    if (![_url hasPrefix:@"h"]) {
+        
+        _url = [NSString stringWithFormat:@"http://%@",_url];
+        
+    }
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:_url]];
     
     
+    
     [_myWebView loadRequest:request];
+    
+    [self.view addSubview:_myWebView];
     
     
     
@@ -31,6 +44,9 @@
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     [MyProgressHUD dismiss];
+    
+    NSLog(@"error:%@",error);
+    
 }
 
 -(void)webViewDidStartLoad:(UIWebView *)webView

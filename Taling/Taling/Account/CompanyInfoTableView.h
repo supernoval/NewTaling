@@ -7,7 +7,7 @@
 //
 
 #import "BaseTableViewController.h"
-#import "WebView.h"
+#import "WebViewController.h"
 
 @interface CompanyInfoTableView : BaseTableViewController
 

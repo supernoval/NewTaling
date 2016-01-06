@@ -8,13 +8,13 @@
 
 #import "BaseViewController.h"
 
-@interface WebView : BaseViewController
+@interface WebViewController : BaseViewController
 
 
 @property (nonatomic) NSString *url;
 
 
-@property (weak, nonatomic) IBOutlet UIWebView *myWebView;
+@property (strong, nonatomic)  UIWebView *myWebView;
 
 
 

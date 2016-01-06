@@ -151,11 +151,19 @@
                 }
             };
             
-            
+            NSString *nickName = [UserInfo getnickName];
+                                  
             _changeVC.title = @"昵称";
             
+            if (_isShowed && nickName) {
+                
+                _changeVC.placeHolder = nickName;
+                
+            }
+            else
+            {
             _changeVC.placeHolder = @"填写昵称";
-            
+            }
             [self.navigationController pushViewController:_changeVC animated:YES];
             
             
