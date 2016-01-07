@@ -7,6 +7,7 @@
 //
 
 #import "UserInfo.h"
+#import "TLRequest.h"
 
 @implementation UserInfo
 
@@ -255,5 +256,33 @@
     
 }
 
+
++(void)loginWithUsername:(NSString *)username password:(NSString *)password
+{
+    [[TLRequest shareRequest] tlRequestWithAction:kLogin Params:@{@"username":username,@"password":password} result:^(BOOL isSuccess, id data) {
+        
+        if (isSuccess)
+        {
+            
+            [UserInfo saveUserInfo:data];
+            
+            [UserInfo saveUserInfoDic:data];
+            
+            [[NSUserDefaults standardUserDefaults ] setObject:@YES forKey:kHadLogin];
+            
+            [[NSUserDefaults standardUserDefaults ] setObject:password forKey:kpassword];
+            
+            
+            [[NSUserDefaults standardUserDefaults ] synchronize];
+            
+            
+            
+            
+        
+            
+        }
+        
+    }];
+}
 
 @end

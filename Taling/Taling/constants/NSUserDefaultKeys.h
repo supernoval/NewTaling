@@ -100,3 +100,8 @@
 //登录的账户已关注人才官的数组
 #define kfocusdHRArray @"focusdHRArray"
 
+
+//信息填写成功通知
+#define kFinishRegistNoti   @"FinishRegistNoti"
+
+

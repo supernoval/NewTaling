@@ -43,6 +43,7 @@
 +(NSString*)getsex;
 
 
++(void)loginWithUsername:(NSString*)username  password:(NSString*)password;
 
 
 

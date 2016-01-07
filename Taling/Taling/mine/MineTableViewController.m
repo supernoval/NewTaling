@@ -25,6 +25,9 @@
 
 
 @interface MineTableViewController ()<UIAlertViewDelegate,UIActionSheetDelegate>
+{
+    
+}
 @property (strong, nonatomic)NSDictionary *countDic;
 @property (strong, nonatomic)UIActionSheet *shareAC;
 
@@ -33,11 +36,16 @@
 @implementation MineTableViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.title = @"我的";
     _headImageView.clipsToBounds = YES;
     _headImageView.layer.cornerRadius = 5.0;
      _countDic = [[NSDictionary alloc]init];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveSuccessNoti) name:kFinishRegistNoti object:nil];
+    
+    
     
 
     
@@ -54,6 +62,7 @@
         if (isSuccess) {
             
             if ([data isKindOfClass:[NSDictionary class]]) {
+                
                 _countDic = data;
 
                 
@@ -301,6 +310,14 @@
             [ShareH5 shareWechatHaoYou];
         }
     }
+}
+
+-(void)receiveSuccessNoti
+{
+    [self.navigationController popToRootViewControllerAnimated:NO];
+    
+    self.tabBarController.selectedIndex = 0;
+    
 }
 
 @end

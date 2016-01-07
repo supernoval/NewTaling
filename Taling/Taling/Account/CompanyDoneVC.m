@@ -36,7 +36,13 @@
 - (IBAction)doneAction:(id)sender {
     
     
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController dismissViewControllerAnimated:YES completion:^{
+        
+        
+        [[NSNotificationCenter defaultCenter ] postNotificationName:kFinishRegistNoti object:nil];
+        
+        
+    }];
     
     
 }

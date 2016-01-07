@@ -495,7 +495,7 @@
 //    pic_IDCARD2
     
     
-    if (_nameLabel.text.length == 0 || _headImageView.image == nil || _companDesLabel.text.length == 0 || _linkLabel.text.length == 0 || _zhizhaoImageView.image == nil || _shuiwuImageView.image == nil || _jigouImageView.image == nil) {
+    if (_nameLabel.text.length == 0 || _headImageView.image == nil || _companDesLabel.text.length == 0 || _companyLink.titleLabel.text.length == 0 || _zhizhaoImageView.image == nil || _shuiwuImageView.image == nil || _jigouImageView.image == nil) {
         
         
         [CommonMethods showDefaultErrorString:@"请填写完整信息"];
@@ -507,7 +507,7 @@
     
     NSString *company_name = _nameLabel.text;
     
-    NSString *company_URL = _linkLabel.text;
+    NSString *company_URL = _companyLink.titleLabel.text;
     
     NSString *company_description = _companDesLabel.text;
     

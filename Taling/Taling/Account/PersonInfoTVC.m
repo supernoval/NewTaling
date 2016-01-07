@@ -207,7 +207,11 @@
                 
                 [UserInfo saveUserInfo:string key:kcity];
                 
-                [self saveInfo];
+                if (_isShowed) {
+                    
+                    [self saveInfo];
+                }
+                
                 
                 
                 
@@ -370,7 +374,12 @@
         if (buttonIndex == 0) {
             
             _sexLabel.text = @"男";
-            [self saveInfo];
+            
+            if (_isShowed) {
+                
+                 [self saveInfo];
+            }
+           
             
             [UserInfo saveUserInfo:@(1) key:ksex];
             
@@ -380,7 +389,11 @@
         {
             _sexLabel.text = @"女";
             
-            [self saveInfo];
+            if (_isShowed) {
+                
+                [self saveInfo];
+            }
+            
             
             [UserInfo saveUserInfo:@(0) key:ksex];
         }

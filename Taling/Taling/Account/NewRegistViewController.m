@@ -186,6 +186,14 @@
     
     [MyProgressHUD showProgress];
     
+#warning  test
+    
+    [self summitRegist];
+    
+    return;
+    
+    
+    
     [SMSSDK commitVerificationCode:SMSCode phoneNumber:_firstTextField.text zone:@"86" result:^(NSError *error) {
         
         
@@ -225,6 +233,9 @@
         [MyProgressHUD dismiss];
         
         if (isSuccess) {
+            
+            
+            [UserInfo loginWithUsername:_firstTextField.text password:_passwordTF.text];
             
              [UserInfo saveUserInfo:data];
             
@@ -305,7 +316,7 @@
     
         
         
-        if ([CommonMethods checkTel:_firstTextField.text]) {
+        if (![CommonMethods checkTel:_firstTextField.text]) {
             
             [CommonMethods showDefaultErrorString:@"手机号码不正确"];
             

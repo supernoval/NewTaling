@@ -104,7 +104,7 @@
                 NSString *email = [data objectForKey:@"email"];
                 
                 
-                if (userStatus != 0) {
+                if (userStatus == 1) {
                     
                     CompanyInfoTableView *_infoTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CompanyInfoTableView"];
                     _infoTVC.accountName = email;
@@ -113,7 +113,12 @@
                 }
                 else
                 {
-                      [self dismissViewControllerAnimated:YES completion:nil];
+                    [self dismissViewControllerAnimated:YES completion:^{
+                        
+                        
+                        
+                        
+                    }];
                 }
                 
                 

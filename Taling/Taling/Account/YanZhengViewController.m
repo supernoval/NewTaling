@@ -218,6 +218,7 @@
         if(timeout<=0){
             dispatch_source_cancel(_timer);
             dispatch_async(dispatch_get_main_queue(), ^{
+                
                 [_sendCodeButton setTitle:@"获取验证码" forState:UIControlStateNormal] ;
                 _sendCodeButton.enabled = YES;
                 _sendCodeButton.hidden = NO;
