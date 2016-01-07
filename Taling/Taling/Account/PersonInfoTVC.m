@@ -66,27 +66,47 @@
     
     UserModel *model = [UserInfo getUserInfoModel];
     
-    if (model.photo_data) {
-        
-        _headImageView.image = [UIImage imageWithData:model.photo_data];
-        
-    }
-    else
-    {
-        [_headImageView sd_setImageWithURL:[NSURL URLWithString:model.photo]];
-    }
     
-    if (model.callingCard_data) {
-        
-        _personCardImageView.image = [UIImage imageWithData:model.callingCard_data];
-        
-    }
-    else
-    {
-        
-        [_personCardImageView sd_setImageWithURL:[NSURL URLWithString:model.callingCard]];
-        
-    }
+    SDPhotoItem *photoItem = [[SDPhotoItem alloc]init];
+    
+    photoItem.imageData = model.photo_data;
+    
+    photoItem.thumbnail_pic = model.photo;
+    
+    _headView.photoItemArray = @[photoItem];
+    
+    
+//    if (model.photo_data) {
+//        
+//        _headImageView.image = [UIImage imageWithData:model.photo_data];
+//        
+//    }
+//    else
+//    {
+//        [_headImageView sd_setImageWithURL:[NSURL URLWithString:model.photo]];
+//    }
+    
+    
+    SDPhotoItem *cardItem = [[SDPhotoItem alloc]init];
+    
+    cardItem.imageData = model.callingCard_data;
+    
+    cardItem.thumbnail_pic = model.callingCard;
+    
+    _personCardView.photoItemArray = @[cardItem];
+    
+    
+//    if (model.callingCard_data) {
+//        
+//        _personCardImageView.image = [UIImage imageWithData:model.callingCard_data];
+//        
+//    }
+//    else
+//    {
+//        
+//        [_personCardImageView sd_setImageWithURL:[NSURL URLWithString:model.callingCard]];
+//        
+//    }
     
     _cityLabel.text = [UserInfo  getcity];
     
@@ -266,10 +286,19 @@
                 }
             };
             
-            
             _changeVC.title = @"服务过的企业";
+            if (_isShowed) {
+                
+                _changeVC.placeHolder = _qiyeLabel.text;
+                
+            }
+            else
+            {
+                _changeVC.placeHolder = @"企业名称"; 
+            }
             
-            _changeVC.placeHolder = @"企业名称";
+            
+           
             
             [self.navigationController pushViewController:_changeVC animated:YES];
             
@@ -407,12 +436,23 @@
     
     UIImage *editImage          = [info objectForKey:UIImagePickerControllerOriginalImage];
     //    UIImage *cutImage           = [self cutImage:editImage size:CGSizeMake(160, 160)];
-    UIImage *cutImage  = [CommonMethods  imageWithImage:editImage scaledToSize:CGSizeMake(300, 300)];
+    UIImage *cutImage  = [CommonMethods  getScreenWithImage:editImage];
     
     NSData *imagedata = UIImagePNGRepresentation(cutImage);
+    
+    
+    SDPhotoItem *item = [[SDPhotoItem alloc]init];
+    
+    item.imageData = imagedata;
+    
+    item.thumbnail_pic = nil;
+    
+    
     if (selectedIndex == 0) {
         
-       _headImageView.image = cutImage;
+//       _headImageView.image = cutImage;
+        
+        _headView.photoItemArray = @[item];
         
         NSData *headImageData = UIImagePNGRepresentation(cutImage);
         
@@ -427,7 +467,10 @@
     }
     else if (selectedIndex == 7)
     {
-        _personCardImageView.image = cutImage;
+//        _personCardImageView.image = cutImage;
+        
+        _personCardView.photoItemArray = @[item];
+        
         
         if (imagedata) {
             
@@ -462,8 +505,17 @@
 
 - (IBAction)doneAction:(id)sender {
     
+    UIButton *button = [[_headView subviews] firstObject];
     
-    if (!_headImageView.image || _nickNameLabel.text.length == 0 || _sexLabel.text == 0 || _cityLabel.text.length == 0 || _hangyeLabel.text.length == 0 || _qiyeLabel.text.length == 0 || _gangweiLabel.text.length == 0 || !_personCardImageView.image ) {
+    UIImage *headImage = button.currentImage;
+
+    
+    UIButton *cartButton = [[_personCardView subviews] firstObject];
+    
+    UIImage *cartImage = cartButton.currentImage;
+    
+    
+    if (!headImage || _nickNameLabel.text.length == 0 || _sexLabel.text == 0 || _cityLabel.text.length == 0 || _hangyeLabel.text.length == 0 || _qiyeLabel.text.length == 0 || _gangweiLabel.text.length == 0 || !cartImage ) {
         
         
         [CommonMethods showDefaultErrorString:@"请完善个人信息"];
@@ -496,12 +548,37 @@
     
     NSString *user_id = [UserInfo getuserid];
     
-    NSData *imageData = UIImagePNGRepresentation(_headImageView.image);
+    UIButton *button = [[_headView subviews] firstObject];
+    
+    UIImage *headImage = button.currentImage;
+    NSData *imageData = nil;
+    
+    if (headImage) {
+        
+         imageData = UIImagePNGRepresentation(headImage);
+        
+    }
+   
     
     NSDictionary *param = @{@"user_id":user_id};
     
-    NSData *cartData = UIImagePNGRepresentation(_personCardImageView.image);
     
+    UIButton *cartButton = [[_personCardView subviews] firstObject];
+    
+    UIImage *cartImage = cartButton.currentImage;
+    
+    
+    NSData *cartData = nil;
+    
+    if (cartImage) {
+        
+        
+       cartData= UIImagePNGRepresentation(cartImage);
+        
+        
+    }
+    
+ 
     NSDictionary *dataDic ;
     
     //如果是显示

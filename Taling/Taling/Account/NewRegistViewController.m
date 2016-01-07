@@ -46,6 +46,7 @@
     _nextButton.clipsToBounds=  YES;
     _nextButton.layer.cornerRadius = 4;
     
+    isCompany = NO;
     
     
 }

@@ -7,12 +7,14 @@
 //
 
 #import "BaseTableViewController.h"
+#import "SDPhotoGroup.h"
 
 @interface PersonInfoTVC : BaseTableViewController
 
 @property (nonatomic) BOOL isShowed;  //是否只是显示
 
-@property (weak, nonatomic) IBOutlet UIImageView *headImageView;
+@property (weak, nonatomic) IBOutlet SDPhotoGroup *headView;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *nickNameLabel;
 
@@ -27,7 +29,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *gangweiLabel;
 
-@property (weak, nonatomic) IBOutlet UIImageView *personCardImageView;
+
+@property (weak, nonatomic) IBOutlet SDPhotoGroup *personCardView;
 
 @property (weak, nonatomic) IBOutlet UIView *footerView;
 
