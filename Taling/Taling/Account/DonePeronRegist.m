@@ -33,6 +33,8 @@
     
     [self.navigationController dismissViewControllerAnimated:YES completion:^{
     
+         [UserInfo loginWithUsername:[UserInfo getUsername] password:[UserInfo getPassWord]];
+        
         [[NSNotificationCenter defaultCenter] postNotificationName:kFinishRegistNoti object:nil];
         
         

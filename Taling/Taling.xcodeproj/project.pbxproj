@@ -231,7 +231,6 @@
 		15D1953E1C1D2FAB001F286E /* CompanyInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D1953D1C1D2FAB001F286E /* CompanyInfoTableView.m */; };
 		15D195411C1D3364001F286E /* YanZhengViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D195401C1D3364001F286E /* YanZhengViewController.m */; };
 		15D195441C1D47D1001F286E /* CompanyDoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D195431C1D47D1001F286E /* CompanyDoneVC.m */; };
-		15D51A0C1BFEFB2D002EEB5C /* CompanyRegistTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D51A0B1BFEFB2D002EEB5C /* CompanyRegistTVC.m */; };
 		15E452CC1C3D4FFA00A6A549 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E452CB1C3D4FFA00A6A549 /* WebViewController.m */; };
 		15E4FBFB1BFDAE23003EA18A /* ShareH5.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E4FBFA1BFDAE23003EA18A /* ShareH5.m */; };
 		15EE6BE01B92D1CA00FBD86C /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EE6BDF1B92D1CA00FBD86C /* MAMapKit.framework */; };
@@ -924,8 +923,6 @@
 		15D195401C1D3364001F286E /* YanZhengViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YanZhengViewController.m; sourceTree = "<group>"; };
 		15D195421C1D47D1001F286E /* CompanyDoneVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyDoneVC.h; sourceTree = "<group>"; };
 		15D195431C1D47D1001F286E /* CompanyDoneVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyDoneVC.m; sourceTree = "<group>"; };
-		15D51A0A1BFEFB2D002EEB5C /* CompanyRegistTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyRegistTVC.h; sourceTree = "<group>"; };
-		15D51A0B1BFEFB2D002EEB5C /* CompanyRegistTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyRegistTVC.m; sourceTree = "<group>"; };
 		15E452CA1C3D4FFA00A6A549 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		15E452CB1C3D4FFA00A6A549 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		15E4FBF91BFDAE23003EA18A /* ShareH5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareH5.h; sourceTree = "<group>"; };
@@ -2043,8 +2040,6 @@
 				1506E24E1B89BD87007D1696 /* LoginViewController.m */,
 				137BBBDE1B9DA9F5004571C6 /* UserInfo.h */,
 				137BBBDF1B9DA9F5004571C6 /* UserInfo.m */,
-				15D51A0A1BFEFB2D002EEB5C /* CompanyRegistTVC.h */,
-				15D51A0B1BFEFB2D002EEB5C /* CompanyRegistTVC.m */,
 				15E452CA1C3D4FFA00A6A549 /* WebViewController.h */,
 				15E452CB1C3D4FFA00A6A549 /* WebViewController.m */,
 			);
@@ -3171,7 +3166,6 @@
 				153F3B831BD279E000C86F1A /* PSTCollectionViewFlowLayout.m in Sources */,
 				1506E0441B89B53C007D1696 /* JSONKeyMapper.m in Sources */,
 				139DC54E1BCE75ED00AA9C27 /* ChatListTableViewController.m in Sources */,
-				15D51A0C1BFEFB2D002EEB5C /* CompanyRegistTVC.m in Sources */,
 				1506E1311B89B646007D1696 /* DataSigner.m in Sources */,
 				D2FCB9051BCBF27200C6ACC0 /* ResumePayStyleCell.m in Sources */,
 				153F3AFA1BD277FB00C86F1A /* EMChatBaseBubbleView.m in Sources */,

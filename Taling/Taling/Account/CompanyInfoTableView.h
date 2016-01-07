@@ -8,6 +8,7 @@
 
 #import "BaseTableViewController.h"
 #import "WebViewController.h"
+#import "SDPhotoGroup.h"
 
 @interface CompanyInfoTableView : BaseTableViewController
 
@@ -24,14 +25,20 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *companDesLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *linkLabel;
 
-@property (weak, nonatomic) IBOutlet UIImageView *zhizhaoImageView;
+@property (weak, nonatomic) IBOutlet SDPhotoGroup *logoImageView;
+
+@property (weak, nonatomic) IBOutlet SDPhotoGroup *zhizhaoView;
+
+@property (weak, nonatomic) IBOutlet SDPhotoGroup *shuiwuView;
+
+@property (weak, nonatomic) IBOutlet SDPhotoGroup *jigouView;
+
+
 
 @property (weak, nonatomic) IBOutlet UIButton *companyLink;
 
-@property (weak, nonatomic) IBOutlet UIImageView *shuiwuImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *jigouImageView;
+
 
 
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;

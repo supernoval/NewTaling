@@ -51,7 +51,11 @@
 
 - (void)dealloc
 {
-    [[UIApplication sharedApplication].keyWindow removeObserver:self forKeyPath:@"frame"];
+    if (self) {
+       [[UIApplication sharedApplication].keyWindow removeObserver:self forKeyPath:@"frame"];
+        
+    }
+    
 }
 
 - (void)setupToolbars
@@ -159,6 +163,7 @@
     SDBrowserImageView *imageView = _scrollView.subviews[index];
     if (imageView.hasLoadedImage) return;
     if ([self highQualityImageURLForIndex:index]) {
+        
         [imageView setImageWithURL:[self highQualityImageURLForIndex:index] placeholderImage:[self placeholderImageForIndex:index]];
     } else {
         imageView.image = [self placeholderImageForIndex:index];

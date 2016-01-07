@@ -76,6 +76,10 @@ typedef void (^upLoadPhotoBlock)(BOOL success,NSArray*results);
 #pragma mark - 对图片进行大小压缩
 +(UIImage*)imageWithImage:(UIImage*)image scaledToSize:(CGSize)newSize;
 
+#pragma mark - 按屏幕宽度压缩图片 
++(UIImage*)getScreenWithImage:(UIImage*)image;
+
+
 #pragma mark - 将中间字符变成 ****
 +(NSString*)geteditedmobile:(NSString*)mobile;
 

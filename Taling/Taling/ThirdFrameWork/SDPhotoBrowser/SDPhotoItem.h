@@ -12,4 +12,7 @@
 
 @property (nonatomic, copy) NSString *thumbnail_pic;
 
+@property (nonatomic,strong) NSData *imageData;
+
+
 @end

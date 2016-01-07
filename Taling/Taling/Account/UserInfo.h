@@ -34,6 +34,8 @@
 +(NSString*)getphoto;
 +(NSString*)getcity;
 +(NSString*)getEmail;
++(NSString*)getPassWord;
+
 +(BOOL)savecity:(NSString*)city;
 
 

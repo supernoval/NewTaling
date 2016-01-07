@@ -332,6 +332,10 @@
 #pragma mark - 对图片进行大小压缩
 +(UIImage*)imageWithImage:(UIImage*)image scaledToSize:(CGSize)newSize
 {
+    
+    
+    
+    
     // Create a graphics image context
     UIGraphicsBeginImageContext(newSize);
     
@@ -349,6 +353,23 @@
     return newImage;
 }
 
+#pragma mark - 按屏幕宽度压缩图片
++(UIImage*)getScreenWithImage:(UIImage*)image
+{
+    
+    
+    CGSize imageSize = image.size;
+    
+    CGFloat imageHeight = imageSize.height;
+    
+    CGFloat imageWith = imageSize.width;
+    
+    
+    CGFloat needHeight =  imageHeight*ScreenWidth / imageWith;
+    
+    return [self imageWithImage:image scaledToSize:CGSizeMake(imageWith, needHeight)];
+    
+}
 #pragma mark - 将中间字符变成 ****
 +(NSString*)geteditedmobile:(NSString*)mobile
 {

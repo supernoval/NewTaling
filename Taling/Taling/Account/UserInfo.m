@@ -116,6 +116,13 @@
     return [[NSUserDefaults standardUserDefaults ] objectForKey:kusername];
     
 }
+
++(NSString*)getPassWord
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:kpassword];
+    
+    
+}
 +(NSString*)getnickName
 {
     return [[NSUserDefaults standardUserDefaults ] objectForKey:knickname];

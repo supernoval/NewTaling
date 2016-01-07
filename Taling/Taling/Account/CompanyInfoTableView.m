@@ -50,58 +50,54 @@
     
     
     _nameLabel.text = model.companyName;
-    
-    
-    if (model.photo_data) {
-        
-        _headImageView.image = [UIImage imageWithData:model.photo_data];
-        
-    }
-    else
-    {
-        [_headImageView sd_setImageWithURL:[NSURL URLWithString:model.photo] placeholderImage:kDefaultHeadImage];
-        
-        
-    }
-    
-    
-
     _companDesLabel.text = model.companyDescription;
-    
-    
-    
     if (model.companyURL) {
         
         [_companyLink setTitle:model.companyURL forState:UIControlStateNormal];
         
     }
     
-    if (model.pic_license_data) {
-        
-        _zhizhaoImageView.image = [UIImage imageWithData:model.pic_license_data];
-        
-    }
-    else
-    {
-    [_zhizhaoImageView sd_setImageWithURL:[NSURL URLWithString:model.companyLicense] placeholderImage:kDefaultHeadImage];
-    }
     
-    if (model.company_number_data) {
-        
-        _shuiwuImageView.image = [UIImage imageWithData:model.company_number_data];
-    }
-    else{
-         [_shuiwuImageView sd_setImageWithURL:[NSURL URLWithString:model.companyNum] placeholderImage:kDefaultHeadImage];
-    }
     
-    if (model.company_code_data) {
-        
-        _jigouImageView.image = [UIImage imageWithData:model.company_code_data];
-    }
-    else
-    {
-         [_jigouImageView sd_setImageWithURL:[NSURL URLWithString:model.companyCode] placeholderImage:kDefaultHeadImage];
-    }
+    SDPhotoItem * logoItem = [[SDPhotoItem alloc]init];
+    logoItem.imageData = model.photo_data;
+    logoItem.thumbnail_pic = model.photo;
+    
+    _logoImageView.photoItemArray = @[logoItem];
+    
+    
+    SDPhotoItem *zhizhaoItem = [[SDPhotoItem alloc]init];
+    
+    zhizhaoItem.imageData = model.pic_license_data;
+    
+    zhizhaoItem.thumbnail_pic = model.companyLicense;
+    
+    
+    _zhizhaoView.photoItemArray = @[zhizhaoItem];
+    
+    
+    
+    SDPhotoItem *shuiwuItem = [[SDPhotoItem alloc]init];
+    
+    shuiwuItem.imageData = model.company_number_data;
+    
+    shuiwuItem.thumbnail_pic = model.companyNum;
+    
+    _shuiwuView.photoItemArray = @[shuiwuItem];
+    
+    
+    
+    SDPhotoItem *jigouItem = [[SDPhotoItem alloc]init];
+    
+    jigouItem.imageData = model.company_code_data;
+    
+    jigouItem.thumbnail_pic = model.companyCode;
+    
+    _jigouView.photoItemArray = @[jigouItem];
+
+    
+    
+
    
     
    
@@ -374,13 +370,22 @@
     
     UIImage *editImage          = [info objectForKey:UIImagePickerControllerOriginalImage];
     //    UIImage *cutImage           = [self cutImage:editImage size:CGSizeMake(160, 160)];
-    UIImage *cutImage  = [CommonMethods  imageWithImage:editImage scaledToSize:CGSizeMake(300, 300)];
+    UIImage *cutImage  = [CommonMethods  getScreenWithImage:editImage];
+    
+    
     
     NSData *data = UIImagePNGRepresentation(cutImage);
     
     if (selectedIndex == 0) {
         
-        _headImageView.image = cutImage;
+        SDPhotoItem *logoItem = [[SDPhotoItem alloc]init];
+        
+        logoItem.imageData = data;
+        
+        logoItem.thumbnail_pic = nil;
+        
+        _logoImageView.photoItemArray = @[logoItem];
+      
         
     
         if (_isShow) {
@@ -398,7 +403,15 @@
     else if (selectedIndex == 4)
     {
         
-        _zhizhaoImageView.image = cutImage;
+        SDPhotoItem *zhizhaoItem = [[SDPhotoItem alloc]init];
+        
+        zhizhaoItem.imageData = data;
+        
+        zhizhaoItem.thumbnail_pic = nil;
+        
+        _zhizhaoView.photoItemArray = @[zhizhaoItem];
+        
+//        _zhizhaoImageView.image = cutImage;
         
         if (_isShow) {
             
@@ -415,7 +428,16 @@
     }
     else if (selectedIndex == 5)
     {
-        _shuiwuImageView.image = cutImage;
+        
+        SDPhotoItem *shuiwuItem = [[SDPhotoItem alloc]init];
+        
+        shuiwuItem.imageData = data;
+        
+        shuiwuItem.thumbnail_pic = nil;
+        
+        _shuiwuView.photoItemArray = @[shuiwuItem];
+        
+//        _shuiwuImageView.image = cutImage;
         
         if (_isShow) {
             
@@ -430,7 +452,15 @@
     }
     else if (selectedIndex == 6)
     {
-        _jigouImageView.image = cutImage;
+        SDPhotoItem *jigouItem = [[SDPhotoItem alloc]init];
+        
+        jigouItem.imageData = data;
+        
+        jigouItem.thumbnail_pic = nil;
+        
+        _jigouView.photoItemArray = @[jigouItem];
+        
+//        _jigouImageView.image = cutImage;
         
         if (_isShow) {
             
@@ -495,7 +525,26 @@
 //    pic_IDCARD2
     
     
-    if (_nameLabel.text.length == 0 || _headImageView.image == nil || _companDesLabel.text.length == 0 || _companyLink.titleLabel.text.length == 0 || _zhizhaoImageView.image == nil || _shuiwuImageView.image == nil || _jigouImageView.image == nil) {
+    UIButton *logoButton = [[_logoImageView subviews]firstObject];
+    
+    UIImage *_logo = logoButton.currentImage;
+    
+    UIButton *zhizhaoButton = [[_zhizhaoView subviews] firstObject];
+    
+    UIImage *_zhizhao = zhizhaoButton.currentImage;
+    
+    UIButton *shuiwuButton = [[_shuiwuView subviews]firstObject];
+    
+    UIImage *_shuiwu = shuiwuButton.currentImage;
+    
+    
+    UIButton *jigouButton = [[_jigouView subviews]firstObject];
+    
+    UIImage *_jigou = jigouButton.currentImage;
+    
+    
+//    _zhizhaoImageView.image == nil || _shuiwuImageView.image == nil || _jigouImageView.image == nil
+    if (_nameLabel.text.length == 0 || _logo == nil || _companDesLabel.text.length == 0 || _companyLink.titleLabel.text.length == 0   || _zhizhao == nil || _shuiwu == nil || _jigou == nil) {
         
         
         [CommonMethods showDefaultErrorString:@"请填写完整信息"];
@@ -511,11 +560,13 @@
     
     NSString *company_description = _companDesLabel.text;
     
-    NSData *pic_license = UIImagePNGRepresentation(_zhizhaoImageView.image);
     
-    NSData *company_code = UIImagePNGRepresentation(_shuiwuImageView.image);
     
-    NSData *company_number = UIImagePNGRepresentation(_jigouImageView.image);
+    NSData *pic_license = UIImagePNGRepresentation(_zhizhao);
+    
+    NSData *company_code = UIImagePNGRepresentation(_shuiwu);
+    
+    NSData *company_number = UIImagePNGRepresentation(_jigou);
     
     NSDictionary *params = @{@"user_id":user_id,@"company_name":company_name,@"company_URL":company_URL,@"company_description":company_description};
     
@@ -608,10 +659,17 @@
 -(void)uploadHeadImage
 {
     
+    UIButton *logoButton = [[_logoImageView subviews]firstObject];
+    UIImage *_logo = logoButton.currentImage;
     
     NSString *user_id = [UserInfo getuserid];
     
-    NSData *imageData = UIImagePNGRepresentation(_headImageView.image);
+    NSData *imageData = UIImagePNGRepresentation(_logo);
+    
+    
+ 
+    
+  
     
     NSDictionary *param = @{@"user_id":user_id};
     

@@ -39,9 +39,20 @@
     }
     _photoItemArray = photoItemArray;
     [photoItemArray enumerateObjectsUsingBlock:^(SDPhotoItem *obj, NSUInteger idx, BOOL *stop) {
-        UIButton *btn = [[UIButton alloc] init];
-        [btn sd_setImageWithURL:[NSURL URLWithString:obj.thumbnail_pic] forState:UIControlStateNormal];
         
+        
+        UIButton *btn = [[UIButton alloc] initWithFrame:self.frame];
+        
+        
+        if (obj.imageData) {
+            
+            [btn setImage:[UIImage imageWithData:obj.imageData] forState:UIControlStateNormal];
+            
+        }
+        else
+        {
+             [btn sd_setImageWithURL:[NSURL URLWithString:obj.thumbnail_pic] forState:UIControlStateNormal];
+        }
         
         btn.tag = idx;
         
@@ -57,8 +68,8 @@
     int perRowImageCount = ((imageCount == 4) ? 2 : 3);
     CGFloat perRowImageCountF = (CGFloat)perRowImageCount;
     int totalRowCount = ceil(imageCount / perRowImageCountF); // ((imageCount + perRowImageCount - 1) / perRowImageCount)
-    CGFloat w = 80;
-    CGFloat h = 80;
+    CGFloat w = self.frame.size.width;
+    CGFloat h = self.frame.size.height;
     
     [self.subviews enumerateObjectsUsingBlock:^(UIButton *btn, NSUInteger idx, BOOL *stop) {
         
@@ -74,12 +85,19 @@
 
 - (void)buttonClick:(UIButton *)button
 {
+     SDPhotoItem *item = self.photoItemArray[button.tag];
+    
+    if (item.imageData || item.thumbnail_pic) {
+          
     SDPhotoBrowser *browser = [[SDPhotoBrowser alloc] init];
     browser.sourceImagesContainerView = self; // 原图的父控件
     browser.imageCount = self.photoItemArray.count; // 图片总数
     browser.currentImageIndex = button.tag;
     browser.delegate = self;
-    [browser show];
+        
+        [browser show];
+    }
+    
     
 }
 
@@ -95,7 +113,13 @@
 // 返回高质量图片的url
 - (NSURL *)photoBrowser:(SDPhotoBrowser *)browser highQualityImageURLForIndex:(NSInteger)index
 {
-    NSString *urlStr = [[self.photoItemArray[index] thumbnail_pic] stringByReplacingOccurrencesOfString:@"thumbnail" withString:@"bmiddle"];
+    NSString *urlStr = [self.photoItemArray[index] thumbnail_pic];
+    
+    if (!urlStr) {
+        
+        return nil;
+        
+    }
     return [NSURL URLWithString:urlStr];
 }
 
