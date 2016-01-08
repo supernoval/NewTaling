@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"联系";
-    self.tableView.tableFooterView.frame = CGRectMake(0, 0, ScreenWidth, 150);
+    self.tableView.tableFooterView.frame = CGRectMake(0, 0, ScreenWidth, 182);
     _positionTF.delegate = self;
     
     
@@ -131,7 +131,12 @@
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
 {
     
-    [controller dismissViewControllerAnimated:YES completion:nil];
+    [controller dismissViewControllerAnimated:YES completion:^{
+    
+        [self.navigationController popViewControllerAnimated:YES];
+        
+        
+    }];
     
 }
 @end

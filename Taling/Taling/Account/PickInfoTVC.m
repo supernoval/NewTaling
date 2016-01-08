@@ -118,7 +118,7 @@
     
     cell.textLabel.text = [_dataSource objectAtIndex:indexPath.section];
   
-    if (_type == 3) {
+    if (_type == 3 || _type == 2) {
         
         
         NSArray *strings = [_goodAtStr componentsSeparatedByString:@","];
@@ -168,7 +168,7 @@
     
     NSString *string = [_dataSource objectAtIndex:indexPath.section];
     
-    if (_type == 3) {
+    if (_type == 3 || _type == 2) {
        
         
         NSArray *strings = [_goodAtStr componentsSeparatedByString:@","];

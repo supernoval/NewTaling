@@ -121,6 +121,15 @@
 #pragma mark - UITableViewDataSource
 -(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
+    
+    NSInteger zanZhuNum = _commentArry.count + 3;
+    if (section == zanZhuNum) {
+        
+        return nil;
+        
+    }
+    
+    
     switch (section) {
         case 0:
         {
@@ -197,6 +206,14 @@
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     
+    NSInteger zanZhuNum = _commentArry.count + 3;
+    if (section == zanZhuNum) {
+        
+        return nil;
+        
+    }
+    
+    
     if (section == 3) {
         UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 50)];
         
@@ -218,6 +235,14 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
+    
+    NSInteger zanZhuNum = _commentArry.count + 3;
+    if (section == zanZhuNum) {
+        
+        return 0.8;
+        
+    }
+    
     switch (section) {
         case 0:
         {
@@ -261,6 +286,13 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
+    NSInteger zanZhuNum = _commentArry.count + 3;
+    if (section == zanZhuNum) {
+        
+        return 0.1;
+        
+    }
+    
     if (_commentArry.count > 0) {
         if (section == 3) {
             return 50;
@@ -279,8 +311,15 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    NSInteger zanZhuNum = _commentArry.count + 3;
+    if (indexPath.section == zanZhuNum) {
+        
+        return 44;
+        
+    }
     CommentItem *oneCom = [[CommentItem alloc]init];
-    if (indexPath.section > 2) {
+    if (indexPath.section > 2 && indexPath.section < _commentArry.count + 3) {
         oneCom = [_commentArry objectAtIndex:indexPath.section-3];
     }
     
@@ -293,13 +332,13 @@
         }
             break;
             
-        case 1:
+        case 2:
         {
             return 40+[StringHeight heightWithText:item.summary font:FONT_14 constrainedToWidth:ScreenWidth-30];
         }
             break;
             
-        case 2:
+        case 1:
         {
             return 69;
         }
@@ -320,13 +359,35 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3+_commentArry.count;
+    return 3+_commentArry.count + 1;
 }
 
 
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    NSInteger zanZhuNum = _commentArry.count + 3;
+    
+    if (indexPath.section == zanZhuNum) {
+        
+        UITableViewCell *adCell = [tableView dequeueReusableCellWithIdentifier:@"AdCell"];
+        
+        if (!adCell) {
+            
+            adCell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"AdCell"];
+            
+            
+        }
+        
+        adCell.textLabel.text = @"赞助商";
+        adCell.textLabel.font = FONT_13;
+        adCell.textLabel.textColor = kLightTintColor;
+        
+        return adCell;
+        
+    }
+    
     
     switch (indexPath.section) {
         case 0:
@@ -370,7 +431,7 @@
         }
             break;
             
-        case 1:
+        case 2:
         {
             static NSString *cellId = @"SummaryCell";
             SummaryCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
@@ -386,7 +447,7 @@
         }
             break;
             
-        case 2:
+        case 1:
         {
             static NSString *cellId = @"FocusCell";
             FocusCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
@@ -420,6 +481,7 @@
             return cell;
         }
             break;
+     
             
             
         default://评价

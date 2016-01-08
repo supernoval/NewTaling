@@ -187,11 +187,7 @@
     
     [MyProgressHUD showProgress];
     
-#warning  test
-    
-    [self summitRegist];
-    
-    return;
+
     
     
     
@@ -224,7 +220,17 @@
 {
     
     
-    NSDictionary *param = @{@"username":_firstTextField.text,@"password":_passwordTF.text,@"is_company":@(isCompany)};
+    NSDictionary *param = nil;
+    
+    if (isCompany) {
+        
+        param= @{@"username":_firstTextField.text,@"password":_passwordTF.text,@"is_company":@(isCompany)};
+    }
+    else
+    {
+        param= @{@"username":_firstTextField.text,@"password":_passwordTF.text};
+    }
+    
     
     
     TLRequest *request = [TLRequest shareRequest];

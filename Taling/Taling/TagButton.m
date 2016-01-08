@@ -20,12 +20,14 @@
         self.clipsToBounds = YES;
         self.layer.cornerRadius = 4.0;
         self.layer.borderWidth = 1.0;
-        self.layer.borderColor = RGB(151, 151, 151, 1).CGColor;
+        self.layer.borderColor = NavigationBarColor.CGColor;
         self.titleLabel.font = FONT_12;
         [self setTitleColor:kTextLightGrayColor forState:UIControlStateNormal];
+        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+        
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         [self setBackgroundImage:[CommonMethods createImageWithColor:[UIColor clearColor]] forState:UIControlStateNormal];
-        [self setBackgroundImage:[CommonMethods createImageWithColor:kYellowColor] forState:UIControlStateSelected];
+        [self setBackgroundImage:[CommonMethods createImageWithColor:NavigationBarColor] forState:UIControlStateSelected];
         
         
     }
