@@ -39,8 +39,12 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="r31-Ug-ecr">
                         <rect key="frame" x="15" y="8" width="48" height="48"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="36" id="0Cq-e6-VNP"/>
-                            <constraint firstAttribute="height" constant="36" id="C9o-RS-w99"/>
+                            <constraint firstAttribute="width" constant="36" id="0Cq-e6-VNP">
+                                <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                            </constraint>
+                            <constraint firstAttribute="height" constant="36" id="C9o-RS-w99">
+                                <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -106,7 +110,9 @@
                     </textView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="r31-Ug-ecr" firstAttribute="top" secondItem="0pf-gK-TsT" secondAttribute="top" constant="15" id="0DG-QD-1kG"/>
+                    <constraint firstItem="r31-Ug-ecr" firstAttribute="top" secondItem="0pf-gK-TsT" secondAttribute="top" constant="15" id="0DG-QD-1kG">
+                        <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                    </constraint>
                     <constraint firstAttribute="bottom" secondItem="hbq-de-DJ9" secondAttribute="bottom" constant="8" id="PRl-wH-pV1"/>
                     <constraint firstItem="S9E-OU-eaW" firstAttribute="top" secondItem="0pf-gK-TsT" secondAttribute="top" constant="16" id="TSw-58-JVV"/>
                     <constraint firstItem="33S-Wi-BT3" firstAttribute="leading" secondItem="r31-Ug-ecr" secondAttribute="trailing" constant="8" id="Vlj-U0-SMZ"/>
