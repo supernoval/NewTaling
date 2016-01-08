@@ -298,12 +298,24 @@
         
         if (isSuccess) {
             
+            if (_block) {
+                
+                _block(YES);
+            }
             [CommonMethods showAlertString:@"评价成功" delegate:self tag:100];
             
             
         }
         else
         {
+            
+            
+            if (_block) {
+                
+                _block(NO);
+                
+            }
+            
             [CommonMethods showDefaultErrorString:@"评价失败，请重试"];
             
             
@@ -321,5 +333,13 @@
         [self.navigationController popViewControllerAnimated:YES];
         
     }
+}
+
+
+-(void)setblock:(CommentBlock)block
+{
+    _block = block;
+    
+    
 }
 @end

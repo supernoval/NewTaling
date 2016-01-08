@@ -33,7 +33,7 @@
     _commentArry = [[NSMutableArray alloc]init];
     
     _index = 1;
-    _size = 3;
+    _size = 10;
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -44,19 +44,16 @@
     _appraiseWidth.constant = ScreenWidth/2;
     _collectWidth.constant = ScreenWidth/2;
     
-
+      [self headerRefresh];
 //    [self getData];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self getData];
+   
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 - (void)headerRefresh{
     _index = 1;
@@ -574,6 +571,18 @@
     
     CommentTVC *comment = [self.storyboard instantiateViewControllerWithIdentifier:@"CommentTVC"];
     comment.item = item;
+    
+    [comment setblock:^(BOOL success) {
+       
+        if (success) {
+            
+            _index ++;
+            
+            [self getData];
+            
+        }
+        
+    }];
     [self.navigationController pushViewController:comment animated:YES];
 }
 

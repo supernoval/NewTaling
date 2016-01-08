@@ -9,8 +9,13 @@
 #import "BaseTableViewController.h"
 #import "ModelItem.h"
 
-@interface CommentTVC : BaseTableViewController
+typedef void (^CommentBlock)(BOOL success);
 
+@interface CommentTVC : BaseTableViewController
+{
+    CommentBlock _block;
+    
+}
 - (IBAction)cancelAction:(id)sender;
 
 - (IBAction)completeAction:(id)sender;
@@ -25,4 +30,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *advantageLabel;
 
 @property (nonatomic, strong)ModelItem *item;
+
+
+-(void)setblock:(CommentBlock)block;
+
+
 @end

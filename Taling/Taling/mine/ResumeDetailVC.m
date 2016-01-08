@@ -537,6 +537,7 @@
         
         CommentViewController *commentVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CommentViewController"];
         commentVC.resumeid = self.item.resumesId;
+        
         [self.navigationController pushViewController:commentVC animated:YES];
         
         
