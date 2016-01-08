@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SummaryCell" rowHeight="89" id="Hwg-Aq-azC" customClass="SummaryCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SummaryCell" rowHeight="124" id="Hwg-Aq-azC" customClass="SummaryCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hwg-Aq-azC" id="rhR-os-Xik">
@@ -33,50 +33,58 @@
                             </mask>
                         </variation>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="这是一份什么样的简历这是一份什么样的简历这是一份什么样的简历这是一份什么样的简历这是一份什么样的简历这是一份这是一份" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMq-Wb-c69">
-                        <rect key="frame" x="15" y="29" width="290" height="62"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BK0-1O-TSC">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                    </textView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="BMq-Wb-c69" firstAttribute="leading" secondItem="rhR-os-Xik" secondAttribute="leading" constant="15" id="5ni-pG-wXf"/>
                     <constraint firstAttribute="trailing" secondItem="vLF-qB-Bai" secondAttribute="trailing" constant="15" id="K7m-cS-q0J"/>
-                    <constraint firstAttribute="bottom" secondItem="BMq-Wb-c69" secondAttribute="bottom" constant="4" id="ULa-df-RTb"/>
-                    <constraint firstAttribute="trailing" secondItem="BMq-Wb-c69" secondAttribute="trailing" constant="15" id="iRg-kK-cTQ"/>
+                    <constraint firstAttribute="bottom" secondItem="BK0-1O-TSC" secondAttribute="bottom" constant="8" id="M4Y-Mt-mRW"/>
+                    <constraint firstAttribute="trailing" secondItem="BK0-1O-TSC" secondAttribute="trailing" constant="8" id="iIy-Y9-WWc"/>
                     <constraint firstItem="vLF-qB-Bai" firstAttribute="top" secondItem="rhR-os-Xik" secondAttribute="top" constant="8" id="juL-uA-Rdu"/>
-                    <constraint firstItem="BMq-Wb-c69" firstAttribute="top" secondItem="vLF-qB-Bai" secondAttribute="bottom" id="lOE-fQ-wKp"/>
                     <constraint firstItem="vLF-qB-Bai" firstAttribute="leading" secondItem="rhR-os-Xik" secondAttribute="leading" constant="15" id="p38-L2-wcp"/>
+                    <constraint firstItem="BK0-1O-TSC" firstAttribute="top" secondItem="vLF-qB-Bai" secondAttribute="bottom" constant="7" id="s4N-6V-IUl"/>
+                    <constraint firstItem="BK0-1O-TSC" firstAttribute="leading" secondItem="rhR-os-Xik" secondAttribute="leading" constant="8" id="uto-iS-5NQ"/>
                 </constraints>
                 <variation key="default">
+                    <mask key="subviews">
+                        <exclude reference="BK0-1O-TSC"/>
+                    </mask>
                     <mask key="constraints">
                         <exclude reference="K7m-cS-q0J"/>
                         <exclude reference="juL-uA-Rdu"/>
                         <exclude reference="p38-L2-wcp"/>
-                        <exclude reference="5ni-pG-wXf"/>
-                        <exclude reference="ULa-df-RTb"/>
-                        <exclude reference="iRg-kK-cTQ"/>
-                        <exclude reference="lOE-fQ-wKp"/>
+                        <exclude reference="M4Y-Mt-mRW"/>
+                        <exclude reference="iIy-Y9-WWc"/>
+                        <exclude reference="s4N-6V-IUl"/>
+                        <exclude reference="uto-iS-5NQ"/>
                     </mask>
                 </variation>
                 <variation key="heightClass=regular-widthClass=compact">
+                    <mask key="subviews">
+                        <include reference="BK0-1O-TSC"/>
+                    </mask>
                     <mask key="constraints">
                         <include reference="K7m-cS-q0J"/>
                         <include reference="juL-uA-Rdu"/>
                         <include reference="p38-L2-wcp"/>
-                        <include reference="5ni-pG-wXf"/>
-                        <include reference="ULa-df-RTb"/>
-                        <include reference="iRg-kK-cTQ"/>
-                        <include reference="lOE-fQ-wKp"/>
+                        <include reference="M4Y-Mt-mRW"/>
+                        <include reference="iIy-Y9-WWc"/>
+                        <include reference="s4N-6V-IUl"/>
+                        <include reference="uto-iS-5NQ"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
             <connections>
-                <outlet property="contentLabel" destination="BMq-Wb-c69" id="8vt-tm-9vG"/>
+                <outlet property="contentTF" destination="BK0-1O-TSC" id="Kbc-Xl-pAp"/>
                 <outlet property="titleLabel" destination="vLF-qB-Bai" id="4BW-dV-2fh"/>
             </connections>
-            <point key="canvasLocation" x="351" y="228.5"/>
+            <point key="canvasLocation" x="351" y="245.5"/>
         </tableViewCell>
     </objects>
 </document>

@@ -16,5 +16,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *idLabel;
 
-@property (strong, nonatomic) IBOutlet UILabel *commentLabel;
+
+@property (weak, nonatomic) IBOutlet UITextView *commentTF;
+
+
 @end

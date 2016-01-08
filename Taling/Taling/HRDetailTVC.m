@@ -595,7 +595,7 @@
                     cell.titleLabel.textColor = kTextLightGrayColor;
                     cell.titleLabel.font = FONT_14;
                     
-                    cell.contentLabel.text = hRitem.speciality;
+                    cell.contentTF.text = hRitem.speciality;
                     return cell;
                 }
                     break;
@@ -611,8 +611,8 @@
                     cell.titleLabel.textColor = kTextLightGrayColor;
                     cell.titleLabel.font = FONT_14;
                     
-                    cell.contentLabel.textColor = kBlueColor;
-                    cell.contentLabel.text = [CommonMethods getServicedComList:hRitem.customerCompany];
+                    cell.contentTF.textColor = kBlueColor;
+                    cell.contentTF.text = [CommonMethods getServicedComList:hRitem.customerCompany];
                     return cell;
                     
                 }
@@ -714,7 +714,7 @@
                 
                 //评论内容
                 
-                cell.commentLabel.text = oneComment.comment;
+                cell.commentTF.text = oneComment.comment;
                 
                 return cell;
                 

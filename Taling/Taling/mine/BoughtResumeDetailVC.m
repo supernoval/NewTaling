@@ -44,7 +44,14 @@
     _appraiseWidth.constant = ScreenWidth/2;
     _collectWidth.constant = ScreenWidth/2;
     
-      [self headerRefresh];
+    
+    
+    
+    
+    
+    
+    
+    [self headerRefresh];
 //    [self getData];
 }
 
@@ -415,7 +422,7 @@
                 }
                 
                 cell.titleLabel.text = @"人才概述";
-                cell.contentLabel.text = item.summary;
+                cell.contentTF.text = item.summary;
                 return cell;
                 
             }else if (indexPath.row == 1){
@@ -427,7 +434,7 @@
 
                 cell.titleLabel.text = @"经历概述";
                 
-                cell.contentLabel.text = [self getResumeExperience];
+                cell.contentTF.text = [self getResumeExperience];
                 return cell;
             }
         }
@@ -507,7 +514,7 @@
                 
                 //评论内容
                 
-                cell.commentLabel.text = oneComment.comment;
+                cell.commentTF.text = oneComment.comment;
                 
             }
             
@@ -576,7 +583,11 @@
        
         if (success) {
             
-            _index ++;
+            if (_commentArry.count > _size) {
+                
+               _index ++;
+            }
+        
             
             [self getData];
             

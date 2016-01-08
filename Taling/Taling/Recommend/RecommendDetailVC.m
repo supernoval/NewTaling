@@ -334,7 +334,12 @@
             
         case 2:
         {
-            return 40+[StringHeight heightWithText:item.summary font:FONT_14 constrainedToWidth:ScreenWidth-30];
+            CGFloat height  = [StringHeight heightWithText:item.summary font:FONT_14 constrainedToWidth:ScreenWidth-30];
+            if (height < 30) {
+                height = 30;
+                
+            }
+            return 40+height;
         }
             break;
             
@@ -441,7 +446,7 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
             //概述
-            cell.contentLabel.text = item.summary;
+            cell.contentTF.text = item.summary;
             
             return cell;
         }
@@ -519,7 +524,7 @@
                 
                 //评论内容
                 
-                cell.commentLabel.text = oneComment.comment;
+                cell.commentTF.text = oneComment.comment;
 
                 
             }

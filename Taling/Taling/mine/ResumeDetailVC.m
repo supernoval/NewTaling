@@ -423,7 +423,7 @@
             if (indexPath.row < _commentArry.count) {
                 
                 NSDictionary *oneComment = [_commentArry objectAtIndex:indexPath.row];
-                commentCell.commentLabel.text = [oneComment objectForKey:@"comment"];
+                commentCell.commentTF.text = [oneComment objectForKey:@"comment"];
                 commentCell.nameLabel.text = @"匿名用户";
                 
                 if ([[oneComment objectForKey:@"addTime"] length]>10) {

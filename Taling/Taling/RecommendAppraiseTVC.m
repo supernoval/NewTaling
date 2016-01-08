@@ -236,7 +236,7 @@
         
         //评论内容
         
-        cell.commentLabel.text = oneComment.comment;
+        cell.commentTF.text = oneComment.comment;
         
     }
 
