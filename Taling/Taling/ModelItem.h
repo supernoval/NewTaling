@@ -44,7 +44,10 @@
 
 @property (strong, nonatomic) NSArray *skills;
 @property (strong, nonatomic) NSString *status;
+
 @property (strong, nonatomic) NSString *summary;
+@property (nonatomic,strong)   NSArray *topsentences; //这个替换上面的summary   里面字典的key: id sentence rank ownerId
+
 @property (strong, nonatomic) NSString *url;
 @property (strong, nonatomic) NSString *userId;
 @property (nonatomic,strong)  NSString *username;
