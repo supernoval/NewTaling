@@ -43,8 +43,8 @@
     
     
     //注册环信
-    [[EaseMob sharedInstance] registerSDKWithAppKey:kEaseMobAppKey apnsCertName:kEaseMobPushCertNameProduct];
-    [[EaseMob sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+//    [[EaseMob sharedInstance] registerSDKWithAppKey:kEaseMobAppKey apnsCertName:kEaseMobPushCertNameProduct];
+//    [[EaseMob sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
     
     
     

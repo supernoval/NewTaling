@@ -25,7 +25,8 @@
     
     BOOL _isSearch;//是不是搜索
     
-
+    BOOL firstAppeal;
+    
 }
 
 @end
@@ -52,7 +53,7 @@
     pageindex = 1;
     size = 10;
     
-    [self getData];
+  
     
     [self setTabBarColor];
     
@@ -63,6 +64,16 @@
 {
     [super viewWillAppear:animated];
     
+    
+
+    
+    
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
     //登陆注册环信账号
     [self CheckEasyMobLogin];
@@ -77,23 +88,20 @@
         UINavigationController *loginNav = [sb instantiateViewControllerWithIdentifier:@"LoginNav"];
         
         [self presentViewController:loginNav animated:YES completion:nil];
-
+        
     }
     else
     {
-
+        if (!firstAppeal) {
+            
+            firstAppeal = YES;
+            
+             [self getData];
+            
+            
+        }
         
     }
-    
-    
-    
-}
-
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    
     
 }
 -(void)viewWillDisappear:(BOOL)animated
