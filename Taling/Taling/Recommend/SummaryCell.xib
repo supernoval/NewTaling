@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SummaryCell" rowHeight="124" id="Hwg-Aq-azC" customClass="SummaryCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SummaryCell" rowHeight="85" id="Hwg-Aq-azC" customClass="SummaryCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hwg-Aq-azC" id="rhR-os-Xik">
@@ -16,6 +16,7 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="人才概述" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLF-qB-Bai">
                         <rect key="frame" x="15" y="8" width="290" height="18"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="cIh-2W-mtD"/>
                         </constraints>
@@ -33,58 +34,59 @@
                             </mask>
                         </variation>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BK0-1O-TSC">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBo-c2-UWU">
+                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                        <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
-                    </textView>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="vLF-qB-Bai" secondAttribute="trailing" constant="15" id="K7m-cS-q0J"/>
-                    <constraint firstAttribute="bottom" secondItem="BK0-1O-TSC" secondAttribute="bottom" constant="8" id="M4Y-Mt-mRW"/>
-                    <constraint firstAttribute="trailing" secondItem="BK0-1O-TSC" secondAttribute="trailing" constant="8" id="iIy-Y9-WWc"/>
                     <constraint firstItem="vLF-qB-Bai" firstAttribute="top" secondItem="rhR-os-Xik" secondAttribute="top" constant="8" id="juL-uA-Rdu"/>
+                    <constraint firstItem="wBo-c2-UWU" firstAttribute="top" secondItem="vLF-qB-Bai" secondAttribute="bottom" constant="5" id="opF-gg-wgb"/>
                     <constraint firstItem="vLF-qB-Bai" firstAttribute="leading" secondItem="rhR-os-Xik" secondAttribute="leading" constant="15" id="p38-L2-wcp"/>
-                    <constraint firstItem="BK0-1O-TSC" firstAttribute="top" secondItem="vLF-qB-Bai" secondAttribute="bottom" constant="7" id="s4N-6V-IUl"/>
-                    <constraint firstItem="BK0-1O-TSC" firstAttribute="leading" secondItem="rhR-os-Xik" secondAttribute="leading" constant="8" id="uto-iS-5NQ"/>
+                    <constraint firstItem="wBo-c2-UWU" firstAttribute="leading" secondItem="rhR-os-Xik" secondAttribute="leading" constant="15" id="qJY-ZI-Tto"/>
+                    <constraint firstAttribute="trailing" secondItem="wBo-c2-UWU" secondAttribute="trailing" constant="15" id="xNF-5k-WDv"/>
+                    <constraint firstAttribute="bottom" secondItem="wBo-c2-UWU" secondAttribute="bottom" constant="8" id="zZE-bj-FHa"/>
                 </constraints>
                 <variation key="default">
                     <mask key="subviews">
-                        <exclude reference="BK0-1O-TSC"/>
+                        <exclude reference="wBo-c2-UWU"/>
                     </mask>
                     <mask key="constraints">
                         <exclude reference="K7m-cS-q0J"/>
                         <exclude reference="juL-uA-Rdu"/>
                         <exclude reference="p38-L2-wcp"/>
-                        <exclude reference="M4Y-Mt-mRW"/>
-                        <exclude reference="iIy-Y9-WWc"/>
-                        <exclude reference="s4N-6V-IUl"/>
-                        <exclude reference="uto-iS-5NQ"/>
+                        <exclude reference="opF-gg-wgb"/>
+                        <exclude reference="qJY-ZI-Tto"/>
+                        <exclude reference="xNF-5k-WDv"/>
+                        <exclude reference="zZE-bj-FHa"/>
                     </mask>
                 </variation>
                 <variation key="heightClass=regular-widthClass=compact">
                     <mask key="subviews">
-                        <include reference="BK0-1O-TSC"/>
+                        <include reference="wBo-c2-UWU"/>
                     </mask>
                     <mask key="constraints">
                         <include reference="K7m-cS-q0J"/>
                         <include reference="juL-uA-Rdu"/>
                         <include reference="p38-L2-wcp"/>
-                        <include reference="M4Y-Mt-mRW"/>
-                        <include reference="iIy-Y9-WWc"/>
-                        <include reference="s4N-6V-IUl"/>
-                        <include reference="uto-iS-5NQ"/>
+                        <include reference="opF-gg-wgb"/>
+                        <include reference="qJY-ZI-Tto"/>
+                        <include reference="xNF-5k-WDv"/>
+                        <include reference="zZE-bj-FHa"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
+            <animations/>
             <connections>
-                <outlet property="contentTF" destination="BK0-1O-TSC" id="Kbc-Xl-pAp"/>
+                <outlet property="contentTF" destination="wBo-c2-UWU" id="ypU-hd-PXH"/>
                 <outlet property="titleLabel" destination="vLF-qB-Bai" id="4BW-dV-2fh"/>
             </connections>
-            <point key="canvasLocation" x="351" y="245.5"/>
+            <point key="canvasLocation" x="351" y="225.5"/>
         </tableViewCell>
     </objects>
 </document>

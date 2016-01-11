@@ -334,11 +334,8 @@
             
         case 2:
         {
-            CGFloat height  = [StringHeight heightWithText:item.summary font:FONT_14 constrainedToWidth:ScreenWidth-30];
-            if (height < 30) {
-                height = 30;
-                
-            }
+            CGFloat height  = [StringHeight heightWithText:[CommonMethods getTopsentences:item.topsentences] font:FONT_14 constrainedToWidth:ScreenWidth-30];
+            
             return 40+height;
         }
             break;
@@ -446,7 +443,8 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
             //概述
-            cell.contentTF.text = item.summary;
+            cell.contentTF.text = [CommonMethods getTopsentences:item.topsentences];
+//            item.summary;
             
             return cell;
         }

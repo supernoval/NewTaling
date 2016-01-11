@@ -455,13 +455,13 @@
                     
                 case 1:
                 {
-                    return 32+ [StringHeight heightWithText:hRitem.speciality font:FONT_14 constrainedToWidth:ScreenWidth-30];
+                    return 40+ [StringHeight heightWithText:hRitem.speciality font:FONT_14 constrainedToWidth:ScreenWidth-30];
                 }
                     break;
                     
                 case 2:
                 {
-                    return 32+ [StringHeight heightWithText:[CommonMethods getServicedComList:hRitem.customerCompany] font:FONT_14 constrainedToWidth:ScreenWidth-30];
+                    return 40+ [StringHeight heightWithText:[CommonMethods getServicedComList:hRitem.customerCompany] font:FONT_14 constrainedToWidth:ScreenWidth-30];
                 }
                     break;
                     

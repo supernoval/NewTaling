@@ -728,6 +728,35 @@
 }
 
 
++ (NSString *)getTopsentences:(NSArray *)array{
+    
+    NSString *str = @"";
+    if ([array isKindOfClass:[NSArray class]]) {
+        
+        if (array.count > 0 && array != nil) {
+            for (NSInteger i=0; i<array.count; i++) {
+                NSDictionary *one = [array objectAtIndex:i];
+                NSString *oneSen = [one objectForKey:@"sentence"];
+                oneSen = [oneSen stringByAppendingString:@","];
+                str = [str stringByAppendingString:oneSen];
+            }
+            
+            str = [str substringToIndex:str.length-1];
+            
+        }else{
+            str = @"暂无数据";
+        }
+        
+    }else{
+        str = @"暂无数据";
+    }
+    
+    
+    
+    return str;
+}
+
+
 +(UIImage*) createImageWithColor:(UIColor*) color
 {
     CGRect rect=CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);

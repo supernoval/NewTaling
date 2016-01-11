@@ -45,6 +45,9 @@
     _phoneTF.delegate = self;
     _codeTF.delegate = self;
     
+    _iconImage.clipsToBounds = YES;
+    _iconImage.layer.cornerRadius = 4.0;
+    
     
 
     

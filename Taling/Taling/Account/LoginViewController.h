@@ -19,5 +19,6 @@
 
 @property (strong, nonatomic) IBOutlet UIView *accountView;
 @property (strong, nonatomic) IBOutlet UIView *codeView;
+@property (strong, nonatomic) IBOutlet UIImageView *iconImage;
 
 @end

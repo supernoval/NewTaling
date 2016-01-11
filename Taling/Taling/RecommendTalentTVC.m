@@ -59,7 +59,7 @@
 
 
 
-#pragma mark - 获取人才官推荐的简历
+#pragma mark - 获取人才官推荐的人才
 -(void)getData
 {
     NSString *userid = hRitem.id;

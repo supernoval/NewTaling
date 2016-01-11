@@ -11,6 +11,7 @@
 @interface SummaryCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UITextView *contentTF;
+
+@property (strong, nonatomic) IBOutlet UILabel *contentTF;
 
 @end

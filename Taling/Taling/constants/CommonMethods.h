@@ -121,6 +121,9 @@ typedef void (^upLoadPhotoBlock)(BOOL success,NSArray*results);
 #pragma mark- 工作技能
 + (NSString *)getTheSkills:(NSArray *)skillsArray;
 
+#pragma mark- 人才概述
++ (NSString *)getTopsentences:(NSArray *)array;
+
 #pragma mark- 将颜色转换为图片
 +(UIImage*) createImageWithColor:(UIColor*) color;
 

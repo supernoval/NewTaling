@@ -335,9 +335,9 @@
         case 1:
         {
             if (indexPath.row == 0) {
-                return 30+[StringHeight heightWithText:item.summary font:FONT_14 constrainedToWidth:ScreenWidth-30];
+                return 40+[StringHeight heightWithText:[CommonMethods getTopsentences:item.topsentences] font:FONT_14 constrainedToWidth:ScreenWidth-30];
             }else{
-                return 30+[StringHeight heightWithText:[self getResumeExperience] font:FONT_14 constrainedToWidth:ScreenWidth-30];
+                return 40+[StringHeight heightWithText:[self getResumeExperience] font:FONT_14 constrainedToWidth:ScreenWidth-30];
             }
         }
             break;
@@ -422,7 +422,7 @@
                 }
                 
                 cell.titleLabel.text = @"人才概述";
-                cell.contentTF.text = item.summary;
+                cell.contentTF.text = [CommonMethods getTopsentences:item.topsentences];
                 return cell;
                 
             }else if (indexPath.row == 1){

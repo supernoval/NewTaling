@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -16,6 +16,7 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="用户姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9E-OU-eaW">
                         <rect key="frame" x="71" y="8" width="241" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="PFI-dG-7RX"/>
                             <constraint firstAttribute="width" constant="152" id="WRn-aC-RH2"/>
@@ -38,12 +39,13 @@
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="r31-Ug-ecr">
                         <rect key="frame" x="15" y="8" width="48" height="48"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="36" id="0Cq-e6-VNP">
-                                <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="48"/>
                             </constraint>
                             <constraint firstAttribute="height" constant="36" id="C9o-RS-w99">
-                                <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="48"/>
                             </constraint>
                         </constraints>
                         <variation key="default">
@@ -61,6 +63,7 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="简历上传者" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33S-Wi-BT3">
                         <rect key="frame" x="71" y="35" width="241" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="ckb-eh-oiz"/>
                         </constraints>
@@ -80,6 +83,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-7-15" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1z-cR-NfP">
                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="84" id="Ooi-Qf-kmE"/>
                             <constraint firstAttribute="height" constant="18" id="VU5-cF-Ara"/>
@@ -102,6 +106,7 @@
                     </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hbq-de-DJ9">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -109,6 +114,7 @@
                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                     </textView>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstItem="r31-Ug-ecr" firstAttribute="top" secondItem="0pf-gK-TsT" secondAttribute="top" constant="15" id="0DG-QD-1kG">
                         <variation key="heightClass=regular-widthClass=compact" constant="8"/>
@@ -132,6 +138,8 @@
                         <exclude reference="hbq-de-DJ9"/>
                     </mask>
                     <mask key="constraints">
+                        <exclude reference="Zkq-yy-08m"/>
+                        <exclude reference="eHT-eY-XZa"/>
                         <exclude reference="0DG-QD-1kG"/>
                         <exclude reference="jfn-yY-KTQ"/>
                         <exclude reference="PRl-wH-pV1"/>
@@ -143,8 +151,6 @@
                         <exclude reference="Vlj-U0-SMZ"/>
                         <exclude reference="X3T-P0-Btr"/>
                         <exclude reference="bUh-iQ-sBe"/>
-                        <exclude reference="Zkq-yy-08m"/>
-                        <exclude reference="eHT-eY-XZa"/>
                     </mask>
                 </variation>
                 <variation key="heightClass=regular-widthClass=compact">
@@ -153,6 +159,8 @@
                         <include reference="hbq-de-DJ9"/>
                     </mask>
                     <mask key="constraints">
+                        <include reference="Zkq-yy-08m"/>
+                        <include reference="eHT-eY-XZa"/>
                         <include reference="0DG-QD-1kG"/>
                         <include reference="jfn-yY-KTQ"/>
                         <include reference="PRl-wH-pV1"/>
@@ -164,11 +172,10 @@
                         <include reference="Vlj-U0-SMZ"/>
                         <include reference="X3T-P0-Btr"/>
                         <include reference="bUh-iQ-sBe"/>
-                        <include reference="Zkq-yy-08m"/>
-                        <include reference="eHT-eY-XZa"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="commentTF" destination="hbq-de-DJ9" id="SGq-g7-xhJ"/>
                 <outlet property="headImageView" destination="r31-Ug-ecr" id="O7C-tK-XBe"/>
