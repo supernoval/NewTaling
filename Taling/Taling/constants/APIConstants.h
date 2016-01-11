@@ -9,9 +9,13 @@
 
 
 //本地测试
-//#define  kRequestHeader   @"http://192.168.40.234/taling-api"
+#define  kRequestHeader   @"http://192.168.40.59/taling-api"
 //正式
-#define  kRequestHeader     @"http://183.131.151.50/taling-api"
+//#define  kRequestHeader     @"http://139.196.189.203/taling-api"  //阿里云
+
+//#define  kRequestHeader     @"http://183.131.151.50/taling-api" //旧
+
+
 
 
 //注册
