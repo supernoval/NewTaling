@@ -1614,19 +1614,10 @@
 				1506DF711B89B40C007D1696 /* constants */,
 				1506DF4D1B89B36D007D1696 /* AppDelegate.h */,
 				1506DF4E1B89B36D007D1696 /* AppDelegate.m */,
-				1577164C1C449B920030DC0B /* MyTabBarController.h */,
-				1577164D1C449B920030DC0B /* MyTabBarController.m */,
-				157716491C449A710030DC0B /* RecommendNavi.h */,
-				1577164A1C449A710030DC0B /* RecommendNavi.m */,
 				1506DF7A1B89B457007D1696 /* Main.storyboard */,
 				1506DF561B89B36D007D1696 /* Images.xcassets */,
 				1506DF491B89B36D007D1696 /* Supporting Files */,
-				157716521C449C8D0030DC0B /* HRNavigationController.h */,
-				157716531C449C8D0030DC0B /* HRNavigationController.m */,
-				157716551C449CB80030DC0B /* MessageNavigationController.h */,
-				157716561C449CB80030DC0B /* MessageNavigationController.m */,
-				157716581C449CE30030DC0B /* MineNavigationController.h */,
-				157716591C449CE30030DC0B /* MineNavigationController.m */,
+				1577165B1C449E660030DC0B /* navigationcontrollers */,
 			);
 			path = Taling;
 			sourceTree = "<group>";
@@ -2505,6 +2496,23 @@
 				153F3BD81BD3641600C86F1A /* RecommendHeaderView.m */,
 			);
 			name = recommendHeaderView;
+			sourceTree = "<group>";
+		};
+		1577165B1C449E660030DC0B /* navigationcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				1577164C1C449B920030DC0B /* MyTabBarController.h */,
+				1577164D1C449B920030DC0B /* MyTabBarController.m */,
+				157716491C449A710030DC0B /* RecommendNavi.h */,
+				1577164A1C449A710030DC0B /* RecommendNavi.m */,
+				157716521C449C8D0030DC0B /* HRNavigationController.h */,
+				157716531C449C8D0030DC0B /* HRNavigationController.m */,
+				157716551C449CB80030DC0B /* MessageNavigationController.h */,
+				157716561C449CB80030DC0B /* MessageNavigationController.m */,
+				157716581C449CE30030DC0B /* MineNavigationController.h */,
+				157716591C449CE30030DC0B /* MineNavigationController.m */,
+			);
+			name = navigationcontrollers;
 			sourceTree = "<group>";
 		};
 		1579153A1B8F52C400E31111 /* mine */ = {

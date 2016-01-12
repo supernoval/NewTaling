@@ -365,9 +365,9 @@
     CGFloat imageWith = imageSize.width;
     
     
-    CGFloat needHeight =  imageHeight*ScreenWidth / imageWith;
+    CGFloat needHeight =  imageHeight*300 / imageWith;
     
-    return [self imageWithImage:image scaledToSize:CGSizeMake(imageWith, needHeight)];
+    return [self imageWithImage:image scaledToSize:CGSizeMake(300, needHeight)];
     
 }
 #pragma mark - 将中间字符变成 ****

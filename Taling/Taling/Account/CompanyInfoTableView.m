@@ -376,6 +376,8 @@
     
     NSData *data = UIImagePNGRepresentation(cutImage);
     
+    NSLog(@"dataSize:%ld",data.length);
+    
     if (selectedIndex == 0) {
         
         SDPhotoItem *logoItem = [[SDPhotoItem alloc]init];
