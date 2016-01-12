@@ -51,21 +51,21 @@
     
     
     //注册高德地图
-    [MAMapServices sharedServices].apiKey = kGaodeMapKey;
+//    [MAMapServices sharedServices].apiKey = kGaodeMapKey;
     
     //sharesdk sms 注册
-    [SMSSDK registerApp:kShareSDKSMSAppKey withSecret:kShareSDKSMSAppSecret];
+//    [SMSSDK registerApp:kShareSDKSMSAppKey withSecret:kShareSDKSMSAppSecret];
     
     
-    if ([[UIDevice currentDevice].systemVersion floatValue] >=8.0)
-    {
-        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
-        
-    }
-    else
-    {
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes: UIRemoteNotificationTypeBadge |UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert];
-    }
+//    if ([[UIDevice currentDevice].systemVersion floatValue] >=8.0)
+//    {
+//        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+//        
+//    }
+//    else
+//    {
+//        [[UIApplication sharedApplication] registerForRemoteNotificationTypes: UIRemoteNotificationTypeBadge |UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert];
+//    }
     
     
     //注册微信

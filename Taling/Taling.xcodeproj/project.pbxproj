@@ -3485,7 +3485,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "61cf057d-3f4f-44bf-9ac6-87f411e99630";
+				PROVISIONING_PROFILE = "38dfd5b0-2e09-46a1-8e29-19bf7df1d5e0";
 			};
 			name = Release;
 		};
