@@ -65,6 +65,7 @@
 }
 
 
+
 -(void)popViewController
 {
     [self.navigationController popViewControllerAnimated:YES];
@@ -136,6 +137,12 @@
     
 }
 
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+    
+}
 
 
 

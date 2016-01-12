@@ -35,11 +35,13 @@
 
     [[UITabBar appearance] setTintColor:kTabbarTintColor];
     [[UITabBar appearance]setBarTintColor:[UIColor whiteColor]];
-    
 
+     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+    
+     
     
     
-   #warning 打包注意修改 certname
+//   #warning 打包注意修改 certname
     
     
     //注册环信

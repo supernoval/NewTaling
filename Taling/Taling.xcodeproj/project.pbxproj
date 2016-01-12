@@ -222,6 +222,12 @@
 		153F3BD41BD27CBC00C86F1A /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 153F3BCC1BD27CBC00C86F1A /* libopencore-amrnb.a */; };
 		153F3BD51BD27CBC00C86F1A /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 153F3BD01BD27CBC00C86F1A /* libopencore-amrwb.a */; };
 		153F3BD91BD3641600C86F1A /* RecommendHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 153F3BD81BD3641600C86F1A /* RecommendHeaderView.m */; };
+		1577164B1C449A710030DC0B /* RecommendNavi.m in Sources */ = {isa = PBXBuildFile; fileRef = 1577164A1C449A710030DC0B /* RecommendNavi.m */; };
+		1577164E1C449B920030DC0B /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1577164D1C449B920030DC0B /* MyTabBarController.m */; };
+		157716511C449C170030DC0B /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157716501C449C170030DC0B /* BaseNavigationController.m */; };
+		157716541C449C8D0030DC0B /* HRNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157716531C449C8D0030DC0B /* HRNavigationController.m */; };
+		157716571C449CB80030DC0B /* MessageNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157716561C449CB80030DC0B /* MessageNavigationController.m */; };
+		1577165A1C449CE30030DC0B /* MineNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157716591C449CE30030DC0B /* MineNavigationController.m */; };
 		1579153D1B8F52E100E31111 /* MineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1579153C1B8F52E100E31111 /* MineTableViewController.m */; };
 		157C02CC1C1C4C160092AFA1 /* NewRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157C02CB1C1C4C160092AFA1 /* NewRegistViewController.m */; };
 		157C02D11C1C5C360092AFA1 /* PersonInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 157C02D01C1C5C360092AFA1 /* PersonInfoTVC.m */; };
@@ -904,6 +910,18 @@
 		153F3BD01BD27CBC00C86F1A /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
 		153F3BD71BD3641600C86F1A /* RecommendHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendHeaderView.h; sourceTree = "<group>"; };
 		153F3BD81BD3641600C86F1A /* RecommendHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendHeaderView.m; sourceTree = "<group>"; };
+		157716491C449A710030DC0B /* RecommendNavi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecommendNavi.h; path = Recommend/RecommendNavi.h; sourceTree = "<group>"; };
+		1577164A1C449A710030DC0B /* RecommendNavi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecommendNavi.m; path = Recommend/RecommendNavi.m; sourceTree = "<group>"; };
+		1577164C1C449B920030DC0B /* MyTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTabBarController.h; sourceTree = "<group>"; };
+		1577164D1C449B920030DC0B /* MyTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTabBarController.m; sourceTree = "<group>"; };
+		1577164F1C449C170030DC0B /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		157716501C449C170030DC0B /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		157716521C449C8D0030DC0B /* HRNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRNavigationController.h; sourceTree = "<group>"; };
+		157716531C449C8D0030DC0B /* HRNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRNavigationController.m; sourceTree = "<group>"; };
+		157716551C449CB80030DC0B /* MessageNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageNavigationController.h; sourceTree = "<group>"; };
+		157716561C449CB80030DC0B /* MessageNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageNavigationController.m; sourceTree = "<group>"; };
+		157716581C449CE30030DC0B /* MineNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineNavigationController.h; sourceTree = "<group>"; };
+		157716591C449CE30030DC0B /* MineNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineNavigationController.m; sourceTree = "<group>"; };
 		157915371B8F4F3200E31111 /* APIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIConstants.h; sourceTree = "<group>"; };
 		1579153B1B8F52E100E31111 /* MineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewController.h; sourceTree = "<group>"; };
 		1579153C1B8F52E100E31111 /* MineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewController.m; sourceTree = "<group>"; };
@@ -1596,9 +1614,19 @@
 				1506DF711B89B40C007D1696 /* constants */,
 				1506DF4D1B89B36D007D1696 /* AppDelegate.h */,
 				1506DF4E1B89B36D007D1696 /* AppDelegate.m */,
+				1577164C1C449B920030DC0B /* MyTabBarController.h */,
+				1577164D1C449B920030DC0B /* MyTabBarController.m */,
+				157716491C449A710030DC0B /* RecommendNavi.h */,
+				1577164A1C449A710030DC0B /* RecommendNavi.m */,
 				1506DF7A1B89B457007D1696 /* Main.storyboard */,
 				1506DF561B89B36D007D1696 /* Images.xcassets */,
 				1506DF491B89B36D007D1696 /* Supporting Files */,
+				157716521C449C8D0030DC0B /* HRNavigationController.h */,
+				157716531C449C8D0030DC0B /* HRNavigationController.m */,
+				157716551C449CB80030DC0B /* MessageNavigationController.h */,
+				157716561C449CB80030DC0B /* MessageNavigationController.m */,
+				157716581C449CE30030DC0B /* MineNavigationController.h */,
+				157716591C449CE30030DC0B /* MineNavigationController.m */,
 			);
 			path = Taling;
 			sourceTree = "<group>";
@@ -1839,6 +1867,8 @@
 				1506E0B31B89B608007D1696 /* BaseTableViewController.m */,
 				1506E0B41B89B608007D1696 /* BaseViewController.h */,
 				1506E0B51B89B608007D1696 /* BaseViewController.m */,
+				1577164F1C449C170030DC0B /* BaseNavigationController.h */,
+				157716501C449C170030DC0B /* BaseNavigationController.m */,
 			);
 			path = BaseViewControllers;
 			sourceTree = "<group>";
@@ -3071,6 +3101,7 @@
 				13AA5E5D1B95C4F900AB477E /* TLRequest.m in Sources */,
 				153F3B711BD279E000C86F1A /* EMSDWebImageDownloader.m in Sources */,
 				153F3B651BD279E000C86F1A /* MWCaptionView.m in Sources */,
+				1577164E1C449B920030DC0B /* MyTabBarController.m in Sources */,
 				1506E09F1B89B582007D1696 /* SDWebImageDownloader.m in Sources */,
 				153F3B7D1BD279E000C86F1A /* UIView+EMWebCacheOperation.m in Sources */,
 				B3FB2A4B1BC28FFE003ACC5D /* BindDetailTVC.m in Sources */,
@@ -3115,8 +3146,10 @@
 				D27D7CFD1C1A96C800C97F67 /* CommentItem.m in Sources */,
 				B300009E1BC3CFCC006B7B08 /* BuyMessageCell.m in Sources */,
 				1506DFFB1B89B506007D1696 /* SDPhotoGroup.m in Sources */,
+				157716511C449C170030DC0B /* BaseNavigationController.m in Sources */,
 				B3CF9D1A1C13307100AD158F /* RecommendAppraiseTVC.m in Sources */,
 				B30000A41BC3D41A006B7B08 /* CommentMessageTVC.m in Sources */,
+				157716541C449C8D0030DC0B /* HRNavigationController.m in Sources */,
 				15F33AF61BDD237C00F34B6B /* PrivacyViewController.m in Sources */,
 				B3D3F9D41BC0F32B00044F0F /* CommentCell.m in Sources */,
 				13AA5EAA1B95CCEF00AB477E /* AFHTTPRequestOperationManager.m in Sources */,
@@ -3185,6 +3218,7 @@
 				153F3B821BD279E000C86F1A /* PSTCollectionViewData.m in Sources */,
 				D2B8E7B01C17B7FC00445EA6 /* TagButton.m in Sources */,
 				1506E12F1B89B646007D1696 /* Order.m in Sources */,
+				1577165A1C449CE30030DC0B /* MineNavigationController.m in Sources */,
 				153F3AEF1BD277FB00C86F1A /* ChatSendHelper.m in Sources */,
 				153F3BAE1BD27A4200C86F1A /* EMCDDeviceManagerBase.m in Sources */,
 				153F3B811BD279E000C86F1A /* PSTCollectionViewController.m in Sources */,
@@ -3207,6 +3241,7 @@
 				1506E09B1B89B582007D1696 /* NSData+ImageContentType.m in Sources */,
 				1302D78E1BDF49BF00FB4D11 /* WXUtil.mm in Sources */,
 				153F3AF31BD277FB00C86F1A /* LocationViewController.m in Sources */,
+				1577164B1C449A710030DC0B /* RecommendNavi.m in Sources */,
 				1506DF811B89B46D007D1696 /* CommonMethods.m in Sources */,
 				B300008F1BC3B2A8006B7B08 /* MessageCell.m in Sources */,
 				153F3BB91BD27AA300C86F1A /* SRRefreshView.m in Sources */,
@@ -3251,6 +3286,7 @@
 				13D5F0FB1BA04FED001A8AFF /* SellOrderCell.m in Sources */,
 				1302D7951BDF4AAF00FB4D11 /* PayOrderInfoModel.m in Sources */,
 				15EE6BF51B93072500FBD86C /* MapAnnotation.m in Sources */,
+				157716571C449CB80030DC0B /* MessageNavigationController.m in Sources */,
 				D27021211BC7744900428B31 /* BuyAndCashTVC.m in Sources */,
 				153F3BA81BD27A4200C86F1A /* EMAudioPlayerUtil.m in Sources */,
 				D2B8E7AA1C169E3400445EA6 /* BoughtResumeDetailVC.m in Sources */,
@@ -3441,7 +3477,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3d826bef-7b5b-488d-869d-ffff975fce4c";
+				PROVISIONING_PROFILE = "61cf057d-3f4f-44bf-9ac6-87f411e99630";
 			};
 			name = Release;
 		};

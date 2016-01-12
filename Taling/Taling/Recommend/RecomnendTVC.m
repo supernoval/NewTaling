@@ -36,6 +36,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+   
+    
     _isSearch = NO;
     
     _JDArray = [[NSMutableArray alloc]init];
@@ -96,7 +98,7 @@
             
             firstAppeal = YES;
             
-             [self getData];
+             [self.tableView.header beginRefreshing];
             
             
         }
@@ -109,6 +111,9 @@
     [super viewWillDisappear:animated];
         
 }
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
