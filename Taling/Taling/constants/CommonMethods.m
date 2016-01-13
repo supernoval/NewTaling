@@ -737,11 +737,11 @@
             for (NSInteger i=0; i<array.count; i++) {
                 NSDictionary *one = [array objectAtIndex:i];
                 NSString *oneSen = [one objectForKey:@"sentence"];
-                oneSen = [oneSen stringByAppendingString:@","];
+                oneSen = [oneSen stringByAppendingString:@";\n\n"];
                 str = [str stringByAppendingString:oneSen];
             }
             
-            str = [str substringToIndex:str.length-1];
+//            str = [str substringToIndex:str.length-1];
             
         }else{
             str = @"暂无数据";
