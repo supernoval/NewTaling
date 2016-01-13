@@ -381,7 +381,7 @@
             
             
         }
-        
+        adCell.selectionStyle = UITableViewCellSelectionStyleNone;
         adCell.textLabel.text = @"赞助商";
         adCell.textLabel.font = FONT_13;
         adCell.textLabel.textColor = kLightTintColor;
