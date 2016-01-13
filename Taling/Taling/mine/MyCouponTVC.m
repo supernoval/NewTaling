@@ -109,14 +109,14 @@
         //有效期
         NSString *startTime = oneItem.startTime;
         if (startTime.length>10) {
-            startTime = [startTime substringFromIndex:10];
+            startTime = [startTime substringToIndex:10];
         }
         
         NSString *endTime = oneItem.endTime;
         if (endTime.length>10) {
-            endTime = [endTime substringFromIndex:10];
+            endTime = [endTime substringToIndex:10];
         }
-        cell.timeLabel.text = [NSString stringWithFormat:@"有效期:%@-%@",startTime,endTime];
+        cell.timeLabel.text = [NSString stringWithFormat:@"有效期:%@－%@",startTime,endTime];
         return cell;
     }else{
         
