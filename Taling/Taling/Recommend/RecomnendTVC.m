@@ -43,9 +43,12 @@
     _JDArray = [[NSMutableArray alloc]init];
     
     
-    _searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(50, 0, ScreenWidth, 44)];
+    _searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 44)];
     _searchBar.delegate = self;
     _searchBar.placeholder = @"行业、职位、城市、资历";
+    
+
+    
     self.navigationItem.titleView = _searchBar;
 
     [self.tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
@@ -357,6 +360,12 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    if (_JDArray.count == 0) {
+        
+        return 44;
+        
+    }
     return 79;
 }
 
@@ -364,6 +373,10 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    if (_JDArray.count == 0) {
+        
+        return 1;
+    }
     return _JDArray.count;
 }
 
@@ -372,6 +385,23 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    if (_JDArray.count == 0) {
+        
+        UITableViewCell *blankCell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"blankCell"];
+        
+        blankCell.backgroundColor = [UIColor clearColor];
+        
+        blankCell.textLabel.text = @"暂无数据";
+        
+        blankCell.textLabel.textAlignment = NSTextAlignmentCenter;
+        
+        blankCell.userInteractionEnabled = NO;
+        
+        blankCell.textLabel.textColor = kDarkGrayColor;
+        
+        return blankCell;
+        
+    }
     static NSString *cellId = @"RecommendCell";
     RecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (cell == nil) {
@@ -501,7 +531,7 @@
     _isSearch = YES;
     pageindex = 1;
     //请求搜索数据
-    [self getData];
+    [self.tableView.header beginRefreshing];
     
 }
 
@@ -512,7 +542,7 @@
     searchBar.showsCancelButton = NO;
     _isSearch = NO;
     pageindex = 1;
-    [self getData];
+    [self.tableView.header beginRefreshing];
 }
 
 

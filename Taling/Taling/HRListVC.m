@@ -376,7 +376,7 @@
     _isSearch = YES;
     index = 1;
     //请求搜索数据
-    [self requestHRList];
+    [self.tableView.header beginRefreshing];
     
     
 }
@@ -388,7 +388,7 @@
     searchBar.showsCancelButton = NO;
     _isSearch = NO;
     index = 1;
-    [self requestHRList];
+    [self.tableView.header beginRefreshing];
 }
 
 //取消searchbar背景色

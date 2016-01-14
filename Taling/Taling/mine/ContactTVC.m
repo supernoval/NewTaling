@@ -25,12 +25,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"联系";
-    self.tableView.tableFooterView.frame = CGRectMake(0, 0, ScreenWidth, 182);
+    self.tableView.tableFooterView.frame = CGRectMake(0, 0, ScreenWidth, 150);
     _positionTF.delegate = self;
     
     
-    _titleStr = [NSString stringWithFormat:@"%@先生/小姐:您好，我是%@企业的招聘负责人，目前在网络上看浏览到您的简历信息，同时我单位有",oneItem.name,[UserInfo getcompany]];
-    _infoStr = @"招聘职位正在公开招聘，欢迎联系，谢谢！";
+    _titleStr = [NSString stringWithFormat:@"%@，您好！%@的人才官正在网络上浏览您的简历信息，如您同意考虑其提供的工作机会，请回复1确认。如您电话号码有变更，请回复新号码。谢谢！",oneItem.name,[UserInfo getcompany]];
+//    _infoStr = @"招聘职位正在公开招聘，欢迎联系，谢谢！";
     _titleLabel.text = _titleStr;
     _infoLabel.text = _infoStr;
 }
@@ -55,8 +55,13 @@
     NSString *photo = [[NSUserDefaults standardUserDefaults] objectForKey:@"photo"];
         if (photo.length > 0) {
             
-            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:photo]];
+            [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:photo] placeholderImage:kDefaultHeadImage];
         }
+    else
+    {
+        cell.headImageView.image = kDefaultHeadImage;
+        
+    }
     
         
         //我
@@ -82,7 +87,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 79;
+    return 85;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -111,16 +116,15 @@
 }
 
 - (IBAction)sendAction:(id)sender {
-    if (_positionTF.text.length == 0) {
-        [CommonMethods showDefaultErrorString:@"请输入招聘的岗位名称"];
-        return;
-    }else{
-        NSString *content = [NSString stringWithFormat:@"%@%@%@",_titleStr,_positionTF.text,_infoStr];
+
+    
+        NSString *content = [NSString stringWithFormat:@"%@",_titleStr];
+    
         NSString *phone = oneItem.phone;
         
         [self sendSMSMessageWithPhoneNum:phone content:content];
         
-    }
+    
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
