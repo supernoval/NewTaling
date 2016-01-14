@@ -14,7 +14,6 @@
 		1302D7951BDF4AAF00FB4D11 /* PayOrderInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1302D7941BDF4AAF00FB4D11 /* PayOrderInfoModel.m */; };
 		137BBBE01B9DA9F5004571C6 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 137BBBDF1B9DA9F5004571C6 /* UserInfo.m */; };
 		139919161B9EB69900FE56DD /* SelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 139919151B9EB69900FE56DD /* SelectView.m */; };
-		139DC5481BCE6DE500AA9C27 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 139DC5471BCE6DE500AA9C27 /* CommentViewController.m */; };
 		139DC54E1BCE75ED00AA9C27 /* ChatListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 139DC54D1BCE75ED00AA9C27 /* ChatListTableViewController.m */; };
 		139DC5511BCE82BC00AA9C27 /* ChatListCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 139DC5501BCE82BC00AA9C27 /* ChatListCellTableViewCell.m */; };
 		139DC5541BCE875000AA9C27 /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 139DC5531BCE875000AA9C27 /* NSDate+Category.m */; };
@@ -295,6 +294,9 @@
 		B3FB2A4B1BC28FFE003ACC5D /* BindDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FB2A4A1BC28FFE003ACC5D /* BindDetailTVC.m */; };
 		B3FB2A4F1BC298A0003ACC5D /* SettingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FB2A4E1BC298A0003ACC5D /* SettingTVC.m */; };
 		B3FB2A531BC3AD82003ACC5D /* MyResumeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FB2A521BC3AD82003ACC5D /* MyResumeTVC.m */; };
+		D249D25C1C472F4E0088E4D1 /* CommentList.plist in Resources */ = {isa = PBXBuildFile; fileRef = D249D25B1C472F4E0088E4D1 /* CommentList.plist */; };
+		D249D25F1C4748F80088E4D1 /* CommentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D249D25E1C4748F80088E4D1 /* CommentTableViewController.m */; };
+		D249D2621C4749470088E4D1 /* AppraiseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D249D2611C4749470088E4D1 /* AppraiseCell.m */; };
 		D2686F311BF1C60400C92983 /* BindEmailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2686F301BF1C60400C92983 /* BindEmailTVC.m */; };
 		D26C29371BD8D68E007F1EF2 /* WorkExperienceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D26C29361BD8D68E007F1EF2 /* WorkExperienceItem.m */; };
 		D27021211BC7744900428B31 /* BuyAndCashTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D27021201BC7744900428B31 /* BuyAndCashTVC.m */; };
@@ -349,8 +351,6 @@
 		137BBBDF1B9DA9F5004571C6 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		139919141B9EB69900FE56DD /* SelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectView.h; sourceTree = "<group>"; };
 		139919151B9EB69900FE56DD /* SelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectView.m; sourceTree = "<group>"; };
-		139DC5461BCE6DE500AA9C27 /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
-		139DC5471BCE6DE500AA9C27 /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
 		139DC54C1BCE75ED00AA9C27 /* ChatListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatListTableViewController.h; path = ChatViewControllers/ChatListTableViewController.h; sourceTree = "<group>"; };
 		139DC54D1BCE75ED00AA9C27 /* ChatListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatListTableViewController.m; path = ChatViewControllers/ChatListTableViewController.m; sourceTree = "<group>"; };
 		139DC54F1BCE82BC00AA9C27 /* ChatListCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatListCellTableViewCell.h; path = ChatViewControllers/ChatListCellTableViewCell.h; sourceTree = "<group>"; };
@@ -1038,6 +1038,11 @@
 		B3FB2A4E1BC298A0003ACC5D /* SettingTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTVC.m; sourceTree = "<group>"; };
 		B3FB2A511BC3AD82003ACC5D /* MyResumeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyResumeTVC.h; sourceTree = "<group>"; };
 		B3FB2A521BC3AD82003ACC5D /* MyResumeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyResumeTVC.m; sourceTree = "<group>"; };
+		D249D25B1C472F4E0088E4D1 /* CommentList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CommentList.plist; sourceTree = "<group>"; };
+		D249D25D1C4748F80088E4D1 /* CommentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewController.h; sourceTree = "<group>"; };
+		D249D25E1C4748F80088E4D1 /* CommentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewController.m; sourceTree = "<group>"; };
+		D249D2601C4749470088E4D1 /* AppraiseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppraiseCell.h; sourceTree = "<group>"; };
+		D249D2611C4749470088E4D1 /* AppraiseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppraiseCell.m; sourceTree = "<group>"; };
 		D2686F2F1BF1C60400C92983 /* BindEmailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindEmailTVC.h; sourceTree = "<group>"; };
 		D2686F301BF1C60400C92983 /* BindEmailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindEmailTVC.m; sourceTree = "<group>"; };
 		D26C29351BD8D68E007F1EF2 /* WorkExperienceItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkExperienceItem.h; sourceTree = "<group>"; };
@@ -1175,10 +1180,13 @@
 		139DC5451BCE6DC000AA9C27 /* comment */ = {
 			isa = PBXGroup;
 			children = (
-				139DC5461BCE6DE500AA9C27 /* CommentViewController.h */,
-				139DC5471BCE6DE500AA9C27 /* CommentViewController.m */,
 				D2B8E7AB1C17B6B300445EA6 /* CommentTVC.h */,
 				D2B8E7AC1C17B6B300445EA6 /* CommentTVC.m */,
+				D249D25B1C472F4E0088E4D1 /* CommentList.plist */,
+				D249D25D1C4748F80088E4D1 /* CommentTableViewController.h */,
+				D249D25E1C4748F80088E4D1 /* CommentTableViewController.m */,
+				D249D2601C4749470088E4D1 /* AppraiseCell.h */,
+				D249D2611C4749470088E4D1 /* AppraiseCell.m */,
 			);
 			name = comment;
 			sourceTree = "<group>";
@@ -3013,6 +3021,7 @@
 				1506DF921B89B4A0007D1696 /* ProgressHUD.bundle in Resources */,
 				B3F2D3BC1C11B5D80061F2A2 /* RecommendCell.xib in Resources */,
 				1506DF7B1B89B457007D1696 /* Main.storyboard in Resources */,
+				D249D25C1C472F4E0088E4D1 /* CommentList.plist in Resources */,
 				15EE6BF21B92FB9300FBD86C /* AMap.bundle in Resources */,
 				B3FB2A471BC27433003ACC5D /* BindAccountCell.xib in Resources */,
 				13CD97681BA152A0007763E0 /* BuyCell.xib in Resources */,
@@ -3100,6 +3109,7 @@
 				1506E0B71B89B608007D1696 /* BaseViewController.m in Sources */,
 				15D1953E1C1D2FAB001F286E /* CompanyInfoTableView.m in Sources */,
 				1506DFFD1B89B506007D1696 /* SDWaitingView.m in Sources */,
+				D249D2621C4749470088E4D1 /* AppraiseCell.m in Sources */,
 				1506E0A51B89B582007D1696 /* UIImage+MultiFormat.m in Sources */,
 				153F3B751BD279E000C86F1A /* MKAnnotationView+EMWebCache.m in Sources */,
 				B30000A11BC3CFE2006B7B08 /* BuyMessageTVC.m in Sources */,
@@ -3129,6 +3139,7 @@
 				13AA5EB11B95CCEF00AB477E /* AFURLSessionManager.m in Sources */,
 				1506E0201B89B521007D1696 /* UIScrollView+MJRefresh.m in Sources */,
 				139DC5541BCE875000AA9C27 /* NSDate+Category.m in Sources */,
+				D249D25F1C4748F80088E4D1 /* CommentTableViewController.m in Sources */,
 				153F3AA71BD1F05200C86F1A /* ChatAccountManager.m in Sources */,
 				B3F2D3E11C12C4440061F2A2 /* HRListVC.m in Sources */,
 				1506E03C1B89B53C007D1696 /* JSONModel.m in Sources */,
@@ -3273,7 +3284,6 @@
 				153F3B701BD279E000C86F1A /* EMSDWebImageDecoder.m in Sources */,
 				1506E01F1B89B521007D1696 /* UIScrollView+MJExtension.m in Sources */,
 				1506E1321B89B646007D1696 /* DataVerifier.m in Sources */,
-				139DC5481BCE6DE500AA9C27 /* CommentViewController.m in Sources */,
 				137BBBE01B9DA9F5004571C6 /* UserInfo.m in Sources */,
 				153F3B881BD279E000C86F1A /* PSTGridLayoutItem.m in Sources */,
 				153F3B761BD279E000C86F1A /* NSData+EMImageContentType.m in Sources */,
