@@ -23,7 +23,6 @@
 #import "ShareH5.h"
 #import "MyCouponTVC.h"
 
-
 @interface MineTableViewController ()<UIAlertViewDelegate,UIActionSheetDelegate>
 {
     
@@ -264,6 +263,7 @@
                 [_shareAC addButtonWithTitle:@"取消"];
                 _shareAC.cancelButtonIndex = 2;
                 [_shareAC showInView:self.view];
+                
                 
                 
                 

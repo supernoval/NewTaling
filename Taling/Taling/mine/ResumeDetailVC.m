@@ -10,7 +10,6 @@
 #import "CommentCell.h"
 #import "ConstantsHeaders.h"
 #import "BuyResumeDetailTVC.h"
-#import "CommentViewController.h"
 #import "UIImageView+WebCache.h"
 #import "UIImageView+WebCache.h"
 #import "ChatViewController.h"
@@ -224,7 +223,7 @@
         case 0:
         {
             //姓名等基本信息
-            static NSString *nameId = @"ResumeNameCell";
+//            static NSString *nameId = @"ResumeNameCell";
             
 //            ResumeNameCell *nameCell = [tableView dequeueReusableCellWithIdentifier:nameId];
 //            
@@ -535,10 +534,10 @@
     }else if (self.type == 2){
         //评价
         
-        CommentViewController *commentVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CommentViewController"];
-        commentVC.resumeid = self.item.resumesId;
+//        CommentViewController *commentVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CommentViewController"];
+//        commentVC.resumeid = self.item.resumesId;
         
-        [self.navigationController pushViewController:commentVC animated:YES];
+//        [self.navigationController pushViewController:commentVC animated:YES];
         
         
     }

@@ -14,6 +14,7 @@
 #import "CommentTVC.h"
 #import "CommentItem.h"
 #import "ContactTVC.h"
+#import "CommentTableViewController.h"
 
 @interface BoughtResumeDetailVC ()<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
 @property (nonatomic, strong)NSMutableArray *commentArry;
@@ -576,7 +577,7 @@
 #pragma mark- 评论分享
 - (IBAction)appraiseAction:(UIButton *)sender {
     
-    CommentTVC *comment = [self.storyboard instantiateViewControllerWithIdentifier:@"CommentTVC"];
+    CommentTableViewController *comment = [self.storyboard instantiateViewControllerWithIdentifier:@"CommentTableViewController"];
     comment.item = item;
     
     [comment setblock:^(BOOL success) {
