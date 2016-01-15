@@ -104,6 +104,10 @@
                 CommentItem *cItem = [[CommentItem alloc]init];
                 [cItem setValuesForKeysWithDictionary:oneDic];
                 
+                cItem.comment = [cItem.comment stringByReplacingOccurrencesOfString:@"(多选)" withString:@""];
+                
+                cItem.comment = [cItem.comment stringByReplacingOccurrencesOfString:@"(单选)"withString:@""];
+                
                 
                 [array addObject:cItem];
                 
@@ -514,8 +518,10 @@
                 }
                 
                 //评论内容
-                
-                cell.commentTF.text = oneComment.comment;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                   cell.commentTF.text = oneComment.comment;
+                });
+               
                 
             }
             

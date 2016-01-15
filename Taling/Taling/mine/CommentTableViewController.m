@@ -20,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"评论";
     NSString *path = [[NSBundle mainBundle]pathForResource:@"CommentList" ofType:@"plist"];
     _dataArray = [[NSMutableArray alloc]initWithContentsOfFile:path];
     self.tableView.tableFooterView = [self tableFooterView];
@@ -267,6 +269,8 @@
     
     //评价内容
     label = [label stringByAppendingString:str];
+    
+  
     
     NSLog(@"&&&&&&:%@",label);
     
