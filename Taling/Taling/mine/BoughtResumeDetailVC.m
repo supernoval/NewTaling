@@ -124,6 +124,12 @@
                 
             }
             
+            
+            if (dataArray.count == 0 && _index > 1) {
+                
+                _index -=1;
+                
+            }
             [_commentArry addObjectsFromArray:array];
             
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -598,19 +604,12 @@
        
         if (success) {
             
-            if (_commentArry.count > _size) {
-                
-               _index ++;
-                [self getData];
-                
-            }
-            else
-            {
-                _index = 1;
-                
-                [self getData];
-                
-            }
+            
+            _index = 1;
+            
+            [self getData];
+            
+            
            
             
        
