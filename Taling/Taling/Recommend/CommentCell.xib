@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="119" id="IV6-Re-qrw" customClass="CommentCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="204" id="IV6-Re-qrw" customClass="CommentCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IV6-Re-qrw" id="0pf-gK-TsT">
@@ -107,6 +107,9 @@
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                            <rect key="frame" x="8" y="59" width="304" height="51"/>
+                        </variation>
                     </textView>
                 </subviews>
                 <constraints>
@@ -176,7 +179,7 @@
                 <outlet property="nameLabel" destination="S9E-OU-eaW" id="vNi-ZL-Jye"/>
                 <outlet property="timeLabel" destination="y1z-cR-NfP" id="5DX-U6-qxA"/>
             </connections>
-            <point key="canvasLocation" x="294" y="220.5"/>
+            <point key="canvasLocation" x="294" y="263"/>
         </tableViewCell>
     </objects>
     <resources>

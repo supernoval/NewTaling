@@ -22,9 +22,12 @@
     [super viewDidLoad];
     
     self.title = @"评论";
+    self.view.backgroundColor = kBackgroundColor;
+    
     NSString *path = [[NSBundle mainBundle]pathForResource:@"CommentList" ofType:@"plist"];
     _dataArray = [[NSMutableArray alloc]initWithContentsOfFile:path];
     self.tableView.tableFooterView = [self tableFooterView];
+    self.tableView.backgroundColor = kBackgroundColor;
     
 }
 
@@ -37,19 +40,21 @@
     
     AppraiseCell *cell = [[AppraiseCell alloc]init];
     cell.delegate = self;
-    cell.tag = indexPath.row;
+    cell.tag = indexPath.section;
     
-    NSDictionary *one = [_dataArray objectAtIndex:indexPath.row];
+    NSDictionary *one = [_dataArray objectAtIndex:indexPath.section];
     [cell assignView:one];
     
     return cell;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    return _dataArray.count;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _dataArray.count;
+   
+    return 1;
+    
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -62,14 +67,24 @@
     }else{
         tagRow = count/4 + 1;
     }
-    return 48+34*tagRow;
+    return 32+34*tagRow;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 0.1;
+- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *blankView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 1)];
+    
+    blankView.backgroundColor = [UIColor clearColor];
+    
+    
+    return blankView;
+    
 }
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+//    return 0;
+//}
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 0.1;
+    return 1;
 }
 
 - (UIView *)tableFooterView{
@@ -79,7 +94,7 @@
     UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, 15, ScreenWidth-30, 18)];
     titleLabel.font = FONT_15;
     titleLabel.textColor = [UIColor blackColor];
-    titleLabel.text = @"整体评估(26个字)";
+    titleLabel.text = @"整体评估(40个字)";
     [footerView addSubview:titleLabel];
     
     _textView = [[UITextView alloc]initWithFrame:CGRectMake(15, titleLabel.frame.origin.y+titleLabel.frame.size.height+10, ScreenWidth-30, 45)];
@@ -136,8 +151,8 @@
     
     NSString *toBeString = [textView.text stringByReplacingCharactersInRange:range withString:text];
     
-    if ([toBeString length] > 26) {
-        textView.text = [toBeString substringToIndex:26];
+    if ([toBeString length] > 40) {
+        textView.text = [toBeString substringToIndex:40];
         return NO;
     }else{
         return YES;

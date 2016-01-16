@@ -126,7 +126,11 @@
             
             [_commentArry addObjectsFromArray:array];
             
-            [self.tableView reloadData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+               
+                  [self.tableView reloadData];
+            });
+          
             
         }
         
@@ -254,9 +258,13 @@
                     
                 }
                 
-                UIView *gap = [[UIView alloc]initWithFrame:CGRectMake(0, blankFooter.frame.size.height-1, ScreenWidth, 1)];
-                gap.backgroundColor = kLineColor;
-                [blankFooter addSubview:gap];
+                if (_commentArry.count > section -2) {
+                    
+                    UIView *gap = [[UIView alloc]initWithFrame:CGRectMake(0, blankFooter.frame.size.height-1, ScreenWidth, 1)];
+                    gap.backgroundColor = kLineColor;
+                    [blankFooter addSubview:gap];
+                }
+          
                 
                 return blankFooter;
             }else{
@@ -593,10 +601,19 @@
             if (_commentArry.count > _size) {
                 
                _index ++;
+                [self getData];
+                
             }
-        
+            else
+            {
+                _index = 1;
+                
+                [self getData];
+                
+            }
+           
             
-            [self getData];
+       
             
         }
         

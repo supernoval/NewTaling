@@ -345,12 +345,6 @@
 			</dict>
 			<dict>
 				<key>answer</key>
-				<string>性格外向</string>
-				<key>selected</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>answer</key>
 				<string>开朗活泼</string>
 				<key>selected</key>
 				<false/>
@@ -384,13 +378,7 @@
 			</dict>
 			<dict>
 				<key>answer</key>
-				<string>自我优越</string>
-				<key>selected</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>answer</key>
-				<string>放荡不羁</string>
+				<string>被动配合</string>
 				<key>selected</key>
 				<false/>
 			</dict>
@@ -402,7 +390,7 @@
 			</dict>
 			<dict>
 				<key>answer</key>
-				<string>礼貌谦虚</string>
+				<string>自负自卑</string>
 				<key>selected</key>
 				<false/>
 			</dict>
@@ -424,12 +412,6 @@
 			<dict>
 				<key>answer</key>
 				<string>思维清晰</string>
-				<key>selected</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>answer</key>
-				<string>思路活跃</string>
 				<key>selected</key>
 				<false/>
 			</dict>
@@ -501,25 +483,13 @@
 			</dict>
 			<dict>
 				<key>answer</key>
-				<string>创新创造</string>
-				<key>selected</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>answer</key>
-				<string>基础工作</string>
-				<key>selected</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>answer</key>
 				<string>按部就班</string>
 				<key>selected</key>
 				<false/>
 			</dict>
 			<dict>
 				<key>answer</key>
-				<string>超越预期</string>
+				<string>创新思变</string>
 				<key>selected</key>
 				<false/>
 			</dict>
@@ -534,19 +504,25 @@
 		<array>
 			<dict>
 				<key>answer</key>
-				<string>经验丰富</string>
+				<string>高级管理</string>
 				<key>selected</key>
 				<false/>
 			</dict>
 			<dict>
 				<key>answer</key>
-				<string>经验不足</string>
+				<string>中层管理</string>
 				<key>selected</key>
 				<false/>
 			</dict>
 			<dict>
 				<key>answer</key>
-				<string>意识强烈</string>
+				<string>基础管理</string>
+				<key>selected</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>answer</key>
+				<string>个人贡献</string>
 				<key>selected</key>
 				<false/>
 			</dict>
@@ -562,6 +538,12 @@
 			<dict>
 				<key>answer</key>
 				<string>团队意识</string>
+				<key>selected</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>answer</key>
+				<string>领导能力</string>
 				<key>selected</key>
 				<false/>
 			</dict>

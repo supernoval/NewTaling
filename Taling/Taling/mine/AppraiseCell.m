@@ -25,7 +25,7 @@
 }
 - (void)assignView:(NSDictionary *)dic{
     NSString *title = [dic objectForKey:@"title"];
-    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, 15, ScreenWidth-30, 18)];
+    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, 8, ScreenWidth-30, 18)];
     titleLabel.font = FONT_15;
     titleLabel.textColor = [UIColor blackColor];
     titleLabel.text = title;
@@ -40,7 +40,7 @@
         NSString *tagTitle = [oneTag objectForKey:@"answer"];
         BOOL selected = [[oneTag objectForKey:@"selected"]boolValue];
         
-        TagButton *tagButton = [[TagButton alloc]initWithFrame:CGRectMake(15+(i%4)*(tagWidth+TagGap), i/4*(tagHeight+TagGap)+48, tagWidth, tagHeight)];
+        TagButton *tagButton = [[TagButton alloc]initWithFrame:CGRectMake(15+(i%4)*(tagWidth+TagGap), i/4*(tagHeight+TagGap)+32, tagWidth, tagHeight)];
         
         [tagButton setTitle:tagTitle forState:UIControlStateNormal];
         
