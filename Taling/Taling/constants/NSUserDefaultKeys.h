@@ -44,7 +44,7 @@
 #define kindustry      @"industry"
 
 //company
-#define kcompany       @"company"
+#define kcompany       @"company"  //注意 这里用 | 分割，前面是服务过的企业，后面是当前公司
 
 //phone
 #define kphone         @"phone"

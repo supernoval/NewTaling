@@ -35,6 +35,7 @@
 +(NSString*)getcity;
 +(NSString*)getEmail;
 +(NSString*)getPassWord;
++(NSString*)getCompanyName; //企业账号 公司名称
 
 +(BOOL)savecity:(NSString*)city;
 

@@ -135,6 +135,13 @@
 {
     return [[NSUserDefaults standardUserDefaults ] objectForKey:kcompany];
 }
+
++(NSString*)getCompanyName
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:kcompanyName];
+    
+    
+}
 +(NSString*)getspecaility
 {
     return [[NSUserDefaults standardUserDefaults ] objectForKey:kspeciality];

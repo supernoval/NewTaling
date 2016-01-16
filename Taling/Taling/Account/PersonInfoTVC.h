@@ -23,6 +23,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *cityLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *currentCompanyLabel;
+
+
+
 @property (weak, nonatomic) IBOutlet UILabel *hangyeLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *qiyeLabel;

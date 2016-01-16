@@ -54,7 +54,7 @@
 //    [MAMapServices sharedServices].apiKey = kGaodeMapKey;
     
     //sharesdk sms 注册
-//    [SMSSDK registerApp:kShareSDKSMSAppKey withSecret:kShareSDKSMSAppSecret];
+    [SMSSDK registerApp:kShareSDKSMSAppKey withSecret:kShareSDKSMSAppSecret];
     
     
 //    if ([[UIDevice currentDevice].systemVersion floatValue] >=8.0)

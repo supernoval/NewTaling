@@ -28,8 +28,38 @@
     self.tableView.tableFooterView.frame = CGRectMake(0, 0, ScreenWidth, 150);
     _positionTF.delegate = self;
     
-    
-    _titleStr = [NSString stringWithFormat:@"%@，您好！%@的人才官正在网络上浏览您的简历信息，如您同意考虑其提供的工作机会，请回复1确认。如您电话号码有变更，请回复新号码。谢谢！",oneItem.name,[UserInfo getcompany]];
+    NSString *companyName =nil;
+    if ([UserInfo getIsCompany]) {
+        
+        companyName = [UserInfo getCompanyName];
+        
+    }
+    else
+    {
+        NSString *temcompany  =  [UserInfo getcompany];
+        
+        if (temcompany.length > 0) {
+            
+            NSArray *companys = [temcompany componentsSeparatedByString:@"|"];
+            
+            if (companys.count > 1) {
+                
+                companyName = [companys objectAtIndex:1];
+                
+            }
+            else
+            {
+                companyName = @"";
+            }
+        }
+        else
+        {
+            companyName = @"";
+            
+        }
+        
+    }
+    _titleStr = [NSString stringWithFormat:@"%@，您好！%@的人才官正在网络上浏览您的简历信息，如您同意考虑其提供的工作机会，请回复1确认。如您电话号码有变更，请回复新号码。谢谢！",oneItem.name,companyName];
 //    _infoStr = @"招聘职位正在公开招聘，欢迎联系，谢谢！";
     _titleLabel.text = _titleStr;
     _infoLabel.text = _infoStr;
@@ -77,7 +107,39 @@
     
         
         //所在企业
-        cell.placeLabel.text = [UserInfo getcompany];
+     NSString *companyName =nil;
+    
+    if ([UserInfo getIsCompany]) {
+        
+        companyName = [UserInfo getCompanyName];
+        
+    }
+    else
+    {
+        NSString *temcompany  =  [UserInfo getcompany];
+        
+        if (temcompany.length > 0) {
+            
+            NSArray *companys = [temcompany componentsSeparatedByString:@"|"];
+            
+            if (companys.count > 1) {
+                
+                companyName = [companys objectAtIndex:0];
+                
+            }
+            else
+            {
+                companyName = temcompany;
+            }
+        }
+        else
+        {
+            companyName = @"";
+            
+        }
+        
+    }
+        cell.placeLabel.text = companyName;
         
         
         

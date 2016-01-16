@@ -261,7 +261,26 @@
                     NSDictionary *oneLabel = [oneItem.resumesLabel objectAtIndex:i];
                     
                     TagLabel *tagLabel = [[TagLabel alloc]initWithFrame:CGRectMake(15+(i%4)*(tagWidth+TagGap), i/4*(tagHeight+TagGap), tagWidth, tagHeight)];
-                    tagLabel.text = [NSString stringWithFormat:@"%@",[oneLabel objectForKey:@"word"]];
+                    NSString *word =[NSString stringWithFormat:@"%@",[oneLabel objectForKey:@"word"]];
+                    
+                    NSArray *_words = nil;
+                    
+                    if (word.length > 0) {
+                        
+                        _words = [word componentsSeparatedByString:@"_"];
+                    }
+                    
+                    
+                    if (_words.count > 1) {
+                        
+                        word = [_words firstObject];
+                    }
+                    else
+                    {
+                        word = @"";
+                    }
+                    
+                    tagLabel.text = word;
                     [blankFooter addSubview:tagLabel];
                     
                 }

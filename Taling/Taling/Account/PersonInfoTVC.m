@@ -60,7 +60,29 @@
     
     _hangyeLabel.text = [UserInfo getindustry];
     
-    _qiyeLabel.text = [UserInfo getcompany];
+    
+    NSString *company = [UserInfo getcompany];
+    
+    if (company.length > 0) {
+        
+        NSArray *_companys = [company componentsSeparatedByString:@"|"];
+        
+        if (_companys.count > 1) {
+            
+            _qiyeLabel.text = [_companys firstObject];
+            
+            _currentCompanyLabel.text = [_companys objectAtIndex:1];
+            
+            
+        }
+        else
+        {
+            _qiyeLabel.text = company;
+            
+        }
+        
+    }
+   
     
     _gangweiLabel.text = [UserInfo getspecaility];
     
@@ -242,7 +264,57 @@
             
         }
             break;
-        case 4:
+            
+        case 4:  //目前所在的公司
+        {
+            ChangePerInfoVC *_changeVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ChangePerInfoVC"];
+            
+            _changeVC.block = ^(NSString *string)
+            {
+                _currentCompanyLabel.text = string;
+                
+                NSString *qiye = _qiyeLabel.text;
+                
+                if (!qiye) {
+                    
+                    qiye = @"";
+                }
+                
+                if (!string) {
+                    
+                    string = @"";
+                }
+                
+                string = [NSString stringWithFormat:@"%@|%@",qiye,string];
+                
+                if (_isShowed) {
+                    
+                    [UserInfo saveInfo:string key:kcompany];
+                    [self saveInfo];
+                    
+                }
+            };
+            
+            _changeVC.title = @"公司";
+            
+            if (_isShowed) {
+                
+                _changeVC.placeHolder = _currentCompanyLabel.text;
+                
+            }
+            else
+            {
+                _changeVC.placeHolder = @"公司名称";
+            }
+            
+            
+            
+            
+            [self.navigationController pushViewController:_changeVC animated:YES];
+            
+        }
+            break;
+        case 5:
         {
             PickInfoTVC *_pickInfo = [[PickInfoTVC alloc]initWithStyle:UITableViewStylePlain];
             
@@ -270,13 +342,27 @@
             [self.navigationController pushViewController:_pickInfo animated:YES];
         }
             break;
-        case 5:
+        case 6:
         {
             ChangePerInfoVC *_changeVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ChangePerInfoVC"];
             
             _changeVC.block = ^(NSString *string)
             {
                 _qiyeLabel.text = string;
+                
+                NSString *currentCompany = _currentCompanyLabel.text;
+                
+                if (!currentCompany) {
+                    
+                    currentCompany = @"";
+                }
+                
+                if (!string) {
+                    
+                    string = @"";
+                }
+                
+                string = [NSString stringWithFormat:@"%@|%@",string,currentCompany];
                 
                 if (_isShowed) {
                     
@@ -306,7 +392,7 @@
             
         }
             break;
-        case 6:
+        case 7:
         {
             PickInfoTVC *_pickInfo = [[PickInfoTVC alloc]initWithStyle:UITableViewStylePlain];
             
@@ -330,7 +416,7 @@
             [self.navigationController pushViewController:_pickInfo animated:YES];
         }
             break;
-        case 7:
+        case 8:
         {
             UIActionSheet *_pickActionSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil, nil];
             _pickActionSheet.delegate = self;
@@ -515,7 +601,7 @@
     UIImage *cartImage = cartButton.currentImage;
     
     
-    if (!headImage || _nickNameLabel.text.length == 0 || _sexLabel.text == 0 || _cityLabel.text.length == 0 || _hangyeLabel.text.length == 0 || _qiyeLabel.text.length == 0 || _gangweiLabel.text.length == 0 || !cartImage ) {
+    if (!headImage || _nickNameLabel.text.length == 0 || _sexLabel.text == 0 || _cityLabel.text.length == 0 || _hangyeLabel.text.length == 0 || _qiyeLabel.text.length == 0 || _gangweiLabel.text.length == 0 || !cartImage || _currentCompanyLabel.text.length == 0) {
         
         
         [CommonMethods showDefaultErrorString:@"请完善个人信息"];
@@ -648,7 +734,24 @@
         
     }
     
-    NSDictionary *param = @{@"user_id":user_id,@"work_year":@"",@"nickname":_nickNameLabel.text,@"industry":_hangyeLabel.text,@"company":_qiyeLabel.text,@"speciality":_gangweiLabel.text,@"sex":sex,@"city":_cityLabel.text};
+    NSString *company = @"";
+    
+    NSString *qiye = _qiyeLabel.text;
+    if (!qiye) {
+        
+        qiye = @"";
+    }
+    NSString *currentCompany = _currentCompanyLabel.text;
+    if (!currentCompany) {
+        
+        currentCompany = @"";
+        
+    }
+    
+    company = [NSString stringWithFormat:@"%@|%@",qiye,currentCompany];
+    
+    
+    NSDictionary *param = @{@"user_id":user_id,@"work_year":@"",@"nickname":_nickNameLabel.text,@"industry":_hangyeLabel.text,@"company":company,@"speciality":_gangweiLabel.text,@"sex":sex,@"city":_cityLabel.text};
     
     if (_isShowed) {
         
