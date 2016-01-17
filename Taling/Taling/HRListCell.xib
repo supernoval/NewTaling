@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HRListCell" rowHeight="276" id="Wny-x0-f4b" customClass="HRListCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HRListCell" rowHeight="337" id="Wny-x0-f4b" customClass="HRListCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wny-x0-f4b" id="BLE-gK-3Fs">
@@ -74,7 +74,7 @@
                             </mask>
                         </variation>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="百度 百度 百度 百度百度 " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJi-Xs-RoS">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJi-Xs-RoS">
                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="oBJ-L3-QL0"/>
@@ -174,7 +174,9 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="VJi-Xs-RoS" firstAttribute="top" secondItem="G2b-A7-8m0" secondAttribute="bottom" constant="17" id="3Jo-hZ-iF8"/>
+                    <constraint firstItem="VJi-Xs-RoS" firstAttribute="top" secondItem="G2b-A7-8m0" secondAttribute="bottom" constant="17" id="3Jo-hZ-iF8">
+                        <variation key="heightClass=regular-widthClass=compact" constant="9"/>
+                    </constraint>
                     <constraint firstItem="DG2-TY-rqT" firstAttribute="leading" secondItem="BLE-gK-3Fs" secondAttribute="leading" constant="15" id="AHS-8L-jmn"/>
                     <constraint firstAttribute="trailing" secondItem="pdM-IX-HCu" secondAttribute="trailing" constant="104" id="BWB-CS-t1c"/>
                     <constraint firstAttribute="trailing" secondItem="G2b-A7-8m0" secondAttribute="trailing" constant="104" id="Cdg-se-gAk"/>
@@ -209,24 +211,24 @@
                         <exclude reference="Kj3-Nj-p87"/>
                     </mask>
                     <mask key="constraints">
+                        <exclude reference="AHS-8L-jmn"/>
+                        <exclude reference="Mna-Eh-2ge"/>
+                        <exclude reference="E2F-aY-4a5"/>
+                        <exclude reference="EhP-sy-bNS"/>
+                        <exclude reference="hOG-rb-fQr"/>
+                        <exclude reference="3Jo-hZ-iF8"/>
+                        <exclude reference="GPC-x5-LVO"/>
+                        <exclude reference="gkY-Gd-dJF"/>
                         <exclude reference="bhW-x7-Hd9"/>
                         <exclude reference="cK3-sb-XXT"/>
                         <exclude reference="nuK-ae-bmP"/>
                         <exclude reference="v3C-wh-m9b"/>
-                        <exclude reference="AHS-8L-jmn"/>
-                        <exclude reference="Mna-Eh-2ge"/>
                         <exclude reference="BWB-CS-t1c"/>
                         <exclude reference="rcZ-KT-N9M"/>
                         <exclude reference="waG-rP-mtl"/>
-                        <exclude reference="E2F-aY-4a5"/>
-                        <exclude reference="EhP-sy-bNS"/>
-                        <exclude reference="hOG-rb-fQr"/>
                         <exclude reference="Cdg-se-gAk"/>
                         <exclude reference="Pod-My-yDp"/>
                         <exclude reference="PtM-Rw-sjc"/>
-                        <exclude reference="3Jo-hZ-iF8"/>
-                        <exclude reference="GPC-x5-LVO"/>
-                        <exclude reference="gkY-Gd-dJF"/>
                         <exclude reference="R7B-nA-VBs"/>
                         <exclude reference="UBD-Z9-XD5"/>
                         <exclude reference="rAD-oU-GfH"/>
@@ -239,24 +241,24 @@
                         <include reference="Kj3-Nj-p87"/>
                     </mask>
                     <mask key="constraints">
+                        <include reference="AHS-8L-jmn"/>
+                        <include reference="Mna-Eh-2ge"/>
+                        <include reference="E2F-aY-4a5"/>
+                        <include reference="EhP-sy-bNS"/>
+                        <include reference="hOG-rb-fQr"/>
+                        <include reference="3Jo-hZ-iF8"/>
+                        <include reference="GPC-x5-LVO"/>
+                        <include reference="gkY-Gd-dJF"/>
                         <include reference="bhW-x7-Hd9"/>
                         <include reference="cK3-sb-XXT"/>
                         <include reference="nuK-ae-bmP"/>
                         <include reference="v3C-wh-m9b"/>
-                        <include reference="AHS-8L-jmn"/>
-                        <include reference="Mna-Eh-2ge"/>
                         <include reference="BWB-CS-t1c"/>
                         <include reference="rcZ-KT-N9M"/>
                         <include reference="waG-rP-mtl"/>
-                        <include reference="E2F-aY-4a5"/>
-                        <include reference="EhP-sy-bNS"/>
-                        <include reference="hOG-rb-fQr"/>
                         <include reference="Cdg-se-gAk"/>
                         <include reference="Pod-My-yDp"/>
                         <include reference="PtM-Rw-sjc"/>
-                        <include reference="3Jo-hZ-iF8"/>
-                        <include reference="GPC-x5-LVO"/>
-                        <include reference="gkY-Gd-dJF"/>
                         <include reference="R7B-nA-VBs"/>
                         <include reference="UBD-Z9-XD5"/>
                         <include reference="rAD-oU-GfH"/>
@@ -272,7 +274,7 @@
                 <outlet property="recomValue" destination="J3L-kv-tEC" id="1tg-cB-gP7"/>
                 <outlet property="servicedCom" destination="VJi-Xs-RoS" id="vJn-Yg-6xE"/>
             </connections>
-            <point key="canvasLocation" x="260" y="361.5"/>
+            <point key="canvasLocation" x="260" y="392"/>
         </tableViewCell>
     </objects>
     <resources>
