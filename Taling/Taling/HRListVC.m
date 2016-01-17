@@ -253,13 +253,42 @@
 
             [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.photo] placeholderImage:kDefaultHeadImage];
         }
+        else
+        {
+            cell.headImageView.image = kDefaultHeadImage;
+            
+        }
+        
         
         //姓名
-        cell.nameLabel.text = oneItem.nickname;
+        
+        if (oneItem.sex.length > 0) {
+            
+            NSString *sex = @"";
+            
+            if ([oneItem.sex isEqualToString:@"0"]) {
+                
+                sex = @"女";
+            }
+            else
+            {
+                sex = @"男";
+            }
+            if (!oneItem.nickname) {
+                
+                oneItem.nickname = @"";
+            }
+            cell.nameLabel.text = [NSString stringWithFormat:@"%@(%@)",oneItem.nickname,sex];
+        }
+        else
+        {
+           cell.nameLabel.text = oneItem.nickname;
+        }
+        
         
         
         //ID
-        cell.idLabel.text = [NSString stringWithFormat:@"人才官ID  %@",oneItem.id];
+        cell.idLabel.text = [NSString stringWithFormat:@"编号  %@",oneItem.id];
     
     // 推荐净值
         
@@ -282,7 +311,26 @@
             
             oneItem.city = @"";
         }
-    cell.disLabel.text = [NSString stringWithFormat:@"%@ 擅长行业:%@",oneItem.city,oneItem.speciality];
+        if (oneItem.city.length > 0) {
+            
+           cell.disLabel.text = [NSString stringWithFormat:@"%@ 擅长行业:%@",oneItem.city,oneItem.speciality];
+        }
+        else
+        {
+            cell.disLabel.text = [NSString stringWithFormat:@"擅长行业:%@",oneItem.speciality];
+        }
+        
+        //所在的行业
+        if (!oneItem.industry) {
+            
+            oneItem.industry = @"";
+        }
+        
+        cell.industryLabel.text = [NSString stringWithFormat:@"所在的行业:%@",oneItem.industry];
+        
+        
+     
+   
 
     
     

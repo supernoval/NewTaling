@@ -20,4 +20,8 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *servicedCom;
 
+@property (weak, nonatomic) IBOutlet UILabel *industryLabel;
+
+
+
 @end

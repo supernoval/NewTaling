@@ -20,7 +20,8 @@ static NSString *cellId = @"ChatListCellTableViewCell";
 {
     NSMutableArray *_conversations;
     
-    
+    NSInteger index;
+    NSInteger size;
 }
 
 @end
@@ -32,7 +33,8 @@ static NSString *cellId = @"ChatListCellTableViewCell";
     [super viewDidLoad];
   
     self.title = @"消息";
-    
+    index = 1;
+    size = 1;
     
     _conversations = [[NSMutableArray alloc]init];
     
@@ -46,9 +48,12 @@ static NSString *cellId = @"ChatListCellTableViewCell";
 {
     [super viewWillAppear:animated];
     
-    [self reFreshDataSource];
+//    [self reFreshDataSource];
+//    
+//    [self registerNotifications];
     
-    [self registerNotifications];
+    [self getMessage];
+    
     
 }
 
@@ -61,6 +66,23 @@ static NSString *cellId = @"ChatListCellTableViewCell";
 {
     
 }
+
+-(void)getMessage
+{
+//    NSDictionary *param = @{@"user_id":[UserInfo getuserid],@"index":@(index),@"size":@(size)};
+    
+    NSDictionary *param = @{@"user_id":@"320",@"index":@(index),@"size":@(size)};
+
+    [[TLRequest shareRequest] tlRequestWithAction:kgetNotification Params:param result:^(BOOL isSuccess, id data) {
+        
+        if (isSuccess) {
+            
+            
+        }
+        
+    }];
+}
+
 
 #pragma mark - UITableViewDataSource
 

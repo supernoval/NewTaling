@@ -235,8 +235,11 @@
         }
         
         //评论内容
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            cell.commentTF.text = oneComment.comment;
+        });
         
-        cell.commentTF.text = oneComment.comment;
         
     }
 

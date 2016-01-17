@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _changeTF.placeholder = _placeHolder;
+    _changeTF.text = _placeHolder;
     
     
 }

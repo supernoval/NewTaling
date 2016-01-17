@@ -14,7 +14,10 @@
 #import "LikeMessageTVC.h"
 
 @interface MessageTVC ()
-
+{
+ 
+    
+}
 @end
 
 @implementation MessageTVC
@@ -22,7 +25,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"消息";
+    
+  
+    
 }
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    
+
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

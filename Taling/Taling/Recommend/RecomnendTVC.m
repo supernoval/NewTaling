@@ -14,9 +14,12 @@
 #import "TagLabel.h"
 #import "RecommendDetailVC.h"
 
-@interface RecomnendTVC ()<UISearchBarDelegate>
+@interface RecomnendTVC ()<UISearchBarDelegate,UISearchDisplayDelegate,UINavigationControllerDelegate>
 {
-    UISearchBar *_searchBar;
+
+    
+    
+    
     
     NSInteger pageindex;
     NSInteger size;
@@ -28,6 +31,10 @@
     BOOL firstAppeal;
     
 }
+
+@property ( nonatomic,strong)  UISearchBar *searchBar;
+@property (nonatomic,strong) UISearchDisplayController *mysearchConroller;
+
 
 @end
 
@@ -43,14 +50,40 @@
     _JDArray = [[NSMutableArray alloc]init];
     
     
-    _searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 44)];
-    _searchBar.delegate = self;
-    _searchBar.placeholder = @"行业、职位、城市、资历";
-    
+//    _searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 44)];
+//    _searchBar.delegate = self;
+//    _searchBar.placeholder = @"行业、职位、城市、资历";
+//    
+//    _searchBar.barTintColor = NavigationBarColor;
+//    
+//    
+//    
+//    
+//    UIView *titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 44)];
+//    titleView.backgroundColor = self.navigationController.navigationBar.barTintColor;
+//    
+//    
+//   
+//    
+//    
+////    [titleView addSubview:_searchBar];
+//    
+//    [self.navigationItem.titleView sizeToFit];
+//    
+//    
+//    self.navigationItem.titleView = titleView;
 
     
-    self.navigationItem.titleView = _searchBar;
-
+//    self.navigationItem.titleView = _searchBar;
+    
+//    [self mysearchConroller];
+//     self.navigationItem.titleView = self.mysearchConroller.searchBar;
+    
+//    self.tableView.tableHeaderView = self.mysearchConroller.searchBar;
+    
+    
+    [self addSearch];
+    
     [self.tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
     
     [self.tableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(footerRefresh)];
@@ -71,7 +104,6 @@
     
     
 
-    
     
     
 }
@@ -115,8 +147,70 @@
         
 }
 
+-(void)addSearch
+{
+    _searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 44)];
+    
+    _searchBar.delegate = self;
+    
+    _searchBar.placeholder = @"行业";
+    
+    
+    _mysearchConroller = [[UISearchDisplayController alloc]initWithSearchBar:self.searchBar contentsController:self];
+    
+    _mysearchConroller.searchResultsDataSource = self;
+    
+    _mysearchConroller.searchResultsDelegate = self;
+    
+    _mysearchConroller.displaysSearchBarInNavigationBar = NO;
+    
+//    self.tableView.tableHeaderView = _mysearchConroller.searchBar;
+    
+    
+    self.navigationItem.titleView = _mysearchConroller.searchBar;
+    
+    
+    
+}
+//-(UISearchDisplayController*)mysearchDisplayController
+//{
+//    
+//    if (!_mysearchConroller) {
+//        
+//        _mysearchConroller = [[UISearchDisplayController alloc]initWithSearchBar:self.searchBar contentsController:self];
+//        
+//        _mysearchConroller.searchResultsDataSource = self;
+//        
+//        _mysearchConroller.searchResultsDelegate = self;
+//        
+//        _mysearchConroller.displaysSearchBarInNavigationBar = NO;
+//        
+//       
+//        
+//    }
+//    
+//  
+//  
+//    return _mysearchConroller;
+//    
+//}
 
-
+//-(UISearchBar*)searchBar
+//{
+//    if (!_searchBar) {
+//        
+//        _searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 44)];
+//        
+//        _searchBar.delegate = self;
+//        
+//        _searchBar.placeholder = @"行业";
+//        
+//        
+//    }
+//    
+//    return _searchBar;
+//    
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -496,6 +590,8 @@
 -(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
 {
 
+    [_mysearchConroller setActive:YES animated:NO];
+    
     return YES;
     
 }
@@ -510,18 +606,18 @@
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
     searchBar.showsCancelButton = YES;
-    NSArray *subViews;
-    subViews = [_searchBar.subviews[0] subviews];
-    for (id view in subViews) {
-        if ([view isKindOfClass:[UIButton class]]) {
-            UIButton *cancelBtn = (UIButton *)view;
-            [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
-            [cancelBtn setTitleColor:kTextLightGrayColor forState:UIControlStateNormal];
-            cancelBtn.userInteractionEnabled = YES;
-            cancelBtn.enabled = YES;
-            break;
-        }
-    }
+//    NSArray *subViews;
+//    subViews = [_searchBar.subviews[0] subviews];
+//    for (id view in subViews) {
+//        if ([view isKindOfClass:[UIButton class]]) {
+//            UIButton *cancelBtn = (UIButton *)view;
+//            [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+//            [cancelBtn setTitleColor:kTextLightGrayColor forState:UIControlStateNormal];
+//            cancelBtn.userInteractionEnabled = YES;
+//            cancelBtn.enabled = YES;
+//            break;
+//        }
+//    }
     
 }
 
@@ -535,19 +631,19 @@
     [searchBar resignFirstResponder];
     [self.view endEditing:YES];
     searchBar.showsCancelButton = YES;
-    NSArray *subViews;
-    subViews = [(_searchBar.subviews[0]) subviews];
-    
-    for (id view in subViews) {
-        if ([view isKindOfClass:[UIButton class]]) {
-            UIButton* cancelbutton = (UIButton* )view;
-            [cancelbutton setTitle:@"取消" forState:UIControlStateNormal];
-            [cancelbutton setTitleColor:kTextLightGrayColor forState:UIControlStateNormal];
-            cancelbutton.userInteractionEnabled =YES;
-            cancelbutton.enabled = YES;
-            break;
-        }
-    }
+//    NSArray *subViews;
+//    subViews = [(_searchBar.subviews[0]) subviews];
+//    
+//    for (id view in subViews) {
+//        if ([view isKindOfClass:[UIButton class]]) {
+//            UIButton* cancelbutton = (UIButton* )view;
+//            [cancelbutton setTitle:@"取消" forState:UIControlStateNormal];
+//            [cancelbutton setTitleColor:kTextLightGrayColor forState:UIControlStateNormal];
+//            cancelbutton.userInteractionEnabled =YES;
+//            cancelbutton.enabled = YES;
+//            break;
+//        }
+//    }
     _isSearch = YES;
     pageindex = 1;
     //请求搜索数据

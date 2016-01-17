@@ -23,6 +23,11 @@
     
     NSMutableArray *_JDArray;
     NSMutableArray *_commentArray;
+    
+    NSInteger appraiseNum;
+    
+    NSInteger saleresumesCountSum;
+    
 }
 
 @end
@@ -38,9 +43,12 @@
     _commentArray = [[NSMutableArray alloc]init];
     pageSize = 1;
     pageIndex = 1;
-    [self requestUpLoadResumes];
+//    [self requestUpLoadResumes];
     
-    [self getAppraise];
+//    [self getAppraise];
+    
+    [self getCount];
+    
     
 }
 
@@ -48,107 +56,32 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark - 获取统计结果
+-(void)getCount
+{
+    NSDictionary *param = @{@"user_id":hRitem.id};
+    
+    [[TLRequest shareRequest] tlRequestWithAction:kresumesCount Params:param result:^(BOOL isSuccess, id data) {
+       
+        
+        if (isSuccess) {
+            
+            if ([data isKindOfClass:[NSDictionary class]]) {
+                
+                appraiseNum = [[data objectForKey:@"appraiseNum"]integerValue];
+                
+                saleresumesCountSum = [[data objectForKey:@"saleresumesCountSum"]integerValue];
+                
+                [self.tableView reloadData];
+                
+                
+            }
+        }
+        
+    }];
+}
 
-#pragma mark - 获取推荐的评价
--(void)getAppraise
-{
-    NSDictionary *param = @{@"user_id":hRitem.id,@"index":@(pageIndex),@"size":@(pageSize)};
-    
-    
-    [[TLRequest shareRequest] tlRequestWithAction:kgetAppraise Params:param result:^(BOOL isSuccess, id data) {
-        
-        
-        if (isSuccess) {
-            
-            NSArray *dataArray = [[NSArray alloc]init];//请求获取到的数据
-            
-            NSMutableArray *array = [[NSMutableArray alloc]init];//解析后的数据
-            
-            if ([data isKindOfClass:[NSArray class]]) {
-                dataArray = data;
-            }
-            
-            for (NSInteger i = 0; i < dataArray.count; i++) {
-                NSDictionary *oneDic = [dataArray objectAtIndex:i];
-                CommentItem *cItem = [[CommentItem alloc]init];
-                [cItem setValuesForKeysWithDictionary:oneDic];
-                
-                
-                [array addObject:cItem];
-                
-                
-                
-            }
-            
-            
-            
-            if (pageIndex == 1)
-            {
-                
-                [_commentArray removeAllObjects];
-                
-            }
-            
-            [_commentArray addObjectsFromArray:array];
-            
-            [self.tableView reloadData];
-            
-        }
-        
-    }];
-}
-#pragma mark - 获取人才官推荐的简历
--(void)requestUpLoadResumes
-{
-    NSString *userid = hRitem.id;
-    
-    NSDictionary *param = @{@"user_id":userid,@"index":@(pageIndex),@"size":@(pageSize)};
-    
-    [[TLRequest shareRequest] tlRequestWithAction:kgetMyResumes Params:param result:^(BOOL isSuccess, id data) {
-        
-        
-        if (isSuccess) {
-            
-            
-            
-            NSArray *dataArray = [[NSArray alloc]init];//请求获取到的数据
-            
-            NSMutableArray *array = [[NSMutableArray alloc]init];//解析后的数据
-            
-            if ([data isKindOfClass:[NSArray class]]) {
-                dataArray = data;
-            }
-            
-            for (NSInteger i = 0; i < dataArray.count; i++) {
-                NSDictionary *oneDic = [dataArray objectAtIndex:i];
-                ModelItem *item = [[ModelItem alloc]init];
-                [item setValuesForKeysWithDictionary:oneDic];
-                [array addObject:item];
-                
-            }
-            
-            if (pageIndex == 1)
-            {
-                
-                [_JDArray removeAllObjects];
-                
-            }
-            
-            [_JDArray addObjectsFromArray:array];
-            
-            [self.tableView reloadData];
-            
-            
-        }else
-        {
-            
-        }
-        
-    }];
-    
-    
-    
-}
+
 
 #pragma mark - UITableViewDataSource
 
@@ -193,27 +126,27 @@
             
         case 1:
         {
-            if (_JDArray.count > 0) {
-                
-                title.text = @"Ta推荐的人才";
-                [pushButton addTarget:self action:@selector(pushToRecommendTalent:) forControlEvents:UIControlEventTouchUpInside];
-                return headView;
-            }else{
-                return nil;
-            }
+//            if (_JDArray.count > 0) {
+//                
+//                title.text = @"Ta推荐的人才";
+//                [pushButton addTarget:self action:@selector(pushToRecommendTalent:) forControlEvents:UIControlEventTouchUpInside];
+//                return headView;
+//            }else{
+//                return nil;
+//            }
             
         }
             break;
             
         case 2:
         {
-            if (_commentArray.count>0) {
-                title.text = @"Ta推荐的评价";
-                [pushButton addTarget:self action:@selector(pushToRecommendAppraise:) forControlEvents:UIControlEventTouchUpInside];
-                return headView;
-            }else{
-                return nil;
-            }
+//            if (_commentArray.count>0) {
+//                title.text = @"Ta推荐的评价";
+//                [pushButton addTarget:self action:@selector(pushToRecommendAppraise:) forControlEvents:UIControlEventTouchUpInside];
+//                return headView;
+//            }else{
+//                return nil;
+//            }
             
         }
             break;
@@ -240,58 +173,58 @@
             
         case 1:
         {
-            if (_JDArray.count > 0) {
-                ModelItem *oneItem = [_JDArray firstObject];
-                
-                float tagWidth = (ScreenWidth-30-3*TagGap)/4;
-                float tagHeight = 24;
-                NSInteger count = oneItem.resumesLabel.count;
-                NSInteger tagRow = count%4==0 ? count/4:count/4 + 1 ;
-                UIView *blankFooter = [[UIView alloc]init];
-                
-                if (tagRow>0) {
-                    blankFooter.frame = CGRectMake(0, 0, ScreenWidth, 34*tagRow+15);
-                }else{
-                     blankFooter.frame = CGRectMake(0, 0, ScreenWidth, 34*tagRow+10);
-                }
-                
-                
-                blankFooter.backgroundColor = [UIColor whiteColor];
-                for (NSInteger i = 0; i < count; i++) {
-                    NSDictionary *oneLabel = [oneItem.resumesLabel objectAtIndex:i];
-                    
-                    TagLabel *tagLabel = [[TagLabel alloc]initWithFrame:CGRectMake(15+(i%4)*(tagWidth+TagGap), i/4*(tagHeight+TagGap), tagWidth, tagHeight)];
-                    NSString *word =[NSString stringWithFormat:@"%@",[oneLabel objectForKey:@"word"]];
-                    
-                    NSArray *_words = nil;
-                    
-                    if (word.length > 0) {
-                        
-                        _words = [word componentsSeparatedByString:@"_"];
-                    }
-                    
-                    
-                    if (_words.count > 1) {
-                        
-                        word = [_words firstObject];
-                    }
-                    else
-                    {
-                        word = @"";
-                    }
-                    
-                    tagLabel.text = word;
-                    [blankFooter addSubview:tagLabel];
-                    
-                }
-                
-                UIView *gap = [[UIView alloc]initWithFrame:CGRectMake(0, blankFooter.frame.size.height-10, ScreenWidth, 10)];
-                    gap.backgroundColor = kLineColor;
-                    [blankFooter addSubview:gap];
-                
-               
-                return blankFooter;
-            }
+//            if (_JDArray.count > 0) {
+//                ModelItem *oneItem = [_JDArray firstObject];
+//                
+//                float tagWidth = (ScreenWidth-30-3*TagGap)/4;
+//                float tagHeight = 24;
+//                NSInteger count = oneItem.resumesLabel.count;
+//                NSInteger tagRow = count%4==0 ? count/4:count/4 + 1 ;
+//                UIView *blankFooter = [[UIView alloc]init];
+//                
+//                if (tagRow>0) {
+//                    blankFooter.frame = CGRectMake(0, 0, ScreenWidth, 34*tagRow+15);
+//                }else{
+//                     blankFooter.frame = CGRectMake(0, 0, ScreenWidth, 34*tagRow+10);
+//                }
+//                
+//                
+//                blankFooter.backgroundColor = [UIColor whiteColor];
+//                for (NSInteger i = 0; i < count; i++) {
+//                    NSDictionary *oneLabel = [oneItem.resumesLabel objectAtIndex:i];
+//                    
+//                    TagLabel *tagLabel = [[TagLabel alloc]initWithFrame:CGRectMake(15+(i%4)*(tagWidth+TagGap), i/4*(tagHeight+TagGap), tagWidth, tagHeight)];
+//                    NSString *word =[NSString stringWithFormat:@"%@",[oneLabel objectForKey:@"word"]];
+//                    
+//                    NSArray *_words = nil;
+//                    
+//                    if (word.length > 0) {
+//                        
+//                        _words = [word componentsSeparatedByString:@"_"];
+//                    }
+//                    
+//                    
+//                    if (_words.count > 1) {
+//                        
+//                        word = [_words firstObject];
+//                    }
+//                    else
+//                    {
+//                        word = @"";
+//                    }
+//                    
+//                    tagLabel.text = word;
+//                    [blankFooter addSubview:tagLabel];
+//                    
+//                }
+//                
+//                UIView *gap = [[UIView alloc]initWithFrame:CGRectMake(0, blankFooter.frame.size.height-10, ScreenWidth, 10)];
+//                    gap.backgroundColor = kLineColor;
+//                    [blankFooter addSubview:gap];
+//                
+//               
+//                return blankFooter;
+//            }
             
             return nil;
 
@@ -300,40 +233,43 @@
             
         case 2:
         {
-            if (_commentArray.count>0) {
-                CommentItem *commentItem = [_commentArray firstObject];
-                
-                float tagWidth = (ScreenWidth-30-3*TagGap)/4;
-                float tagHeight = 30;
-                NSArray *labelArray = [CommonMethods sepretTheAppraiseLabel:commentItem.lable];
-                NSInteger count = labelArray.count;
-                NSInteger tagRow;
-                if (count%4 == 0) {
-                    tagRow = count/4;
-                }else{
-                    tagRow = count/4 + 1;
-                }
-                
-                UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40*tagRow)];
-                
-                blankFooter.backgroundColor = [UIColor whiteColor];
-                for (NSInteger i = 0; i < count; i++) {
-                    
-                    NSString *oneLabel = [labelArray objectAtIndex:i];
-                    TagLabel *tagLabel = [[TagLabel alloc]initWithFrame:CGRectMake(15+(i%4)*(tagWidth+TagGap), i/4*(tagHeight+TagGap), tagWidth, tagHeight)];
-                    tagLabel.text = oneLabel;
-                    [blankFooter addSubview:tagLabel];
-                    
-                }
-                
-                UIView *gap = [[UIView alloc]initWithFrame:CGRectMake(0, blankFooter.frame.size.height-1, ScreenWidth, 1)];
-                gap.backgroundColor = kLineColor;
-                [blankFooter addSubview:gap];
-                
-                return blankFooter;
-            }else{
-                return nil;
-            }
+//            if (_commentArray.count>0) {
+//                CommentItem *commentItem = [_commentArray firstObject];
+//                
+//                float tagWidth = (ScreenWidth-30-3*TagGap)/4;
+//                float tagHeight = 30;
+//                NSArray *labelArray = [CommonMethods sepretTheAppraiseLabel:commentItem.lable];
+//                NSInteger count = labelArray.count;
+//                NSInteger tagRow;
+//                if (count%4 == 0) {
+//                    tagRow = count/4;
+//                }else{
+//                    tagRow = count/4 + 1;
+//                }
+//                
+//                UIView *blankFooter = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40*tagRow)];
+//                
+//                blankFooter.backgroundColor = [UIColor whiteColor];
+//                for (NSInteger i = 0; i < count; i++) {
+//                    
+//                    NSString *oneLabel = [labelArray objectAtIndex:i];
+//                    TagLabel *tagLabel = [[TagLabel alloc]initWithFrame:CGRectMake(15+(i%4)*(tagWidth+TagGap), i/4*(tagHeight+TagGap), tagWidth, tagHeight)];
+//                    tagLabel.text = oneLabel;
+//                    [blankFooter addSubview:tagLabel];
+//                    
+//                }
+//                
+//                UIView *gap = [[UIView alloc]initWithFrame:CGRectMake(0, blankFooter.frame.size.height-1, ScreenWidth, 1)];
+//                gap.backgroundColor = kLineColor;
+//                [blankFooter addSubview:gap];
+//                
+//                return blankFooter;
+//            }else{
+//                return nil;
+//            }
+            
+            return nil;
+            
         }
             break;
             
@@ -355,18 +291,6 @@
             
         case 1:
         {
-            if (_JDArray.count > 0) {
-                ModelItem *oneItem = [_JDArray firstObject];
-                NSInteger count = oneItem.resumesLabel.count;
-                NSInteger tagRow = count%4==0 ? count/4:count/4 + 1 ;
-                
-                if (tagRow>0) {
-                    return 34*tagRow+15;
-                }else{
-                    return 34*tagRow+10;
-                }
-
-            }
             
             return 0.1;
         }
@@ -374,16 +298,7 @@
             
         case 2:
         {
-            if (_commentArray.count >0) {
-                
-                CommentItem *oneItem = [_commentArray firstObject];
-                NSInteger count = [CommonMethods sepretTheAppraiseLabel:oneItem.lable].count;
-                NSInteger tagRow = count%4==0 ? count/4:count/4 + 1 ;
-                return 40*tagRow+0.1;
-                
-            }else{
-                return 0.1;
-            }
+        
 
         }
             break;
@@ -407,18 +322,14 @@
             
         case 1:
         {
-            if (_JDArray.count > 0 ) {
-                return 30;
-            }
+         
             return 0.1;
         }
             break;
             
         case 2:
         {
-            if (_commentArray.count >0) {
-                return 30;
-            }
+         
             return 0.1;
         }
             break;
@@ -438,19 +349,13 @@
         }
             break;
             
-        case 1:
-        {
-            return _JDArray.count;
-        }
-            break;
-            
-        case 2:
-        {
-            return _commentArray.count;
-        }
-            break;
+  
             
         default:
+        {
+            return 1;
+            
+        }
             break;
     }
     
@@ -490,33 +395,13 @@
         }
             break;
             
-        case 1:
-        {
-            if (_JDArray.count > 0 ) {
-                
-                return 79;
-                
-            }else{
-                return 0;
-            }
-           
-            
-        }
-            break;
-            
-        case 2:
-        {
-            
-            if (_commentArray.count>0) {
-                CommentItem *oneItem = [_commentArray firstObject];
-                return 78+[StringHeight heightWithText:oneItem.comment font:FONT_14 constrainedToWidth:ScreenWidth-30];
-            }else{
-                return 0;
-            }
-        }
-            break;
+   
             
         default:
+        {
+            return 44;
+            
+        }
             break;
     }
     
@@ -646,98 +531,136 @@
             
         case 1:
         {
-            static NSString *cellId = @"RecommendCell";
-            RecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-            if (cell == nil) {
-                cell = [[NSBundle mainBundle]loadNibNamed:@"RecommendCell" owner:self options:nil][0];
-            }
             
-            if (_JDArray.count > 0) {
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CountCell"];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+            
+                UILabel *titleLable = (UILabel*)[cell viewWithTag:100];
                 
-                ModelItem *oneItem = [_JDArray firstObject];
-                
-                
-                //头像
-                if (oneItem.photo.length > 0) {
-                    
-                    [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.userPhoto] placeholderImage:kDefaultHeadImage];
-                    
-                }
-                
-                //估值
-                
-                NSString *titleStr = [NSString stringWithFormat:@"估值  ¥%.0f",oneItem.price];
-                NSMutableAttributedString *title = [[NSMutableAttributedString alloc]initWithString:titleStr];
-                [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, 2)];
-                [title addAttribute:NSForegroundColorAttributeName value:kTextLightGrayColor range:NSMakeRange(0, 2)];
-                cell.priceLabel.attributedText = title;
+                UILabel *numLabel = (UILabel*)[cell viewWithTag:101];
                 
                 
-                //人才名称
-                cell.idLabel.text = [NSString stringWithFormat:@"%@",oneItem.name];
+                titleLable.text = @"Ta推荐的人才";
+                
+                numLabel.text = [NSString stringWithFormat:@"%ld",(long)saleresumesCountSum];
                 
                 
-                //地址&公式名称
-                cell.companyLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,oneItem.currentCompany];
                 
-                //行业&职位
-                cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.currentIndustry,oneItem.currentPosition];
-                
-                
-             return cell;
+            });
+            
+            return cell;
+            
+//            static NSString *cellId = @"RecommendCell";
+//            RecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+//            if (cell == nil) {
+//                cell = [[NSBundle mainBundle]loadNibNamed:@"RecommendCell" owner:self options:nil][0];
+//            }
+//            
+//            if (_JDArray.count > 0) {
+//                
+//                ModelItem *oneItem = [_JDArray firstObject];
+//                
+//                
+//                //头像
+//                if (oneItem.photo.length > 0) {
+//                    
+//                    [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneItem.userPhoto] placeholderImage:kDefaultHeadImage];
+//                    
+//                }
+//                
+//                //估值
+//                
+//                NSString *titleStr = [NSString stringWithFormat:@"估值  ¥%.0f",oneItem.price];
+//                NSMutableAttributedString *title = [[NSMutableAttributedString alloc]initWithString:titleStr];
+//                [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, 2)];
+//                [title addAttribute:NSForegroundColorAttributeName value:kTextLightGrayColor range:NSMakeRange(0, 2)];
+//                cell.priceLabel.attributedText = title;
+//                
+//                
+//                //人才名称
+//                cell.idLabel.text = [NSString stringWithFormat:@"%@",oneItem.name];
+//                
+//                
+//                //地址&公式名称
+//                cell.companyLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.city,oneItem.currentCompany];
+//                
+//                //行业&职位
+//                cell.placeLabel.text = [NSString stringWithFormat:@"%@ %@",oneItem.currentIndustry,oneItem.currentPosition];
+//                
+//                
+//             return cell;
             
 
-            }else{
-                return nil;
-            }
+      
             
             
             
             
-        }
+         }
             break;
             
         case 2:
         {
-            static NSString *cellId = @"CommentCell";
-            CommentCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-            if (cell == nil) {
-                cell = [[NSBundle mainBundle]loadNibNamed:@"CommentCell" owner:self options:nil][0];
-            }
-            if (_commentArray.count>0){
+            
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CountCell"];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
                 
-                CommentItem *oneComment = [_commentArray firstObject];
+                UILabel *titleLable = (UILabel*)[cell viewWithTag:100];
                 
-                //头像
-                if (oneComment.photo.length > 0 ) {
-
-                    [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneComment.photo] placeholderImage:kDefaultHeadImage];
-
-                }
+                UILabel *numLabel = (UILabel*)[cell viewWithTag:101];
                 
                 
-                //姓名
-                cell.nameLabel.text = oneComment.commentUser;
+                titleLable.text = @"Ta推荐的评价";
                 
-                //id
+                numLabel.text = [NSString stringWithFormat:@"%ld",(long)appraiseNum];
                 
-                cell.idLabel.text = [NSString stringWithFormat:@"人才官ID %@",oneComment.userId];
-
                 
-                //time
-                if (oneComment.time.length > 10) {
-                    cell.timeLabel.text = [oneComment.time substringToIndex:10];
-                }else{
-                    cell.timeLabel.text = oneComment.time;
-                }
                 
-                //评论内容
-                
-                cell.commentTF.text = oneComment.comment;
-                
-                return cell;
-                
-            }
+            });
+            
+            return cell;
+//            
+//            static NSString *cellId = @"CommentCell";
+//            CommentCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+//            if (cell == nil) {
+//                cell = [[NSBundle mainBundle]loadNibNamed:@"CommentCell" owner:self options:nil][0];
+//            }
+//            if (_commentArray.count>0){
+//                
+//                CommentItem *oneComment = [_commentArray firstObject];
+//                
+//                //头像
+//                if (oneComment.photo.length > 0 ) {
+//
+//                    [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:oneComment.photo] placeholderImage:kDefaultHeadImage];
+//
+//                }
+//                
+//                
+//                //姓名
+//                cell.nameLabel.text = oneComment.commentUser;
+//                
+//                //id
+//                
+//                cell.idLabel.text = [NSString stringWithFormat:@"人才官ID %@",oneComment.userId];
+//
+//                
+//                //time
+//                if (oneComment.time.length > 10) {
+//                    cell.timeLabel.text = [oneComment.time substringToIndex:10];
+//                }else{
+//                    cell.timeLabel.text = oneComment.time;
+//                }
+//                
+//                //评论内容
+//                
+//                cell.commentTF.text = oneComment.comment;
+//                
+//                return cell;
+//                
+//            }
         
             
             return nil;
@@ -760,6 +683,17 @@
 {
    
     
+    if (indexPath.section == 1) {
+        
+        [self pushToRecommendTalent];
+    }
+    
+    if (indexPath.section == 2) {
+        
+        [self pushToRecommendAppraise];
+        
+        
+    }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     
@@ -811,7 +745,7 @@
 }
 
 #pragma mark- 推荐的人才
--(void)pushToRecommendTalent:(UIButton *)button{
+-(void)pushToRecommendTalent{
     
     RecommendTalentTVC *talent = [self.storyboard instantiateViewControllerWithIdentifier:@"RecommendTalentTVC"];
     talent.hRitem = hRitem;
@@ -819,7 +753,7 @@
 }
 
 #pragma mark- 推荐的评价
--(void)pushToRecommendAppraise:(UIButton *)button{
+-(void)pushToRecommendAppraise{
     
     RecommendAppraiseTVC *talent = [self.storyboard instantiateViewControllerWithIdentifier:@"RecommendAppraiseTVC"];
     talent.hritem = hRitem;
