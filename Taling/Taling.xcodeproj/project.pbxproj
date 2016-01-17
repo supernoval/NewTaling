@@ -223,6 +223,7 @@
 		153F3BD91BD3641600C86F1A /* RecommendHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 153F3BD81BD3641600C86F1A /* RecommendHeaderView.m */; };
 		15521B851C4BE2920010E718 /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = 15521B841C4BE2920010E718 /* city.json */; };
 		15521B871C4BE2EE0010E718 /* Province.json in Resources */ = {isa = PBXBuildFile; fileRef = 15521B861C4BE2EE0010E718 /* Province.json */; };
+		15521B8B1C4BEC2A0010E718 /* PickCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15521B8A1C4BEC2A0010E718 /* PickCityViewController.m */; };
 		1577164B1C449A710030DC0B /* RecommendNavi.m in Sources */ = {isa = PBXBuildFile; fileRef = 1577164A1C449A710030DC0B /* RecommendNavi.m */; };
 		1577164E1C449B920030DC0B /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1577164D1C449B920030DC0B /* MyTabBarController.m */; };
 		157716511C449C170030DC0B /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157716501C449C170030DC0B /* BaseNavigationController.m */; };
@@ -914,6 +915,8 @@
 		153F3BD81BD3641600C86F1A /* RecommendHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendHeaderView.m; sourceTree = "<group>"; };
 		15521B841C4BE2920010E718 /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
 		15521B861C4BE2EE0010E718 /* Province.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Province.json; sourceTree = "<group>"; };
+		15521B891C4BEC2A0010E718 /* PickCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickCityViewController.h; sourceTree = "<group>"; };
+		15521B8A1C4BEC2A0010E718 /* PickCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickCityViewController.m; sourceTree = "<group>"; };
 		157716491C449A710030DC0B /* RecommendNavi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecommendNavi.h; path = Recommend/RecommendNavi.h; sourceTree = "<group>"; };
 		1577164A1C449A710030DC0B /* RecommendNavi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecommendNavi.m; path = Recommend/RecommendNavi.m; sourceTree = "<group>"; };
 		1577164C1C449B920030DC0B /* MyTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTabBarController.h; sourceTree = "<group>"; };
@@ -2512,6 +2515,15 @@
 			name = recommendHeaderView;
 			sourceTree = "<group>";
 		};
+		15521B881C4BEC140010E718 /* cityPickerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				15521B891C4BEC2A0010E718 /* PickCityViewController.h */,
+				15521B8A1C4BEC2A0010E718 /* PickCityViewController.m */,
+			);
+			name = cityPickerViewController;
+			sourceTree = "<group>";
+		};
 		1577165B1C449E660030DC0B /* navigationcontrollers */ = {
 			isa = PBXGroup;
 			children = (
@@ -2564,6 +2576,7 @@
 		157C02CD1C1C5BE90092AFA1 /* newRegist */ = {
 			isa = PBXGroup;
 			children = (
+				15521B881C4BEC140010E718 /* cityPickerViewController */,
 				157C02DB1C1C920F0092AFA1 /* companyregist */,
 				157C02CE1C1C5BF70092AFA1 /* personInfo */,
 				157C02CA1C1C4C160092AFA1 /* NewRegistViewController.h */,
@@ -3205,6 +3218,7 @@
 				15F7CB0B1BD1E6A5008BB231 /* Emoji.m in Sources */,
 				13AA5EA91B95CCEF00AB477E /* AFHTTPRequestOperation.m in Sources */,
 				D2B8E7961C16662E00445EA6 /* BoughtResumeTVC.m in Sources */,
+				15521B8B1C4BEC2A0010E718 /* PickCityViewController.m in Sources */,
 				1506E03E1B89B53C007D1696 /* JSONModelClassProperty.m in Sources */,
 				153F3BAC1BD27A4200C86F1A /* EMCDDeviceManager+ProximitySensor.m in Sources */,
 				1506E0451B89B53C007D1696 /* JSONValueTransformer.m in Sources */,

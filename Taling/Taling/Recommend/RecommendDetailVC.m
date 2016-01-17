@@ -465,7 +465,7 @@
             }
             
             //姓名
-            cell.nameLabel.text = [NSString stringWithFormat:@"人才官ID  %@",item.userId];
+            cell.nameLabel.text = [NSString stringWithFormat:@"编号 %@",item.userId];
             
             //人才官
             cell.disLabel.text = @"人才官";
@@ -511,7 +511,7 @@
                 
                 //id
                 
-                cell.idLabel.text = [NSString stringWithFormat:@"ID  %@",oneComment.userId];
+                cell.idLabel.text = [NSString stringWithFormat:@"编号 %@",oneComment.userId];
                 
                 //time
                 if (oneComment.time.length > 10) {

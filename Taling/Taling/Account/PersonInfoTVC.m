@@ -10,6 +10,8 @@
 #import "ChangePerInfoVC.h"
 #import "PickInfoTVC.h"
 #import "DonePeronRegist.h"
+#import "PickCityViewController.h"
+
 
 
 @interface PersonInfoTVC ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
@@ -236,31 +238,68 @@
             break;
         case 3:
         {
-            PickInfoTVC *_pickInfo = [[PickInfoTVC alloc]initWithStyle:UITableViewStylePlain];
             
-            _pickInfo.title = @"城市选择";
-            _pickInfo.type =1;
-            _pickInfo.beforeString = _cityLabel.text;
-            _pickInfo.block = ^(NSString*string)
-            {
+            PickCityViewController *_pickCity = [[PickCityViewController alloc]init];
+            
+            [_pickCity pickCityBlock:^(NSDictionary *dict, BOOL isCity) {
+               
+                NSString *cityname = nil;
                 
-                _cityLabel.text = string;
-                
-                
-                [UserInfo saveUserInfo:string key:kcity];
-                
-                if (_isShowed) {
+                if (isCity) {
                     
-                    [self saveInfo];
+                    cityname = [dict objectForKey:@"-CityName"];
+                }
+                else
+                {
+                    cityname = [dict objectForKey:@"-ProvinceName"];
+                    
                 }
                 
+              _cityLabel.text = cityname;
+                
+                
+              [UserInfo saveUserInfo:cityname key:kcity];
+                
+             if (_isShowed) {
+                
+              [self saveInfo];
+                 
+                  }
                 
                 
                 
-                
-            };
+            }];
             
-            [self.navigationController pushViewController:_pickInfo animated:YES];
+            [self.navigationController pushViewController:_pickCity animated:YES];
+            
+            
+            
+//            
+//            PickInfoTVC *_pickInfo = [[PickInfoTVC alloc]initWithStyle:UITableViewStylePlain];
+//            
+//            _pickInfo.title = @"城市选择";
+//            _pickInfo.type =1;
+//            _pickInfo.beforeString = _cityLabel.text;
+//            _pickInfo.block = ^(NSString*string)
+//            {
+//                
+//                _cityLabel.text = string;
+//                
+//                
+//                [UserInfo saveUserInfo:string key:kcity];
+//                
+//                if (_isShowed) {
+//                    
+//                    [self saveInfo];
+//                }
+//                
+//                
+//                
+//                
+//                
+//            };
+//            
+//            [self.navigationController pushViewController:_pickInfo animated:YES];
             
         }
             break;

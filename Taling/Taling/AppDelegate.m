@@ -72,6 +72,21 @@
     [WXApi registerApp:kWXAppID];
     
  
+    //预先加载省 城市
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Province" ofType:@"json"];
+    
+    NSData *data = [NSData dataWithContentsOfFile:path];
+
+    _provinceArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    
+    NSString *cityPath = [[NSBundle mainBundle] pathForResource:@"city" ofType:@"json"];
+    
+    NSData *cityData = [NSData dataWithContentsOfFile:cityPath];
+
+    _citysArray = [NSJSONSerialization JSONObjectWithData:cityData options:NSJSONReadingMutableContainers error:nil];
+    
+    
+   
     
     return YES;
 }

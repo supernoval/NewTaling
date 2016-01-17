@@ -1,176 +1,172 @@
-{
-    "Provinces": {
-        "Province": [
-        {
-            "-ID": "1",
-            "-ProvinceName": "北京市",
-            "#text": "北京市"
-        },
-        {
-            "-ID": "2",
-            "-ProvinceName": "天津市",
-            "#text": "天津市"
-        },
-        {
-            "-ID": "3",
-            "-ProvinceName": "河北省",
-            "#text": "河北省"
-        },
-        {
-            "-ID": "4",
-            "-ProvinceName": "山西省",
-            "#text": "山西省"
-        },
-        {
-            "-ID": "5",
-            "-ProvinceName": "内蒙古自治区",
-            "#text": "内蒙古自治区"
-        },
-        {
-            "-ID": "6",
-            "-ProvinceName": "辽宁省",
-            "#text": "辽宁省"
-        },
-        {
-            "-ID": "7",
-            "-ProvinceName": "吉林省",
-            "#text": "吉林省"
-        },
-        {
-            "-ID": "8",
-            "-ProvinceName": "黑龙江省",
-            "#text": "黑龙江省"
-        },
-        {
-            "-ID": "9",
-            "-ProvinceName": "上海市",
-            "#text": "上海市"
-        },
-        {
-            "-ID": "10",
-            "-ProvinceName": "江苏省",
-            "#text": "江苏省"
-        },
-        {
-            "-ID": "11",
-            "-ProvinceName": "浙江省",
-            "#text": "浙江省"
-        },
-        {
-            "-ID": "12",
-            "-ProvinceName": "安徽省",
-            "#text": "安徽省"
-        },
-        {
-            "-ID": "13",
-            "-ProvinceName": "福建省",
-            "#text": "福建省"
-        },
-        {
-            "-ID": "14",
-            "-ProvinceName": "江西省",
-            "#text": "江西省"
-        },
-        {
-            "-ID": "15",
-            "-ProvinceName": "山东省",
-            "#text": "山东省"
-        },
-        {
-            "-ID": "16",
-            "-ProvinceName": "河南省",
-            "#text": "河南省"
-        },
-        {
-            "-ID": "17",
-            "-ProvinceName": "湖北省",
-            "#text": "湖北省"
-        },
-        {
-            "-ID": "18",
-            "-ProvinceName": "湖南省",
-            "#text": "湖南省"
-        },
-        {
-            "-ID": "19",
-            "-ProvinceName": "广东省",
-            "#text": "广东省"
-        },
-        {
-            "-ID": "20",
-            "-ProvinceName": "广西壮族自治区",
-            "#text": "广西壮族自治区"
-        },
-        {
-            "-ID": "21",
-            "-ProvinceName": "海南省",
-            "#text": "海南省"
-        },
-        {
-            "-ID": "22",
-            "-ProvinceName": "重庆市",
-            "#text": "重庆市"
-        },
-        {
-            "-ID": "23",
-            "-ProvinceName": "四川省",
-            "#text": "四川省"
-        },
-        {
-            "-ID": "24",
-            "-ProvinceName": "贵州省",
-            "#text": "贵州省"
-        },
-        {
-            "-ID": "25",
-            "-ProvinceName": "云南省",
-            "#text": "云南省"
-        },
-        {
-            "-ID": "26",
-            "-ProvinceName": "西藏自治区",
-            "#text": "西藏自治区"
-        },
-        {
-            "-ID": "27",
-            "-ProvinceName": "陕西省",
-            "#text": "陕西省"
-        },
-        {
-            "-ID": "28",
-            "-ProvinceName": "甘肃省",
-            "#text": "甘肃省"
-        },
-        {
-            "-ID": "29",
-            "-ProvinceName": "青海省",
-            "#text": "青海省"
-        },
-        {
-            "-ID": "30",
-            "-ProvinceName": "宁夏回族自治区",
-            "#text": "宁夏回族自治区"
-        },
-        {
-            "-ID": "31",
-            "-ProvinceName": "新疆维吾尔自治区",
-            "#text": "新疆维吾尔自治区"
-        },
-        {
-            "-ID": "32",
-            "-ProvinceName": "香港特别行政区",
-            "#text": "香港特别行政区"
-        },
-        {
-            "-ID": "33",
-            "-ProvinceName": "澳门特别行政区",
-            "#text": "澳门特别行政区"
-        },
-        {
-            "-ID": "34",
-            "-ProvinceName": "台湾省",
-            "#text": "台湾省"
-        }
-        ]
-    }
-}
+[
+ {
+ "-ID": "1",
+ "-ProvinceName": "北京市",
+ "#text": "北京市"
+ },
+ {
+ "-ID": "2",
+ "-ProvinceName": "天津市",
+ "#text": "天津市"
+ },
+ {
+ "-ID": "3",
+ "-ProvinceName": "河北省",
+ "#text": "河北省"
+ },
+ {
+ "-ID": "4",
+ "-ProvinceName": "山西省",
+ "#text": "山西省"
+ },
+ {
+ "-ID": "5",
+ "-ProvinceName": "内蒙古自治区",
+ "#text": "内蒙古自治区"
+ },
+ {
+ "-ID": "6",
+ "-ProvinceName": "辽宁省",
+ "#text": "辽宁省"
+ },
+ {
+ "-ID": "7",
+ "-ProvinceName": "吉林省",
+ "#text": "吉林省"
+ },
+ {
+ "-ID": "8",
+ "-ProvinceName": "黑龙江省",
+ "#text": "黑龙江省"
+ },
+ {
+ "-ID": "9",
+ "-ProvinceName": "上海市",
+ "#text": "上海市"
+ },
+ {
+ "-ID": "10",
+ "-ProvinceName": "江苏省",
+ "#text": "江苏省"
+ },
+ {
+ "-ID": "11",
+ "-ProvinceName": "浙江省",
+ "#text": "浙江省"
+ },
+ {
+ "-ID": "12",
+ "-ProvinceName": "安徽省",
+ "#text": "安徽省"
+ },
+ {
+ "-ID": "13",
+ "-ProvinceName": "福建省",
+ "#text": "福建省"
+ },
+ {
+ "-ID": "14",
+ "-ProvinceName": "江西省",
+ "#text": "江西省"
+ },
+ {
+ "-ID": "15",
+ "-ProvinceName": "山东省",
+ "#text": "山东省"
+ },
+ {
+ "-ID": "16",
+ "-ProvinceName": "河南省",
+ "#text": "河南省"
+ },
+ {
+ "-ID": "17",
+ "-ProvinceName": "湖北省",
+ "#text": "湖北省"
+ },
+ {
+ "-ID": "18",
+ "-ProvinceName": "湖南省",
+ "#text": "湖南省"
+ },
+ {
+ "-ID": "19",
+ "-ProvinceName": "广东省",
+ "#text": "广东省"
+ },
+ {
+ "-ID": "20",
+ "-ProvinceName": "广西壮族自治区",
+ "#text": "广西壮族自治区"
+ },
+ {
+ "-ID": "21",
+ "-ProvinceName": "海南省",
+ "#text": "海南省"
+ },
+ {
+ "-ID": "22",
+ "-ProvinceName": "重庆市",
+ "#text": "重庆市"
+ },
+ {
+ "-ID": "23",
+ "-ProvinceName": "四川省",
+ "#text": "四川省"
+ },
+ {
+ "-ID": "24",
+ "-ProvinceName": "贵州省",
+ "#text": "贵州省"
+ },
+ {
+ "-ID": "25",
+ "-ProvinceName": "云南省",
+ "#text": "云南省"
+ },
+ {
+ "-ID": "26",
+ "-ProvinceName": "西藏自治区",
+ "#text": "西藏自治区"
+ },
+ {
+ "-ID": "27",
+ "-ProvinceName": "陕西省",
+ "#text": "陕西省"
+ },
+ {
+ "-ID": "28",
+ "-ProvinceName": "甘肃省",
+ "#text": "甘肃省"
+ },
+ {
+ "-ID": "29",
+ "-ProvinceName": "青海省",
+ "#text": "青海省"
+ },
+ {
+ "-ID": "30",
+ "-ProvinceName": "宁夏回族自治区",
+ "#text": "宁夏回族自治区"
+ },
+ {
+ "-ID": "31",
+ "-ProvinceName": "新疆维吾尔自治区",
+ "#text": "新疆维吾尔自治区"
+ },
+ {
+ "-ID": "32",
+ "-ProvinceName": "香港特别行政区",
+ "#text": "香港特别行政区"
+ },
+ {
+ "-ID": "33",
+ "-ProvinceName": "澳门特别行政区",
+ "#text": "澳门特别行政区"
+ },
+ {
+ "-ID": "34",
+ "-ProvinceName": "台湾省",
+ "#text": "台湾省"
+ }
+ ]

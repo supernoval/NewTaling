@@ -448,7 +448,7 @@
                     cell.nameLabel.text = hRitem.nickname;
                     
                     //ID
-                    cell.idLabel.text = [NSString stringWithFormat:@"ID  %@",hRitem.id];
+                    cell.idLabel.text = [NSString stringWithFormat:@"编号 %@",hRitem.id];
                     
                     //城市
                     cell.disLabel.text = @"城市";
@@ -524,7 +524,7 @@
                     
                 default:
                     break;
-            }
+             }
             
         }
             break;
