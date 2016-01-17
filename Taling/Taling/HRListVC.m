@@ -52,6 +52,60 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self getFocusedHR];
+}
+
+-(void)getFocusedHR//获取关注的人才并将其保存本地
+{
+    NSDictionary *param = @{@"user_id":[UserInfo getuserid],@"index":@(index),@"size":@(9999)};
+    
+    [[TLRequest shareRequest ] tlRequestWithAction:kgetAttention Params:param result:^(BOOL isSuccess, id data) {
+        
+        [self.tableView.header endRefreshing];
+        [self.tableView.footer endRefreshing];
+        
+        if (isSuccess) {
+            
+            NSArray *dataArray = [[NSArray alloc]init];//请求获取到的数据
+            
+            NSMutableArray *array = [[NSMutableArray alloc]init];//解析后的数据
+            
+            if ([data isKindOfClass:[NSArray class]]) {
+                dataArray = data;
+            }
+            
+            for (NSInteger i = 0; i < dataArray.count; i++) {
+                NSDictionary *oneDic = [dataArray objectAtIndex:i];
+                HRItem *item = [[HRItem alloc]init];
+                [item setValuesForKeysWithDictionary:oneDic];
+                
+                
+                [array addObject:item];
+                
+                
+                
+            }
+            
+            for (NSInteger a=0; a<array.count; a++) {
+                
+                HRItem *item = [array objectAtIndex:a];
+                [UserInfo addHR:[item.id integerValue]];
+                
+            }
+            
+        }
+    }];
+}
+
+
+
+
+
+
+
+
 #pragma mark - 请求数据
 -(void)requestHRList
 {

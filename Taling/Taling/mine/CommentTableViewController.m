@@ -175,12 +175,16 @@
             [oneQ setObject:optionArray forKey:@"option"];
             
         }else{
-            [oneAnswer setObject:@(YES) forKey:@"selected"];
-            for (NSInteger i=0; i<optionArray.count && i!=answerNum; i++) {
+            
+            for (NSInteger i=0; i<optionArray.count; i++) {
                 NSMutableDictionary *otherAnswer = [optionArray objectAtIndex:i];
                 [otherAnswer setObject:@(NO) forKey:@"selected"];
                 [optionArray replaceObjectAtIndex:i withObject:otherAnswer];
             }
+            
+            [oneAnswer setObject:@(YES) forKey:@"selected"];
+            
+            NSLog(@"%@",oneAnswer);
             [optionArray replaceObjectAtIndex:answerNum withObject:oneAnswer];
             [oneQ setObject:optionArray forKey:@"option"];
         }

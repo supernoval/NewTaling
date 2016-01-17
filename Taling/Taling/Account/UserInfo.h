@@ -59,4 +59,7 @@
 
 + (BOOL)hasFocusedHR:(NSInteger)userId;
 
+#pragma mark- 获取关注列表后直接加进本地
++ (void)addHR:(NSInteger)userId;
+
 @end

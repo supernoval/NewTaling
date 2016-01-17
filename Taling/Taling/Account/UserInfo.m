@@ -271,6 +271,35 @@
 }
 
 
++ (void)addHR:(NSInteger)userId{
+    
+    
+    
+    NSMutableArray *array =[[NSMutableArray alloc]initWithArray:[[NSUserDefaults standardUserDefaults]objectForKey:kfocusdHRArray]];
+    
+    
+    NSInteger theId = -88888;
+    NSInteger theNum = 0;
+    
+    
+    for (NSInteger i = 0; i < array.count; i++) {
+        NSInteger oneId = [[array objectAtIndex:i]integerValue];
+        
+        if (oneId == userId) {
+            theId = oneId;
+            theNum = i;
+        }
+        
+    }
+    
+    if (theId == -88888) {
+        [array addObject:@(userId)];
+        [[NSUserDefaults standardUserDefaults]setObject:array forKey:kfocusdHRArray];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+       
+    }
+}
+
 +(void)loginWithUsername:(NSString *)username password:(NSString *)password
 {
     [[TLRequest shareRequest] tlRequestWithAction:kLogin Params:@{@"username":username,@"password":password} result:^(BOOL isSuccess, id data) {
