@@ -21,19 +21,10 @@
                             <constraint firstAttribute="width" constant="50" id="OFk-U5-UMq"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="王女士" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldD-ZT-1wi">
-                        <rect key="frame" x="75" y="16" width="147" height="18"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="18" id="ZAE-oR-nwH"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人才官" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqW-rW-MWG">
-                        <rect key="frame" x="75" y="36" width="147" height="18"/>
+                        <rect key="frame" x="75" y="28" width="147" height="14"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="18" id="5nB-NG-YTI"/>
+                            <constraint firstAttribute="height" constant="14" id="5nB-NG-YTI"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -51,13 +42,22 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="王女士" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldD-ZT-1wi">
+                        <rect key="frame" x="75" y="8" width="147" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="ZAE-oR-nwH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ldD-ZT-1wi" firstAttribute="leading" secondItem="Aa0-Sc-hZA" secondAttribute="trailing" constant="10" id="DkX-eV-Epc"/>
                     <constraint firstItem="sqW-rW-MWG" firstAttribute="leading" secondItem="Aa0-Sc-hZA" secondAttribute="trailing" constant="10" id="EpC-54-hA9"/>
                     <constraint firstItem="sqW-rW-MWG" firstAttribute="top" secondItem="ldD-ZT-1wi" secondAttribute="bottom" constant="2" id="JkW-1A-Pu1"/>
                     <constraint firstItem="JTC-Zd-q5b" firstAttribute="leading" secondItem="sqW-rW-MWG" secondAttribute="trailing" constant="8" id="LE2-ae-c6W"/>
-                    <constraint firstItem="ldD-ZT-1wi" firstAttribute="top" secondItem="DBH-4I-qoi" secondAttribute="top" constant="16" id="Zkl-iL-Jtk"/>
+                    <constraint firstItem="ldD-ZT-1wi" firstAttribute="top" secondItem="DBH-4I-qoi" secondAttribute="top" constant="8" id="Zkl-iL-Jtk"/>
                     <constraint firstItem="Aa0-Sc-hZA" firstAttribute="leading" secondItem="DBH-4I-qoi" secondAttribute="leading" constant="15" id="aVx-zr-sB6"/>
                     <constraint firstItem="JTC-Zd-q5b" firstAttribute="leading" secondItem="ldD-ZT-1wi" secondAttribute="trailing" constant="8" id="c9v-rd-zOH"/>
                     <constraint firstItem="Aa0-Sc-hZA" firstAttribute="top" secondItem="DBH-4I-qoi" secondAttribute="top" constant="8" id="crN-ob-Ucp"/>

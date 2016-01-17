@@ -69,12 +69,17 @@
         {
             if (indexPath.row == 0) {
                 //关于
+                
+                UINavigationController *_privacy = [self.storyboard instantiateViewControllerWithIdentifier:@"privacyNav"];
+                
+                [self presentViewController:_privacy animated:YES completion:nil];
+                
             }else if (indexPath.row == 1){
                 //评价
-//                NSString *urlStr = [NSString stringWithFormat:
-//                                    @"http://itunes.apple.com/app/id646300912"];
-//                NSURL *url =[NSURL URLWithString:urlStr];
-//                [[UIApplication sharedApplication] openURL:url];
+                NSString *urlStr = [NSString stringWithFormat:
+                                    @"https://itunes.apple.com/us/app/ta-ling/id912169073?l=zh&ls=1&mt=8"];
+                NSURL *url =[NSURL URLWithString:urlStr];
+                [[UIApplication sharedApplication] openURL:url];
             }
             
         }

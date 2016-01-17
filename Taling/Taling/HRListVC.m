@@ -351,8 +351,7 @@
         
         
         
-        //ID
-        cell.idLabel.text = [NSString stringWithFormat:@"编号  %@",oneItem.id];
+  
     
     // 推荐净值
         
@@ -368,35 +367,35 @@
         [title addAttribute:NSForegroundColorAttributeName value:kTextLightGrayColor range:NSMakeRange(0, 4)];
         cell.recomValue.attributedText = title;
         
+        //ID  城市  服务过的企业
+        if (!oneItem.city) {
+            
+            oneItem.city = @"";
+            
+        }
+        if (!oneItem.industry) {
+            
+            oneItem.industry = @"";
+            
+        }
+        cell.idLabel.text = [NSString stringWithFormat:@"编号%@ %@ 所在行业:%@",oneItem.id,oneItem.city,oneItem.industry];
         
-    //城市&擅长行业
+    //擅长行业
+        
+        if (!oneItem.speciality) {
+            
+            oneItem.speciality = @"";
+            
+        }
+      cell.disLabel.text = [NSString stringWithFormat:@"擅长行业:%@",oneItem.speciality];
         
         if (!oneItem.city) {
             
             oneItem.city = @"";
         }
-        if (oneItem.city.length > 0) {
-            
-           cell.disLabel.text = [NSString stringWithFormat:@"%@ 擅长行业:%@",oneItem.city,oneItem.speciality];
-        }
-        else
-        {
-            cell.disLabel.text = [NSString stringWithFormat:@"擅长行业:%@",oneItem.speciality];
-        }
-        
-        //所在的行业
-        if (!oneItem.industry) {
-            
-            oneItem.industry = @"";
-        }
-        
-        cell.industryLabel.text = [NSString stringWithFormat:@"所在的行业:%@",oneItem.industry];
         
         
-     
-   
 
-    
     
     //服务过的企业
         cell.servicedCom.text = [CommonMethods getServicedComList:oneItem.customerCompany];

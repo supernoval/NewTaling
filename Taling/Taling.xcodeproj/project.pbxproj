@@ -221,6 +221,8 @@
 		153F3BD41BD27CBC00C86F1A /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 153F3BCC1BD27CBC00C86F1A /* libopencore-amrnb.a */; };
 		153F3BD51BD27CBC00C86F1A /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 153F3BD01BD27CBC00C86F1A /* libopencore-amrwb.a */; };
 		153F3BD91BD3641600C86F1A /* RecommendHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 153F3BD81BD3641600C86F1A /* RecommendHeaderView.m */; };
+		15521B851C4BE2920010E718 /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = 15521B841C4BE2920010E718 /* city.json */; };
+		15521B871C4BE2EE0010E718 /* Province.json in Resources */ = {isa = PBXBuildFile; fileRef = 15521B861C4BE2EE0010E718 /* Province.json */; };
 		1577164B1C449A710030DC0B /* RecommendNavi.m in Sources */ = {isa = PBXBuildFile; fileRef = 1577164A1C449A710030DC0B /* RecommendNavi.m */; };
 		1577164E1C449B920030DC0B /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1577164D1C449B920030DC0B /* MyTabBarController.m */; };
 		157716511C449C170030DC0B /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157716501C449C170030DC0B /* BaseNavigationController.m */; };
@@ -910,6 +912,8 @@
 		153F3BD01BD27CBC00C86F1A /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
 		153F3BD71BD3641600C86F1A /* RecommendHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendHeaderView.h; sourceTree = "<group>"; };
 		153F3BD81BD3641600C86F1A /* RecommendHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendHeaderView.m; sourceTree = "<group>"; };
+		15521B841C4BE2920010E718 /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
+		15521B861C4BE2EE0010E718 /* Province.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Province.json; sourceTree = "<group>"; };
 		157716491C449A710030DC0B /* RecommendNavi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecommendNavi.h; path = Recommend/RecommendNavi.h; sourceTree = "<group>"; };
 		1577164A1C449A710030DC0B /* RecommendNavi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecommendNavi.m; path = Recommend/RecommendNavi.m; sourceTree = "<group>"; };
 		1577164C1C449B920030DC0B /* MyTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTabBarController.h; sourceTree = "<group>"; };
@@ -1626,6 +1630,8 @@
 				1506DF561B89B36D007D1696 /* Images.xcassets */,
 				1506DF491B89B36D007D1696 /* Supporting Files */,
 				1577165B1C449E660030DC0B /* navigationcontrollers */,
+				15521B841C4BE2920010E718 /* city.json */,
+				15521B861C4BE2EE0010E718 /* Province.json */,
 			);
 			path = Taling;
 			sourceTree = "<group>";
@@ -3029,6 +3035,7 @@
 				B3F2D3D01C11F7BF0061F2A2 /* SummaryCell.xib in Resources */,
 				B30000A91BC3D449006B7B08 /* CommentMeaageCell.xib in Resources */,
 				153F3BB81BD27AA300C86F1A /* sr_refresh@2X.png in Resources */,
+				15521B871C4BE2EE0010E718 /* Province.json in Resources */,
 				153F3BB71BD27AA300C86F1A /* sr_refresh.png in Resources */,
 				D2FCB9001BCBF12200C6ACC0 /* ResumePriceCell.xib in Resources */,
 				B3F2D3D51C11FA060061F2A2 /* FocusCell.xib in Resources */,
@@ -3046,6 +3053,7 @@
 				1506E0C41B89B637007D1696 /* SMS_SDKLocalizable.strings in Resources */,
 				B3F2D3E31C12C7850061F2A2 /* HRListCell.xib in Resources */,
 				13C8AD611BC94587009F5B4B /* EaseMob.bundle in Resources */,
+				15521B851C4BE2920010E718 /* city.json in Resources */,
 				B3F2D3E81C12DD5D0061F2A2 /* HRDetailCell.xib in Resources */,
 				1506DF571B89B36D007D1696 /* Images.xcassets in Resources */,
 			);

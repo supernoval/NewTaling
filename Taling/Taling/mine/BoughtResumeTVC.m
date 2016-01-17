@@ -203,7 +203,11 @@
             
             
             //人才名称
-            cell.idLabel.text = [NSString stringWithFormat:@"%@",oneItem.name];
+            dispatch_async(dispatch_get_main_queue(), ^{
+               
+                
+         
+            cell.nameLabel.text = [NSString stringWithFormat:@"%@",oneItem.name];
             
             
             //地址&公式名称
@@ -216,7 +220,7 @@
  
            //购买自 ID
     
-            cell.idLabel.text = [NSString stringWithFormat:@"人才官ID  %@",oneItem.userId];
+            cell.idLabel.text = [NSString stringWithFormat:@"编号 %@",oneItem.userId];
     
     
         //时间
@@ -227,6 +231,8 @@
                 cell.timeLabel.text = oneItem.buyTime;
             }
       
+                
+                   });
         }
     
     return cell;
