@@ -200,6 +200,11 @@
                         <exclude reference="DG2-TY-rqT"/>
                     </mask>
                     <mask key="constraints">
+                        <exclude reference="AHS-8L-jmn"/>
+                        <exclude reference="Mna-Eh-2ge"/>
+                        <exclude reference="3Jo-hZ-iF8"/>
+                        <exclude reference="GPC-x5-LVO"/>
+                        <exclude reference="gkY-Gd-dJF"/>
                         <exclude reference="bhW-x7-Hd9"/>
                         <exclude reference="cK3-sb-XXT"/>
                         <exclude reference="nuK-ae-bmP"/>
@@ -207,14 +212,9 @@
                         <exclude reference="BWB-CS-t1c"/>
                         <exclude reference="rcZ-KT-N9M"/>
                         <exclude reference="waG-rP-mtl"/>
-                        <exclude reference="AHS-8L-jmn"/>
-                        <exclude reference="Mna-Eh-2ge"/>
                         <exclude reference="Cdg-se-gAk"/>
                         <exclude reference="PtM-Rw-sjc"/>
                         <exclude reference="vkO-OS-aGO"/>
-                        <exclude reference="3Jo-hZ-iF8"/>
-                        <exclude reference="GPC-x5-LVO"/>
-                        <exclude reference="gkY-Gd-dJF"/>
                         <exclude reference="R7B-nA-VBs"/>
                         <exclude reference="UBD-Z9-XD5"/>
                         <exclude reference="rAD-oU-GfH"/>
@@ -226,6 +226,11 @@
                         <include reference="DG2-TY-rqT"/>
                     </mask>
                     <mask key="constraints">
+                        <include reference="AHS-8L-jmn"/>
+                        <include reference="Mna-Eh-2ge"/>
+                        <include reference="3Jo-hZ-iF8"/>
+                        <include reference="GPC-x5-LVO"/>
+                        <include reference="gkY-Gd-dJF"/>
                         <include reference="bhW-x7-Hd9"/>
                         <include reference="cK3-sb-XXT"/>
                         <include reference="nuK-ae-bmP"/>
@@ -233,14 +238,9 @@
                         <include reference="BWB-CS-t1c"/>
                         <include reference="rcZ-KT-N9M"/>
                         <include reference="waG-rP-mtl"/>
-                        <include reference="AHS-8L-jmn"/>
-                        <include reference="Mna-Eh-2ge"/>
                         <include reference="Cdg-se-gAk"/>
                         <include reference="PtM-Rw-sjc"/>
                         <include reference="vkO-OS-aGO"/>
-                        <include reference="3Jo-hZ-iF8"/>
-                        <include reference="GPC-x5-LVO"/>
-                        <include reference="gkY-Gd-dJF"/>
                         <include reference="R7B-nA-VBs"/>
                         <include reference="UBD-Z9-XD5"/>
                         <include reference="rAD-oU-GfH"/>
