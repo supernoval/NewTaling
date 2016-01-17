@@ -261,8 +261,7 @@
         
         
         //姓名
-        
-        if (oneItem.sex.length > 0) {
+    
             
             NSString *sex = @"";
             
@@ -270,20 +269,31 @@
                 
                 sex = @"女";
             }
-            else
+            else if ([oneItem.sex isEqualToString:@"1"])
             {
                 sex = @"男";
             }
+            else
+            {
+                sex = @"";
+            }
+        
             if (!oneItem.nickname) {
                 
                 oneItem.nickname = @"";
             }
-            cell.nameLabel.text = [NSString stringWithFormat:@"%@(%@)",oneItem.nickname,sex];
+        
+        if (sex.length > 0) {
+            
+          cell.nameLabel.text = [NSString stringWithFormat:@"%@(%@)",oneItem.nickname,sex];
         }
         else
         {
-           cell.nameLabel.text = oneItem.nickname;
+            cell.nameLabel.text = oneItem.nickname;
+            
         }
+        
+       
         
         
         
