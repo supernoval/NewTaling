@@ -46,10 +46,7 @@
     _collectWidth.constant = ScreenWidth/2;
     
     
-    
-    
-    
-    
+    [self getResumeDetail];
     
     
     [self headerRefresh];
@@ -71,6 +68,43 @@
     
     _index ++;
     [self getData];
+}
+
+
+-(void)getResumeDetail
+{
+    
+    if (!item.resumesId) {
+        
+        return;
+    }
+    
+    NSDictionary *param = @{@"resume_id":@(item.resumesId)};
+    
+    [[TLRequest shareRequest] tlRequestWithAction:kgetResumeDetail Params:param result:^(BOOL isSuccess, id data) {
+        
+        if (isSuccess) {
+            
+            NSDictionary *dic = [item  toDictionary];
+            
+            if ([data isKindOfClass:[NSDictionary class]]) {
+                
+                NSDictionary *temDic = (NSDictionary*)dic;
+                
+                NSMutableDictionary *mudict = [[NSMutableDictionary alloc]initWithDictionary:dic];
+                
+                [mudict addEntriesFromDictionary:temDic];
+                
+                
+                [item setValuesForKeysWithDictionary:mudict];
+                
+                
+                [self.tableView reloadData];
+                
+            }
+        }
+        
+    }];
 }
 
 -(void)getData

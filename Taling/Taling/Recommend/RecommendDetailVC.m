@@ -20,6 +20,11 @@
 @property (nonatomic)NSInteger index;
 @property (nonatomic)NSInteger size;
 
+@property (nonatomic) BOOL attenTionStatus;
+@property (nonatomic) BOOL buyStatus;
+@property (nonatomic) BOOL reservStatus;
+
+
 @end
 
 @implementation RecommendDetailVC
@@ -43,6 +48,12 @@
     _collectWidth.constant = ScreenWidth/2;
     _buyWidth.constant = ScreenWidth/2;
     [self getData];
+    
+    [self getResumeDetail];
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,6 +70,81 @@
     _index ++;
     [self getData];
 }
+
+
+-(void)checkStatus
+{
+    
+    if (!item.resumesId || !item.userId) {
+        
+        return;
+        
+    }
+    
+    NSDictionary *param = @{@"user_id":[UserInfo getuserid],@"hr_id":item.userId,@"resume_id":@(item.resumesId)};
+    
+    [[TLRequest shareRequest] tlRequestWithAction:kcheckStatus Params:param result:^(BOOL isSuccess, id data) {
+       
+        if (isSuccess) {
+            
+            NSDictionary *temData = (NSDictionary*)data;
+            
+            _attenTionStatus = [[temData objectForKey:@"attenTionStatus"]boolValue];
+            
+            _buyStatus = [[temData objectForKey:@"buyStatus"]boolValue];
+            
+            _reservStatus = [[temData objectForKey:@"buyStatus"]boolValue];
+            
+            
+            [self.tableView reloadData];
+            
+        }
+        else
+        {
+            [CommonMethods showDefaultErrorString:@"网络请求失败"];
+            
+        }
+        
+    }];
+    
+}
+
+-(void)getResumeDetail
+{
+    
+    if (!item.resumesId) {
+        
+        return;
+    }
+    
+    NSDictionary *param = @{@"resume_id":@(item.resumesId)};
+    
+    [[TLRequest shareRequest] tlRequestWithAction:kgetResumeDetail Params:param result:^(BOOL isSuccess, id data) {
+       
+        if (isSuccess) {
+            
+            NSDictionary *dic = [item  toDictionary];
+            
+            if ([data isKindOfClass:[NSDictionary class]]) {
+                
+                NSDictionary *temDic = (NSDictionary*)dic;
+                
+                NSMutableDictionary *mudict = [[NSMutableDictionary alloc]initWithDictionary:dic];
+                
+                [mudict addEntriesFromDictionary:temDic];
+                
+                
+                [item setValuesForKeysWithDictionary:mudict];
+                
+                [self checkStatus];
+                
+               
+                
+            }
+        }
+        
+    }];
+ }
 
 -(void)getData
 {
@@ -472,7 +558,7 @@
             
             //加关注
             
-            if ([UserInfo isFocusedHR:[item.userId integerValue]] == YES) {
+            if (_attenTionStatus) {
                 [cell.focusButton setTitle:@"取消关注" forState:UIControlStateNormal];
             }else{
                 [cell.focusButton setTitle:@"加关注" forState:UIControlStateNormal];
@@ -540,7 +626,7 @@
 - (void)focusOnTheHR:(UIButton *)button{
     
     
-    if ([UserInfo isFocusedHR:[item.userId integerValue]] == YES) {
+    if (_attenTionStatus) {
         
         //取消关注
         
@@ -550,7 +636,10 @@
             
             if (isSuccess) {
                 
-                [UserInfo hasFocusedHR:[item.userId integerValue]];
+                _attenTionStatus = NO;
+                
+                [self.tableView reloadData];
+                
                 
                 [CommonMethods showAlertString:@"取消关注成功" delegate:self tag:66];
                 
@@ -567,7 +656,11 @@
         [[TLRequest shareRequest]  tlRequestWithAction:kAttentionHr Params:param result:^(BOOL isSuccess, id data) {
             
             if (isSuccess) {
-                [UserInfo hasFocusedHR:[item.userId integerValue]];
+              
+                _attenTionStatus = YES;
+                
+                [self.tableView reloadData];
+                
                 
                 [CommonMethods showAlertString:@"关注成功" delegate:self tag:66];
                 

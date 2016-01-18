@@ -9,7 +9,8 @@
 
 
 //本地测试
-//#define  kRequestHeader   @"http://192.168.40.59/taling-api"
+//#define  kRequestHeader   @"http://192.168.40.80/taling-api"
+
 //正式
 #define  kRequestHeader     @"http://139.196.189.203/taling-api"  //阿里云
 
@@ -136,6 +137,13 @@
 
  */
 #define kgetCommendResumes @"/resume/getCommendResumes"
+
+//获取简历详情
+/*
+ * resume_id
+ *
+ */
+#define kgetResumeDetail     @"/resume/getResumeDetail"
 
 
 //搜索标签 获取简历数据
@@ -301,3 +309,11 @@
  *user_id
  */
 #define kgetNotification  @"/notification/getNotification"
+
+#pragma mark - 获取简历是否收藏  是否购买 人才官是否关注
+/*
+ * user_id
+ * hr_id
+ * resume_id
+ */
+#define kcheckStatus    @"/user/checkStatus"

@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JSONModel.h"
 
-@interface ModelItem : NSObject
+@interface ModelItem : JSONModel
 //简历
 @property (nonatomic) NSInteger age;
 @property (nonatomic) NSInteger appraiseNum;
@@ -49,7 +50,7 @@
 @property (nonatomic,strong)   NSArray *topsentences; //这个替换上面的summary   里面字典的key: id sentence rank ownerId
 
 @property (strong, nonatomic) NSString *url;
-@property (strong, nonatomic) NSString *userId;
+@property (strong, nonatomic) NSString *userId;  //hr_id
 @property (nonatomic,strong)  NSString *username;
 @property (strong, nonatomic) NSArray *workexpenrience;
 @property (nonatomic) NSInteger workYears;

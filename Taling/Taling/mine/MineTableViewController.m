@@ -72,7 +72,7 @@
                 _collectedLabel.text = [NSString stringWithFormat:@"%@份",[_countDic objectForKey:@"reservNum"]];
                 
                 
-                _walletLabel.text = [NSString stringWithFormat:@"￥%@",[_countDic objectForKey:@"money"]];
+                _walletLabel.text = [NSString stringWithFormat:@"￥%ld",(long)[[_countDic objectForKey:@"money"]integerValue]];
 
                 
                 _coupleLabel.text = [NSString stringWithFormat:@"%@张",[_countDic objectForKey:@"couponNum"]];
@@ -101,7 +101,7 @@
         
     }else{
         
-        _idLabel.text = [NSString stringWithFormat:@"人才官ID:%@",[UserInfo getuserid]];
+        _idLabel.text = [NSString stringWithFormat:@"编号:%@",[UserInfo getuserid]];
          _nameLabel.text = [UserInfo getnickName];
         
     }

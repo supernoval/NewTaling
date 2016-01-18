@@ -453,7 +453,6 @@
         [title addAttribute:NSForegroundColorAttributeName value:kTextLightGrayColor range:NSMakeRange(0, 2)];
         cell.priceLabel.attributedText = title;
         
-        
         //人才名称
         cell.idLabel.text = [NSString stringWithFormat:@"%@",oneItem.name];
         

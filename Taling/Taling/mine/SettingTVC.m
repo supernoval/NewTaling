@@ -77,7 +77,7 @@
             }else if (indexPath.row == 1){
                 //评价
                 NSString *urlStr = [NSString stringWithFormat:
-                                    @"https://itunes.apple.com/us/app/ta-ling/id912169073?l=zh&ls=1&mt=8"];
+                                    @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=912169073"];
                 NSURL *url =[NSURL URLWithString:urlStr];
                 [[UIApplication sharedApplication] openURL:url];
             }
