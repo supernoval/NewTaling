@@ -133,6 +133,11 @@ typedef void (^upLoadPhotoBlock)(BOOL success,NSArray*results);
 #pragma mark- 将评价标签分割
 + (NSArray *)sepretTheAppraiseLabel:(NSString *)label;
 
+
+#pragma mark - 处理搜索条件
++(NSString*)getSearchString:(NSString*)originString;
+
+
 @end
 
 

@@ -178,6 +178,10 @@
     NSString *search;
     if (_isSearch) {
         search = _searchBar.text;
+        
+        search = [CommonMethods getSearchString:search];
+        
+        
     }else{
         search = @"";
     }

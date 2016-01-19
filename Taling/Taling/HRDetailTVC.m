@@ -713,6 +713,11 @@
             
             if (isSuccess) {
                 
+                
+                if (_block) {
+                    
+                    _block(YES);
+                }
                 [UserInfo hasFocusedHR:[hRitem.id integerValue]];
                 
                 [CommonMethods showAlertString:@"取消关注成功" delegate:self tag:66];
@@ -730,6 +735,12 @@
         [[TLRequest shareRequest]  tlRequestWithAction:kAttentionHr Params:param result:^(BOOL isSuccess, id data) {
             
             if (isSuccess) {
+                
+                if (_block) {
+                    
+                    _block(YES);
+                }
+                
                 [UserInfo hasFocusedHR:[hRitem.id integerValue]];
                 
                 [CommonMethods showAlertString:@"关注成功" delegate:self tag:66];
@@ -769,5 +780,11 @@
             [self.tableView reloadData];
         }
     }
+}
+
+-(void)setblock:(CancelForcos)block
+{
+    _block = block;
+    
 }
 @end

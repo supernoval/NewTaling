@@ -61,6 +61,8 @@
     
     [_companybutton setTitleColor:kDarkGrayColor forState:UIControlStateNormal];
     
+    _secondView.hidden = NO;
+    
     _secViewHeight.constant = 44;
     
     _sendCodeButton.hidden = NO;
@@ -84,8 +86,10 @@
     
     [_companybutton setTitleColor:kButtonBackGroundColor forState:UIControlStateNormal];
     
+    _secondView.clipsToBounds = YES;
     
     _secViewHeight.constant = 0;
+    _secondView.hidden = YES;
     
     _sendCodeButton.hidden = YES;
     

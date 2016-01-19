@@ -5419,10 +5419,10 @@
                                 <exclude reference="sPF-n2-irX"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="9k0-Jj-VjI"/>
                                 <exclude reference="2do-n8-s15"/>
                                 <exclude reference="axE-fs-3UV"/>
                                 <exclude reference="bjQ-qM-6we"/>
-                                <exclude reference="9k0-Jj-VjI"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -5430,10 +5430,10 @@
                                 <include reference="sPF-n2-irX"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="9k0-Jj-VjI"/>
                                 <include reference="2do-n8-s15"/>
                                 <include reference="axE-fs-3UV"/>
                                 <include reference="bjQ-qM-6we"/>
-                                <include reference="9k0-Jj-VjI"/>
                             </mask>
                         </variation>
                     </view>

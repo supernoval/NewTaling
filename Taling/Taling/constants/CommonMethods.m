@@ -802,4 +802,52 @@
         return list;
     }
 }
+
+#pragma mark - 处理搜索条件
++(NSString*)getSearchString:(NSString*)originString
+{
+    
+    if (!originString) {
+        
+        return @"";
+    }
+    
+    //先将 空格 和中文逗号 句号 都换成 英文逗号
+    originString = [originString stringByReplacingOccurrencesOfString:@" " withString:@","];
+    
+    originString = [originString stringByReplacingOccurrencesOfString:@"，" withString:@","];
+    
+    originString = [originString stringByReplacingOccurrencesOfString:@"。" withString:@","];
+    
+    originString = [originString stringByReplacingOccurrencesOfString:@"." withString:@","];
+    
+    //再循环处理掉重叠的逗号
+    int i = 0;
+    
+    while (i < originString.length -1) {
+        
+         char oneChar = [originString characterAtIndex:i];
+         char nextChar = [originString characterAtIndex:i+1];
+        
+         if (oneChar == nextChar)
+          {
+                    
+            NSRange replaceRane = NSMakeRange(i+1, 1);
+                    
+            originString = [originString stringByReplacingCharactersInRange:replaceRane withString:@""];
+              
+              //如果有相同 ，就从头再遍历
+              i = 0;
+            
+          }else
+          {
+                i++;
+          }
+        
+    }
+ 
+    return originString;
+    
+    
+}
 @end

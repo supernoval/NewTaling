@@ -419,6 +419,17 @@
         detail.hRitem = oneItem;
         detail.hidesBottomBarWhenPushed = YES;
         
+        [detail setblock:^(BOOL cancel) {
+          
+            if (cancel && !_isRecommendType) {
+                
+                index =1;
+
+                [self getGuanZhuList];
+                
+            }
+            
+        }];
         [self.navigationController pushViewController:detail animated:YES];
     }
     
