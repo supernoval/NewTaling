@@ -87,7 +87,7 @@
 {
      SDPhotoItem *item = self.photoItemArray[button.tag];
     
-    if (item.imageData || item.thumbnail_pic) {
+    if (item.imageData.length > 0 || item.thumbnail_pic.length > 0) {
           
     SDPhotoBrowser *browser = [[SDPhotoBrowser alloc] init];
     browser.sourceImagesContainerView = self; // 原图的父控件

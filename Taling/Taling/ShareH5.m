@@ -8,7 +8,7 @@
 
 #import "ShareH5.h"
 
-static NSString *title = @"她灵";
+static NSString *title = @"《她灵》帮您迅速精准定位人才";
 NSString *description = @"《她灵》帮您迅速精准定位人才";
 static NSString *kLinkTagName = @"WECHAT_TAG_JUMP_SHOWRANK";
 

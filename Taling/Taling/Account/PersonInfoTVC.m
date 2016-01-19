@@ -590,7 +590,7 @@
         
         
     }
-    else if (selectedIndex == 7)
+    else if (selectedIndex == 8)
     {
 //        _personCardImageView.image = cutImage;
         
@@ -714,7 +714,7 @@
             dataDic = @{@"pic_file":imageData};
         }
         
-        if (selectedIndex == 7) {
+        if (selectedIndex == 8) {
             
             dataDic = @{@"calling_card":cartData};
         }

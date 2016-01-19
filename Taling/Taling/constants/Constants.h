@@ -127,6 +127,9 @@
 //说明浅灰色
 #define kExtralLightGrayColor  RGB(181,181,181,1)
 
+//绿色按钮背景
+#define kGreenBackGroundColor  RGB(86,222,124,1)
+
 
 #define kDarkGrayColor   RGB(85,85,85,1.0)
 

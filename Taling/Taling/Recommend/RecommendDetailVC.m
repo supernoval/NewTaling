@@ -16,6 +16,14 @@
 #import "CommentItem.h"
 
 @interface RecommendDetailVC ()<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
+{
+    UIView *bottomView;
+    
+    UIButton *collectionButton;
+    
+    UIButton *buyButton;
+    
+}
 @property (nonatomic, strong)NSMutableArray *commentArry;
 @property (nonatomic)NSInteger index;
 @property (nonatomic)NSInteger size;
@@ -40,6 +48,9 @@
     _index = 1;
     _size = 10;
     
+    
+    
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -47,6 +58,7 @@
     [self.tableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(footerRefresh)];
     _collectWidth.constant = ScreenWidth/2;
     _buyWidth.constant = ScreenWidth/2;
+    
     [self getData];
     
     [self getResumeDetail];
@@ -54,13 +66,50 @@
     
     
     
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)initBottomView
+{
+    CGFloat bottomHeight = 49;
+    
+    bottomView = [[UIView alloc]initWithFrame:CGRectMake(0, ScreenHeight - bottomHeight , ScreenWidth, bottomHeight)];
+    
+    bottomView.backgroundColor = kBackgroundColor;
+    
+    collectionButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth/2, bottomHeight)];
+    
+    [collectionButton setTitle:@"收藏人才" forState:UIControlStateNormal];
+    
+    [collectionButton setTitleColor:kDarkGrayColor forState:UIControlStateNormal];
+    [collectionButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+    
+    collectionButton.backgroundColor = [UIColor whiteColor];
+    
+    [collectionButton addTarget:self action:@selector(collecAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [bottomView addSubview:collectionButton];
+    
+    
+    buyButton = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth/2, 0, ScreenWidth/2, bottomHeight)];
+    
+    [buyButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [buyButton setTitleColor:kDarkGrayColor forState:UIControlStateHighlighted];
+    
+    [buyButton setTitle:@"立即购买" forState:UIControlStateNormal];
+    [buyButton addTarget:self action:@selector(buyAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    buyButton.backgroundColor = kGreenBackGroundColor;
+    
+    [bottomView addSubview:buyButton];
+    
+    
+    [self.view addSubview:bottomView];
+    
+    
+    
+    
 }
-
 - (void)headerRefresh{
     _index = 1;
     [self getData];
@@ -93,9 +142,26 @@
             
             _buyStatus = [[temData objectForKey:@"buyStatus"]boolValue];
             
-            _reservStatus = [[temData objectForKey:@"buyStatus"]boolValue];
+            _reservStatus = [[temData objectForKey:@"reservStatus"]boolValue];
+            
+            [self initBottomView];
             
             
+            if (_reservStatus) {
+                
+                collectionButton.enabled = NO;
+                
+                [collectionButton setTitle:@"已收藏" forState:UIControlStateNormal];
+            }
+            
+            if (_buyStatus) {
+                
+                buyButton.enabled = NO;
+                
+                [buyButton setTitle:@"已购买" forState:UIControlStateNormal];
+                
+                
+            }
             [self.tableView reloadData];
             
         }
@@ -127,7 +193,7 @@
             
             if ([data isKindOfClass:[NSDictionary class]]) {
                 
-                NSDictionary *temDic = (NSDictionary*)dic;
+                NSDictionary *temDic = (NSDictionary*)data;
                 
                 NSMutableDictionary *mudict = [[NSMutableDictionary alloc]initWithDictionary:dic];
                 
@@ -675,7 +741,7 @@
 }
 
 
-- (IBAction)collecAction:(UIButton *)sender {
+- (void)collecAction:(UIButton *)sender {
     
     NSString *userid = [UserInfo getuserid];
     
@@ -687,6 +753,9 @@
         
         if (isSuccess) {
             
+            [collectionButton setTitle:@"已收藏" forState:UIControlStateNormal];
+            collectionButton.enabled = NO;
+            
             [CommonMethods showDefaultErrorString:@"收藏成功"];
             
         }
@@ -697,7 +766,7 @@
     }];
 }
 
-- (IBAction)buyAction:(id)sender {
+- (void)buyAction:(id)sender {
     
     if ([UserInfo getIsCompany] == YES) {
         //公司购买

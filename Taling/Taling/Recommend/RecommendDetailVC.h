@@ -11,8 +11,7 @@
 @interface RecommendDetailVC : BaseViewController
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) IBOutlet UIButton *collectButton;
-@property (strong, nonatomic) IBOutlet UIButton *buyButton;
+
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *collectWidth;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *buyWidth;
 

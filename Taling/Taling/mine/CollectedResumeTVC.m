@@ -36,7 +36,7 @@
     pageindex = 1;
     size = 10;
     
-    [self getData];
+   [self.tableView.header beginRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
