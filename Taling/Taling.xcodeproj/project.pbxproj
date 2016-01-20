@@ -221,6 +221,10 @@
 		153F3BD41BD27CBC00C86F1A /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 153F3BCC1BD27CBC00C86F1A /* libopencore-amrnb.a */; };
 		153F3BD51BD27CBC00C86F1A /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 153F3BD01BD27CBC00C86F1A /* libopencore-amrwb.a */; };
 		153F3BD91BD3641600C86F1A /* RecommendHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 153F3BD81BD3641600C86F1A /* RecommendHeaderView.m */; };
+		154FCBCC1C4F5FBE00318D5E /* MessageNavigationControlller.m in Sources */ = {isa = PBXBuildFile; fileRef = 154FCBCB1C4F5FBE00318D5E /* MessageNavigationControlller.m */; };
+		154FCBD21C4F622400318D5E /* MSGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 154FCBD11C4F622400318D5E /* MSGModel.m */; };
+		154FCBD51C4F6B2800318D5E /* MessageDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 154FCBD41C4F6B2800318D5E /* MessageDetailVC.m */; };
+		154FCBD81C4F6D8800318D5E /* MSGCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 154FCBD71C4F6D8800318D5E /* MSGCell.m */; };
 		15521B851C4BE2920010E718 /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = 15521B841C4BE2920010E718 /* city.json */; };
 		15521B871C4BE2EE0010E718 /* Province.json in Resources */ = {isa = PBXBuildFile; fileRef = 15521B861C4BE2EE0010E718 /* Province.json */; };
 		15521B8B1C4BEC2A0010E718 /* PickCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15521B8A1C4BEC2A0010E718 /* PickCityViewController.m */; };
@@ -913,6 +917,14 @@
 		153F3BD01BD27CBC00C86F1A /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
 		153F3BD71BD3641600C86F1A /* RecommendHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendHeaderView.h; sourceTree = "<group>"; };
 		153F3BD81BD3641600C86F1A /* RecommendHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendHeaderView.m; sourceTree = "<group>"; };
+		154FCBCA1C4F5FBE00318D5E /* MessageNavigationControlller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageNavigationControlller.h; sourceTree = "<group>"; };
+		154FCBCB1C4F5FBE00318D5E /* MessageNavigationControlller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageNavigationControlller.m; sourceTree = "<group>"; };
+		154FCBD01C4F622400318D5E /* MSGModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGModel.h; sourceTree = "<group>"; };
+		154FCBD11C4F622400318D5E /* MSGModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGModel.m; sourceTree = "<group>"; };
+		154FCBD31C4F6B2800318D5E /* MessageDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDetailVC.h; sourceTree = "<group>"; };
+		154FCBD41C4F6B2800318D5E /* MessageDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageDetailVC.m; sourceTree = "<group>"; };
+		154FCBD61C4F6D8800318D5E /* MSGCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGCell.h; sourceTree = "<group>"; };
+		154FCBD71C4F6D8800318D5E /* MSGCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGCell.m; sourceTree = "<group>"; };
 		15521B841C4BE2920010E718 /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
 		15521B861C4BE2EE0010E718 /* Province.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Province.json; sourceTree = "<group>"; };
 		15521B891C4BEC2A0010E718 /* PickCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickCityViewController.h; sourceTree = "<group>"; };
@@ -1276,6 +1288,10 @@
 				B30000921BC3C52E006B7B08 /* NotifiCell.xib */,
 				B30000941BC3C838006B7B08 /* NotifiCell.h */,
 				B30000951BC3C838006B7B08 /* NotifiCell.m */,
+				154FCBD31C4F6B2800318D5E /* MessageDetailVC.h */,
+				154FCBD41C4F6B2800318D5E /* MessageDetailVC.m */,
+				154FCBD61C4F6D8800318D5E /* MSGCell.h */,
+				154FCBD71C4F6D8800318D5E /* MSGCell.m */,
 			);
 			name = messages;
 			sourceTree = "<group>";
@@ -2537,6 +2553,8 @@
 				157716561C449CB80030DC0B /* MessageNavigationController.m */,
 				157716581C449CE30030DC0B /* MineNavigationController.h */,
 				157716591C449CE30030DC0B /* MineNavigationController.m */,
+				154FCBCA1C4F5FBE00318D5E /* MessageNavigationControlller.h */,
+				154FCBCB1C4F5FBE00318D5E /* MessageNavigationControlller.m */,
 			);
 			name = navigationcontrollers;
 			sourceTree = "<group>";
@@ -2926,6 +2944,8 @@
 				151932FB1C291AFD009C5ECC /* UserModel.m */,
 				D2CA5F151C2A5C6900A7D1FF /* CouponItem.h */,
 				D2CA5F161C2A5C6900A7D1FF /* CouponItem.m */,
+				154FCBD01C4F622400318D5E /* MSGModel.h */,
+				154FCBD11C4F622400318D5E /* MSGModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -3095,6 +3115,7 @@
 				B30000961BC3C838006B7B08 /* NotifiCell.m in Sources */,
 				153F3BBD1BD27B1000C86F1A /* UIViewController+HUD.m in Sources */,
 				153F3B911BD27A0800C86F1A /* MBProgressHUD+Add.m in Sources */,
+				154FCBCC1C4F5FBE00318D5E /* MessageNavigationControlller.m in Sources */,
 				153F3B921BD27A0800C86F1A /* MBProgressHUD.m in Sources */,
 				153F3AF91BD277FB00C86F1A /* EMChatAudioBubbleView.m in Sources */,
 				151932FC1C291AFD009C5ECC /* UserModel.m in Sources */,
@@ -3158,6 +3179,7 @@
 				1506E0A61B89B582007D1696 /* UIImage+WebP.m in Sources */,
 				1506E0401B89B53C007D1696 /* NSArray+JSONModel.m in Sources */,
 				13AA5EB11B95CCEF00AB477E /* AFURLSessionManager.m in Sources */,
+				154FCBD51C4F6B2800318D5E /* MessageDetailVC.m in Sources */,
 				1506E0201B89B521007D1696 /* UIScrollView+MJRefresh.m in Sources */,
 				139DC5541BCE875000AA9C27 /* NSDate+Category.m in Sources */,
 				D249D25F1C4748F80088E4D1 /* CommentTableViewController.m in Sources */,
@@ -3187,6 +3209,7 @@
 				B300009E1BC3CFCC006B7B08 /* BuyMessageCell.m in Sources */,
 				1506DFFB1B89B506007D1696 /* SDPhotoGroup.m in Sources */,
 				157716511C449C170030DC0B /* BaseNavigationController.m in Sources */,
+				154FCBD81C4F6D8800318D5E /* MSGCell.m in Sources */,
 				B3CF9D1A1C13307100AD158F /* RecommendAppraiseTVC.m in Sources */,
 				B30000A41BC3D41A006B7B08 /* CommentMessageTVC.m in Sources */,
 				157716541C449C8D0030DC0B /* HRNavigationController.m in Sources */,
@@ -3258,6 +3281,7 @@
 				1506E2531B89BD87007D1696 /* LoginViewController.m in Sources */,
 				153F3B821BD279E000C86F1A /* PSTCollectionViewData.m in Sources */,
 				D2B8E7B01C17B7FC00445EA6 /* TagButton.m in Sources */,
+				154FCBD21C4F622400318D5E /* MSGModel.m in Sources */,
 				1506E12F1B89B646007D1696 /* Order.m in Sources */,
 				1577165A1C449CE30030DC0B /* MineNavigationController.m in Sources */,
 				153F3AEF1BD277FB00C86F1A /* ChatSendHelper.m in Sources */,

@@ -52,8 +52,6 @@ static NSString *cellId = @"ChatListCellTableViewCell";
 //    
 //    [self registerNotifications];
     
-    [self getMessage];
-    
     
 }
 
@@ -67,21 +65,7 @@ static NSString *cellId = @"ChatListCellTableViewCell";
     
 }
 
--(void)getMessage
-{
-//    NSDictionary *param = @{@"user_id":[UserInfo getuserid],@"index":@(index),@"size":@(size)};
-    
-    NSDictionary *param = @{@"user_id":@"320",@"index":@(index),@"size":@(size)};
 
-    [[TLRequest shareRequest] tlRequestWithAction:kgetNotification Params:param result:^(BOOL isSuccess, id data) {
-        
-        if (isSuccess) {
-            
-            
-        }
-        
-    }];
-}
 
 
 #pragma mark - UITableViewDataSource
