@@ -58,7 +58,8 @@
 }
 -(void)getMessage
 {
-    NSDictionary *param = @{@"user_id":[UserInfo getuserid],@"index":@(index),@"size":@(size)};
+    NSDictionary *param
+    = @{@"user_id":[UserInfo getuserid],@"index":@(index),@"size":@(size)};
     
 //    NSDictionary *param = @{@"user_id":@"1",@"index":@(index),@"size":@(size)};
     
