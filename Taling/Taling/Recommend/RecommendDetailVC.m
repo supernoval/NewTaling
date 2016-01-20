@@ -149,9 +149,8 @@
             
             if (_reservStatus) {
                 
-                collectionButton.enabled = NO;
-                
-                [collectionButton setTitle:@"已收藏" forState:UIControlStateNormal];
+               
+                [collectionButton setTitle:@"取消收藏" forState:UIControlStateNormal];
             }
             
             if (_buyStatus) {
@@ -749,12 +748,43 @@
     
     NSDictionary *param = @{@"user_id":userid,@"resumes_id":@(resumeid)};
     
+    if (_reservStatus) {
+        
+        [[TLRequest shareRequest] tlRequestWithAction:kcancelReserv Params:param result:^(BOOL isSuccess, id data) {
+            
+            if (isSuccess) {
+               
+                _reservStatus = NO;
+                
+                if (_block) {
+                    
+                    _block(YES);
+                    
+                }
+                [collectionButton setTitle:@"收藏人才" forState:UIControlStateNormal];
+               
+                
+                [CommonMethods showDefaultErrorString:@"已取消收藏"];
+                
+            }
+            else
+            {
+                [CommonMethods showDefaultErrorString:@"取消收藏失败，请重试"];
+            }
+        }];
+        
+        
+    }
+    else
+    {
     [[TLRequest shareRequest] tlRequestWithAction:kreservResume Params:param result:^(BOOL isSuccess, id data) {
         
         if (isSuccess) {
             
-            [collectionButton setTitle:@"已收藏" forState:UIControlStateNormal];
-            collectionButton.enabled = NO;
+            _reservStatus = YES;
+            
+            [collectionButton setTitle:@"取消收藏" forState:UIControlStateNormal];
+           
             
             [CommonMethods showDefaultErrorString:@"收藏成功"];
             
@@ -764,6 +794,7 @@
             [CommonMethods showDefaultErrorString:@"收藏失败，请重试"];
         }
     }];
+    }
 }
 
 - (void)buyAction:(id)sender {
@@ -791,5 +822,11 @@
             [self.tableView reloadData];
         }
     }
+}
+
+-(void)setblock:(CancelCollectBlock)block
+{
+    _block = block;
+    
 }
 @end

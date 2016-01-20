@@ -294,6 +294,17 @@
             
             RecommendDetailVC *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"RecommendDetailVC"];
             detail.item = oneItem;
+            
+            [detail setblock:^(BOOL cancel) {
+               
+                if (cancel) {
+                    
+                    pageindex = 1;
+                    
+                    [self getData];
+                }
+                
+            }];
             [self.navigationController pushViewController:detail animated:YES];
         }
         

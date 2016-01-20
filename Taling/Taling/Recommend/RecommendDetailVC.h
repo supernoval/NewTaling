@@ -8,9 +8,20 @@
 
 #import "BaseViewController.h"
 
-@interface RecommendDetailVC : BaseViewController
 
+typedef void (^CancelCollectBlock)(BOOL cancel);
+
+@interface RecommendDetailVC : BaseViewController
+{
+    
+    CancelCollectBlock _block;
+    
+    
+}
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+
+-(void)setblock:(CancelCollectBlock)block;
 
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *collectWidth;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *buyWidth;

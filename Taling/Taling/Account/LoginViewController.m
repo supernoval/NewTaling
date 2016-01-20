@@ -63,6 +63,8 @@
 
 - (IBAction)loginAction:(id)sender {
     
+    [self.view endEditing:YES];
+    
     NSString *phone = _phoneTF.text;
     
     NSString *code = _codeTF.text;
