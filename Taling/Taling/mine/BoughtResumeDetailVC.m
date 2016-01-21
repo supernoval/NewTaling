@@ -504,7 +504,7 @@
                 [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:item.userPhoto] placeholderImage:kDefaultHeadImage];
             }
             
-            cell.nameLabel.text = [NSString stringWithFormat:@"人才官ID %@",item.userId];
+            cell.nameLabel.text = [NSString stringWithFormat:@"编号 %@",item.userId];
             cell.disLabel.text = @"人才官";
             //加关注
             

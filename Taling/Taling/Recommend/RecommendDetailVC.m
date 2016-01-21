@@ -483,7 +483,7 @@
         }
             break;
             
-        case 2:
+        case 1:
         {
             CGFloat height  = [StringHeight heightWithText:[CommonMethods getTopsentences:item.topsentences] font:FONT_14 constrainedToWidth:ScreenWidth-30];
             
@@ -491,7 +491,7 @@
         }
             break;
             
-        case 1:
+        case 2:
         {
             return 69;
         }
@@ -584,7 +584,7 @@
         }
             break;
             
-        case 2:
+        case 1:
         {
             static NSString *cellId = @"SummaryCell";
             SummaryCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
@@ -601,7 +601,7 @@
         }
             break;
             
-        case 1:
+        case 2:
         {
             static NSString *cellId = @"FocusCell";
             FocusCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
