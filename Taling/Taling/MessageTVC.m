@@ -159,10 +159,12 @@
         switch (indexPath.row) {
             case 0:
             {
-                cell.iconImageView.image = [UIImage imageNamed:@"message notification"];
-                cell.titleLabel.text = @"系统消息";
+            
+                cell.iconImageView.image = [UIImage imageNamed:@"message comment"];
+                cell.titleLabel.text = @"用户消息";
                 
-                 cell.dotView.hidden = YES;
+                cell.dotView.hidden = YES;
+                
                 
 //                if (_SYSMSGArray.count > 0) {
 //                    
@@ -177,10 +179,13 @@
                 
             case 1:
             {
-                cell.iconImageView.image = [UIImage imageNamed:@"message comment"];
-                cell.titleLabel.text = @"用户消息";
                 
-                 cell.dotView.hidden = YES;
+                cell.iconImageView.image = [UIImage imageNamed:@"message notification"];
+                cell.titleLabel.text = @"系统消息";
+                
+                cell.dotView.hidden = YES;
+                
+              
                 
 //                if (_UserMSGArray.count > 0) {
 //                    
@@ -227,11 +232,13 @@
         
         MessageDetailVC *_detail = [self.storyboard instantiateViewControllerWithIdentifier:@"MessageDetailVC"];
         
-        _detail.messages = _SYSMSGArray;
+        _detail.messages = _UserMSGArray;
         
         _detail.hidesBottomBarWhenPushed = YES;
         
         [self.navigationController pushViewController:_detail animated:YES];
+        
+   
         
     }
     
@@ -239,7 +246,7 @@
         
         MessageDetailVC *_detail = [self.storyboard instantiateViewControllerWithIdentifier:@"MessageDetailVC"];
         
-        _detail.messages = _UserMSGArray;
+        _detail.messages = _SYSMSGArray;
         
         _detail.hidesBottomBarWhenPushed = YES;
         
