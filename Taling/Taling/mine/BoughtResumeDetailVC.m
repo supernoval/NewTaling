@@ -206,7 +206,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
-    return 3+_commentArry.count;
+    return 2+_commentArry.count;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
@@ -246,34 +246,35 @@
             
         case 1:
         {
-            return nil;
+               if (_commentArry.count > 0) {
+                            UIView *appraiseView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 50)];
+                            appraiseView.backgroundColor = [UIColor whiteColor];
+                            UILabel *appraiseLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, 15, ScreenWidth-30, 35)];
+                            appraiseLabel.text = @"评价";
+                            appraiseLabel.font = FONT_14;
+                            [appraiseView addSubview:appraiseLabel];
+                            UILabel *line = [[UILabel alloc]initWithFrame:CGRectMake(0, appraiseView.frame.size.height-1, ScreenWidth, 1)];
+                            line.backgroundColor = kLineColor;
+                            [appraiseView addSubview:line];
+                            return appraiseView;
+                        }else{
+                            
+                            return nil;
+                        }
+
+   
         }
             break;
             
-        case 2:
-        {
-            if (_commentArry.count > 0) {
-                UIView *appraiseView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 50)];
-                appraiseView.backgroundColor = [UIColor whiteColor];
-                UILabel *appraiseLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, 15, ScreenWidth-30, 35)];
-                appraiseLabel.text = @"评价";
-                appraiseLabel.font = FONT_14;
-                [appraiseView addSubview:appraiseLabel];
-                UILabel *line = [[UILabel alloc]initWithFrame:CGRectMake(0, appraiseView.frame.size.height-1, ScreenWidth, 1)];
-                line.backgroundColor = kLineColor;
-                [appraiseView addSubview:line];
-                return appraiseView;
-            }else{
-                
-                return nil;
-            }
-        }
-            break;
+//        case 2:
+//        {
+//        }
+//            break;
             
         default://评价
         {
             if (_commentArry.count>0) {
-                CommentItem *commentItem = [_commentArry objectAtIndex:section-3];
+                CommentItem *commentItem = [_commentArry objectAtIndex:section-2];
                 
                 float tagWidth = (ScreenWidth-30-3*TagGap)/4;
                 float tagHeight = 24;
@@ -336,27 +337,37 @@
             
         case 1:
         {
-            return 0.01;
-        }
-            break;
-            
-        case 2:
-        {
             if (_commentArry.count > 0) {
                 
-                return 50;
-            }else{
+                                return 50;
                 
-                return 0.01;
-            }
+             }else{
+                
+                                return 0.01;
+                 
+              }
+            
+            
         }
             break;
+//            
+//        case 2:
+//        {
+//            if (_commentArry.count > 0) {
+//                
+//                return 50;
+//            }else{
+//                
+//                return 0.01;
+//            }
+//        }
+//            break;
             
         default://评价
         {
             if (_commentArry.count >0) {
                 
-                CommentItem *oneItem = [_commentArry objectAtIndex:section-3];
+                CommentItem *oneItem = [_commentArry objectAtIndex:section-2];
                 NSInteger count = [CommonMethods sepretTheAppraiseLabel:oneItem.lable].count;
                 NSInteger tagRow = count%4==0 ? count/4:count/4 + 1 ;
                 if (tagRow>0) {
@@ -395,17 +406,17 @@
         }
             break;
             
-        case 2:
-        {
-            return 69;
-        }
-            break;
+//        case 2:
+//        {
+//            return 69;
+//        }
+//            break;
             
             
         default://评价
         {
             if (_commentArry.count>0) {
-                CommentItem *oneItem = [_commentArry objectAtIndex:indexPath.section-3];
+                CommentItem *oneItem = [_commentArry objectAtIndex:indexPath.section-2];
                 return 78+[StringHeight heightWithText:oneItem.comment font:FONT_14 constrainedToWidth:ScreenWidth-30];
             }else{
                 return 0;
@@ -493,43 +504,43 @@
         }
             break;
             
-        case 2:
-        {
-            static NSString *cellId = @"FocusCell";
-            FocusCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-            if (cell == nil) {
-                cell = [[NSBundle mainBundle]loadNibNamed:cellId owner:self options:nil][0];
-            }
-            if (item.userPhoto.length>0) {
-                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:item.userPhoto] placeholderImage:kDefaultHeadImage];
-            }
-            
-            cell.nameLabel.text = [NSString stringWithFormat:@"编号 %@",item.userId];
-            cell.disLabel.text = @"人才官";
-            //加关注
-            
-            if ([UserInfo isFocusedHR:[item.userId integerValue]] == YES) {
-                [cell.focusButton setTitle:@"取消关注" forState:UIControlStateNormal];
-            }else{
-                [cell.focusButton setTitle:@"加关注" forState:UIControlStateNormal];
-                
-            }
-            
-            [cell.focusButton addTarget:self action:@selector(focusOnAction:) forControlEvents:
-             UIControlEventTouchUpInside];
-            
-            UILabel *line_0 = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 1)];
-            line_0.backgroundColor = kLineColor;
-            [cell addSubview:line_0];
-            
-            UILabel *line = [[UILabel alloc]initWithFrame:CGRectMake(0, cell.frame.size.height-1, ScreenWidth, 1)];
-            line.backgroundColor = kLineColor;
-            [cell addSubview:line];
-            return cell;
-            
-            
-        }
-            break;
+//        case 2:
+//        {
+//            static NSString *cellId = @"FocusCell";
+//            FocusCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+//            if (cell == nil) {
+//                cell = [[NSBundle mainBundle]loadNibNamed:cellId owner:self options:nil][0];
+//            }
+//            if (item.userPhoto.length>0) {
+//                [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:item.userPhoto] placeholderImage:kDefaultHeadImage];
+//            }
+//            
+//            cell.nameLabel.text = [NSString stringWithFormat:@"编号 %@",item.userId];
+//            cell.disLabel.text = @"人才官";
+//            //加关注
+//            
+//            if ([UserInfo isFocusedHR:[item.userId integerValue]] == YES) {
+//                [cell.focusButton setTitle:@"取消关注" forState:UIControlStateNormal];
+//            }else{
+//                [cell.focusButton setTitle:@"加关注" forState:UIControlStateNormal];
+//                
+//            }
+//            
+//            [cell.focusButton addTarget:self action:@selector(focusOnAction:) forControlEvents:
+//             UIControlEventTouchUpInside];
+//            
+//            UILabel *line_0 = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 1)];
+//            line_0.backgroundColor = kLineColor;
+//            [cell addSubview:line_0];
+//            
+//            UILabel *line = [[UILabel alloc]initWithFrame:CGRectMake(0, cell.frame.size.height-1, ScreenWidth, 1)];
+//            line.backgroundColor = kLineColor;
+//            [cell addSubview:line];
+//            return cell;
+//            
+//            
+//        }
+//            break;
             
             
         default://评价
@@ -543,7 +554,7 @@
             
             if (_commentArry.count > 0) {
                 
-                CommentItem *oneComment = [_commentArry objectAtIndex:(indexPath.section-3)];
+                CommentItem *oneComment = [_commentArry objectAtIndex:(indexPath.section-2)];
                 
                 //头像
                 if (oneComment.photo.length > 0 ) {
