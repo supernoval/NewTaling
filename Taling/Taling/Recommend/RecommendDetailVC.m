@@ -454,6 +454,10 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (section == 1) {
+        return 2;
+    }
+    
     return 1;
     
 }
@@ -485,9 +489,12 @@
             
         case 1:
         {
-            CGFloat height  = [StringHeight heightWithText:[CommonMethods getTopsentences:item.topsentences] font:FONT_14 constrainedToWidth:ScreenWidth-30];
-            
-            return 40+height;
+
+            if (indexPath.row == 0) {
+                return 40+[StringHeight heightWithText:[CommonMethods getTopsentences:item.topsentences] font:FONT_14 constrainedToWidth:ScreenWidth-30];
+            }else{
+                return 40+[StringHeight heightWithText:[self getResumeExperience] font:FONT_14 constrainedToWidth:ScreenWidth-30];
+            }
         }
             break;
             
@@ -586,18 +593,31 @@
             
         case 1:
         {
-            static NSString *cellId = @"SummaryCell";
-            SummaryCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-            if (cell == nil) {
-                cell = [[NSBundle mainBundle]loadNibNamed:@"SummaryCell" owner:self options:nil][0];
+
+            
+            if (indexPath.row == 0) {
+                static NSString *cellId = @"SummaryCell";
+                SummaryCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+                if (cell == nil) {
+                    cell = [[NSBundle mainBundle]loadNibNamed:cellId owner:self options:nil][0];
+                }
+                
+                cell.titleLabel.text = @"人才概述";
+                cell.contentTF.text = [CommonMethods getTopsentences:item.topsentences];
+                return cell;
+                
+            }else if (indexPath.row == 1){
+                static NSString *cellId = @"SummaryCellExperence";
+                SummaryCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+                if (cell == nil) {
+                    cell = [[NSBundle mainBundle]loadNibNamed:@"SummaryCell" owner:self options:nil][0];
+                }
+                
+                cell.titleLabel.text = @"经历概述";
+                
+                cell.contentTF.text = [self getResumeExperience];
+                return cell;
             }
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            
-            //概述
-            cell.contentTF.text = [CommonMethods getTopsentences:item.topsentences];
-//            item.summary;
-            
-            return cell;
         }
             break;
             
@@ -685,6 +705,32 @@
     
     
     return nil;
+}
+
+
+#pragma mark- 经历概述
+- (NSString *)getResumeExperience{
+    
+    //学校
+    
+    NSString *school = @"毕业学校:";
+    if (item.eduexpenrience.count > 0 ) {
+        NSDictionary *dic = [self.item.eduexpenrience firstObject];
+        school = [NSString stringWithFormat:@"毕业学校:%@",[dic objectForKey:@"school"]];
+    }
+    
+    
+    //工作经历
+    
+    NSString *experienceStr = [NSString stringWithFormat:@"工作经历:%@",[CommonMethods getTheWorkExperience:self.item.workexpenrience]];
+    
+    
+    //办公技巧
+    NSString *skillsStr = [NSString stringWithFormat:@"办公技巧:%@",[CommonMethods getTheSkills:self.item.skills]];
+    
+    NSString *str = [NSString stringWithFormat:@"%@\n%@\n%@",school,experienceStr,skillsStr];
+    
+    return str;
 }
 
 #pragma mark- 关注人才官
