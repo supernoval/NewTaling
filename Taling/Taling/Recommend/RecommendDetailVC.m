@@ -489,7 +489,9 @@
             if (indexPath.row == 0) {
                 return 30+[StringHeight heightWithText:[CommonMethods getTopsentences:item.topsentences] font:FONT_14 constrainedToWidth:ScreenWidth-30];
             }else{
-                return 30+[StringHeight heightWithText:[self getResumeExperience] font:FONT_14 constrainedToWidth:ScreenWidth];
+                
+                
+                return 30 +[StringHeight heightWithText:[self getResumeExperience] font:FONT_14 constrainedToWidth:ScreenWidth];
             }
         }
             break;

@@ -718,7 +718,7 @@
         for (NSInteger i = 0; i < dataArray.count; i++) {
             
             WorkExperienceItem *oneItem = [dataArray objectAtIndex:i];
-            NSString *oneExperience = [NSString stringWithFormat:@"%li、名称:%@  时间:%@  熟练度:%@\n\n",i+1,oneItem.skillName,oneItem.skillPeriod,oneItem.skillStatus];
+            NSString *oneExperience = [NSString stringWithFormat:@"%ld、名称:%@  时间:%@  熟练度:%@\n\n",(long)i+1,oneItem.skillName,oneItem.skillPeriod,oneItem.skillStatus];
             str = [str stringByAppendingString:oneExperience];
             
         }
