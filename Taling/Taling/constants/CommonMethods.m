@@ -741,8 +741,10 @@
                 str = [str stringByAppendingString:oneSen];
             }
             
-//            str = [str substringToIndex:str.length-1];
-            
+            if (str.length>2) {
+                str = [str substringToIndex:str.length-2];
+            }
+   
         }else{
             str = @"暂无数据";
         }

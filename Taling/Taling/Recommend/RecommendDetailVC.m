@@ -48,9 +48,6 @@
     _index = 1;
     _size = 10;
     
-    
-    
-    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -59,14 +56,13 @@
     _collectWidth.constant = ScreenWidth/2;
     _buyWidth.constant = ScreenWidth/2;
     
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self getData];
     
     [self getResumeDetail];
-    
-    
-    
-    
-    
 }
 
 -(void)initBottomView
@@ -491,9 +487,9 @@
         {
 
             if (indexPath.row == 0) {
-                return 40+[StringHeight heightWithText:[CommonMethods getTopsentences:item.topsentences] font:FONT_14 constrainedToWidth:ScreenWidth-30];
+                return 30+[StringHeight heightWithText:[CommonMethods getTopsentences:item.topsentences] font:FONT_14 constrainedToWidth:ScreenWidth-30];
             }else{
-                return 40+[StringHeight heightWithText:[self getResumeExperience] font:FONT_14 constrainedToWidth:ScreenWidth-30];
+                return 30+[StringHeight heightWithText:[self getResumeExperience] font:FONT_14 constrainedToWidth:ScreenWidth];
             }
         }
             break;
@@ -717,8 +713,9 @@
     if (item.eduexpenrience.count > 0 ) {
         NSDictionary *dic = [self.item.eduexpenrience firstObject];
         school = [NSString stringWithFormat:@"毕业学校:%@",[dic objectForKey:@"school"]];
+        
     }
-    
+    school = [school stringByAppendingString:@"\n"];
     
     //工作经历
     
@@ -728,7 +725,7 @@
     //办公技巧
     NSString *skillsStr = [NSString stringWithFormat:@"办公技巧:%@",[CommonMethods getTheSkills:self.item.skills]];
     
-    NSString *str = [NSString stringWithFormat:@"%@\n%@\n%@",school,experienceStr,skillsStr];
+    NSString *str = [NSString stringWithFormat:@"%@\n%@%@",school,experienceStr,skillsStr];
     
     return str;
 }

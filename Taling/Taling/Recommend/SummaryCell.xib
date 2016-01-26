@@ -7,14 +7,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SummaryCell" rowHeight="85" id="Hwg-Aq-azC" customClass="SummaryCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SummaryCell" rowHeight="37" id="Hwg-Aq-azC" customClass="SummaryCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hwg-Aq-azC" id="rhR-os-Xik">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="人才概述" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLF-qB-Bai">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="人才概述" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLF-qB-Bai">
                         <rect key="frame" x="15" y="8" width="290" height="18"/>
                         <animations/>
                         <constraints>
@@ -34,19 +34,22 @@
                             </mask>
                         </variation>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBo-c2-UWU">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="尼玛 这是什么狗屁玩意" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBo-c2-UWU">
                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
+                        <size key="shadowOffset" width="0.0" height="0.0"/>
                     </label>
                 </subviews>
                 <animations/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="vLF-qB-Bai" secondAttribute="trailing" constant="15" id="K7m-cS-q0J"/>
                     <constraint firstItem="vLF-qB-Bai" firstAttribute="top" secondItem="rhR-os-Xik" secondAttribute="top" constant="8" id="juL-uA-Rdu"/>
-                    <constraint firstItem="wBo-c2-UWU" firstAttribute="top" secondItem="vLF-qB-Bai" secondAttribute="bottom" constant="5" id="opF-gg-wgb"/>
+                    <constraint firstItem="wBo-c2-UWU" firstAttribute="top" secondItem="vLF-qB-Bai" secondAttribute="bottom" constant="5" id="opF-gg-wgb">
+                        <variation key="heightClass=regular-widthClass=compact" constant="3"/>
+                    </constraint>
                     <constraint firstItem="vLF-qB-Bai" firstAttribute="leading" secondItem="rhR-os-Xik" secondAttribute="leading" constant="15" id="p38-L2-wcp"/>
                     <constraint firstItem="wBo-c2-UWU" firstAttribute="leading" secondItem="rhR-os-Xik" secondAttribute="leading" constant="15" id="qJY-ZI-Tto"/>
                     <constraint firstAttribute="trailing" secondItem="wBo-c2-UWU" secondAttribute="trailing" constant="15" id="xNF-5k-WDv"/>
@@ -86,7 +89,7 @@
                 <outlet property="contentTF" destination="wBo-c2-UWU" id="ypU-hd-PXH"/>
                 <outlet property="titleLabel" destination="vLF-qB-Bai" id="4BW-dV-2fh"/>
             </connections>
-            <point key="canvasLocation" x="351" y="225.5"/>
+            <point key="canvasLocation" x="351" y="201"/>
         </tableViewCell>
     </objects>
 </document>
