@@ -275,9 +275,27 @@
             oneLabel = [oneLabel substringToIndex:oneLabel.length-1];
         }
         
-        oneLabel = [title stringByAppendingString:oneLabel];
-        oneLabel = [oneLabel stringByAppendingString:@"\n\n"];
+         oneLabel = [title stringByAppendingString:oneLabel];
         
+//        if (i%2 == 0) {
+//            
+//            if (i == 0) {
+//                
+//               oneLabel = [NSString stringWithFormat:@"%@        ",oneLabel];
+//            }
+//            else
+//            {
+//            oneLabel = [NSString stringWithFormat:@"%@            ",oneLabel];
+//            }
+//        }
+//        else
+//        {
+//    
+//        oneLabel = [oneLabel stringByAppendingString:@"\n\n"];
+//        }
+//        
+        
+          oneLabel = [oneLabel stringByAppendingString:@"\n\n"];
         label = [label stringByAppendingString:oneLabel];
         
         
