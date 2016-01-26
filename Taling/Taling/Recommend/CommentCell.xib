@@ -123,14 +123,18 @@
                     <constraint firstItem="S9E-OU-eaW" firstAttribute="top" secondItem="0pf-gK-TsT" secondAttribute="top" constant="16" id="TSw-58-JVV"/>
                     <constraint firstItem="33S-Wi-BT3" firstAttribute="leading" secondItem="r31-Ug-ecr" secondAttribute="trailing" constant="8" id="Vlj-U0-SMZ"/>
                     <constraint firstAttribute="trailing" secondItem="33S-Wi-BT3" secondAttribute="trailing" constant="73" id="X3T-P0-Btr"/>
-                    <constraint firstItem="hbq-de-DJ9" firstAttribute="leading" secondItem="0pf-gK-TsT" secondAttribute="leading" constant="8" id="XzC-g3-mkf"/>
+                    <constraint firstItem="hbq-de-DJ9" firstAttribute="leading" secondItem="0pf-gK-TsT" secondAttribute="leading" constant="8" id="XzC-g3-mkf">
+                        <variation key="heightClass=regular-widthClass=compact" constant="15"/>
+                    </constraint>
                     <constraint firstAttribute="trailing" secondItem="y1z-cR-NfP" secondAttribute="trailing" constant="15" id="Zkq-yy-08m"/>
                     <constraint firstItem="hbq-de-DJ9" firstAttribute="top" secondItem="33S-Wi-BT3" secondAttribute="bottom" constant="4" id="aAn-Cd-9Hz"/>
                     <constraint firstItem="33S-Wi-BT3" firstAttribute="top" secondItem="S9E-OU-eaW" secondAttribute="bottom" constant="3" id="bUh-iQ-sBe"/>
                     <constraint firstItem="y1z-cR-NfP" firstAttribute="top" secondItem="0pf-gK-TsT" secondAttribute="top" constant="15" id="eHT-eY-XZa"/>
                     <constraint firstItem="S9E-OU-eaW" firstAttribute="leading" secondItem="r31-Ug-ecr" secondAttribute="trailing" constant="8" id="gGz-xj-Bgm"/>
                     <constraint firstItem="r31-Ug-ecr" firstAttribute="leading" secondItem="0pf-gK-TsT" secondAttribute="leading" constant="15" id="jfn-yY-KTQ"/>
-                    <constraint firstAttribute="trailing" secondItem="hbq-de-DJ9" secondAttribute="trailing" constant="8" id="q69-M2-SA7"/>
+                    <constraint firstAttribute="trailing" secondItem="hbq-de-DJ9" secondAttribute="trailing" constant="8" id="q69-M2-SA7">
+                        <variation key="heightClass=regular-widthClass=compact" constant="15"/>
+                    </constraint>
                 </constraints>
                 <variation key="default">
                     <mask key="subviews">

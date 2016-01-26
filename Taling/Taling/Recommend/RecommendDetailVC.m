@@ -491,7 +491,7 @@
             }else{
                 
                 
-                return 30 +[StringHeight heightWithText:[self getResumeExperience] font:FONT_14 constrainedToWidth:ScreenWidth];
+                return 30 +[StringHeight heightWithText:[self getResumeExperience] font:FONT_14 constrainedToWidth:ScreenWidth-30];
             }
         }
             break;
@@ -506,7 +506,7 @@
         default:
         {
             
-            return 78+[StringHeight heightWithText:oneCom.comment font:FONT_14 constrainedToWidth:ScreenWidth-30];
+            return 30+[StringHeight heightWithText:oneCom.comment font:FONT_14 constrainedToWidth:ScreenWidth-30];
         }
             break;
     }
@@ -725,11 +725,12 @@
     
     
     //办公技巧
-    NSString *skillsStr = [NSString stringWithFormat:@"办公技巧:%@",[CommonMethods getTheSkills:self.item.skills]];
+//    NSString *skillsStr = [NSString stringWithFormat:@"办公技巧:%@",[CommonMethods getTheSkills:self.item.skills]];
     
-    NSString *str = [NSString stringWithFormat:@"%@\n%@%@",school,experienceStr,skillsStr];
+    NSString *str = [NSString stringWithFormat:@"%@\n%@",school,experienceStr];
     
     return str;
+    
 }
 
 #pragma mark- 关注人才官

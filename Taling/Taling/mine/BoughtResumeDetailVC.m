@@ -197,9 +197,9 @@
     
     
     //办公技巧
-    NSString *skillsStr = [NSString stringWithFormat:@"办公技巧:%@",[CommonMethods getTheSkills:self.item.skills]];
+//    NSString *skillsStr = [NSString stringWithFormat:@"办公技巧:%@",[CommonMethods getTheSkills:self.item.skills]];
     
-    NSString *str = [NSString stringWithFormat:@"%@\n%@\n%@",school,experienceStr,skillsStr];
+    NSString *str = [NSString stringWithFormat:@"%@\n%@",school,experienceStr];
     
     return str;
 }
@@ -417,7 +417,7 @@
         {
             if (_commentArry.count>0) {
                 CommentItem *oneItem = [_commentArry objectAtIndex:indexPath.section-2];
-                return 78+[StringHeight heightWithText:oneItem.comment font:FONT_14 constrainedToWidth:ScreenWidth-30];
+                return 30+[StringHeight heightWithText:oneItem.comment font:FONT_14 constrainedToWidth:ScreenWidth-30];
             }else{
                 return 0;
             }

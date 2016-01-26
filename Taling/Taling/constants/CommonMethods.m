@@ -694,6 +694,9 @@
             str = [str stringByAppendingString:oneExperience];
             
         }
+        if (str.length>2) {
+            str = [str substringToIndex:str.length-2];
+        }
     }
     
     return str;
