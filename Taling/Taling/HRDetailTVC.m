@@ -541,7 +541,7 @@
                 UILabel *numLabel = (UILabel*)[cell viewWithTag:101];
                 
                 
-                titleLable.text = @"Ta推荐的人才";
+                titleLable.text = @"Ta的人才";
                 
                 numLabel.text = [NSString stringWithFormat:@"%ld",(long)saleresumesCountSum];
                 
@@ -612,7 +612,7 @@
                 UILabel *numLabel = (UILabel*)[cell viewWithTag:101];
                 
                 
-                titleLable.text = @"Ta推荐的评价";
+                titleLable.text = @"Ta的评价";
                 
                 numLabel.text = [NSString stringWithFormat:@"%ld",(long)appraiseNum];
                 

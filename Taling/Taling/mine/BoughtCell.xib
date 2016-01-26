@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -16,7 +16,6 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="iTh-cG-ZOE">
                         <rect key="frame" x="15" y="15" width="50" height="50"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="58" id="LqQ-pD-gaI"/>
                             <constraint firstAttribute="height" constant="58" id="Wro-4W-ykS"/>
@@ -36,7 +35,6 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="姓名的简历" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVx-a0-Vgu">
                         <rect key="frame" x="73" y="15" width="159" height="18"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="fFb-vz-oW8"/>
                         </constraints>
@@ -55,7 +53,6 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="上海  公司名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7E-sR-kKm">
                         <rect key="frame" x="73" y="35" width="169" height="18"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="kUe-sP-0SE"/>
                         </constraints>
@@ -75,7 +72,6 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="估值  ¥88" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jN-Ui-F7C">
                         <rect key="frame" x="245" y="36" width="60" height="18"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="91" id="5kA-83-tZw"/>
                             <constraint firstAttribute="height" constant="18" id="hrt-w8-b7y"/>
@@ -98,7 +94,6 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="行业  职位" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptX-CN-Z4f">
                         <rect key="frame" x="73" y="55" width="169" height="18"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="BCV-tS-NqM"/>
                         </constraints>
@@ -116,9 +111,8 @@
                             </mask>
                         </variation>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="最购买自:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upv-G9-C5a">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="购买自:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upv-G9-C5a">
                         <rect key="frame" x="15" y="80" width="56" height="18"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="xNj-y2-O7W"/>
                             <constraint firstAttribute="width" constant="56" id="yXZ-9T-5Kx"/>
@@ -141,7 +135,6 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="2015-12-9" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlF-cN-V7d">
                         <rect key="frame" x="214" y="80" width="91" height="18"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="91" id="0B8-yI-Rks"/>
                             <constraint firstAttribute="height" constant="18" id="6fT-NY-hYo"/>
@@ -164,7 +157,6 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="人才官ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyR-H9-Y4T">
                         <rect key="frame" x="73" y="80" width="140" height="18"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="4Ye-vs-czH"/>
                         </constraints>
@@ -183,7 +175,6 @@
                         </variation>
                     </label>
                 </subviews>
-                <animations/>
                 <constraints>
                     <constraint firstItem="uyR-H9-Y4T" firstAttribute="leading" secondItem="Upv-G9-C5a" secondAttribute="trailing" constant="2" id="2zJ-O3-Sah"/>
                     <constraint firstItem="3jN-Ui-F7C" firstAttribute="leading" secondItem="RVx-a0-Vgu" secondAttribute="trailing" constant="1" id="6El-u9-IJs"/>
@@ -255,7 +246,6 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
-            <animations/>
             <connections>
                 <outlet property="companyLabel" destination="t7E-sR-kKm" id="dLl-Hs-2YY"/>
                 <outlet property="headImageView" destination="iTh-cG-ZOE" id="GsM-Ra-wlQ"/>
