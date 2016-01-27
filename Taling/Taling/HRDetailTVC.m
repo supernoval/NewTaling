@@ -70,7 +70,7 @@
                 
                 appraiseNum = [[data objectForKey:@"fansNum"]integerValue];
                 
-                saleresumesCountSum = [[data objectForKey:@"saleresumesCountSum"]integerValue];
+                saleresumesCountSum = [[data objectForKey:@"resumesCountSum"]integerValue];
                 
                 [self.tableView reloadData];
                 
@@ -458,10 +458,10 @@
                     
                     if (value.length == 0) {
                         
-                        value = @"1.0";
+                        value = @"1";
                         
                     }
-                    NSString *titleStr = [NSString stringWithFormat:@"推荐净值  %@",value];
+                    NSString *titleStr = [NSString stringWithFormat:@"皇冠 %@",value];
                     
                     NSMutableAttributedString *title = [[NSMutableAttributedString alloc]initWithString:titleStr];
                     [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, 4)];

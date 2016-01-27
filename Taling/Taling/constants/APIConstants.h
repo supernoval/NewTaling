@@ -96,7 +96,7 @@
 /*
  返回  1）购买的简历数  2）出售的简历数   3）收藏的简历数   4)钱包余额  5)优惠券张数  6)自己的评价数量
  
- 1 buyresumesCountSum 2 saleresumesCountSum   3 reservNum  4 money    5 couponNum  6 appraiseNum
+ 1 buyresumesCountSum 2 saleresumesCountSum (resumesCountSum)   3 reservNum  4 money    5 couponNum  6 appraiseNum
  */
 #define kresumesCount    @"/user/resumesCount"
 

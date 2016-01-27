@@ -125,7 +125,7 @@
 
 -(void)getGuanZhuList
 {
-    NSDictionary *param = @{@"user_id":[UserInfo getuserid],@"index":@(index),@"size":@(pageSize)};
+    NSDictionary *param = @{@"user_id":[UserInfo getuserid],@"index":@(index),@"size":@(pageSize),@"type":@(1)};
     
     [[TLRequest shareRequest ] tlRequestWithAction:kgetAttention Params:param result:^(BOOL isSuccess, id data) {
         
@@ -315,10 +315,11 @@
         NSString *value = [NSString stringWithFormat:@"%@",oneItem.recommend];
         if (value.length == 0) {
             
-            value = @"1.0";
+            value = @"1";
         }
         
-        NSString *titleStr = [NSString stringWithFormat:@"推荐净值  %@",value];
+        
+        NSString *titleStr = [NSString stringWithFormat:@"皇冠 %@",value];
         NSMutableAttributedString *title = [[NSMutableAttributedString alloc]initWithString:titleStr];
         [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, 4)];
         [title addAttribute:NSForegroundColorAttributeName value:kTextLightGrayColor range:NSMakeRange(0, 4)];

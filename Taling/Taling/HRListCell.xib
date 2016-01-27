@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -16,7 +16,6 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="HLc-wC-kjy">
                         <rect key="frame" x="15" y="10" width="50" height="50"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="Fbd-6c-mdR"/>
                             <constraint firstAttribute="width" constant="50" id="urD-Wc-ovr"/>
@@ -36,7 +35,6 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="上海 擅长行业:移动互联 " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2b-A7-8m0">
                         <rect key="frame" x="71" y="48" width="157" height="18"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="10" id="Taz-0V-Nbo"/>
                         </constraints>
@@ -56,7 +54,6 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="推荐净值  7.5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3L-kv-tEC">
                         <rect key="frame" x="250" y="34" width="57" height="21"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="4AT-1Q-zXe">
                                 <variation key="heightClass=regular-widthClass=compact" constant="20"/>
@@ -81,7 +78,6 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJi-Xs-RoS">
                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="oBJ-L3-QL0"/>
                         </constraints>
@@ -101,7 +97,6 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="服务过的企业:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DG2-TY-rqT">
                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="EgA-yy-zhw"/>
                             <constraint firstAttribute="width" constant="78" id="qk9-F1-I8L"/>
@@ -124,7 +119,6 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="人才官ID 123456" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdM-IX-HCu">
                         <rect key="frame" x="71" y="28" width="157" height="18"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="10" id="Qje-WM-S2I"/>
                         </constraints>
@@ -144,7 +138,6 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="李女士" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ER-MW-rjt">
                         <rect key="frame" x="71" y="8" width="157" height="18"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="h6I-K5-HEp">
                                 <variation key="heightClass=regular-widthClass=compact" constant="20"/>
@@ -165,7 +158,6 @@
                         </variation>
                     </label>
                 </subviews>
-                <animations/>
                 <constraints>
                     <constraint firstItem="VJi-Xs-RoS" firstAttribute="top" secondItem="G2b-A7-8m0" secondAttribute="bottom" constant="17" id="3Jo-hZ-iF8">
                         <variation key="heightClass=regular-widthClass=compact" constant="17"/>
@@ -255,7 +247,6 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
-            <animations/>
             <connections>
                 <outlet property="disLabel" destination="G2b-A7-8m0" id="Aoa-cl-oEh"/>
                 <outlet property="headImageView" destination="HLc-wC-kjy" id="dew-nb-K03"/>
