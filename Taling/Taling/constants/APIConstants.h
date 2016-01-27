@@ -301,6 +301,8 @@
  * user_id
    index
     size
+ 
+ *  type   1 获取我关注的用户信息  2获取关注我的用户信息
  */
 #define kgetAttention    @"/attention/getAttention"
 

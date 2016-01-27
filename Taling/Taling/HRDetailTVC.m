@@ -68,7 +68,7 @@
             
             if ([data isKindOfClass:[NSDictionary class]]) {
                 
-                appraiseNum = [[data objectForKey:@"appraiseNum"]integerValue];
+                appraiseNum = [[data objectForKey:@"fansNum"]integerValue];
                 
                 saleresumesCountSum = [[data objectForKey:@"saleresumesCountSum"]integerValue];
                 

@@ -11407,12 +11407,12 @@
         <scene sceneID="eVQ-qG-ORD">
             <objects>
                 <tableViewController storyboardIdentifier="RecommendAppraiseTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EfL-dk-Kt0" customClass="RecommendAppraiseTVC" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="uxe-qa-Ovs">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="105" sectionHeaderHeight="18" sectionFooterHeight="18" id="uxe-qa-Ovs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="oWz-Gi-nLg">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HrCell" rowHeight="105" id="oWz-Gi-nLg">
                                 <rect key="frame" x="0.0" y="114" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oWz-Gi-nLg" id="FrM-1d-t8P">
