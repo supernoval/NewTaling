@@ -612,7 +612,7 @@
                 UILabel *numLabel = (UILabel*)[cell viewWithTag:101];
                 
                 
-                titleLable.text = @"Ta的评价";
+                titleLable.text = @"Ta的粉丝";
                 
                 numLabel.text = [NSString stringWithFormat:@"%ld",(long)appraiseNum];
                 

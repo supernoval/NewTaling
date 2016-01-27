@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"推荐的评价";
+    self.title = @"Ta的粉丝";
     self.view.backgroundColor = kBackgroundColor;
     
     [self.tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];

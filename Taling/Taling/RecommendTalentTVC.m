@@ -25,7 +25,7 @@
     [super viewDidLoad];
     _JDArray = [[NSMutableArray alloc]init];
     
-    self.title = @"推荐的人才";
+    self.title = @"Ta的人才";
     [self.tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
     
     [self.tableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(footerRefresh)];
