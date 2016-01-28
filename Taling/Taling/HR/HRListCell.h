@@ -21,7 +21,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *servicedCom;
 
 @property (weak, nonatomic) IBOutlet UILabel *industryLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *nameLabelWith;
 
+@property (weak, nonatomic) IBOutlet UIImageView *crownImageView;
 
 
 @end

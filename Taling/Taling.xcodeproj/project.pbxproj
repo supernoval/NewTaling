@@ -2133,7 +2133,7 @@
 		153F3AA91BD1FD3200C86F1A /* HR */ = {
 			isa = PBXGroup;
 			children = (
-				B3CF9D141C13303400AD158F /* 推荐的评价 */,
+				B3CF9D141C13303400AD158F /* 粉丝 */,
 				B3CF9D131C13302800AD158F /* 推荐的人才 */,
 				153F3AB31BD2018700C86F1A /* HrDetail */,
 				B3F2D3E21C12C7850061F2A2 /* HRListCell.xib */,
@@ -2739,13 +2739,13 @@
 			name = "推荐的人才";
 			sourceTree = "<group>";
 		};
-		B3CF9D141C13303400AD158F /* 推荐的评价 */ = {
+		B3CF9D141C13303400AD158F /* 粉丝 */ = {
 			isa = PBXGroup;
 			children = (
 				B3CF9D181C13307100AD158F /* RecommendAppraiseTVC.h */,
 				B3CF9D191C13307100AD158F /* RecommendAppraiseTVC.m */,
 			);
-			name = "推荐的评价";
+			name = "粉丝";
 			sourceTree = "<group>";
 		};
 		B3F2D3C81C11C63C0061F2A2 /* TagLabel */ = {

@@ -639,6 +639,33 @@
             //人才官
             cell.disLabel.text = @"人才官";
             
+            
+        
+            CGFloat nameWith = [StringHeight widthtWithText:cell.nameLabel.text font:FONT_14 constrainedToHeight:21];
+            
+            cell.nameLabelWith.constant = nameWith;
+            
+            
+            
+            // 推荐净值
+            
+//            NSInteger  value = [[NSString stringWithFormat:@"%@",item.recommend]integerValue];
+//            if (value == 0) {
+//                
+//                value = 1;
+//            }
+//            
+//            if (value > 5) {
+//                
+//                value = 5;
+//                
+//            }
+//            
+//            
+//            cell.crownImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"crown_%ld",(long)value]];
+            
+            
+            
             //加关注
             
             if (_attenTionStatus) {

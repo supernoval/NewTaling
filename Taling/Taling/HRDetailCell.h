@@ -16,4 +16,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *disLabel;
 @property (strong, nonatomic) IBOutlet UILabel *recomValue;
 @property (strong, nonatomic) IBOutlet UIButton *focusButton;
+
+@property (weak, nonatomic) IBOutlet UIImageView *crownImageView;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *nameLabelWith;
+
+
 @end

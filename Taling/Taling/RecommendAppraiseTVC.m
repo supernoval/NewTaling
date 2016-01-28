@@ -277,22 +277,30 @@
         
         
         
-
+        CGFloat nameWith = [StringHeight widthtWithText:cell.nameLabel.text font:FONT_14 constrainedToHeight:21];
+        
+        cell.nameLabelWith.constant = nameWith;
+        
         
         
         // 推荐净值
         
-        NSString *value = [NSString stringWithFormat:@"%@",oneItem.recommend];
-        if (value.length == 0) {
+        NSInteger  value = [[NSString stringWithFormat:@"%@",oneItem.recommend]integerValue];
+        if (value == 0) {
             
-            value = @"1";
+            value = 1;
         }
         
-        NSString *titleStr = [NSString stringWithFormat:@"皇冠 %@",value];
-        NSMutableAttributedString *title = [[NSMutableAttributedString alloc]initWithString:titleStr];
-        [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, 4)];
-        [title addAttribute:NSForegroundColorAttributeName value:kTextLightGrayColor range:NSMakeRange(0, 4)];
-        cell.recomValue.attributedText = title;
+        if (value > 5) {
+            
+            value = 5;
+            
+        }
+        
+        
+        cell.crownImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"crown_%ld",(long)value]];
+        
+   
         
         //ID  城市  服务过的企业
         if (!oneItem.city) {

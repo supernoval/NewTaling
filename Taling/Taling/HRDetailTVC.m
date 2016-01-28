@@ -453,20 +453,30 @@
                     //城市
                     cell.disLabel.text = @"城市";
                     
-                    // 推荐净值
-                    NSString *value = [NSString stringWithFormat:@"%@",hRitem.recommend] ;
+                    CGFloat nameWith = [StringHeight widthtWithText:cell.nameLabel.text font:FONT_14 constrainedToHeight:21];
                     
-                    if (value.length == 0) {
+                    cell.nameLabelWith.constant = nameWith;
+                    
+                    
+                    
+                    // 推荐净值
+                    
+                    NSInteger  value = [[NSString stringWithFormat:@"%@",hRitem.recommend]integerValue];
+                    if (value == 0) {
                         
-                        value = @"1";
+                        value = 1;
+                    }
+                    
+                    if (value > 5) {
+                        
+                        value = 5;
                         
                     }
-                    NSString *titleStr = [NSString stringWithFormat:@"皇冠 %@",value];
                     
-                    NSMutableAttributedString *title = [[NSMutableAttributedString alloc]initWithString:titleStr];
-                    [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, 4)];
-                    [title addAttribute:NSForegroundColorAttributeName value:kTextLightGrayColor range:NSMakeRange(0, 4)];
-                    cell.recomValue.attributedText = title;
+                    
+                    cell.crownImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"crown_%ld",(long)value]];
+                    
+              
                     
                     //加关注
                     
