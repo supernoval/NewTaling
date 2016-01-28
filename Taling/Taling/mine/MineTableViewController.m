@@ -67,7 +67,7 @@
                 
                 _boughtLabel.text = [NSString stringWithFormat:@"%@份",[_countDic objectForKey:@"buyresumesCountSum"]];
                 
-                _sharedLabel.text = [NSString stringWithFormat:@"%@份",[_countDic objectForKey:@"saleresumesCountSum"]];
+                _sharedLabel.text = [NSString stringWithFormat:@"%@份",[_countDic objectForKey:@"resumesCountSum"]];
                 
                 _collectedLabel.text = [NSString stringWithFormat:@"%@份",[_countDic objectForKey:@"reservNum"]];
                 

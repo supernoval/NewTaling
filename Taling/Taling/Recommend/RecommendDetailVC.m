@@ -491,7 +491,7 @@
             }else{
                 
                 
-                return 10 +[StringHeight heightWithText:[self getResumeExperience] font:FONT_14 constrainedToWidth:ScreenWidth];
+                return 30 +[StringHeight heightWithText:[self getResumeExperience] font:FONT_14 constrainedToWidth:ScreenWidth];
             }
         }
             break;

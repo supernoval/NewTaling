@@ -12,6 +12,9 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    
+    self.contentTF.textColor = [UIColor lightGrayColor];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

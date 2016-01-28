@@ -7,11 +7,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BoughtCell" rowHeight="128" id="xMU-LH-PHX" customClass="BoughtCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BoughtCell" rowHeight="357" id="xMU-LH-PHX" customClass="BoughtCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="338"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xMU-LH-PHX" id="WaD-QL-xvM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="108"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="337"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="iTh-cG-ZOE">
@@ -255,7 +255,7 @@
                 <outlet property="priceLabel" destination="3jN-Ui-F7C" id="IMy-9U-DVD"/>
                 <outlet property="timeLabel" destination="DlF-cN-V7d" id="6VU-0B-EHi"/>
             </connections>
-            <point key="canvasLocation" x="393" y="210"/>
+            <point key="canvasLocation" x="393" y="324"/>
         </tableViewCell>
     </objects>
     <resources>
