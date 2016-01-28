@@ -70,7 +70,7 @@
                 
                 appraiseNum = [[data objectForKey:@"fansNum"]integerValue];
                 
-                saleresumesCountSum = [[data objectForKey:@"resumesCountSum"]integerValue];
+                saleresumesCountSum = [[data objectForKey:@"saleresumesCountSum"]integerValue];
                 
                 [self.tableView reloadData];
                 

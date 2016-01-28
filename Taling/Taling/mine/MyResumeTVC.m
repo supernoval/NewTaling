@@ -170,10 +170,10 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     buyNum.font = FONT_17;
     buyNum.textAlignment = NSTextAlignmentCenter;
     buyNum.textColor = [UIColor blackColor];
-    if ([_upLoadDic objectForKey:@"resumesCountSum"] == nil) {
+    if ([_upLoadDic objectForKey:@"saleresumesCountSum"] == nil) {
         buyNum.text = @"0份";
     }else{
-    buyNum.text = [NSString stringWithFormat:@"%@份",[_upLoadDic objectForKey:@"resumesCountSum"]];
+    buyNum.text = [NSString stringWithFormat:@"%@份",[_upLoadDic objectForKey:@"saleresumesCountSum"]];
     }
     [buyView addSubview:buyNum];
     
@@ -258,10 +258,10 @@ typedef NS_ENUM(NSInteger,ResumeListType)
     buyNum.font = FONT_17;
     buyNum.textAlignment = NSTextAlignmentCenter;
     buyNum.textColor = [UIColor blackColor];
-    if ([_buyDic objectForKey:@"resumesCountSum"] == nil) {
+    if ([_buyDic objectForKey:@"saleresumesCountSum"] == nil) {
         buyNum.text = @"0份";
     }else{
-    buyNum.text = [NSString stringWithFormat:@"%@份",[_buyDic objectForKey:@"resumesCountSum"]];
+    buyNum.text = [NSString stringWithFormat:@"%@份",[_buyDic objectForKey:@"saleresumesCountSum"]];
     }
     [buyView addSubview:buyNum];
     
