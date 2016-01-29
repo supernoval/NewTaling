@@ -3817,7 +3817,7 @@
         <scene sceneID="1w8-xr-6pM">
             <objects>
                 <navigationController storyboardIdentifier="MessageNavigationControlller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XUy-KO-nyH" customClass="MessageNavigationControlller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="消息" id="ZsS-UM-u6B"/>
+                    <tabBarItem key="tabBarItem" title="消息" image="message off" selectedImage="message on" id="ZsS-UM-u6B"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Obj-dM-bvf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -3828,7 +3828,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWH-Hs-ndL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-586.5" y="1423.5"/>
+            <point key="canvasLocation" x="-723" y="1524"/>
         </scene>
         <!--消息-->
         <scene sceneID="g46-gc-hZn">
@@ -11532,6 +11532,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cos-g2-UvG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-541.5" y="394.5"/>
         </scene>
     </scenes>
     <resources>
