@@ -55,10 +55,14 @@ TLRequest *request;
         if (result == 1) {
             
             
-            if (![action isEqualToString:kRegist]) {
+            NSString *err_str = [responseObject objectForKey:@"err_str"];
+            
+            if (![action isEqualToString:kRegist] || ![err_str isEqualToString:@"未知错误"]) {
                 
                 [CommonMethods showDefaultErrorString:[responseObject objectForKey:@"err_str"]];
             }
+            
+            
             
             
             block(NO,nil);
@@ -226,7 +230,7 @@ TLRequest *request;
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     manager.requestSerializer.timeoutInterval = 20.0;
-    
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:<#(nonnull id)#>]
     [MyProgressHUD showProgress];
     
     
