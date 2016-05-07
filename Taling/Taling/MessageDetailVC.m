@@ -55,7 +55,7 @@
     
     MSGModel *model = [_messages objectAtIndex:indexPath.section];
     
-    CGFloat height = [StringHeight heightWithText:model.verb font:FONT_15 constrainedToWidth:ScreenWidth - 20];
+    CGFloat height = [StringHeight heightWithText:model.verb font:FONT_14 constrainedToWidth:ScreenWidth - 20];
     
     if (height < 30) {
         
